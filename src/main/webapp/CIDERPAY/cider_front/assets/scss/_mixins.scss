@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* _mixins.scss */
+
+// breakpoint media queries
+@mixin res($key, $map: $--breakpoints) {
+  // 循环断点Map，如果存在则返回
+  @if map-has-key($map, $key) {
+    @media only screen and #{inspect(map-get($map, $key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefeined points: `#{$map}`";
+  }
+}
+
+// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// Mixin to box-sizing
+@mixin boxSizing{
+  box-sizing: border-box;
+}
+
+// Mixin to clearing effect
+@mixin clearfix {
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}
+
+// Mixin to make box-shadow
+@mixin boxShadow {
+  @include prefix(box-shadow, (9px 9px 25px rgba(163, 177, 198, 0.25), inset -9px 0px 10px rgba(224, 229, 236, 0.1)), moz webkit);
+}
+
+
+
+@mixin bullet($bgColor, $margin){
+  &:before{
+    content:"";
+    display: inline-block;
+    width:6px;
+    height: 6px;
+    background-color: $bgColor;
+    border-radius: 50%;
+    vertical-align: top;
+    transform: translateY(0.5rem);
+    //margin-right:4px;
+    margin-right: $margin;
+  }
+}
+
+@mixin quickMenu($bgColor, $color){
+  background-color: $bgColor;
+  color: $color;
+}

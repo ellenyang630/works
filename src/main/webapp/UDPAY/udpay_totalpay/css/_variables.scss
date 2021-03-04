@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+//color
+$white: #ffffff !default;
+$white-dark: darken($white,2%);
+$white-gray: #f5f6f7 !default;
+
+$gray-6: #585b64 !default;
+$gray-9: #999999 !default;
+
+$black: #2e2e2e !default;
+
+$base: #656c7f !default;
+
+$blue: #006dff !default;
+$blue-dark: darken($blue,5%);
+$blue-light: lighten($blue,5%);
+$blue_a: rgba($blue, 0.15) !default;
+
+$line: #d5d8db !default;
+$line-light: #e1e4e7 !default;
+
+$dis-gray: #a0a9b8 !default;
+
+
+
+
+//animation
+
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+
+//fontstyle
+
+$font-family: 'Apple SD Gothic Neo',
+arial,
+sans-serif !default;
+$font-family-us: Roboto,
+Tahoma,
+Arial,
+Helvetica,
+sans-serif;
+$font-icon: FontAwesome;
+
+$font-size-sm: 0.85em !default;
+$font-size-base: 1em !default;
+$font-size-middle: 1.17em !default;
+$font-size-xslg: 1.3em !default;
+$font-size-slg: 1.6em !default;
+$font-size-lg: 2em !default;
+$font-size-xlg: 2.588em !default;
+
+$font-weight-light: 100 !default;
+$font-weight-base: 400 !default;
+$font-weight-normal: 500 !default;
+$font-weight-bold: 700 !default;
+
+$small-font-size: 80% !default;
+
+$normal: normal;
+
+//radius
+
+$radius-50: 50em !default;
+
+
+
+%button-radius {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+%shadow {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.05);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,.05);
+}
+%shadowBlue {
+    box-shadow: 0 4px 8px 0 rgba($blue,.4);
+    -webkit-box-shadow: 0 4px 8px 0 rgba($blue,.4);
+}
+%shadowGray {
+    box-shadow: 0 4px 8px 0 rgba($dis-gray,.4);
+    -webkit-box-shadow: 0 4px 8px 0 rgba($dis-gray,.4);
+}
+%shadowOn {
+    box-shadow: 0 4px 13px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 4px 13px 0 rgba(0,0,0,.15);
+}
+
+%box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+%top50 {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+%left50 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+%group {
+    zoom: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+%table{
+    display: table;
+    width: 100%;
+}
+
+%cell{
+    display: table-cell;
+    vertical-align: middle;
+}

@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>서류 조회 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="format-detection" content="telephone=no" />
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/IE9.js"></script>
+  <![endif]-->
+
+  <!-- import CSS -->
+  <link rel="stylesheet" href="../assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">  
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+
+  <!-- import element-ui CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="wrapper">
+      <div id="ltnav" class="lnb">
+        <div class="logoBox">
+          <h1><a href="index.html">유디체크</a></h1>
+        </div>
+        <!--// logoBox -->
+        <div id="cssmenu">
+          <h2 class="invisible">현재 위치한 페이지 하위 메뉴</h2>
+          <div class="user_infoBox">
+            <div class="user_info_top">
+              <dl>
+                <dt>접속ID</dt>
+                <dd>admin</dd>
+              </dl>
+              <dl>
+                <dt>접속자</dt>
+                <dd>관리자</dd>
+              </dl>
+              <dl>
+                <dt>IP주소</dt>
+                <dd>218.232.75.133</dd>
+              </dl>
+            </div>
+            <div class="user_info_bottom">
+              <button type="button" class="btn btn_logout btn-pri">로그아웃</button>
+            </div>
+          </div>
+          <!--// user_infoBox -->
+
+          <ul>
+            <li class="dep1 active menu1">
+              <a href="javascript:void(0);"><span><i class="la la-folder"></i> 서류 관리</span></a>
+              <ul>
+                <li class="active">
+                  <a href="index.html">
+                    <span>등록</span>
+                    <span class="badge update">새로 추가된 건</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="index.html"><span>재 요청</span></a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span>보완 완료</span>
+                    <span class="badge update">새로 추가된 건</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"><span>승인</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--// cssmenu -->
+      </div>
+      <!--// ltnav -->
+      <div id="header">
+        <nav class="gnbWrap">
+          <h2 class="invisible">상단메뉴</h2>
+          <ul class="gnb">
+            <li class="menu_btn show_lnb"><a href="#"><i class="la la-bars"></i></a></li>
+            <li class="menu_item current"><a href="index.html">
+                <h3><i class="la la-folder"></i> 서류 관리</h3>
+              </a></li>
+            <li class="menu_item"><a href="list_service.html">
+                <h3><i class="la la-check-circle"></i> 서비스 설정</h3>
+              </a></li>
+            <li class="menu_item"><a href="list_adm.html">
+                <h3><i class="la la-user"></i> 관리자 설정</h3>
+              </a></li>
+            <li class="menu_item"><a href="list_etc.html">
+                <h3><i class="la la-cog"></i> 기타 설정</h3>
+              </a></li>
+            <li class="menu_item"><a href="list_systemLog.html">
+                <h3><i class="la la-history"></i> 로그 관리</h3>
+              </a></li>
+              <div class="nav-underline"></div>
+          </ul>
+        </nav>
+      </div>
+      <!--// header -->
+
+      <div id="content_wrap" class="clearfix">
+        <div id="content">
+          <div id="table-fixed">
+            <h2 class="invisible">본문영역</h2>
+            <div id="content_inner">
+
+              <!-- include -->
+              <div class="title_box clearfix">
+                <div class="ttBox">
+                  <h3 class="tt">서류 조회</h3>
+                </div>
+                <div class="location">
+                  <ul class="clearfix">
+                    <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
+                    <li><a href="#">서류 관리</a></li>
+                    <li><strong class="active">서류 조회</strong></li>
+                  </ul>
+                </div>
+                <!--// location-->
+              </div>
+              <!--// title_box-->
+
+              <v-form ref="form" v-model="valid" lazy-validation>
+
+
+                <div class="flexWrap">
+                  <div class="flexDiv about">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <table class="tbOpt">
+                          <caption>등록된 서류에서 서비스명과 회원아이디</caption>
+                          <tbody>
+                            <tr>
+                              <th scope="row">서비스 구분</th>
+                              <td class="en">
+                                <strong class="text-pri">Payapp</strong>
+                              </td>
+                              <th scope="row">회원 <span class="en"></span>ID</th>
+                              <td class="en">
+                                <strong>tester001</strong>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!--// tbOpt -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+
+                  <break class="flexBreak"></break>
+
+                  <!-- 개인일 때, 실거주지 정보가 없을 경우 아래 flexDiv에 클래스 추가( widen ) -->
+                  <div class="flexDiv">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">회원정보</span>
+                          <span class="tblCt">
+                            <button type="button" class="btn btn-darken" @click="dialogVisible2 = true"><i class="la la-pencil"></i>수정</button>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <table class="tbOpt">
+                          <caption>등록된 서류의 회원정보</caption>
+                          <tr>
+                            <th scope="row">상호명</th>
+                            <td>
+                              <strong class="text-highlight">맛있는 케이크</strong>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">사업자번호</th>
+                            <td class="en"> 105-87-99887</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">대표자명</th>
+                            <td>전미란</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">휴대전화번호</th>
+                            <td class="en">010-1234-5678</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">이메일</th>
+                            <td class="en">matcake@naver.com</td>
+                          </tr>
+                        </table>
+                        <!--// tbOpt -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+
+                  <div class="flexDiv">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">실 거주지 등록</span>
+                        </div>
+                        <!--// tblTitle -->
+                        <div class="imgDoc_container">
+                          <div class="imgDoc_view fullWrap">
+                            <table class="tbOpt">
+                              <caption>회원의 실 거주지 등록 정보</caption>
+                                <tr>
+                                  <th scope="row">우편번호</th>
+                                  <td class="en">08389</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">주소</th>
+                                  <td>
+                                      서울특별시 구로구 디지털로 26길 61
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">상세주소</th>
+                                  <td>
+                                      에이스 하이엔드 타워 2차 1801호
+                                  </td>
+                                </tr>
+                              </table>
+                              <!--// tbOpt -->
+
+                          </div>
+                          <!--// imgDoc_view -->
+
+                          <div class="imgDoc_ct">
+                            <div class="ct">
+                              <span class="input_chk first">
+                                <input type="checkbox" id="reReqDoc1">
+                                <label for="reReqDoc1"><span>재 요청</span></label>
+                              </span>
+                            </div>
+                          </div>
+                          <!--// imgDoc_ct -->
+                        </div>
+                        <!--// imgDoc_container -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+
+                  <div class="flexDiv">  
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">사업자 등록증</span>
+                          <span class="tblCt">
+                            <span class="status enroll">등록</span>
+                            <span class="status approval">승인</span>
+                            <span class="status reReq">재 요청</span>
+                            <span class="status fixGap">보완 완료</span>
+                          </span> 
+                        </div>
+                        <!--// tblTitle -->
+                        <div class="imgDoc_container">
+                            <div class="imgDoc_view">
+                                <div class="imgThumb md">
+                                  <button type="button" @click="dialogVisible2 = true"><img src="../assets/img/doc_thumb_md.jpg" alt="사업자 등록증" /></button>
+                                </div>
+                            </div>
+                            <!--// imgDoc_view -->
+                            <div class="imgDoc_ct">
+                              <div class="ct">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="reReqDoc1">
+                                  <label for="reReqDoc1"><span>재 요청</span></label>
+                                </span>
+                              </div>
+                            </div>
+                            <!--// imgDoc_ct -->
+                        </div>
+                        <!--// imgDoc_container -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+                  
+                  
+                  <div class="flexDiv widen">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">신분증 인식 결과</span>
+                          <span class="tblCt">
+                            <span class="status enroll">등록</span>
+                            <span class="status approval">승인</span>
+                            <span class="status reReq">재 요청</span>
+                            <span class="status fixGap">보완 완료</span>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <table class="tbOpt">
+                          <caption>신분증 인식 후 결과 정보들</caption>
+                          <tr>
+                            <th scope="row">신분증 종류</th>
+                            <td>
+                              <strong class="text-highlight">운전면허증</strong>
+                            </td>
+                            <th scope="row">이름</th>
+                            <td>전미란</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">주민등록번호</th>
+                            <td class="en">881111-<span class="masking">●●●●●●●</span></td>
+                            <th scope="row">발급일</th>
+                            <td class="en">2004-11-11</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">면허번호</th>
+                            <td class="en">123456-123456</td>
+                            <th scope="row">발급처</th>
+                            <td>서울특별시 종로구</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">만료일</th>
+                            <td class="en">2022-11-11</td>
+                            <th scope="row">종별구분</th>
+                            <td>2종 보통</td>
+                          </tr>
+                        </table>
+                        <!--// tbOpt -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen -->
+
+                  <div class="flexDiv">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">계좌 정보</span>
+                          <span class="tblCt">
+                            <button type="button" class="btn btn-darken" @click="dialogVisible3 = true"><i class="la la-pencil"></i>수정</button>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <table class="tbOpt">
+                          <caption>계좌 정보 - 은행명, 계좌번호, 예금주</caption>
+                          <tr>
+                            <th scope="row">은행명</th>
+                            <td>신한은행</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">계좌번호</th>
+                            <td class="en">111123568784</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">예금주</th>
+                            <td>전미란</td>
+                          </tr>
+                        </table>
+                        <!--// tbOpt -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+
+                  <div class="flexDiv">
+                    <div class="cardBox">
+                        <div class="cardText">
+                          <div class="tblTitle">
+                            <span class="tblTit">통장 사본</span>
+                            <span class="tblCt">
+                              <span class="status enroll">등록</span>
+                              <span class="status approval">승인</span>
+                              <span class="status reReq">재 요청</span>
+                              <span class="status fixGap">보완 완료</span>
+                            </span>
+                          </div>
+                          <!--// tblTitle -->
+                          <div class="imgDoc_container">
+                            <div class="imgDoc_view">
+                              <div class="imgThumb md">
+                                <button type="button" @click="dialogVisible3 = true">
+                                  <img src="../assets/img/doc_thumb_md.jpg" alt="" />
+                                </button>
+                              </div>
+                            </div>
+                            <!--// imgDoc_view -->
+                            <div class="imgDoc_ct">
+                                <div class="ct">
+                                  <span class="input_chk first">
+                                    <input type="checkbox" id="reReqDoc1">
+                                    <label for="reReqDoc1"><span>재 요청</span></label>
+                                  </span>
+                                </div>
+                            </div>
+                            <!--// imgDoc_ct -->
+                          </div>
+                          <!--// imgDoc_container -->
+                        </div>
+                      </div>
+                      <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+
+                  <div class="flexDiv widen">
+                    <div class="cardBox">
+                        <div class="cardText">
+                          <div class="tblTitle">
+                            <span class="tblTit">판매점 계약서 <span class="case">5건</span></span>
+                            <span class="tblCt">
+                              <span class="status enroll">등록</span>
+                              <span class="status approval">승인</span>
+                              <span class="status reReq">재 요청</span>
+                              <span class="status fixGap">보완 완료</span>
+                            </span>
+                          </div>
+                          <!--// tblTitle -->
+                          <div class="imgDoc_container slider_container">
+                              <div class="imgDoc_view">
+                                  <carousel  :navigation-enabled="true" :per-page-custom=[[980,3],[1160,6]]>    <!-- :per-page="5" -->
+                                    <slide v-for="a in 15">
+                                      <div class="imgThumb sm" @click="dialogVisible4 = true">
+                                        <img src="../assets/img/doc_thumb_sm.jpg" alt="" />
+                                      </div>
+                                    </slide>
+                                  </carousel>
+                              </div>
+                              <!--// imgDoc_view -->
+  
+                              <div class="imgDoc_ct">
+                                <div class="ct">
+                                  <span class="input_chk first">
+                                    <input type="checkbox" id="reReqDoc1">
+                                    <label for="reReqDoc1"><span>재 요청</span></label>
+                                  </span>
+                                </div>  
+                                <div class="ct">
+                                  <button type="button" class="btn btn-sm btn-line-pri">다운로드</button>
+                                </div>
+                              </div>
+                              <!--// imgDoc_ct -->
+                          </div>
+                          <!--// imgDoc_container -->
+                        </div>
+                      </div>
+                      <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen -->
+
+                  <div class="flexDiv widen">
+                      <div class="cardBox">
+                          <div class="cardText">
+                            <div class="tblTitle">
+                              <span class="tblTit">매장사진 <span class="case">5건</span></span>
+                              <span class="tblCt">
+                                <span class="status enroll">등록</span>
+                                <span class="status approval">승인</span>
+                                <span class="status reReq">재 요청</span>
+                                <span class="status fixGap">보완 완료</span>
+                              </span>
+                            </div>
+                            <!--// tblTitle -->
+                            <div class="imgDoc_container slider_container">
+                                <div class="imgDoc_view">
+                                    <carousel  :navigation-enabled="true" :per-page-custom=[[980,3],[1160,6]]>    <!-- :per-page="5" -->
+                                      <slide v-for="a in 15">
+                                        <div class="imgThumb sm" @click="dialogVisible4 = true">
+                                          <img src="../assets/img/doc_thumb_sm.jpg" alt="" />
+                                        </div>
+                                      </slide>
+                                    </carousel>
+                                </div>
+                                <!--// imgDoc_view -->
+    
+                                <div class="imgDoc_ct">
+                                  <div class="ct">
+                                    <span class="input_chk first">
+                                      <input type="checkbox" id="reReqDoc1">
+                                      <label for="reReqDoc1"><span>재 요청</span></label>
+                                    </span>
+                                  </div>  
+                                  <div class="ct">
+                                    <button type="button" class="btn btn-sm btn-line-pri">다운로드</button>
+                                  </div>
+                                </div>
+                                <!--// imgDoc_ct -->
+                            </div>
+                            <!--// imgDoc_container -->
+                          </div>
+                        </div>
+                        <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen -->
+
+                  <div class="flexDiv widen">
+                      <div class="cardBox">
+                          <div class="cardText">
+                            <div class="tblTitle">
+                              <span class="tblTit">판매상품 사진 <span class="case">5건</span></span>
+                              <span class="tblCt">
+                                <span class="status enroll">등록</span>
+                                <span class="status approval">승인</span>
+                                <span class="status reReq">재 요청</span>
+                                <span class="status fixGap">보완 완료</span>
+                              </span>
+                            </div>
+                            <!--// tblTitle -->
+                            
+                            <div class="imgDoc_container slider_container">
+                                <div class="imgDoc_view">
+                                    <carousel  :navigation-enabled="true" :per-page-custom=[[980,3],[1160,6]]>    <!-- :per-page="5" -->
+                                      <slide v-for="a in 15">
+                                        <div class="imgThumb sm" @click="dialogVisible4 = true">
+                                          <img src="../assets/img/doc_thumb_sm.jpg" alt="" />
+                                        </div>
+                                      </slide>
+                                    </carousel>
+                                </div>
+                                <!--// imgDoc_view -->
+    
+                                <div class="imgDoc_ct">
+                                  <div class="ct">
+                                    <span class="input_chk first">
+                                      <input type="checkbox" id="reReqDoc1">
+                                      <label for="reReqDoc1"><span>재 요청</span></label>
+                                    </span>
+                                  </div>  
+                                  <div class="ct">
+                                    <button type="button" class="btn btn-sm btn-line-pri">다운로드</button>
+                                  </div>
+                                </div>
+                                <!--// imgDoc_ct -->
+                            </div>
+                            <!--// imgDoc_container -->
+                          </div>
+                        </div>
+                        <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen -->
+
+                  <div class="flexDiv widen">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">추가 서류 <span class="case">5건</span></span>
+                          <span class="tblCt">
+                            <span class="status enroll">등록</span>
+                            <span class="status approval">승인</span>
+                            <span class="status reReq">재 요청</span>
+                            <span class="status fixGap">보완 완료</span>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <div class="imgDoc_container slider_container">
+                            <div class="imgDoc_view">
+                              <carousel  :navigation-enabled="true" :per-page-custom=[[980,3],[1160,6]]>    <!-- :per-page="5" -->
+                                <slide>
+                                  <!-- 첨부:이미지 -->
+                                  <div class="imgThumb sm" @click="dialogVisible4 = true">
+                                    <img src="../assets/img/doc_thumb_sm.jpg" alt="" />
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부:텍스트 -->
+                                  <div class="docThumb sm">
+                                    <div class="cell">
+                                      <img src="../assets/img/icoAttach/icon_text.png" alt="" />
+                                      <p class="fileName">다소농산_사업자등록증.txt</p>
+                                    </div>
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부:한글 -->
+                                  <div class="docThumb sm">
+                                      <div class="cell">
+                                        <img src="../assets/img/icoAttach/icon_hwp.png" alt="" />
+                                        <p class="fileName">다소농산_사업자등록증.hwp</p>
+                                    </div>
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부:워드 -->
+                                  <div class="docThumb sm">
+                                    <div class="cell">
+                                      <img src="../assets/img/icoAttach/icon_doc.png" alt="" />
+                                      <p class="fileName">다소농산_사업자등록증.docx</p>
+                                    </div>
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부:pdf -->
+                                  <div class="docThumb sm">
+                                      <div class="cell">
+                                        <img src="../assets/img/icoAttach/icon_pdf.png" alt="" />
+                                        <p class="fileName">다소농산_사업자등록증.pdf</p>
+                                    </div>
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부:파워포인트 -->
+                                  <div class="docThumb sm">
+                                      <div class="cell">
+                                        <img src="../assets/img/icoAttach/icon_ppt.png" alt="" />
+                                        <p class="fileName">다소농산_사업자등록증.pptx</p>
+                                    </div>
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부:엑셀 -->
+                                  <div class="docThumb sm">
+                                    <div class="cell">
+                                      <img src="../assets/img/icoAttach/icon_xls.png" alt="" />
+                                      <p class="fileName">다소농산_사업자등록증.xls</p>
+                                    </div>  
+                                  </div>
+                                </slide>
+                                <slide>
+                                  <!-- 첨부: 그외 파일들 -->
+                                  <div class="docThumb sm">
+                                    <div class="cell">
+                                      <img src="../assets/img/icoAttach/icon_etc.png" alt="" />
+                                      <p class="fileName">다소농산_사업자등록증.etc</p>
+                                    </div>
+                                  </div>
+                                  </slide> 
+                              </carousel>
+                            </div>
+                            <!--// imgDoc_view -->
+
+                            <div class="imgDoc_ct">
+                              <div class="ct">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="reReqDoc1">
+                                  <label for="reReqDoc1"><span>재 요청</span></label>
+                                </span>
+                              </div>  
+                              <div class="ct">
+                                <button type="button" class="btn btn-sm btn-line-pri">다운로드</button>
+                              </div>
+                            </div>
+                            <!--// imgDoc_ct -->
+                        </div>
+                        <!--// imgDoc_container -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen --> 
+
+
+                  <!-- 추가된 서류 카테고리 -->
+                  <div class="flexDiv widen">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">법인 인감 증명서 <span class="case">5건</span></span>
+                          <span class="tblCt">
+                            <span class="status enroll">등록</span>
+                            <span class="status approval">승인</span>
+                            <span class="status reReq">재 요청</span>
+                            <span class="status fixGap">보완 완료</span>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <div class="imgDoc_container slider_container">              
+                            <div class="imgDoc_view">
+                                
+                               
+                            </div>
+                            <!--// imgDoc_view -->
+
+                            <div class="imgDoc_ct">
+                              <div class="ct">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="reReqDoc1" checked>
+                                  <label for="reReqDoc1"><span>재 요청</span></label>
+                                </span>
+                              </div>  
+                              <div class="ct">
+                                <button type="button" class="btn btn-sm btn-line-pri">다운로드</button>
+                              </div>
+                            </div>
+                            <!--// imgDoc_ct -->
+                        </div>
+                        <!--// imgDoc_container -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen --> 
+                  
+
+                  <div class="flexDiv widen">
+                    <div class="cardBox">
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">관리자 서류 업로드 <span class="case">5건</span></span>
+                          <span class="tblCt">
+                            <span class="status enroll">등록</span>
+                            <span class="status approval">승인</span>
+                            <span class="status reReq">재 요청</span>
+                            <span class="status fixGap">보완 완료</span>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <div class="imgDoc_container slider_container">              
+                            <div class="imgDoc_view">
+                                <el-upload
+                                  class="upload-demo"
+                                  drag
+                                  action="https://jsonplaceholder.typicode.com/posts/"
+                                  :on-preview="handlePreview"
+                                  :on-remove="handleRemove"
+                                  :file-list="fileList"
+                                  multiple>
+                                  <div class="el-upload__dir">
+                                    <i class="xi-file-zip"></i>
+                                    <i class="xi-file-image"></i>
+                                    <i class="xi-image"></i>
+                                  </div>  
+                                  <div class="el-upload__text">클릭하거나 파일을 드래그해서 올려주세요.</div>
+                                </el-upload>
+
+                                <div class="imgThumb sm">
+                                  <img src="../assets/img/doc_thumb_sm.jpg" alt="">
+                                  <button type="button" class="btn-dlt">
+                                    <i class="la la-times"></i>
+                                    <span class="invisible">삭제</span>
+                                  </button>
+                                </div>
+                                <div class="docThumb sm">
+                                  <div class="cell">
+                                    <img src="../assets/img/icoAttach/icon_text.png" alt=""> 
+                                    <p class="fileName">다소농산_사업자등록증.txt</p>
+                                  </div>
+                                  <button type="button" class="btn-dlt">
+                                      <i class="la la-times"></i>
+                                      <span class="invisible">삭제</span>
+                                  </button>
+                                </div>
+
+                            </div>
+                            <!--// imgDoc_view -->
+
+                            <div class="imgDoc_ct">
+                              <div class="ct">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="reReqDoc1">
+                                  <label for="reReqDoc1"><span>재 요청</span></label>
+                                </span>
+                              </div>  
+                              <div class="ct">
+                                <button type="button" class="btn btn-sm btn-line-pri">다운로드</button>
+                              </div>
+                            </div>
+                            <!--// imgDoc_ct -->
+                        </div>
+                        <!--// imgDoc_container -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv.widen --> 
+
+                </div>
+                <!--// flexWrap -->
+
+
+                <div class="btnArea seperate">
+                  <div class="pull-left">
+                      <span><button type="button" class="btn btn-md btn-line-pri"  @click="dialogVisible = true"><i class="la la-plus"></i> 서류 카테고리 추가</button></span>
+                  </div>
+                  <div class="pull-right">
+                    <span class="first"><button type="button" class="btn btn-md btn-line-pri"><i class="xi-folder-download"></i> 첨부파일 일괄 다운로드</button></span>
+                    <span><button type="button" class="btn btn-md btn-line-alert" @click="dialogVisible5 = true">재 요청</button></span>
+                    <span class="last"><button type="button" class="btn btn-md btn-pri" @click="dialogVisible6 = true">승인</button></span>
+                  </div>
+                </div>
+                <!--// btnArea -->
+
+              </v-form>
+              <!--// include -->
+              
+            </div>
+            <!--//#content_inner-->
+          </div>
+          <!--//#table-fixed-->
+        </div>
+        <!--//#content-->
+      </div>
+      <!--//#content_wrap-->
+    </div>
+    <!--// wrapper -->
+
+
+
+
+    <!-- 서류 카테고리 추가 다이얼로그 -->
+    <el-dialog
+      title="서류 카테고리 추가"
+      :visible.sync="dialogVisible"
+      class="sm">
+
+        <div class="text-info">
+          <p><strong><i class="la la-info-circle"></i> 안내</strong></p>
+          <p class="indent_p">
+            - 서류 카테고리 추가 시, <span class="en">UDCHECK</span> 사용자 <span class="en">APP</span> 의 '추가 서류' 항목에도 <br/> 해당 카테고리가 추가됩니다.<br/>
+          </p>
+          <p class="indent_p">
+            - 재 요청 필요 여부 체크 시, 해당 서류 카테고리를 재 요청 할 수 있습니다. <br/> (사용자 <span class="en">APP</span>에 보완 필요 항목으로 표시됩니다.)
+          </p>
+        </div>
+
+        <table class="table tbList">
+          <caption>서류 카테고리 추가 관련 폼</caption>
+          <colgroup>
+            <col width="10%"> 
+            <col width="30%">
+            <col width="60%">
+          </colgroup> 
+          <thead>
+            <tr>
+              <th>선택</th>
+              <th>재 요청 필요 여부</th>
+              <th>항목명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <span class="input_chk alone">
+                  <input type="checkbox" id="type1" checked>
+                  <label for="type1"><span class="invisible">선택</span></label>
+                </span>
+              </th>
+              <td>
+                <span class="input_chk alone">
+                  <input type="checkbox" id="reReqChk1" checked>
+                  <label for="reReqChk1"><span class="invisible">선택</span></label>
+                </span>
+              </td>
+              <td class="text-left">
+                법인 인감 증명서
+              </td>
+            </tr>  
+            <tr>
+              <th scope="row">
+                <span class="input_chk alone">
+                  <input type="checkbox" id="type2">
+                  <label for="type2"><span class="invisible">선택</span></label>
+                </span>
+              </th>
+              <td>
+                <span class="input_chk alone">
+                  <input type="checkbox" id="reReqChk2">
+                  <label for="reReqChk2"><span class="invisible">선택</span></label>
+                </span>
+              </td>
+              <td class="text-left">
+                공동 대표 확인서
+              </td>
+            </tr> 
+            <tr>
+              <th scope="row">
+                <span class="input_chk alone">
+                  <input type="checkbox" id="type3">
+                  <label for="type3"><span class="invisible">선택</span></label>
+                </span>
+              </th>
+              <td>
+                <span class="input_chk alone">
+                  <input type="checkbox" id="reReqChk3">
+                  <label for="reReqChk3"><span class="invisible">선택</span></label>
+                </span>
+              </td>
+              <td class="text-left">
+                법인 등기부등본
+              </td>
+            </tr> 
+            <tr>
+              <th scope="row">
+                <span class="input_chk alone">
+                  <input type="checkbox" id="type4">
+                  <label for="type4"><span class="invisible">선택</span></label>
+                </span>
+              </th>
+              <td>
+                <span class="input_chk alone">
+                  <input type="checkbox" id="reReqChk4">
+                  <label for="reReqChk4"><span class="invisible">선택</span></label>
+                </span>
+              </td>
+              <td class="text-left">
+                개인 인감 증명서
+              </td>
+            </tr> 
+            <tr>
+              <th scope="row">
+                <span class="input_chk alone">
+                  <input type="checkbox" id="type5">
+                  <label for="type5"><span class="invisible">선택</span></label>
+                </span>
+              </th>
+              <td>
+                <span class="input_chk alone">
+                  <input type="checkbox" id="reReqChk5">
+                  <label for="reReqChk5"><span class="invisible">선택</span></label>
+                </span>
+              </td>
+              <td class="text-left">
+                <input type="text" class="int" placeholder="" />
+              </td>
+            </tr> 
+          </tbody>
+        </table>
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">닫기</el-button>
+        <el-button type="primary">추가</el-button>
+      </div>
+    </el-dialog>
+
+    <!-- 사업자등록증 다이얼로그 -->
+    <el-dialog
+      title="사업자 등록증"
+      :visible.sync="dialogVisible2"
+      class="xlg">
+
+      <div class="cardBox">
+        <div class="cardText">
+          <div class="tblTitle">
+            <span class="tblTit">회원정보</span> 
+          </div>
+          <!--// tblTitle -->
+          <table class="tbOpt">
+            <caption>등록된 서류의 회원정보</caption>
+            <tr>
+              <th scope="row"><label for="bizName">상호명</label></th>
+              <td>
+                <input type="text" class="int" id="bizName" value="맛있는 케이크">
+              </td>
+              <th scope="row"><label for="bizNum">사업자번호</label></th>
+              <td class="en">
+                <input type="text" class="int" id="bizNum" value="1058799887" placeholder="-없이 입력해주세요.">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="ceoName">대표자명</label></th>
+              <td>
+                <input type="text" class="int" id="ceoName" value="전미란">
+              </td>
+              <th scope="row"><label for="phoneNum">휴대전화번호</label></th>
+              <td class="en">
+                <input type="tel" class="int" id="phoneNum" value="01012345678" placeholder="-없이 입력해주세요.">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="email">이메일</label></th>
+              <td class="en">
+                <input type="email" class="int" id="email" value="matcake@naver.com">
+              </td>
+            </tr>
+          </table>
+          <!--// tbOpt -->
+        </div>
+      </div>
+      <!--// cardBox -->
+      
+      <div class="cardBox">
+        <div class="imgView_wrap">
+          <div class="imgView">
+            <img src="../assets/img/test.jpg" alt="" />
+            <div class="imgViewBtn">
+              <button type="button" class="btn-rotation" title="사진 회전"><i class="xi-refresh-l"></i></button>
+              <button type="button" class="btn-download" title="사진 다운로드"><i class="xi-download"></i></button>
+            </div>  
+          </div>
+        </div>  
+        <!--// imgView_wrap -->
+      </div>
+      <!--// cardBox -->
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible2 = false">닫기</el-button>
+        <el-button type="primary">확인</el-button>
+      </div>
+    </el-dialog>
+
+    <!-- 통장 사본 다이얼로그 -->
+    <el-dialog
+      title="통장 사본"
+      :visible.sync="dialogVisible3"
+      class="xlg">
+      <div class="cardBox">
+        <div class="cardText">
+          <div class="tblTitle">
+            <span class="tblTit">계좌 정보</span>
+          </div>
+          <!--// tblTitle -->
+          <table class="tbOpt">
+            <caption>계좌 정보 - 은행명, 계좌번호, 예금주</caption>
+            <tr>
+              <th scope="row"><label for="bankName">은행명</label></th>
+              <td>
+                  <div class="selectWrap">
+                    <select class="int" id="bankName">
+                      <option selected>신한은행</option>
+                    </select>
+                  </div>
+              </td>
+              <th scope="row"><label for="accountNum">계좌번호</label></th>
+              <td class="en">
+                <input type="text" class="int" id="accountNum" value="111123568784" placeholder="-없이 입력해주세요.">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="accountHolder">예금주</label></th>
+              <td>
+                <input type="text" class="int" id="accountHolder" value="전미란" >
+              </td>
+            </tr>
+          </table>
+          <!--// tbOpt -->
+        </div>
+      </div>
+      <!--// cardBox -->
+
+      <div class="cardBox">
+        <div class="imgView_wrap">
+          <div class="imgView">
+            <img src="../assets/img/test.jpg" alt="" />
+            <div class="imgViewBtn">
+              <button type="button" class="btn-rotation" title="사진 회전"><i class="xi-refresh-l"></i></button>
+              <button type="button" class="btn-download" title="사진 다운로드"><i class="xi-download"></i></button>
+            </div>  
+          </div>
+        </div>  
+        <!--// imgView_wrap -->
+      </div>
+      <!--// cardBox -->
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible3 = false">닫기</el-button>
+        <el-button type="primary">확인</el-button>
+      </div>
+    </el-dialog>
+
+
+    <!-- 사진 및 서류 다이얼로그 -->
+    <el-dialog
+      title="판매점 계약서 / 매장 사진 / 판매 상품 사진 / 추가 서류"
+      :visible.sync="dialogVisible4"
+      class="xlg">
+
+      <div class="cardBox">
+        <div class="imgView_wrap">
+            <carousel :navigation-enabled="true" :per-page="1" id="">    <!-- :per-page="5" -->
+              <slide v-for="a in 3">
+                <div class="imgView">
+                  <img src="../assets/img/test.jpg" alt="" />
+                  <div class="imgViewBtn">
+                    <button type="button" class="btn-rotation" title="사진 회전"><i class="xi-refresh-l"></i></button>
+                    <button type="button" class="btn-download" title="사진 다운로드"><i class="xi-download"></i></button>
+                  </div>  
+                </div>
+              </slide>
+            </carousel>
+        </div>  
+        <!--// imgView_wrap -->
+      </div>
+
+      
+      <div class="imgView_thumb_Wrap">
+      <carousel :navigation-enabled="true" :per-page="6" >
+        <slide v-for="a in 15">
+          <div class="imgThumb xs" @click="dialogVisible4 = true">
+            <img src="../assets/img/doc_thumb_sm.jpg" alt="" />
+          </div>
+        </slide>
+        <numbered-pagination slot="pagination" />
+      </carousel>
+    </div>
+        
+      <!--// imgDoc_container -->
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible4 = false">닫기</el-button>
+        <el-button type="primary">확인</el-button>
+      </div>
+    </el-dialog>
+
+
+
+    <!-- 서류 재요청 다이얼로그 -->
+    <el-dialog
+      title="서류 재 요청"
+      :visible.sync="dialogVisible5"
+      class="">
+
+      <div class="cardBox">
+        <div class="cardText">
+          <div class="tblTitle">
+            <span class="tblTit">재 요청 항목</span>
+          </div>
+          <!--// tblTitle -->
+          <table class="table tbList text-left">
+            <colgroup>
+              <col width="10%"> 
+              <col width="90%">
+            </colgroup> 
+            <!-- <thead>
+              <tr>
+                <th>선택</th>
+                <th>요청 항목</th>
+              </tr>
+            </thead> -->
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType1">
+                    <label for="docType1"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>통장 사본 </td>
+              </tr>  
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType2">
+                    <label for="docType2"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>사업자 등록증 </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType3">
+                    <label for="docTdocType3ype1"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>판매점 계약서 </td>
+              </tr>  
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType4">
+                    <label for="docType4"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>실 거주지 등록 </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType5">
+                    <label for="docType5"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>매장사진</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType6">
+                    <label for="docType6"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>판매상품 사진 </td>
+              </tr>  
+              <tr>
+                <th scope="row">
+                  <span class="input_chk alone">
+                    <input type="checkbox" id="docType7">
+                    <label for="docType7"><span class="invisible">선택</span></label>
+                  </span>
+                </th>
+                <td>추가 서류</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--// tbList -->    
+        </div>
+      </div>
+      <!--// cardBox -->
+
+      <div class="cardBox">
+          <div class="cardText">
+            <div class="tblTitle">
+              <span class="tblTit">재 요청 사유</span>
+            </div>
+            <!--// tblTitle -->
+            <table class="table tbList text-left">
+              <colgroup>
+                <col width="10%"> 
+                <col width="90%">
+              </colgroup> 
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <textarea class="int" placeholder="재 요청 사유를 입력해 주세요. (미 입력 시, 기본 문구로 안내)">재 요청 사유 입니다.</textarea>
+                    <p class="text-right">
+                        <small><strong>55</strong>/200자 이내</small>
+                    </p>
+                  </td>
+                </tr>  
+              </tbody>
+            </table>
+            <!--// tbList -->    
+          </div>
+        </div>
+        <!--// cardBox -->
+       
+     
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible5 = false">닫기</el-button>
+        <el-button type="primary">재 요청</el-button>
+      </div>
+    </el-dialog>
+
+
+    <!-- 서류 승인 다이얼로그 -->
+    <el-dialog
+      title="서류 승인"
+      :visible.sync="dialogVisible6">
+ 
+      <div class="alert-text">
+        해당 판매점의 서류 심사를 승인하시겠습니까?
+      </div>
+      <div class="alert-infoBox">
+        <dl>
+          <dt>승인자</dt>
+          <dd>최우영(devwy)</dd>
+        </dl>
+        <dl>
+          <dt>승인 일시</dt>
+          <dd>2019-09-28 23:23:23</dd>
+        </dl>
+      </div>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible6 = false">닫기</el-button>
+        <el-button type="primary">승인 완료</el-button>
+      </div>
+    </el-dialog>
+
+  </div>
+</body>
+
+
+
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.rawgit.com/SSENSE/vue-carousel/6823411d/dist/vue-carousel.min.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        dialogVisible: false,
+        dialogVisible2: false,
+        dialogVisible3: false,
+        dialogVisible4: false,
+        dialogVisible5: false,
+        dialogVisible6: false,
+      };
+    },
+    components: {
+      'carousel': VueCarousel.Carousel,
+      'slide': VueCarousel.Slide
+    },
+    methods: {
+     
+    }
+  })
+</script>
+<script src="../assets/js/jquery-latest.min.js"></script>
+<script src="../assets/js/design.js"></script>
+
+</html>

@@ -1,0 +1,622 @@
+@charset "UTF-8";
+/* custom/_formItem.scss */
+
+//==  Form Item Style
+//## for form, input, button tag
+
+
+//
+//  Form
+// --------------------------------------------------
+.form {
+  // form-control
+  &-control__wrap {
+    padding: 0;
+  }
+  &-control__wrap &-control {
+    border: 0;
+  }
+  // form-group
+  &-group {
+    .form-label {
+      margin-bottom: 4px;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+      color: $gray-666;
+    }
+    &.inline-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+
+//
+//  Input
+// --------------------------------------------------
+.input {
+  &-group-wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media-breakpoint-down(sm) {
+      &{
+        width: 100%;
+      }
+    }
+    .form-control {
+      background-color: inherit;
+    }
+    .input-joint {
+      margin-left: 10px;
+
+      button, a{
+        width: 100%;
+        white-space: nowrap;
+      }
+    }
+    .input-joint2{
+      margin-left: 20px;
+    }
+    > *:not(.input-joint) {
+      flex-grow: 1;
+    }
+    .input-text{
+      min-width:210px;
+    }
+  }
+
+  &-joint {
+    &.center {
+      margin-right: 10px;
+    }
+  }
+  &-text{
+    &__name{
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+    }
+    &__desc{
+      margin-top: 4px;
+      font-size: $font-size-base * 0.9;
+      color: $base-lighter;
+    }
+  }
+
+  // input type date, icon
+  &-date-group{
+    .input-date{
+      position: relative;
+
+      &:before{
+        content:"\e9a4";
+        font-family: xeicon;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left:0;
+        z-index: 10;
+        color: lighten($gray-999, 17%);
+        line-height: 37px;
+        padding:0 1rem;
+        font-size: 1.2rem;
+      }
+
+      .form-control{
+        padding-left:40px;
+      }
+    }
+  }
+}
+
+// 이미지 업로드
+.goodsImgWrap{
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  img{
+    //max-width: 120px;
+    //max-height: 120px;
+    width:100%;
+    min-width: 120px;
+    min-height: 120px;
+  }
+  label{
+    cursor: pointer;
+  }
+  input[type="file"].up-goods-file {
+    display: none;
+  }
+}
+
+.delFile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  cursor: pointer;
+  width: 32px;
+  height:32px;
+  //display: table;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+
+  i {
+    //display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: $white;
+  }
+}
+
+// 파일찾기 버튼형
+input[type="file"]#custom-input-file {
+  display: none;
+  cursor: pointer;
+}
+
+.custom-file-label{
+  padding-right: 98px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
+.custom-file-uploaded{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: calc(1.5em + 0.9334rem + 2px);
+  padding: 0.4667rem 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $gray-700;
+  background-color: $white;
+  border: 1px solid $gray-400;
+  border-radius: 0.25rem;
+  width:100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+
+//
+//  Button
+// --------------------------------------------------
+.btn {
+  // 버튼 색상 커스텀
+  &-base-lighter {
+    border-color: $line-default;
+    background-color: $white;
+    font-size: 1.133rem;
+    font-weight: $font-weight-bold;
+    color: lighten($black, 13%);
+
+    &:hover {
+      background-color: darken($white, 6%);
+    }
+
+    &:focus{
+      box-shadow: 0 0 0 0.2rem rgba(lighten($black, 13%),0.15);
+    }
+  }
+
+  &-white {
+    background-color: $white;
+    color: inherit;
+  }
+
+  &-outline-white {
+    border-color: $white;
+    color: $white;
+  }
+
+  // 검색창 열기 버튼
+  &-open-search {
+    @include btnShape($primary-dark);
+  }
+
+  // 결제 바로요청 창 열기 버튼
+  &-open-payment {
+    @include btnShape($primary);
+  }
+
+  // 상세검색창 초기화 버튼
+  &-reload {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin-left: 7px;
+    margin-top: -3px;
+
+    &:hover {
+      i {
+        @include prefix(animation, spin360 0.75s linear 2, webkit ms moz o);
+      }
+    }
+  }
+
+  &-reset{
+    &:hover {
+      i {
+        @include prefix(animation, spin360 0.75s linear 2, webkit ms moz o);
+      }
+    }
+  }
+
+  // 상세검색창 하단버튼
+  &-filter-search {
+    font-size: 1.133rem;
+    font-weight: $font-weight-bold;
+    @include prefix(box-shadow, 2px 2px 9px 1px rgba($primary, 0.47), webkit);
+  }
+
+  //상세보기 하단버튼
+  &-more-view {
+    border-color: $line-default;
+    background-color: $white;
+    font-size: 1.133rem;
+    font-weight: $font-weight-bold;
+    color: lighten($black, 13%);
+
+    &:hover {
+      background-color: darken($white, 6%);
+    }
+    &:focus{
+      box-shadow: 0 0 0 0.2rem rgba(lighten($black, 13%),0.15);
+    }
+  }
+
+  // 고객센터 최신게시물 더보기 버튼
+  &-more-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 600;
+    color: $text-default;
+
+    i {
+      font-size: 0.9333rem;
+      transform: translateY(0.05rem);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      i {
+        //animation: arrow-icon-ani 0.8s ease-in-out infinite;
+        animation: wobble 1.7s ease-in-out infinite;
+      }
+    }
+  }
+
+  // 라디오 버튼 그룹
+  &-group-flex {
+    display: flex;
+  }
+
+  // 버튼형식 토글 (개발 다중처리일 때 사용)
+  &-group-toggle{
+    display: flex;
+
+    .el-button{
+      flex-grow: 1;
+      flex-basis: 0;
+      color: $primary;
+      border-color: $primary;
+      padding: 10px 16px;
+
+      &:hover{
+        color: $white;
+        border-color: $primary;
+        background-color: $primary;
+      }
+      &:focus{
+        outline:0;
+        color: $primary;
+        border-color: $primary;
+        background-color: $white;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(19, 105, 250, 0.5);
+        box-shadow: 0 0 0 0.2rem rgba(19, 105, 250, 0.5);
+      }
+
+      // 선택됐을 때,
+      &.btn-toggle__active{
+        color: $white;
+        background-color: $primary;
+      }
+      &.btn-toggle__nouse{
+        //color: $white;
+        //background-color: $secondary;
+        //border-color: $secondary;.
+
+        &:hover{
+          color: $white;
+          background-color: $secondary;
+          border-color: $secondary;
+        }
+        &:focus{
+          outline:0;
+          color: $white;
+          border-color: $secondary;
+          background-color: $secondary;
+          -webkit-box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+        }
+        &:focus:not(.is-focus):not(:active):not(.is-disabled) {
+          -webkit-box-shadow: 0 0 2px 2px rgba($secondary, 0.5);
+          box-shadow: 0 0 2px 2px rgba($secondary, 0.5);
+        }
+
+        &.btn-toggle__active{
+          color: $white;
+          background-color: $secondary;
+          border-color: $secondary;
+
+          &:hover{
+            color: $white;
+            background-color: $secondary;
+            border-color: $secondary;
+          }
+          &:focus{
+            outline:0;
+            color: $white;
+            border-color: $secondary;
+            background-color: $secondary;
+            -webkit-box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  // 라디오버튼형식 토글 (개발 단일처리일 때 사용)
+  &-radiogroup-toggle {
+    display: flex;
+
+    .el-radio-button {
+      flex-grow: 1;
+      flex-basis: 0;
+
+      &:not(:first-child){
+        margin-left: -1px;
+      }
+      &:first-child{
+        .el-radio-button__inner {
+          border-left: 1px solid $primary;
+        }
+      }
+    }
+    .el-radio-button__inner {
+      width: 100%;
+      border: 1px solid $primary;
+      border-left-color:$primary;
+      color: $primary;
+
+      &:hover{
+        color: $white;
+        border-color: $primary;
+        background-color: $primary;
+      }
+      &:focus{
+        outline:0;
+        color: $primary;
+        border-color: $primary;
+        background-color: $white;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(19, 105, 250, 0.5);
+        box-shadow: 0 0 0 0.2rem rgba(19, 105, 250, 0.5);
+      }
+    }
+    //.el-radio-button:first-child .el-radio-button__inner{
+    //  border-color: $primary;
+    //}
+
+    .el-radio-button__orig-radio + .el-radio-button__inner {
+
+    }
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      background-color: $primary;
+      border-color: $primary;
+      -webkit-box-shadow: -1px 0 0 0 $primary;
+      box-shadow: -1px 0 0 0 $primary;
+    }
+
+    // 사용안함, 비활성 버튼 색상
+    .btn-toggle__nouse {
+
+      .el-radio-button__orig-radio:checked + .el-radio-button__inner{
+        background-color: lighten($secondary,12%);
+        border-color: lighten($secondary,12%);
+        //-webkit-box-shadow: 0 0 0 0.2rem rgba(lighten($secondary,12%), 0.5);
+        //box-shadow: 0 0 0 0.2rem rgba(lighten($secondary,12%), 0.5);
+      }
+      .el-radio-button__inner {
+        //color: $white;
+        //border-color: lighten($secondary,12%);
+        //background-color: lighten($secondary,12%);
+
+        &:hover{
+          color: $white;
+          border-color: lighten($secondary,12%);
+          background-color: lighten($secondary,12%);
+        }
+      }
+    }
+  }
+
+  &-group-toggle__fixed {
+    width: 205px;
+  }
+
+  // 사용, 사용안함 라디오 버튼
+  &-group-toggle__use {
+    .no-use {
+      &.btn-outline-primary {
+        &:not(:disabled):not(.disalbed) {
+          &:active,
+          &.active {
+            color: $white;
+            background-color: $secondary;
+            border-color: $secondary;
+
+            &:focus,
+            &.focus {
+              box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+            }
+          }
+        }
+        &:hover {
+          color: $white;
+          background-color: $secondary;
+          border-color: $secondary;
+        }
+      }
+    }
+  }
+
+  // btn hover, icon moving
+  &-ico-hover {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    i {
+      margin-right: 3px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      i {
+        -webkit-animation-name: hvr-icon-push;
+        animation-name: hvr-icon-push;
+        -webkit-animation-duration: 0.3s;
+        animation-duration: 0.3s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+      }
+    }
+  }
+}
+
+
+// 상단 / 하단 버튼 그룹
+.btn-ct {
+  // .btn-ct-top
+  &-top {
+    margin-left: auto;
+
+    .btn {
+      margin: 0 5px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // .btn-ct-bottom
+  &-bottom {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+
+    .btn {
+      margin-top: 0;
+      font-size: 1.133rem;
+      font-weight: $font-weight-bold;
+
+      &:not(:first-child) {
+        margin-left: 1.5vw;
+      }
+    }
+    &.block {
+      justify-content: space-evenly;
+
+      .btn {
+        width: 100%;
+      }
+    }
+    &.inline {
+      justify-content: center;
+
+      .btn {
+        width: 170px;
+      }
+    }
+  }
+}
+
+// 상품 수량 컨트롤러
+.number-controller{
+  .btn-group{
+    .btn{
+      border:1px solid $gray-400;
+      padding:$input-btn-padding-y $input-btn-padding-x-sm;
+      color:$primary;
+      font-weight: $font-weight-bold;
+    }
+  }
+  .form-control{
+    text-align: center;
+    min-width: 40px;
+    margin-left:-1px;
+    border-radius: 0;
+    padding:$input-btn-padding-y $input-btn-padding-x-sm;
+  }
+}
+
+// 리스트 내 우측 관리버튼 (모바일, pc 분리)
+.btn-control {
+  @include prefix(transition, all 0.5s ease-in-out, webkit o);
+
+  &-web {
+    display: block;
+    width: 95px;
+  }
+  &-m {
+    display: none;
+  }
+
+  @at-root{
+    .page-body{
+      // 개발작업 시, 검색, 상세창 없어지면 class 추가해서 제어하기.
+
+      .btn-control{
+        &-web {
+          display: none;
+        }
+        &-m {
+          display: block;
+        }
+      }
+    }
+  }
+}

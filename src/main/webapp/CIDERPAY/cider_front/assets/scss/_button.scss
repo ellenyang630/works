@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* _button.scss */
+
+// 버튼 스타일 init
+.btn{
+  @include boxSizing;
+  margin:0;
+  padding:0;
+  display: inline-block;
+  font-weight: 500;
+  color: $text-dark;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.4667rem 1rem;
+  font-size: 0.934rem;
+  line-height: 1.5;
+  transition-property: color, border, background-color;
+  transition-duration: 250ms;
+
+  i{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
+}
+
+// 백그라운드버튼 테마 스타일
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    color: $white;
+    background-color: $value;
+    border: 1px solid $value;
+    transition-property: background-color, color, border;
+    transition-duration: 250ms;
+
+    &:hover{
+      background-color: darken($value, 3%);
+      border: 1px solid darken($value, 3%);
+    }
+  }
+}
+
+// 라인버튼 테마 스타일
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    color: $value;
+    background-color: $white;
+    border: 1px solid $value;
+
+    &:hover{
+      background-color: $value;
+      color:$white;
+    }
+  }
+}
+
+// 백그라운드버튼 기본 스타일
+.btn-default{
+  padding: 1.667rem 1.667rem;
+  border-color: $text-dark;
+  background-color: $text-dark;
+  font-size: 1.4rem;
+  font-weight: $font-weight-semibold;
+  color: $white;
+
+  &:hover{
+    background-color: darken($text-dark, 15%);
+    color:$white;
+  }
+}
+
+// 라인버튼 기본 스타일
+.btn-outline-default{
+  padding: 0.9333rem 1.667rem;
+  border-color: $text-light;
+  background-color: $white;
+  font-size: 1.133rem;
+  color: $text-dark;
+
+  i{
+    color:$primary;
+  }
+
+  &:hover{
+    background-color: $text-light;
+    color:$white;
+  }
+}
+
+// 버튼 크기 스타일
+.btn{
+  &-lg{
+    padding: 1.133rem 2rem;
+    font-size: 1.4rem;
+  }
+  &-md{
+    padding: 1.067rem 1.667rem;
+    font-size: 1.133rem;
+  }
+  &-sm{
+    padding: 1.067rem 1.667rem;
+    font-size: 1.133rem;
+  }
+  &-xs{
+
+  }
+}
+
+//
+.btn-block{
+  display: block;
+  width:100%;
+}
+
+// 버튼 라운드 크기 스타일
+.btn-round{
+  &-circle{
+    border-radius: 50rem;
+  }
+  &-sm{
+    border-radius: 8px;
+  }
+  &-xs{
+    border-radius: 4px;
+  }
+}
+
+// 버튼 그룹 스타일
+.btn-group{
+
+  &.center{
+    text-align: center;
+  }
+
+  .btn{
+    &:not(:last-child){
+      margin-right: 1.467rem;
+    }
+  }
+
+  &-bottom{
+    margin-top:3.333rem;
+
+    .btn{
+      min-width:90%;
+      margin-left:0;
+
+      &:not(:last-child){
+        margin-right:0;
+        margin-bottom:1rem;
+      }
+    }
+
+    @include res(xs){
+      &{
+        .btn{
+          min-width:200px;
+
+          &:not(:last-child){
+            margin-right:1.467rem;
+            margin-bottom:0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 버튼 호버 애니메이션 스타일
+.btn-ani-arrow{
+  i{
+    transition-duration: 250ms;
+    transition-property: animation;
+  }
+
+  &:hover,
+  &:active,
+  &:focus{
+    i{
+      animation: slide1 600ms ease-in-out infinite;
+    }
+  }
+}
+
+// 앱 다운로드 버튼
+$btn-download-icon: playGoogle, appStore;
+
+@each $value in $btn-download-icon{
+  .btn-#{$value}{
+    &:before {
+      content:"";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right:5px;
+      background: url("../img/common/icon_#{$value}.svg") center center no-repeat;
+      width: 19px;
+      height: 22px;
+      background-size: 19px 22px;
+    }
+  }
+}
+
+

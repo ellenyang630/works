@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+.btn {
+	@extend %box;
+	@extend .mp_none;
+	@extend .hand;
+	@extend %button-radius;
+	font-weight: $font-weight-exbold;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+	text-decoration: none !important;
+	color: $black;
+	background: $white;
+	border: 1px solid $line-dark;
+	&:hover, &:focus, &:active{
+		text-decoration: none !important;
+	}
+	i{
+		font-weight: $font-weight-exbold;
+		font-size: 1.1em;
+		position: relative;
+		top: -0.5px;
+		margin-right:3px;
+	}
+
+	&:disabled,
+	&[disabled]{
+		opacity:0.7;
+	}
+}
+
+.btn-sm {
+	height: 34px;
+	line-height: 33px;
+	padding: 0px 8px;
+	font-size:$font-size-sm;
+	min-width: 30px;
+}
+.tbList .btn-sm{
+	height: 25px;
+	line-height: 24px;
+}
+
+.btn-md {
+	height: 38px;
+	line-height: 36px;
+	padding: 0 15px;
+	min-width: 40px;
+	// font-size: $font-size-sm;
+	font-size:0.8rem;
+
+}
+
+.btn-big{
+	height: 60px;
+	line-height: 56px;
+	padding: 0 18px;
+	min-width:  200px;
+	font-size: $font-size-middle;
+}
+.btn-block {
+	width:100% !important;
+}
+
+// 글 정렬 바꾸는 버튼
+.btn_sort{
+	width:100%;
+	font-size: 12px;
+	font-weight: $font-weight-exbold;
+	color:$gray-9;
+	i{
+		font-size:80%;
+		font-weight: $font-weight-exbold;
+		color:$gray-9;
+	}
+}
+
+.btn-group{
+	min-width:120px;
+	// 순서 이동 버튼
+	&.btn-move-group{
+		@include clearfix;
+		.btn{
+			padding:0;
+			margin:0;
+			width:35px;
+			height:35px;
+			border-radius: 0;
+			border-color:rgba($green, 0.2);
+			display: inline-block;
+			margin-left:-1px;
+			background: $green-a;
+			color:$green;
+			&-up{
+				&:before{
+					@include font-family(LineAwesome);
+					@include content-val("\f113");
+				}
+			}
+			&-down{
+				&:before{
+					@include font-family(LineAwesome);
+					@include content-val("\f110");
+				}
+			}
+			&:disabled{
+				//background: $lightGray;
+				background: $white;
+				color:$gray-9;
+				cursor: initial;
+				cursor: default;
+				cursor: not-allowed;
+				border-color:$line-light;
+				&:hover, &:active, &:focus, &.active{
+					background: $white;
+					color:$gray-9;
+				}
+			}
+		}
+	}
+}

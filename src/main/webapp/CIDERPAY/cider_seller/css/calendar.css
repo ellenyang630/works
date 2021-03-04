@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+#calendar {
+    width:100%;
+    margin: 0 auto;
+}
+
+/* 달력 레이아웃 스타일 */
+.fc-body{
+    background: #fff;
+}
+tr:first-child>td>.fc-day-grid-event{
+    margin-top:0;
+}
+.fc-day-grid-event{
+    padding: 0 !important;
+}
+.fc-event{
+    border:none !important;
+    border-width:0px !important;
+    background: none;
+    padding: 0;
+    margin:0 1px;
+    margin-top:3px;
+    font-size:11px;
+}
+.fc-event:hover{
+    color:inherit;
+}
+.fc-event small{
+    color:inherit;
+    margin-left:5px;
+}
+.fc-content{
+    position: relative;
+    padding: 0px 5px 1px 5px;
+}
+/*.fc-event .fc-content:before{*/
+/*display: inline-block;*/
+/*content: "";*/
+/*background: #000;*/
+/*width: 4px;*/
+/*height: 100%;*/
+/*z-index: 100;*/
+/*position: absolute;*/
+/*top: 0;*/
+/*left: 0;*/
+/*border-top-left-radius: 3px;*/
+/*border-bottom-left-radius: 3px;*/
+/*}*/
+.fc th {
+    border: none !important;
+    height: 25px;
+    line-height: 25px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #f5f8fa;
+    color: #8b929e;
+}
+
+
+
+/* 달력 헤더 스타일 */
+.fc-title{
+    font-weight:700;
+}
+
+.fc-toolbar .fc-center button,
+.fc-toolbar .fc-center h2 {
+    display: inline-block;
+}
+.fc-toolbar .fc-center h2{
+    font-size:17.5px;
+    font-weight: 600;
+    color:#232f49;
+    font-family: "Malgun Gothic";
+}
+.fc-toolbar .fc-center button, .fc-toolbar .fc-center button:hover{
+    padding:0;
+    margin:0 80px;
+    border:none !important;
+    background: none !important;
+    color: #2C3E50;
+    vertical-align: middle;
+    box-shadow: none;
+}
+.fc-toolbar .fc-center button .fc-icon{
+    font-size:21px;
+    color:#b5bbc4;
+}
+.fc-toolbar .fc-center button:hover,
+.fc-toolbar .fc-center button:active{
+    background-color: #fff;
+    color: #2C3E50;
+    border-color:#fff;
+}
+.fc-toolbar h2 {
+    font-size:1.5em;
+    color:#323c4a;
+}
+.fc-icon-left-single-arrow:after {
+    font-family: LineAwesome;
+    content: "\f111";
+    font-size: 23px;
+    /*top: -8.5%;*/
+    top: -2px;
+}
+.fc-icon-right-single-arrow:after {
+    font-size: 23px;
+    /*top: 3%;*/
+    top: 2px;
+    font-family: LineAwesome;
+    content: "\f112";
+}
+
+
+.fc-today-button{
+    border: none;
+    background: none;
+    background: #fff;
+    border:1px solid #dce0e1;
+    width:70px;
+    height:33px !important;
+    line-height:33px;
+    font-size:14px !important;
+    font-weight:600 !important;
+    color:#232f49 !important;
+    box-shadow: none;
+}
+
+
+
+/* Day 스타일 */
+.fc-day-number{
+    margin-top: 4px;
+    margin-right: 4px;
+    font-size:12px;
+    font-weight:400;
+    color: #8b929e;
+}
+.fc-unthemed td.fc-today{
+    background: #fcfade;
+}
+.fc-unthemed td.fc-today .fc-day-number{
+    color:#232f49;
+    font-weight:bold;
+}
+.fc-sun{
+    color: #de5e91 !important;
+}
+.fc-sun .fc-day-number{
+    color: #de5e91;
+}
+.fc-day-header.fc-sat{
+    color: #509ccd;
+}
+
+
+
+/* 지난달, 다음달 스타일 */
+.fc-bg .fc-other-month{
+    background: #fcfcfc;
+}
+.fc-head .fc-head-container{
+    border-color:#c5c7c8 !important;
+    border-top: 2px solid #232f49 !important;
+}
+.fc-body > tr > .fc-widget-content{
+    border-color:#c5c7c8 !important;
+}
+
+
+
+/* 건수 & 금액 추가 데이터 */
+.fc-case{
+    float:right;
+    font-weight:600;
+}
+.fc-desc{
+    display:block;
+    width:100%;
+    text-align: right;
+    font-weight:600;
+}
+
+
+
+/* 정산, 결제 addClass 제어 */
+/*.pay_type1 .fc-content:before{*/
+/*background: #00cd8d;*/
+/*}*/
+/*.pay_type2 .fc-content:before{*/
+/*background: #8f4ee0;*/
+/*}*/
+/*.pay_type3 .fc-content:before{*/
+/*background: #ea65ad;*/
+/*}*/
+/*.cal_type1 .fc-content:before{*/
+/*background: #5e90ff;*/
+/*}*/
+/*.cal_type2 .fc-content:before{*/
+/*background: #58809b;*/
+/*}*/
+
+.pay_type1, .pay_type1:hover{
+    /*background-color: #e6faf4;*/
+    color:#00cd8d;
+}
+.pay_type2, .pay_type2:hover{
+    /*background-color: #f4eefc;*/
+    color:#8f4ee0;
+}
+.pay_type3, .pay_type3:hover{
+    /*background-color: #fdf3f9;*/
+    color:#ea65ad;
+}
+.cal_type1, .cal_type1:hover{
+    /*background-color: #eff4ff;*/
+    color:#5e90ff;
+}
+.cal_type2, .cal_type2:hover{
+    /*background-color: #eff3f5;*/
+    color:#58809b;
+}
+
+
+
+
+/* 반응형 */
+@media screen and (max-width: 767px) {
+    .fc-title,
+    .fc-case,
+    .fc-desc{
+        letter-spacing: -1.3px;
+    }
+
+    .fc-event small{
+        margin-left:0 !important;
+    }
+}

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+
+//color
+$white: #ffffff !default;
+$black: #2d3539 !default;
+$blue-black: #33414e !default;
+$blue-black-light: #576c80 !default;
+$blue-black-dark: #253340 !default;
+
+$gray-6: #767a83 !default;
+$gray-9: #999999 !default;
+
+$base: #656c7f !default;
+$red: #e9385d !default;
+$red_a: rgba($red,0.07) !default;
+$green: #00d593 !default;
+$green_a: rgba($green,0.07) !default;
+
+$line: #dbdde2 !default;
+$line-dark: #cbcdd2 !default;
+$line-light: #e1e4e7 !default;
+
+$white-gray:rgb(237, 240, 245) !default;
+$white-lgray: #f5f7f9 !default;
+
+// sub color
+$blue     : #0698fb !default;
+$violet     : #842cf2 !default;
+$purple     : #4545bb !default;
+
+
+//animation
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+
+//fontstyle
+$font-family: Malgun Gothic, Dotum,'Apple SD Gothic Neo',Sans-serif !default;
+$font-icon: LineAwesome;
+
+$font-size-sm: 0.9em !default;
+$font-size-base: 1em !default;
+$font-size-middle: 1.117em !default;
+$font-size-slg: 1.6em !default;
+$font-size-lg: 2em !default;
+$font-size-xlg: 2.588em !default;
+
+$font-weight-light: 100 !default;
+$font-weight-base: 400 !default;
+$font-weight-bold: 500 !default;
+$font-weight-exbold: 700 !default;
+
+$small-font-size: 80% !default;
+
+$normal: normal;
+
+//radius
+$radius-50: 50em !default;
+
+%button-radius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+%box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//vertical
+%top50 {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%left50 {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+%group{
+  zoom: 1;
+  &:before, &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+%table{
+  display: table;
+  width: 100%;
+}
+
+%cell{
+  display: table-cell;
+}
+
+/* mixin */
+/// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// font-family
+@mixin font-family($fontFam) {
+  font-family: $fontFam;
+}
+
+// content value init
+@mixin content-val($content) {
+  display:inline-block;
+  content: $content;
+}
+
+// float clear both
+@mixin clearfix {
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}

@@ -1,0 +1,316 @@
+@charset "UTF-8";
+/* index.scss */
+
+// core
+@import "variables_dark";
+@import "fonts";
+@import "mixins";
+@import "reset";
+
+// function
+@import "forms";
+@import "button";
+@import "table";
+@import "common";
+@import "layout";
+@import "modal";
+@import "findpay";
+
+
+// main page
+@import "page/topBanner";
+@import "page/mainPage";
+
+// sub page
+@import "page/subPage";
+@import "page/quickMenu";
+
+// etc.
+@import "page/terms";
+
+
+  .light{
+    display: none !important;
+  }
+  .dark{
+    display: initial !important;
+  }
+
+  //공통 > 메인 핸드폰
+  #main-sections .section#intro .imgBox{
+    .aniView{
+      left: 15px;
+      width: 205px;
+      @include res(md){
+        width: 327px !important;
+        left: 25px !important;
+      }
+    }
+    .aniView-2{
+      left: 15px;
+      width: 205px;
+      @include res(md){
+        width: 327px !important;
+        left: 25px !important;
+        top: 55px !important;
+      }
+    }
+    .aniView-3{
+      top: 139px;
+    }
+  }
+
+    //공통 > 로고
+  #site-header.main #site-logo a, #site-logo a{
+    background-image: url(../img/common/logo_dark.svg);
+  }
+  //메인
+  .msc1 .imgBox .cont .txt_scan, .msc1 .imgBox .cont .txt_lead, .msc1 .imgBox .cont .txt_write{
+    background:$bg-sky;
+  }
+  .msc1 .imgBox .cont {
+    &:after{
+      background-image: url(../img/main/sec1_bg_dark.svg);
+    }
+    .txt_write .desc:before{
+      background-image: url(../img/main/sec1_write_dark.gif);
+    }
+    .txt_scan .desc:before{
+      background-image: url(../img/main/sec1_scan_dark.gif);
+    }
+    .txt_lead .desc:before{
+      background-image: url(../img/main/sec1_lead_dark.gif);
+    }
+  }
+  .msc2 .imgBox .cont:after{
+    background-image: url(../img/main/sec2_bg_dark.svg);
+  }
+  #main-sections .section#intro{
+    background: $bg;
+    .btnArea{
+      .btn_gp{
+        background: $bg-sky;
+       &:hover,&:active,&:focus{
+         background: $white;
+       }
+      }
+      .btn_as{
+        border-color: rgba($bg-sky, 0.7);
+        color:$bg-sky;
+        label{
+          &:before{
+            background-image:url(../img/common/icon_apple_black.svg);
+          }
+        }
+        *{
+          color:$gray;
+        }
+      }
+    }
+    .txtBox {
+      h2, span{
+        color:$black;
+      }
+      h3{
+        color:$gray;
+      }
+    }
+  }
+  #site-header{
+    &.main{
+      background: $bg;
+      nav{
+        a{
+          color:$light-black;
+        }
+      }
+      .menu__line {
+        background-color: $black !important;
+      }
+    }
+    .nav-link:hover:after,  .nav-link:focus:after {
+      background: $blue !important;
+    }
+  }
+  .solBox li {
+    &:nth-child(2){
+      .inBox{
+        .tt:before{
+          background-image: url(../img/main/icon_main_solution_dark_2.svg);
+        }
+      }
+    }
+    &:nth-child(3){
+      .inBox{
+        .tt:before{
+          background-image: url(../img/main/icon_main_solution_dark_3.svg);
+        }
+      }
+    }
+    &:nth-child(4){
+      .inBox{
+        .tt:before{
+          background-image: url(../img/main/icon_main_solution_dark_4.svg);
+        }
+      }
+    }
+    &:nth-child(5){
+      .inBox{
+        .tt:before{
+          background-image: url(../img/main/icon_main_solution_dark_5.svg);
+        }
+      }
+    }
+    &:nth-child(6){
+      .inBox{
+        .tt:before{
+          background-image: url(../img/main/icon_main_solution_dark_6.svg);
+        }
+      }
+    }
+    .inBox{
+      background: $bg-sky;
+      .tt{
+        &:before{
+          background-image: url(../img/main/icon_main_solution_dark_1.svg);
+        }
+        &:after{
+          background:$gray;
+          color:$black;
+        }
+      }
+    }
+  }
+  .msc7 .btnArea .btn{
+    color:$black;
+    box-shadow: 0px 30px 50px rgba($white, 0.3);
+  }
+
+  //이용안내 > 가입/결제받기
+  .flow-item-user .flow-item-container:before{
+    background-image: url("../img/common/icon_user_dark.svg");
+  }
+  .flow-item-mobile .flow-item-container:before{
+    background-image: url("../img/common/icon_mobile_dark.svg");
+  }
+  .flow-item-card .flow-item-container:before{
+    background-image: url("../img/common/icon_card_dark.svg");
+  }
+  .flow-item-site .flow-item-container:before{
+    background-image: url("../img/common/icon_site_dark.svg");
+  }
+  .flow-item-api .flow-item-container:before{
+    background-image: url("../img/common/icon_api_dark.svg");
+  }
+  //이용안내 > 판매점 계약 안내
+  .is-bg-1{
+    background:$bg;
+  }
+  //이용안내 > 보증보험 안내
+  .ins-wrapper .tab li .tab-link.active{
+    color:$blue;
+    border-color: $blue;
+  }
+  //주요기능 > 구매자 결제화면
+  .subPage-body.area-wrapper .subPage-area.bg{
+    background:$bg;
+  }
+  //주요기능 > 가이드
+  .guide-img-location p:first-child{
+    color:$black;
+  }
+  //결제 API 연동
+  .subPage-header.with-bg.api{
+    background: url(../img/sub/bg_api_dark.jpg) no-repeat;
+    //.subPage-subTitle, .subPage-subTitle *, p, h3{
+    //  color:$white;
+    //}
+  }
+  //영업채널
+  .subPage-header.with-bg.chSales{
+    .subPage-subTitle, .subPage-subTitle *, p, h3{
+      color:$black;
+    }
+  }
+  //고객센터
+  .subPage-header.support{
+    background: $bg;
+  }
+  .need-more-help-options .btn-quest{
+    box-shadow: 9px 9px 25px rgba($white, 0.25), inset -9px 0px 10px rgba($white, 0.1);
+  }
+  .faq-list-item.is-active{
+    background: $bg;
+  }
+  .support-search__input{
+    box-shadow: 9px 9px 25px rgba($white, 0.8), inset -9px 0px 10px rgba($white, 0.1);
+    &:focus{
+      box-shadow: inset 2px 2px 10px rgba(17,29,54,0.8), inset -6px -6px 15px $white;
+    }
+  }
+  .support-search__button{
+    box-shadow: 9px 9px 25px rgba($white, 0.8), inset -9px 0px 10px rgba($white, 0.1);
+  }
+  //공통 / 참고
+  .help-box{
+    background:$bg;
+  }
+  .card-infobox{
+    background:$bg;
+  }
+  //공통 / 탭
+  .subPage-tabMenu{
+    a{
+      color: $gray;
+      &:hover,&:active,&:focus,&.active{
+        background: $blue;
+        color: $black;
+      }
+    }
+  }
+  //공통 / 푸터
+  .ft-row-1 .family-site .select-wrapper select{
+    color:$black;
+    option{
+      color:$white;
+    }
+  }
+  //공통 / 퀵메뉴
+  .quick-menu, .quick-menu {
+    .trigger, .action{
+     @include prefix(box-shadow, 0 2px 5px rgba($white,.25), webkit moz);
+      color:$black;
+    }
+  }
+  //공통 / 버튼
+  .btn-outline-default:hover{
+    color:$black;
+    background:$blue;
+    border-color: $blue;
+    *,i{
+      color:$black !important;
+    }
+  }
+  *::placeholder{
+    color:$text-light;
+  }
+  //테마버튼
+  .btn_theme{
+    background:$bg-sky;
+    &:hover,&:active,&:focus{
+      background: darken($black, 10);
+      color:$white;
+      i{
+        color:$blue;
+      }
+    }
+  }
+  //팝업> 문구
+  .popup-header{
+    .text-warning{
+      color:$white !important;
+    }
+  }
+
+
+

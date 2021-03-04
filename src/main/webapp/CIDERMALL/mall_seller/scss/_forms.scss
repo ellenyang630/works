@@ -1,0 +1,509 @@
+@charset "UTF-8";
+/* _forms.scss */
+
+
+// 필수값 표시
+.required-data{
+  display: inline-block;
+  text-align: center;
+  vertical-align: text-top;
+  color:$--color-primary;
+}
+
+// 폼 카드
+.form-card{
+  @include boxSizing;
+  @include cardShadow;
+  border: 1px solid $border-base;
+  border-radius: $--border-radius-base;
+
+
+  + .form-card{
+    margin-top: 2rem;
+  }
+
+  + .el-row{
+    .form-card{
+      margin-top: 2rem;
+    }
+  }
+
+  // 마이몰 디자인 설정
+  &--div{
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  // 메시지 설정 헤더
+  &__header{
+    margin-bottom: 3.333rem;
+    color:$text-dark;
+    font-size: $--font-size-large;
+    font-weight: $font-weight-bold;
+
+    // 사용여부 스위치
+    .el-card__control{
+      display: inline-block;
+      float: right;
+      margin-top: -.3333rem;
+    }
+  }
+
+  // 배너 사용여부 스위치
+  .el-card__header{
+    .el-card__control{
+      display: inline-block;
+      float: right;
+      margin-top: -.3333rem;
+    }
+  }
+}
+
+// 폼 그룹
+.form-group{
+  & + &{
+    margin-top: 2rem;
+  }
+
+  &__header{
+    margin-bottom: .6667rem;
+
+    &.is-flex{
+      //width: 390px;
+      //display: flex;
+      ////justify-content: space-between;
+      //align-items: center;
+      //align-content: center;
+
+      .search-goods{
+        width: 310px;
+
+        i{
+          color:$text-base;
+          font-size:$--font-size-medium;
+        }
+      }
+    }
+  }
+
+  &__tit{
+    color:$text-dark;
+    font-size: $--font-size-base;
+    font-weight: $font-weight-bold;
+  }
+}
+
+
+//
+//  공통 입력 폼 요소 (el-form 클래스 동일하게 사용)
+// --------------------------------------------------
+
+// 인풋 최대입력값이 있는 경우
+.el-input--with-count{
+  .el-input__count{
+    margin-top: .5333rem;
+    text-align: right;
+    color: $text-light;
+    font-size: $--font-size-small;
+  }
+}
+
+.el-input__wrap{
+  width:100%;
+}
+.el-input__label {
+  color: $text-dark;
+  font-size: $--font-size-smaller;
+  font-weight: $font-weight-bold;
+  line-height: inherit;
+}
+
+// el-form
+.el-form{
+  .el-select,
+  .el-input{
+    width:100%;
+  }
+
+  // 레이블 & 인풋 block 요소
+  &.top-block{
+    .el-input__wrap{
+      margin-top:1.333rem;
+    }
+    .el-input__label{
+      margin-bottom: .3333rem;
+    }
+  }
+
+  // 레이블 & 인풋 각각 table-cell 요소
+  &.top-inline{
+    margin-top:0;
+
+    .el-input__label{
+      width:132px;
+      padding: .6667rem 1.333rem .6667rem 0;
+      text-align: right;
+      word-break: keep-all;
+    }
+
+    .el-input__area{
+      position: relative;
+
+      .el-input__item{
+        margin-top: .8667rem;
+
+        &:first-child{
+          margin-top: 0;
+        }
+
+        &.cells{
+          .el-input__cell {
+            + .el-input__cell{
+              margin-top: 1rem;
+            }
+
+            .cell{
+              + .cell{
+                margin-top: .4rem;
+              }
+              .el-input{
+                width: 215px;
+
+              }
+            }
+          }
+
+          @include res(lg){
+            //display: table;
+            display: inline-flex;
+            align-content: center;
+
+            .el-input__cell{
+              display: table-cell;
+              vertical-align: top;
+
+              + .el-input__cell{
+                padding-left: 2rem;
+              }
+
+              .cell{
+                display: inline-block;
+
+                + .cell{
+                  margin-top: 0;
+                  margin-left: .4rem;
+                }
+
+                .el-input{
+                  width: 215px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+      .el-input__suffix{
+        vertical-align: middle;
+        font-size: $--font-size-extra-large;
+      }
+    }
+
+    .el-input__wrap{
+      @include clearfix;
+      display: table;
+      width:100%;
+      table-layout: fixed;
+
+      &:not(:first-child){
+        margin-top:2rem;
+      }
+
+      .el-input__label,
+      .el-input__area{
+        display: table-cell;
+        vertical-align: top;
+      }
+
+      .el-input__area{
+        width: 100%;
+
+        .el-radio-group{
+          .el-radio{
+            display: block;
+            padding: .3333rem 0;
+          }
+
+          @include res(md){
+            padding: .6667rem 0;
+
+            .el-radio{
+              display: inline-block;
+            }
+          }
+        }
+        .el-checkbox{
+          padding: .7333rem 0;
+        }
+      }
+
+      .el-input__item{
+        .el-input__label{
+          width:auto;
+          padding: .8rem .4rem .6667rem 0;
+          font-weight: $font-weight-regular;
+        }
+      }
+    }
+
+    // 데이터 고정 값 출력 (뷰페이지에서)
+    .el-input__text{
+      padding: .6667rem 1.333rem .6667rem 0;
+    }
+  }
+}
+
+
+
+//
+//  리스트 상단 검색
+// --------------------------------------------------
+
+// 검색 영역 박스
+.search-area {
+  position: relative;
+
+  &__form{
+    overflow: hidden;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+    transition-property: height;
+
+    .el-input__label{
+      color:$text-base;
+      font-weight: $font-weight-regular;
+    }
+
+    .el-radio-group{
+      &.is-background{
+        height: 44px;
+        padding: .7333rem .8rem;
+        border-radius: $--border-radius-base;
+        background: $--border-color-light;
+      }
+    }
+  }
+
+  // 검색 버튼
+  .search-fixed-btn {
+    margin-top: 1.067rem;
+    text-align: center;
+
+    .btn-expand {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      i{
+        transition-duration: 300ms;
+        transition-property: transform;
+        transform: rotateZ(0deg);
+      }
+    }
+
+  }
+
+  // 간편검색일 때,
+  &--collapse {
+    overflow: hidden;
+
+    .search-area__form{
+      height:94px;
+    }
+
+    .search-fixed-btn{
+      .btn-expand i{
+        transition-duration: 300ms;
+        transition-property: transform;
+        transform: rotateZ(0deg);
+      }
+    }
+  }
+
+  // 상세검색일 때,
+  &--expand {
+    height: auto;
+
+    .search-area__form{
+      height: auto;
+    }
+
+    .search-fixed-btn{
+      .btn-expand i{
+        transform: rotateZ(-180deg);
+      }
+    }
+  }
+}
+
+// 일자 검색
+.daterange{
+  &-wrap{
+    .el-input__area{
+      display: flex;
+    }
+  }
+  &-picker,
+  &-select{
+    flex:1 1 49.7%;
+  }
+  &-picker{
+    width:100%;
+  }
+  &-select{
+    display: block;
+    display: flex;
+    width:100%;
+    margin-left: .3333rem;
+
+    .el-radio-button{
+      width:100%;
+      flex-grow:1;
+
+      .el-radio-button__inner{
+        width:100%;
+        padding: .9333rem;
+        color: $text-light;
+        font-weight: $font-weight-regular;
+      }
+
+      &__orig-radio:checked + .el-radio-button__inner{
+        color: $--color-white;
+        border-color: $border-base;
+        background-color: $text-light;
+        box-shadow: none;
+        font-weight: $font-weight-bold;
+      }
+
+      &:focus:not(.is-focus):not(:active):not(.is-disabled){
+        box-shadow: none;
+      }
+
+      &--medium .el-radio-button__inner {
+        padding: .8667rem .8rem;
+        font-size: $--font-size-base;
+      }
+    }
+
+    @include res(md){
+      .el-radio-button{
+        .el-radio-button__inner{
+          padding: .9333rem 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+//
+//  첨부파일 업로드
+// --------------------------------------------------
+
+// 이미지 첨부
+.file-uploader {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  text-align: left;
+  border: 1px solid $border-base;
+  border-radius: $--border-radius-base;
+  background-color: $border-lighter;
+
+  + .file-uploader{
+    margin-left: .4667rem;
+  }
+
+  &__input {
+    display: none;
+    cursor: pointer;
+  }
+
+  &__label{
+    position: relative;
+    display: block;
+    width: 100% ;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 118px;
+
+    &:after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      content: "\EE46";
+      text-align: center;
+      color:$text-light;
+      border-radius: $--border-radius-base;
+      font-family: $font-family-icon;
+      font-size: 300%;
+    }
+  }
+
+  &__img{
+    @include boxSizing;
+    @include prefix(transform, translateY(-50%), webkit ms moz o);
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  &__del{
+    position: absolute;
+    z-index: 10;
+    top:0;
+    right:0;
+    overflow:hidden;
+    width:1.467rem;
+    height:1.467rem;
+    text-align: center;
+    color:$--color-white;
+    border-radius: $--border-radius-small;
+    background-color: rgba($--color-black,.8);
+    line-height: 1.333rem;
+  }
+}
+
+// 배너 이미지 첨부
+.file-uploader--banner{
+  width: 100%;
+  height: 140px;
+  margin-left: 0;
+
+  .file-uploader__label{
+    line-height: 138px;
+  }
+}
+
+// 로고 이미지 첨부
+.file-uploader--logo{
+  width: 240px;
+  height: 80px;
+  margin-left: 0;
+
+  .file-uploader__label{
+    line-height: 78px;
+  }
+}

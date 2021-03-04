@@ -1,0 +1,347 @@
+@charset "UTF-8";
+@import "variables";
+@import "reset";
+@import "layout";
+@import "buttons";
+@import "owl";
+@import url('simple-line-icons.css');
+@import url('line-awesome.css');
+@import url('line-awesome-font-awesome.css');
+
+html {
+  font-size: 16.5px;
+}
+
+/*--- top 버튼 -----*/
+#topButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba($blue, 0.5);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#topButton:hover {
+  background-color: $blue;
+}
+
+/*--- desBox -----*/
+.desBox {
+  .owl-carousel {
+    li {
+      width: 100% !important;
+      float: inherit !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      word-break: keep-all;
+    }
+    dl{
+      margin: 0 auto;
+    }
+    h3 {
+      font-size: 1.2rem !important;
+    }
+  }
+}
+
+%desBox {
+  .desBox {
+    margin: 0 -1%;
+    li {
+      display: inline-block;
+      float: left;
+      text-align: center;
+      margin: 0 1% 20px 1%;
+      width: 23%;
+      background: $white-grey;
+      // border: 1px solid $line;
+      @extend %box;
+      @extend %button-radius;
+      .nameTitle{
+        padding: 30px 15px;
+        font-size: 1.2rem;
+        @include fontSt;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+
+
+      dl {
+        padding: 30px 15px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        dt {
+          color: $black;
+          font-weight: $font-weight-bold;
+          margin-bottom: 13px;
+          letter-spacing: -0.7px;
+        }
+        dd {
+          font-size: $font-size-sm;
+          line-height: 1.5em;
+          letter-spacing: -0.7px;
+        }
+      }
+    }
+
+    &.col5{
+      li {
+        margin: 0 1% 20px 1%;
+        width: 18%;
+      }
+    }
+  }
+}
+
+%dasBoxLine {
+  .desBox_line {
+    border: 1px solid $line;
+    background: $white;
+    //@extend %button-radius;
+    li {
+      width: 100%;
+      display: inline-block;
+      border-bottom: 1px solid $line-light;
+      // font-size: $font-size-middle;
+      font-size: 1.2rem;
+      border-radius: 0;
+      @include fontSt;
+      &:last-child {
+        border-bottom: 0px;
+      }
+      &:hover .link {
+        color: $blue;
+      }
+      &.active {
+        border: 1px solid $blue;
+        position: relative;
+        a {
+          color: $blue;
+        }
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 26.3px 20px;
+        position: relative;
+        color:$black;
+        @extend %box;
+        .link {
+          position: absolute;
+          right: 20px;
+          font-size: $font-size-sm;
+          @extend %top50;
+          i{
+            font-size: 200%;
+            transform: translateY(0.4rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1179px) {
+  html {
+    font-size: 15px;
+  }
+  .big_btn {
+    height: 46px;
+    line-height: 43px;
+    font-size: $font-size-base;
+  }
+  h1 {
+    left: 30px !important;
+  }
+  /*.centerThis {
+    width: 100%;
+    min-width: 320px;
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }*/
+}
+
+@media screen and (max-width: 1219px) {
+  .centerThis {
+    width: 100%;
+    min-width: 320px;
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .big_btn {
+    height: 46px;
+    line-height: 43px;
+    font-size: $font-size-base;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .web_hidden {
+    display: none !important;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 13px;
+  }
+  .mb_hidden {
+    display: none !important;
+  }
+  #header {
+    display: none;
+  }
+  .desBox {
+    margin: 0px !important;
+    @include fontSt;
+    dl {
+      margin-top: 30px;
+      padding: 5px 25px !important;
+      display: table !important;
+      width: 100% !important;
+      &:first-child {
+        margin-top: 0px !important;
+      }
+      dt {
+        margin-bottom: 13px !important;
+        text-align: center;
+      }
+    }
+  }
+  .desBox_line {
+    li a {
+      padding: 13px 10px !important;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+  .big_btn {
+    height: 38px;
+    line-height: 37px;
+    padding: 0 1.2em;
+    min-width: 40px;
+    font-size: $font-size-base;
+  }
+  .footer {
+    padding: 18px 0;
+    .privacy_menu, .select_wrap {
+      clear: both;
+      float: inherit;
+      width: 100%;
+      padding: 0px;
+    }
+    .select_wrap {
+      background: rgba(255, 255, 255, 0.1);
+      margin-top: 13px;
+      &:after {
+        right: 8px;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+.mb_visible{ display: none;}
+.mb_visible2 {display: none;}
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 13px;
+  }
+  .mb_visible2 {
+    display: block !important;
+  }
+  .mb_hidden3 {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .mb_visible {
+    display: block !important;
+  }
+  .mb_hidden2 {
+    display: none !important;
+  }
+}
+
+
+.floating{
+  border:1px solid #c8c8c8;
+  position: fixed;
+  top:50%;
+  right:10vw;
+  margin-top: -120.5px;
+  z-index:100;
+  li{
+    background: $white;
+    border-bottom:1px solid #e8e8e8;
+    font-size:0.90rem;
+    text-align: center;
+    color:$white;
+    &:last-child{
+      border-bottom-width: 0;
+    }
+    i{
+      font-size:170%;
+    }
+    a{
+      display: inline-block;
+      padding:10px 13px;
+    }
+    &.cs{
+      a{
+        color:$green;
+      }
+    }
+    &.join{
+      a{
+        color:$blue;
+      }
+    }
+    &.login{
+      a{
+        color:$purple;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1760px) {
+  .floating{
+    right:30px;
+  }
+}
+@media screen and (max-width: 1219px) {
+  .floating{
+    right:15px;
+  }
+}
+
+@import "main";
+@import "sub";
+@import "modal";

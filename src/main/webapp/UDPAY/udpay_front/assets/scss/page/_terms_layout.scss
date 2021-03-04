@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* _subPage.scss */
+//==## 이 파일은 사이다페이 & 유디페이의 약관 페이지를 공통으로 사용하기 위해 필요한 스타일입니다.
+//==## 아래 스타일은 _subPage.scss 에서 불필요한 부분만 지웠습니다.
+
+.subPage {
+  &-wrapper{
+    padding-bottom: 8rem;
+  }
+  &-inner{
+    width:100%;
+    padding:0 1.333rem;
+
+    @include res(lg){
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+  }
+  &-header{
+    text-align: center;
+    margin-top: 2rem;
+
+
+    @include res(md){
+      &{
+        margin-top: 6rem;
+      }
+    }
+  }
+  &-title{
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $text-dark;
+    margin-bottom: 1.867rem;
+
+    strong{
+      font-weight: $font-weight-bold;
+    }
+
+    @include res(sm){
+      font-size: 2rem;
+    }
+
+  }
+  &-subTitle{
+    font-size: 2.8rem;
+
+    strong{
+      display: block;
+      font-family: $font-family-gmarket;
+      color: $text-dark;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &-body{
+    margin-top: 3rem;
+
+    &.padding1{
+      margin-top:4rem;
+    }
+
+    &.area-wrapper{
+      .subPage-area{
+        padding:6rem 0;
+
+        &:first-child{
+          padding-top:0;
+        }
+      }
+    }
+
+
+    @include res(md){
+      margin-top:6rem;
+    }
+  }
+
+
+  // subPage-section
+  &-section{
+    margin-top: 6rem;
+
+    &:first-child{
+      margin-top: 0;
+    }
+
+    &-header{
+      margin-bottom: 1.067rem;
+
+      &.center{
+        text-align: center;
+      }
+    }
+    &-title{
+      font-size: $font-size-md;
+      font-weight: $font-weight-normal;
+
+      strong{
+        font-weight: $font-weight-semibold;
+      }
+
+      &.sm{
+        font-size: $font-size-sm;
+      }
+
+
+      @include res(md){
+        font-size: 2rem;
+      }
+      @include res(md){
+        font-size: $font-size-lg;
+      }
+    }
+    &-desc{
+      font-size:$font-size-xs;
+      margin-top:1.067rem;
+      color: $text-base;
+
+      &.sm{
+        font-size: $font-size-xs;
+        margin-top: 0.6667rem;
+        padding-bottom: 0.933rem;
+      }
+
+
+      @include res(md){
+        font-size:$font-size-sm;
+      }
+    }
+    &-body{
+      margin-top:2rem;
+
+      &.no-margin{
+        margin-top: 0;
+      }
+      &.center{
+        text-align: center;
+      }
+
+
+      @include res(md){
+        margin-top:4.667rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,560 @@
+@charset "UTF-8";
+/* _buttons.scss */
+
+// Button init
+.btn {
+  @include boxSizing;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $text-dark;
+  border-radius: $border-radius-base;
+  font-weight: $font-weight-bold;
+  white-space: nowrap;
+  list-style-type: none;
+  list-style-position: outside;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  i{
+    vertical-align: middle;
+    font-size:118%;
+  }
+}
+
+
+// Button Size
+.btn-large{
+  height:60px;
+  line-height: 60px;
+  font-size: $--font-size-base;
+  border-radius: $border-radius-medium;
+}
+.btn-small{
+  height: 45px;
+  line-height: 45px;
+  padding: 0 1rem;
+  font-size: $font-size-small;
+  border-radius: $border-radius-base;
+}
+.btn-xsmall{
+  height:32px;
+  line-height: 32px;
+  padding: 0 11px;
+  font-size: $font-size-smaller;
+  border-radius: $border-radius-base;
+  font-weight: $font-weight-regular;
+}
+
+
+// Button layout
+.btn-block{
+  width: 100%;
+}
+
+
+// Button Color
+.btn-outline-default{
+  background-color: $--color-white;
+  border: 1px solid $--border-color-base;
+  color: $--color-text-primary;
+
+  @include hover-focus{
+
+  }
+}
+.btn-default{
+  background-color: $--color-text-primary;
+  border-color: $--color-text-primary;
+  color: $--color-white;
+
+  @include hover-focus{
+    background-color: darken($--color-text-primary, 3%);
+    border-color: darken($--color-text-primary, 3%);
+  }
+}
+.btn-default-gray{
+  background-color: $bg-base;
+  border-color: $bg-base;
+  color: $--color-text-primary;
+
+  @include hover-focus{
+    background-color: darken($bg-base, 3%);
+    border-color: darken($bg-base, 3%);
+  }
+}
+
+// 백그라운드버튼 테마 스타일
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    color: $--color-white;
+    background-color: $value;
+    border-color: $value;
+
+    &:hover{
+      background-color: darken($value, 3%);
+      border-color: darken($value, 3%);
+    }
+  }
+}
+
+// 라인버튼 테마 스타일
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    color: $value;
+    background-color: $--color-white;
+    border-color: $value;
+
+    &:hover{
+      background-color: $value;
+      border-color: $value;
+      color:$--color-white;
+    }
+  }
+}
+
+
+// 버튼 그룹
+.btn-group{
+  .btn + .btn{
+    margin-top: 10px;
+  }
+
+
+  @include respond-to('small-up'){
+    .btn + .btn{
+      margin-left: 6px;
+      margin-top: 0;
+    }
+  }
+
+
+  // 페이지 하단 버튼 그룹
+  &--bottom{
+    margin-top: 60px;
+    font-size: 0; //inline-block 요소의 4px 여백 생기는 걸 없애기 위해 추가
+    text-align: center;
+
+    .btn{
+      width: 100%;
+    }
+
+
+    @include respond-to('small-up'){
+      .btn{
+        width: 49.3%;
+        width: calc(50% - 5px);
+      }
+    }
+
+    @include respond-to('medium-up') {
+      .btn{
+        width: auto;
+        min-width: 280px;
+      }
+    }
+  }
+
+
+  // 항상 1개의 버튼이 나오는 경우
+  &--cell1{
+    .btn{
+      width: 100%;
+    }
+  }
+
+  // 항상 2개의 버튼이 나오는 경우
+  &--cell2{
+    .btn{
+      width: 50%;
+    }
+  }
+
+  // btn-group--gutter (버튼 사이에 여백이 있는 경우
+  &--gutter{
+    &.btn-group--cell2{
+      .btn{
+        width: 49.3%;
+        width: calc(50% - 5px);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+// lnb 열기버튼
+.btn-burger{
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  padding: 1.6rem;
+
+  &__inn{
+    display: inline-block;
+    width: 21px;
+    vertical-align: middle;
+  }
+
+  .bar{
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 5px;
+    text-align: left;
+    background: $text-dark;
+    border-top-left-radius: $border-radius-round;
+    border-top-right-radius: $border-radius-round;
+    border-bottom-left-radius: $border-radius-round;
+    border-bottom-right-radius: $border-radius-round;
+
+    &.top{
+      margin-top:0;
+      //transition: all 200ms ease-in-out;
+    }
+    &.mid{
+      //width: 70%;
+      //transition: all 200ms ease-in-out;
+      //transition-delay: 200ms;
+    }
+    &.bottom{
+      //transition: all 200ms ease-in-out;
+      //transition-delay: 400ms;
+    }
+
+    @include respond-to('small-up'){
+      background: $--color-white;
+    }
+  }
+
+  //@include hover-focus-active{
+  //  .bar{
+  //    width: 100%;
+  //    transition-delay: 500ms;
+  //
+  //    &.top{
+  //      animation: burger-hover 1s infinite ease-in-out alternate;
+  //    }
+  //    &.mid{
+  //      animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
+  //      transition-delay: 200ms;
+  //    }
+  //    &.bottom{
+  //      animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
+  //      transition-delay: 400ms;
+  //    }
+  //  }
+  //}
+}
+
+
+// 사이드바 열기 버튼
+.btn-menu{
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 20px;
+  height: 21px;
+  padding: 30px 18px;
+  @include ie-only {
+    background: url("../img/ico_menu.svg") center center no-repeat;
+  }
+  background: $ico-menu center center no-repeat;
+  background-size: auto auto;
+
+  @include respond-to('small-up'){
+    padding: 30px;
+  }
+}
+
+// 검색 버튼
+.btn-search{
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 20px;
+  height: 21px;
+  padding: 30px 18px;
+  @include ie-only {
+    background: url("../img/ico_search.svg") center center no-repeat;
+  }
+  background: $ico-search center center no-repeat;
+
+  @include respond-to('small-up'){
+    padding: 30px;
+  }
+}
+
+// 장바구니 이용 버튼
+.btn-cart{
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 25px;
+  padding: 30px 32px;
+  @include ie-only {
+    background: url("../img/ico_cart.svg") center center no-repeat;
+  }
+  background: $ico-cart-black center center no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+
+  &__count{
+    position: absolute;
+    right: 18px;
+    bottom: 15px;
+    display: block;
+    background-color: $--color-primary;
+    border-radius: $border-radius-xsmall;
+    min-width: 11px;
+    min-height: 11px;
+    padding: 2px;
+    line-height: 1;
+    font-size: 10px;
+    color: rgba($--color-white, .98);
+    text-indent: initial;
+    text-align: center;
+  }
+
+  @include respond-to('small-up'){
+    //padding: 30px;
+
+    padding: 20px;
+    width: 65px;
+    height: 65px;
+  }
+}
+
+// 홈으로 이동 버튼
+.btn-home{
+  position: relative;
+  display: inline-block;
+  color: $text-light;
+  font-size: $font-size-smaller;
+  padding-left: 24px;
+
+  &:before{
+    content:"";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("../img/ico_home.svg") center center no-repeat;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+// 사이드바 닫기 버튼
+.btn-close--sidebar{
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url("../img/ico_close.svg") center center no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+// 삭제 버튼
+.btn-delete{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/ico_delete.svg") center center no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+
+// 리스트 더보기 버튼
+.btn-more{
+  margin-top: 20px;
+  border-color: $gray-lighter;
+  position: relative;
+  color: $gray-dark;
+  font-size: $font-size-small;
+  font-weight: $font-weight-regular;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 0;
+
+  span{
+    &:after{
+      content:"";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      @include ie-only {
+        background: url("../img/ico_arrow_down_gray.svg") center center no-repeat;
+      }
+      background: $ico-arrow-down-gray center center no-repeat;
+    }
+  }
+
+  @include respond-to('small-up'){
+    height: 64px;
+    line-height: 64px;
+    margin-top: 40px;
+    font-size: $--font-size-base;
+  }
+}
+
+
+// 주문조회 상세보기 버튼
+.btn-view{
+  display: inline-block;
+  color: $text-base;
+  font-size: $font-size-small;
+  vertical-align: middle;
+
+  span{
+    &:after{
+      content:"";
+      margin-left: 7px;
+      display: inline-block;
+      width: 5px;
+      height: 9px;
+      @include ie-only {
+        background: url("../img/ico_arrow_right_gray.svg") center center no-repeat;
+      }
+      background: $ico-arrow-right-gray center center no-repeat;
+      vertical-align: baseline;
+    }
+  }
+}
+
+// 장바구니 담기
+.btn-addToCart{
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  @include ie-only {
+    background: rgba($--color-primary, .08) url("../img/ico_cart_primary.svg") center center no-repeat;
+  }
+  background: rgba($--color-primary, .08) $ico-cart-primary center center no-repeat;
+  background-size: 13px auto;
+  border-radius: $border-radius-circle;
+  text-indent: -9999px;
+  overflow: hidden;
+
+  @include respond-to('small-up'){
+    width: 44px;
+    height: 44px;
+    background-size: 18px auto;
+  }
+}
+
+
+// 장바구니 담기
+.btn-addToCart--desktop{
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: $border-radius-round;
+  background-color: rgba($--color-primary, .08);
+  color: $--color-primary;
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-bold;
+
+  span{
+    display: inline-block;
+    vertical-align: middle;
+
+    &:before{
+      content:"";
+      margin-right: 5px;
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      @include ie-only {
+        background: url("../img/ico_cart_primary.svg") center center no-repeat;
+      }
+      background: $ico-cart-primary center center no-repeat;
+      background-size: 13px auto;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+// 상품리스트 상품 보기 타입 변경
+.btn-type{
+  display: inline-block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  border: 1px solid $gray-light;
+
+  + .btn-type{
+    margin-left: -1px;
+  }
+
+  &--grid{
+    @include ie-only {
+      background: url("../img/ico_grid.svg") center center no-repeat;
+    }
+    background: $ico-grid center center no-repeat;
+
+    &.active{
+      @include ie-only {
+        background: url("../img/ico_grid_active.svg") center center no-repeat;
+      }
+      background: $ico-grid-active center center no-repeat;
+    }
+
+    @include respond-to('small-down'){
+      @include ie-only {
+        background: url("../img/ico_grid_active.svg") center center no-repeat;
+      }
+      background: $ico-grid-active center center no-repeat;
+    }
+  }
+
+  &--list{
+    @include ie-only {
+      background: url("../img/ico_list.svg") center center no-repeat;
+    }
+    background: $ico-list center center no-repeat;
+
+    &.active{
+      @include ie-only {
+        background: url("../img/ico_list_active.svg") center center no-repeat;
+      }
+      background: $ico-list-active center center no-repeat;
+    }
+
+    @include respond-to('small-down'){
+      @include ie-only {
+        background: url("../img/ico_list_active.svg") center center no-repeat;
+      }
+      background: $ico-list-active center center no-repeat;
+    }
+  }
+}
+
+
+.change__viewType{
+  font-size: 0;
+
+  @include respond-to('small-down'){
+    .btn-type{
+      &:not(.active){
+        display: block;
+      }
+      &.active{
+        display: none;
+      }
+    }
+  }
+}

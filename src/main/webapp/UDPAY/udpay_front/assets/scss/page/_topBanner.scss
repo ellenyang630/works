@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* _topBanner.scss */
+//  Event Banner Layout Style (상단 이벤트 배너)
+#top-banner{
+  @include boxSizing;
+  width:100%;
+  color:$white;
+  overflow: hidden;
+  height:inherit;
+
+  @include res(md) {
+    &{
+      height: 90px;
+    }
+  }
+}
+
+.banner{
+  &-container{
+    @include boxSizing;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  &-slider{
+    height:100%;
+  }
+  &-item{
+    position: relative;
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+    text-align: center;
+
+    &:focus{
+      outline:0;
+    }
+  }
+  &-item1{
+    background-color: #E4ECF3;
+  }
+  &-item2{
+    background-color: #E4ECF3;
+  }
+  &-item3{
+    background-color: #31C2BD;
+  }
+  &-item4{
+    background-color: #E4ECF3;
+  }
+  &-elm{
+    a{
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 930px;
+
+      img{
+        width: 100%;
+        max-width: 930px;
+      }
+    }
+  }
+
+  &-mb{
+    display: block;
+    padding: 0 45px;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-web{
+    display:none;
+  }
+
+  @include res(sm){
+    &-mb {
+      display: none;
+    }
+    &-web{
+      display: block;
+    }
+  }
+}
+
+
+// for slick.js plugin
+.slick{
+  &-track{
+    height:100%;
+  }
+  &-list {
+    @include boxSizing;
+    position: relative;
+    width: 100%;
+    height:100%;
+    overflow: inherit;
+    padding: 0 !important;
+  }
+
+  &-arrow{
+    position: absolute;
+    top: 50%;
+    z-index:10;
+    @include prefix(transform, translateY(-50%), webkit ms);
+    i{
+    border-radius: 50%;
+    width: 2.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    color: $white;
+    background-color: rgba(0,0,0,0.1);
+    background-blend-mode: multiply;
+    cursor: pointer;
+    font-size: 1.467rem;
+    text-align: center;
+    display: block;
+    }
+  }
+  &-prev{
+    left:0px;
+  }
+  &-next{
+    right: 0px;
+  }
+
+
+  @include res(sm){
+    &{
+      &-arrow{
+        i{
+        width: 3.267rem;
+        height: 3.267rem;
+        line-height: 3.267rem;
+        }
+      }
+      &-prev{
+        left:20px;
+      }
+      &-next{
+        right: 20px;
+      }
+    }
+  }
+}

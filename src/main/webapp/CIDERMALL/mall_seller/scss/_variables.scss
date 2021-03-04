@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+// basic color
+$white:                 #ffffff !default;
+$defaultBlack:          #000000 !default;
+$basicBlack:            #222222 !default;
+$lightGray :            #f0f3f7 !default;
+$gray-6:                #666666 !default;
+$gray-9:                #999999 !default;
+
+
+// udpay-api color
+$mainColor:             #1a6bfa !default;
+$mainDarkColor:         #11384e !default;
+$mainOpcColor:          rgba(#11384e,0.6) !default;
+$mainMuddyColor:        #263b54 !default;
+$mainLightColor:        #317eff !default;
+
+$subColor:              #537a96 !default;
+$subLightColor:         #688aa3 !default;
+$subMuddyColor:         #46566a !default;
+
+$baseColor:             #aeb9c4 !default;
+$baseLightColor:        #e7ebed !default;
+$baseMuddyColor :       #96a5b3 !default;
+
+// additional color
+$mainRed:               #f13d4a !default;
+$mainGreen:             #00b591 !default;
+$subGreen:              #00bb81 !default;
+$skyblue:               #4e9bd9 !default;
+
+$shadowBg:              #dce2e8 !default;
+$lightBg:               #f0f3f7 !default;
+
+/*******************************/
+
+// 필요없으면 지울 것.
+$LineColorA :       #a5a6a8 !default;
+$LineColorB :       #bababa !default;
+$LineColorC :       #c6d2dd !default;
+$LineColorC2 :      #cccccc !default;
+$LineColorD :       #dddddd !default;
+$LineColorE :       #ebebeb !default;
+$LineColorE2 :      #e9eef9 !default;
+$LineColor9 :       #98a9b8 !default;
+
+
+//animation
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+
+//fontstyle
+$font-family-base: 'NanumSquareRound', Malgun Gothic, Dotum,'Apple SD Gothic Neo', Sans-serif !default;
+//$font-family : "Apple SD Gothic Neo", arial, sans-serif !default;
+$font-icon: LineAwesome;
+
+$font-size-sm: 0.9em !default;
+$font-size-base: 1em !default;
+$font-size-middle: 1.117em !default;
+$font-size-slg: 1.6em !default;
+$font-size-lg: 2em !default;
+$font-size-xlg: 2.588em !default;
+
+$font-weight-light: 100 !default;
+$font-weight-base: 400 !default;
+$font-weight-bold: 500 !default;
+$font-weight-exbold: 700 !default;
+
+$small-font-size: 80% !default;
+
+$normal: normal;
+
+//radius
+$radius-50: 50em !default;
+
+%button-radius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+%box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//vertical
+%top50 {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%left50 {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+%group{
+  zoom: 1;
+  &:before, &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}

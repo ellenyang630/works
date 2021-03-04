@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+
+/* Animation
+--------------------------*/
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+%trasform{
+    transition: transform .3s;
+}
+%trasformOn{
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+
+/* font Style
+--------------------------*/
+$font-family: 'Noto Sans KR', Dotum,'돋움',Helvetica,"Apple SD Gothic Neo", sans-serif !default;
+$font-icon: FontAwesome;
+
+$font-size-sm: 0.85em !default;
+$font-size-base: 1em !default;
+$font-size-middle: 1.17em !default;
+$font-size-xslg: 1.3em !default;
+$font-size-slg: 1.4em !default;
+$font-size-lg: 2em !default;
+$font-size-xlg: 2.588em !default;
+
+$font-weight-light: 100 !default;
+$font-weight-base: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+$small-font-size: 80% !default;
+
+$normal: normal;
+
+//radius
+$radius-50: 50em !default;
+%button-radius {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+/* Color
+--------------------------*/
+$white :                #ffffff !default;
+$black :                #000000 !default;
+$black-light-2 :        lighten($black, 18%) !default;  // #2e2e2e
+$black-light-3 :        lighten($black, 20%) !default; // #333
+$black-light-6 :        lighten($black, 40%) !default; // #666
+$black-light-9 :        lighten($black, 60%) !default; // #999
+
+$primary:               #00d593 !default;
+$success:               #0698fb !default;
+$warning:               #c047da !default;
+$danger:                #ff386b !default;
+$info :                 #3c4b58 !default;
+
+$text-primary-color:    #283345 !default;
+$text-base-color :      #1e1e1e !default;
+$text-light-color:      #3c3c3c !default;
+$text-lighter-color:    #888888 !default;
+
+$line-base-color:       #b8c3d6 !default;
+$line-light-color:      #dcdfe1 !default;
+$line-lighter-color:    #d7d9da !default;
+
+$bg-black-color:        #20252b !default;
+$bg-base-color:         #f3f6fb !default;
+
+
+/* Break-point
+--------------------------*/
+$--xs: 425px !default;
+$--min-xs: $--xs + 1 !default;
+
+$--sm: 768px !default;
+$--min-sm: $--sm + 1 !default;
+
+$--md: 992px !default;
+$--min-md: $--md + 1 !default; 
+
+$--lg: 1200px !default;
+$--min-lg: $--lg + 1 !default;
+
+$--xl: 1920px !default;
+
+
+
+/* Help extend
+--------------------------*/
+%mp_none{
+    margin:0;
+    padding:0;
+}
+%hand{
+    cursor: pointer;
+}
+%box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+%top50 {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+%left50 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+%group {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+%table{
+    display: table;
+    width: 100%;
+}
+%cell{
+    display: table-cell;
+    vertical-align: middle;
+}

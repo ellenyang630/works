@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* _tables.scss */
+
+
+// table responsive
+//.table-responsive{
+//  overflow-x: auto;
+//  min-height: 0.01%;
+//
+//  .el-table{
+//    overflow-x: auto;
+//    min-height: 0.01%;
+//  }
+//
+//  .table{
+//    width: 100%;
+//    min-width: 1280px;
+//    table-layout: inherit;
+//  }
+//
+//
+//  @media screen and (max-width: 1440px) {
+//    .el-table{
+//      overflow-y: hidden;
+//      width: 100%;
+//      margin-bottom: 15px;
+//      -ms-overflow-style: -ms-autohiding-scrollbar;
+//    }
+//
+//    .table{
+//      thead,
+//      tbody,
+//      tfoot{
+//        > tr {
+//          > th,
+//          > td{
+//            white-space: nowrap;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+
+// table init
+.table{
+  width:100%;
+  max-width:100%;
+  text-align: center;
+  font-size: $font-size-small;
+
+  th, td{
+    text-align: center;
+    vertical-align: middle;
+    color: $text-dark;
+  }
+
+  td{
+
+  }
+
+
+  thead{
+    th{
+      font-weight: $font-weight-regular;
+      //font-size: $font-size-smaller;
+    }
+  }
+  tbody{
+    th{
+
+    }
+    td{
+
+    }
+  }
+
+
+
+
+
+  // table__head
+  &__head{
+
+  }
+
+  // table__head--mobile
+  &__head--mobile{
+    display: table;
+    width: 100%;
+    border-top: 1px solid $text-dark;
+
+    @include respond-to('medium-up'){
+      display:none;
+    }
+  }
+
+  &__td{
+    display: table-cell;
+    padding: 9px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  // table__body
+  &__body{
+
+
+  }
+}
+
+
+// table--empty
+.table--empty{
+  display: table;
+  width: 100%;
+
+  .empty-text{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 50px 0;
+    text-align: center;
+
+    p{
+      span{
+        &:before{
+          content: "";
+          display: block;
+          @include ie-only {
+            background: url("../img/ico_error.svg") center center no-repeat;
+          }
+          background: $ico-error no-repeat;
+          width: 30px;
+          height: 30px;
+          margin: 0 auto 10px auto;
+        }
+      }
+    }
+    .btn{
+      display: inline-block;
+      margin-top: 20px;
+      min-width: 200px;
+      font-weight: $font-weight-regular;
+    }
+  }
+}
+
+
+// 테이블 기본 스타일
+.table.table--default {
+  font-size: $font-size-small;
+
+  th, td{
+    padding: 20px 14px;
+    border-bottom: 1px solid $gray-light;
+  }
+
+  .table__head {
+    th {
+      padding: 15px 14px;
+      border-top: 1px solid $text-dark;
+      font-size: $font-size-smaller;
+    }
+  }
+
+  .price-txt{
+    font-size: $--font-size-base;
+  }
+}
+
+
+// 장바구니 내역
+.table.table--cart{
+  .table__head{
+    th{
+      border-top: 0;
+    }
+  }
+
+  .td-number{
+    min-width:100px;
+    width: 15%;
+  }
+
+  .td-content{
+    vertical-align: top;
+  }
+  .td-btns{
+    min-width:65px;
+    width: 7%;
+  }
+
+
+  // 태블리 사이즈 이하일 때, table 구조 변경
+  @include respond-to('medium-down'){
+    .table__head{
+      display: none;
+    }
+    td{
+      padding: 15px 0;
+
+      &:not(.td-content){
+        display: none;
+      }
+    }
+  }
+}

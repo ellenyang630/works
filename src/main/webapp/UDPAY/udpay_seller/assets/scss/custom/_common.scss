@@ -1,0 +1,1570 @@
+@charset "UTF-8";
+/* _common.scss */
+
+//
+//  Help Style
+// --------------------------------------------------
+
+// 텍스트 컬러
+.text {
+  &-deep-primary {
+    color: $text-darker !important;
+  }
+  &-disabled {
+    color: $base-lighter !important;
+  }
+  &-yellow{
+    color:#fffa82 !important;
+  }
+}
+
+// 포인트 불렛 (필수값 표시)
+em.point {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  position: relative;
+  margin-right: 4px;
+  margin-left: 4px;
+  top: -0.5em;
+  text-align: center;
+  border-radius: 50em;
+  background-color: $blue;
+  opacity: 0.8;
+}
+.icon_tooltip{
+  font-size: $font-size-base * 1.3;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+
+table {
+  em.point {
+    margin-right: 0;
+    margin-left: 5px;
+    top: -0.5em;
+  }
+}
+
+// 팁 (안내문구)
+.tip {
+  display: block;
+  font-weight: $font-weight-light;
+  font-size: $font-size-sm;
+  color: $gray-999;
+  margin-top: 8px;
+
+  // 상단에 위치
+  &.on-top{
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+}
+
+// 공통 넘버 텍스트 스타일(건수, 금액)
+.num-txt {
+  strong, small, span {
+    color: inherit;
+    vertical-align: middle;
+    vertical-align: text-bottom;
+  }
+  strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  small {
+    font-size: 0.9333rem;
+    margin: 0 2px;
+    color: inherit;
+  }
+  span{
+    display: inline-block;
+    margin: 0 2px;
+    color: inherit;
+  }
+}
+
+// 공통 서브텍스트
+.sub-text {
+  font-weight: $font-weight-normal;
+  color:$text-dark;
+  word-break: keep-all;
+
+  &.md{
+    font-size: 1.2rem;
+  }
+}
+
+// 폰트아이콘 크기
+.i-font{
+  // 기본사이즈 : md
+  font-size:150%;
+  background-size: inherit;
+  vertical-align: middle;
+
+  &-lg{
+    font-size:180%;
+  }
+  &-sm{
+    font-size:130%;
+  }
+  &-xs{
+    font-size:115%;
+  }
+}
+.i-circle-shadow{
+  display: inline-block;
+  width:26px;
+  height:26px;
+  background-color: inherit;
+  border:3px solid;
+  border-radius: 50%;
+  color:$white;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top:-2px;
+
+  i{
+    //transform: translateY(0.1vh);
+    text-align: center;
+  }
+
+  @at-root{
+    .text-primary .i-circle-shadow{
+      background-color: $primary;
+      border-color:lighten($primary, 35%);
+    }
+    .text-secondary .i-circle-shadow{
+      background-color: $secondary;
+      border-color:lighten($secondary, 35%);
+    }
+
+    .text-danger .i-circle-shadow{
+      background-color: $danger;
+      border-color:lighten($danger, 35%);
+    }
+  }
+}
+
+// 숫자 & 텍스트 라운드박스
+.roundbox{
+  &{
+    width:55px;
+    height:55px;
+  }
+  &-wrap{
+    position: relative;
+    display: inline-block;
+    width:55px;
+
+    i, .ico, .txt, .num{
+      position: absolute;
+      top: 50%;
+      left:50%;
+      transform: translate(-54%, -50%);
+    }
+    i{
+      font-size:1.8rem;
+    }
+    .num {
+      font-size:1.6rem;
+    }
+    .txt {
+      font-size: 1rem;
+      line-height: 1.2;
+      word-break: break-all;
+    }
+  }
+
+  &-wrap-md{
+    width:67px;
+  }
+  &-wrap-md &{
+    width:67px;
+    height: 67px;
+  }
+  &-shape{
+    fill: #ebf0f3;
+    fill-rule: evenodd;
+  }
+}
+
+// checkbox
+.custom-checkbox{
+  .custom-control-label {
+    &::before {
+      width: 1.185rem;
+      height: 1.185rem;
+    }
+    &::after {
+      width: 1.185rem;
+      height: 1.185rem;
+    }
+  }
+}
+
+// radio
+.custom-radio{
+  .custom-control-label {
+    &::before {
+      width: 1.185rem;
+      height: 1.185rem;
+    }
+    &::after {
+      width: 1.16rem;
+      height: 1.16rem;
+      left: -1.46rem;
+    }
+  }
+}
+
+
+//
+//  The Text Layout Style
+// --------------------------------------------------
+// span wrapper
+.inline-span-wrap{
+  span{
+    &:not(:first-child){
+      margin-left: 7px;
+    }
+  }
+  &:not(:first-child){
+    margin-top:5px
+  }
+
+  @at-root .d-flex{
+    .inline-span-wrap{
+      &:not(:first-child){
+        margin-top:0;
+        margin-left:15px;
+      }
+    }
+  }
+}
+
+// dl 형식으로
+.list-data-text {
+  > * {
+    &:last-child {
+      color: $base-light;
+      color: $gray-600;
+    }
+    &:first-child {
+      min-width: 30px;
+      //min-width:55px;
+      font-weight: $font-weight-bold;
+      color: $text-darker;
+      text-align: left;
+    }
+  }
+  &:not(:first-child) {
+    margin-top: 4px;
+  }
+  & > & {
+    margin-top: 0;
+  }
+
+  // 한 줄
+  &.inline-layout {
+    display: flex;
+    > * {
+      &:last-child {
+        margin-left: 10px;
+        text-align: left;
+      }
+    }
+    &.stretch {
+      //max-width: 250px;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-left: auto;
+      margin-right: auto;
+
+      > * {
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  // 두 줄
+  &.block-layout {
+    display: block;
+    text-align: left;
+
+    > * {
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+    &.center {
+      text-align: center;
+
+      > * {
+        text-align: center;
+      }
+    }
+  }
+
+  @at-root{
+    .table{
+      .list-data-text{
+        &.inline-layout {
+          &.stretch {
+            max-width: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// flex layout (d-flex 와 같이 사용)
+.flex-wrap{
+  .flex-item{
+    &:first-child{
+      padding-right: 1.5rem;
+      font-size: 0.97rem;
+      color: $text-default;
+    }
+  }
+
+  &.align-items-center{
+    .tip{
+      margin-top: 0;
+    }
+  }
+}
+
+
+//
+//  Li Tag Style with bullets
+// --------------------------------------------------
+.num-list{
+  @include numberLi;
+  padding: 15px 25px;
+
+  ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size:0.8667rem;
+  }
+}
+
+.bullet-circle-list{
+  @include bulletLi(50%, $gray-500);
+
+  li{
+    text-indent: 0;
+    padding-left: 10px;
+  }
+  &.card{
+    padding:7px 15px;
+  }
+}
+
+.bullet-square-list{
+  @include bulletLi(0, $white);
+}
+
+.step-list{
+  @include numliLayout($primary-dark);
+  font-size:13px;
+}
+
+//
+//  Row & Col - Grid
+// --------------------------------------------------
+
+// 대시보드 > 결제요청 폼
+.col-fixed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  animation: box-ani 0.4s ease-in-out;
+  animation-delay: 0.5s;
+
+  .card {
+    min-height: 791px;
+    margin-bottom: 0;
+
+    button[type="submit"].btn {
+      margin-top: 132px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &{
+      .card {
+        min-height: 701px;
+
+        button[type="submit"].btn {
+          margin-top: 70px;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  Card
+// --------------------------------------------------
+.card {
+  & {
+    height: auto;
+    margin-bottom: 2.2vh;
+
+    &.sm {
+      min-height: 180px;
+    }
+    &.md {
+      min-height: 380px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      &.sm,
+      &.md {
+        min-height: auto;
+      }
+    }
+  }
+
+  &-actions{
+    position: absolute;
+    top: $card-spacer-y;
+    right: $card-spacer-x;
+
+    @include media-breakpoint-down(md){
+      &{
+        top: $card-spacer-y-xs;
+        right: $card-spacer-x-xs;
+      }
+    }
+  }
+
+  &-row__deck {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-wrap: wrap;
+    height: 100%;
+
+    > .card {
+      flex: 1 1 auto !important;
+    }
+  }
+
+  &-body-flex {
+    display: flex;
+  }
+
+  // card custom
+  &-line {
+    border: 1px solid lighten($base, 34%);
+
+    .card-body {
+      padding-top: 1rem;
+    }
+  }
+
+  &-inner{
+    padding: 1rem;
+
+    &__sm{
+      padding:0.5rem;
+    }
+  }
+
+  &-shadow {
+    @include prefix(box-shadow, 0 0 9px 3px rgba($black, 0.05), webkit moz ms o);
+    border: 1px solid rgba($black, 0.04);
+
+    .card-body {
+      padding-top: 1rem;
+    }
+  }
+
+  &-view {
+    .card-body {
+      padding-top: 1.2rem;
+    }
+  }
+
+  &-totalSum {
+    background-color: initial;
+  }
+
+  &.no-padding{
+    .card-header{
+      padding:0;
+    }
+    .card-footer{
+      background-color: $white;
+    }
+  }
+}
+
+.card-scrollable-y{
+  overflow-y: auto;
+
+  &__sm{
+    max-height:123px;
+  }
+}
+
+// 등록, 정기결제 - 결제정보
+.card-col{
+  &-wrap{
+    margin-top: -1.2rem;
+  }
+  &-wrap &{
+    margin-top: 1.2rem;
+  }
+
+  &{
+    @include border-radius($card-border-radius);
+    border: $table-border-width solid $table-border-color;
+    overflow:hidden;
+  }
+
+  &-title{
+    padding: 1rem 1.2rem;
+    background: $line-gray;
+
+    .tit{
+      color:$white;
+      font-size: $font-size-base * 1.1;
+    }
+  }
+
+  &-body{
+    padding: 0 1rem;
+  }
+
+  .table-view{
+    border-top: 0;
+
+    tr:first-child{
+      th,td{
+        border-top: 0;
+      }
+    }
+  }
+}
+
+// 백그라운드 엘리먼트가 있는 경우
+.card-header__bg {
+  position: relative;
+  min-height: 125px;
+  padding: 1.8rem 2.667rem;
+  text-align: center;
+  background: $primary;
+  overflow: hidden;
+  background: $primary url("../../img/tit_bg.png") no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  animation: bg-ani 8s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:$white;
+
+  .tit, .subtit {
+    color: $white;
+  }
+  .tit {
+    margin-bottom: 3px;
+  }
+  .subtit {
+    color: rgba($white, 0.8);
+  }
+}
+
+
+//
+//  Image (Thumbnail)
+// --------------------------------------------------
+.img-thumbs {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background-color: rgba($primary, 0.03);
+  border: 1px solid rgba($primary, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+
+  &:before {
+    content: "이미지 없음";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 13px;
+    font-weight: $font-weight-bold;
+    color: rgba($primary, 0.8);
+    line-height: 78px;
+  }
+  img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+// 큐알코드
+.qr-thumbs {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  background-color: $line-lighter;
+  border: 1px solid $line-light;
+  border-radius: 4px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+//
+//  Header
+// --------------------------------------------------
+#site-header {
+  width: 100%;
+  min-width: 600px;
+  padding: 0 !important;
+}
+
+.logo-box {
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: $white url("../../img/logo.svg") center center no-repeat;
+  background-size: 99px 27px;
+  text-indent: -9999px;
+  overflow: hidden;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: -1px;
+  z-index: 130;
+  box-sizing: border-box;
+
+  h1, a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-breakpoint-down(sm){
+    &{
+      width: 158px;
+      background-size: 90px;
+    }
+  }
+  @include media-breakpoint-down(md){
+    &{
+      border-bottom: 1px solid #edeff4;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  border-right: 1px solid #edeff4;
+  width: 250px;
+  z-index: 90;
+  //padding-top: 60px;
+  margin-top: 60px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -webkit-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, 0); /* older webkit */
+  -webkit-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055);
+  -moz-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055);
+  -o-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055);
+  transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, 0); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055);
+  -moz-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055);
+  -o-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055);
+  transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055); /* custom */
+
+
+  &.show{
+    left:0;
+
+    -webkit-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, 0); /* older webkit */
+    -webkit-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055);
+    -moz-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055);
+    -o-transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055);
+    transition: all 300ms cubic-bezier(0.000, 0.485, 0.665, -0.055); /* custom */
+
+    -webkit-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, 0); /* older webkit */
+    -webkit-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055);
+    -moz-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055);
+    -o-transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055);
+    transition-timing-function: cubic-bezier(0.000, 0.485, 0.665, -0.055); /* custom */
+
+    //&:before{
+    //  content:"";
+    //  display: block;
+    //  position: fixed;
+    //  top: 0;
+    //  left: 0;
+    //  right: 0;
+    //  bottom: 0;
+    //  background-color: rgba($black, 0.7);
+    //  z-index: 80;
+    //}
+
+    .dimmer{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($black, 0.65);
+      z-index: 80;
+    }
+  }
+
+  // .sidebar-content
+  &-content {
+    border-bottom: 1px solid #e9eef5;
+    padding: 15px 0 30px 0;
+  }
+
+  // .sidebar-link
+  &-link {
+    display: block;
+    padding: .8rem 1.5rem;
+    color: $base-lighter;
+    font-weight: $font-weight-normal;
+    background-color: $white;
+    -webkit-transition: background 50ms ease-in-out;
+    transition: background 50ms ease-in-out;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+
+    i {
+      font-size: 1.333rem;
+      margin-right: .6rem;
+      opacity: .8;
+      vertical-align: middle;
+    }
+  }
+
+  // .sidebar-item
+  &-item {
+    position: relative;
+
+    &.active {
+      &:after {
+        display: inline-block;
+        content: "";
+        width: 6px;
+        height: 100%;
+        background: $primary;
+        border-radius: 50em;
+        position: absolute;
+        right: -3px;
+        top: 0;
+        z-index: 5;
+      }
+      a {
+        font-weight: $font-weight-bolder;
+      }
+      .siderbar-link:hover,
+      > .sidebar-link {
+        color: $primary;
+      }
+    }
+  }
+
+  // .sidebar-dropdown
+  &-dropdown {
+    .sidebar-link {
+      padding: .55rem 1.5rem .55rem 3.55rem;
+      font-weight: 400;
+      color: $base-lighter;
+    }
+    & .sidebar-link {
+      //padding: .55rem 1.5rem .55rem 4.3rem;
+      padding: .55rem 1.5rem .55rem  3.667rem;
+    }
+  }
+
+  // [data-toggle=collapse]
+  [data-toggle=collapse] {
+    position: relative;
+
+    &:before {
+      content: "";
+      border: solid;
+      border-width: 0 .1rem .1rem 0;
+      display: inline-block;
+      padding: 2px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out;
+    }
+
+    &.sidebar-link {
+      &:not(.collapsed) {
+        color: $primary;
+
+        &:after {
+          display: inline-block;
+          content: "";
+          width: 6px;
+          height: 40px;
+          background: $primary;
+          border-radius: 50em;
+          position: absolute;
+          right: -3px;
+          top: 0;
+          z-index: 5;
+        }
+      }
+    }
+  }
+
+  [aria-expanded=true],
+  [data-toggle=collapse]:not(.collapsed) {
+    &:before {
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+      top: 1.4rem;
+    }
+  }
+
+  @media (max-width: 1600px){
+    &{
+      left: -250px;
+      transition: left 0.2s ease;
+    }
+  }
+}
+
+// top-navbar
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 580px;
+  width: 100%;
+  height: 60px;
+  z-index: 100;
+  background-color: $white;
+  overflow: hidden;
+  //border-bottom: 1px solid #edeff4;
+
+  .user-menu {
+    @include clearfix;
+    padding-left: 250px;
+
+    @include media-breakpoint-down(sm){
+      &{
+          padding-left:158px;
+      }
+    }
+
+  }
+}
+
+// 상단 네비 바 묶음
+.util-item {
+  line-height: 60px;
+  color: $base-lighter;
+
+  &.left {
+    float: left;
+  }
+  &.right {
+    float: right;
+    padding-right: 30px;
+  }
+}
+
+// lnb 열기버튼
+.btn-menu-opener {
+  display: inline-block;
+  height: 60px;
+  padding: 0 33px;
+  text-align: left;
+  vertical-align: top;
+
+  &__inn {
+    display: inline-block;
+    width: 25px;
+    vertical-align: middle;
+  }
+  .bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 6px;
+    text-align: left;
+    background: $primary-dark;
+    transition: all 200ms ease-in-out;
+
+    &.top {
+      margin-top: 0;
+    }
+    &.mid {
+      width: 76%;
+      transition-delay: 200ms;
+    }
+    &.bottom {
+      width: 76%;
+      transition-delay: 400ms;
+    }
+  }
+
+  /*&:focus,
+  &:active*/
+  &:hover{
+    .bar {
+      width: 100%;
+      transition-delay: 500ms;
+      &.top {
+        //animation: burger-hover 1s infinite ease-in-out alternate;
+        @include prefix(animation, burger-hover 1s infinite ease-in-out alternate, webkit moz ms o);
+      }
+      &.mid {
+        @include prefix(animation, burger-hover 1s infinite ease-in-out alternate forwards 200ms, webkit moz ms o);
+        @include prefix(transition-delay, 200ms, webkit moz ms o);
+        //animation: burger-hover 1s infinite ease-in-out alternate forwards 200ms;
+        //transition-delay: 200ms;
+      }
+      &.bottom {
+        @include prefix(animation, burger-hover 1s infinite ease-in-out alternate forwards 400ms, webkit moz ms o);
+        @include prefix(transition-delay, 400ms, webkit moz ms o);
+        //animation: burger-hover 1s infinite ease-in-out alternate forwards 400ms;
+        //transition-delay: 400ms;
+      }
+    }
+  }
+}
+
+// 수수료 안내
+.fee-info {
+  display: inline-block;
+
+  .label{
+    &-card{
+      color: $blue;
+    }
+    &-mobile{
+      color: $purple;
+    }
+    &-kakao{
+      color: $brown;
+    }
+    &-naver{
+      color: $green;
+    }
+  }
+  span{
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: all 0.2s ease-in-out;
+  }
+  li {
+    display: inline-block;
+    font-weight: $font-weight-bold;
+    vertical-align: middle;
+    margin-right: 13px;
+
+    i {
+      font-size: 1.267rem;
+      vertical-align: middle;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &{
+      span{
+        display: none;
+        transition: all 0.2s ease-in-out;
+      }
+      li {
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &{
+      display: none;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+
+
+// 우측상단 버튼들
+.option-menu {
+  display: table;
+
+  li {
+    position: relative;
+    display: table-cell;
+    min-width: 43px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+
+    a, button {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      line-height: 60px;
+      vertical-align: middle;
+
+
+      &:hover,
+      &:active,
+      &:focus {
+        i {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  i {
+    color: $primary-dark;
+    font-size: 1.733rem;
+    vertical-align: inherit;
+  }
+  .alarm {
+    position: relative;
+    i {
+
+    }
+    &.active {
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        right: 0.3rem;
+        top: 0.9rem;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $primary;
+        //@include prefix(animation, shadow-sm-pulse1 1s infinite, webkit moz ms o);
+      }
+      i{
+        -webkit-animation: tada 1.5s ease infinite;
+        animation: tada 1.5s ease infinite;
+      }
+    }
+  }
+
+  .mypage{
+    &:hover{
+      i{
+        //transform-origin: 0 0;
+        -webkit-animation:spin360 1.7s linear infinite;
+        -moz-animation:spin360 1.7s linear infinite;
+        animation: spin360 1.7s linear infinite;
+      }
+    }
+    //i{
+    //  -webkit-animation: tada 1.5s ease infinite;
+    //  animation: tada 1.5s ease infinite;
+    //}
+  }
+
+  // 사이다페이 전환버튼
+  .convert {
+    padding: 0 15px;
+
+    button {
+      width: 2.467rem; // 37px
+      height: 2.467rem; // 37px
+      padding: 0;
+      line-height: 2.267rem; // 37px
+      border: 2px solid $primary;
+      border-radius: 50em;
+      color: $primary;
+      overflow: hidden;
+      @include prefix(transition, width 0.5s cubic-bezier(0.5, -0.5, 0.5, 0.5) 0.3s, webkit moz ms o);
+      @include prefix(box-shadow, 2px 2px 7px 0 rgba($primary, 0.28), webkit moz ms o);
+
+      .btn_inn {
+        display: table;
+        min-width: 8.2rem; // 123px
+        font-weight: $font-weight-bolder;
+
+        span {
+          display: table-cell;
+          vertical-align: middle;
+
+          &:first-child {
+            width: 2.267rem;
+          }
+          &:last-child {
+            text-align: left;
+            font-size: 0.9333rem;
+          }
+        }
+      }
+      i {
+        font-size: 1.733rem;
+        color: $primary;
+        vertical-align: sub;
+      }
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        width: 8.2rem; /*123px*/
+        border-color: $primary;
+        @include prefix(transition, width 0.5s cubic-bezier(0.5, -0.5, 0.5, 0.5), webkit moz ms o);
+
+        i{
+          animation: spin-inf 1.2s 2;
+          animation-delay: 0.5s;
+        }
+      }
+    }
+  }
+
+  // 환영문구
+  .hello {
+    letter-spacing: 0;
+    font-size: 1rem;
+    color: $base-lighter;
+
+    i {
+      font-size: 1.733rem;
+      color: $base-lighter;
+      transform: translateY(0.3rem);
+    }
+    strong {
+      color: $base-dark;
+      font-weight: 600;
+    }
+
+    //@include media-breakpoint-down(lg) {
+    //  &{
+    //    display: none;
+    //  }
+    //}
+
+    @include media-breakpoint-down(xl) {
+      &{
+        display: none;
+      }
+    }
+  }
+
+}
+
+//@include media-breakpoint-down(lg) {
+//  .fee-info,
+//  .option-menu .hello {
+//    display: none;
+//    transition: all 0.5s ease;
+//  }
+//}
+
+//@include media-breakpoint-down(sm){
+//  .option-menu .hello {
+//    display: none;
+//    transition: all 0.5s ease;
+//  }
+//}
+
+// 세무문의 & 고객상담문의
+.cs-info {
+  padding: 20px 30px;
+  color: $text-dark;
+
+  &:not(:first-child){
+    border-top: 1px solid #e9eef5;
+  }
+  .cs-tit,
+  .cs-time{
+    font-size: 0.9333rem;
+  }
+  .cs-tit {
+    i {
+      font-size: 1.333rem;
+      vertical-align: middle;
+    }
+  }
+  .cs-tel {
+    margin-top: 10px;
+    margin-bottom:5px;
+    font-size: 1.6rem;
+    font-weight: $font-weight-bold;
+    letter-spacing: 2px;
+    color: $base;
+  }
+  .cs-time {
+    color: $base-lighter;
+    line-height: 1.468;
+  }
+}
+
+
+//
+//  Footer
+// --------------------------------------------------
+#site-footer {
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+//
+//  Contents Layout
+// --------------------------------------------------
+#content {
+
+  // #content-wrap
+  &-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  // #content
+  & {
+    width:100%;
+    padding-top: 60px;
+    padding-left: 250px;
+    transition: padding 0.2s ease;
+
+
+
+    @include media-breakpoint-up(md){
+      &{
+        min-width:1440px;
+      }
+    }
+    @media (max-width: 1600px){
+      &{
+        padding-left: 0;
+        transition: padding 0.2s ease;
+      }
+    }
+
+    &.expanded{
+      padding-left:250px;
+      transition: padding 0.2s ease;
+    }
+    &.collapsed{
+      padding-left:0;
+      transition: padding 0.2s ease;
+    }
+
+  }
+
+  // #content-inner
+  &-inner {
+    width: 100%;
+    min-height: 827px;
+    padding: 30px 25px;
+
+    @include media-breakpoint-up(lg){
+      &{
+        padding: 40px 40px 60px 40px;
+      }
+    }
+  }
+}
+
+
+//
+//  Title & Breadcrumb
+// --------------------------------------------------
+.page {
+  &-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &-header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &-title {
+    color: $text-dark;
+
+    .tt {
+      font-size: 1.4rem;
+      font-weight: $font-weight-bolder;
+    }
+    .subtt {
+      margin-top: 7px;
+      font-size: 0.9333rem;
+      font-weight: $font-weight-bold;
+    }
+  }
+  &-location {
+    margin-left: auto;
+
+    .breadcrumb {
+      padding: 0;
+      margin: 0;
+      &-item{
+        color:$base-lighter;
+        &:first-child i{
+          font-size: 125%;
+        }
+      }
+      //.breadcrumb-item.active
+    }
+  }
+  &-body {
+    position:relative;
+
+    // list & view 페이지 제외한 페이지에서 card-body padding 값 제어
+    &.page-info-body{
+      @include media-breakpoint-up(lg){
+        .card-header + .card-body{
+          padding-top: $card-spacer-y;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  Top of the list Style
+// --------------------------------------------------
+.list {
+  // 리스트 총 건수
+  &-total {
+    font-size: 0.8667rem;
+    color: $base-lighter;
+  }
+
+  // 리스트 내용 불러오기
+  &-more {
+    padding: 10px 0;
+
+    .btn-list__more {
+      margin-top: 1rem;
+      font-size: 1.067rem;
+      color: $base-lighter;
+
+      i {
+        font-size: 1.2rem;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  // 리스트 내 관리버튼
+  &-controller {
+    width: 50px;
+
+    a {
+      color: $base-lighter;
+    }
+    .btn-controller i {
+      font-size: 1.467rem;
+    }
+  }
+
+  &-pager{
+
+  }
+
+  &-sort-change{
+    margin-left: auto;
+  }
+}
+
+// 리스트 내 드롭다운 메뉴
+.box-controller {
+  min-width: 115px;
+  padding: 0;
+  text-align: center;
+  border-color: $base-light;
+  box-shadow: 3px 3px 7px 2px rgba($base-light, 0.15);
+  overflow: hidden;
+
+  .dropdown-item {
+    padding: 0.6rem 1.5rem;
+    border-top: 1px solid #ebeced;
+    font-size: 0.9333rem;
+    color: $text-darker;
+
+    &:first-child {
+      border-top: 0;
+    }
+    &.active,
+    &:active{
+      color: #16181b;
+      text-decoration: none;
+      background-color: #f8f9fa;
+    }
+    i {
+      font-size: 1.067rem;
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+
+// 리스트 상단 써머리 정보
+.summary-info-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  li{
+    flex-grow: 1;
+    padding:1.5333rem 0;
+    background-color: $white;
+    text-align: center;
+
+    &:first-child{
+      border-top-left-radius: 0.5333rem;
+      border-bottom-left-radius: 0.5333rem;
+
+      dl{
+        border-left:0;
+      }
+    }
+    &:last-child{
+      border-top-right-radius: 0.5333rem;
+      border-bottom-right-radius: 0.5333rem;
+    }
+  }
+  dl{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    border-left:1px solid $line-lighter;
+  }
+  dd{
+    text-align: right;
+    p{
+      strong{
+        font-size:1.333rem;
+      }
+      small{
+        font-size:0.9333rem;
+      }
+      &:first-child{
+        color:$base-lighter;
+      }
+    }
+  }
+}
+
+
+// Loader
+.loader{
+  &-dimmer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3000;
+    background-color: rgba(0,0,0,0.7);
+  }
+  &-wrap{
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    width: 100%;
+  }
+  &-box{
+    width: 50px;
+    height: 50px;
+    background: $white;
+    animation: animate .7s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+  }
+  &-shadow {
+    width: 50px;
+    height: 5px;
+    background: $line-lighter;
+    opacity: 0.1;
+    position: absolute;
+    top: 59px;
+    left: 0;
+    border-radius: 50%;
+    animation: shadow .7s linear infinite;
+  }
+  &-txt{
+    position: absolute;
+    top: 90px;
+    font-size:15px;
+    color:#fff;
+    margin-left: -4px;
+    animation: opacityTxt 1.0s linear infinite;
+  }
+}
+
+@keyframes loader {
+  0% { left: -100px }
+  100% { left: 110%; }
+}
+@keyframes animate {
+  17% { border-bottom-right-radius: 3px; }
+  25% { transform: translateY(9px) rotate(22.5deg); }
+  50% {
+    transform: translateY(18px) scale(1,.9) rotate(45deg) ;
+    border-bottom-right-radius: 40px;
+  }
+  75% { transform: translateY(9px) rotate(67.5deg); }
+  100% { transform: translateY(0) rotate(90deg); }
+}
+@keyframes shadow {
+  50% {
+    transform: scale(1.2,1);
+  }
+}
+@keyframes opacityTxt {
+  50%{ opacity: 0.8 }
+}

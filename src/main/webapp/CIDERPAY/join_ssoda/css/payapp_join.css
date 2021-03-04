@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.step_act * {
+    color: #4d7cfe;
+}
+.step_act dt span{
+    background: #4d7cfe;
+    border: 1px solid #4d7cfe;
+}
+.joinBizCont .mypage-tbtext i {
+    color: #4d7cfe
+}
+.joinBizCont b {
+    color: #4d7cfe;
+}
+.joinBizFin h3{
+    color: #4d7cfe !important;
+}
+.joinBizFin .icon span{
+    color: #4d7cfe !important;
+}
+.btn-primary {
+    background-color: #4d7cfe;
+    border-color: #4d7cfe
+}
+
+.btn-primary:hover {
+    background-color: #2e5ee4;
+    border-color: #2e5ee4
+}
+.btn-line-primary {
+    border-color: #4d7cfe;
+    color: #4d7cfe;
+}
+
+.btn-line-primary:hover {
+    background-color: #4d7cfe;
+    border-color: #4d7cfe;
+}
+.btn-line-secondary {
+    border-color: #abb7c1;
+}
+
+.btn-line-secondary:hover {
+    background-color: #abb7c1;
+    border-color: #abb7c1;
+}
+.tab li a{
+    border-color: #1e2f3a;
+    color: #1e2f3a;
+}
+/* hiden */
+.soda{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    text-indent:-9999px;
+}
+.payapp{
+    visibility: visible;
+    position: static;
+    width: inherit;
+    height: inherit;
+    font-size: inherit;
+    /*font-size: initial;*/
+    line-height: inherit;
+    text-indent: 0;
+}

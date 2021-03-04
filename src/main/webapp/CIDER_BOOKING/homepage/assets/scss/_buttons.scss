@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* _buttons.scss */
+
+.btn {
+	@extend %box;
+	@extend %mp_none;
+	@extend %hand;
+	@extend %button-radius;
+
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none !important;
+	border:1px solid ;
+	font-size:inherit;
+	line-height: 1;
+	&:hover, &:focus, &:active{
+		transition: all .25s ease;
+		text-decoration: none !important;
+	}
+	i{
+		margin-right: 5px;
+		vertical-align: middle;
+		font-size:140%;
+	}
+}
+.btn-md{
+	padding: 11px 1.467rem;
+	font-size: 1.133rem;
+}
+.btn-lg{
+	padding: 0.8667rem 1.6rem;
+	font-size: 1.133rem;
+}
+
+.btn-login{
+	@include btnSlideUp($primary, $white);
+	color:$primary;
+	border-color:$primary;
+	background-color: $white;
+}
+.btn-join{
+	@extend %trasform;
+	@include prefix(box-shadow, 0px 3px 12px -1px rgba($line-light-color, 0.6), webkit ms moz o);
+
+	position: fixed;
+	z-index:100;
+	right: 3.5%;
+	bottom:15px;
+	width: 93%;
+	height: 47px;
+	padding: 10px 1rem;
+	margin: 0 auto;
+	text-align: center;
+	border-width: 3px;
+	border-color: $line-lighter-color;
+	border-radius: 11px;
+	background-color: $white;
+	font-size: $font-size-base;
+	font-weight: $font-weight-bold;
+	&:hover, &:active, &:focus{
+		@extend %hand;
+		@extend %trasformOn;
+	}
+	span{
+		display: inline-block;
+		vertical-align: middle;
+		opacity: 0.95;
+		color:#253645;
+		font-size:1.067rem;
+		&:before{
+			display: inline-block;
+			margin-right: 8px;
+			content:"\ea64";
+			vertical-align: text-top;
+			color:$primary;
+			font-family: xeicon;
+			font-size:1.667rem;
+		}
+	}
+
+	@media screen and (min-width: $--min-sm){
+		&{
+			right: 15px;
+			bottom: 15px;
+			width: 8rem;
+			height: 8rem;
+			padding: 1.333rem;
+			border-radius: 20px;
+			span{
+				&:before{
+					display: block;
+					margin-right:0;
+					margin-bottom: 8px;
+					font-size:2.933rem;
+				}
+			}
+		}
+	}
+	@media screen and (min-width: $--min-lg){
+		&{
+			right: 6vw;
+			bottom: 5vh;
+		}
+	}
+}
+.btn-down-manual{
+	@include btnSlideUp($white, $bg-black-color);
+
+	color: $white;
+	border-color: $line-lighter-color;
+}
+
+.btn-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+}
+.btn-ico{
+	position: relative;
+}

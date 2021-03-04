@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+//nav
+#cssmenu {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  display: block;
+  position: relative;
+  * {
+    cursor: pointer;
+  }
+  a {
+    color: $black;
+    z-index: 9;
+    position: relative;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    z-index: 9;
+    > li {
+      float: left;
+    }
+    li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: relative;
+      span {
+        text-decoration: none;
+        display: block;
+        margin: 0;
+        -webkit-transition: color .2s ease;
+        -moz-transition: color .2s ease;
+        -ms-transition: color .2s ease;
+        -o-transition: color .2s ease;
+        transition: color .2s ease;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      ul {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        z-index: 99;
+        li {
+          position: absolute;
+          background: $white;
+          &:hover.has-sub:after {
+            color: $blue;
+          }
+          &.has-sub:after {
+            display: block;
+            position: absolute;
+            font-family: xeicon_v2;
+            content: "\e93e";
+            color: $line-dark;
+            font-size: $font-size-xsm;
+            z-index: 1;
+            top: 21px;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+  > ul {
+    > li {
+      > ul{
+        display: block;
+        > li {
+          width: 180px;
+          display: block;
+        }
+        li {
+          border-right: 1px solid $line-light;
+          border-left: 1px solid $line-light;
+          &:first-child {
+            margin-top: 12.5px;
+            padding-top: 10px;
+          }
+          &:last-child {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $line-light;
+          }
+        }
+      }
+      width: auto;
+      padding: 0 20px;
+      &:hover{
+        > ul {
+          left: 0;
+          > li {
+            max-height: 72px;
+            position: relative;
+          }
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: relative;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: -30%;
+        z-index: 0;
+      }
+      &:hover, &.active{
+        > a{
+          color: $blue;
+          &:before{
+            border-top-color: $white;
+          }
+          &:after{
+            color: $black;
+          }
+        }
+        > span a {
+          color: $blue;
+        }
+        &:after {
+          border-bottom: 2px solid $blue;
+          width: 100%;
+          left: 0;
+          -webkit-transition: left .2s;
+          -moz-transition: left .2s;
+          -ms-transition: left .2s;
+          -o-transition: left .2s;
+          transition: left .2s;
+          z-index: 99;
+          height: 100%;
+        }
+      }
+      > span {
+        font-weight: $font-weight-base;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        z-index: 2;
+        position: relative;
+        font-size: $font-size-middle;
+        display: block;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: 15px 0px;
+        }
+      }
+    }
+  }
+  ul li ul li {
+    &:hover, &.active {
+      > a {
+        color: $blue;
+      }
+    }
+    &:hover {
+      > ul {
+        left: 100%;
+        top: 0;
+        > li {
+          max-height: 72px;
+          position: relative;
+        }
+      }
+    }
+    ul li {
+      background: $white-light;
+      &:first-child {
+        margin: 0;
+      }
+    }
+    a {
+      font-weight: $font-weight-base;
+      text-transform: none;
+      color: $black;
+      letter-spacing: 0;
+      display: block;
+      width: 180px;
+      padding: 9px 10px 9px 20px;
+    }
+
+  }
+  ul:after,
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  .has-sub {
+    ul {
+      font-size: $font-size-base;
+    }
+  }
+  &.align-right {
+    > ul {
+      float: right;
+      > li:hover > ul {
+        left: auto;
+        right: 0;
+      }
+    }
+    ul ul li {
+      &:hover > ul {
+        right: 100%;
+        left: auto;
+      }
+      a {
+        text-align: right;
+      }
+    }
+    ul li ul li {
+      &.has-sub {
+        &:after {
+          right: auto;
+          left: 15px;
+        }
+        &:before {
+          right: auto;
+          left: 15px;
+          border-left-color: transparent;
+          border-right-color: $white;
+        }
+      }
+    }
+  }
+  &.align-center {
+    ul {
+      ul {
+        text-align: left;
+      }
+    }
+    > ul {
+      text-align: center;
+      > li {
+        float: none;
+        display: inline-block;
+      }
+    }
+  }
+
+  #menu-button {
+    display: none;
+  }
+}
+
+
+//nav_bar
+#menu-toggle {
+  * {
+    transition: .25s ease-in-out;
+  }
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+  box-sizing: border-box;
+  span {
+    display: block;
+    background: $black;
+  }
+  #hamburger {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    span {
+      width: 25px;
+      height: 2px;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      margin: 6px 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:nth-child(1) {
+        transition-delay: .5s;
+      }
+      &:nth-child(2) {
+        width: 70%;
+        transition-delay: .625s;
+      }
+      &:nth-child(3) {
+        width: 85%;
+        transition-delay: .75s;
+      }
+    }
+    &:hover {
+      span {
+        width: 100%;
+        background: $blue;
+        &:nth-child(1) {
+          transition-delay: 0s;
+          width: 100%;
+        }
+        &:nth-child(2) {
+          transition-delay: .125s;
+          width: 100%;
+        }
+        &:nth-child(3) {
+          transition-delay: .25s;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,388 @@
+@charset "UTF-8";
+/* _common.scss */
+
+// for screen reader device
+.screen-reader {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+hr{
+  display: block;
+  margin: 0;
+  margin-top: 2rem;
+  border: 0;
+  //border-top: 1px solid $border-light;
+}
+
+.hidden{
+  &-mobile{
+    display: none;
+
+    @include respond-to('xsmall-up'){
+      display: initial;
+    }
+  }
+  &-tablet{
+    display: none;
+
+    @include respond-to('small-up'){
+      display: block;
+    }
+  }
+  &-desktop{
+    display: block;
+
+    @include respond-to('small-up'){
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+
+//
+//  Margin & Padding
+// --------------------------------------------------
+
+
+$sides: ("b": "bottom","t": "top","l": "left","r": "right");
+@each $prefix, $value in $sides {
+  $property: if($prefix == '', '', -#{$value});
+  @for $i from 0 through 5 {
+
+    //margin
+    .m#{$prefix}{
+      &-#{$i} {
+        margin#{$property}:#{$i - ($i * .5)}rem;
+      }
+    }
+
+    // padding
+    .p#{$prefix}{
+      &-#{$i} {
+        padding#{$property}:#{$i - ($i * .5)}rem;
+      }
+    }
+  }
+}
+
+
+
+//
+//  Text style
+// --------------------------------------------------
+
+// text align
+@each $alignVal in $x-align {
+  .text-#{$alignVal}{
+    text-align: $alignVal !important;
+  }
+}
+
+
+// text theme color
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+}
+
+.text-disabled{
+  color: $text-light;
+}
+
+.break-keep{
+  word-break:keep-all;
+}
+
+// 숫자 텍스트 스타일
+.num-txt {
+  strong, small {
+    vertical-align: baseline;
+    color: $text-dark;
+    color: inherit;
+  }
+  strong {
+    font-size: 2.667rem;
+    font-weight: $font-weight-bold;
+  }
+  small {
+    color: inherit;
+    font-size: $--font-size-base;
+    font-weight: $font-weight-regular;
+  }
+}
+
+// 가격 스타일
+.price-txt{
+  color: $text-dark;
+
+  .num,
+  .unit{
+    vertical-align: baseline;
+    font-weight:$font-weight-bold;
+  }
+
+  .unit{
+    color: inherit;
+    font-size: 86%;
+    margin-left:-4px;
+  }
+  .calc{
+    color: $gray-dark;
+  }
+}
+
+.price-txt--md{
+  font-size: $font-size-large;
+
+  .unit{
+    font-size: 80%;
+  }
+}
+
+.price-txt--lg{
+  font-size: $font-size-largest;
+
+  .unit{
+    font-size: 68%;
+  }
+}
+
+.price-txt--em{
+  font-size: $font-size-largest;
+  color: rgba($--color-danger, .98);
+
+  .unit{
+    font-size: 68%;
+  }
+}
+
+
+// text underline
+.under {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:link{
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @include hover-focus-active{
+    text-decoration: underline;
+  }
+}
+
+.text-through{
+  text-decoration: line-through;
+}
+
+
+
+
+
+
+//
+//  Design Style
+// --------------------------------------------------
+
+
+// 아이콘 스타일로 만든 경우
+.ico{
+  &-minus{
+    //position: relative;
+
+    &:before{
+      content:"";
+      display: inline-block;
+      vertical-align: middle;
+      width: 9px;
+      height: 1px;
+      background-color: $text-dark;
+    }
+  }
+  &-plus{
+    display: block;
+    position: relative;
+    width:9px;
+    height:9px;
+    //background:#000;
+
+    &:before,
+    &:after {
+      content: "";
+      position:absolute;
+      background:#000;
+    }
+
+    &:before {
+      left:50%;
+      top:4px; /* this defines how much black "border" there should be */
+      bottom:4px;
+      width:1px;
+      transform:translateX(-50%);
+    }
+
+    &:after {
+      top:50%;
+      left:4px;
+      right:4px;
+      height:1px;
+      transform:translateY(-50%);
+    }
+
+    //&:before{
+    //  content:"";
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //  width: 9px;
+    //  height: 1px;
+    //  //background-color: $text-dark;
+    //  background-color: red;
+    //  position: absolute;
+    //  //top:50%;
+    //  //left:50%;
+    //}
+    //&:after{
+    //  content:"";
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //  width: 1px;
+    //  height: 9px;
+    //  background-color: $text-dark;
+    //  position: absolute;
+    //}
+  }
+}
+
+// 페이지 내 안내 텍스트
+.help-text{
+  color: $gray-dark;
+  font-size: $font-size-smaller;
+  line-height: 1.69;
+  word-break: keep-all;
+  text-align: center;
+
+  &__card{
+    border-radius: $border-radius-medium;
+    background-color: $bg-base;
+    padding: 20px 15px;
+    margin-top: 1.333rem;
+  }
+
+  &__ico{
+    display: inline-block;
+    border-radius: $border-radius-circle;
+    background-color: $--color-white;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    font-weight: $font-weight-black;
+    color: $text-dark;
+    text-align: center;
+  }
+
+
+  @include respond-to('small-up'){
+    &__card{
+      padding: 25px 15px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+
+// 링크결제 최종 표시가격
+.product-price__wrap{
+  width:100%;
+  padding-top: 1.333rem;
+
+
+  @include respond-to('small-up'){
+    background-color: $bg-base;
+    padding: 2.4rem 2rem;
+  }
+
+  dl{
+    @include clearFix;
+    width:100%;
+    //padding:0 10px;
+    margin-top:10px;
+
+    &:first-child{
+      margin-top:0;
+    }
+    &:last-child{
+      //margin-top:20px;
+    }
+
+    > *{
+      float:left;
+
+      &:last-child{
+        float:right;
+      }
+    }
+    dt{
+      font-size: $font-size-small;
+      color: $text-base;
+    }
+    dd{
+      font-size: $--font-size-base;
+      color:$text-dark;
+      text-align: right;
+
+      strong{
+        //font-size:$font-size-base;
+
+        &.num{
+          //font-size: $font-size-more-medium;
+        }
+      }
+    }
+    .none-price{
+      text-decoration: line-through;
+      //color:$gray-666;
+    }
+
+
+    &.discounted-price{
+      dd{
+        p{
+          display:inline-block;
+        }
+      }
+      .discount{
+        //color: $primary;
+        margin-right:5px;
+        //font-size: $font-size-xsmaller;
+      }
+    }
+    &.total-price{
+      padding:10px 0;
+      //margin-top:15px;
+      //background-color:rgba($primary,.1);
+      //border-radius: $border-radius-lg;
+
+      dt, dd{
+        //color:$primary;
+      }
+
+      @include respond-to('small-up'){
+        padding: 0;
+      }
+    }
+  }
+}

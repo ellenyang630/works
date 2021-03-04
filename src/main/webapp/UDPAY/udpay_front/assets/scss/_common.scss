@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/* _common.scss */
+//
+//
+//  Help Style
+// --------------------------------------------------
+
+// only for screen-reader device
+.screen-reader,
+.screen-reader-text{
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+}
+
+
+// hidden in desktop device
+.desktop-hidden{
+  display: inherit;
+}
+@each $bp, $value in $--breakpoints {
+  @include res($bp){
+    .desktop-hidden-#{$bp} {
+      display: none;
+    }
+  }
+}
+
+// hidden in mobile device
+[class*="mobile-hidden-"]{
+  display: none;
+}
+@each $bp, $value in $--breakpoints {
+  @include res($bp){
+    .mobile-hidden-#{$bp} {
+      display: inherit;
+    }
+  }
+}
+
+//== Text Color
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+}
+
+// Align
+.text{
+  &-left{
+    text-align: left !important;
+  }
+  &-center{
+    text-align: center !important;
+  }
+  &-right{
+    text-align: right !important;
+  }
+}
+
+.vertical{
+  &-top{
+    vertical-align: top !important;
+  }
+  &-middle{
+    vertical-align: middle !important;
+  }
+  &-baseline{
+    vertical-align: baseline !important;
+  }
+  &-bottom{
+    vertical-align: bottom !important;
+  }
+}
+
+
+// For font-family
+.font-gmarket{
+  letter-spacing: 0.05em;
+  font-family: $font-family-gmarket;
+}
+.font-godo{
+  font-family: $font-family-godo;
+}
+
+
+// For margin, padding
+.mt-0{
+  margin-top:0rem !important;
+}
+.mt-1{
+  margin-top:0.5rem !important;
+}
+.mt-2{
+  margin-top:1rem !important;
+}
+.ml-1{
+  margin-left:0.5rem !important;
+}
+.mr-1{
+  margin-right:0.5rem !important;
+}
+.mb-1{
+  margin-bottom:0.5rem !important;
+}
+.mb-2{
+  margin-bottom:1rem !important;
+}
+.mb-3{
+  margin-bottom:1.5rem !important;
+}
+
+
+// For text-underline
+a.under, button.under{
+  text-decoration: underline;
+}
+@each $color, $value in $theme-colors {
+  a.under-#{$color}, button.under-#{$color} {
+    color: $value;
+  }
+}
+
+.line-box-effect{
+  display: inline-block;
+  min-width: 10rem;
+  padding: .7rem .6rem;
+  text-align: center;
+  border: 1px solid $text-base;
+
+  @include res(sm){
+    &{
+      padding: 1.333rem 0.3333rem;
+    }
+  }
+
+  @include res(md){
+    &{
+      min-width: 20.67rem;
+    }
+  }
+}
+
+// Background Color
+.is-bg-1{
+  background-color: $white-gray;
+}
+.is-bg-2{
+  background-color: $light-black;
+}
+
+// card box
+.card{
+  padding:0.5rem;
+}
+.card-line{
+  border:1px solid $border-light;
+}
+
+
+
+
+//
+//  Skip Navigation
+// --------------------------------------------------
+
+#site-logo{
+  a{
+    display: block;
+    width: 100px;
+    height: 24px;
+    background-image: url(../img/common/logo.svg);
+    background-repeat: no-repeat ;
+    background-position:left center;
+    background-size: 100% auto;
+    margin-top: 18px;
+    @include res(md){
+      margin-top: 30px;
+    }
+  }
+}
+
+#skip-nav{
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  border: 0;
+}
+.skip-item{
+  position: absolute;
+  left: -300%;
+  color: $white;
+  background-color: $lighter-black;
+  font-size: $font-size-base;
+
+  &:hover,
+  &:focus{
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $white;
+    font-size: 2em;
+    line-height: 1.5;
+  }
+}

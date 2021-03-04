@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/* _buttons.scss */
+
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  color: $text-dark;
+  border: 1px solid transparent;
+  border-radius: $--border-radius-base;
+  background-color: transparent;
+  font-weight: $font-weight-bold;
+
+  i{
+    vertical-align: middle;
+    font-size:118%;
+  }
+}
+
+// Button Size
+.btn-lg{
+  padding: 1rem 1.8rem;
+  border-radius: $--border-radius-base;
+  font-size: $--font-size-large;
+}
+.btn-md{
+
+}
+.btn-sm{
+
+}
+.btn-xs{
+  padding: .6667rem;
+  font-size: $--font-size-small;
+}
+
+.btn-block{
+  width: 100%;
+}
+
+
+// Button Color
+.btn-white{
+  @include plain-hover-focus{
+    color:$text-dark;
+    border-color: $--color-white;
+    background-color: $--color-white;
+  }
+}
+
+.btn-white-gray{
+  @include plain-hover-focus{
+    color:$border-dark;
+    border-color: $--color-white;
+    background-color: $--color-white;
+  }
+}
+
+.btn-gray{
+  @include plain-hover-focus{
+    color:$--color-white;
+    border-color: $border-dark;
+    background-color: $border-dark;
+  }
+}
+
+.btn-gray-light{
+  color: $text-light;
+  border-color:$border-lighter;
+  background: $border-lighter;
+
+  @include hover-focus{
+    color: $--color-white;
+    border-color: $text-light;
+    background: $text-light;
+  }
+}
+
+.btn-black{
+  @include plain-hover-focus{
+    color:$--color-white;
+    border-color: $text-dark;
+    background-color: $text-dark;
+  }
+}
+
+.btn-dark{
+  color:$--color-white;
+  border-color:$nav-bg-color;
+  background-color:$nav-bg-color;
+
+  @include hover-focus{
+    color:$--color-white;
+    border-color:darken($nav-bg-color, 5%);
+    background-color: darken($nav-bg-color, 5%);
+  }
+}
+
+.btn-dark-light{
+  color:$--color-white;
+  border-color: $border-dark;
+  background-color:$border-dark;
+
+  @include hover-focus{
+    color:$--color-white;
+    border-color:darken($border-dark, 5%);
+    background-color: darken($border-dark, 5%);
+  }
+}
+
+.btn-kakao{
+  color: $kakao-color;
+  border-color: $kakao-bg;
+  background-color: $kakao-bg;
+
+  i{
+    font-size: 166%;
+  }
+}
+
+
+// Button Plain Color
+.el-button{
+  &--primary.is-plain{
+    border-color: $primary-light;
+    background-color: $primary-light;
+    color:$--color-primary;
+  }
+  &--success.is-plain{
+    border-color: $success-light;
+    background-color: $success-light;
+    color:$--color-success;
+  }
+  &--danger.is-plain{
+    border-color:$danger-light;
+    background-color: $danger-light;
+    color:$--color-danger;
+  }
+}
+
+// Button with icon
+.el-button--icon{
+  i{
+    vertical-align: text-top;
+    font-size: 123%;
+
+    &.icon-left{
+      margin-right: 5px;
+    }
+
+    &.icon-right{
+      margin-right: 0;
+      margin-left: 5px;
+    }
+  }
+
+  &.el-button--medium {
+    padding: .6rem 1.2rem;
+  }
+  &.el-button--small {
+    padding: .5333rem 1rem;
+  }
+  &.el-button--mini {
+
+  }
+
+  &.btn-lg {
+    padding: .9333rem 1.8rem;
+    vertical-align: middle;
+
+    i{
+      font-size: 95%;
+    }
+  }
+}
+
+
+// Button with icon
+.el-button--square{
+  //padding: 11.5px 23.5px;
+  padding: .8rem 1.6rem;
+  font-size: $--font-size-base;
+
+  &.el-button--primary.is-plain.is-disabled{
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      opacity: .2;
+      color: $--color-primary;
+      border-color: $primary-light;
+      background: $primary-light;
+    }
+  }
+
+  &.el-button--danger.is-plain.is-disabled{
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      opacity: .2;
+      color: $--color-danger;
+      border-color: $danger-light;
+      background-color: $danger-light;
+    }
+  }
+
+  i{
+    display: block;
+    margin-right: 0 !important;
+    margin-bottom: .6667rem;
+    text-align: center;
+    font-size: 206%;
+  }
+}
+
+// 선택삭제
+.btn-selectDel{
+  color: $--color-danger;
+  border-color: $danger-light;
+  background-color: $danger-light;
+
+  @include hover-focus{
+    color: $--color-white;
+    border-color: $--color-danger;
+    background: $--color-danger;
+  }
+
+  &[disabled]{
+    color: $border-dark;
+    border-color: $--border-color-light;
+    background-color: $--border-color-light;
+
+    @include hover-focus{
+      color: $border-dark;
+      border-color: $--border-color-light;
+      background-color: $--border-color-light;
+    }
+  }
+}
+
+// 이미지 첨부하기
+.btn-attach{
+  color: $--color-success;
+  border-color: $success-light;
+  background-color: $success-light;
+
+  &:hover,
+  &:focus{
+    color: $--color-white;
+    border-color: $--color-success;
+    background: $--color-success;
+  }
+
+  &[disabled]{
+    color: $border-dark;
+    border-color: $--border-color-light;
+    background-color: $--border-color-light;
+
+    &:hover,
+    &:focus{
+      color: $border-dark;
+      border-color: $--border-color-light;
+      background-color: $--border-color-light;
+    }
+  }
+}
+
+// 리스트 노출 순서 변경 버튼
+.btn-mover{
+  font-size: $--font-size-medium;
+}
+
+
+// 폼 하단 완료버튼
+.el-button__wrap{
+  margin: 0 auto;
+  text-align: center;
+
+  .el-button{
+    min-width:147px;
+    @include prefix(transition, min-width .2s ease-in-out, webkit o);
+  }
+
+
+  &-submit{
+    margin-top:60px;
+    vertical-align: middle;
+
+    .el-button,
+    .btn{
+      vertical-align: middle;
+    }
+  }
+}

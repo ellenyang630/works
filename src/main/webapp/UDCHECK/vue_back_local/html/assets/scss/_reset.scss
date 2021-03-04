@@ -1,0 +1,588 @@
+@charset "UTF-8";
+
+// only screen reader
+.invisible {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------
+ color
+ -----------------------------------------------------------------*/
+.cred {
+  color: $mainRed !important;
+}
+.cgreen {
+  color: $mainGreen !important;
+}
+.cgray {
+  color: $gray-6 !important;
+}
+.clgray {
+  color: $gray-9 !important;
+}
+.bgreen_a{
+  background: rgba($mainGreen,0.07);
+}
+.bred_a{
+  background: rgba($mainRed,0.07);
+}
+.lgreen{
+  color: $mainGreen !important;
+  border-color:  rgba($mainGreen,0.9) !important;
+}
+.bgreen{
+  background: $mainGreen !important;
+  color: $white !important;
+  border-color: $mainGreen !important;
+}
+.lred{
+  color: $mainRed !important;
+  border-color:  rgba($mainRed,0.5) !important;
+}
+.cblueblack{
+  color:$blue-black !important;
+}
+
+// the most use color text
+.text-pri{
+  color:$mainColor !important;
+}
+.text-alert{
+  color:$mainRed !important;
+}
+.text-succ{
+  color:$mainGreen !important;
+}
+.text-lighter{
+  color:$gray-6 !important;
+}
+.text-disabled{
+  color:$gray-6 !important;
+}
+.text-black{
+  color:$basicBlack !important;
+}
+.text-highlight{
+  color:$defaultBlack !important;
+}
+
+/* ----------------------------------------------------------------
+ decoration
+ -----------------------------------------------------------------*/
+.under {
+  text-decoration: underline;
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+}
+.del {
+  text-decoration: line-through;
+}
+.ins {
+  text-decoration: none;
+}
+.en{
+  letter-spacing: 0 !important;
+}
+
+/* ----------------------------------------------------------------
+ Helper Classes
+ -----------------------------------------------------------------*/
+.vertical-mid {
+  vertical-align: middle !important;
+}
+.mgt5{
+  margin-top: 5px;
+}
+.mgt10{
+  margin-top: 10px;
+}
+.mgt15{
+  margin-top: 15px;
+}
+.mgt20{
+  margin-top: 20px;
+}
+
+.clearFix {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.pull-left{
+  float:left;
+  display: inline-block;
+}
+.pull-right{
+  float: right;
+  display: inline-block;
+}
+.text-right{
+  text-align: right !important;
+}
+.text-center{
+  text-align: center !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.hand {
+  cursor: pointer;
+}
+
+.rd50 {
+  border-radius: $radius-50;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transform: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+/* ----------------------------------------------------------------
+ margin padding
+ -----------------------------------------------------------------*/
+.mp_none {
+  margin: 0px;
+  padding: 0px;
+}
+.bd_none{
+  border:0px;
+}
+
+/* ----------------------------------------------------------------
+ width
+ -----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+ Reset
+ -----------------------------------------------------------------*/
+*{
+  @extend %box;
+  @extend .mp_none;
+  outline: none !important;
+}
+*:before, *:after {
+  @extend %box;
+  white-space-collapse: collapse;
+}
+body, html {
+  height: 100%;
+}
+
+html, body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, blockquote, p, address, pre, cite, form, fieldset, input, textarea, select, table, th, td {
+  @extend .mp_none;
+}
+
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+  display: block;
+  @extend .mp_none;
+}
+
+fieldset, img, abbr, acronym {
+  @extend .bd_none;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-base;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  @extend .bd_none;
+  width: 100%;
+}
+
+address, caption, strong, em, cite {
+  font-weight: $font-weight-exbold;
+  font-style: normal;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+legend, caption {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+}
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+a {
+  @extend .ins;
+  color: $base;
+  outline: none !important;
+  // &:hover, &:active, &:focus {
+  //   @extend .ins;
+  // }
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+input, select, textarea, button, textarea {
+  @extend %box;
+  outline: none !important;
+  border: 0;
+  padding: 0;
+  font-family: $font-family;
+  line-height: normal !important; /* safari 에서 상하가운데정렬이 안되서 추가  */
+  font-size: 14px;
+  font-weight: $font-weight-base;
+  //letter-spacing: -1.7px;
+  letter-spacing: -0.5px;
+}
+input:disabled{
+  background: $white-gray;
+  color: $gray-9;
+}
+input::-ms-clear {/* 180621 IE에서 x버튼 */
+  width: 23px;
+  height: 23px
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input::-webkit-input-placeholder {
+  color: $gray-9;
+  letter-spacing: 0 !important;
+}
+input:-ms-input-placeholder {
+  color: $gray-9;
+  letter-spacing: 0 !important;
+}
+textarea::-webkit-input-placeholder {
+  color: $gray-9;
+  letter-spacing: 0 !important;
+}
+textarea:-ms-input-placeholder {
+  color: $gray-9;
+  letter-spacing: 0 !important;
+}
+input::placeholder {
+  color: $gray-9;
+  opacity: 1;
+  letter-spacing: 0 !important;
+}
+textarea::placeholder {
+  color: $gray-9;
+  opacity: 1;
+  letter-spacing: 0 !important;
+}
+select{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  background: none;
+}
+select::-ms-expand {
+  display: none;
+}
+select option{
+  background: none;
+}
+select option[disabled]{
+  color: $gray-9 !important;
+  display: none;
+}
+strong, .strong{
+  font-weight: $font-weight-exbold;
+}
+small {
+  font-weight: $normal;
+  font-size: 0.9em !important;
+  color: $gray-9;
+}
+
+input + label, input + small {
+  margin-left: 3px;
+}
+input + label small{
+  margin-left: 6px;
+}
+
+
+
+
+/* ----------------------------------------------------------------
+ int
+ -----------------------------------------------------------------*/
+.int{
+  padding: 0 0 0 10px;
+  height: 30px;
+  line-height: 30px;
+  min-width: 130px;
+  width:100%; //width full 
+  font-size: 13px;
+  color: $basicBlack;
+  background: $white;
+  border: 1px solid $line-dark;
+  display: inline-block;
+
+  &:focus{
+    border-color: $LineColor9;
+    @include prefix(box-shadow, 0px 0px 4px 0px rgba($mainColor, 0.3), webkit ms moz o);
+  }
+  &[disabled]{
+    background: $bgMainColor;
+  }
+}
+
+
+
+
+.hsInt{
+  height: 80px !important;
+}
+.wsInt{
+  min-width: auto;
+  width:60px !important;
+  text-align: center;
+  padding: 0 10px;
+}
+.w80Int{
+  width: 80px !important;
+}
+.w300Int{
+  width: 300px !important;
+}
+.whalfInt{
+  width: 50% !important;
+}
+.wfInt{
+  min-width: auto;
+  width:100% !important;
+}
+.half{
+  //width:50% !important;
+  //width:548px;
+  .int{
+    
+  }
+}
+select.int{
+  padding-left: 6px;
+  background: none;
+}
+.selectWrap {
+  position: relative;
+  background: $white;
+  &:before{
+    position: absolute;
+    right:10px;
+    top:5px;
+    display: inline-block;
+    font-family: LineAwesome;
+    content: "\F110";
+  }
+}
+/* CAUTION: IE hackery ahead */
+select.int::-ms-expand {
+  display: none; /* remove default arrow on ie10 and ie11 */
+}
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+  select.int {
+    background:none\9;
+    padding: 5px\9;
+  }
+}
+.int_plus{
+  margin-top: 6px;
+}
+.int_date{
+  position: relative;
+}
+.int_date:after{
+  @extend %top50;
+  position:absolute;
+  right: 5px;
+  color: $gray-9;
+  font-size: 1.5em;
+  font-family: $font-icon;
+  font-weight: $font-weight-base;
+  content:"\f15c";
+  cursor: pointer;
+}
+textarea.int{
+  padding: 6px;
+  resize: none;
+  height: 116px;
+  line-height: inherit;
+  width :100%;
+  &.sm{
+    height:80px;
+  }
+}
+
+
+@media (max-width:1239px){
+  .int, .selectWrap {
+    width:100% !important;
+  }
+  .thead .int, .thead .selectWrap{ width:auto !important;}
+}
+
+// LineAwesome font-size
+.i_icon{
+  color:$gray-9;
+  i{
+    transform: translateY(9%);
+  }
+  &.bg{
+    font-size:160%;
+  }
+  &.md{
+    font-size:130%;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+ tab
+ -----------------------------------------------------------------*/
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+
+/*------------------------------------------------------------------
+ collapse
+ -----------------------------------------------------------------*/
+
+.collapse {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+
+/* css3 animate */
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba($mainGreen, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba($mainGreen, 0);
+  }
+}
+
+// @keyframes shadow-pulse-big
+// {
+//   0% {
+//     box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+//   }
+//   100% {
+//     box-shadow: 0 0 0 70px rgba(0, 0, 0, 0);
+//   }
+// }
+
+
+
+
+
+@mixin btnActive($shadowColor){
+	&:active,
+	&:focus,
+	&:hover,
+	&.active{
+		@include prefix(box-shadow, 0px 0px 4px 0px rgba($shadowColor, 0.3), webkit ms moz o);
+	}
+}
+
+
+// use of keyframes mixin
+@include keyframes(shadow-pulse1) {
+  0% {
+    box-shadow: 0 0 0 0px rgba($mainGreen, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba($mainGreen, 0);
+  }
+}
+@include keyframes(shadow-pulse2) {
+  0% {
+    box-shadow: 0 0 0 0px rgba($mainColor, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba($mainColor, 0);
+  }
+}
+@include keyframes(shadow-pulse3) {
+  0% {
+    box-shadow: 0 0 0 0px rgba($mainRed, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba($mainRed, 0);
+  }
+}
+@include keyframes(shadow-pulse4) {
+  0% {
+    box-shadow: 0 0 0 0px rgba($gray-6, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 8px rgba($gray-6, 0);
+  }
+}
+
+
+@keyframes spin-inf {
+  100%{ transform:rotate(360deg);}
+}

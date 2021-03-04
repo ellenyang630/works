@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* _table.scss */
+
+//
+//  Table
+// --------------------------------------------------
+.table {
+  &-list-head {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &-list-foot {
+    display: flex;
+    //flex: 1;
+    //flex-wrap: wrap;
+    align-items: center;
+    //justify-content: space-between;
+    //margin-bottom: 10px;
+  }
+
+  // table-view (상세페이지 - 데이터 테이블)
+  &-view {
+    font-size: 1rem;
+    margin-bottom: 0;
+    border-top: 2px solid $text-dark;
+    border-color: $line-gray;
+
+    tbody {
+      th, td {
+        padding: 1rem 0.75rem;
+        font-weight: $font-weight-normal;
+      }
+      th {
+        color: $base-lighter;
+      }
+      td {
+        color: $text-dark;
+      }
+
+      // input wrapper magin-bottom:0;
+      .form-group{
+        margin-bottom:0;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      & {
+        th, td {
+          display: block;
+          border-top: 0;
+        }
+        tbody {
+          th {
+            border-bottom: 0;
+            padding-bottom: 0;
+          }
+          td{
+            padding-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  // table-view-info (상세정보 테이블)
+  &-view-info {
+    font-size: 0.9333rem;
+    margin-bottom: 0;
+
+    thead{
+      th{
+        color: $primary-dark;
+        color:$base-lighter;
+        background-color: $bg-base;
+        padding: 0.3333rem 0.75rem;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: $font-weight-bolder;
+        border:0;
+
+        &:first-child{
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+        &:last-child{
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+
+    tbody {
+      th, td {
+        padding: 0.75rem;
+        font-weight: $font-weight-normal;
+        color: $text-dark;
+      }
+      tr{
+        &:first-child{
+          th, td{
+            border-top: 0;
+          }
+        }
+      }
+      // input wrapper magin-bottom:0;
+      .form-group{
+        margin-bottom:0;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      & {
+        th, td {
+          display: table-cell;
+          border-top: 1px;
+        }
+      }
+    }
+  }
+
+  // table-excel (결제요청 > 결제요청(대량))
+  &-excel {
+    border: 1px solid $line-gray;
+    width: 100%;
+    font-size: 13px;
+
+    th, td {
+      padding: 0.22rem;
+
+      &:first-child {
+        border-left: 0;
+      }
+    }
+
+    thead {
+      th {
+        background: $line-lighter;
+      }
+      th, td {
+        border-left: 1px solid $line-gray;
+      }
+      tr {
+        border-bottom: 1px solid $line-gray;
+      }
+    }
+
+    tbody {
+      th {
+        background: #f2f2f2;
+      }
+      th, td {
+        border-left: 1px solid $line-light;
+      }
+      tr {
+        border-bottom: 1px solid $line-light;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // table-bd0 (등록&정기결제 > 상세페이지 - 결제 데이터 테이블)
+  &-bd0 {
+    tbody {
+      tr:last-child {
+        th, td {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // table-empty__block (전체 데이터 테이블 내역 없을 경우)
+  &-empty__block {
+    padding: 4rem 0;
+    text-align: center;
+
+    .empty-info__text {
+      font-size: 1.067rem;
+      color: $base-dark;
+
+      p {
+        margin-top: 1rem;
+
+        & + button{
+          margin-top: 1.2rem;
+        }
+      }
+    }
+
+    &-sm{
+        padding:1.5rem 0;
+
+      .empty-info__text {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // 테이블 랩 상하스크롤 생기기
+  &-scrollable-y{
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}
+
+// table tr 색상
+.tr {
+  &-total {
+    th, td {
+      background-color: rgba($primary, 0.045);
+      font-weight: $font-weight-bolder;
+    }
+  }
+
+  &-read {
+    th, td {
+      opacity: 0.6;
+    }
+  }
+}
+
+// 반응형 테이블
+.table-responsive-md{
+  @include media-breakpoint-down(sm){
+    .table{
+      min-width:970px;
+    }
+  }
+}

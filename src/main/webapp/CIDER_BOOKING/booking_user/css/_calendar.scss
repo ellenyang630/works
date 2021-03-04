@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+/* bootstrap datepicker */
+// 사용자 메인 - 이용일자 선택 달력
+#datetimepicker1{
+  margin-top:0px;
+  //margin-bottom:10px;
+}
+
+// 달력 공통 스타일
+.bootstrap-datetimepicker-widget{
+  table{
+    font-size:14px;
+    th, td{
+      border-radius: 0 !important;
+    }
+    // 상단 연월
+    th{
+      &.picker-switch{
+        font-size:21px;
+        color:$blue-purple;
+        letter-spacing: -0.4px;
+      }
+      &.prev,
+      &.next{
+        font-size:20px;
+        font-weight: 600;
+        color:$disabled;
+      }
+    }
+
+    // 월 ~ 금
+    thead{
+      border-bottom:1px solid $line-e;
+      tr{
+        &:first-child{
+          height:50px;
+          th{
+            &:hover{
+              background:none !important;
+            }
+          }
+        }
+        &:last-child{
+          height:38px;
+        }
+      }
+      th.dow{
+        color:$disabled;
+        font-weight: 400;
+      }
+    }
+
+    // 일자
+    tbody{
+      td{
+        // 기본 일자
+        &.day{
+          color:$blue-purple;
+          z-index:2;
+          &:first-child{
+            color: #f82222;
+          }
+          &:last-child{
+            color:#379afc;
+          }
+          .day_em{
+            display: inline-block;
+            width:50px;
+            height:50px;
+            line-height:50px;
+            margin: 1px 0;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index:-1;
+            &:hover,
+            &:active,
+            &:focus{
+              background-color: $green;
+              color: $white;
+              &:after{
+                color:$white;
+              }
+            }
+          }
+          &:hover{
+            background:none;
+            text-shadow: none;
+            .day_em{
+              background-color: $green;
+              color: $white;
+              &:after{
+                color:$white;
+              }
+            }
+          }
+        }
+        // 지난 일수
+        &.old{
+          color:$disabled !important;
+        }
+        // today
+        &.today{
+          &:before{
+            display:none;
+          }
+          .day_em{
+            background-color: $lwhite;
+            color:$blue-purple;
+            line-height:34px;
+            &:after{
+              display: block !important;
+              content:"오늘" !important;
+              font-size: 11px !important;
+              color: $blue-purple !important;
+              margin-top:-5px !important;
+              line-height: 1 !important;
+            }
+          }
+          &:hover{
+            .day_em{
+              &:after{
+                display: block;
+                // color: $disabled !important;
+                color:$white !important;
+              }
+            }
+          }
+        }
+        // 선택된 일자
+        &.active{
+          background: none;
+          text-shadow: none;
+          &:hover{
+            background: none;
+            text-shadow: none;
+          }
+          .day_em{
+            background-color: $green;
+            color: $white;
+            &:after{
+              color:$white !important;
+            }
+          }
+        }
+        // 선택 못 하는 일자
+        &.disabled{
+          color:$disabled !important;
+          &:hover{
+            background: none;
+            color:$disabled !important;
+            text-shadow: none;
+            .day_em{
+              background: none;
+              color:$disabled;
+              text-shadow: none;
+            }
+          }
+          // 오늘 예약불가 일 때,
+          &.today{
+            &:after{
+              display: block;
+              color: $blue-purple;
+            }
+            &:hover{
+              color:$blue-purple;
+              .day_em{
+                background-color: $lwhite;
+                color:$disabled !important;
+                &:after{
+                  display: block;
+                  color:$disabled !important;
+                }
+              }
+            }
+          }
+        }
+
+        // 가장 작은 디바이스에서 달력 크기 조정
+        @media (max-width:375px){
+          &.day .day_em{
+            width:40px !important;
+            height:40px !important;
+            line-height:40px;
+          }
+          &.today .day_em {
+            line-height: 28px;
+          }
+        }
+      }
+    }
+
+    // 연월 선택
+    td {
+      span{
+        border-radius: 50% !important;
+        &.active{
+          background-color: $lwhite !important;
+          color:$blue-purple !important;
+        }
+        &:hover{
+          background: $green !important;
+          color:$white !important;
+        }
+      }
+    }
+  }
+}

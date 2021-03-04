@@ -1,0 +1,568 @@
+/* @import url("https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR"); */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700|Roboto&subset=korean');
+
+body {
+	font-family: 'Roboto', "Noto Sans", "Noto Sans KR", sans-serif !important;
+	line-height: 1.35;
+}
+
+
+/* ----------------------------------------------------------------
+ Reset
+ -----------------------------------------------------------------*/
+/* 모바일에서 터치영역 생기는 거 막기 위해 */
+*{ -webkit-tap-highlight-color: transparent !important; outline:0;}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body {
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	outline: none !important;
+	-webkit-tap-highlight-color: transparent;
+}
+ol, ul, li {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 0px;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+/*텍스트 관련 요소 초기화*/
+address, caption, strong, em, cite {
+	font-weight: normal;
+	font-style: normal;
+}
+small {
+	font-weight: normal;
+}
+a {
+	outline: none !important;
+	text-decoration: none;
+	color:#2e2e2e;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+	outline: none;
+}
+button{
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner {
+	 border: 0;
+	 padding: 0;
+}
+input, textarea, select, button{ font-family: 'Roboto', "Noto Sans", "Noto Sans KR", sans-serif !important;}
+textarea:disabled, input:disabled{ background: #f5f7f8 !important; }
+textarea{ resize: none; border:none;}
+textarea:focus{ outline: 0;}
+select:focus{ outline:none;}
+select::-ms-expand { display: none;}
+input{
+	width: 100%;
+	border: none;
+	background: none;
+	box-sizing:border-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input::placeholder, textarea::placeholder {
+	color: #ccc;
+	font-weight: normal;
+}
+input::placeholder, textarea::placeholder {
+	color: #ccc;
+	font-weight: normal;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { /*180702 input placeholder IE에서도 적용되게 */
+	color: #ccc;
+	font-weight: normal;
+}
+
+input:focus { outline: none; }
+button:focus { outline:none; }
+input[type="file"] {
+	display: none;
+	cursor: pointer;
+}
+input[type="text"]:disabled{
+	background: #f5f7f8 !important;
+}
+
+input[type="text"] {
+	ime-mode: active;
+}
+input.input_login {
+	ime-mode: disabled;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], textarea, button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], textarea, button, select {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], input[type="button"] {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0 14px;
+	width:100%;
+	height:33px;
+	color:#2e2e2e;
+	background: #fff;
+	border:1px solid #e2e2e2;
+	border-radius: 4px;
+}
+/* 날짜 인풋 가운데 정렬 */
+input[type="date"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+	-webkit-appearance: none;
+	display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+	color: transparent;
+	background: none;
+	z-index: 1;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	overflow: hidden;
+	-webkit-appearance: none;
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	border: 0;
+	background: 0;
+	opacity: 0;
+	cursor: pointer;
+	/*width: 18px;*/
+	/*height: 18px;*/
+}
+
+
+
+/*라디오버튼*/
+.intGroup input[type="radio"] {
+	position: relative;
+	opacity: 0;
+
+}
+.intGroup input[type="radio"] + .wrapLabel:before {
+	content: '';
+	background: #fff;
+	border-radius: 100%;
+	border: 4px solid #e2e2e2;
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	position: relative;
+	top: -0.2em;
+	margin-right: 7px;
+	vertical-align: top;
+	cursor: pointer;
+	text-align: center;
+	transition: all 250ms ease;
+	box-sizing:border-box;
+}
+.intGroup input[type="radio"]:checked + .wrapLabel:before {
+	border-color: #00d593;
+	/*box-shadow: inset 0 0 0 4px #f4f4f4;*/
+}
+.intGroup input[type="radio"]:focus + .wrapLabel:before {
+	outline: none;
+	border-color: #00d593;
+}
+.intGroup input[type="radio"]:disabled + .wrapLabel:before {
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+	border-color: #b4b4b4;
+	background: #b4b4b4;
+}
+.intGroup input[type="radio"] + .wrapLabel:empty:before {
+	margin-right: 0;
+}
+
+
+/* 검색폼 radio */
+input[type="checkbox"].check_toggle:checked + label, input[type="radio"].radio_taggle:checked + label {
+	background: #0093d9;
+	color: #ffffff;
+	font-weight: bold;
+	border-color: rgba(255,255,255,0.2);
+}
+
+input[type="radio"].radio_toggle {
+	position: relative;
+}
+input[type="radio"].radio_toggle {
+	display: none;
+}
+input[type="radio"].radio_toggle + label{ width:100%;}
+input[type="radio"].radio_toggle + label {
+	display: inline-block;
+	float: left;
+	margin-bottom: 0;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	height:100%;
+	padding: 0;
+	margin: 0px;
+	box-sizing: border-box;
+	font-weight: 500;
+}
+input[type="radio"].radio_toggle.first + label {
+	border-left: 1px solid #103760;
+	-webkit-border-top-left-radius: 50em;
+	-webkit-border-bottom-left-radius: 50em;
+	-moz-border-radius-topleft: 50em;
+	-moz-border-radius-bottomleft: 50em;
+	border-top-left-radius: 50em;
+	border-bottom-left-radius: 50em;
+}
+input[type="radio"].radio_toggle.last + label {
+	-webkit-border-top-right-radius: 50em;
+	-webkit-border-bottom-right-radius: 50em;
+	-moz-border-radius-topright: 50em;
+	-moz-border-radius-bottomright: 50em;
+	border-top-right-radius: 50em;
+	border-bottom-right-radius: 50em;
+}
+input[type="radio"].radio_toggle:checked + label {
+	background: #fff !important;
+	border: 3px solid #00d593 !important;
+}
+
+input[type="radio"].radio_toggle_chk {
+	position: relative;
+}
+input[type="radio"].radio_toggle_chk {
+	display: none;
+}
+input[type="radio"].radio_toggle_chk + label {
+	display: inline-block;
+	margin-bottom: 0;
+	color: #2e2e2e;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	height: 41px;
+	line-height: 41px;
+	padding: 0;
+	margin: 0px;
+}
+input[type="radio"].radio_toggle_chk:checked + label {
+	font-weight: bold;
+	color: #0093d9;
+}
+input[type="radio"].radio_toggle_chk:checked + label:before {
+	content: "\f00c";
+	font-family: FontAwesome;
+}
+/* 검색폼 radio */
+
+
+
+/* .input_chk_hp */
+input[type="checkbox"], input[type="radio"] {
+    padding: 0;margin: 0;vertical-align: middle;*overflow: hidden;-webkit-appearance: none;position: absolute !important;z-index: 9;top: 0;left: 0;border: 0;background: 0;opacity: 0;cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+		display: block;
+		padding-left: 23px;
+		font-size: 13px;
+		line-height: 15px;
+		color: #222;
+}
+.input_chk_hp{
+    margin-top: 10px;
+}
+.input_chk_hp + .input_chk_hp{
+    margin-left: 40px;
+}
+.input_chk_hp:last-child input[type="checkbox"] + label, .input_chk_hp:last-child input[type="radio"] + label {
+    margin-right: 0px;
+}
+@media screen and (max-width: 320px) {
+    input[type="checkbox"] + label, input[type="radio"] + label {
+        padding-left: 30px;
+    }
+}
+.input_chk_hp {
+    position: relative;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+}
+.input_chk_hp span + label{
+    padding-left: 30px;
+    margin-right: 30px;
+    cursor : pointer;
+}
+.input_chk_hp input[type="checkbox"] + label:before, .input_chk_hp input[type="radio"] + label:before, .input_chk_hp span + label:before {
+    content: '';position: absolute !important;top: 0;left: 0;width: 16px;height: 15px;display: inline-block;color: transparent;overflow: hidden;white-space: nowrap;
+    background: url(../image/checking.png) no-repeat;background-size: 41px 33px;cursor: pointer;
+}
+.input_chk_hp input[type="checkbox"] + label:before, .input_chk_hp span + label:before {
+    background-position:  0 0;
+}
+.input_chk_hp input[type="checkbox"]:checked + label:before, .input_chk_hp span.on + label:before {
+    background-position: 0px -18px;
+}
+.input_chk_hp input[type="radio"] + label:before {
+    background-position: -45px 0px;
+}
+.input_chk_hp input[type="radio"]:checked + label:before {
+    background-position:-45px -31px;
+}
+.checking.first .input_chk_hp{margin-top: 0;}
+.checking.last{margin-top: 20px;padding-top: 10px;border-top: 1px solid #e5e5e5;}
+
+
+html {
+	/*scroll-behavior: smooth;*/
+	color:#2e2e2e;
+}
+/* normalize */
+
+.icon { font-family: 'fontAwesome' !important;}
+
+
+/* images */
+.images{
+	display: block;
+	/* margin: 0 auto; */
+	background: url("../image/images.png") no-repeat;
+	background-size: 166px 166px;
+}
+
+/* 메인페이지 결제 방법 아이콘 */
+.i_payFcard{
+	width:34px;
+	height:23px;
+	background-position: 0 0;
+}
+.i_payFphone{
+	width:23px;
+	height:33px;
+	background-position: -40px 0;
+}
+.i_payFPayco{
+	width:55px;
+	height:19px;
+	background-position: -69px 0;
+}
+.i_payFPayco{
+	width:55px;
+	height:19px;
+	background-position: -69px 0;
+}
+
+/* 결제방식 선택 아이콘 */
+.i_personalCard{
+	width:24px;
+	height:27px;
+	background-position: 0 -39px;
+}
+.i_bizCard{
+	width:27px;
+	height:19px;
+	background-position: -30px -39px;
+}
+.i_ispCard{
+	width:24px;
+	height:28px;
+	background-position: -62px -39px;
+}
+.i_noInterest{
+	width:27px;
+	height:28px;
+	background-position: -92px -39px;
+}
+/* 핸드폰결제 통신사 아이콘 */
+.i_sk{
+	width:73px;
+	height:28px;
+	background-position: 0px -75px;
+}
+.i_kt{
+	width:28px;
+	height:23px;
+	background-position: -79px -74px;
+}
+.i_lgup{
+	width:72px;
+	height:20px;
+	background-position: 0px -119px;
+}
+.i_helloMobile{
+	width:72px;
+	height:22px;
+	background-position: -78px -118px;
+}
+.i_kct{
+	width:41px;
+	height:37px;
+	background-position: -125px -76px;
+}
+
+
+/* button */
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 500;
+}
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.btn-xs {
+  padding: 1px 5px;
+  font-size: 10px;
+  /* line-height: 1.5; */
+  border-radius: 1px;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------
+							PRINT
+ -----------------------------------------------------------------*/
+@media print {
+	body {
+		padding:0;
+		margin: 0;
+		min-width:21cm;
+		min-height: 29.7cm;
+		padding: 2cm;
+	}
+	.wrapper{
+		max-width:55%;
+		width:100%;
+		margin: 0 auto;
+		background: #fff;
+	}
+	.headerTabFixed{
+		position: absolute !important;
+	}
+	.tabBox{
+		position: absolute !important;
+		width:100%;
+		max-width:100%;
+		margin: 0 auto;
+		/* transform: translateX(40%); */
+	}
+	#fixedBtn_bottom{
+		display: none;
+	}
+}

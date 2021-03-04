@@ -1,0 +1,1521 @@
+@charset "UTF-8";
+@import "variables";
+@import "reset";
+@import "gnb";
+@import "main";
+@import "sub";
+@import "snb";
+@import "table";
+@import "join";
+@import "login";
+@import "popup";
+
+@media (min-width: 801px) {
+  .mb_hidden {
+    display: block !important;
+  }
+  .web_hidden {
+    display: none !important;
+  }
+  .mscSlider_600, .mscSlider_601, .mscSlider_800 {
+    display: none !important;
+    //mscSlider_800 800이하 3개
+  }
+}
+
+@media (max-width: 800px) {
+
+  #allmenu_popup {
+    min-width: 800px;
+  }
+
+  .joinForm {
+    display: block;
+    .inn {
+      display: block;
+    }
+  }
+
+  .mb_hidden, .mb_tb_hidden {
+    display: none !important;
+  }
+  .web_hidden {
+    display: block !important;
+  }
+  .mscSlider_800 {
+    display: block !important;
+  }
+
+  .joinLink {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 9999;
+    i {
+      position: relative;
+      top: 2px;
+      font-size: 1.3rem;
+      margin-right: 4px;
+    }
+    a {
+      padding: 0px;
+      height: 44px;
+      line-height: 44px;
+      width: 90px;
+      text-align: center;
+      color: $blue;
+      display: block;
+    }
+  }
+  html, body {
+    height: 100%;
+    -webkit-text-size-adjust: none; /*Chrome, Safari, newer versions of Opera*/
+    -moz-text-size-adjust: none; /*Firefox*/
+    -ms-text-size-adjust: none; /*Ie*/
+    -o-text-size-adjust: none; /*old versions of Opera*/
+  }
+  table {
+    th, td {
+      *, dl, dt, dd, ol, li, ul {
+        font-size: 10pt !important;
+      }
+    }
+  }
+
+  .tab-select-outer select {
+    border: 0px;
+    font-size: $font-size-xxmiddle;
+    color: $blue;
+    width: 100%;
+    option {
+      font-size: $font-size-base;
+      padding: 8px;
+    }
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;
+  }
+
+  .subWrap {
+    margin-top: 40px;
+  }
+
+  .mainVisual {
+    height: 100% !important;
+    .item {
+      height: 100% !important;
+      .img800 {
+        display: block !important;
+      }
+    }
+    .vs_img, .vs_img2, .vs_img3, .vs_img4 {
+      background: none !important;
+    }
+  }
+
+  .tbWrapShadow {
+    position: relative;
+    &:before {
+      position: absolute;
+      right: 0px;
+      top: -40px;
+      opacity: 0.5;
+      content: '\e90e';
+      font-family: xeicon_v2;
+      font-size: 1.6rem;
+      color: $gray-light;
+      animation: lRight 0.8s infinite;
+    }
+    @keyframes lRight {
+      0% {
+        right: 0;
+      }
+      100% {
+        right: 10px;
+      }
+    }
+    &:after {
+      -webkit-box-shadow: inset -12px 0px 5px -5px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset -12px 0px 5px -5px rgba(0, 0, 0, 0.5);
+      box-shadow: inset -12px 0px 5px -5px rgba(0, 0, 0, 0.5);
+      content: '';
+      display: block;
+      height: 100%;
+      width: 12px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .tbWrap {
+    overflow-x: auto;
+  }
+  .paypalTB, .insTB {
+    min-width: 1000px;
+  }
+  .kakaoTB {
+    min-width: 700px;
+  }
+
+  table {
+    width: 100%;
+    table-layout: inherit !important;
+    white-space: nowrap !important;
+    th, td {
+      &.text-link {
+        display: table-cell;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &.normal {
+      white-space: normal;
+      th, td {
+        padding: 13px 0px !important;
+      }
+    }
+    &.link {
+      table-layout: fixed;
+    }
+    .num, .snum, .tnum {
+      font-size: $font-size-xmiddle;
+    }
+  }
+
+  .writeTBWrap {
+    width: auto;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid $line;
+    height: 45px;
+    padding: 0px;
+    .centerThis {
+      padding: 0px !important;
+    }
+    .utilArea {
+      display: none;
+    }
+    h1 {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      img {
+        z-index: 9999;
+        width: 85px;
+        height: 24px;
+        top: 8px;
+      }
+    }
+    nav {
+      float: inherit;
+      margin: 0px;
+      height: 44px;
+    }
+    .centerThis {
+      width: 100%;
+      margin: 0px;
+      min-width: inherit;
+    }
+  }
+
+  .wrap {
+    padding-top: 45px;
+  }
+
+  .quickMenu {
+    display: none;
+  }
+
+  .centerThis {
+    width: inherit;
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+    min-width: 320px;
+  }
+  .ssc_line .centerThis {
+    padding-top: 20px;
+  }
+  .ttBoxCenter {
+    h2 {
+      font-size: $font-size-xxmiddle;
+      img {
+        width: 80px;
+        height: 19px;
+        top: 2px;
+      }
+    }
+    h3 {
+      margin-top: 10px;
+      word-break: keep-all;
+    }
+  }
+
+  .msc, .ssc {
+    margin-top: 20px;
+  }
+
+  .garoTBCell, .garoCell {
+    &.col_8 {
+      li, .li {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+    &.col_7 {
+      li, .li {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+    &.col_6 {
+      li, .li {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+    &.col_5 {
+      li, .li {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+    &.col_4 {
+      li, .li {
+        width: 50%;
+        display: inline-block;
+      }
+    }
+    &.col_2, &.col_3 {
+      li, .li {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  .tab_titFaq {
+    .tab_tit {
+      margin-top: -1px;
+      border-bottom: 1px solid $line-light;
+      &:nth-child(4) {
+        border-left: 1px solid $line-light;
+      }
+      &.current {
+        color: $blue;
+        border: 1px solid $blue !important;
+      }
+    }
+    li {
+      width: 33.333% !important;
+      padding: 8px;
+    }
+  }
+
+  .subBigTab {
+    margin-top: 0px;
+    li {
+      width: 33.333% !important;
+      display: table-cell !important;
+    }
+  }
+
+  #cssmenu {
+    background: $white;
+    z-index: 999;
+    height: 44px;
+    ul {
+      width: 100%;
+      > li {
+        float: none;
+        width: 100%;
+        &:after {
+          display: none;
+        }
+      }
+      li {
+        a {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+        }
+        ul {
+          li {
+            ul li {
+              background: $white;
+              &:last-child {
+                border: 0px;
+              }
+              a {
+                color: $base;
+                font-size: $font-size-sm;
+              }
+            }
+            a {
+              width: 100%;
+              padding: 6px 13px;
+            }
+            &:hover > a {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+    > ul {
+      position: absolute;
+      top: 44px;
+      display: none;
+      overflow: hidden;
+      /*-webkit-transition: max-height 0.35s ease-out;
+      -moz-transition: max-height 0.35s ease-out;
+      -ms-transition: max-height 0.35s ease-out;
+      -o-transition: max-height 0.35s ease-out;
+      transition: max-height 0.35s ease-out;*/
+      > li {
+        border-bottom: 1px solid $line-light;
+        > ul {
+          width: 100%;
+          display: block;
+          li {
+            border: 0px;
+            &:first-child {
+              padding-top: 0px;
+              margin-top: 0px;
+            }
+          }
+          > li {
+            width: 100%;
+            display: block;
+            border: 0px;
+            &:last-child {
+              border-bottom: 0px;
+            }
+            > a {
+              width: 100%;
+              display: block;
+            }
+          }
+        }
+      }
+      &.open {
+        display: block;
+        background: $white;
+        border-top: 1px solid rgba(110, 110, 110, 0.25);
+        height: calc(100vh - 45px);
+        overflow-y: auto;
+      }
+    }
+    &.align-right {
+      text-align: left;
+    }
+    &.align-center {
+      > ul {
+        text-align: left;
+        > li {
+          display: block;
+        }
+      }
+    }
+
+    ul li.has-sub > a:after,
+    ul li.has-sub > a:before,
+    ul li ul li.has-sub:after,
+    ul li ul li.has-sub:before {
+      display: none;
+    }
+    ul li ul,
+    ul li ul li ul,
+    ul li ul li:hover > ul,
+    &.align-right ul li ul,
+    &.align-right ul li ul li ul,
+    &.align-right ul li ul li:hover > ul {
+      left: 0;
+      position: relative;
+      right: auto;
+    }
+    ul li ul li,
+    ul li:hover > ul > li {
+      max-height: 999px;
+      position: relative;
+      background: none;
+    }
+    #menu-button {
+      display: block;
+      width: 30px;
+      height: 100%;
+      position: absolute;
+      right: 13px;
+      .inn {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        &:after {
+          display: block;
+          content: '';
+          position: absolute;
+          height: 7px;
+          width: 30px;
+          border-top: 2px solid $black;
+          border-bottom: 2px solid $black;
+          right: 0px;
+          top: 10px;
+        }
+        &:before {
+          display: block;
+          content: '';
+          position: absolute;
+          height: 3px;
+          width: 30px;
+          border-top: 2px solid $black;
+          right: 0px;
+          top: 28px;
+        }
+      }
+    }
+  }
+
+  .owl-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+
+  .vsText {
+    position: inherit;
+    margin: 0px;
+    left: 0px;
+    padding: 0 13px;
+    .vsNotice {
+      height: 55px;
+    }
+    .vsLink {
+      a {
+        line-height: 55px;
+        height: 55px;
+      }
+      .vspayBtn {
+        &:before {
+          display: none;
+        }
+      }
+    }
+    .vsNotice, .vsLink {
+      float: inherit;
+      width: 100%;
+      padding: 0px;
+      .btn {
+        border: 1px solid $blue;
+      }
+    }
+  }
+
+  .msc {
+    .linkBox {
+      li, .li {
+        dl {
+          padding: 20px 0;
+        }
+      }
+    }
+  }
+
+  .msc1 {
+    .sc_icon {
+      dt {
+        &:before {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .msc3 {
+    .decoBox {
+      ul {
+        li {
+          margin-bottom: 15px;
+          dl, .decoInn {
+            padding: 30px 13px;
+          }
+          .decoInn {
+            height: 157px;
+          }
+        }
+      }
+    }
+  }
+  .msc4 {
+    .counterBox {
+      li {
+        padding: 30px 0 !important;
+        height: auto !important;
+        &:nth-child(1) {
+          border-bottom: 1px solid rgba($white, 0.15) !important;
+        }
+        &:nth-child(2) {
+          border-right: 1px solid $line-light !important;
+        }
+        &:last-child {
+          border-top: 0px !important;
+        }
+      }
+    }
+  }
+
+  .mscBan {
+    .mscBan_1 {
+      height: 180px;
+    }
+    .mscBan_2 {
+      height: auto;
+      padding: 30px 0;
+    }
+  }
+
+  .subVisual {
+    /*background: $white-blue-light url(../images/deco_join_udpay.png) no-repeat center center;
+    background-size: 100%;*/
+    background: $white;
+    h2 {
+      font-size: $font-size-xxmiddle;
+    }
+    h3 {
+      display: none;
+    }
+    .subVisualtt {
+      height: 130px;
+      display: none;
+    }
+    .centerThis {
+      padding: 0px !important;
+    }
+  }
+
+  .mscSliderWrap {
+    .card {
+      width: 160px;
+      margin: 0 auto;
+    }
+  }
+
+  .mscSlider {
+    .owl-nav {
+      .owl-prev {
+        left: -20px;
+      }
+      .owl-next {
+        right: -20px;
+      }
+    }
+  }
+
+  #subGnbWrap {
+    position: inherit;
+    bottom: inherit;
+    height: auto;
+    &.fixed {
+      position: inherit;
+    }
+  }
+
+  .subWrap {
+    &.pdt {
+      padding-top: 0px !important;
+    }
+  }
+
+  .snb-inner-box {
+    .snb-depth01, .snb-depth03 .current-snb {
+      display: none;
+    }
+    .snb-depth03 #snb03 {
+      display: block;
+    }
+    .snb-depth02 {
+      float: none;
+      z-index: 10;
+      ul {
+        left: 0;
+        top: 50px;
+        right: 0;
+        border: 0;
+        &:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+      }
+      li {
+        float: left;
+        width: 50%;
+      }
+    }
+    .current-snb {
+      line-height: 50px;
+      position: relative;
+      left: -25px;
+      &:after {
+        right: 0px;
+      }
+    }
+    .snb-home {
+      width: 50px;
+      line-height: 50px;
+      height: 50px;
+    }
+  }
+
+  .snb-depth {
+    .current-snb {
+      min-width: 100%;
+      text-align: center;
+      border: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    li a {
+      padding: 6px 20px;
+    }
+  }
+
+  .stepGraphWrap {
+
+    .btnArea {
+      &:after {
+        background: transparent;
+      }
+    }
+    .graphBox {
+      margin: 0px;
+      > ul > li {
+        padding: 0px;
+        display: block;
+        width: 100%;
+        .graphTT {
+          border-top: 0px;
+        }
+        &:first-child {
+          .graphTT {
+            border-top: 1px solid $line-light;
+          }
+        }
+        &:before, &:after {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .mscSliderWrap {
+    width: 90%;
+    .mscSlider_web, .mscSlider_600 {
+      display: none;
+    }
+    //mscSlider_web web에서 보이는 슬라이더 5개
+    //mscSlider_600 600이하 1개
+  }
+
+  .pointBox {
+    li {
+      border-bottom: 1px solid $line-light;
+      border-left: 0px;
+      padding: 13px;
+      &:last-child {
+        border-bottom: 0px;
+      }
+    }
+  }
+
+  .advBox {
+    margin-top: 15px;
+    ul {
+      margin-bottom: 0px;
+    }
+  }
+
+  .kakaoBox {
+    width: auto;
+    li {
+      .textBox {
+        margin-top: 13px;
+      }
+      display: block;
+      margin-bottom: 20px;
+      &:first-child {
+        span {
+          left: -65px;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0px;
+        span {
+          img {
+            max-width: 90px;
+          }
+        }
+      }
+      img {
+        max-width: 200px;
+      }
+      span {
+        img {
+          max-width: 70px;
+        }
+      }
+    }
+  }
+
+  .tipBan {
+    padding: 15px;
+    dl {
+      &:before {
+        position: inherit;
+        left: inherit;
+        top: inherit;
+        margin-bottom: 6px;
+      }
+      dd {
+        a {
+          margin: 0;
+          display: block;
+        }
+      }
+      padding-left: 0;
+    }
+  }
+
+  .billBan {
+    width: 100%;
+    padding: 15px;
+    &:after {
+      background: none;
+    }
+    .textBox {
+      h2 {
+        word-break: keep-all;
+        line-height: 1.35em;
+        font-size: $font-size-xxmiddle;
+        strong:after {
+          background-size: 80%;
+        }
+      }
+      h3 {
+        word-break: keep-all;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .payBanBox.add_icon {
+    .textBox {
+      padding: 0px;
+      &:before {
+        background: none;
+      }
+    }
+  }
+
+  .tagBox {
+    padding: 15px 0;
+    li {
+      padding: 0 15px;
+    }
+    dl:first-child {
+      margin-bottom: 5px;
+    }
+  }
+
+  .circleBox {
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+  .pagination {
+    a {
+      width: 33px;
+      height: 33px;
+      line-height: 33px;
+    }
+  }
+
+  .contractInfoBox {
+    img {
+      width: 100%;
+    }
+  }
+
+  .joinSecBox li {
+    width: 50% !important;
+    display: inline-block !important;
+  }
+
+  .cusList {
+    i {
+      font-size: $font-size-xxmiddle !important;
+    }
+  }
+
+  .apiIconWrap {
+    .apiIconBox {
+      margin-bottom: 0px;
+    }
+    li {
+      width: 50% !important;
+      display: inline-block !important;
+      margin-bottom: 13px;
+    }
+  }
+
+  .apiPayBox, .apiPayBox2 {
+    .apiEx {
+      margin-top: 20px;
+    }
+    .apiTT, .apiEx {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0px;
+      li {
+        width: 33.3333% !important;
+        .ccBox {
+          margin: 0 auto;
+        }
+      }
+    }
+    .apiTT {
+      h2 {
+        font-size: $font-size-xxmiddle;
+      }
+    }
+    .ccBox {
+      width: auto;
+      height: auto;
+      border: 0px;
+    }
+  }
+
+  .userBox {
+    li {
+      margin-bottom: 18px;
+    }
+  }
+
+  .bankBox {
+    ul {
+      &:first-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .alarmBan {
+    img {
+      width: 100%;
+    }
+  }
+
+  .payBanList {
+    ul {
+      li {
+        padding: 0px;
+        display: block;
+        width: 100%;
+        &:nth-child(2) {
+          border-left: 0px;
+          padding: 0px;
+          padding-top: 20px;
+          margin-top: 20px;
+          border-top: 1px solid $line-light;
+        }
+      }
+    }
+  }
+
+  .payBan_1 {
+    .imgBox {
+      height: auto;
+      padding: 30px;
+      margin-bottom: 20px;
+      img {
+        max-width: 100%;
+      }
+      .payBan_img {
+        position: inherit;
+        left: inherit;
+        top: inherit;
+        display: table;
+        margin: 0 auto;
+      }
+      .payBan_img2 {
+        display: none;
+      }
+    }
+  }
+
+  .payBan_2 {
+    &:before {
+      background-size: 60%;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+    }
+    &:after {
+      right: 0px;
+      background-size: 60%;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+  }
+
+  .iconBox {
+    li {
+      padding: 20px;
+      dl {
+        padding: 0;
+        &:before {
+          display: none;
+        }
+      }
+      dl {
+        display: block;
+      }
+      .btnArea {
+        display: table;
+        width: 100%;
+        padding: 0px;
+        margin-top: 13px;
+        a {
+          min-width: auto;
+        }
+        p {
+          display: table-cell;
+        }
+      }
+    }
+  }
+
+  .pointBox {
+    li {
+      height: auto !important;
+    }
+  }
+
+  .apiBox {
+    li, .li {
+      display: inline-block !important;
+      width: 50% !important;
+      height: 300px;
+    }
+  }
+
+  .apiBtnArea {
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+  .picxellBan {
+    padding: 30px 13px;
+    .textBox {
+      h2 {
+        font-size: $font-size-xxmiddle;
+        span {
+          font-size: $font-size-xxmiddle;
+          height: 35px;
+          line-height: 35px;
+        }
+      }
+    }
+    .picxellImg, .textBox {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0px;
+      img {
+        max-width: 160px;
+      }
+      .btnArea {
+        a {
+          padding: 11px 30px;
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .serviceBan_1 {
+    text-align: center;
+    .textBox {
+      h2 {
+        font-size: $font-size-xxmiddle;
+      }
+    }
+    &:before, &:after {
+      background: none;
+    }
+  }
+
+  .easyPay {
+    .easyInfo {
+      padding: 20px 0;
+      li {
+        &:first-child, &:nth-child(2) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .srcBox {
+    width: 100% !important;
+  }
+
+  .stepImgBox {
+    li {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    dl {
+      margin-top: 8px;
+      p {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .footArea {
+    .footMenu {
+      display: none;
+    }
+  }
+
+  footer{
+    padding-top: 20px;
+  }
+
+
+}
+
+@media (max-width: 640px) {
+
+  html {
+    font-size: 10.5pt;
+  }
+
+  .joinForm {
+    background: $white;
+    .inn {
+      vertical-align: top;
+      .joinBox {
+        width: auto;
+        padding: 0px;
+        .scCon {
+          padding: 13px;
+          padding-bottom: 30px;
+        }
+        .head {
+          background: $white;
+          position: fixed;
+          width: 100%;
+          height: 44px;
+          border: 0px;
+          padding: 0px;
+          z-index: 9;
+          border-bottom: 1px solid $line;
+          h1 {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            img {
+              z-index: 99999;
+              width: 85px;
+              height: 24px;
+              top: 8px;
+            }
+          }
+        }
+        .bot {
+          position: fixed;
+          width: 100%;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          .btn-lg {
+            padding: 0;
+            height: 55px;
+            line-height: 55px;
+          }
+        }
+        .con {
+          border: 0px;
+          margin: 0px;
+          padding-bottom: 55px;
+          padding-top: 44px;
+        }
+        .joinSecBox {
+          padding-bottom: 0px;
+        }
+        .finBox {
+          width: 100%;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          position: fixed;
+        }
+      }
+    }
+  }
+
+  .payBan_2 {
+    &:before {
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+    }
+    &:after {
+      display: none;
+    }
+  }
+
+  .mainVisual {
+    .item {
+      .img800 {
+        display: none !important;
+      }
+      .img640 {
+        display: block !important;
+      }
+    }
+  }
+
+}
+
+@media (min-width: 601px) {
+  .mscSlider_601 {
+    display: block !important;
+  }
+  //mscSlider_601 601이상 슬라이더 보이게(600이하는 안보이게)
+  .mscSlider_600 {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .mscSlider_601, .mscSlider_800, .mscSlider_web {
+    display: none !important;
+  }
+  .mscSlider_600 {
+    display: block !important;
+  }
+
+  .vsText {
+    .vsNotice {
+      .newsWrap {
+        width: 210px;
+        a {
+          width: 200px;
+        }
+      }
+    }
+  }
+
+  .msc {
+    .linkBox {
+      li, .li {
+        dl {
+          padding: 10px 0;
+        }
+      }
+    }
+    .mscBan {
+      > li {
+        height: auto;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .mscBan_1 {
+        padding: 30px 13px;
+        ul {
+          width: 90%;
+        }
+      }
+      .mscBan_2 {
+        padding: 30px 13px;
+      }
+    }
+  }
+  .msc3 {
+    .decoBox {
+      ul {
+        li {
+          width: 50%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .decoBox2 {
+    li {
+      width: 50% !important;
+      margin-bottom: 20px;
+      dd {
+        min-height: auto;
+        small {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .msc4 {
+    .counterBox {
+      li {
+        width: 50% !important;
+        display: inline-block !important;
+        height: 100px;
+        dt {
+          .counter {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  .subWrap {
+    margin-top: 30px;
+  }
+
+  .garoTBCell, .garoCell {
+    @for $i from 1 through 8 {
+      &.col_#{$i} {
+        li, .li {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .infoArea {
+    li {
+      min-height: inherit;
+    }
+  }
+
+
+  .lineTB {
+    label {
+      margin: 0 2px;
+    }
+    thead tr {
+      th {
+        padding: 6px 6px !important;
+      }
+    }
+    tbody {
+      tr {
+        th, td {
+          padding: 10px 6px !important;
+        }
+      }
+    }
+  }
+
+  .contractInfoBox {
+    li {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .searchBox {
+    width: 100%;
+    float: inherit;
+    input {
+      width: calc(100% - 47px);
+    }
+    .btnSch {
+      width: 44px;
+      i {
+        font-size: $font-size-xmmiddle;
+      }
+    }
+  }
+
+  .globeBox {
+    dl {
+      dt {
+        &:before {
+          background-size: 564px 94px;
+        }
+      }
+    }
+  }
+
+  .userBox {
+    dl {
+      dt {
+        &:before {
+          background-size: 660px 94px;
+        }
+      }
+    }
+  }
+  .globeBox, .userBox {
+    dl {
+      dt {
+        &:before {
+          width: 94px;
+          height: 94px;
+        }
+      }
+    }
+    li {
+      display: inline-block !important;
+      width: 50% !important;
+      margin-bottom: 10px;
+      &:nth-child(2) {
+        dt:before {
+          background-position: -94px 0;
+        }
+      }
+      &:nth-child(3) {
+        dt:before {
+          background-position: -188px 0;
+        }
+      }
+      &:nth-child(4) {
+        dt:before {
+          background-position: -282px 0;
+        }
+      }
+      &:nth-child(5) {
+        dt:before {
+          background-position: -376px 0;
+        }
+      }
+      &:nth-child(6) {
+        dt:before {
+          background-position: -470px 0;
+        }
+      }
+      &:nth-child(7) {
+        dt:before {
+          background-position: -564px 0;
+        }
+      }
+    }
+  }
+
+  .bankBox {
+    li {
+      width: 50% !important;
+      display: inline-block !important;
+    }
+  }
+  .alarmBan {
+    display: none;
+  }
+
+  .circleBox {
+    .inn {
+      width: 100%;
+      height: auto;
+      border-radius: 0px;
+    }
+  }
+
+  .payBanBox {
+    .textBox {
+      padding: 0px;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .stepImgBox {
+    img {
+      max-width: 100%;
+      max-height: 400px;
+      width: auto;
+    }
+  }
+
+  .msc1 {
+    .lineCell {
+      border: 0px;
+    }
+    .li {
+      width: 200px !important;
+      margin: 0 auto;
+      float: none;
+      border: 0px;
+      display: table;
+    }
+  }
+
+  .flipBox .mscSlider .item {
+    float: inherit;
+    width: 100%;
+  }
+
+  .apiBox {
+    li, .li {
+      width: 100% !important;
+      height: auto;
+    }
+  }
+
+  .linkBox {
+    .owl-nav {
+      .owl-prev {
+        left: 6px;
+      }
+      .owl-next {
+        right: 6px;
+      }
+    }
+  }
+
+  .apiBox {
+    dl {
+      padding: 0 20px;
+    }
+    .owl-nav [class*='owl-'] {
+      top: -150px;
+    }
+  }
+
+  .easyPay {
+    .easyInfo {
+      dl {
+        border: 0px;
+      }
+    }
+  }
+
+  .portBox {
+    li {
+      display: inline-block !important;
+      width: 50% !important;
+    }
+  }
+
+}

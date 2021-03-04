@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>서비스 등록 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="format-detection" content="telephone=no"/>
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/IE9.js"></script>
+  <![endif]-->
+    
+  <!-- import CSS -->
+  <link rel="stylesheet" href="../assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+
+  <!-- import el-elment CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="wrapper">
+      <div id="ltnav" class="lnb">
+        <div class="logoBox">
+          <h1><a href="./index.html">유디체크</a></h1>
+        </div>
+        <!--// logoBox -->
+        <div id="cssmenu">
+          <h2 class="invisible">현재 위치한 페이지 하위 메뉴</h2>
+          <div class="user_infoBox">
+            <div class="user_info_top">
+                <dl>
+                    <dt>접속ID</dt>
+                    <dd>admin</dd>
+                </dl>
+                <dl>
+                    <dt>접속자</dt>
+                    <dd>관리자</dd>
+                </dl>
+                <dl>
+                    <dt>IP주소</dt>
+                    <dd>218.232.75.133</dd>
+                </dl>
+            </div>
+            <div class="user_info_bottom">
+                <button type="button" class="btn btn_logout btn-pri">로그아웃</button>
+            </div>
+          </div>
+          <!--// user_infoBox -->
+
+          <ul>
+            <li class="dep1 active menu2">
+              <a href="javascript:void(0);"><span><i class="la la-check-circle"></i> 서비스 설정</span></a>
+              <ul>
+                <li>
+                  <a href="list_service.html"><span>서비스 목록</span></a>
+                </li>
+                <li class="active">
+                  <a href="write_service.html"><span>서비스 등록</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--// cssmenu -->
+      </div>
+      <!--// ltnav -->
+      <div id="header">
+        <nav class="gnbWrap">
+          <h2 class="invisible">상단메뉴</h2>
+          <ul class="gnb">
+              <li class="menu_btn show_lnb"><a href="#"><i class="la la-bars"></i></a></li>
+              <li class="menu_item"><a href="index.html"><h3><i class="la la-folder"></i> 서류 관리</h3></a></li>
+              <li class="menu_item current"><a href="list_service.html"><h3><i class="la la-check-circle"></i> 서비스 설정</h3></a></li>
+              <li class="menu_item"><a href="list_adm.html"><h3><i class="la la-user"></i> 관리자 설정</h3></a></li>
+              <li class="menu_item"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
+              <li class="menu_item"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
+              <div class="nav-underline"></div>
+          </ul>
+        </nav>
+      </div>
+      <!--// header -->
+
+      <div id="content_wrap" class="clearfix">
+        <div id="content">
+          <div id="table-fixed">
+              <h2 class="invisible">본문영역</h2>
+              <div id="content_inner">
+              
+              <!-- include -->
+                <div class="title_box clearfix">
+                  <div class="ttBox">
+                    <h3 class="tt">서비스 등록</h3>
+                  </div>
+                  <div class="location">
+                    <ul class="clearfix">
+                      <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
+                      <li><a href="#">서비스 설정</a></li>
+                      <li><strong class="active">서비스 등록</strong></li>
+                    </ul>
+                  </div>
+                  <!--// location-->
+                </div>
+                <!--// title_box-->
+
+
+
+           
+              <form action="" method="POST">
+
+                <div class="flexWrap">
+                  <dl class="flexInt">
+                    <dt><label for="serviceID"><em class="im_bullet">*</em> 서비스 <span class="en">ID</span></label></dt>
+                    <dd>
+                      <input type="text" class="int" id="serviceID" placeholder="" value="payapp" required disabled />
+                    </dd>
+                  </dl>  
+                  <dl class="flexInt">
+                    <dt><label for="serviceName"><em class="im_bullet">*</em> 서비스 이름</label></dt>
+                    <dd>
+                      <input type="text" class="int" id="serviceName" placeholder="" value="페이앱" required />
+                    </dd>
+                  </dl>  
+                  <dl class="flexInt">
+                    <dt><em class="im_bullet">*</em> 서비스 로고</dt>
+                    <dd>
+                      <div class="fileUp">
+                        <label for="serviceLogo" class="int">
+                          <input type="file" class="up-file" id="serviceLogo" placeholder="파일을 첨부해 주세요." required>
+                          <span class="placeholder">파일을 첨부해 주세요.</span>
+                          <span class="file_name"></span>
+                        </label>
+                      </div>
+                    </dd>
+                  </dl>  
+                  <dl class="flexInt">
+                    <dt><label for="findIDurl"><em class="im_bullet">*</em> 아이디 찾기 <span class="en">URL</span></label></dt>
+                    <dd>
+                      <input type="url" class="int" id="findIDurl" placeholder="아이디 찾기 URL을 입력해 주세요." required />
+                    </dd>
+                  </dl>  
+                  <dl class="flexInt">
+                    <dt><label for="findPWurl"><em class="im_bullet">*</em> 비밀번호 찾기 <span class="en">URL</span></label></dt>
+                    <dd>
+                      <input type="url" class="int" id="findPWurl" placeholder="비밀번호 찾기 URL을 입력해 주세요." required />
+                    </dd>
+                  </dl>  
+                  <dl class="flexInt">
+                    <dt><label for="pageUrl"><em class="im_bullet">*</em> 서비스 홈페이지 <span class="en">URL</span></label></dt>
+                    <dd>
+                      <input type="url" class="int" id="pageUrl" placeholder="서비스 홈페이지 URL을 입력해 주세요." required />
+                    </dd>
+                  </dl>  
+                </div>
+                <!--// flexWrap -->
+
+                <div class="flexWrap">
+                  <div class="flexDiv list">
+                    <div class="ttBox2"><h3 class="tt">사업자 업로드 서류</h3></div>
+
+                    <div class="cardBox">  
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit"><span class="en">OCR</span>인증</span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="idCard">
+                                  <label for="idCard"><span>신분증</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit"><em class="im_bullet">*</em> 필수서류</span>
+                          <span class="tblCt">
+                            <button type="button" class="btn btn-pri" @click="dialogVisible = true"><i class="la la-plus"></i>추가</button>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType1">
+                                  <label for="docType1"><span>통장 사본</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType2">
+                                  <label for="docType2"><span>사업자 등록증</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType3">
+                                  <label for="docType3"><span>실 거주지 등록</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType4">
+                                  <label for="docType4"><span>판매점 계약서</span></label>
+                                </span>
+                              </div>
+                              <div class="cell-mid cell-btn">
+                                <button type="button" class="btn btn-sm btn-line-pri">편집</button>
+                                <button type="button" class="btn btn-sm">삭제</button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">파일 업로드</span>
+                          <span class="tblCt">
+                            <button type="button" class="btn btn-pri" @click="dialogVisible = true"><i class="la la-plus"></i>추가</button>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType5">
+                                  <label for="docType5"><span>매장 사진</span></label>
+                                </span>
+                              </div>
+                              
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType6">
+                                  <label for="docType6"><span>판매상품 사진</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType7">
+                                  <label for="docType7"><span>추가된 서류 양식 이름</span></label>
+                                </span>
+                              </div>
+                              <div class="cell-mid cell-btn">  
+                                <button type="button" class="btn btn-sm btn-line-pri">편집</button>
+                                <button type="button" class="btn btn-sm">삭제</button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">추가 서류</span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType7">
+                                  <label for="docType7"><span>추가 서류</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+
+                  <div class="flexDiv list personal">
+                    <div class="ttBox2"><h3 class="tt">개인 업로드 서류</h3></div>
+
+                    <div class="cardBox">  
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit"><span class="en">OCR</span>인증</span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="idCard_pers">
+                                  <label for="idCard_pers"><span>신분증</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit"><em class="im_bullet">*</em> 필수서류</span>
+                          <span class="tblCt">
+                            <button type="button" class="btn btn-darken" @click="dialogVisible = true"><i class="la la-plus"></i>추가</button>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType1_pers">
+                                  <label for="docType1_pers"><span>통장 사본</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType2_pers">
+                                  <label for="docType2_pers"><span>사업자 등록증</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType3_pers">
+                                  <label for="docType3_pers"><span>실 거주지 등록</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType4">
+                                  <label for="docType4"><span>판매점 계약서</span></label>
+                                </span>
+                              </div>
+                              <div class="cell-mid cell-btn">
+                                <button type="button" class="btn btn-sm btn-line-pri">편집</button>
+                                <button type="button" class="btn btn-sm">삭제</button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">파일 업로드</span>
+                          <span class="tblCt">
+                            <button type="button" class="btn btn-darken" @click="dialogVisible = true"><i class="la la-plus"></i>추가</button>
+                          </span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType5_pers">
+                                  <label for="docType5_pers"><span>매장 사진</span></label>
+                                </span>
+                              </div>
+                              
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType6_pers">
+                                  <label for="docType6_pers"><span>판매상품 사진</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType7_pers">
+                                  <label for="docType7_pers"><span>추가된 서류 양식 이름</span></label>
+                                </span>
+                              </div>
+                              <div class="cell-mid cell-btn">  
+                                <button type="button" class="btn btn-sm btn-line-pri">편집</button>
+                                <button type="button" class="btn btn-sm">삭제</button>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+
+                      <div class="cardText">
+                        <div class="tblTitle">
+                          <span class="tblTit">추가 서류</span>
+                        </div>
+                        <!--// tblTitle -->
+                        <ul class="docList">
+                          <li>
+                            <div class="inn">
+                              <div class="cell-mid">
+                                <span class="input_chk first">
+                                  <input type="checkbox" id="docType7_pers">
+                                  <label for="docType7_pers"><span>추가 서류</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <!--// docList -->
+                      </div>
+                    </div>
+                    <!--// cardBox -->
+                  </div>
+                  <!--// flexDiv -->
+                </div>
+                <!--// flexWrap -->
+
+                <div class="btnArea clearfix">
+                  <span><button type="button" class="btn btn-md">목록으로</button></span>
+                  <!-- 새글등록일때 -->
+                  <span><button type="submit" class="btn btn-md btn-pri">등록</button></span>
+                  <!-- 수정일때 -->
+                  <span><button type="submit" class="btn btn-md btn-pri">변경사항 저장</button></span>
+                </div>
+
+              </form>
+
+              <!--// include -->
+
+            </div>
+            <!--//#content_inner-->
+          </div>
+          <!--//#table-fixed-->
+        </div>
+        <!--//#content-->
+      </div>
+      <!--//#content_wrap-->
+    </div>
+    <!--// wrapper -->
+
+
+    <!-- 서류양식추가 다이얼로그 -->
+    <el-dialog
+      title="서류 양식 추가"
+      :visible.sync="dialogVisible"
+      class="md">
+
+      <div class="cardBox left-side">  
+        <div class="cardText">
+          <div class="tblTitle">
+            <span class="tblTit"><em class="im_bullet">*</em> 서류 양식 이름</span>
+          </div>
+          <!--// tblTitle -->
+          <ul class="docList">
+            <li>
+              <div class="inn">
+                <div class="cell-mid">
+                  <input type="text" class="int" placeholder="서류 양식 이름을 입력해 주세요." value="판매점 계약서" required>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!--// docList -->
+        </div>
+        <div class="cardText">
+          <div class="tblTitle">
+            <span class="tblTit">서류 양식 타입</span>
+          </div>
+          <!--// tblTitle -->
+          <ul class="docList">
+            <li>
+              <div class="inn">
+                <div class="cell-mid">
+                  <span class="input_radio first">
+                    <input type="radio" id="fileImg" name="fileExtenA" checked>
+                    <label for="fileImg"><span>사진 파일</span></label>
+                  </span>
+                  <span class="input_radio">
+                    <input type="radio" id="fileAll" name="fileExtenA">
+                    <label for="fileAll"><span>다양한 파일 형식</span></label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="inn">
+                <div class="cell-mid">
+                  <span class="input_radio first">
+                    <input type="radio" id="fileOne" name="fileExtenB" checked>
+                    <label for="fileOne"><span>단일 파일</span></label>
+                  </span>
+                  <span class="input_radio">
+                    <input type="radio" id="fileMulti" name="fileExtenB">
+                    <label for="fileMulti"><span>멀티 파일</span></label>
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!--// docList -->
+        </div>
+
+        <div class="cardText">
+          <div class="tblTitle">
+            <span class="tblTit">제공 여부</span>
+          </div>
+          <!--// tblTitle -->
+
+          <ul class="docList">
+            <li>
+              <div class="inn">
+                <div class="cell-mid">  
+                  <span class="input_chk first" el-collapse-item title="Consistency" name="1">
+                    <input type="checkbox" id="availDown" checked>
+                    <label for="availDown"><span>다운로드 제공</span></label>
+                  </span>
+                </div>
+              </div>
+
+              <!-- 다운로드 제공 checked 시, addClass(true) -->
+              <div class="expand true">
+                <div class="inn">
+                  <div class="cell-mid"> 
+                    <div>
+                      <input type="url" class="int" id="serviceName" placeholder="다운로드 URL을 입력해 주세요." value="http://url/of/download" required>
+                    </div>
+                    <div class="fileUp mgt10">
+                      <label for="serviceLogo" class="int">
+                        <input type="file" class="up-file" id="serviceLogo" placeholder="다운로드 파일을 첨부해 주세요." required> 
+                        <span class="placeholder">다운로드 파일을 첨부해 주세요.</span> 
+                        <span class="file_name" style="display: none;">20190723_091931_141.jpg</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="inn">
+                <div class="cell-mid">  
+                  <span class="input_chk first">
+                    <input type="checkbox" id="needFile" checked>
+                    <label for="needFile"><span>필요 서류 안내 제공</span></label>
+                  </span>
+                </div>
+              </div>
+              
+              <!-- 다운로드 제공 checked 시, addClass(true) -->
+              <div class="expand true">
+                <!-- 추가 버튼 클릭시, inn 엘리먼트 반복 -->
+                <div class="inn">
+                  <div class="cell-mid cell-int"> 
+                    <label for="docfileName1" class="invisible">서류명</label>
+                    <input type="text" class="int" id="docfileName1" placeholder="서류명을 입력해 주세요." value="법인 사업자" >
+                  </div>
+                  <div class="cell-mid"> 
+                    <label for="docfileExp1" class="invisible">서류의 설명</label>
+                    <input type="text" class="int" id="docfileExp1" placeholder="서류의 설명을 입력해 주세요." value="법인 인감 증명서 추가" >
+                  </div>
+                </div>
+                <div class="inn">
+                  <div class="cell-mid cell-int"> 
+                    <label for="docfileName2" class="invisible">서류명</label>
+                    <input type="text" class="int" id="docfileName2" placeholder="서류명을 입력해 주세요." value="" >
+                  </div>
+                  <div class="cell-mid"> 
+                    <label for="docfileExp2" class="invisible">서류의 설명</label>
+                    <input type="text" class="int" id="docfileExp2" placeholder="서류의 설명을 입력해 주세요." value="" >
+                  </div>
+                  <div class="cell-mid cell-btn cell-btn2">
+                    <button type="button" class="btn btn-sm btn-line-pri">추가</button>
+                  </div>
+                </div>
+              </div>
+              <!--// expand -->
+            </li>
+
+           
+          </ul>
+          <!--// docList -->
+        </div>
+      </div>
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">닫기</el-button>
+        <el-button type="primary">저장</el-button>
+      </div>
+    </el-dialog>
+
+  </div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data () {
+      return {
+        dialogVisible: false,
+        dialogVisible2: false,
+        activeName: '1',
+      }
+    },
+    methods: {
+      
+    },
+  })
+</script>
+<script src="../assets/js/jquery-latest.min.js"></script>
+<script src="../assets/js/design.js"></script>
+</html>

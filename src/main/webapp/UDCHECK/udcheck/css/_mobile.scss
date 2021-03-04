@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+
+/*--반응형--*/
+@media (max-width: 1400px) {
+    .container{
+        max-width: 980px;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        .inn{
+            padding-left: 3vw;
+            padding-right: 3vw;
+        }
+    }
+    .section{
+        .ttBox{
+            h2{
+                font-size: $font-size-slg;
+            }
+            h3{
+            font-size: $font-size-middle;
+            }
+        }
+        .bgImg{
+            img{
+                max-width: 400px;
+            }
+            .innImg {
+                .item{
+                    right: -100px;
+                    top: 210px;
+                }
+                .item3{
+                    right: 295px;
+                    top: 295px;
+                }
+            }
+        }
+        body{
+            overflow:hidden;
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    .section{
+        .bgImg{
+            top: 150px;
+            img{
+                max-width: 330px;
+            }
+            .innImg {
+                .item{
+                    right: -55px;
+                    top: 210px;
+                }
+                .item3{
+                    right: 250px;
+                    top: 255px;
+                    }
+                }
+            }
+    }
+}
+@media (max-width: 800px) {
+   .section{
+       .ttBox{
+           h2{
+               font-size: $font-size-slg;
+           }
+           h3{
+               font-size: $font-size-base;
+           }
+       }
+   }
+   .sec1{
+    .ttBoxList{
+        font-size: $font-size-middle;
+    }
+   }
+   .sec2{
+    .inn{
+        padding: 0;
+    }
+    .infoBox{
+        img{
+            max-width: 50px;
+        }
+        li{
+            &:first-child{margin-top: 0;}
+            &:last-child{margin-bottom: 0;}
+            margin: 4% 0;
+            display: block;
+            width: 100%;
+            dl{
+                padding: 2em 0;
+            }
+        }
+    }
+}
+}
+
+
+@media (max-width: 660px) {
+    #header .logo img{
+        max-width: 80px;
+    }
+    #header a{
+        font-size: 0.9em;
+    }
+    .section{
+        
+        .bgImg{
+            top: 300px;
+            img{
+                max-width: 270px;
+            }
+            .innImg {
+                .item{
+                    right: -30px;
+                    top: 180px;
+                }
+                .item3{
+                    right: 195px;
+                    top: 195px;
+                    }
+                }
+            }
+
+            .logoBox{
+                bottom: -12vh;
+                padding: 4% 0;
+                li{
+                    float:left;
+                    display: inline-block;
+                    width: 50%;
+                    height: 40px;
+                    line-height: 40px;
+                    img{
+                        max-width: 120px;
+                    }
+                }
+            }
+    }
+    
+    .sec2{
+        .ttBox{
+            img{
+                max-height: 19px;
+            }
+        }
+        .infoBox{
+            img{
+                max-width: 40px;
+            }
+            p{
+                font-size: $font-size-sm;
+            }
+            h3{
+                font-size: $font-size-middle !important;
+            }
+        }
+    }
+
+    .sec3{
+        background-attachment: inherit;
+        .container{
+            padding: 8% 0;
+        }
+        .ttBox{
+            h2{
+                font-size: $font-size-middle;
+            }
+            img{
+                max-height: 16px;
+            }
+            h3{
+                font-size: $font-size-sm;
+                opacity: 0.9;
+            }
+        }
+    }
+    .sec4{
+        .imgInfo{
+            min-height: 100px;
+        }
+    }
+
+    .sec5 {
+        background-size: 180%;
+        background-position: 60% center;
+        background-attachment: inherit;
+        .container{
+            padding: 0;
+            height: 140px;
+        }
+    }
+    .sec6{
+        .inn{
+            padding-top: 10%;
+        }
+        .ttBox{
+            img{
+                max-height: 19px;
+                margin-left: 6px;
+            }
+        }
+        .linkBtn{
+            width: 100%;
+            text-align: left;
+            dl{
+                padding: 1em 1em;
+                line-height: 1.2em;
+                &:before{
+                    background-size: 40% !important;
+                }
+            }
+            dt,dd{
+                padding-left: 35px;
+            }
+            dt{
+                font-size: $font-size-sm;
+            }
+            dd{
+                font-size: $font-size-base;
+            }
+        }
+    }
+
+    #footer{
+            font-size: $font-size-sm;
+            .linkText,.familysite, .add, .call{
+                float: inherit !important;
+                width: 100%;
+                display: block;
+            }
+            .call{
+                margin-top: 2%;
+            }
+            .selectBox{
+                min-width: 100%;
+                margin: 2% 0  !important;
+                border: 1px solid rgba($white, 0.2);
+                padding: 1% 2% !important;
+            }
+    }
+
+}
+
+@media (max-width: 500px) {
+    .sec6 .linkBtn{
+        li{
+            float: inherit;
+            width: 100%;
+            padding:0; 
+            margin: 8% 0;
+            &:last-child{
+                margin-bottom:0;
+            }
+        }
+    }
+}

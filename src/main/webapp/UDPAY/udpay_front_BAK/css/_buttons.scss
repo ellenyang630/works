@@ -1,0 +1,51 @@
+
+ .sm_btn, .md_btn, .big_btn {
+	@extend %box;
+	@extend .mp_none;
+	@extend .hand;
+	@extend %button-radius;
+	font-weight: $font-weight-base;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+	text-decoration: none !important;
+	&:hover, &:focus, &:active{
+		text-decoration: none !important;
+	}
+}
+
+.sm_btn {
+	height: 25px;
+	line-height: 24px;
+	padding: 0px 8px;
+	color: $white;
+	background: $blue;
+	border: 1px solid $blue;
+	font-size:$font-size-sm;
+	min-width: 30px;
+}
+
+.md_btn {
+	height: 38px;
+	line-height: 36px;
+	padding: 0 15px;
+	color: $white;
+	background: $blue;
+	border: 1px solid $blue;
+	min-width: 40px;
+	font-size: $font-size-sm;
+}
+
+.big_btn{
+	height: 60px;
+	line-height: 56px;
+	padding: 0 47px;
+	color: $white;
+	background: $blue;
+	border: 1px solid $blue;
+	min-width:  235px;
+	font-size: $font-size-base;
+	@include fontSt;
+}

@@ -1,0 +1,357 @@
+/* ----------------------------------------------------------------
+ font Styling
+ -----------------------------------------------------------------*/
+html {
+	overflow-x: hidden;
+}
+body {
+	font-family: Helvetica, sans-serif, Tahoma, Arial, Malgun Gothic, '맑은고딕', Dotum, '돋움';
+	font-size: 14px;
+	line-height: 1.267em;
+	letter-spacing: -0.55px;
+	overflow-x: hidden;
+	background: #f3f5f9;
+	color: #2e2e2e;
+}
+input, select, textarea, button, textarea {
+	font-family: Helvetica, sans-serif, Tahoma, Arial, Malgun Gothic, '맑은고딕', Dotum, '돋움';
+}
+.images {
+	display: inline-block;
+	color: transparent;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url(../images/images.png) no-repeat;
+	-webkit-background-size: 266px 266px;
+	background-size: 266px 266px;
+}
+.images_after:after {
+	content: '';
+	display: block;
+	color: transparent;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url(../images/images.png) no-repeat;
+	-webkit-background-size: 266px 266px;
+	background-size: 266px 266px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.images_before:before {
+	content: '';
+	display: block;
+	color: transparent;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url(../images/images.png) no-repeat;
+	-webkit-background-size: 266px 266px;
+	background-size: 266px 266px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.icon_currency {
+	display: inline-block;
+	white-space: nowrap;
+	background: url("../images/coins.png") 0 0 no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.centerThis {
+	position: relative;
+	min-width: 290px;
+	box-sizing: border-box;
+}
+.centerThis.centerInner {
+	padding: 0 15px;
+}
+
+/* ----------------------------------------------------------------
+ General Styling
+ -----------------------------------------------------------------*/
+.header_main_fixed {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 99;
+}
+
+.headerTabFixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+#header {
+	position: relative;
+	height: 48px;
+	background: #fff;
+	border-bottom: 1px solid #d8d8d8;
+}
+#header h1 {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	line-height: 48px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #2e2e2e;
+}
+#header h1.images {
+	width: 96px;
+	height: 23.6px;
+	background-position: -71px -22px;
+	margin-top: 10px;
+	color: transparent;
+}
+
+/* ----------------------------------------------------------------
+ header .util
+ -----------------------------------------------------------------*/
+#header_back span, #header_back a, #header_close span, #header_close a {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+}
+
+#header_back {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 48px;
+	width: 48px;
+	cursor: pointer;
+}
+#header_back i {
+	background-position: -222px 0;
+	width: 15px;
+	height: 16px;
+	position: absolute;
+	top: 17px;
+	left: 15px;
+}
+
+#header_close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 48px;
+	width: 48px;
+	cursor: pointer;
+}
+
+#header_close i {
+	background-position: -251px 0;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: 17px;
+	right: 15px;
+}
+
+/* ----------------------------------------------------------------
+ lnb Styling
+ -----------------------------------------------------------------*/
+#content_wrap {
+	/*position: relative;*/
+	display: table;
+	width: 100%;
+	height: 100%;
+	background: #f3f5f9;
+}
+#content {
+	min-width: 320px;
+	height: 100%;
+}
+#content #table-fixed {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+/* new header layout */
+.sub_header {/* 180523 */
+	/*height: 176px;*/
+	background: #007aff;
+	border-bottom: none !important;
+	padding: 0 15px;
+}
+.sub_header2 {
+	/*height: 203px !important;*/
+}
+
+.sub_header .coinq_hd {/* 180523 */
+	/*height: 64px;*/
+}
+.sub_header .coinq_hd h1 {
+	line-height: 64px;
+	text-align: center;
+}
+
+.coinq_hd h1 .logoImg {
+	display: inline-block;
+	width: 107px;
+	height: 29px;
+	vertical-align: middle;
+	margin-top: -1px;
+}
+
+.sub_header .coinq_hd i {
+	background-position: -188px 0 !important;
+}
+
+/*.abst_cont{
+ position: absolute;
+ top: 67px;
+ z-index:100;
+ padding-bottom: 60px;
+ }*/
+
+.mgb_cont {
+	padding-bottom: 48px;
+}
+
+.selectCtr .Select-option-icon {
+	padding-left: 25px;
+	background-size: 18px;
+	margin: 0px 10px;
+	line-height: 42px;
+	overflow: hidden;
+	white-space: nowrap;
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	width: 100%;
+}
+
+.selectCtr .nara01 {
+	display: inline-block;
+	background-image: url('http://devteam2.hosting.bizfree.kr/admin/images/nara/afghanistan.png');
+}
+
+/***********************************
+ * wSelect-e
+ ***********************************/
+.wSelect-el {
+	width: 0px;
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	overflow: hidden;
+}
+.wSelect {
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.wSelect-arrow {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 100%;
+}
+.wSelect-arrow:after {
+	font-family: FontAwesome;
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	content: '\f107';
+	font-size: 19px;
+	color: #999;
+}
+.wSelect-selected {
+	margin: 0px 10px;
+	line-height: 42px;
+	overflow: hidden;
+	white-space: nowrap;
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	width: 100%;
+	/*color: #999;*/
+	color:#2e2e2e;
+	font-size: 13px;
+}
+.wSelect-options-holder {
+	position: absolute;
+	display: none;
+	left: 0px;
+	z-index: 200;
+	overflow: hidden;
+}
+.wSelect-multiple .wSelect-options-holder {
+	position: relative !important;
+	display: block !important;
+	top: auto !important;
+	z-index: auto !important;
+	border: none !important;
+}
+.wSelect-options {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.wSelect-option {
+	font-size: 13px;
+}
+.wSelect-option-value {
+	margin: 0 5px;
+	padding: 5px 0;
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.wSelect-option-disabled .wSelect-option-value {
+	filter: alpha(opacity=20);
+	opacity: 0.2;
+}
+.wSelect-option-icon {
+	padding-left: 25px;
+	background-size: 18px;
+}
+/***********************************
+ * Theme - classic
+ ***********************************/
+.wSelect-theme-classic.wSelect {
+	min-width: 100px;
+	width: 100% !important;
+	padding: 0;
+	height: 42px;
+	font-size: 14px;
+	color: #2e2e2e;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+}
+.wSelect-theme-classic .wSelect-options-holder {
+	background-color: #fff;
+	border: solid #ddd 1px;
+	width: 100%;
+}
+.wSelect-theme-classic .wSelect-option {
+	background-color: #fff;
+	color: #999;
+}
+.wSelect-theme-classic .wSelect-option-disabled {
+	background-color: #fff !important;
+	color: #3e3e3e !important;
+}
+.wSelect-theme-classic .wSelect-option-selected, .wSelect-theme-classic .wSelect-option:hover {
+	background-color: #d8dbe2;
+	color: #3e3e3e;
+}

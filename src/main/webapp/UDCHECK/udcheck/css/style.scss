@@ -1,0 +1,647 @@
+@charset "UTF-8";
+@import "variables";
+@import "reset";
+@import "layout";
+@import "buttons";
+@import "tab";
+
+#header{
+  background-color: $white;
+  border-bottom: 1px solid $line-light;
+  height: 60px;
+  line-height: 60px;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 10;
+  .logo{
+    float:left;
+    img{
+      max-width: 100px;
+      position: relative;
+      top: -4px;
+    }
+  }
+  .gnb{
+    float:right;
+    @extend %group;
+    li{
+      float: left;
+      margin-left: 3vw;
+      position: relative;
+      &:first-child{
+        margin-left: 0px;
+        }
+        &.on{
+          a{
+            color: $blue;
+            font-weight: $font-weight-normal;
+          }
+          &:after{
+            width:100%;
+            height: 3px;
+            background: $blue;
+            position: absolute;
+            left:0;
+            bottom:0;
+            right:0;
+            content:'';
+            display: inline-block;
+          }  
+      } 
+    }
+  }
+      a{
+        font-size: $font-size-base;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+}
+
+#footer{
+  background: $black;
+  color: $white;
+  li{
+    @extend %group;
+    padding: 0.7% 0;
+    &:last-child{
+      padding: 1% 0;
+    }
+    &:first-child{
+      border-bottom: 1px solid rgba($white,0.05);
+     a{  
+       color: $white;
+       margin: 0 0.5vw;
+     }
+    }
+    .linkText a{
+      &:first-child{
+        margin-left: 0px;
+      }
+    }
+    .linkText, .add{
+      float:left;
+    }
+    .linkSel, .call{
+      float:right;
+    }
+  }
+  .call{
+    padding-left: 60px;
+    background: url(../images/udcheck/icon_call.png) no-repeat left 5px;
+    h2{
+      letter-spacing: 0.1vw;
+      font-weight: $font-weight-bold;
+    }
+    h3{
+      font-size: $font-size-sm;
+      letter-spacing: 0;
+      opacity: 0.8;
+    }
+  }
+  .familysite{
+    float:right;
+    }
+  .add{
+    font-size: $font-size-sm;
+    color: rgba($white,0.9);
+    line-height: 1.5em;
+    span{
+      margin: 0 0.3vw;
+      letter-spacing: 0;
+    }
+  }
+  .copy{
+    letter-spacing: 0;
+  }
+  .selectBox{
+    padding: 3px 6px;
+    min-width: 200px;
+    color: $white;
+  }
+  .selectWrap:after{
+    color: $white;
+  }
+  option{
+    padding: 0 3px;
+    color: $black;
+  }
+}
+
+.container{
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-width: 320px;
+  @extend %group;
+}
+.section{
+  .ttBox{
+    h2{
+      font-size: $font-size-xlg;
+      line-height: 1.4em;
+      color:$black;
+      letter-spacing: -0.2vw;
+    }
+    h3{
+      margin-top: 2%;
+      font-size: $font-size-slg;
+      letter-spacing: -0.1vw;
+      word-break: keep-all;
+    }
+  }
+  .container{
+    @extend %table;
+    padding: 60px 0;
+    .inn{
+      @extend %cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+.sec1{
+  background: $white-gray;
+  .container{
+    min-height: 100vh;
+    .inn{
+      vertical-align: top;
+      padding-top: 10%;
+    }
+  }
+  .bgImg{
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    width: 50vw;
+    height: 60vh;
+    .innImg{
+      position: relative;
+      li{
+        position: absolute;
+      }
+      .item{
+        right:-160px;
+        top:260px;
+      }
+      .item2{
+        right:0;
+        top:0;
+      }
+      .item3{
+        right:400px;
+        top:400px;
+      }
+    }
+  }
+  .ttBoxList{
+    margin-top: 6%;
+    font-size: $font-size-slg;
+    position: relative;
+    &:after{
+      content:'';
+      display: block;
+      width: 1px;
+      background-color: $line;
+      position: absolute;
+      height: 95%;
+      z-index: 1;
+      top:3px;
+      left: 12px;
+    }
+    li{
+      line-height: 26px;
+      padding: 1.5% 0;
+      z-index: 3;
+      position: relative;
+      color: $black;
+      &:first-child{
+        padding-top: 0;
+      }
+      &:last-child{
+        padding-bottom: 0;
+      }
+      &.active {
+        color: $blue-light;
+        font-weight: $font-weight-normal;
+        em{
+          background-color: $blue-light;
+          -webkit-box-shadow: 6px 6px 12px rgba($blue, 0.13);
+          box-shadow: 6px 6px 12px rgba($blue, 0.12);
+          animation: ttStep 2s infinite;   
+          width: 30px;
+          height: 30px;
+          line-height: 30px;   
+        }
+      }
+    }
+    em{
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      text-align: center;
+      font-size: 14px;
+      background-color: $dis-gray;
+      border-radius: 50em;
+      color: $white;
+      margin-right: 13px;
+      transition: $transition-base; 
+    }
+  }
+}
+
+@-webkit-keyframes ttStep {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba($blue, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba($blue, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba($blue, 0);
+  }
+}
+@keyframes ttStep {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba($blue, 0.4);
+    box-shadow: 0 0 0 0 rgba($blue, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba($blue, 0);
+      box-shadow: 0 0 0 10px rgba($blue, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba($blue, 0);
+      box-shadow: 0 0 0 0 rgba($blue, 0);
+  }
+}
+
+.sec2{
+  text-align: center;
+  background-color: $blue-dark;
+  .inn{
+    padding: 1.5% 0 3% 0;
+  }
+  .ttBox{
+    h2{ 
+      color: $white;
+      }
+  }
+  .infoBox{
+    margin-top: 4%;
+    @extend %table;
+    li{
+      @extend %cell;
+      padding: 0 4%;
+      width: 33.33%;
+      dl{
+        background: $white;
+        padding: 4.4em 0;
+        @extend %button-radius;
+        dt{
+          p{
+            position: relative;
+            width: 70px;
+            margin: 0 auto;
+            label{
+              position: absolute;
+              right:-30px;
+              top: -5px;
+            }
+          }
+          margin-bottom: 2.5%;
+        }
+        dd{
+          color: $black;
+          p{
+            font-size:  $font-size-middle;
+            margin-bottom: 0.5%;
+          }
+          h3{
+            font-size:  $font-size-slg;
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec3{
+  background-attachment: fixed;
+  background-image: url("../images/udcheck/bg_sec3.png");
+  background-size:100%;
+  .container{
+    padding: 5% 0;
+  }
+  .ttBox{
+    h2{  
+      color:$white;
+    }
+    color:$white;
+    h3{
+      font-size:  $font-size-middle;
+      line-height: 1.5em;
+      letter-spacing: -0.03vw;
+    }
+  }
+}
+
+.sec4{
+  .ttBox{
+    text-align: center;
+    margin-bottom: 4%;
+  }
+  .container{
+    padding: 6% 0;
+  }
+}
+
+.sec5{
+  background-attachment: fixed;
+  background-image: url("../images/udcheck/bg_sec5.png");
+  background-size:100%;
+  margin-bottom: 3%;
+  .container{
+    padding: 8vh 0;
+  }
+  .ttBox{
+    text-align: center;
+    h2{  
+      color:$white;
+    }
+    color:$white;
+    h3{
+      font-size:  $font-size-middle;
+      line-height: 1.5em;
+      letter-spacing: -0.03vw;
+      margin-top: 1%;
+    }
+  }
+  .logoBox{
+    position: absolute;
+    bottom:-8vh;
+    left:0;
+    right:0;
+    width: 100%;
+    z-index: 3;
+    background: $white;
+    @extend %table;
+    @extend %button-radius;
+    padding: 2.5% 0;
+    li{
+      @extend %cell;
+      text-align: center;
+    }
+  }
+}
+
+.sec6{
+  text-align: center;
+  .inn{
+    padding: 5% 0;
+  }
+  .ttBox{
+    margin-bottom: 4%;
+    img{
+      margin-left: 13px;
+    }
+    h2:last-child{
+      font-weight: $font-weight-normal;
+    }
+  }
+  .linkBtn{
+    @extend %group;
+    margin: 0 auto;
+    width: 800px;
+    li{
+      position: relative;
+      padding: 0 3%;
+      float:left;
+      width: 50%;
+      &:first-child{
+        dl:before{
+          background: url(../images/udcheck/icon_goolge.png) no-repeat left center;
+        }
+      }
+      &:last-child{
+        dl:before{
+          background: url(../images/udcheck/icon_apple.png) no-repeat left center;
+        }
+      }
+      .btnTag{
+        position: absolute;
+        right: 50%;
+        @extend %left50;
+        top:-10px;
+        display: inline-block;
+        padding: 3px 13px;
+        width: 150px;
+        border-radius: 50em;
+        background: $blue-dark;
+        color: $white;
+        z-index: 1;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+        letter-spacing: 0.5px;
+      }
+    }
+    dl{
+      position: relative;
+      width: 100%;
+      padding: 2em 3.5em;
+      background-color: $white;
+      text-align: center;
+      @extend %shadow;
+      @extend %button-radius;
+      border: 1px solid $line-light;
+      text-align: left;
+      @extend %trasform;
+      &::before{
+        position: absolute;
+        @extend %top50;
+        content:'';
+        width: 46px;
+        height: 46px;
+        display: inline-block;
+      }
+      &.btnGoogle{
+        &:hover, &:active, &:focus{
+          @extend %shadowOn;
+          @extend %hand;
+          @extend %trasformOn;
+        }
+      }
+      &.btnApple{
+        position: relative;
+        opacity: 0.5;
+        background-color: #f1f1f1;
+      }
+    }
+    dt,dd{
+      padding-left: 60px;
+    }
+    dd{
+      margin-top: 0.5%;
+      font-size: $font-size-slg;
+      font-weight: $font-weight-bold;
+      color: $black;
+      letter-spacing: 0;
+    }
+  }
+}
+
+
+.downBtn{
+  position: fixed;
+  z-index: 99;
+	bottom: 50px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+  background-color: $white;
+  text-align: center;
+  @extend %shadow;
+  border-radius: 1.5em;
+  border: 1px solid $line-light;
+  @extend %trasform;
+  animation: iconani 3s 0.3s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  .btnInn{
+    @extend %table;
+    height: 100%;
+    dl{
+      @extend %cell;
+      height: 100%;
+      vertical-align: middle;
+    }
+    dt img{
+      max-width: 40%;
+    }
+    dd{
+      font-weight: $font-weight-normal;
+      color: $black;
+    }
+  }
+  &:hover, &:active, &:focus{
+    @extend %shadowOn;
+    @extend %hand;
+    @extend %trasformOn;
+    animation: inherit;
+  }
+}
+
+@keyframes iconani{
+  0% {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  10% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  20% {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  30% {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  
+  70% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  80% {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+
+
+//itemBox
+.itemBox {
+  position: relative;
+  @extend %table;
+  text-align: center;
+   img {
+    width: 100%;
+    max-width: 280px;
+    }
+  .item{
+    padding: 13px 0.4%;
+    padding-bottom: 0;
+    @extend %cell;
+    vertical-align: top;
+    position: relative;
+    width: 25%;
+  }
+  .imgInfo{
+    margin: 0 auto;
+    margin-top: 2%;
+    line-height: 1.5em;
+    max-width: 280px;
+    text-align: left;
+    word-break: keep-all;
+  }
+  small{
+    line-height: 1.4em;
+    display: block;
+  }
+}
+
+.emStep{
+  position: absolute;
+  @extend %left50;
+  top: 0px;
+  display: inline-block;
+  background: rgba($black,0.97);
+  color: $white;
+  padding: 0.3em 1.5em;
+  @extend %button-radius;
+  z-index: 3;
+  text-align: center;
+  &.emStep2{
+    width: calc(50% - 2vw);
+  }
+}
+#tab4 .item{
+  width: 33.33%;
+}
+
+.itemBoxWrap{
+  @extend %group;
+  .itemBox{
+    float:left;
+    width: 50%;
+    .item{
+      width: 50%;
+    }
+  }
+}
+
+
+
+@import "mobile";

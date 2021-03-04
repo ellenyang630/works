@@ -1,0 +1,11 @@
+CoinqPub.iml
+.idea
+.gradle
+COINQ_PUB.iml
+build
+.map
+
+.sass-cache
+*.css.map
+*.sass.map
+*.scss.map

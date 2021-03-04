@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+/* SCDream */
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/SCDream1.woff2) format('woff2'),
+  url(../fonts/SCDream1.woff) format('woff'),
+  url(../fonts/SCDream1.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../fonts/SCDream2.woff2) format('woff2'),
+  url(../fonts/SCDream2.woff) format('woff'),
+  url(../fonts/SCDream2.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/SCDream3.woff2) format('woff2'),
+  url(../fonts/SCDream3.woff) format('woff'),
+  url(../fonts/SCDream3.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/SCDream4.woff2) format('woff2'),
+  url(../fonts/SCDream4.woff) format('woff'),
+  url(../fonts/SCDream4.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/SCDream5.woff2) format('woff2'),
+url(../fonts/SCDream5.woff) format('woff'),
+url(../fonts/SCDream5.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/SCDream6.woff2) format('woff2'),
+url(../fonts/SCDream6.woff) format('woff'),
+url(../fonts/SCDream6.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/SCDream7.woff2) format('woff2'),
+url(../fonts/SCDream7.woff) format('woff'),
+url(../fonts/SCDream7.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/SCDream8.woff2) format('woff2'),
+url(../fonts/SCDream8.woff) format('woff'),
+url(../fonts/SCDream8.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SCDream';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/SCDream9.woff2) format('woff2'),
+url(../fonts/SCDream9.woff) format('woff'),
+url(../fonts/SCDream9.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  src: url(../fonts/NanumSquareR.eot);
+  src: url(../fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/NanumSquareR.woff) format('woff'),
+  url(../fonts/NanumSquareR.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  src: url(../fonts/NanumSquareB.eot);
+  src: url(../fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/NanumSquareB.woff) format('woff'),
+  url(../fonts/NanumSquareB.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 600;
+  src: url(../fonts/NanumSquareEB.eot);
+  src: url(../fonts/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/NanumSquareEB.woff) format('woff'),
+  url(../fonts/NanumSquareEB.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  src: url(../fonts/NanumSquareL.eot);
+  src: url(../fonts/NanumSquareL.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/NanumSquareL.woff) format('woff'),
+  url(../fonts/NanumSquareL.ttf) format('truetype');
+}
+
+//color
+$white: #fff !default;
+$black: #444b5e !default;
+$blue-black: #161e2a !default;
+$grey-blue: #8fa1b5 !default;
+$white-blue: #f5f7f8 !default;
+
+$base: #656c7f !default;
+$blue: #3ea0ff !default;
+$blue_a: rgba($blue, 0.15) !default;
+$red: #e56885 !default;
+$red_a: rgba($red, 0.15) !default;
+$green: #3bc289 !default;
+$green_a: rgba($green, 0.15) !default;
+$purple: #9671ee !default;
+$purple_a: rgba($purple, 0.15) !default;
+$orange: #fc9004 !default;
+$orange_a: rgba($orange, 0.15) !default;
+
+$line: #d5d8db !default;
+$line-light: #e1e4e7 !default;
+
+$white-grey: #f2f4f9 !default;
+
+//animation
+
+$transition-base: all .2s ease-in-out !default;
+$transition-fade: opacity .15s linear !default;
+
+//fontstyle
+
+$font-family: 'NanumSquare', Malgun Gothic, Dotum, Roboto, Arial !default;
+$font-family-us: Roboto, Tahoma, Arial, Helvetica, sans-serif;
+$font-icon: FontAwesome;
+
+$font-size-base: 1rem !default;
+$font-size-xlg: 2.588rem !default;
+$font-size-lg: 2rem !default;
+$font-size-slg: 1.6rem !default;
+$font-size-middle: 1.117rem !default;
+$font-size-sm: 0.9rem !default;
+
+$font-weight-light: 100 !default;
+$font-weight-base: 400 !default;
+$font-weight-normal: 500 !default;
+$font-weight-bold: 700 !default;
+
+$small-font-size: 80% !default;
+
+$normal: normal;
+
+//radius
+
+$radius-50: 50em !default;
+
+%button-radius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+%box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//vertical
+%top50 {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%left50 {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+%em{
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $white;
+  background: $grey-blue;
+  margin-right: 6px;
+  font-style: normal;
+  border-radius: $radius-50;
+}
+
+
+%group{
+  zoom: 1;
+  &:before, &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}

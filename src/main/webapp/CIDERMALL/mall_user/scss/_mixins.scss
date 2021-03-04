@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+
+/// Mixin to manage responsive breakpoints
+// see https://css-tricks.com/snippets/sass/mixin-manage-breakpoints
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+/// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// Mixin to box-sizing
+@mixin boxSizing{
+  @include prefix(box-sizing, border-box, webkit ms moz o);
+}
+
+// Mixin to clearing
+@mixin clearFix {
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}
+
+@mixin inner($maxWidth){
+  max-width: $maxWidth;
+  width: 100%;
+  margin:0 auto;
+}
+
+// keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Mixin to support IE browser
+@mixin ie-only() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+
+// placeholder
+@mixin placeholder(){
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder{
+    @content
+  }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    @content
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder{
+    @content
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder{
+    @content
+  }
+  input::-ms-input-placeholder,
+  textarea::-ms-input-placeholder{
+    @content
+  }
+  input::placeholder,
+  textarea::placeholder{
+    @content
+  }
+}
+
+
+// hover, focus, active
+@mixin hover() {
+  &:hover { @content; }
+}
+
+@mixin hover-focus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin plain-hover-focus() {
+  &,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover-focus-active() {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+
+
+// Style module for checkbox & radio
+@mixin controller(){
+  position: relative;
+  cursor: pointer;
+  font-size: $font-size-small;
+  color: $text-base;
+
+  &::selection {
+    background: transparent;
+  }
+
+  input + span {
+    @include boxSizing;
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    background: $--color-white;
+    border: 1px solid $gray-base;
+
+    &::after {
+      content: "";
+      display: block;
+      transform: scale(1);
+      transition: transform .2s;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover input + span {
+      //box-shadow: 0 2px 4px rgba($--color-black, .15);
+    }
+  }
+
+  input:active + span {
+    //box-shadow: 0 4px 8px rgba($--color-black, .15);
+  }
+
+  input:focus + span {
+    //box-shadow: 0 0 0 3px lightblue;
+  }
+  input:checked + span{
+    background: $--color-danger;
+    border-color: $--color-danger;
+  }
+  input:checked + span::after {
+    width: 18px;
+    height: 18px;
+    //transform: scale(1.2);
+    background: url("../img/ico_checkbox_on.svg") center center no-repeat;
+  }
+
+  input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+  }
+}

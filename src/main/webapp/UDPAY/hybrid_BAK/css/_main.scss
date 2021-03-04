@@ -1,0 +1,1026 @@
+/* ----------------------------------------------------------------
+ main
+ -----------------------------------------------------------------*/
+#mainVisual {
+  background: $white-grey;
+  position: relative;
+  .deco {
+    width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .deco:after {
+    content: '';
+    width: 846px;
+    height: 522px;
+    background: url('../images/main/visual_deco.png') no-repeat top center;
+    position: absolute;
+    right: -75px;
+    bottom: 50px;
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 2s infinite alternate;
+  }
+  .centerThis:before {
+    content: '';
+    width: 825px;
+    height: 400px;
+    background: url('../images/main/visual_bg.png') no-repeat bottom center;
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+    position: absolute;
+    right: -75px;
+    bottom: 0;
+  }
+
+  .textBox {
+    padding: 120px 0;
+    float: left;
+    display: inline-block;
+    img {
+      max-height: 43px;
+    }
+    h2 {
+      font-size: $font-size-xlg;
+      color: $black;
+      line-height: 1.3em;
+      letter-spacing: -2px;
+      font-weight: $font-weight-light;
+    }
+    h3 {
+      font-size: $font-size-base;
+      margin-top: 30px;
+    }
+    .hashBox {
+      margin-top: 30px;
+    }
+    .hashBox span {
+      @extend .rd50;
+      display: inline-block;
+      padding: 5px 1.2em;
+      margin: 5px;
+      font-weight: $font-weight-bold;
+      &:first-child {
+        margin-left: 0px;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+      &.cblue {
+        background: $blue_a;
+      }
+      &.cred {
+        background: $red_a;
+      }
+      &.cgreen {
+        background: $green_a;
+      }
+      &.cpurple {
+        background: $purple_a;
+      }
+      &.corg {
+        background: $orange_a;
+      }
+    }
+  }
+  .imgBox {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 680px;
+    height: 100%;
+    .inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .phone {
+      position: absolute;
+      bottom: 80px;
+      left: 0px;
+    }
+    .laptop {
+      position: absolute;
+      bottom: 80px;
+      right: 0px;
+    }
+    img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      z-index: 3;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #mainVisual {
+    .centerThis {
+      &:before {
+        height: 350px;
+        background-size: 80%;
+      }
+    }
+    .textBox {
+      h3 {
+        margin-top: 15px;
+      }
+      .hashBox {
+        margin-top: 15px;
+      }
+      img {
+        max-height: 30px;
+      }
+    }
+    .deco {
+      width: 100%;
+      &:after {
+        background-size: 70%;
+        bottom: -60px;
+      }
+    }
+    .textBox {
+      padding: 60px 0;
+    }
+    .imgBox {
+      right: 30px;
+      width: 540px;
+    }
+    .laptop {
+      bottom: 60px !important;
+      img {
+      }
+    }
+    .phone {
+      bottom: 60px !important;
+      img {
+        width: 90%;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+
+  #mainVisual {
+    .centerThis {
+      &:before {
+        background-size: 80%;
+        height: 300px;
+        right: -100px;
+      }
+    }
+    .deco {
+      &:after {
+        background-size: 60%;
+        bottom: -100px;
+      }
+    }
+    .imgBox {
+      width: 500px;
+    }
+    .phone {
+      img {
+        width: 120px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #mainVisual {
+    h2 {
+      font-size: 1.6rem !important;
+    }
+    .centerThis {
+      &:before {
+        background-size: 70%;
+        height: 320px;
+        right: -150px;
+      }
+    }
+    .deco {
+      &:after {
+        background-size: 60%;
+        bottom: -185px;
+        right: -200px;
+      }
+    }
+    .textBox {
+      padding: 40px 0;
+    }
+    .imgBox {
+      width: 360px;
+    }
+    .laptop {
+      bottom: 70px !important;
+    }
+    .phone {
+      bottom: 70px !important;
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mainVisual {
+    .centerThis {
+      padding: 0 15px;
+      &:before {
+        background: none;
+      }
+    }
+    .deco {
+      width: 100%;
+      &:after {
+        background: none;
+      }
+    }
+    .textBox {
+      float: inherit;
+      display: block;
+      padding: 40px 0 20px 0;
+      text-align: center;
+      h2 {
+        word-break: keep-all;
+        font-size: 2rem !important;
+        letter-spacing: -2px !important;
+      }
+      h3, .hashBox {
+        margin-top: 15px;
+      }
+      img {
+        position: relative;
+        top: 10px;
+      }
+    }
+    .imgBox {
+      padding-bottom: 40px;
+      position: inherit;
+      position: relative;
+      text-align: center;
+      right: inherit;
+      width: 100%;
+      .laptop {
+        position: inherit;
+        right: inherit;
+        bottom: inherit !important;
+        width: 100%;
+        img {
+          max-width: 90%;
+          padding-left: 10%;
+        }
+      }
+      .phone {
+        bottom: 0px !important;
+        left: 0 !important;
+        width: 20%;
+
+        z-index: 3;
+        img {
+          max-width: 100%;
+          width: 100% !important;
+          padding-left: 38%;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #mainVisual {
+    .hashBox {
+      font-size: 0.9em;
+      span {
+        padding: 2px 1.2em !important;
+        margin: 3px 2px !important;
+      }
+    }
+  }
+}
+
+
+.mSIn {
+  padding: 6% 0;
+  .titleBox {
+    text-align: center;
+    margin-bottom: 50px;
+    img {
+      position: relative;
+      top: 6px;
+    }
+    h2 {
+      font-size: $font-size-lg;
+      line-height: 1.4em;
+      letter-spacing: -2px;
+      strong {
+        color: $blue;
+        font-weight: $font-weight-base;
+      }
+    }
+    h3 {
+      margin-top: 20px;
+      line-height: 1.5em;
+      font-size: $font-size-middle;
+    }
+    .logo_img {
+      height: 33px;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .mSIn {
+    .titleBox {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .mSIn {
+    .titleBox h2, .tt {
+      font-size: 1.6rem !important;
+    }
+    .titleBox {
+      margin-bottom: 30px;
+      img {
+        height: 30px;
+        position: relative;
+        top: 4px;
+      }
+    }
+    .logo_img {
+      height: 26px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mSIn {
+    .titleBox h3 {
+      font-size: 1rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mSIn{
+    .titleBox {
+      margin-bottom: 15px !important;
+      h3 {
+        margin-top: 10px;
+      }
+    }
+    .apiLink {
+      margin-top: 15px !important;
+    }
+  }
+}
+
+
+#mSec {
+  dt:before {
+    content: '';
+    width: 140px;
+    height: 100px;
+    display: block;
+    background: url('../images/main/icon_mSec.png') no-repeat;
+    background-size: 560px 300px;
+    margin: 0 auto;
+  }
+  .icon2 dt:before {
+    background-position: -140px 0;
+  }
+  .icon3 dt:before {
+    background-position: -280px 0;
+  }
+  .icon4 dt:before {
+    background-position: -420px 0;
+  }
+  .icon5 dt:before {
+    background-position: 0px -100px;
+  }
+  .icon6 dt:before {
+    background-position: -140px -100px;
+  }
+  .icon7 dt:before {
+    background-position: -280px -100px;
+  }
+  .icon8 dt:before {
+    background-position: -420px -100px;
+  }
+  .icon9 dt:before {
+    background-position: 0px -200px;
+  }
+  .icon10 dt:before {
+    background-position: -140px -200px;
+  }
+  .icon11 dt:before {
+    background-position: -280px -200px;
+  }
+  .icon12 dt:before {
+    background-position: -420px -200px;
+  }
+  dd {
+    min-height: 70px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec {
+    .desBox {
+      dt {
+        margin-bottom: 8px;
+      }
+      dt:before {
+        margin-bottom: 0px;
+      }
+      li {
+        width: 31.5%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  #mSec {
+    .desBox {
+      li {
+        width: 48%;
+      }
+    }
+  }
+}
+
+
+
+
+
+#mSec, #mSec5 {
+  @extend %desBox;
+}
+
+@media screen and (max-width: 800px) {
+  #mSec, #mSec5 {
+    dt {
+      font-size: 1.3rem !important;
+    }
+    dd {
+      font-size: 1.1rem !important;
+      word-break: keep-all;
+    }
+  }
+}
+
+#mSec3, #mSec4 dl:first-child {
+  @extend %dasBoxLine;
+}
+
+#mSec2, #mSec4 {
+  background: $white-grey;
+  .desBox {
+    display: table;
+    width: 100%;
+    dl {
+      display: table-cell;
+      padding: 0 40px;
+      width: 50%;
+      &:first-child {
+        padding-left: 0px;
+      }
+      &:last-child {
+        padding-right: 0px;
+      }
+      dt {
+        text-align: center;
+        font-size: $font-size-lg;
+        color: $black;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+#mSec2 {
+  .imgBox {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      -webkit-animation: mover 2s infinite alternate;
+      animation: mover 2s infinite alternate;
+    }
+    img {
+      position: relative;
+    }
+  }
+  .info {
+    width: 110px;
+    height: 110px;
+    border-radius: 50em;
+    padding: 8px;
+    color: $white;
+    font-size: $font-size-base;
+    letter-spacing: -1px;
+    line-height: 1.3em;
+    display: table;
+    border: 8px solid rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    p {
+      display: table-cell;
+      vertical-align: middle;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .phoneBox .imgBox {
+    &:before {
+      width: 423px;
+      height: 377px;
+      background: url('../images/main/img_deco.png') no-repeat 0 0;
+      left: 52px;
+      top: 100px;
+    }
+    .info {
+      background: $blue;
+      right: 20%;
+    }
+  }
+  .lapBox .imgBox {
+    padding-top: 70px;
+    &:before {
+      width: 542px;
+      height: 406px;
+      background: url('../images/main/img_deco2.png') no-repeat 0 0;
+      right: -70px;
+      bottom: 50px;
+      left: 0px;
+      top: 40px;
+    }
+    .info {
+      background: $green;
+      top: 40px;
+    }
+  }
+
+  .pgBox {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid $line-light;
+    h3 {
+      font-size: $font-size-middle;
+      text-align: center;
+      color: $black;
+      margin-bottom: 40px;
+      img {
+        max-height: 23px;
+        position: relative;
+        top: 6px;
+      }
+    }
+    ul {
+      display: table;
+      width: 100%;
+    }
+    li {
+      display: table-cell;
+      width: 20%;
+      text-align: center;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1279px) {
+
+  #mSec2 {
+    .phone img {
+      max-width: 180px;
+    }
+    .laptop img {
+      max-width: 400px;
+    }
+    .imgBox:before {
+      background-size: 80% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #mSec2 {
+    .phoneBox {
+      .info {
+        right: 13% !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+
+  #mSec2 {
+    .tt span {
+      display: block;
+      width: 80px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
+
+    .phoneBox {
+      .tt {
+        color: $blue;
+      }
+      .imgBox {
+        margin-top: 20px;
+        &:before {
+          width: 100%;
+          top: 0px;
+          left: 25%;
+          background-size: 50% !important;
+        }
+      }
+      img {
+        max-width: 100px;
+      }
+    }
+    .lapBox {
+      .tt {
+        color: $green;
+      }
+      .imgBox {
+        margin-top: 0px;
+        padding-top: 30px;
+        &:before {
+          width: 100%;
+          top: 20px;
+          left: 25%;
+          background-size: 60% !important;
+        }
+      }
+      img {
+        max-width: 240px;
+      }
+    }
+    .pgBox {
+      margin-top: 30px;
+      padding-top: 30px;
+      ul {
+        display: block !Important;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+      }
+      h3 img {
+        height: 18px;
+      }
+
+      .mSlider2 {
+        li {
+          width: 100% !important;
+          display: inline-block !important;
+        }
+        .dl {
+          height: 80px;
+          border: 1px solid $line;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          background: $white;
+          text-align: center;
+          width: 100%;
+          display: table;
+          .inner {
+            vertical-align: middle;
+            display: table-cell;
+            margin: 0 auto;
+          }
+          img {
+            height: 33px;
+            width: inherit;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#mSec3 {
+  .msTabBox {
+    display: table;
+    width: 100%;
+    margin: 0 -30px;
+  }
+  .tab, .tab-content {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 30px;
+  }
+  .tab {
+    width: 35%;
+    i {
+      margin-right: 8px;
+    }
+  }
+  .apiLink {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec3 {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .tab, .tab-content {
+      display: block;
+      padding: 0px;
+      width: 100%;
+    }
+    .tab {
+      a {
+        padding: 10px !important;
+        font-size: 1rem !important;
+      }
+      i {
+        display: block;
+        vertical-align: middle;
+        margin: 0px;
+        margin-bottom: 5px;
+      }
+    }
+    .tab-content {
+      margin-top: 15px;
+      text-align: center;
+      iframe {
+        height: 250px;
+      }
+    }
+    .msTabBox {
+      margin: 0px;
+    }
+    .link {
+      display: none;
+    }
+    .desBox_line {
+      display: table;
+      width: 100%;
+      li {
+        display: table-cell;
+        text-align: center;
+        width: 25%;
+        border: 0px;
+      }
+    }
+  }
+}
+
+#mSec4 {
+  .iconBox {
+    li {
+      position: relative;
+      a {
+        padding-left: 65px !important;
+      }
+      &:before {
+        content: '';
+        background: url('../images/main/icon_mSec4.png') no-repeat 0 0;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        position: absolute;
+        @extend %top50;
+        left: 20px;
+      }
+      &.icon2:before {
+        background-position: 0 -35px;
+      }
+      &.icon3:before {
+        background-position: 0 -70px;
+      }
+      &.icon4:before {
+        background-position: 0 -105px;
+      }
+      &.icon5:before {
+        background-position: 0 -140px;
+      }
+      &.icon6:before {
+        background-position: 0 -175px;
+      }
+    }
+  }
+  .freeBox {
+    border: 1px solid $line;
+    background: $white;
+    @extend %button-radius;
+    overflow: hidden;
+    li {
+      padding: 10px 25px;
+      position: relative;
+      &:first-child {
+        margin-top: 20px;
+      }
+      &:last-child {
+        margin-bottom: 20px;
+      }
+      .free {
+        position: absolute;
+        @extend %top50;
+        right: 20px;
+        color: $blue;
+      }
+      .free:before {
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        margin-right: 10px;
+        font-size: $font-size-middle;
+        color: $blue_a;
+      }
+    }
+    .info {
+      padding: 20px 25px;
+      background: $blue;
+      color: $white;
+      strong {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec4 {
+    .desBox dl {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mSec4 {
+    ul {
+      display: block !Important;
+    }
+    .iconBox li:before {
+      left: 13px !important;
+    }
+    .freeBox li {
+      padding: 6px 25px;
+    }
+    dd{
+      padding: 0px;
+    }
+  }
+}
+
+#mSec5 {
+  .desBox{
+    li {
+      width: 31.6%;
+    }
+  }
+  .step {
+    @extend .rd50;
+    display: inline-block;
+    padding: 5px 1.2em;
+    font-size: $font-size-base;
+  }
+  dl {
+    text-align: left;
+    padding: 30px !important;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      background: url('../images/main/icon_mSec5.png') no-repeat 0 0;
+      width: 60px;
+      height: 60px;
+      display: block;
+    }
+    h3 {
+      margin-top: 15px;
+      font-size: $font-size-base;
+    }
+    &.dl {
+      span {
+        background: $blue_a;
+      }
+      dt, span {
+        color: $blue !important;
+      }
+    }
+    &.dl2 {
+      span {
+        background: $green_a;
+      }
+      dt, span {
+        color: $green !important;
+      }
+      &:after {
+        background-position: 0 -60px;
+      }
+    }
+    &.dl3 {
+      span {
+        background: $purple_a;
+      }
+      dt, span {
+        color: $purple !important;
+      }
+      &:after {
+        background-position: 0 -120px;
+      }
+    }
+  }
+
+  .sellBan {
+    margin-top: 40px;
+    background: $blue url('../images/main/banner_bg.png') no-repeat center center;
+    padding: 40px;
+    text-align: center;
+    color: $white;
+    h2 {
+      font-size: 1.6em;
+    }
+    h3 {
+      margin-top: 20px;
+    }
+    .big_btn {
+      margin-top: 30px;
+      background: $white !important;
+      color: $blue !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec5 {
+    .sellBan {
+      margin-top: 10px;
+      padding: 20px;
+      background-size: contain;
+      .big_btn {
+        margin-top: 20px;
+      }
+    }
+    .mSlider3{
+      li {
+        width: 100% !important;
+        display: inline-block !important;
+      }
+      dl {
+        padding: 20px !important;
+        &:after {
+          right: 20px;
+          top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #mSec5 dl:after {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mSec5{
+    dd{
+      text-align: center;
+    }
+  }
+  .sellBan {
+    h2 {
+      img {
+        height: 23px;
+      }
+    }
+    h3 {
+      margin-top: 10px !important;
+      font-size: 1.1rem !important;
+    }
+  }
+}
+

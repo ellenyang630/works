@@ -1,0 +1,50 @@
+@mixin badge-variant($bg) {
+  color: color-yiq($bg);
+  background-color: $bg;
+
+  @at-root a#{&} {
+    @include hover-focus() {
+      color: color-yiq($bg);
+      background-color: darken($bg, 10%);
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width rgba($bg, .5);
+    }
+  }
+}
+
+@mixin badge-light-variant($bg) {
+  color: $bg;
+  background-color: rgba($bg, 0.15);
+
+
+  @at-root a#{&} {
+    @include hover-focus() {
+      color: color-yiq($bg);
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width rgba($bg, .5);
+    }
+  }
+}
+
+@mixin badge-line-variant($bg) {
+  color: $bg !important;
+  border: 1px solid $bg;
+  @at-root a#{&} {
+    @include hover-focus() {
+      color: color-yiq($bg);
+    }
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 $badge-focus-width rgba($bg, .5);
+    }
+  }
+}

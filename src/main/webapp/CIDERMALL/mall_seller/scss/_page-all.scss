@@ -1,0 +1,1037 @@
+@charset "UTF-8";
+/* _page-all */
+//## 모든 페이지 내 각각의 스타일을 지정합니다.
+
+
+//
+//  로그인
+// --------------------------------------------------
+
+.fixed-table{
+  display: table;
+  width: 100%;
+  height: 100vh;
+  table-layout: fixed;
+}
+.cell-vm{
+  display:table-cell;
+  width: 100%;
+  height: 100vh;
+  vertical-align: middle;
+}
+
+// 로그인 영역
+.login{
+  &-card{
+    @include cardShadow;
+    max-width: 520px;
+    padding: 5.333rem 4.667rem;
+    margin: 0 auto;
+    background-color: $--color-white;
+    border-radius: $border-radius-medium;
+
+    .logo {
+      margin-bottom: 3.333rem;
+      text-align: center;
+
+      img {
+        width: 210px;
+      }
+    }
+  }
+
+  &-input{
+    @include placeholder{
+      color: $text-light;
+    }
+
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: .6667rem;
+    font-size: $--font-size-base;
+
+    &:first-child {
+      border-bottom: 0;
+      margin-top: 0;
+    }
+
+    &:before {
+      position: absolute;
+      left: .9333rem;
+      display: inline-block;
+      color: rgba($text-dark,.5);
+      font-family: $font-family-icon;
+      font-size: 150%;
+      line-height: 52px;
+    }
+
+    &.login-id:before {
+      content: "\F264";
+      font-family: $font-family-icon;
+    }
+    &.login-pw:before {
+      content: "\EECC";
+      font-family: $font-family-icon;
+    }
+
+    input{
+      @include boxSizing;
+      width: 100%;
+      height: 52px;
+      padding: 0 1.333rem 0 3.333rem;
+      font-size: $--font-size-base;
+      border-bottom: 1px solid $--border-color-base;
+      position: relative;
+
+      & ~ .focus-border{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: $--color-primary;
+        transition: 0.4s;
+      }
+      &:focus ~ .focus-border{
+        width: 100%;
+        transition: 0.4s;
+        left: 0;
+      }
+
+      &::-ms-clear {
+        display:none;
+      }
+      &::-ms-reveal{
+        display:none;
+      }
+    }
+  }
+
+  &-idSave{
+    margin-top: 1.333rem;
+  }
+
+  &-btn{
+    margin-top: 3.333rem;
+
+    button {
+      width: 100%;
+      padding: 1.067rem .8rem;
+      color:$--color-white;
+      background: $--color-primary;
+      -webkit-box-shadow: 0 .6667rem 1.333rem 0 rgba($--color-primary, .4);
+      box-shadow: 0 .6667rem 1.333rem 0 rgba($--color-primary, .4);
+      font-size: 1.267rem;
+      font-weight: $font-weight-bold;
+      border-radius: $border-radius-medium;
+
+      @include hover-focus{
+        background: darken($--color-primary,1.5%);
+      }
+    }
+  }
+}
+
+
+
+
+//
+//  대시보드
+// --------------------------------------------------
+
+.main-row{
+  .el-col:not(:first-child) .main-sect{
+    margin-top: 2rem;
+  }
+}
+
+.main-sect__tit{
+  margin-bottom: .6667rem;
+  color: $text-dark;
+  font-size: $--font-size-large;
+  font-weight: $font-weight-bold;
+
+  small{
+    font-weight: $font-weight-bold;
+  }
+}
+
+.main-card{
+  .el-card__header{
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .el-card__body{
+    padding-top: 1.333rem;
+  }
+}
+
+// 오늘 현황
+.card-group{
+  .card-sum{
+    min-height: 201px;
+    margin-top: 1.333rem;
+
+    @include res(lg){
+      margin-top: 0;
+    }
+
+    a{
+      color: inherit;
+
+      &:hover{
+        .card-sum__tit{
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .el-card__body{
+      padding: 1.333rem;
+    }
+
+    .label-outer{
+      margin-left: 1.067rem;
+      transform: translateY(-.5em);
+      vertical-align: baseline;
+      font-weight: $font-weight-bold;
+
+      i, span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i{
+        transform: translateY(0.05em);
+        font-size: 138%;
+        line-height: 1;
+      }
+    }
+    &__tit{
+      margin-bottom: 1.2rem;
+      transition: text-decoration 300ms ease-in-out;
+      font-weight: $font-weight-bold;
+
+      i{
+        vertical-align: middle;
+        font-size: 107%;
+      }
+
+      &:before{
+        display: block;
+        width: 3.333rem;
+        height: 3.333rem;
+        margin-bottom: .6667rem;
+        content:"";
+        color: $--color-success;
+        border-radius: 1.333rem;
+        background: rgba($text-dark, .05);
+      }
+    }
+  }
+
+  .card-sum{
+    $card-sum-colors:
+      "primary" $--color-primary,
+      "success" $--color-success,
+      "warning" $--color-warning,
+      "danger" $danger-sub;
+
+    @each $name, $solid-color in $card-sum-colors {
+      &--#{$name} {
+        color: $solid-color;
+
+        .card-sum__tit:before{
+          background: rgba($text-dark, .05)
+          url("../img/ico_sum_#{$name}.svg") center center no-repeat;
+        }
+
+        &.active{
+          color: $--color-white;
+          background-color: $solid-color;
+
+          .card-sum__tit:before{
+            background: rgba($text-dark, .2)
+            url("../img/ico_sum_#{$name}.svg") center center no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 많이 판매된 상품
+.goods-rank{
+  &__item{
+    display: flex;
+    padding: .6667rem .9333rem;
+    border-radius: $--border-radius-base;
+    background: $border-lighter;
+    flex-wrap: wrap;
+    align-content: center;
+
+    + .goods-rank__item{
+      margin-top: .9333rem;
+    }
+
+    .price-txt{
+      margin-left: auto;
+      font-size: $--font-size-large;
+    }
+  }
+
+  &__name{
+    color: $text-dark;
+    font-size: $--font-size-base;
+
+    span{
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .num{
+      display: inline-block;
+      width: 1.733rem;
+      height: 1.733rem;
+      margin-right: .6667rem;
+      text-align: center;
+      color: $--color-white;
+      border-radius: $--border-radius-base;
+      background: $text-light;
+      font-weight: $font-weight-bold;
+      line-height: 1.733rem;
+    }
+  }
+}
+
+// 안내문자 잔액 현황
+.msg{
+  &-balance{
+
+  }
+  &-total{
+    padding: 1.067rem;
+    text-align: center;
+    color: $--color-success;
+    background-color: $success-light;
+
+    .msg-txt{
+      font-weight: $font-weight-bold;
+    }
+    .num-txt{
+      margin-top: .3333rem;
+
+      .num{
+        font-size: 32px;
+      }
+    }
+  }
+  &-unit{
+    padding: 1rem 0 1.333rem;
+
+    .price-txt{
+      font-size: $--font-size-large;
+    }
+  }
+  &-btn{
+    margin-top: .3333rem;
+  }
+}
+
+
+
+//
+//  상품 관리
+// --------------------------------------------------
+
+// 상품 등록 > 최종 표시가격
+.payment-price{
+  &__wrap{
+    width:100%;
+    background-color: rgba(246, 192, 0, .1);
+  }
+
+  &{
+    width:100%;
+    padding: 7px 2rem;
+    @include clearfix;
+
+    &:first-child{
+      padding-top: 1.333rem;
+    }
+    &:nth-last-child(2){
+      padding-bottom: 1.333rem;
+    }
+
+    &:not(:first-child){
+      //margin-top:.6667rem;
+    }
+
+    > *{
+      float:left;
+
+      &:last-child{
+        float:right;
+      }
+    }
+    dt{
+      color:$text-base;
+      font-size:$--font-size-small;
+    }
+    dd{
+      color:$text-dark;
+      font-size: $--font-size-small;
+
+      strong{
+        font-size: $--font-size-base;
+      }
+    }
+    .none-price{
+      text-decoration: line-through;
+      color:$text-light;
+    }
+
+    &.discounted-price{
+      dd{
+        p{
+          display:inline-block;
+        }
+      }
+      .discount{
+        margin-right:.3333rem;
+        color: $--color-danger;
+        font-weight: $font-weight-bold;
+        //font-size: $font-size-xsmaller;
+      }
+    }
+
+    &.total-price{
+      padding:1.333rem 2rem;
+      border-top:1px solid $border-base;
+
+      dt, dd{
+        color:$--color-success;
+      }
+      dt{
+        font-size: $--font-size-medium;
+        line-height: 1;
+      }
+      dd{
+        strong{
+          font-size:$--font-size-large;
+        }
+      }
+    }
+  }
+}
+
+// 카테고리 관리 > 카테고리 등록 팝업
+.choose-category{
+  padding: 1.6rem 2rem 1.067rem 2rem;
+  margin-top: .6667rem;
+  background-color: rgba($text-light,.1);
+
+  .el-form.top-inline {
+    .el-input__label{
+      width: auto;
+      padding-right: 1.333rem;
+      text-align: left;
+    }
+  }
+}
+.choose-goods{
+  display: flex;
+  align-items: center;
+}
+
+.goods{
+
+  // goods-allList
+  &-allList{
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 544px;
+    border: 1px solid $border-base;
+
+    .el-table{
+      &::before{
+        display: none;
+      }
+      .cell{
+        padding:0 .3333rem;
+      }
+      th,
+      td{
+        &:first-child{
+          .cell{
+            padding-left:1rem;
+          }
+        }
+        &:last-child{
+          .cell{
+            padding-right:1rem;
+          }
+        }
+      }
+    }
+
+    .btn-loadList{
+      padding: .8rem 0 !important;
+      text-align: center;
+      background-color: rgba(161, 172, 201, .1);
+    }
+  }
+
+  // goods-transfer
+  &-transfer{
+    width: 121px;
+    padding: 0 21px;
+
+    .el-button+.el-button{
+      margin-top: 1.333rem;
+      margin-left: 0;
+    }
+  }
+
+  // goods-chkList
+  &-chkList{
+    overflow: hidden;
+    width: 500px;
+    height: 544px;
+    border: 1px solid $--color-primary;
+    background: rgba(161, 172, 201, .1);
+
+    .el-table{
+      .cell{
+        padding:0 .3333rem;
+      }
+
+      th,
+      td{
+        &:first-child{
+          .cell{
+            padding-left:1rem;
+          }
+        }
+        &:nth-child(2){
+          .cell{
+            padding-right: .6667rem;
+            padding-left:.6667rem;
+          }
+        }
+        &:last-child{
+          .cell{
+            padding-right:1rem;
+          }
+        }
+      }
+
+      td{
+        &:nth-child(2){
+          .cell{
+            padding-right: 1rem;
+            padding-left:1rem;
+          }
+        }
+      }
+    }
+
+    .el-table__empty{
+      td{
+        padding: 0 !important;
+      }
+
+      .empty-text{
+        height: 496px;
+        background-color: rgba($text-light, .1);
+      }
+    }
+  }
+}
+
+
+
+//
+//  주문 관리
+// --------------------------------------------------
+
+.view{
+  &-container{
+    width: 100%;
+
+    &--md{
+      .view-item__title{
+        width: 105px;
+        text-align: right;
+        color: $text-dark;
+        font-size: $--font-size-base;
+      }
+      .view-item__area{
+        color: $text-base;
+      }
+
+    }
+  }
+
+  &-title{
+    margin-bottom: .8rem;
+    color: $text-dark;
+    font-size: $--font-size-base;
+    font-weight: $font-weight-bold;
+  }
+
+  &-item__wrap{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  &-item__title{
+    @include boxSizing;
+    display: table-cell;
+    width: 67px;
+    padding: .8rem 1.333rem .8rem 0;
+    text-align: left;
+    vertical-align: top;
+    word-break: keep-all;
+    color: $text-base;
+    font-size: $--font-size-base;
+    line-height: .9333rem;
+    line-height: inherit;
+  }
+
+  &-item__area{
+    position: relative;
+    display: table-cell;
+    padding: .8rem 1.333rem .8rem 0;
+    color: $text-dark;
+
+    .view-item__group{
+      margin-top: .8667rem;
+
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-item__group{
+    &+ &{
+      margin-top: .5333rem;
+    }
+
+    .list-data__text{
+      &:first-child{
+        color: $text-light;
+      }
+      &:last-child{
+        .price-txt{
+          color: $text-base;
+        }
+      }
+
+      .el-button{
+        margin-left: .6667rem;
+      }
+    }
+  }
+
+  &-item__text{
+    //padding: .8rem 1.333rem .8rem 0;
+  }
+}
+
+
+
+//
+//  메시지 관리
+// --------------------------------------------------
+
+// 메시지 설정
+.send-msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .send-msg__cancel{
+    margin-top: 2rem;
+  }
+
+
+  @include res(md){
+    flex-direction: row;
+
+    .send-msg__cancel{
+      margin-top: 0;
+      margin-left: 11.333rem;
+    }
+  }
+}
+
+.phone{
+  // phone-shape
+  &-shape{
+    @include cardShadow;
+    width: 360px;
+    height: 680px;
+    margin: 0 auto;
+    border-radius: $border-radius-large;
+    background: $--color-white;
+
+    @include res(md){
+      width: 360px;
+    }
+  }
+
+  // phone-inner
+  &-inner{
+    padding: 2.067rem 1.333rem 3.133rem;
+
+    .form-card{
+      border: 0;
+      box-shadow: none;
+    }
+    .form-card__header{
+      margin-left: .6667rem;
+    }
+
+    img{
+      width: 240px;
+      height: 130px;
+    }
+
+    .textarea-wrap{
+      .el-textarea__inner{
+        width: 100%;
+        height: 440px !important;
+      }
+
+      &.textarea--with-img{
+        position: relative;
+
+        img{
+          position: absolute;
+          z-index: 10;
+          top: 1.067rem;
+          left: 1.067rem;
+        }
+        .el-textarea__inner{
+          padding-top: 156px;
+        }
+      }
+    }
+  }
+}
+
+// 메시지 충전
+.charge{
+
+  // charge-summary
+  &-summary{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.6rem 2rem;
+    color: inherit;
+    border-radius: $--border-radius-base;
+    background: $--color-white;
+
+    @include res(md){
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    dl{
+      display: table;
+
+      dt, dd{
+        display: table-cell;
+        vertical-align: middle;
+        color:$--color-success;
+      }
+    }
+
+    .table.table-borderless{
+      th, td{
+        padding: 3px 1rem;
+      }
+      th{
+        text-align: left;
+      }
+      td{
+        text-align: right;
+        font-size: $--font-size-large;
+      }
+      .label-outer{
+        margin-right: .3333rem;
+      }
+
+      .use-number{
+        th, td .price-txt {
+          color: $text-dark;
+        }
+      }
+
+      .unit-price{
+        th, td, .price-txt {
+          color: $text-light;
+        }
+      }
+    }
+  }
+
+  // charge-item
+  &-item{
+    margin-top: 1.333rem;
+
+    @include res(md){
+      margin-top: 0;
+
+      &:first-child{
+        margin-top: 0;
+        flex: 0 1 40%;
+      }
+
+      &:last-child{
+        margin-left: auto;
+        flex: 0 1 50%;
+
+        .table{
+          margin-left: auto;
+        }
+      }
+    }
+
+    &:first-child{
+      margin-top: 0;
+    }
+
+    &:last-child{
+      .table{
+        width: 100%;
+      }
+    }
+
+    &__tit{
+      padding-right: 2.667rem;
+      font-size: $--font-size-base;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  // charge-wrap
+  &-wrap{
+    margin-top:2rem;
+
+    .el-col:first-child{
+      .charge-box{
+        margin-top: 0;
+      }
+    }
+  }
+
+  // charge-box
+  &-box {
+    position: relative;
+    min-height: 160px;
+    padding: 1.133rem 1.533rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: $--color-white;
+    border-radius: $--border-radius-base;
+    font-weight: $font-weight-bold;
+
+    @include res(sm){
+      margin-top: 0;
+    }
+
+    &:before,
+    &:after{
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      width: 2rem;
+      height: 2rem;
+      content: "";
+      transform: translateY(-50%);
+      border-radius: $border-radius-circle;
+      background-color: $--background-color-base;
+      filter: drop-shadow(0 0 2rem rgba($text-dark, .1));
+    }
+
+    &:before {
+      left: -1rem;
+    }
+    &:after {
+      right: -1rem;
+    }
+  }
+
+  // charge-button
+  &-button{
+    margin-top: 1.333rem;
+  }
+}
+
+.charge-box{
+  $charge-box-colors:
+    "primary" $--color-primary #7EDCD1,
+    "success" $--color-success #8AAEFF,
+    "danger" $danger-sub #FFAEAE;
+
+  @each $name, $start-color, $end-color in $charge-box-colors {
+    &--#{$name} {
+      background: linear-gradient(90deg, $start-color 0%, $end-color 100%);
+    }
+  }
+}
+
+
+
+//
+//  주문 관리
+// --------------------------------------------------
+
+// 상세 > 구매 상품 정보
+.card-collapse{
+  .el-card__body{
+    padding: 0 !important;
+  }
+  .el-collapse{
+    overflow: hidden;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: $--border-radius-base;
+  }
+  .el-collapse-item__header{
+    height: 61px;
+    padding: 1.133rem 2rem;
+    border-bottom: 1px solid $--border-color-extra-light;
+    font-size: $--font-size-large;
+    font-weight: $font-weight-bold;
+    line-height: 61px;
+
+    &.is-active{
+      //border-bottom: 0;
+    }
+  }
+  .el-collapse-item__arrow{
+    transform: rotate(90deg);
+
+    &.is-active {
+      transform: rotate(-90deg);
+    }
+  }
+  .el-collapse-item__wrap{
+    border-bottom: 0;
+    background-color: $--color-white;
+  }
+
+  .el-collapse-item__content{
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+}
+
+// 리스트 & 상세 > 메모 팝업
+.order-info{
+  padding: 1.333rem 1.467rem;
+  background-color: rgba($text-light,.1);
+}
+.order-memo{
+  margin-top: .6667rem;
+
+  &__int{
+    display: flex;
+    overflow: hidden;
+    padding: .8rem 1rem;
+    border: 1px solid $border-base;
+    border-top: 0;
+    background-color: rgba($text-light,.1);
+    flex-wrap: wrap;
+
+    .el-input,
+    .el-button{
+      height: 80px;
+    }
+  }
+  &__cell{
+    padding: 0 .3333rem;
+    flex: 0 1 auto;
+
+    &:first-child{
+      flex-grow: 1;
+    }
+    &:last-child{
+      flex-basis:80px;
+    }
+  }
+}
+
+
+
+//
+//  마이몰 관리
+// --------------------------------------------------
+
+// 마이몰 설정 > 테마 선택 후 프리뷰
+.mymall-preview{
+  margin-top: 2rem;
+
+  @include res(lg) {
+    margin-top: 0;
+  }
+
+  &__m{
+    @include cardShadow;
+    width: 360px;
+    height: 640px;
+    margin: 0 auto;
+    border-radius: $border-radius-large;
+    background: $--color-white;
+  }
+  &__inner{
+    position: relative;
+    overflow: hidden;
+    padding: .6667rem;
+    border-radius: $border-radius-large;
+  }
+
+  &__logo{
+    @include boxSizing;
+    position: absolute;
+    z-index: 1;
+    top: 1.133rem;
+    left:50%;
+    width: 124px;
+    height: 40px;
+    transform: translateX(-50%);
+    border: 2px dashed $border-base;
+    background: $--color-white;
+
+    p{
+      text-align: center;
+      vertical-align: middle;
+      color:$text-dark;
+      font-size: $--font-size-base;
+      line-height:35px;
+
+      img{
+        vertical-align: middle;
+      }
+    }
+  }
+  &__masking{
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    left:50%;
+    width: 100%;
+    height: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba($--color-white, 0) 0%, $--color-white 100%);
+  }
+}

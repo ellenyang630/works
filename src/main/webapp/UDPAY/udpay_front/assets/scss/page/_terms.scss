@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* _terms.scss */
+.terms_wrapper{
+  width:100%;
+  height:100%;
+  padding-top: 2rem;
+  border-top: 1px solid #e8e8e8;
+  scroll-behavior: smooth;
+
+  *{
+    font-size: $font-size-xxs;
+    line-height: 2;
+  }
+  strong{
+    font-weight: $font-weight-normal;
+  }
+  .paragraph_rule{
+    margin-bottom:0.6667rem;
+  }
+  .tit_rule{
+    margin-top: 1.333rem;
+    margin-bottom:5px;
+    font-size: $font-size-xxs;
+    font-weight: $font-weight-medium;
+    color: $text-light;
+
+    &.first{
+      margin-top:0;
+    }
+    &.st{
+      font-size: 1.067rem;
+      color: $text-dark;
+      margin-bottom:0;
+
+      + .tit_rule{
+        margin-top:0;
+      }
+    }
+  }
+
+  .list_rule {
+    &.first{
+      margin-top:0.6667rem;
+    }
+    &.last{
+      margin-bottom:0.6667rem;
+    }
+  }
+
+  .list_case{
+    padding-left:18px;
+  }
+
+  .table{
+    margin: 0.6667rem 0;
+    text-align: left;
+    line-height: 1.5;
+    color: $text-light;
+    font-size: 0.8667rem;
+
+    th, td{
+      padding: 5px 10px;
+    }
+    tbody{
+      th, td{
+        vertical-align: top;
+      }
+    }
+  }
+
+  @include res(sm){
+    &{
+      *{
+        font-size: 1.067rem;
+      }
+      .tit_rule{
+        font-size: 1.2rem;
+
+        &.st{
+          font-size:1.333rem;
+        }
+      }
+      .table {
+        font-size: $font-size-xxs;
+      }
+    }
+  }
+}
+
+// 문의하기 스크롤 영역 안 개인정보취급방침
+.scrollTextWrap{
+  @include boxSizing;
+  width: 100%;
+  height: 173px;
+  padding: 1.067rem 1.267rem;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid $border-light;
+  border-radius: .533rem;
+  font-size: $font-size-base;
+  color:$gray;
+  overflow-y: auto;
+
+  .terms_wrapper{
+    padding-top:0;
+    border-top:0;
+  }
+}

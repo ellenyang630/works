@@ -1,0 +1,253 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:include page="include/header2.jsp"/>
+<div class="joinBizWrap">
+	<div class="inner">
+		<div class="centerThis">
+			<div class="joinBizCont">
+				<h2 class="joinBizTit">정산업체 회원가입</h2>
+
+				<div class="joinBizStep">
+					<ul class="clearfix">
+						<li class="s01">
+							<span class="images"></span>
+							<p><small>STEP 01</small> <br/>약관동의</p>
+						</li>
+						<li class="arrow">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+						<li class="s02 step_act">
+							<span class="images"></span>
+							<p><small>STEP 02</small> <br/>정보입력</p>
+						</li>
+						<li class="arrow">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</li>
+						<li class="s03">
+							<span class="images"></span>
+							<p><small>STEP 03</small> <br/>신청완료</p>
+						</li>
+					</ul>
+				</div><!--//joinBizStep-->
+				<div class="infoBox">
+					가입완료 후, 실제 대금정산이 가능합니다. 
+					<small>(가입 신청 후, 본사승인 절차를 거쳐 정산가능상태로 전환됩니다.)</small>
+				</div><!--//infoBox-->
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<div class="mypage-tbtext">
+							개인정보
+						</div>
+						<table class="tbSimple2 tbnoLine">
+							<colgroup>
+								<col width="80">
+								<col width="*">
+							</colgroup>
+							<thead></thead>
+							<tbody>
+								<tr class="intTr">
+									<th>이름</th>
+									<td>
+										<input type="text" class="int" placeholder="실명 입력">
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>주민번호</th>
+									<td>
+										<div class="clearfix">
+											<div class="w45pc pull-left">
+													<input type="text" class="int" placeholder="주민번호 앞자리">
+											</div>
+											<span class="btnAt  pull-left line42"> - </span>
+											<div class="w45pc pull-left">
+												<input type="text" class="int" placeholder="주민번호 뒷자리">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>휴대전화</th>
+									<td class="clearfix">
+										<div class="selectWrap w26pc pull-left">
+											<select class="selectBox">
+												<option>010</option>												
+											</select>
+										</div>
+										<div class="w42pc pull-left">
+											<input type="text" class="int" placeholder="-없이 숫자만 입력">
+										</div>
+										<div class="w26pc pull-left">
+											<button class="btn lmainblue w100p">인증</button>
+										</div>
+									</td>
+								</tr>
+								<tr class="intTr intEq">
+									<th>인증번호</th>
+									<td>
+										<input type="text" class="int" placeholder="인증번호 입력">
+										<p class="validTime cred">남은시간 03:00</p>
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>이메일</th>
+									<td>
+										<div class="clearfix">
+											<div class="w45pc pull-left">
+													<input type="text" class="int" placeholder="">
+											</div>
+											<span class="btnAt  pull-left line42">@</span>
+											<div class="selectWrap w45pc pull-left">
+												<select class="selectBox">
+													<option>직접 입력</option>												
+												</select>
+											</div>
+										</div>
+										<div class="mgt10">
+											<input type="text" class="int" placeholder="직접 입력">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!--//col-md-6-->
+					
+					<div class="col-xs-12 col-md-6">
+						<div class="mypage-tbtext ">
+							<p>상세정보</p>
+						</div>
+						<table class="tbSimple2 tbnoLine">
+							<colgroup>
+								<col width="120">
+								<col width="*">
+							</colgroup>
+							<thead></thead>
+							<tbody>
+								<tr class="intTr">
+									<th>입금 계좌은행</th>
+									<td>
+										<div class="selectWrap">
+											<select class="selectBox">
+												<option>은행선택</option>												
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>입금 계좌번호</th>
+									<td>
+										<div class="clearfix">
+											<input type="text" class="int w70pc pull-left" placeholder="-없이 숫자만 입력">
+										
+											<button class="btn lmainblue w27pc pull-left">계좌인증</button>
+										</div>
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>예금주</th>
+									<td>
+										<input type="text" class="int" placeholder="예금주명 입력">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!--//col-md-6-->
+				</div>
+				
+				<div class="row docWrapper">
+					<div class="col-xs-12">
+						<div class="mypage-tbtext clearfix">
+							서류제출
+							<a class="btn btn-md lmainblue pull-right"><i class="la la-download"></i>다운로드</a>
+							<!--<div class="col-md-6 col-xs-5 text-right">
+								<a href="#" class="btn btn-md lmainblue" data-toggle="modal" data-target="#telreset">계약서 다운로드</a>
+							</div>-->
+						</div>					
+						
+						<table class="tbSimple2 tbnoLine">
+							<colgroup>
+								<col width="190">
+								<col width="100">
+								<col width="*">
+							</colgroup>
+							<thead></thead>
+							<tbody>
+								<tr class="intTr">
+									<th>서류제출방식</th>
+									<td colspan="2">
+										<span class="input_chk">
+											<input type="radio" id="way1" name="way" checked="">
+											<label for="way1">이메일로 전송</label> 
+										</span>
+										<span class="input_chk">
+											<input type="radio" id="way2" name="way">
+											<label for="way2">파일 업로드</label> 
+										</span>
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>신분증 사본</th>
+									<td colspan="3">
+										<ul class="docBox">
+											<li><span class="first"><label><i class="fa fa-file-archive-o" aria-hidden="true"></i> 계약서_1_180426.pdf</label></span>  
+												<span class="last"><a href="#" class="btn lgray">다운로드</a></span>
+											</li>
+											<li><span class="first"><label><i class="fa fa-file-archive-o" aria-hidden="true"></i> 계약서_1_180426.pdf</label></span> 
+												<span class="last"><a href="#" class="btn lgray">다운로드</a></span>
+											</li>
+											<li><span class="first"><label><i class="fa fa-file-archive-o" aria-hidden="true"></i> 계약서_1_180426.pdf</label></span> 
+												<span class="last"><a href="#" class="btn lgray">다운로드</a></span>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr class="intTr">
+									<th>통장사본</th>
+									<td>
+										<label class="btn lmainblue">파일첨부
+											<input type="file" class="fileUp">
+							            </label>
+									</td>
+									<td></td>
+								</tr>
+								<tr class="intTr">
+									<th>추가서류</th>
+									<td>
+										<label class="btn lmainblue">파일첨부
+											<input type="file" class="fileUp">
+							            </label>
+									</td>
+									<td>
+										<span class="mem_tag">계약서_1_180426.jpg <span class="remove"><i class="fa fa-times" aria-hidden="true"></i></span></span>	
+										<span class="mem_tag">계약서_1_180426.jpg <span class="remove"><i class="fa fa-times" aria-hidden="true"></i></span></span>				
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!--//col-md-12-->
+				</div>
+				
+				<div class="informBox">
+					<p class="informTit"><i class="la la-exclamation-circle"></i>제출 서류 주의사항</p>
+					<ul>
+						<li><span>01</span>형식에 맞게 등록해주시기 바랍니다. 입력한 정보와 서류가 일치하지 않는 경우 승인이 거절될 수 있습니다.</li>
+						<li><span>02</span>법적 미성년자인 경우, 법정대리인 동의서/가족관계증명서/법정대리인 인감증명서 사본을 제출하셔야 합니다.</li>	
+						<li><span>03</span>신분증은 앞/뒷면을 모두 제출해주셔야 합니다.</li>					
+						
+					</ul>
+				</div><!--//informBox-->
+				
+				<div class="cardBtnWrap">
+					<div class="row">
+						<div class="col-xs-6 col-md-3 col-md-offset-3">
+							<a class="btn btn-md bgrayblue">취소</a>
+						</div>
+						<div class="col-xs-6 col-md-3 ">
+							<a class="btn btn-md bmainblue" href="join_biz_fin.jsp">확인</a>
+						</div>
+					</div>
+				</div><!--//cardBtnWrap-->
+			</div>
+		</div><!--//centerThis-->
+	</div>
+</div>
+<!--//joinBizWrap-->
+<jsp:include page="include/footer2.jsp"/>

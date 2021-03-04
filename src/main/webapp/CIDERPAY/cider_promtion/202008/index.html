@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<title>my사이다페이 프로모션</title>
+		<meta property="og:image" content="images/cider_link.png">
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/wow.js"></script>
+		<script>
+		new WOW().init();
+		</script>
+	
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) {
+			var element = document.querySelector('.tabs');
+
+			function resize() {
+			if (window.innerWidth < 800) {
+				element.classList.add('mb_tab');
+			} else {
+				element.classList.remove('mb_tab');
+			}
+			}
+			// For performance reasons, this method should be 
+			// "debounced" so that it doesn't have to execute 
+			// on every resize event, only when you're done resizing.
+			window.onresize = resize;
+		});
+		</script>
+
+	<body>
+		<div class="vsArea">
+			<div class="centerThis">
+				<div class="ribbon">
+					<h3>사이다페이 최고 이용법</h3>
+				</div>
+				<div class="tt">
+						<h3>이벤트 기간 중 MY사이다페이로</h3>
+						<h3>사이다페이에 가입하시면</h3>
+						<h2><strong>3-0-0</strong> 특전을 드립니다~</h2>
+				</div>
+				<div class="inBox">
+					<div class="item">
+						<dl>
+							<dt>수수료</dt>
+							<dd><strong>3</strong>%</dd>
+						</dl>
+					</div>
+					<div class="item">
+						<dl>
+							<dt>가입비</dt>
+							<dd><strong>무료</strong></dd>
+						</dl>
+					</div>
+					<div class="item">
+						<dl>
+							<dt>유지비</dt>
+							<dd><strong>ZERO</strong></dd>
+						</dl>
+					</div>
+				</div>
+				<div class="ttDate">
+					<span>
+						<label>
+						이벤트 기간
+						</label> 
+						<strong>2020.08.31</strong>까지
+					</span>
+				</div>
+				<div class="btt">
+					사이다페이는 영업점을 통한 가입만 가능합니다. <br/>
+					장안의 화제 사이다페이를 No.1 총판<br class="mb"> MY사이다페이에서 최고의 조건으로 이용하세요~
+				</div>
+			</div>
+		</div>
+		<!--//vsArea-->
+
+
+		<div class="mvArea">
+			<div class="centerThis">
+				<div class="text">
+					<div class="inn">
+						<h2>리더기 필요 없이</h2>
+						<h2>스마트폰으로 바로 결제 받는</h2>
+						<h1><img src="images/logo_white.svg" alt="사이다페이"></h1>
+					</div>
+				</div>
+				<div class="imgArea">
+					<video autoplay loop muted preload="auto" poster="images/my_cider.png">
+						<source src="images/my_cider.mp4" type="video/mp4">
+						<div class="video-alt">
+							<img src="images/my_cider.png" alt="">
+						</div>
+					</video>
+				</div>
+			</div>
+		</div>
+		<!--//mvArea-->
+
+		<div class="playArea section">
+			<div class="centerThis">
+				<div class="tt">
+					<h2>1분 소개영상</h2>
+				</div>
+				<div class="ing">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/cTeE1lGXD1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; width:100%; height:100%;"></iframe>
+				</div>
+			</div>
+		</div>	
+		<!--//playArea-->
+
+		<div class="fireBox section">
+			<div class="centerThis">
+				<div class="tt">
+					<h2>사이다페이가 이렇게 <strong>인기</strong>있는 이유는?</h2>
+					<h3>
+						속 시원한 10가지 통합 결제 솔루션!
+					</h3>
+				</div>
+				<!--//tt-->
+
+				<div id="tabs" class="tabs">
+					<div class="tab_nav">
+					<ul>
+						<li><a href="#tab-1"><span><em>1</em>카메라 <label>결제</label></span></a></li>
+						<li><a href="#tab-2"><span><em>2</em>삼성페이 <label>결제</label></span></a></li>
+						<li><a href="#tab-3"><span><em>3</em>NFC <label>결제</label></span></a></li>
+						<li><a href="#tab-4"><span><em>4</em>수기 <label>결제</label></span></a></li>
+						<li><a href="#tab-5"><span><em>5</em>SMS <label>결제</label></span></a></li>
+						<li><a href="#tab-6"><span><em>6</em>링크 <label>결제</label></span></a></li>
+						<li><a href="#tab-7"><span><em>7</em>대량 <label>결제</label></span></a></li>
+						<li><a href="#tab-8"><span><em>8</em>정기 <label>결제</label></span></a></li>
+						<li><a href="#tab-9"><span><em>9</em>등록 <label>결제</label></span></a></li>
+						<li><a href="#tab-10"><span><em>10</em>현금영수증 <label>발행</label></span></a>
+							<div class="pnArea2">
+						        <span class="nexttab2" href="#"><i class="ri-arrow-right-s-line"></i></span>
+							</div>
+						</li>
+					</ul>
+					</div>
+					<div class="pnArea">
+						<span class="pervtab" href="#"><i class="ri-arrow-left-s-line"></i></span>
+						<span class="nexttab" href="#"><i class="ri-arrow-right-s-line"></i></span>
+					</div>
+					<div id="tab-1">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_camera.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>카메라 결제</h2>
+									<h3>휴대폰 카메라로 결제할 카드를 비춰서<br/> 카드번호/유효기간을 자동으로 인식해 결제 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#오프라인결제</span>
+									<span>#배달업종</span>
+									<span>#방문판매</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//tab-1-->
+
+					<div id="tab-2">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_samsung.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>삼성페이 결제</h2>
+									<h3>
+											판매자 스마트폰에 구매자 삼성페이폰을 <br/>
+											터치해서 바로 결제 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#오프라인결제</span>
+									<span>#배달업종</span>
+									<span>#방문판매</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//tab-2-->
+
+					<div id="tab-3">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_nfc.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>NFC 결제</h2>
+									<h3>판매자 스마트폰에 구매자 신용카드를<br/>
+										터치해 바로 결제 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#오프라인결제</span>
+									<span>#배달업종</span>
+									<span>#방문판매</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-4">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_write.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>수기 결제</h2>
+									<h3>카드사 별도 특약이 없어도 고객으로부터<br/> 최소한의 신용카드정보를 전달 받아 결제 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#오프라인결제</span>
+									<span>#배달업종</span>
+									<span>#방문판매</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-5">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_sms.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>SMS 결제</h2>
+									<h3>
+										카드정보 노출을 꺼리거나,<br/> 매장 방문이 어려운 고객에게 SMS로 결제요청 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#온라인</span>
+									<span>#키인결제</span>
+									<span>#카드결제</span>
+									<span>#폰소액결제</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-6">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_link.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>링크 결제</h2>
+									<h3>
+										상품정보를 링크로 등록한 뒤 고객이 상품 링크를 
+										누르면<br/> 스마트폰으로 상세정보 조회/결제 가능 										
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#SNS판매</span>
+									<span>#온라인판매</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-7">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_excel.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>대량 결제</h2>
+									<h3>
+										다수의 고객에게 엑셀로 대량 결제요청 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#학원</span>
+									<span>#공동구매</span>
+									<span>#후원단체</span>
+									<span>#교회</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-8">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_auto.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>정기 결제</h2>
+									<h3>
+										주 단위, 월 단위 일정 금액을 자동으로 결제 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#월정액</span>
+									<span>#학원비</span>
+									<span>#강습비</span>
+									<span>#렌털료</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-9">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_upload.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>등록 결제</h2>
+									<h3> 
+										결제 정보 등록 후 이후 정기/비정기 결제건들에 대해 <br/>
+										판매자 결제 요청시 바로 결제 가능
+									</h3>
+									<h4>
+										<label>옵션</label>
+										자동결제/확인 후 결제/비밀번호 입력 후 결제
+									</h4>
+								</div>
+								<div class="tagBox">
+									<span>#병원비</span>
+									<span>#단골관리</span>
+									<span>#PC방</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="tab-10">
+						<div class="inBox">
+							<div class="imgBox">
+								<img src="images/tab_rece.png">
+							</div>
+							<div class="textBox">
+								<div class="stt">
+									<h2>현금영수증 발행</h2>
+									<h3>
+										현금영수증 무료 발행/조회/취소 가능
+									</h3>
+								</div>
+								<div class="tagBox">
+									<span>#사업자만가능</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			
+				<script type="text/javascript">
+			
+					$("#tabs").tabs();
+				
+					
+					$(".pervtab").click(function() {
+						var selected = $("#tabs").tabs("option", "selected");
+						$("#tabs").tabs("option", "selected", selected - 1);
+					});
+					$(".nexttab").click(function() {
+						var selected = $("#tabs").tabs("option", "selected");
+						$("#tabs").tabs("option", "selected", selected + 1);
+					});
+
+					$(".nexttab2").click(function() {
+						var selecteds = $("#tabs").tabs("option", "selected");
+						$("#tabs").tabs("option", "selected", selecteds - 9);
+					});
+
+				</script>
+				
+				
+				
+			</div>
+		</div>
+		<!--//fireBox-->
+
+
+		<div class="settingBox section">
+			<div class="centerThis">
+				<div class="tt">
+					<h2>
+						무료 가입 <strong>즉시 결제받기</strong> 가능
+					</h2>
+					<h3>
+						추가 비용 없이 운영도 관리도 내맘대로 편리하게!
+					</h3>
+				</div>
+				<div class="inBox">
+					<div class="item">
+						<dl>
+							<dt><strong>무료</strong> 부계정 서비스</dt>
+							<dd>같이 관리하는 직원들도 마음 대로<br/>
+								결제 받을 수 있는 서비스 </dd>
+						</dl>
+					</div>
+					<div class="item">
+						<dl>
+							<dt><strong>무료</strong> PC관리자 제공</dt>
+							<dd>PC로도 결제요청 가능,<br/>
+								대사 관리 편리 </dd>
+						</dl>
+					</div>
+					<div class="item">
+						<dl>
+							<dt>입금주기 선택가능</dt>
+							<dd>D+3일 기본정산
+								<small>
+									D+1일 빠른 정산 (수수료 0.5% 추가)
+								</small>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--//settingBox-->
+
+		<div class="welBox section">
+			<div class="centerThis">
+				<div class="tt">
+					<h2>
+						사이다페이 영업점 중 <br class="mb"><strong>최고의 이용조건</strong>으로 모십니다!
+					</h2>
+					<h3>
+						답답한 결제 상황에는 고민 말고<br class="mb"> 속 시원 하게 사이다페이 하세요~
+					</h3>
+				</div>
+				<div class="inBox">
+					<div class="item">
+						<dl>
+							<dt><span>가입비</span></dt>
+							<dd><strong>무료</strong></dd>
+						</dl>
+					</div>
+					<div class="item">
+						<dl>
+							<dt><span>관리비/유지비/위약금</span></dt>
+							<dd><strong>무료</strong></dd>
+						</dl>
+					</div>
+					<div class="item">
+						<dl>
+							<dt><span>영중소 환급 시 1.7%</span></dt>
+							<dd>
+								최저 수수료 <strong>3</strong>%
+								<small class="web">유의업종이나 리스크 업종의 경우<br/>
+									수수료가 상향될 수 있습니다. </small>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="infoBox">
+					<h2><i class="ri-information-line"></i> 이용안내</h2>
+					<ol>
+						<li>사이다페이 홈페이지에서 자세한 내용을 확인하실 수 있습니다. <a href="https://ciderpay.com" target="_blank">공식 홈페이지 바로가기</a></li>
+						<li>다만, 사이다페이는 영업점을 통한 가입만 가능합니다. 최고의 이용조건을 위해서는 <label class="web_text">우측</label> <label class="mb_text">아래</label> [무료가입]으로 가입하세요. </li>
+						<li class="mb mb_lg cred">유의업종이나 리스크 업종의 경우 수수료가 상향될 수 있습니다.</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<!--//settingBox-->
+
+		<div class="footer">
+			<div class="centerThis">
+					<h1><img src="images/logo_boot.svg" alt="bootpay"></h1>
+					<div class="text">
+						<span><strong>(주)부트페이</strong></span>
+						<span><label>사업자 등록번호</label> 618-87-00495 </span>
+						<span><label>대표</label> 윤태섭 </span><br/>
+						<span><label>고객센터</label>  1599-4602 </span>
+						<span><label>주소</label> 서울시 금천구 벚꽃로 286, 507-293호 </span>
+					</div>
+			</div>
+		</div>
+		<!--//footer-->
+
+		<div class="talkBtn">
+			<span class="btn_kakao">
+				<a href="https://pf.kakao.com/_EzfzK" target="_blank">
+					<img src="images/icon_kakao.svg"> 문의하기
+				</a>
+			</span>
+			<span class="btn_join">
+				<a href="https://my.ciderpay.com/rs/seller/c2019/join" target="_blank">
+					<i class="ri-edit-line"></i> 무료가입
+				</a>
+			</span>
+		</div>
+		<!--//talkBtn-->
+
+		
+		<div class="floatBtn">
+			<span class="btn_kakao">          
+				<a href="https://pf.kakao.com/_EzfzK" target="_blank">
+					<p>
+						<img src="images/icon_kakao.svg">
+					</p>
+					문의하기
+				</a>
+			</span>
+			<span class="btn_join">
+				<a href="https://my.ciderpay.com/rs/seller/c2019/join" target="_blank">
+					<p>
+						<i class="ri-edit-line"></i>
+					</p>
+					무료가입
+				</a>
+			</span>
+		</div>
+		<!--//floatBtn-->
+	</body>
+
+</html>

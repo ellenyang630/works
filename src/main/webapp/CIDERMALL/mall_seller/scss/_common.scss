@@ -1,0 +1,361 @@
+@charset "UTF-8";
+/* _common.scss */
+
+// for screen reader device
+.invisible {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+hr{
+  display: block;
+  margin: 0;
+  margin-top: 2rem;
+  border: 0;
+  border-top: 1px solid $border-light;
+}
+
+
+
+//
+//  Margin & Padding
+// --------------------------------------------------
+
+
+$sides: ("b": "bottom","t": "top","l": "left","r": "right");
+@each $prefix, $value in $sides {
+  $property: if($prefix == '', '', -#{$value});
+  @for $i from 0 through 5 {
+
+    //margin
+    .m#{$prefix}{
+      &-#{$i} {
+        margin#{$property}:#{$i - ($i * .5)}rem;
+      }
+    }
+
+    // padding
+    .p#{$prefix}{
+      &-#{$i} {
+        padding#{$property}:#{$i - ($i * .5)}rem;
+      }
+    }
+  }
+}
+
+.pt-1-5{
+  padding-top: .8rem;
+}
+
+
+
+//
+//  Text style
+// --------------------------------------------------
+
+// text align
+@each $alignVal in $x-align {
+  .text-#{$alignVal}{
+    text-align: $alignVal !important;
+  }
+}
+
+
+// text theme color
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+}
+
+.text-disabled{
+  color: $text-light;
+}
+
+.break-keep{
+  word-break:keep-all;
+}
+
+// 숫자 텍스트 스타일
+.num-txt {
+  strong, small {
+    vertical-align: baseline;
+    color: $text-dark;
+    color: inherit;
+  }
+  strong {
+    font-size: 2.667rem;
+    font-weight: $font-weight-bold;
+  }
+  small {
+    color: inherit;
+    font-size: $--font-size-base;
+    font-weight: $font-weight-regular;
+  }
+}
+
+// 가격 스타일
+.price-txt{
+  color: $text-dark;
+
+  strong,
+  small,
+  span{
+    vertical-align: baseline;
+  }
+
+  strong{
+    font-weight:$font-weight-bold;
+  }
+
+  small{
+    margin-left: 0;
+    color: inherit;
+    font-size: 83%;
+  }
+
+  span{
+    color: inherit;
+    font-size: 100%;
+  }
+}
+
+.price-txt__md{
+  font-size:$--font-size-large;
+}
+
+// text underline
+.under {
+  cursor: pointer;
+  text-decoration: underline;
+
+  @include hover-focus-active{
+    text-decoration: underline;
+  }
+}
+
+
+
+//
+//  Design Style
+// --------------------------------------------------
+
+// 텍스트 라벨 (el-tag 보다 큰 경우 사용)
+.label-outer{
+  display: inline-block;
+  padding: .1333rem .8rem;  // height:26px
+  text-align: center;
+  border-radius: $border-radius-round;
+  font-size: $--font-size-small !important;
+  font-weight: $font-weight-bold;
+
+  @each $color, $value in $theme-colors {
+    &--#{$color} {
+      color: $value !important;
+      background-color: rgba($value, .1);
+    }
+  }
+
+  i{
+    position: relative;
+    transform: translateY(.2em);
+    font-size: 123%;
+  }
+
+  &--fill-success{
+    color: $--color-success !important;
+    background-color: $success-light !important;
+  }
+
+  &--fill-light{
+    color: $text-base !important;
+    background-color: $--border-color-light !important;
+  }
+
+  &--fill-white{
+    color: $--color-success !important;
+    background-color: $--border-color-light !important;
+  }
+}
+
+// 페이지 내 안내 텍스트
+.help-text{
+  margin-top: .8667rem;
+  color: $text-light;
+  font-size: $--font-size-small;
+  line-height: 1.69;
+}
+
+// 데이터 키 & 밸류 구조
+.list-data{
+
+  // list-data__text
+  &__text{
+    &:last-child {
+      color:$text-dark;
+    }
+    &:first-child {
+      text-align: left;
+      word-break: keep-all;
+      color: $text-base;
+    }
+    &.emphasis{
+      min-width: 30px;
+      text-align: left;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  // list-data__wrapper
+  &__wrapper{
+
+    @at-root .table &{
+      &.inline-layout, &.block-layout {
+        &.stretch {
+          padding: 0 1rem;
+        }
+
+        // dt가 4글자일때, 너비
+        &.w200{
+          max-width: 240px;
+        }
+
+        // dt가 2글자일때, 너비
+        &.w180{
+          max-width: 180px;
+
+          .list-data__text:first-child{
+            width: 85px;
+          }
+        }
+      }
+    }
+
+    & + &{
+      margin-top: .5333rem;
+    }
+
+    & > & {
+      margin-top: 0;
+    }
+
+    // 한 줄 레이아웃
+    &.inline-layout {
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+
+      > .list-data__text{
+        + .list-data__text{
+          margin-left: .6667rem;
+          text-align: left;
+        }
+
+        &:first-child{
+          width: 56px;
+          flex-basis:56px;
+          flex-grow: 0;
+          flex-shrink: 0;
+        }
+      }
+
+      &.stretch {
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-items: baseline;
+
+        > .list-data__text {
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    &.inline-layout__fixed {
+      > .list-data__text {
+        &:first-child {
+          width:75px;
+        }
+      }
+    }
+
+    // 두 줄 레이아웃
+    &.block-layout {
+      display: block;
+      text-align: left;
+
+      > .list-data__text {
+        &:not(:first-child) {
+          margin-top: 2px; //링크결제 > 링크내역 결제정보 가격
+        }
+      }
+      &.center {
+        text-align: center;
+
+        > .list-data__text {
+          text-align: center;
+        }
+      }
+    }
+
+    // 한 줄 > 두 줄 레이아웃
+    &.inBlock-layout {
+      display: flex;
+
+      > .list-data__text{
+        + .list-data__text{
+          margin-left: .6667rem;
+          text-align: left;
+        }
+      }
+
+      &.stretch {
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        align-items: baseline;
+
+        > .list-data__text {
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 한줄 레이아웃 텍스트
+.inline_row_flex{
+  display: flex;
+  align-items: center;
+
+  .el-input{
+    display: block;
+    flex-grow: 1;
+  }
+
+  .el-button_wrap{
+    padding-left:.6667rem;
+  }
+
+  .el-input__units{
+    width:29px;
+    padding:0 .6rem;
+  }
+
+  .el-button{
+    vertical-align: top;
+  }
+  .el-select__wrap{
+    width: auto;
+    min-width:130px;
+    padding-right:.6667rem;
+  }
+}

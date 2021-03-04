@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* _variables.scss */
+
+//== Color system
+$white:                 #ffffff !default;
+$black:                 #000000 !default;
+$light-black:           #2a2a34 !default;
+$lighter-black:         #454f5d !default;
+$gray:                  #aaaaaa !default;
+$red:                   #ff4869 !default;
+$green:                 #00cdb6 !default;
+$light-blue:            #3eaeff !default;
+$yellow:                #ffc60e !default;
+$purple:                #926bff !default;
+$white-gray:            #f7f8f8 !default;
+$cola-theme:            #ff2431 !default;
+
+// Main Theme Color
+$primary:               $green !default;
+$secondary:             $white-gray !default;
+$success:               $light-blue !default;
+$info:                  $gray !default;
+$warning:               $yellow !default;
+$danger:                $red !default;
+$light:                 $lighter-black !default;
+$additional:            $purple !default;
+
+// Main Theme Color Array
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+        "primary":      $primary,
+        "secondary":    $secondary,
+        "success":      $success,
+        "info":         $info,
+        "warning":      $warning,
+        "danger":       $danger,
+        "light":        $light,
+        "additional":   $additional,
+    ),
+    $theme-colors
+);
+
+
+
+$text-dark:             $light-black !default;
+$text-base:             rgba($light-black,.7) !default;
+$text-light:            $lighter-black !default;
+
+$border-base:           #e7e7e7 !default;
+$border-light:          #eaeaea !default;
+
+
+
+//== Typography
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+$font-family-base:      $font-family-sans-serif !default;
+
+$font-size-base:        1rem !default; // Assumes the browser default, typically `15px`
+$font-size-xs:          $font-size-base * 1.133 !default;  // 17px
+$font-size-sm:          $font-size-base * 1.4 !default;  // 21px
+$font-size-md:          $font-size-base * 1.6 !default;  // 24px
+$font-size-lg:          $font-size-base * 2.533 !default;  // 38px
+
+$font-weight-normal:    400 !default;
+$font-weight-medium:    500 !default;
+$font-weight-semibold:  600 !default;
+$font-weight-bold:      700 !default;
+
+
+//== Break-point
+$--xs:                  576px !default;
+$--sm:                  768px !default;
+$--md:                  992px !default;
+$--lg:                  1200px !default;
+$--xl:                  1920px !default;
+
+$--breakpoints: (
+    'exs': (max-width: $--xs - 1),
+    'xs' : (min-width: $--xs),
+    'sm' : (min-width: $--sm),
+    'md' : (min-width: $--md),
+    'lg' : (min-width: $--lg),
+    'xl' : (min-width: $--xl)
+);
+
+$--breakpoints-spec: (
+    'xs-only' : (max-width: $--sm - 1),
+    'sm-and-up' : (min-width: $--sm),
+    'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+    'sm-and-down': (max-width: $--md - 1),
+    'md-and-up' : (min-width: $--md),
+    'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+    'md-and-down': (max-width: $--lg - 1),
+    'lg-and-up' : (min-width: $--lg),
+    'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+    'lg-and-down': (max-width: $--xl - 1),
+    'xl-only' : (min-width: $--xl),
+);
+
+// flow item icon Array
+$flow-item-icon: user, api, card, site, mobile;
+
+// quick menu color Arroy
+$quick-menu-colors: () !default;
+$quick-menu-colors: map-merge(
+    (
+        "primary":      $primary,
+        "secondary":    $secondary,
+        "success":      $success,
+        "info":         $info,
+        "warning":      $warning,
+        "danger":       $danger,
+        "light":        $light,
+        "additional":   $additional,
+    ),
+    $quick-menu-colors
+);
+
+// spacer
+$s5 :                   5px !default;
+$s10 :                  10px !default;

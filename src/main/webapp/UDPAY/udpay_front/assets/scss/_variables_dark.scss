@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* _variables.scss */
+
+//== Color system
+$white:                 #1A2744 !default;
+$black:                 #ffffff !default;
+$light-black:           #abbbd8 !default;
+$lighter-black:         #93a2c2 !default;
+$gray:                  #93a2c2 !default;
+$red:                   #FF8181 !default;
+$green:                 #55c5b8 !default;
+$blue:                  #5896FF !default;
+$light-blue:            #3eaeff !default;
+$yellow:                #ffcc5f !default;
+$purple:                #a786f3 !default;
+$white-gray:            #f7f8f8 !default;
+$cola-theme:            #ff2431 !default;
+$sky:                   #1cb6f2 !default;
+$bg:                    #2E3D60 !default;
+$bg-sky:                #455781 !default;
+$base:                  #93A2C2 !default;
+
+
+// Main Theme Color
+$primary:               $blue !default;
+$secondary:             $white-gray !default;
+$success:               $light-blue !default;
+$info:                  $gray !default;
+$warning:               $yellow !default;
+$danger:                $red !default;
+$light:                 $lighter-black !default;
+$additional:            $purple !default;
+
+// Main Theme Color Array
+$theme-colors: () !default;
+$theme-colors: map-merge(
+                (
+                        "primary":      $primary,
+                        "secondary":    $secondary,
+                        "success":      $success,
+                        "info":         $info,
+                        "warning":      $warning,
+                        "danger":       $danger,
+                        "light":        $light,
+                        "additional":   $additional,
+                ),
+                $theme-colors
+);
+
+
+
+$text-dark:             $black !default;
+$text-base:             $base !default;
+$text-light:            $lighter-black !default;
+
+$border-base:           rgba($light-black,0.3) !default;
+$border-light:          #40527B !default;
+
+
+//== Typography
+$font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+$font-family-base:      $font-family-sans-serif !default;
+$font-family-gmarket:   'GmarketSans', sans-serif !default;
+$font-family-godo:      'Godo', sans-serif !default;
+$font-family-icon:      'remixicon' !default;
+
+
+$font-size-base:        1rem !default;
+$font-size-xxs:         $font-size-base * 0.9333 !default;
+$font-size-xs:          $font-size-base * 1.17 !default;
+$font-size-sm:          $font-size-base * 1.4 !default;
+$font-size-md:          $font-size-base * 1.6 !default;
+$font-size-xmd:         $font-size-base * 2 !default;
+$font-size-lg:          $font-size-base * 2.533 !default;
+$font-size-xlg:         $font-size-base * 3 !default;
+$font-size-xxlg:         $font-size-base * 3.333 !default;
+
+
+$font-weight-normal:    400 !default;
+$font-weight-medium:    500 !default;
+$font-weight-semibold:  600 !default;
+$font-weight-bold:      700 !default;
+
+
+//== Break-point
+$--xs:                  576px !default;
+$--sm:                  768px !default;
+$--md:                  992px !default;
+$--lg:                  1200px !default;
+$--xl:                  1920px !default;
+
+$--breakpoints: (
+        'exs': (max-width: $--xs - 1),
+        'xs' : (min-width: $--xs),
+        'sm' : (min-width: $--sm),
+        'md' : (min-width: $--md),
+        'lg' : (min-width: $--lg),
+        'xl' : (min-width: $--xl)
+);
+
+$--breakpoints-spec: (
+        'xs-only' : (max-width: $--sm - 1),
+        'sm-and-up' : (min-width: $--sm),
+        'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+        'sm-and-down': (max-width: $--md - 1),
+        'md-and-up' : (min-width: $--md),
+        'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+        'md-and-down': (max-width: $--lg - 1),
+        'lg-and-up' : (min-width: $--lg),
+        'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+        'lg-and-down': (max-width: $--xl - 1),
+        'xl-only' : (min-width: $--xl),
+);
+
+
+
+// menu opener button vars
+$menu-size: 30px;
+$menu-height: 20px;
+$menu-width: 30px;
+$menu-line-size: 3px;
+$menu-line-color: #47C9AF;
+$menu-line-radius: $menu-line-size;
+$menu-to-translate: ($menu-height - $menu-line-size) / 2;
+$menu-bounce: cubic-bezier(.87,-.50,.19,1.50);
+
+// flow item icon Array
+$flow-item-icon: user, api, card, site, mobile;
+
+// quick menu vars
+$quick-menu-padding: 2rem;
+$quick-menu-trigger-size: 4rem;
+$quick-menu-action-size: 4rem;
+$quick-menu-max-child-actions: 4;
+$quick-menu-transition-duration: .4s;
+
+// spacer
+$s5 :                   5px !default;
+$s10 :                  10px !default;
+
+//trans
+%trans{
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+

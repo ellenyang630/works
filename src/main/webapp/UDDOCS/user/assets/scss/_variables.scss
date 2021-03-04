@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/*============== ui library custom theme vars ==============*/
+
+/* Transition
+-------------------------- */
+$--all-transition: all .3s cubic-bezier(.645,.045,.355,1) !default;
+$--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--fade-linear-transition: opacity 200ms linear !default;
+$--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
+$--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
+
+/* Color
+-------------------------- */
+/// color|1|Brand Color|0
+$primary: #1369fa !default;
+/// color|1|Background Color|4
+$white: #ffffff !default;
+/// color|1|Background Color|4
+$black: #000000 !default;
+$primary-light-1: mix($white, $primary, 10%) !default;      // #2b78fb
+$primary-light-2: mix($white, $primary, 20%) !default;      // #4287fb
+$primary-light-3: mix($white, $primary, 30%) !default;      // #5a96fc
+$primary-light-4: mix($white, $primary, 40%) !default;      // #71a5fc
+$primary-light-5: mix($white, $primary, 50%) !default;      // #89b4fd
+$primary-light-6: mix($white, $primary, 60%) !default;      // #a1c3fd
+$primary-light-7: mix($white, $primary, 70%) !default;      // #b8d2fe
+$primary-light-8: mix($white, $primary, 80%) !default;      // #d0e1fe
+$primary-light-9: mix($white, $primary, 90%) !default;      // #e7f0ff
+/// color|1|Functional Color|1
+$success: #00d593 !default;
+/// color|1|Functional Color|1
+$warning: #ffa443 !default;
+/// color|1|Functional Color|1
+$danger: #ff2951 !default;
+/// color|1|Functional Color|1
+$info: #7d8592 !default;
+//96a5b3
+$success-light: mix($white, $success, 80%) !default;
+$warning-light: mix($white, $warning, 80%) !default;
+$danger-light: mix($white, $danger, 80%) !default;
+$info-light: mix($white, $info, 80%) !default;
+
+$success-lighter: mix($white, $success, 90%) !default;
+$warning-lighter: mix($white, $warning, 90%) !default;
+$danger-lighter: mix($white, $danger, 90%) !default;
+$info-lighter: mix($white, $info, 90%) !default;
+
+/// color|1|Font Color|2
+$--color-text-primary: #263b54 !default;
+/// color|1|Font Color|2
+$--color-text-regular: #666666 !default;
+/// color|1|Font Color|2
+$--color-text-secondary: #86909d !default;
+/// color|1|Font Color|2
+$--color-text-placeholder: #989ba1 !default;
+
+/// color|1|Border Color|3
+$--border-color-base: #aaaaaa !default;
+/// color|1|Border Color|3
+$--border-color-light: #bcc2ca !default;
+/// color|1|Border Color|3
+$--border-color-lighter: #e3e8ee !default;
+/// color|1|Border Color|3
+$--border-color-extra-light: #f1f1f1 !default;
+
+
+/* Break-point
+--------------------------*/
+$--xs: 425px !default;
+$--sm: 768px !default;
+$--md: 992px !default;
+$--lg: 1200px !default;
+$--xl: 1920px !default;
+
+$--breakpoints: (
+        'xs' : (max-width: $--sm - 1),
+        'sm' : (min-width: $--sm),
+        'md' : (min-width: $--md),
+        'lg' : (min-width: $--lg),
+        'xl' : (min-width: $--xl)
+);
+
+$--breakpoints-spec: (
+        'xs-only' : (max-width: $--sm - 1),
+        'sm-and-up' : (min-width: $--sm),
+        'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+        'sm-and-down': (max-width: $--md - 1),
+        'md-and-up' : (min-width: $--md),
+        'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+        'md-and-down': (max-width: $--lg - 1),
+        'lg-and-up' : (min-width: $--lg),
+        'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+        'lg-and-down': (max-width: $--xl - 1),
+        'xl-only' : (min-width: $--xl),
+);
+
+
+
+/*============== custom vars ==============*/
+
+// color
+$base-black:            #222222 !default;    
+
+$bg-base:               #e3e8ee !default;
+$bg-primary:            #202a3a !default;
+$bg-primary-dark:       #111721 !default;
+
+$color-assort-1:        #1369fa !default;
+$color-assort-2:        #3eb63e !default;
+$color-assort-3:        #9a40ff !default;
+$color-assort-4:        #f89b00 !default;
+$color-assort-5:        #ff2960 !default;
+
+
+// font family
+$font-family: 'NanumBarunGothic', Malgun Gothic, Dotum, 'Apple SD Gothic Neo', sans-serif !default;
+$font-family-eng: 'Roboto', 'NanumBarunGothic', Malgun Gothic, Dotum, 'Apple SD Gothic Neo', sans-serif !default;
+//$font-family : "Apple SD Gothic Neo", arial, sans-serif !default;
+$font-icon: LineAwesome;
+
+// font size
+$font-size-sm:          0.9333rem !default;
+$font-size-base:        1rem !default;
+
+// font weight
+$font-weight-light:     100 !default;
+$font-weight-base:      300 !default;
+$font-weight-regular:   400 !default;
+$font-weight-bold:      700 !default;
+
+// hamburger button
+$h-padding: 15px;
+$h-width: 22px;
+$h-height: 24px;
+$h-vertical-gap: 8px;
+$h-initial-opposition: 5px;
+$h-hide-distance: $h-width + $h-padding;
+
+
+
+%button-radius {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+%box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//vertical
+%top50 {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%left50 {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+%group{
+  zoom: 1;
+  &:before, &:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}

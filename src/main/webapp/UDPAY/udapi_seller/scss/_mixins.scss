@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// font-family
+@mixin font-family($fontFam) {
+  font-family: $fontFam;
+}
+
+// content value init
+@mixin content-val($content) {
+  display:inline-block;
+  content: $content;
+}
+
+// float clear both
+@mixin clearfix {
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}
+
+
+// button active
+@mixin btnActive($shadowColor){
+  &:active,
+  &:focus,
+  &:hover,
+  &.active{
+    @include prefix(box-shadow, 0px 0px 4px 0px rgba($shadowColor, 0.3), webkit ms moz o);
+  }
+}
+
+
+// animation keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+
+
+
+
+// placeholder
+@mixin placeholder(){
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder{
+    @content
+  }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    @content
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder{
+    @content
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder{
+    @content
+  }
+  input::placeholder,
+  textarea::placeholder{
+    @content
+  }
+}
+
+// for placeholder
+@mixin placeholder(){
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder{
+    @content
+  }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    @content
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder{
+    @content
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder{
+    @content
+  }
+  input::placeholder,
+  textarea::placeholder{
+    @content
+  }
+}

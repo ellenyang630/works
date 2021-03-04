@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* _element-components */
+//## 개발 단계에서 사용하는 element-ui의 컴포넌트 스타일을 지정합니다.
+
+
+// alert
+.el-alert{
+  min-height:97px;
+  padding: 1.467rem 2.133rem;
+  margin-bottom: 2rem;
+  border-radius: 0;
+  background: rgba($--color-white, .7) !important;
+
+  &__content {
+    display: block;
+    padding: 0;
+  }
+
+  &__title{
+    word-break: keep-all;
+    font-size: $--font-size-base;
+    font-weight: $font-weight-bold !important;
+
+    i{
+      transform: translateY(-.1em);
+      vertical-align: middle;
+      font-size:133%;
+    }
+  }
+
+  & &__description{
+    padding-left:1.467rem;
+    margin-top:.5333rem;
+    word-break: keep-all;
+    color:$text-base !important;
+    font-size: $--font-size-small !important;
+  }
+
+  &__em{
+    text-decoration: underline;
+    color:inherit;
+  }
+}
+
+// tag
+.el-tag {
+  min-width: 70px;
+  text-align: center;
+  border-radius: $border-radius-round;
+  font-size: $--font-size-base;
+
+  &.el-tag--light{
+    color: $--color-text-regular;
+    border: 1px solid $--border-color-base;
+    background: $--border-color-light;
+
+    .el-tag__close,
+    .el-tag__close:hover{
+      color: $--color-white;
+      //background: $border-dark;
+    }
+  }
+}
+
+// form
+.el-form{
+  // el-form-item
+  &-item{
+    &__inner{
+      position: relative;
+      display: inline-block;
+      width:100%;
+      font-size: $--font-size-smaller;
+
+      > .el-select,
+      > .el-input,
+      > .el-button{
+        width:100%;
+      }
+    }
+
+    &__label {
+      padding-bottom: .6667rem;
+      line-height: 14px;
+    }
+
+    &__tip {
+      margin-top: .8667rem;
+      color: $text-light;
+      font-size: $--font-size-small;
+      line-height: 1.69;
+
+      .tip-tit {
+        margin-bottom: 5px;
+        font-size: .9333rem;
+      }
+    }
+
+    .el-upload{
+      width: 100%;
+
+      .el-button{
+        width: 100%;
+      }
+    }
+  }
+
+  // form 에서 grid 사용시 여백 삭제
+  .el-col{
+    margin-top:0 !important;
+  }
+}
+
+// dialog
+.el-dialog{
+  overflow: hidden;
+  width:540px;
+  margin: 0 auto;
+  margin-top:0 !important;
+  border-radius: $--border-radius-base;
+
+  .lg &{
+    width:960px;
+  }
+
+  &__wrapper{
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  &__header{
+    padding: 1.333rem 2rem;
+    //border-bottom: 1px solid $border-base;
+  }
+
+  &__title{
+    color:$text-dark;
+    font-size: $--font-size-large;
+    font-weight: $font-weight-bold;
+  }
+
+  &__subtitle{
+    margin-top: .3333rem;
+    color:$--color-info;
+  }
+
+  &__headerbtn{
+    top: 1.2rem;
+    right: 2rem;
+    font-size: $--font-size-extra-large;
+
+    .el-dialog__close{
+      color:$text-base;
+      font-weight: $font-weight-bold;
+    }
+
+    &:focus,
+    &:hover{
+      .el-dialog__close{
+        color:$--color-primary;
+      }
+    }
+  }
+
+  &__body{
+    padding: 2rem;
+  }
+
+  &__footer{
+    padding: 1.6rem 2rem;
+    text-align: center;
+    //border-top: 1px solid $border-base;
+
+    .el-button{
+      min-width:127px;
+
+      &:not(:first-child){
+        margin-left: .4667rem;
+      }
+    }
+  }
+}
+
+// Popover
+.el-popper{
+  [x-placement^="bottom"] .popper__arrow{
+    border-bottom-color:$--border-color-base !important;
+  }
+}
+
+.el-popover{
+  width: 330px;
+  padding: 1.667rem;
+  border-radius: $--border-radius-medium;
+
+  &__body{
+    color: $text-base;
+    font-size: $--font-size-small;
+  }
+
+  &__text{
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+
+  button{
+    padding:0;
+    margin: 0;
+  }
+}

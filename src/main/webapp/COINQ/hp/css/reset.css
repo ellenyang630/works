@@ -1,0 +1,572 @@
+/* ----------------------------------------------------------------
+ 							Reset
+ -----------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	outline: none !important;
+	-webkit-tap-highlight-color: transparent;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+a {
+	outline: none !important;
+}
+html {
+	scroll-behavior: smooth;
+}
+html, body {
+	height: 100%;
+}
+header, footer, section, article,  nav, hgroup, details, menu, figure, figcaption {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+/*요소 여백 초기화 */
+html, body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, blockquote, p, address, pre, cite, form, fieldset, input, textarea, select, table, th, td {
+	margin: 0;
+	padding: 0;
+}
+/*테투리 없애기*/
+fieldset, img, abbr, acronym {
+	border: 0 none;
+}
+
+/*목록*/
+ol, ul, li {
+	list-style: none;
+}
+/*테이블 -마크업에 'cellspacion="0" 지정 함께 필요 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0px;
+	width: 100%;
+	border: 0px;
+}
+caption, th, td {
+	/*text-align: left;*/
+	font-weight: normal;
+}
+/*텍스트 관련 요소 초기화*/
+address, caption, strong, em, cite {
+	font-weight: normal;
+	font-style: normal;
+}
+small {
+	font-weight: normal;
+}
+.ins {
+	text-decoration: none;
+}
+.nor {
+	font-weight: normal;
+}
+.del {
+	text-decoration: line-through;
+}
+.und {
+	text-decoration: underline;
+}
+.fa-chevron-right {
+	color: #a6a6a6;
+}
+.not_scroll {
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+.not_scroll #table-fixed {
+	position: relative;
+	top: 0;
+}
+/*인용문*/
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+}
+/*수평선*/
+hr {
+	display: none;
+}
+legend, caption {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	font-size: 0;
+	line-height: 0;
+}
+a {
+	text-decoration: none;
+	color: #222;
+	outline: none !important;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+input::placeholder, textarea::placeholder {
+	color: #a6a6a6;
+	font-weight: normal;
+}
+input[type="file"] {
+	display: none;
+	cursor: pointer;
+}
+input[type="text"]:disabled{
+	background: #f5f7f8 !important;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"] {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0 8px;
+}
+input[type="text"] {
+	ime-mode: active;
+}
+input.input_login {
+	ime-mode: disabled;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], textarea, button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], textarea, button, select {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+}
+input[type="checkbox"], input[type="radio"] {
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	*overflow: hidden;
+	-webkit-appearance: none;
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	border: 0;
+	background: 0;
+	opacity: 0;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+}
+
+/* 체크박스 버튼 */
+.input_chk {
+	position: relative;
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	margin-left: 20px;
+	cursor: hand;
+}
+.input_chk:first-child { margin-left: 0px;}
+.input_chk input[type="checkbox"] + label:before, .input_chk input[type="radio"] + label:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 19px;
+	height: 19px;
+	display: inline-block;
+	color: transparent;
+	overflow: hidden;
+	white-space: nowrap;
+	background: url("../images/icon_sprit.png") no-repeat;
+	/*-webkit-background-size: 500px 500px;*/
+	cursor: pointer;
+}
+.input_chk input[type="checkbox"] + label:before { background-position: -151px 0; }
+.input_chk input[type="checkbox"]:checked + label:before { background-position: -180px 0;}
+.input_chk input[type="checkbox"] + label, .input_chk input[type="radio"] + label { padding-left: 24px; cursor: hand; }
+.input_chk.first input[type="checkbox"] + label, .input_chk.first input[type="radio"] + label {padding-left: 18px; }
+
+/* 라디오버튼 */
+.input_chk input[type="radio"] + label:before { background-position: -153px -28px; }
+.input_chk input[type="radio"]:checked + label:before { background-position: -180px -28px; }
+
+
+
+/* ----------------------------------------------------------------
+ 						LAYOUT HELPER CSS
+ -----------------------------------------------------------------*/
+strong { font-weight: bold; }
+.fno { font-weight: normal; }
+
+.inBlock{ display: inline-block !important; }
+.tableCell{ display:table-cell; vertical-align:middle; }
+
+.fl { float: left !important; }
+.fr { float: right !important; }
+.clearfix::after { content: ""; clear: both; display: table;}
+
+.text-left{ text-align:left !important; }
+.text-center{ text-align:center !important;}
+.text-right{ text-align:right !important;}
+.vm { vertical-align: middle !important;}
+.vt { vertical-align: top !important;}
+
+.group {zoom: 1;}
+.group:before, .group:after { content: ""; display: table; }
+.group:after { clear: both; }
+
+.hand { cursor: hand; cursor: pointer; }
+
+.bdl0{ border-left: none !important;}
+
+.text-hidden{ width:1px; height:1px; position:absolute; left: 9999px; top:auto; overflow: hidden; }
+
+
+
+/* 컬러 */
+.cgray { color: #8f979b !important; }
+.cdgray { color: #6e6e6e !important;}
+.cred { color: #fb537e !important;}
+.cblue { color: #1c69d3 !important;}
+.cmainblue{ color:#007aff !important; }
+.cnavy { color: #103760 !important;}
+.bmainblue { background: #007aff !important; color: #fff !important }
+
+
+/* 마진 및 패딩 */
+.mg10 {margin: 10px 0px; }
+.mgt0 { margin-top: 0px !important;}
+.mgt5 {	margin-top: 5px !important;}
+.mgt10 { margin-top: 10px !important;}
+.mgt15 { margin-top: 15px !important;}
+.mgt20 { margin-top: 20px !important;}
+.mgt30 { margin-top: 30px !important; }
+.mgt40 { margin-top: 40px !important; }
+.mgt60 { margin-top: 60px !important; }
+
+.mgb0 { margin-bottom: 0px !important;}
+.mgb5 { margin-bottom: 5px !important; }
+.mgb10 { margin-bottom: 10px !important;}
+.mgb20 { margin-bottom: 20px !important;}
+.mgb30 { margin-bottom: 30px !important;}
+.mgb50 { margin-bottom: 50px !important; }
+
+.mgl0 { margin-left: 5px !important;}
+.mgl5 { margin-left: 5px !important; }
+.mgl10 { margin-left: 10px !important;}
+.mgl15 { margin-left: 15px !important; }
+
+.mgr5 { margin-right: 5px !important;}
+.mgr10 { margin-right: 10px !important;}
+
+.pt_none { padding-top: 0px !important;}
+.pb_none { padding-bottom: 0px !important;}
+
+
+/* WIDTH */
+.w250{ width: 250px !important; }
+.w280{ width: 280px !important;}
+.w300{ width: 300px !important;}
+.w310{ width: 322px !important;}
+.w20pc{ width:20% !important;}
+.w25pc{ width:25% !important;}
+.w74pc{ width:74% !important;}
+.w80pc{ width:80% !important;}
+
+
+
+/* ----------------------------------------------------------------
+					아이콘 및 이미지 Styling
+ -----------------------------------------------------------------*/
+.images{ display:inline-block; content:''; vertical-align:middle; background: url("../images/icon_sprit.png") no-repeat; }
+
+/* 화폐 아이콘 */
+.subkrw{ width:35px; height:35px; background-position: 0 -296px !important;}
+.subkrwThumb{ width:23px; height:23px; background-position: 0 -69px !important; }
+.subusd{ width:35px; height:35px; background-position: -46px -296px !important;}
+.subusdThumb{ width:23px; height:23px; background-position: -32px -69px !important;}
+.subbtc{ width:36px; height:36px; background-position: 0 -111px !important; vertical-align: text-bottom !important; transform: translateY(10%);}
+.subbtcThumb{ width:23px; height:23px; background-position: -64px -69px !important;}
+.btg{ width:36px; height:36px; background-position: -46px -111px !important; vertical-align: text-bottom !important; transform: translateY(10%);}
+.btgThumb{ width:23px; height:23px; background-position: -96px -69px !important;}
+.bch{ width:36px; height:36px; background-position: -91px -111px !important; vertical-align: text-bottom !important; transform: translateY(10%);}
+.bchThumb{ width:23px; height:23px; background-position: -129px -69px !important;}
+.ltc{ width:36px; height:36px; background-position: -137px -111px !important; vertical-align: text-bottom !important; transform: translateY(10%);}
+.ltcThumb{ width:23px; height:23px; background-position: -161px -69px !important; }
+
+/* 보증금 설명 아이콘 */
+.deposit01{ width:34px; height:34px; background-position: 0 -157px !important;}
+.deposit02{ width:32px; height:37px; background-position: -44px -157px !important;}
+.deposit03{ width:31px; height:34px; background-position: -86px -157px !important;}
+.deposit04{ width:36px; height:36px; background-position: -127px -157px !important;}
+
+/* 검색아이콘 */
+.search{ display:inline-block; width: 23px; height: 23px; background: url(../images/icon_sprit.png) no-repeat; background-position: -123px -28px;}
+
+@media(max-width:800px){
+	.deposit01{ width:26px; height:26px; background-position: 0 -118px !important; background-size: 150px 226px;}
+	.deposit02{ width:24px; height:28px; background-position: -33px -118px !important; background-size: 150px 226px;}
+	.deposit03{ width:24px; height:26px; background-position: -64px -118px !important; background-size: 150px 226px;}
+	.deposit04{ width:25px; height:26px; background-position: -95px -119px !important; background-size: 150px 226px;}
+	.search{ width: 19px; height: 19px; background-position: -92px -21px; background-size: 150px 226px;}
+}
+
+
+
+/* ----------------------------------------------------------------
+						BUTTON styling
+ -----------------------------------------------------------------*/
+.btnArea {
+	margin-top: 50px;
+	text-align:center;
+}
+.btnArea .btn{
+	display:inline-block;
+	min-width:280px;
+	height:60px;
+	line-height: 60px;
+	border-radius:50em;
+	font-size:19px;
+}
+.btnArea .btn i{ font-size:23px; font-weight:400; margin-right: 8px;}
+.btnArea.col-2 .btn{
+	margin: 0 10px;
+}
+.btn_global {
+	font-size: 18px;
+	font-weight: 100;
+	line-height: 57px;
+	display: inline-block;
+	height: 57px;
+	padding: 0 2em;
+	cursor: pointer;
+	text-align: center;
+	color: #6e6e6e;
+	border: 1px solid #ccc;
+	background: #ffffff;
+	white-space: nowrap;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.btn_small {
+	font-size: 12px;
+	font-weight: 100;
+	line-height: 26px;
+	display: inline-block;
+	vertical-align: middle;
+	height: 27px;
+	cursor: pointer;
+	text-align: center;
+	color: #2e2e2e;
+	border: 1px solid #ccc;
+	background: #ffffff;
+	white-space: nowrap;
+	min-width: 70px;
+	overflow: hidden;
+	box-sizing:border-box;
+}
+.btn_md {
+	font-size: 15px;
+	font-weight: 100;
+	line-height: 40px;
+	display: inline-block;
+	height: 40px;
+	cursor: pointer;
+	text-align: center;
+	color: #6e6e6e;
+	border: 1px solid #ccc;
+	background: #ffffff;
+	white-space: nowrap;
+	width: 100%;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.btn_link {
+	font-size: 19px;
+	font-weight: 100;
+	min-width: 280px;
+	height: 60px;
+	line-height: 60px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	text-align: center;
+	color: #6e6e6e;
+	border: 1px solid #ccc;
+	background: #ffffff;
+	white-space: nowrap;
+	overflow: hidden;
+	box-sizing:border-box;
+}
+.lblue {
+	background: #ffffff !important;
+	color: #1c69d3 !important;
+	border-color: #1c69d3 !important;
+}
+.lnavy {
+	border-color: #103760 !important;
+	color: #103760 !important;
+	background: #fff !important;
+}
+.bblue {
+	background: #007aff !important;
+	border-color: #007aff !important;
+	color: #ffffff !important;
+}
+.bblue50 {
+	background: rgba(0,122,255,0.05) !important;
+}
+.bnavy {
+	border-color: #103760 !important;
+	background: #103760 !important;
+	color: #fff !important;
+}
+.bgreen {
+	border-color: #01b8b5 !important;
+	background: #01b8b5 !important;
+	color: #fff !important;
+}
+/*.wSmall { width: 27%; }*/
+/*.wBig { width: 70%; }*/
+/*.wHalf { width: 48%; }*/
+
+
+
+/* ----------------------------------------------------------------
+						inputBox ( 입력폼 인풋)
+ -----------------------------------------------------------------*/
+.inputBox {
+	background: #ffffff !important;
+	font-size: 15px;
+	width: 100%;
+	position: relative;
+	height: 41px;
+	border: 1px solid #d7d9dc;
+	padding: 0 6px;
+	box-sizing: border-box;
+}
+.inputBox > .btn{
+	width: 100%;
+	height: 100%;
+	line-height:40px;
+}
+.rd50 {
+	border-radius: 50em;
+	padding: 0 15px !important;
+}
+.selectBox {
+	background: #ffffff;
+	font-size: 14px;
+	width: 100%;
+	position: relative;
+	height: 44px;
+}
+.requiredData{
+	color:#007aff;
+	font-weight:bold;
+	margin-left: 5px;
+}
+/*textarea */
+textarea {
+	background: #ffffff;
+	font-size: 14px;
+	width: 100%;
+	position: relative;
+	padding: 13px 0;
+	line-height: 1.6em;
+	border: 0px;
+}
+textarea.inputBox{
+	font-family: Malgun Gothic, '맑은고딕', Dotum, '돋움', Helvetica, sans-serif, Tahoma, Arial;
+}
+@media(max-width:749px){
+	.inputBox > .btn {
+		font-size: 0.75rem;
+	}
+}
+
+
+
+/* ----------------------------------------------------------------
+						SELECT Styling
+ -----------------------------------------------------------------*/
+.selectWrap{
+	position:relative;
+}
+.selectWrap:after {
+	font-family: FontAwesome;
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	content: '\f107';
+	font-size: 19px;
+	color: #a6a6a6;
+}
+.selectBox {
+	position: relative;
+	width: 100%;
+	height: 41px;
+	padding: 0 8px;
+	background: #ffffff;
+	border: 1px solid #d7d9dc !important;
+	font-size: 15px;
+	/*color: #999;*/
+	color:#2e2e2e;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.selectBox option:checked {
+	color: #2e2e2e;
+}
+
+
+
+/* ----------------------------------------------------------------
+					스크롤 테이블 (모바일 ver.)
+ -----------------------------------------------------------------*/
+.table-responsive {
+	overflow-x: auto;
+	min-height: 0.01%;
+	font-size: 13.5px;
+}
+@media screen and (max-width: 540px) {
+	.table-responsive {
+		width: 100%;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid #ddd;
+	}
+	.table-responsive > .table {
+		margin-bottom: 0;
+	}
+	.table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td {
+		white-space: nowrap;
+	}
+	.table-responsive > .table-bordered {
+		border: 0;
+	}
+	.table-responsive > .table-bordered > thead > tr > th:first-child, .table-responsive > .table-bordered > tbody > tr > th:first-child, .table-responsive > .table-bordered > tfoot > tr > th:first-child, .table-responsive > .table-bordered > thead > tr > td:first-child, .table-responsive > .table-bordered > tbody > tr > td:first-child, .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+		border-left: 0;
+	}
+	.table-responsive > .table-bordered > thead > tr > th:last-child, .table-responsive > .table-bordered > tbody > tr > th:last-child, .table-responsive > .table-bordered > tfoot > tr > th:last-child, .table-responsive > .table-bordered > thead > tr > td:last-child, .table-responsive > .table-bordered > tbody > tr > td:last-child, .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+		border-right: 0;
+	}
+	.table-responsive > .table-bordered > tbody > tr:last-child > th, .table-responsive > .table-bordered > tfoot > tr:last-child > th, .table-responsive > .table-bordered > tbody > tr:last-child > td, .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+		border-bottom: 0;
+	}
+	table { table-layout: inherit; }
+	table td, table th { font-size: 0.9em;}
+}

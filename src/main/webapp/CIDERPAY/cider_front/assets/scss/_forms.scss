@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* _forms.scss */
+
+
+// select
+.select-wrapper{
+  position: relative;
+
+  &:after{
+    content:"\ea4e";
+    display: inline-block;
+    font-family: remixicon;
+    position: absolute;
+    top:50%;
+    right: 1.267rem;
+    z-index: -1;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    opacity: 0.3;
+  }
+
+  select {
+    display: inline-block;
+    padding: .25rem;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border:0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  // for IE 11
+  select::-ms-expand {
+    display: none;
+  }
+
+
+  // for IE 9
+  &:after{
+    //width:100px \0/IE8;/*IE8적용*/
+    //width:150px \0/IE9;/*IE9적용*/
+    //height:50px  \0/IE8+9;/*IE8+9적용*/
+
+  }
+
+  html>body .select-wrapper:after {
+    display: none;
+    content:"";
+  }
+}
+
+.form-wrapper{
+  width:100%;
+  max-width:420px;
+  margin:0 auto;
+
+  input,
+  select,
+  textarea{
+    margin:0;
+    background-color: transparent;
+    border: 1px solid $border-light;
+    border-radius: .533rem;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 1.067rem 1.267rem;
+    resize: none;
+    top: 0;
+    width: 100%;
+    font-size: 1.133rem;
+    color:$text-light;
+  }
+
+  textarea{
+    min-height: 222px;
+  }
+}
+
+.form-item{
+  &.divider{
+    padding-top: 10px;
+  }
+  &:not(:first-child){
+    margin-top: 1.667rem;
+  }
+  dt{
+    margin-bottom:.533rem;
+    font-size: 1.133rem;
+    color:$text-light;
+  }
+}
+
+// 필수값 표시
+.required-data{
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: $primary;
+  text-indent: -9999px;
+  vertical-align: text-top;
+}
+
+.form-info{
+  margin-bottom:1rem;
+  color: $text-base;
+}
+
+.form-agree-check{
+  margin-top: 1.8rem;
+}
+
+
+%controller {
+  position: relative;
+  cursor: pointer;
+  //padding: 1em;
+
+  &::selection {
+    background: transparent;
+  }
+
+  input + span {
+    background: white;
+    content: "";
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 26px;
+    height: 26px;
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      transform: scale(1);
+      transition: transform .2s;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover input + span {
+      box-shadow: 0 2px 4px rgba(#000, .15);
+    }
+  }
+
+  input:active + span {
+    box-shadow: 0 4px 8px rgba(#000, .15);
+  }
+
+  input:focus + span {
+    box-shadow: 0 0 0 3px lightblue;
+  }
+  input:checked + span{
+    background: $primary;
+  }
+  input:checked + span::after {
+    transform: scale(1.2);
+    background: url("../img/common/icon_checkbox_on.svg") center center no-repeat;
+  }
+
+  input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+  }
+}
+
+.checkbox {
+  @extend %controller;
+
+  input + span {
+    border-radius: 2px;
+    border-radius: 100%;
+    background: rgba($gray,0.2);
+
+    &::after {
+      background: url("../img/common/icon_checkbox_off.svg") center center no-repeat;
+      background-size: auto;
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.radio {
+  @extend %controller;
+
+  input + span {
+    border-radius: 100%;
+    background: $white-gray;
+
+    &::after {
+      border-radius: 100%;
+      margin: .35em;
+      width: .75em;
+      height: .75em;
+    }
+  }
+
+  input:checked + span::after {
+    background: $white;
+  }
+}

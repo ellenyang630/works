@@ -1,0 +1,608 @@
+@charset "UTF-8";
+table {
+  width: 100%;
+  border: 0;
+  .num, .snum, .tnum {
+    font-size: $font-size-xxmiddle;
+    position: relative;
+    letter-spacing: 0.5px;
+    top: 1px;
+    position: relative;
+    font-family: GmarketSansMedium;
+  }
+  .snum {
+    font-size: $font-size-xmiddle;
+  }
+  .tnum {
+    font-size: $font-size-xmiddle;
+    font-family: $font-family !Important;
+  }
+  .btnArea {
+    p {
+      &:first-child {
+        margin-bottom: 6px;
+      }
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+    .btn {
+      min-width: 150px;
+    }
+  }
+}
+
+.simpleTB {
+  font-size: $font-size-sm;
+  line-height: 1.4em;
+  thead th {
+    background: $white-light;
+    text-align: center;
+    padding: 6px 0;
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid lighten($line-light, 2.5);
+    }
+    th {
+      text-align: center;
+      color: $black;
+    }
+    th, td {
+      padding: 6px 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+.lineTB {
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $line;
+  label {
+    margin: 0 13px;
+  }
+  &.line {
+    th, td {
+      border-left: 1px solid $line-light;
+      &:first-child {
+        border-left: 0px
+      }
+    }
+  }
+  dl {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  ol, dl {
+    text-align: left;
+    li, dd {
+      margin-bottom: 6px;
+      padding-left: 10px;
+      position: relative;
+      &:before {
+        position: absolute;
+        top: 8px;
+        left: 0px;
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        background-color: $line;
+      }
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  thead tr {
+    border-bottom: 1px solid $line;
+    th {
+      padding: 13px 6px;
+      background: $white-light;
+      color: $gray-light;
+    }
+  }
+  tbody {
+    text-align: center;
+    tr {
+      border-bottom: 1px solid $line-light;
+      &:last-child {
+        border-bottom: 0px;
+      }
+      th, td {
+        padding: 25px;
+        vertical-align: middle;
+      }
+    }
+    small {
+      display: block;
+    }
+  }
+  small {
+    color: $gray-light;
+    font-size: $font-size-sm;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+.srcTB{
+  font-size: $font-size-sm;
+  white-space: nowrap;
+  table-layout: fixed;
+  thead{
+    tr{
+      th{
+        padding: 10px 6px;
+      }
+    }
+  }
+  tbody{
+    tr{
+      th, td{
+        padding: 13px 6px;
+      }
+    }
+  }
+  .eli{
+    display: table-cell;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+}
+
+.smdlBox{
+  display: table;
+  margin: 0 auto;
+  + small{
+    padding-top: 15px;
+    border-top: 1px solid $line-light;
+    margin-top: 15px;
+  }
+}
+
+.paypalTB, .insTB {
+  text-align: center;
+  border: 1px solid $line;
+  border-bottom: 0px;
+  th, td {
+    vertical-align: middle;
+  }
+  tr {
+    th:last-child, td:last-child {
+      border-right: 0px;
+    }
+  }
+  thead {
+    tr {
+      border-bottom: 1px solid $line-light;
+      &:first-child {
+        th {
+          padding: 13px 0;
+          img {
+            position: relative;
+            top: 3.5px;
+          }
+        }
+        th:nth-child(2) {
+          background: $blue;
+          border-left: 3px solid $blue;
+          border-right: 3px solid $blue;
+        }
+      }
+    }
+    th {
+      color: $black;
+      font-weight: $font-weight-bold;
+    }
+  }
+  tbody {
+    tr {
+      th, td {
+        padding: 13px 6px;
+        border-right: 1px solid lighten($line-light, 1);
+      }
+      th {
+        border-bottom: 1px solid $line-light;
+        background: $white-blue-light;
+        color: $black;
+        font-size: $font-size-xsm;
+      }
+      td {
+        border-bottom: 1px solid lighten($line-light, 3);
+      }
+
+      &:last-child {
+        th, td {
+          border-bottom: 1px solid $line;
+        }
+      }
+      small {
+        font-size: $font-size-xsm;
+        color: $gray-light;
+        display: block;
+      }
+    }
+  }
+}
+
+.insTB {
+  tbody {
+    tr {
+      td {
+        padding: 13px 18px;
+        &:nth-child(2) {
+          border-left: 3px solid $blue;
+          border-right: 3px solid $blue;
+        }
+      }
+      &:last-child {
+        td:nth-child(2) {
+          border-bottom: 3px solid $blue;
+        }
+      }
+    }
+    i {
+      color: $line-dark;
+    }
+    .btnArea {
+      margin: 30px 0;
+    }
+  }
+  .arBox em {
+    color: rgba($blue, 0.5);
+    padding-right: 6px;
+    font-family: GmarketSansMedium;
+  }
+}
+
+.paypalTB {
+  thead {
+    tr {
+      &:last-child {
+        th:nth-child(1) {
+          border-left: 3px solid $blue;
+        }
+        th:nth-child(2) {
+          border-right: 3px solid $blue;
+        }
+        th {
+          font-size: $font-size-xsm;
+          background: $white-blue-light;
+          padding: 6px 0;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        &:nth-child(2) {
+          border-left: 3px solid $blue;
+        }
+        &:nth-child(3) {
+          border-right: 3px solid $blue;
+        }
+      }
+      &:last-child {
+        td:nth-child(2), td:nth-child(3) {
+          border-bottom: 3px solid $blue;
+        }
+      }
+    }
+  }
+}
+
+.kakaoTB {
+  text-align: center;
+  border-left: 1px solid $line;
+  border-top: 1px solid $line;
+  border-right: 1px solid $line;
+  width: 900px;
+  margin: 0 auto;
+  th, td {
+    vertical-align: middle;
+  }
+  th {
+    background: $white-blue-light;
+  }
+  td:last-child {
+    border-right: 0px;
+  }
+  tr {
+    border-bottom: 1px solid $line-light;
+    &:last-child {
+      border-bottom: 1px solid $line;
+    }
+  }
+  .th_blue {
+    background: rgba($blue, 0.1);
+    border: 1px solid rgba($blue, 0.5);
+    color: $blue;
+    z-index: 1;
+    position: relative;
+  }
+  .th_green {
+    background: rgba($green, 0.1);
+    border: 1px solid rgba($green, 0.5);
+    color: $green;
+    z-index: 1;
+    position: relative;
+  }
+  thead {
+    th {
+      padding: 13px 6px;
+    }
+  }
+  tbody {
+    th, td {
+      padding: 20px 6px;
+    }
+    th, td {
+      border-right: 1px solid $line-light;
+    }
+  }
+  small {
+    font-size: $font-size-xsm;
+    color: $gray-light;
+    display: block;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  em {
+    font-size: $font-size-xsm;
+    color: $blue;
+    font-family: GmarketSansMedium;
+    display: block;
+    letter-spacing: 0;
+    margin-bottom: 6px;
+  }
+}
+
+.tbInfo {
+  margin-top: 13px;
+  color: $gray-light;
+  font-size: $font-size-sm;
+  text-align: left;
+}
+
+.cusList {
+  a {
+    text-decoration: none !important;
+    &:hover, &:active, &:focus {
+      color: $blue;
+    }
+  }
+  i {
+    font-size: $font-size-xxmiddle;
+  }
+}
+
+.cusView {
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $line;
+  .top {
+    border-bottom: 1px solid $line;
+    padding: 25px 0;
+    @extend %group;
+    h3 {
+      font-size: $font-size-xmiddle;
+      float: left;
+    }
+    span {
+      float: right;
+      width: 100px;
+    }
+  }
+  .con {
+    padding: 25px 0;
+    min-height: 250px;
+  }
+  .conFile {
+    border-top: 1px solid $line-light;
+    padding: 25px 0;
+    i {
+      font-size: $font-size-xxmiddle;
+      position: relative;
+      top: 2px;
+      margin-right: 6px;
+      color: $black;
+    }
+    a {
+      &:hover, &:active, &:focus {
+        text-decoration: underline;
+        color: $blue;
+        i {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.cusBtn {
+  margin-top: 30px;
+  width: 100%;
+  p {
+    text-align: center;
+  }
+}
+
+.pagination {
+  margin: 0 auto;
+  margin-top: 40px;
+  display: table;
+  a {
+    float: left;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid $line-light;
+    margin: 0 4px;
+    &.active {
+      color: $white;
+      background-color: $blue;
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.pagination a:hover:not(.active) {
+  background-color: $white-light;
+  border-color: $line;
+}
+
+//faqBox
+.faqBox {
+  h3 {
+    padding: 25px 0;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid $line-light;
+    &.ui-accordion-header-active {
+      color: $blue;
+      &:after {
+        content: "\e944";
+        color: $blue;
+      }
+    }
+    &:after {
+      content: "\e941";
+      color: $line-dark;
+      font-family: xeicon_v2;
+      display: block;
+      right: 0px;
+      position: absolute;
+      @extend %top50;
+    }
+  }
+  em {
+    color: $blue;
+    display: inline-block;
+    width: 60px;
+  }
+  .con {
+    padding: 25px;
+    background: $white-light;
+    border-bottom: 1px solid $line-light;
+  }
+}
+
+.tab_titFaq {
+  .tab_tit {
+    color: $gray-light;
+    border: 1px solid $line-light;
+    border-left: 0px;
+    border-bottom: 1px solid $black;
+    &:first-child {
+      border-left: 1px solid $line-light;
+    }
+    &:hover, &:active, &:focus {
+      background: $white;
+    }
+    &.current {
+      background: $white;
+      color: $black;
+      border: 1px solid $black;
+      border-bottom: 0px !important;
+      position: relative;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+//searchBox
+.searchBox {
+  width: 300px;
+  float: right;
+  border: 1px solid $line-light;
+  margin-bottom: 20px;
+  input, .btnSch {
+    font-size: $font-size-base;
+    background: $white;
+    border: 0;
+    height: 44px;
+  }
+  .btnSch {
+    width: 44px;
+  }
+  input {
+    width: 250px;
+    padding-left: 20px;
+  }
+}
+
+.searchWrap {
+  @extend %group;
+}
+
+//writeTB
+.writeTBWrap {
+  width: 600px;
+  margin: 0 auto;
+
+  .writeTB {
+    li {
+      margin-bottom: 20px;
+    }
+    select, input, textarea {
+      border: 0px;
+      width: 100%;
+      resize: none;
+    }
+    dl {
+      border: 1px solid $line;
+      padding: 20px;
+    }
+    dd {
+      margin-top: 10px;
+    }
+    em {
+      color: $blue;
+    }
+  }
+
+  .policyView {
+    h2 {
+      font-weight: $font-weight-bold;
+    }
+  }
+  .scrollTextWrap{
+    height: 150px;
+  }
+}
+
+.scrollTextWrap {
+  height: 100px;
+  border: 1px solid $line;
+  padding: 15px;
+  background: $white-light;
+  font-size: $font-size-xsm;
+  overflow-y: auto;
+}
+.textCheck {
+  margin-top: 13px;
+}
+
+.noData{
+  min-height: 250px;
+  display: table;
+  width: 100%;
+  text-align: center;
+  .inn{
+    display: table-cell;
+    vertical-align: middle;
+    i{
+      font-size: 1.4rem;
+    }
+  }
+}

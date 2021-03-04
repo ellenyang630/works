@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* web version css */
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+.subSec{
+    padding: 10% 0;
+}
+.subTT {
+    margin-bottom: 6%;
+    text-align: center;
+}
+@media (max-width: 768px){
+    .subTT h2, .subTT .tt {
+        font-size: 1.2em !important;
+    }
+}
+@media (max-width: 1200px){
+.subTT h2, .subTT .tt {
+      font-size: 30px;
+  }
+}
+
+/* 문의하기 스크롤 영역 안 개인정보취급방침 */
+.scrollTextWrap{
+    width: 100%;
+    height: 270px;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 28px;
+    color: #6e6e6e;
+    background-color: #fff;
+    overflow-y: auto;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+}
+.scrollTextWrap .terms_wrapper{
+    padding-top:0;
+    border-top-width:0;
+}
+/* 약관 재정리작업 (190730) */
+.terms_wrapper{
+    width:100%;
+    height:100%;
+    padding-top: 30px;
+    border-top: 1px solid #e8e8e8;
+    scroll-behavior: smooth;
+}
+.terms_wrapper *{
+    font-size: 14px;
+    line-height: 2;
+}
+.terms_wrapper strong{
+    font-weight: 400;
+}
+.terms_wrapper .paragraph_rule{
+    margin-bottom:10px;
+}
+
+
+
+.terms_wrapper .tit_rule{
+    margin-top: 40px;
+    margin-bottom:5px;
+    font-size:14px;
+    font-weight:500;
+    color:#666;
+}
+.terms_wrapper .tit_rule.first{
+    margin-top:0;
+}
+.terms_wrapper .tit_rule.st{
+    font-size:16px;
+    color:#2e2e2e;
+    margin-bottom:0;
+}
+.terms_wrapper .tit_rule.st + .tit_rule{
+    margin-top:0;
+}
+.terms_wrapper .list_rule {
+
+}
+.terms_wrapper .list_rule.first{
+    margin-top:10px;
+}
+.terms_wrapper .list_rule.last{
+    margin-bottom:10px;
+}
+.terms_wrapper .list_case{
+    padding-left:18px;
+}
+
+.terms_wrapper .table{
+    border-collapse: collapse;
+    margin: 10px 0;
+    text-align: left;
+    line-height: 1.5;
+    color: #666;
+    border: 1px solid #ccc;
+}
+.terms_wrapper .table *{
+    font-size:13px;
+}
+.terms_wrapper .table thead{
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #f5f7f8;
+}
+.terms_wrapper .table thead th {
+    padding: 5px 10px;
+    font-weight: 500;
+    text-align: left;
+    color: #333;
+}
+.terms_wrapper .table tbody th {
+    padding: 5px 10px;
+    font-weight: 500;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+.terms_wrapper .table td {
+    padding: 5px 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+
+@media (min-width: 768px){
+    .terms_wrapper *{
+        font-size: 16px;
+    }
+    .terms_wrapper .tit_rule{
+        font-size: 18px;
+    }
+    .terms_wrapper .tit_rule.st{
+        font-size:20px;
+    }
+    .terms_wrapper .table *{
+        font-size:14px;
+    }
+}

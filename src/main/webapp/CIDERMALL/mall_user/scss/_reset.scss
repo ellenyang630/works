@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* _reset.scss */
+
+@font-face {
+  font-family: 'Gmarket Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Gmarket Sans Bold'), local('GmarketSans-Bold'),
+  url('../fonts/gmarketSans/gmarketSansTTFBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/gmarketSans/gmarketSansTTFBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+//
+//  Reset Style
+// --------------------------------------------------
+*{outline:none;}
+html {-webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body {background: inherit; }
+input,textarea,keygen,select,button {
+  padding: 0;
+  margin: 0;
+  font-family: inherit; font-size: inherit; line-height: inherit;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  box-sizing:border-box; padding: 0;
+  margin: 0; vertical-align: baseline; border: 0;
+}
+// Set html5 elements to block
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,main,nav,section,summary{display:block;}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,font,img,ins,q,s,samp,strike,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{ padding:0; margin:0;border:0 none; }
+body{position:relative;word-break:break-all;-ms-text-size-adjust:100%;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+header,h1{font-size:100%;}
+caption,legend{position:absolute;top:-9999px;left:-9999px;visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;}
+img{vertical-align:top;border:none;}
+select,input{vertical-align:top;border:0;border-radius:0;background-color:transparent;box-shadow: none;}
+hr{display:none;border:0 none;}
+ol,ul,ul li{padding:0;margin:0;list-style:none;}
+dl, dt, dd{padding:0; margin:0;}
+em{font-style:normal;}
+menu li{list-style:none;}
+address{display:inline;font-style:normal;}
+button{ padding: 0; margin: 0;cursor:pointer;border:0;border-radius:0;box-shadow:none;background-color:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+button:active, button:focus{ outline:none; }
+table{border-spacing:0;border-collapse:collapse;}
+//input,textarea,keygen,select,button{ font-family:$font-family-base; }
+strong{font-weight:600;}
+dfn{font-style:normal;}
+// Link Style
+a,a:hover,a:link,a:visited,a:active,a:focus{cursor:pointer;text-decoration:none;}
+a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+// Forms
+fieldset{-webkit-appearance:none;-moz-appearance:none;appearance:none; display: block;
+  //margin-inline-end: 2px;
+  //padding-block-start: 0.35em;
+  //padding-inline-start: 0.75em;
+  //padding-inline-end: 0.75em;
+  //padding-block-end: 0.625em;
+  min-inline-size: inherit;
+  max-inline-size: inherit;
+}
+select,input[type=radio],input[type=submit],input[type=search]{cursor:pointer;border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select::-ms-expand {display:none;}
+input:focus,button:focus,textarea:focus{}
+select,div{}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button{ margin: 0; -webkit-appearance: none;}
+input[type=date]::-webkit-calendar-picker-indicator {z-index:1;color:transparent;background:none;}
+textarea{width:100%;resize: none;border:none;background:none;}
+// heading
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;}
+img{max-width:100%;height:auto;vertical-align:top;-ms-interpolation-mode:bicubic;}
+small{ color:inherit;font-size:88%;font-weight:400; }
+
+html {
+  overflow-x: auto;
+  min-width:319px;
+  background: $--color-white;
+  font-size: 15px;
+}
+
+body {
+  //letter-spacing: -.45px;
+  letter-spacing: -.05em;
+  color: $text-base;
+  background: $--color-white;
+  font-family: $font-family-base;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.46;
+}
+
+// menu hover animaiton
+@include keyframes(burger-hover) {
+  0% { width: 100%; }
+  50% { width: 50%; }
+  100% { width: 100%;}
+}

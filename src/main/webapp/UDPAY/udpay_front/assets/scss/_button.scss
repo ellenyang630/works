@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* _button.scss */
+
+// button style init
+.btn{
+  @include boxSizing;
+  @include prefix(transition-property, (color, border, background-color), webkit o);
+  @include prefix(transition-duration, 250ms, webkit o);
+  margin:0;
+  padding:0;
+  display: inline-block;
+  font-weight: 500;
+  color: $text-dark;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.4667rem 1rem;
+  font-size: $font-size-xxs;
+  line-height: 1.5;
+
+  i{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
+}
+
+// button size
+.btn{
+  &-lg{
+    padding: 1.133rem 2rem;
+    font-size: $font-size-sm;
+  }
+  &-md{
+    padding: 1.067rem 1.667rem;
+    font-size: $font-size-xs;
+  }
+  &-sm{
+    padding: 1.067rem 1.667rem;
+    font-size: $font-size-xs;
+  }
+}
+
+// button block 100%
+.btn-block{
+  display: block;
+  width:100%;
+}
+
+// button border-radius
+.btn-round{
+  &-circle{
+    border-radius: 50rem;
+  }
+  &-sm{
+    border-radius: 8px;
+  }
+  &-xs{
+    border-radius: 4px;
+  }
+}
+// button group
+.btn-group{
+  .btn{
+    &:not(:last-child){
+      margin-right: 1.467rem;
+    }
+  }
+
+  &.center{
+    text-align: center;
+  }
+
+  &-bottom{
+    margin-top:3.333rem;
+
+    .btn{
+      min-width:90%;
+      margin-left:0;
+
+      &:not(:last-child){
+        margin-right:0;
+        margin-bottom:1rem;
+      }
+    }
+
+    @include res(xs){
+      &{
+        .btn{
+          min-width:200px;
+
+          &:not(:last-child){
+            margin-right:1.467rem;
+            margin-bottom:0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 백그라운드버튼 테마 스타일
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    color: $white;
+    background-color: $value;
+    border: 1px solid $value;
+
+    &:hover{
+      background-color: darken($value, 3%);
+      border: 1px solid darken($value, 3%);
+    }
+  }
+}
+
+// 라인버튼 테마 스타일
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    color: $value;
+    background-color: $white;
+    border: 1px solid $value;
+
+    &:hover{
+      background-color: $value;
+      color:$white;
+    }
+  }
+}
+
+// 백그라운드버튼 기본 스타일
+.btn-default{
+  padding: 1.667rem 1.667rem;
+  border-color: $text-dark;
+  background-color: $text-dark;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $white;
+
+  &:hover{
+    background-color: darken($text-dark, 15%);
+    color:$white;
+  }
+}
+
+// 라인버튼 기본 스타일
+.btn-outline-default{
+  padding: 0.9333rem 1.667rem;
+  border-color: rgba($text-light,0.3);
+  background-color: $white;
+  font-size: $font-size-xs;
+  color: $text-dark;
+
+  i{
+    color:$primary;
+  }
+
+  &:hover{
+    background-color: $text-light;
+    color:$white;
+    i{
+      color: $white !important;
+    }
+  }
+}
+
+// 버튼 호버 애니메이션 스타일
+.btn-ani-arrow{
+  i{
+    @include prefix(transition-duration, 250ms, webkit o);
+    @include prefix(transition-property, animation, webkit o);
+  }
+
+  &:hover,
+  &:active,
+  &:focus{
+    i{
+      @include prefix(animation, slide1 600ms ease-in-out infinite, webkit);
+    }
+  }
+}
+
+// 앱 다운로드 버튼
+$btn-download-icon: playGoogle, appStore;
+
+@each $value in $btn-download-icon{
+  .btn-#{$value}{
+    letter-spacing: 0;
+    &:before {
+      content:"";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right:5px;
+      background: url("../img/common/icon_#{$value}.svg") right center no-repeat;
+      width: 19px;
+      height: 22px;
+      background-size: 19px 22px;
+    }
+  }
+}
+
+.btn-appStore-sub{
+  &:before{
+    background-image: url("../img/common/icon_apple_black.svg");
+  }
+  &:hover,&:focus,&:active {
+    &:before {
+      background-image: url("../img/common/icon_apple.svg");
+    }
+  }
+}
+
+
+.flow-item-btn{
+  @each $value in $btn-download-icon{
+    .btn-#{$value}{
+      min-width: 200px;
+    }
+  }
+}
+
+
+#btn-api{
+  padding: 1.333rem;
+  font-size: $font-size-sm;
+
+  @include res(sm){
+    padding: 1.667rem 1.667rem;
+    font-size: $font-size-md;
+  }
+}

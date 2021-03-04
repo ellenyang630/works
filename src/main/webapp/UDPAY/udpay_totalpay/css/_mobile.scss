@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+
+/*--반응형--*/
+@media (max-width: 576px) {
+  body{
+    background: $white-gray;
+  }
+    .mask,.inn{
+        height: 100%;
+    }
+    .wrap{
+        width: 100% !important;
+        height: 100vh;
+        border-radius: 0px !important;
+        box-shadow:none !important;
+    }
+
+    .headFixed, .btnFixed {
+        position: fixed !important;
+        background: $white-gray;
+    }
+    .contentScroll{
+      padding: 60px 13px 130px 13px !important;
+      height: calc(100% - 107px) !important;
+      &.index{
+        padding-bottom: 30px !important;
+      }
+    }
+    .headInn{
+      padding: 0px;
+    }
+    .btnClose{
+      margin: 0px !important;
+    }
+    .ingBox{
+    top:  inherit;
+    -webkit-transform:  inherit;
+    transform: inherit;
+    padding-top: 30%;
+  }
+}
+
+/*--//반응형--*/

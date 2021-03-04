@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* _fonts.scss */
+
+
+//== Web Font Setting
+
+// Noto Sans KR (korean)
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url(../fonts/notoSansKR/notoSansKR-Thin.woff2) format('woff2'),
+         url(../fonts/notoSansKR/notoSansKR-Thin.woff) format('woff'),
+         url(../fonts/notoSansKR/notoSansKR-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/notoSansKR/notoSansKR-Light.woff2) format('woff2'),
+       url(../fonts/notoSansKR/notoSansKR-Light.woff) format('woff'),
+       url(../fonts/notoSansKR/notoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 400;
+   src: url(../fonts/notoSansKR/notoSansKR-Regular.woff2) format('woff2'),
+        url(../fonts/notoSansKR/notoSansKR-Regular.woff) format('woff'),
+        url(../fonts/notoSansKR/notoSansKR-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 500;
+   src: url(../fonts/notoSansKR/notoSansKR-Medium.woff2) format('woff2'),
+        url(../fonts/notoSansKR/notoSansKR-Medium.woff) format('woff'),
+        url(../fonts/notoSansKR/notoSansKR-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 700;
+   src: url(../fonts/notoSansKR/notoSansKR-Bold.woff2) format('woff2'),
+        url(../fonts/notoSansKR/notoSansKR-Bold.woff) format('woff'),
+        url(../fonts/notoSansKR/notoSansKR-Bold.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 900;
+   src: url(../fonts/notoSansKR/notoSansKR-Black.woff2) format('woff2'),
+        url(../fonts/notoSansKR/notoSansKR-Black.woff) format('woff'),
+        url(../fonts/notoSansKR/notoSansKR-Black.otf) format('opentype');
+ }
+
+// GmarketSans
+@font-face {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/gmarketSans/gmarketSansTTFLight.eot');
+    src: url('../fonts/gmarketSans/gmarketSansTTFLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gmarketSans/gmarketSansTTFLight.svg#GmarketSansTTFLight') format('svg'),
+         url('../fonts/gmarketSans/gmarketSansTTFLight.woff') format('woff'),
+         url('../fonts/gmarketSans/gmarketSansTTFLight.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/gmarketSans/gmarketSansTTFMedium.eot');
+    src: url('../fonts/gmarketSans/gmarketSansTTFMedium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gmarketSans/gmarketSansTTFMedium.svg#GmarketSansTTFMedium') format('svg'),
+         url('../fonts/gmarketSans/gmarketSansTTFMedium.woff') format('woff'),
+         url('../fonts/gmarketSans/gmarketSansTTFMedium.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/gmarketSans/gmarketSansTTFBold.eot');
+    src: url('../fonts/gmarketSans/gmarketSansTTFBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gmarketSans/gmarketSansTTFBold.svg#GmarketSansTTFBold') format('svg'),
+         url('../fonts/gmarketSans/gmarketSansTTFBold.woff') format('woff'),
+         url('../fonts/gmarketSans/gmarketSansTTFBold.woff2') format('woff2');
+}
+
+// Roboto
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 500;
+    src: url(../fonts/roboto/roboto-Medium.eot);
+    src: url(../fonts/roboto/roboto-Medium.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/roboto/roboto-Medium.woff2) format('woff2'),
+    url(../fonts/roboto/roboto-Medium.woff) format('woff'),
+    url(../fonts/roboto/roboto-Medium.ttf) format('truetype');
+}

@@ -1,0 +1,279 @@
+@charset "UTF-8";
+/* _page-all */
+//## 모든 페이지 내 각각의 스타일을 지정합니다.
+
+
+//
+//  주문조회
+// --------------------------------------------------
+
+
+// 개인정보 확인 페이지
+.identify{
+  &__form{
+    @include inner(420px);
+    padding: 0 20px;
+
+    // 로그인 영역
+    .sign-in{
+
+    }
+
+    // 회원가입 영역
+    .sign-up{
+      padding-top: 1.333rem;
+      border-top: 1px solid $gray-light;
+    }
+  }
+
+  &__btn{
+    margin-top: 1.333rem;
+  }
+
+  &__opt{
+    display: flex;
+    margin-top: 1.333rem;
+    margin-bottom: 2rem;
+    font-size: $font-size-small;
+
+    &-findId{
+      margin-left: auto;
+
+      a{
+        color: $text-base;
+      }
+    }
+  }
+}
+
+
+// 주문상품 정보
+.ordered{
+  // ordered__contents
+  &__contents{
+    .goods-control{
+      @include respond-to('medium-up'){
+        display: block;
+      }
+    }
+  }
+
+  // ordered__head
+  &__head{
+    background-color: $gray-extra-light-3;
+    display: flex;
+
+    .status{
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      color: $--color-danger;
+      padding: 15px 20px;
+    }
+    .btn-view{
+      margin-left: auto;
+      padding: 15px 20px;
+    }
+
+
+    @include respond-to('medium-up'){
+      .status{
+        padding: 20px 30px;
+      }
+      .btn-view{
+        padding: 20px 30px;
+      }
+    }
+
+  }
+
+  //&__status{
+  //  font-weight: $font-weight-bold;
+  //  color: $--color-danger;
+  //}
+
+
+  // ordered__lists (ul)
+  &__lists{
+    @include respond-to('medium-up'){
+      //padding: 0 14px;
+      padding: 0 30px;
+    }
+  }
+
+  // ordered__list (li)
+  &__list{
+    padding: 15px 0;
+    border-bottom: 1px solid $gray-light;
+
+    &:last-child{
+      border-bottom: 0;
+    }
+
+    .goods-control__cell{
+      + .goods-control__cell{
+        margin-left: 10px;
+      }
+    }
+
+    @include respond-to('small-up'){
+      .goods-control__cell{
+        + .goods-control__cell{
+          margin-left: auto;
+        }
+      }
+    }
+
+    @include respond-to('medium-up'){
+      padding: 1.333rem 0;
+
+      .goods-txt{
+        padding-left: 30px;
+      }
+    }
+  }
+
+
+  // ordered__summary
+  &__summary{
+    display: flex;
+    padding: 1.333rem;
+    background: $bg-base;
+    border-radius: $border-radius-medium * 2;
+    align-items: center;
+
+    .pay-idNum{
+      font-size: $font-size-small;
+
+      dt{
+        color: $text-base;
+      }
+      dd{
+        color: $text-dark;
+        font-weight: $font-weight-bold;
+      }
+    }
+    .pay-status{
+      margin-left: auto;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
+      color: $--color-danger;
+    }
+
+
+    @include respond-to('small-down'){
+      .pay-idNum{
+        dt{
+          display: none;
+        }
+        dl:last-child dd{
+          color: $gray-dark;
+          font-weight: $font-weight-regular;
+        }
+      }
+    }
+
+    @include respond-to('small-up'){
+      padding: 1.8rem 2rem;
+
+      .pay-idNum{
+        display: flex;
+
+        dl{
+          display: flex;
+
+          + dl{
+            margin-left: 2rem;
+          }
+        }
+        dd{
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  상품 관리
+// --------------------------------------------------
+
+// 상품 등록 > 최종 표시가격
+.payment-price{
+  &__wrap{
+    width:100%;
+    background-color: rgba(246, 192, 0, .1);
+  }
+
+  &{
+    @include clearFix;
+    width:100%;
+    padding: 7px 2rem;
+
+    &:first-child{
+      padding-top: 1.333rem;
+    }
+    &:nth-last-child(2) {
+      padding-bottom: 1.333rem;
+    }
+    &:not(:first-child){
+      //margin-top:.6667rem;
+    }
+
+    > *{
+      float:left;
+
+      &:last-child{
+        float:right;
+      }
+    }
+    dt{
+      color:$text-base;
+      font-size:$--font-size-small;
+    }
+    dd{
+      color:$text-dark;
+      font-size: $--font-size-small;
+
+      strong{
+        font-size: $--font-size-base;
+      }
+    }
+    .none-price{
+      text-decoration: line-through;
+      color:$text-light;
+    }
+
+    &.discounted-price{
+      dd{
+        p{
+          display:inline-block;
+        }
+      }
+      .discount{
+        margin-right:.3333rem;
+        color: $--color-danger;
+        font-weight: $font-weight-bold;
+        //font-size: $font-size-xsmaller;
+      }
+    }
+
+    &.total-price{
+      padding:1.333rem 2rem;
+      //border-top:1px solid $border-base;
+
+      dt, dd{
+        color:$--color-success;
+      }
+      dt{
+        font-size: $--font-size-medium;
+        line-height: 1;
+      }
+      dd{
+        strong{
+          font-size:$--font-size-large;
+        }
+      }
+    }
+  }
+}

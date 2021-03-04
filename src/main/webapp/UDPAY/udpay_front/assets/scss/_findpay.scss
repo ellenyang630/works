@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/* _findpay.scss */
+.find-pay{
+    &-head{
+        padding: 20px 0;
+        border-bottom: 1px solid $border-light;
+
+        img{
+            width: 113px;
+            height: 24px;
+            vertical-align: middle;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    &-table{
+        border-top: 2px solid $black;
+        tr{
+            border-bottom: 1px solid $border-light;
+        }
+        th,td{
+            border: 0;
+            text-align: left;
+            display: flex;
+        }
+        th{
+            padding-bottom: 0;
+        }
+        .textBtn{
+            display: flex;
+            flex-wrap: wrap;
+            span:first-child{
+                flex: 2;
+            }
+            span:last-child{
+                flex: 1;
+            }
+        }
+        @include res(md) {
+            th, td{
+                display: table-cell;
+                padding: 1rem;
+            }
+        }
+        &-search{
+            width: 100%;
+            overflow-x:auto;
+            table{
+                width: 1300px;
+            }
+            @include res(lg){
+                overflow: inherit;
+                table{
+                    width: 100%;
+                }
+            }
+            .link-view{
+                color:$primary;
+                text-decoration: underline;
+            }
+            border-top: 2px solid $black;
+            th,td{
+                padding: 0.5rem 1rem;
+                font-size: 0.95rem;
+            }
+            td{
+                padding: 1rem;
+            }
+            .noData{
+                text-align: center;
+                padding: 3rem 0;
+                color:rgba($black,0.5);
+                i{
+                    display: block;
+                    font-size: 1.3rem;
+                }
+            }
+            .pd_text{
+                span{
+                    text-align: left;
+                    display: block;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    width: 280px;
+                }
+            }
+        }
+    }
+
+    &-filter{
+        margin-bottom: 1rem;
+        strong{
+            color:$primary;
+        }
+        &:after,&:before{
+            clear:both;
+            content:'';
+            display: block;
+        }
+        .left{
+            margin-bottom: 1rem;
+        }
+        @include res(md) {
+            .left{
+                float:left;
+                line-height: 40px;
+                margin: 0;
+            }
+            .right{
+                float:right;
+                &:after,&:before{
+                    clear:both;
+                    content:'';
+                    display: block;
+                }
+            }
+        }
+        .formEleWrap{
+            @include res(md) {
+                float:left;
+                display: table;
+            }
+            .inputBox , .fromTo{
+                display: table-cell;
+
+            }
+            .fromTo{
+                padding: 0 10px;
+            }
+            .inputBox{
+                position: relative;
+                input{
+                    border: 1px solid $border-light;
+                    padding: 0.5rem 1rem;
+                    width: 120px;
+                    position: relative;
+                    background:transparent;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                .datePickIcon{
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 0;
+                    cursor: pointer;
+                }
+            }
+            .schOpt{
+                @include clearfix;
+                border: 1px solid $border-light;
+                border-left: 0;
+                margin-top: 1rem;
+                width: 100%;
+
+                @include res(md) {
+                    margin-top: 0;
+                    margin-left: 20px;
+                    width: 350px;
+                }
+                li{
+                    vertical-align: middle;
+                    display: inline-block;
+                    float:left;
+                    width: 20%;
+                    font-size: 0.95rem;
+                    input[type="radio"]{
+                        display: none;
+                    }
+                    input[type="radio"].radio_toggle + label{
+                        width: 100%;
+                        line-height: 40px;
+                        height: 40px;
+                        padding: 0;
+                        margin: 0;
+                        cursor: pointer;
+                        display: block;
+                        border-left: 1px solid $border-light;
+                        text-align: center;
+                        &:first-child{
+                            border-left: 0;
+                        }
+                    }
+                    input[type="radio"].radio_toggle:checked + label{
+                        border:1px solid $primary;
+                        color:$primary;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &-body{
+        padding: 40px 0;
+        .title{
+            margin-bottom: 30px;
+            h2{
+                font-weight: $font-weight-bold;
+                font-size: $font-size-sm;
+            }
+            h3{
+                margin-top: 5px;
+                font-size: $font-size-base;
+                color:$gray;
+            }
+        }
+
+        .int{
+            @include boxSizing;
+            border: 1px solid $border-light;
+            padding: 1rem;
+            width: 100%;
+            @include res(md) {
+            }
+        }
+        .btn{
+            padding: 1.2rem 0;
+            font-size: $font-size-base;
+            width: 120px;
+            margin-left: 6px;
+            @include res(md) {
+            }
+        }
+    }
+    &-wrap{
+        .container{
+            width: 100%;
+            padding: 0 15px;
+        }
+        @include res(md) {
+            .container{
+                width: 600px;
+                margin: 0 auto;
+                padding: 0;
+                &.lg{
+                    width: 1200px;
+                }
+            }
+        }
+    }
+    &-agree{
+        margin-top: 40px;
+    }
+    &-btn{
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 2rem;
+        .btn{
+            color:$white;
+            background: $primary;
+            width: 120px;
+            padding: 1.2rem 0;
+            font-size: $font-size-base;
+        }
+    }
+}
+.pagination{
+    display: table;
+    margin: 0 auto;
+    margin-top: 2rem;
+    li{
+        padding: 0 0.3rem;
+        display: table-cell;
+        vertical-align: middle;
+        a{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            display: block;
+            text-align: center;
+            &.active{
+                color:$primary;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+    .prev-btn , .next-btn{
+        a{
+            border: 1px solid $border-light;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            i{
+                font-size: $font-size-sm;
+            }
+        }
+    }
+    @include res(md) {
+        li{
+            padding: 0 1rem;
+        }
+        a{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .prev-btn , .next-btn{
+            a{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}

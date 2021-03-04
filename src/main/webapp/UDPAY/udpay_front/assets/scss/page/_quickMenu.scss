@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* _quickMenu.scss */
+
+/*모바일에서는 퀵메뉴 글씨가 잘 안보여 푸터로 뺌*/
+.footer-menu{
+  display: table;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  li{
+    display: table-cell;
+    padding: 0 10px;
+
+    &:first-child{
+      padding-left: 0;
+    }
+    &:last-child{
+      padding-right: 0;
+    }
+
+    a{
+      opacity: 0.5;
+    }
+  }
+
+  @include res(md){
+    display: none;
+  }
+}
+
+
+.quick-menu {
+  position: fixed;
+  bottom: $quick-menu-padding;
+  right: $quick-menu-padding;
+  text-align: center;
+  z-index:100;
+  display: none !important;
+
+  @include res(md){
+    display: block !important;
+  }
+
+  .actions {
+    opacity: 0;
+    @include prefix(transition, opacity $quick-menu-transition-duration ease, webkit o);
+  }
+
+  .trigger,
+  .action {
+    border-radius: 50%;
+    cursor: pointer;
+    @include prefix(box-shadow, 0 2px 5px rgba($black,.25), webkit moz);
+
+    &:active {
+      opacity: .7;
+    }
+  }
+
+  // 플러팅 메뉴 열기 버튼
+  .trigger {
+    position: relative;
+    height: $quick-menu-trigger-size;
+    width: $quick-menu-trigger-size;
+    line-height: $quick-menu-trigger-size;
+    vertical-align: middle;
+    background: $lighter-black;
+    color: $white;
+    font-size: 170%;
+    z-index: 1;
+
+    i{
+      display: inline-block;
+      font-size:150%;
+      @include prefix(transform, rotate(0deg), webkit ms);
+      @include prefix(transition-duration, 0.3s, webkit o);
+      @include prefix(transition-property, transform, webkit o);
+    }
+  }
+
+  // 플러팅 메뉴 숨은 버튼들
+  .action {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: $quick-menu-action-size;
+    width: $quick-menu-action-size;
+    line-height: $quick-menu-action-size;
+    margin: 0 ($quick-menu-trigger-size - $quick-menu-action-size)/2;
+    background-color: $white;
+    color: $text-dark;
+    @include prefix(transition, transform $quick-menu-transition-duration ease, webkit ms);
+
+    a{
+      color:inherit;
+    }
+
+    .quick-button{
+      i{
+        font-size:170%;
+      }
+    }
+
+    &1{
+      background-color: $warning;
+      color: $text-dark;
+    }
+    &2{
+      background-color: $danger;
+      color: $white;
+    }
+    &3{
+      background-color: $primary;
+      color: $white;
+    }
+    &4{
+      background-color: $danger;
+      color: $white;
+    }
+  }
+
+  // 플러팅 메뉴 툴팁
+  .tooltip {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 125px;
+    text-align: right;
+    opacity: 0;
+    color: $text-base;
+    font-size:$font-size-base;
+    @include prefix(transform, translateY(-50%)scale(0), webkit ms);
+    @include prefix(transform-origin, right center 0, webkit ms);
+    @include prefix(transition, all $quick-menu-transition-duration ease, webkit o);
+  }
+
+  // 플러팅 메뉴 열었을 때,
+  &.open {
+    .trigger{
+      i{
+        @include prefix(transform, rotate(135deg), webkit ms);
+      }
+    }
+
+    .actions {
+      $action-space: $quick-menu-action-size + $quick-menu-padding/2;
+      opacity: 1;
+
+      @for $i from 1 through $quick-menu-max-child-actions {
+        $distance: $action-space * $i;
+        .action:nth-child(#{$i}) {
+          @include prefix(transform, translateY(-$distance), webkit ms);
+        }
+      }
+    }
+
+    .tooltip {
+      opacity: 1;
+      right: $quick-menu-trigger-size + $quick-menu-padding/2;
+      @include prefix(transform, translateY(-50%)scale(1), webkit ms);
+      @include prefix(transition-delay, $quick-menu-transition-duration/4, webkit o);
+    }
+  }
+}

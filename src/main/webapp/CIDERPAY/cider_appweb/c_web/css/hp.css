@@ -1,0 +1,319 @@
+@charset "utf-8";
+/* web version css */
+
+/* ----------------------------------------------------------------
+                            DEFAULT
+ -----------------------------------------------------------------*/
+/* reset.css */
+body, input, textarea, select, button {
+    font-family: Helvetica, sans-serif, Tahoma, Arial, Malgun Gothic, '맑은고딕', Dotum, '돋움' !important;
+    letter-spacing: -0.65px;
+}
+select, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], input[type="button"] {
+    border:1px solid #d8d8d8;
+}
+@media (min-width: 600px) {
+    select, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="time"], input[type="date"], input[type="tel"], input[type="button"] {
+        height:45px;
+        letter-spacing: 0px;
+        font-size:15px;
+    }
+}
+
+/*숫자,영문폰트 크게*/
+.usnum{
+    letter-spacing: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #222;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    padding: 0;margin: 0;vertical-align: middle;*overflow: hidden;-webkit-appearance: none;position: absolute !important;z-index: 9;top: 0;left: 0;border: 0;background: 0;opacity: 0;cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+    padding-left: 35px;display: block;font-size: 14px;color: #666;
+}
+.input_chk_hp{
+    margin-top: 10px;
+}
+.input_chk_hp + .input_chk_hp{
+    margin-left: 40px;
+}
+.input_chk_hp:last-child input[type="checkbox"] + label, .input_chk_hp:last-child input[type="radio"] + label {
+    margin-right: 0px;
+}
+@media screen and (max-width: 320px) {
+    input[type="checkbox"] + label, input[type="radio"] + label {
+        padding-left: 30px;
+    }
+}
+.input_chk_hp {
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+}
+.input_chk_hp span + label{
+    padding-left: 30px;
+    margin-right: 30px;
+    cursor : pointer;
+}
+.input_chk_hp input[type="checkbox"] + label:before, .input_chk_hp input[type="radio"] + label:before, .input_chk_hp span + label:before {
+    content: '';position: absolute !important;top: 0;left: 0;width: 25px;height: 25px;display: inline-block;color: transparent;overflow: hidden;white-space: nowrap;
+    background: url(../image/checking.png) no-repeat;background-size: 70px 56px;cursor: pointer;
+}
+.input_chk_hp input[type="checkbox"] + label:before, .input_chk_hp span + label:before {
+    background-position:  0 0;
+}
+.input_chk_hp input[type="checkbox"]:checked + label:before, .input_chk_hp span.on + label:before {
+    background-position: 0px -31px;
+}
+.input_chk_hp input[type="radio"] + label:before {
+    background-position: -45px 0px;
+}
+.input_chk_hp input[type="radio"]:checked + label:before {
+    background-position:-45px -31px;
+}
+.checking.first .input_chk_hp{margin-top: 3px;}
+.checking.last{margin-top: 20px;padding-top: 10px;border-top: 1px solid #e5e5e5;}
+
+.group:before, .group:after {content: "";display: table;}
+
+.mgt5{margin-top: 5px;}
+
+.agreeBox{border:1px solid #e5e5e5;background: #f5f5f5;height: 80px;color: #666;font-size: 13px;padding: 18px;box-sizing: border-box;overflow-y:scroll;line-height: 1.8em;width:100%;}
+
+.byellow{background:#ffdc2e;color:#2e2e2e;}
+.bgreyblue{background:#324755 ; color: #fff;}
+
+/* modal.css */
+.modal-body h3 {
+    color: #666;
+}
+.modal-footer .btn_md {
+    border: none !important;
+}
+
+
+
+
+/* ----------------------------------------------------------------
+                            LAYOUT
+ -----------------------------------------------------------------*/
+/* header */
+#header { width: 100%; }
+#header h1 img { width: 85px; vertical-align: middle; }
+#header h1 span { position: absolute; top: 0; left: 50%; transform: translateX(-50%); font-size: 18px;}
+/* header 추가변경 */
+#header.unit_hd { box-sizing: border-box;}
+#header.unit_hd h1{ display: inline-block; position: absolute; left:0; padding-left:14px; line-height: 42px; }
+#header.unit_hd .unit-menu{ display: inline-block; position: absolute; right:0; padding-right:14px; font-size:13px; color:#666;}
+#header.unit_hd .unit-menu li{ float:left; line-height:42px; padding:0 7px; }
+#header.unit_hd .unit-menu li:last-child{ padding-right: 0; }
+#header.unit_hd .unit-menu a{ color:#999; }
+#header.unit_hd .unit-menu .link-mark{ color:#2e2e2e; }
+#header.unit_hd .hdInner{ width:100%; position:relative;}
+
+@media (min-width: 600px) {
+    #header { height: 60px; }
+    #header h1 { line-height: 60px; }
+    #header h1 img { width:110px; }
+    /* header 추가변경 */
+    #header.unit_hd{ border-top:2px solid #00e69c;}
+    #header.unit_hd h1{ line-height: 57px; left:15px;}
+    #header.unit_hd .unit-menu{ font-size:14px; right:15px;}
+    #header.unit_hd .unit-menu li{ line-height: 57px;}
+    #header.unit_hd .hdInner{ width:1170px; margin:0 auto; }
+}
+@media (max-width: 1200px){
+    #header.unit_hd .hdInner{ width:100%; }
+}
+
+
+/* 입력폼 */
+@media (min-width: 600px) {
+    .intGroupScroll{
+        height: 450px;
+        border-top: 1px solid #e8e8e8;
+        height: 585px;
+        overflow-y:scroll;
+        margin-top: 20px;
+    }
+    .intGroupWrap{ padding: 30px 30px 40px 30px;}
+
+    .intGroupWrap.bd{margin-top:0px !important}
+    .intGroup{ margin-top:24px; font-size:14px;}
+    .intGroup .errorMsg{ font-size:14px;}
+    .input_btn{
+        display: table;width: 100%;
+    }
+    .input_btn span{display: table-cell;vertical-align: top}
+    .input_btn .inputBtn{width: 100px;padding-left: 5px;}
+
+}
+
+
+/* 아이디 비밀번호찾기(반응형) */
+.contTTBox{ padding: 14px 14px 0 14px; background: #fff;display: none; }
+.contTTBox2{margin-bottom: 20px;}
+.contT{ font-size:15px; font-weight: 600; color:#222;}
+.contsubT{ font-size:13px; color:#999; margin-top:8px;}
+.intGroupWrap.bd{ border-top: 1px solid #e8e8e8; padding-top: 30px; margin-top: 30px;}
+.intGroup .inputName{font-weight: 700; color: #333}
+
+.findInfoWrap{ display:table; width: 100%; height: 100%; text-align: center; box-sizing: border-box;}
+.findInfo{ display:table-cell; vertical-align: middle; }
+.findInfo img{ width: 50px; }
+.findIDInfo{ margin-top: 10px; font-weight:600; line-height: 1.6; color:#2e2e2e;font-size: 15px}
+.findIDInfo2{margin-top: 5px; font-size: 14px; color: #666;line-height: 1.5em}
+.findInfoTxt{ margin-top:26px; font-size:13px; color:#999; text-align: center; }
+.findInfoTxt i{ font-size: 24px; vertical-align: sub;}
+
+.cont-vc.findChoice .formWrap{ padding:0; }
+.cont-vc.findChoice .findInfoWrap{ }
+.cont-vc.findChoice .findInfo { width:50%; }
+.cont-vc.findChoice .findInfo:first-child { border-right:1px solid #e2e2e2; }
+.cont-vc.findChoice .findInfoInner { width:100%; padding:40px 0; background: #fff; }
+
+.md-btn{border-radius:5px;text-align: center; color: #222;border: 1px solid #ccc;height: 42px;line-height: 42px;width: 100%;display: inline-block}
+
+
+@media (min-width: 600px) {
+    /* layout */
+    html{ height:100%; }
+    body { height: 100%; overflow: visible;}
+    .wrapper{height:100%;}
+    .mobile { display: block; }
+    #content_inner{ display: table; width: 100%; height: 100%; padding: 0 !important;  margin: 0 !important; padding-top: 61px !important; box-sizing: border-box;}
+    .cont-vc { display: table-cell; width: 500px; min-width: 320px; padding: 30px 0; height: inherit; vertical-align: middle; }
+    .cont-vc .table-fixed { display: inherit; width: 500px; margin: 0 auto; background: #fff !important; border: 1px solid #e2e2e2; }
+    #fixedBtn_bottom { position: inherit; }
+    #fixedBtn_bottom a{ height: 60px; line-height:60px; font-size:19px; font-weight: 600;}
+    .formWrap{ padding:0; }
+
+    /* title */
+    .contTTBox{ display: block; text-align: center; padding:0; margin-bottom: 50px; background: none; }
+    .contT{ font-size:27px; font-weight: 400; letter-spacing: -1.5px}
+    .contsubT{ font-size:16px; margin-top:20px;}
+    .contTTBox2{ text-align: left; margin: 0; padding:40px 30px; padding-bottom: 0px;}
+    .contTTBox2 .contT{font-size: 24px;}
+    .contTTBox2 .contsubT{ font-size: 14px; margin-top:15px;}
+
+    .findInfoWrap{ padding: 60px 0;}
+    .findInfo{ }
+    .findInfo img{ width: 84px; }
+    .findIDInfo{ margin-top: 20px; font-size:17px; font-weight: 600; }
+    .findInfoTxt{ margin-top:45px; font-size:16px; }
+    .findInfoTxt i{ font-size: 24px; vertical-align: sub;}
+
+    .cont-vc.findChoice{ width: 700px !important;}
+    .cont-vc.findChoice .table-fixed{ width: 700px !important; background: none !important; border: none !important;}
+    .cont-vc.findChoice .formWrap { background: none !important; }
+    .cont-vc.findChoice .findInfoWrap{ padding:0;}
+    .cont-vc.findChoice .findInfo{ width:46%; padding:0 2%;}
+    .cont-vc.findChoice .findInfo:first-child { border-right: none; }
+    .cont-vc.findChoice .findInfoInner{ padding:60px 0; border:1px solid #e2e2e2;}
+}
+
+
+/* 회원가입폼 */
+.j_input_chk_box_wrap{
+    padding: 30px;margin-top: 30px; border-top: 1px solid #e2e2e2;border-bottom: 1px solid #e8e8e8;
+}
+.j_input_chk_box{
+    display: table;width: 100%;
+}
+.j_input_chk_box li{
+    display: table-cell;vertical-align: top;width: 50%;
+}
+.j_input_chk_box dt{
+    font-weight: 700;color: #222;
+    margin-bottom: 6px;
+}
+.info_text{
+    margin-top: 13px;
+    color: #999;
+    line-height: 1.4em;
+    font-size: 13px;
+}
+.info_text li{
+    margin-top: 5px;
+}
+.info_text li:first-child{
+    margin-top: 0px;
+}
+
+/* 테이블 */
+.join_tbBox{padding: 30px 30px 0 30px;}
+.join_tb{
+    border-top: 1px solid #222;
+    font-size: 14px;
+}
+.join_tb th{color: #666}
+.join_tb td{font-weight: 700;}
+.join_tb th, .join_tb td{padding: 15px 8px;border-bottom: 1px solid #e2e2e2;}
+
+.join_cusBox{padding: 30px;padding-bottom: 0px}
+.join_cus{background: #f5f5f5 url(../image/icon_join_cus.png) no-repeat 20px center;padding: 15px; padding-left: 100px;text-align: left;border: 1px solid #e2e2e2;}
+.join_cus h2{font-size: 14px;font-weight: 700;margin-bottom: 6px;}
+
+/* 회원가입폼-모바일 */
+@media (max-width: 600px) {
+    .j_input_chk_box_wrap{
+        padding:  0 0 20px 0;
+        margin-bottom: 20px;
+    }
+    .inputBtn{
+        margin-top: 5px;
+        display: block;
+    }
+    .j_input_chk_box_wrap .input_chk_hp{
+        height: auto;
+        margin: 0px;
+    }
+    .j_input_chk_box, .j_input_chk_box li{
+        display: block;
+        width: 100%;
+        margin-top: 15px !important;
+    }
+    .join_tbBox,.join_cusBox{padding: 0;margin-top: 20px}
+}
+
+
+/*정산신청*/
+.applyWrap{padding: 30px;margin-top: 30px; border-top: 1px solid #e2e2e2;}
+.applyStep li:after{padding:10px 0;width:70px;display:inline-block; content:'\f107';font-family: FontAwesome; color: #a6a6a6;font-size: 1.6em;text-align: center}
+.applyStep li:last-child:after{display: none}
+.applyStep dl{width:100%;display: table;}
+.applyStep dt, .applyStep dd{display: table-cell; vertical-align: top}
+.applyStep dt{width: 70px;padding-right: 20px;}
+.applyStep dd{color: #666;line-height: 1.5em;}
+.applyStep dd h2{font-size: 16px;font-weight: 700; color: #222;margin-bottom: 8px}
+.stepBox{width:70px;height: 70px; border-radius:50em; text-align: center; display: table;border:1px solid #e2e2e2;background: #f5f5f5;}
+.stepBox span{display: table-cell;vertical-align: middle; color: #222;font-weight: 700;}
+
+.applyInfo{width:100%;display:table;padding: 30px 0;margin-top: 30px; border-top: 1px solid #e8e8e8}
+.applyInfo li{display: table-cell;vertical-align: top;width:33.333%;text-align: center;border-right: 1px solid #e8e8e8;}
+.applyInfo li:last-child{border-right: 0px;}
+.applyInfo dt{margin-bottom: 13px;}
+.applyInfo dt img{max-width: 50px}
+.applyInfo dd{color: #999}
+.applyInfo dd h2{font-weight: 700;font-size: 15px; letter-spacing: -1px; color: #222;margin-bottom: 7px;}
+.btn_icon_kakao{position: relative;padding-right: 6px; max-width:35px;top:9px;}
+
+.btn_bottom .col_2 .btn_global{
+    width: 50% !important;
+}
+
+
+/* 정산신청-모바일 */
+@media (max-width: 600px) {
+    .applyWrap{padding:30px 0 0 0;}
+    .applyInfo{padding-bottom:0;}
+    .applyStep dd h2, .applyInfo dd h2{font-size: 13px;}
+    .applyInfo dt img{max-width: 30px;}
+}

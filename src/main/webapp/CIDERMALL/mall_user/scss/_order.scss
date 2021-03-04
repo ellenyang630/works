@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* _order */
+//## 주문서 페이지에 사용하는 스타일을 지정합니다.
+
+
+.module{
+
+  // module__section
+  &__section{
+    margin-top: 2rem;
+
+    &.mt-0{
+      margin-top: 0;
+    }
+
+    @include respond-to('small-up'){
+      margin-top: 4.667rem;
+    }
+  }
+
+  // module__head
+  &__head{
+    border-bottom: 1px solid $text-dark;
+
+    &.is-flex{
+      display: flex;
+      align-content: center;
+
+      .module__act{
+        margin-left: auto;
+      }
+    }
+  }
+
+  // module-title
+  &__title{
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    padding-bottom: 1rem;
+    color: $text-dark;
+
+    em{
+      color: rgba($--color-danger, .98);
+    }
+  }
+
+  // module-body
+  &__body{
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-light;
+
+    &.bb-0{
+      border-bottom: 0;
+      padding-bottom:0;
+    }
+
+    &.module-view{
+      background-color: $bg-base;
+    }
+
+    &.module-list{
+      padding:0;
+      border-bottom: 0;
+    }
+    &.init{
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &-view{
+    background-color: $bg-base;
+  }
+  &__form{
+
+  }
+
+  &__foot{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+    .help-text{
+      margin-left: auto;
+    }
+
+
+    @include respond-to('medium-down'){
+      .btn-group{
+        display: none;
+      }
+    }
+  }
+}
+
+
+

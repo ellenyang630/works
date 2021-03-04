@@ -1,0 +1,1269 @@
+@charset "UTF-8";
+
+/*==================== Reset ==========================*/
+
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('../fonts/nanumSquare/NanumSquareRound.eot'), /* IE9 Compat Modes */
+  url('../fonts/nanumSquare/NanumSquareRound.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/nanumSquare/NanumSquareRound.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/nanumSquare/NanumSquareRound.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/nanumSquare/NanumSquareRound.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/nanumSquare/NanumSquareRound.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  @include prefix(box-sizing, border-box, webkit ms moz o);
+  &:before,
+  &:after{
+    @include prefix(box-sizing, border-box, webkit ms moz o);
+  }
+}
+
+html {
+  font-size: 12px;
+  background: $lwhite;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 500;
+  // line-height: 1.42857143;
+  line-height: 1.57142857;
+  //letter-spacing: -0.6px;   // 나눔스퀘어라운드
+  letter-spacing: -0.95px;
+  color: $gray-6;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: -0.95px;
+}
+
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+  &:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+}
+
+/* Set html5 elements to block */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,main,nav,section,summary{display:block;}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,font,img,ins,q,s,samp,strike,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{border:0 none; margin:0; padding:0; /*line-height:1.5;*/}
+body{position:relative;word-break:break-all;-ms-text-size-adjust:100%;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+header,h1{font-size:100%;}
+html,body{height:100%;}
+caption,legend{position:absolute;top:-9999px;left:-9999px;visibility:hidden;width:0;height:0;font-size:0;overflow:hidden;}
+caption{display:none;}
+img{vertical-align:top;border:none;}
+select,input{vertical-align:top;border:0px;border-radius:0;background-color:transparent; box-shadow: none;}
+hr{display:none;border:0 none;}
+ol,ul,ul li{list-style:none; padding:0; margin:0;}
+dl, dt, dd{ padding:0; margin:0;}
+em{font-style:normal;}
+menu li{list-style:none;}
+address{font-style:normal;display:inline;}
+button{cursor:pointer;border:0px;border-radius:0;background-color:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+button:active{ outline:none;}
+//button:focus{ outline:none;}
+table{border-spacing:0;border-collapse:collapse;}
+input,textarea,keygen,select,button{font-family: $font-family;}
+strong{font-weight:normal;}
+dfn{font-style:normal;}
+/* Link Style */
+a:link,a:visited,a:active,a:focus{/*text-decoration:none;*/ color: inherit;}
+a:focus{}
+//a:hover{text-decoration:none;}
+/* Forms */
+fieldset{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select,input[type=radio],input[type=submit],input[type=search]{cursor:pointer;border:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select::-ms-expand {display:none;}
+input:focus,button:focus,textarea:focus{ /*outline:none;*/}
+select,div{}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  z-index: 1;
+}
+textarea{
+  width:100%;
+  border:none;
+  background: none;
+  border:1px solid $line-d;
+  resize: none;
+  color:$gray-6;
+}
+/* heading */
+body,input,textarea,select,button{font-family: $font-family; letter-spacing: -0.95px;}
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;}
+img{max-width:100%;height:auto;vertical-align:top;-ms-interpolation-mode:bicubic;}
+small{font-size: 11px;color:$th-color;}
+
+
+
+
+/*==================== Helper CSS ==========================*/
+
+// Floats
+.clearfix {
+  @include clearfix;
+}
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+// Toggling content
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+
+// Hide from screenreaders and browsers
+.hidden {
+  display: none !important;
+}
+
+// for only read screen-reader
+.sr_only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  &-focusable:active,
+  &-focusable:focus{
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+// For Affix plugin
+.affix {
+  position: fixed;
+}
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+
+// text decoration
+strong,.strong{
+  font-weight:600;
+}
+.under{
+  text-decoration: underline !important;
+}
+
+
+// color
+.corange{
+  color: $orange_dark !important;
+}
+.cred{
+  color: $red !important;
+}
+.cblue{
+  color: $blue !important;
+}
+.cgreen{
+  color: $green !important;
+}
+.cbluelight{
+  color: $blue-light !important;
+}
+.cpink{
+  color: $pink !important;
+}
+.cpurple{
+  color: $purple !important;
+}
+.cgray{
+  color:$gray-6 !important;
+}
+.clgray{
+  color:$gray-9 !important;
+}
+.clgray2{
+  color:$light-gray !important;
+}
+.cblack{
+  color: $black !important;
+}
+.clblack{
+  color: $light-black !important;
+}
+.csky{
+  color:$sky !important;
+}
+.cdsky{
+  color:$dark-sky !important;
+}
+
+
+// margin & padding
+.mgl10{
+  margin-left:10px !important;
+}
+.mgl30{
+  margin-left:30px  !important;
+}
+
+.mgt0{
+  margin-top: 0px !important;
+}
+.mgt5{
+  margin-top:5px !important;
+}
+.mgt10{
+  margin-top:10px !important;
+}
+.mgt20{
+  margin-top:20px !important;
+}
+
+.mgb5{
+  margin-bottom:5px !important;
+}
+.mgb10{
+  margin-bottom:10px !important;
+}
+.mgb15{
+  margin-bottom:15px !important;
+}
+.mgb20{
+  margin-bottom:20px !important;
+}
+.mgb25{
+  margin-bottom:25px !important;
+}
+
+// Images Background ICON
+.images {
+  display: inline-block;
+  background: url("../images/images.png") no-repeat;
+  vertical-align: top;
+
+  &:before {
+    position: relative;
+  }
+}
+
+
+
+
+
+
+/* header */
+.header{
+  height:60px;
+  padding: 18px 0;
+  background: $white;
+  border-bottom:1px solid $line-c;
+  .logo{
+    width:134px;
+    height:23px;
+    margin: 0 auto;
+    background: url("../images/logo.png")0 0 no-repeat;
+    background-size: 134px 23px;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+
+
+  @media (max-width:375px){
+    &{
+      height:47px;
+      padding: 14px 0;
+      .logo{
+        width:110px;
+        height:19px;
+        background-size: 110px 19px;
+      }
+    }
+  }
+}
+
+/* footer */
+.footer{
+  width:960px;
+  padding:20px 0;
+  margin:0 auto;
+  border-top:1px solid $line-d;
+
+  @media (max-width:1019px){
+    &{
+      min-width: 300px;
+      width:100%;
+      padding:20px 15px;
+      box-sizing:border-box;
+    }
+  }
+
+  .ft_addr,
+  .ft_cs_wrap{
+    display: table-cell;
+    vertical-align: top;
+
+  }
+  .ft_addr{
+    width: 100%;
+    padding-right:124px;
+  }
+  .ft_cs_wrap{
+    min-width: 180px;
+    //padding-left:120px;
+    text-align: right;
+
+    .ft_cs{
+      //float:left;
+      display: table;
+      width:100%;
+      color:$light-black;
+
+      // .cs_tit
+      .cs_tit{
+        display: table-cell;
+        text-align: right;
+        .i_wrap,
+        .cs_name{
+          display: block;
+        }
+        .i_wrap{
+          width:51px;
+          height:51px;
+          text-align: center;
+          background: $line-e;
+          border-radius: 50%;
+          i{
+            font-size:26px;
+            line-height: 51px;
+            vertical-align: middle;
+          }
+        }
+        .cs_name{
+          margin-top:5px;
+          font-size:11px;
+          text-align: center
+        }
+      }
+
+      // .cs_txt
+      .cs_txt{
+        display: table-cell;
+        padding-left:20px;
+        vertical-align: middle;
+
+      }
+      .cs_tt{
+        font-size:21px;
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+      .cs_tc,
+      .cs_tb{
+        font-size:12px;
+        color:$light-black;
+
+      }
+      & + .ft_cs{
+        margin-left: 18px;
+        padding-left:18px;
+        border-left:1px solid $line-e;
+        .i_wrap{
+          i{
+            font-size:23px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1279px) {
+    .ft_addr{
+      padding-right:50px;
+    }
+    .ft_cs_wrap{
+
+    }
+  }
+
+  @media (max-width: 800px) {
+    .ft_addr,
+    .ft_cs_wrap{
+      display:block;
+    }
+
+    .ft_addr{
+      padding-right:0;
+    }
+    .ft_cs_wrap{
+      margin-top:20px;
+      text-align:left;
+      .ft_cs {
+        display: block;
+        .cs_tit,
+        .cs_txt{
+          display: inline-block;
+        }
+        .cs_tit{
+          .i_wrap {
+            width: 34px;
+            height: 34px;
+            i {
+              font-size: 17px;
+              line-height: 35px;
+            }
+          }
+        }
+        .cs_txt{
+          display: inline-block;
+          margin-left: 0;
+          vertical-align: top;
+          padding-left: 0;
+          .cs_tt,
+          .cs_tc{
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .cs_tc{
+            margin-left:2px;
+          }
+        }
+      }
+    }
+  }
+
+  .addr_tit{
+    margin-bottom:3px;
+    font-weight: 600;
+    color:$light-black;
+    &.second{
+      margin-top:15px;
+    }
+  }
+  .addr_info{
+    color:$light-black;
+  }
+  .co_bar{
+    padding:0 2px;
+    color: $gray-9;
+  }
+}
+
+
+#content{
+  width:960px;
+  padding:40px 0;
+  margin:0 auto;
+
+  @media (max-width:1019px){
+    &{
+      min-width: 300px;
+      width:100%;
+      padding:20px 15px;
+      box-sizing:border-box;
+    }
+  }
+  @media (max-width:320px){
+    &{
+      padding:10px;
+    }
+  }
+  @media (min-width:801px){
+    &{
+      min-height: 710px;
+    }
+  }
+}
+
+#content_inner{
+  .flex_wrap{
+    @include clearfix();
+  }
+  .flex_box{
+    float:left;
+    width:50%;
+    padding: 0 10px;
+    &:first-child{
+      padding-left:0;
+    }
+    &:last-child{
+      padding-right:0;
+    }
+    // 단독으로 쓰일 때
+    &.center{
+      float: none;
+      margin: 0 auto;
+    }
+
+    @media (max-width:800px){
+      &{
+        width:100%;
+        padding:10px 0 0 0;
+        &:first-child{
+          padding-top:0;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* 예약 진행 스텝 박스 */
+.booking_step{
+  margin-bottom: 40px;
+  ul{
+    @include clearfix;
+  }
+  li{
+    position: relative;
+    float:left;
+    padding:17px 0;
+    background: $white;
+    border-top:1px solid $line-d;
+    border-bottom:1px solid $line-d;
+    font-size: 15px;
+    font-weight: 600;
+    color:$disabled;
+    text-align:center;
+
+    &:after{
+      display: inline-block;
+      font-family: LineAwesome;
+      content: '\f112';
+      position: absolute;
+      top: 50%;
+      right: -7px;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #a3a7ab;
+      z-index: 1;
+    }
+
+    &:first-child{
+      border-top-left-radius: 50em;
+      border-bottom-left-radius: 50em;
+      border-left:1px solid $line-d;
+    }
+    &:last-child{
+      border-top-right-radius: 50em;
+      border-bottom-right-radius: 50em;
+      border-right:1px solid $line-d;
+      &:after{
+        content:"";
+      }
+    }
+
+    i{
+      font-size:150%;
+      transform: translateY(0.16em);
+    }
+
+    // active
+    &.active{
+      color:$light-black;
+    }
+  }
+
+  &.step_3{
+    li{
+      width:33.333%;
+    }
+  }
+
+
+  @media (max-width:1019px){
+    &{
+      margin-bottom:20px;
+    }
+  }
+  @media (max-width:600px){
+    li{
+      font-size:12px;
+      border-radius: 0 !important;
+      i{
+        display: block;
+        margin-bottom:8px;
+      }
+    }
+  }
+  @media (max-width:375px){
+    li{
+      font-size:11.5px;
+    }
+  }
+  @media (max-width:320px){
+    li{
+      font-size:11px;
+    }
+  }
+
+
+
+}
+
+/* 섹션박스별 스타일 */
+.section_booking{
+  margin-top:10px;
+  border:1px solid $line-d;
+  &:first-child{
+    margin-top: 0;
+  }
+  .section_booking{
+    margin-top:-1px;
+  }
+}
+.section_tit {
+  position: relative;
+  padding: 10px 15px;
+  background: $white;
+  color:$light-black;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  > * , h2, h3{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+}
+.section_cont{
+  //min-height:46px;
+  padding:15px;
+  background: $white;
+  border-top:1px solid $line-d;
+  box-sizing: border-box;
+  //overflow: hidden;  //다중셀렉트팝업때문에 주석
+  &.inn{
+    padding:14px;
+  }
+  &.scrollY_section{
+    min-height: 137px;
+    max-height: 221px;
+    overflow-y: auto;
+    line-height:1.7;
+  }
+  &.noPadding{
+    padding:0;
+  }
+  &.bd0{
+    border-top-width:0;
+  }
+}
+
+.section_tit.open{
+  background: $lwhite;
+  cursor: pointer;
+  &:after{
+    position: absolute;
+    top: 50%;
+    right:20px;
+    transform: translateY(-50%);
+    font-family: LineAwesome;
+    content:'\f113';
+    display: inline-block;
+    font-size:16px;
+    color:$disabled;
+  }
+
+  &.collapsed{
+    &:after{
+      font-family: LineAwesome;
+      content:'\f110';
+      display: inline-block;
+    }
+  }
+}
+
+// 타이틀 옆 가능여부 힌트
+.section_tit.with_hint{
+  display: table;
+  width:100%;
+
+  h2,
+  .hint_avail{
+    display: table-cell;
+  }
+  h2{
+    width:100%;
+  }
+
+  .hint_avail{
+    min-width:127px;
+    width:auto;
+    font-size:12px;
+    font-weight: 400;
+    color:$light-black;
+    text-align: right;
+    @include clearfix();
+
+    li{
+      float:left;
+      margin-left:15px;
+
+      &:first-child{
+        margin-left:0;
+      }
+      &:before{
+        content:"";
+        display: inline-block;
+        width:8px;
+        height:8px;
+        margin-right:1px;
+        border-radius: 50%;
+      }
+      &.poss{
+        &:before{
+          background: $green;
+          border:1px solid $green;
+        }
+      }
+      &.imposs{
+        &:before{
+          background: $line-d;
+          border:1px solid $line-d;
+        }
+      }
+    }
+
+    // 이용회차
+    &.time{
+      li{
+        &.poss{
+          &:before{
+            //background: lighten($green, 40%);
+            background: rgba( $green, .2 );
+            border:1px solid $green;
+          }
+        }
+        &.imposs{
+          &:before{
+            //background: lighten($line-d, 40%);
+            background: rgba($line-d, .2);
+            border:1px solid $line-d;
+          }
+        }
+      }
+
+   }
+  }
+}
+
+// 팝업 안, 섹션박스 레이아웃
+.check_booking{
+  border-width: 0;
+  .section_cont{
+    padding:15px 0 0 0;
+  }
+  .inline_form.total{
+    padding: 10px;
+    background: rgba($green, 0.05);
+    border: 1px solid $line-d;
+  }
+}
+
+
+
+
+
+
+// section_button
+.section_button{
+  margin-top:20px;
+  text-align: center;
+  span{
+    padding: 0 3px;
+    &:first-child{
+      padding-left:0;
+    }
+    &:last-child{
+      padding-right:0;
+    }
+  }
+
+  .btn{
+    //min-width: 300px;
+    //width: 100%;
+    min-width:100%;
+    height:60px;
+    font-size:17px;
+  }
+  .btn-wb{
+    min-width:300px;
+  }
+  .btn-ws{
+    min-width:160px;
+  }
+
+  // 버튼 두개
+  &.with_2{
+    .btn{
+
+    }
+  }
+
+  @media (max-width:1024px){
+    &.with_2{
+      span{
+        padding:0;
+        &:first-child{
+          padding-right:3%;
+          .btn{
+          }
+        }
+      }
+      .btn-wb{
+        min-width: 66%;
+        //padding-left:2%;
+      }
+      .btn-ws{
+        min-width: 30%;
+      }
+    }
+  }
+
+  @media (max-width:500px){
+    &{
+      .btn{
+        height:45px;
+        font-size:15px;
+      }
+    }
+
+    &.with_2{
+      span{
+        padding:0;
+        &:first-child{
+          padding-right:0;
+          .btn{
+          }
+        }
+      }
+      .btn-wb{
+        min-width: 52%;
+        width:52%;
+        padding-left:3%;
+      }
+      .btn-ws{
+        min-width: 45%;
+        width:45%;
+      }
+    }
+  }
+
+  @media (max-width:800px){
+    &{
+      .btn-wb,
+      .btn-ws{
+        min-width:100%;
+      }
+    }
+  }
+}
+
+
+// .section_form
+.section_form{
+  width: 100%;
+}
+.inline_form{
+  display: table;
+  width: 100%;
+  margin-top:8px;
+  text-align: left;
+  &:first-child{
+    margin-top: 0;
+  }
+
+  .label,
+  .inputBox,
+  .data,
+  .controller{
+    display: table-cell;
+    vertical-align: middle;
+    padding:0 5px;
+  }
+  .label{
+    min-width:90px;
+    width: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: $light-black;
+    //word-break: keep-all;
+    word-break: break-all;
+    &.vertical-top{
+      vertical-align: top;
+    }
+    i{
+      font-size:115%;
+      color:$light-gray;
+      transform: translateY(0.15em);
+    }
+    small{
+      margin-left:5px;
+      font-size: 12.5px !important;
+      font-weight: 400;
+      color:$gray-6;
+    }
+
+  }
+  .data{
+    width: 100%;
+    font-size: 14px;
+    color: $gray-6;
+    &.vertical-top{
+      vertical-align: top;
+    }
+  }
+  .controller{
+    min-width:120px;
+    padding-left:30px;
+  }
+
+  // 총 합계
+  &.total{
+    padding-top:13px;
+    margin-top:16px;
+    border-top: 1px solid $line-d;
+    .label{
+      color: $light-black !important;
+      font-weight: 600 !important;
+    }
+  }
+}
+
+.block_form{
+  &:first-child{
+    margin-top: 0;
+  }
+  .label,
+  .inputBox,
+  .data,
+  .controller{
+    display: block;
+    padding:0 5px;
+  }
+  .label{
+    margin-bottom:5px;
+  }
+}
+
+// 예약권종
+.booking_type{
+  .quantity{
+    color:$disabled;
+  }
+}
+
+// 뷰 페이지
+.view{
+  .inline_form{
+    .label{
+      color:$light-gray;
+      font-weight: 400;
+    }
+    .data{
+      color: $light-black;
+    }
+  }
+}
+.text-right {
+  .inline_form{
+    .data{
+      text-align: right;
+    }
+  }
+}
+// 판매자 정보
+.seller{
+  .inline_form{
+    .label{
+      // min-width:115px;
+      min-width: 95px;
+    }
+  }
+}
+// 예약자 정보
+.booker{
+  .inline_form{
+    .data{
+      color:$gray-6;
+    }
+  }
+}
+// 가격/수량 선택
+.inline_mobile {
+  .inline_form {
+    .label {
+      min-width: 120px;
+    }
+  }
+}
+
+
+@media (max-width:425px) {
+
+  .section_tit {
+    //padding:10px 20px;
+    > *{
+      font-size:13px;
+    }
+  }
+
+  .inline_form{
+    .label,
+    .inputBox,
+    .data{
+      font-size:13px;
+    }
+  }
+
+
+
+  // 모바일에서 하나씩 블락으로
+  .inline_mobile {
+    .inline_form {
+      position: relative;
+
+      .label,
+      .inputBox,
+      .data {
+        display: block;
+        text-align: left !important;
+      }
+      .label{
+        padding-right: 130px;
+      }
+      .data {
+        margin-top: 3px;
+      }
+      .controller {
+        display: inline-block;
+        width: 120px;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        padding-left:0;
+      }
+    }
+  }
+}
+
+
+
+// 안내문구
+.info_txt{
+  margin-top: 10px;
+  text-align: left;
+  font-weight: 600;
+  color:$light-gray;
+  i{
+    font-size:130%;
+    font-weight: 600;
+    transform: translateY(0.1em);
+  }
+  &.md{
+    font-size:14px;
+    i{
+      transform: translateY(0.15em);
+    }
+  }
+}
+.section_form .info_txt{
+  padding-left:90px;
+  margin-top:5px;
+}
+.textDummy_wrap .info_txt{
+  margin-top:0;
+  margin-bottom:7px;
+}
+
+
+
+
+/* tables */
+table {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  background: $white;
+  font-size: 13px;
+  .btn {
+    position: relative;
+    letter-spacing: -0.5px;
+    &.first{
+      margin-right:5px;
+    }
+  }
+  th, td {
+    word-break: break-all;
+  }
+  .num {
+    font-size: 1.1em;
+    position: relative;
+    top: -0.5px;
+  }
+}
+.tbList {
+  border: 1px solid $line-d;
+  thead {
+    th {
+      color: $gray-9;
+      padding:4px 10px;
+      border-bottom: 1px solid $line-d;
+      background-color: $line-d;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  tbody {
+    tr {
+      th,td{
+        border-bottom: 1px solid $line-d;
+      }
+      &:last-child {
+        th,td{
+          border-bottom: 0px !important;
+        }
+      }
+    }
+    th, td {
+      padding: 15px 35px;
+      line-height: 1.4em;
+      letter-spacing: 0px;
+      //border-right: 1px solid $line-d;
+      word-break: keep-all;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td {
+      text-align: center;
+      &.text-left{
+        text-align:left;
+      }
+    }
+
+  }
+  // tbody 반복 시, 라인 추가
+  tbody + tbody{
+    border-top:1px solid $line-d;
+  }
+  tbody:first-child{
+    border-top:0;
+  }
+  .btnBox {
+    vertical-align: middle;
+    span {
+      display: block;
+      width: 90px;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      a , button {
+        width: 100%;
+      }
+    }
+  }
+  .td_arrow{
+    position: relative;
+    cursor: pointer;
+    &:before{
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      font-family: LineAwesome;
+      content: '\f112';
+      display: inline-block;
+      font-size: 21px;
+      font-weight: 600;
+      color: #a3a7ab;
+    }
+  }
+}
+
+
+.dlBox {
+  tbody {
+    th, td {
+      vertical-align: top;
+    }
+  }
+  dl {
+    display: table;
+    width: 100%;
+    margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    dt, dd {
+      display: table-cell;
+      vertical-align: top;
+    }
+    dt {
+      text-align: left;
+      color: $gray-9;
+      min-width: 65px;
+    }
+    dd {
+      text-align: right;
+    }
+  }
+}

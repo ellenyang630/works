@@ -1,0 +1,312 @@
+@charset "UTF-8";
+/* _quickMenu.scss */
+
+$padding: 2rem;
+$trigger-size: 4rem;
+$action-size: 4rem;
+$max-child-actions: 4;
+$transition-duration: .4s;
+
+.fab {
+  position: fixed;
+  bottom: $padding;
+  right: $padding;
+
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index:100;
+
+  //@include res(xl){
+  //  bottom: static;
+  //  bottom: initial;
+  //  top:65%;
+  //  transform: translateY(-50%);
+  //  right:95px;
+  //}
+
+  .trigger, .action {
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    cursor: pointer;
+
+    &:active {
+      opacity: .7;
+    }
+  }
+
+  .trigger {
+    position: relative;
+    background: $lighter-black;
+    color: $white;
+    height: $trigger-size;
+    width: $trigger-size;
+    line-height: $trigger-size;
+    vertical-align: middle;
+    font-size:170%;
+    z-index: 1;
+
+    i{
+      display: inline-block;
+      font-size:150%;
+      transform: rotate(0deg);
+      transition-duration: 0.3s;
+      transition-property: transform;
+    }
+  }
+
+  .action {
+    position: absolute;
+    top: 0;
+    left:0;
+    margin: 0 ($trigger-size - $action-size)/2;
+    background: #fff;
+    color: #333;
+    height: $action-size;
+    width: $action-size;
+    line-height: $action-size;
+    transition: transform $transition-duration ease;
+
+    a{
+      color:inherit;
+    }
+    .quick-button{
+      i{
+        font-size:170%;
+      }
+    }
+
+    &1{
+      background-color: $warning;
+      color: $text-dark;
+    }
+    &2{
+      background-color: $danger;
+      color: $white;
+    }
+    &3{
+      background-color: $primary;
+      color: $white;
+    }
+    &4{
+      background-color: $additional;
+      color: $white;
+    }
+
+
+
+
+
+
+  }
+
+  .actions {
+    opacity: 0;
+    transition: opacity $transition-duration ease;
+  }
+
+  &.open {
+    .trigger{
+      i{
+
+        transform: rotate(135deg);
+      }
+    }
+
+    .actions {
+      $action-space: $action-size + $padding/2;
+      opacity: 1;
+
+      @for $i from 1 through $max-child-actions {
+        $distance: $action-space * $i;
+        .action:nth-child(#{$i}) {
+          transform: translateY(-$distance);
+        }
+      }
+    }
+
+    .tooltip {
+      opacity: 1;
+      transform: translateY(-50%)scale(1);
+      right: $trigger-size + $padding/2;
+      transition-delay: $transition-duration/4;
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50vw;
+    transform: translateY(-50%)scale(0);
+    transform-origin: right center 0;
+    text-align: right;
+    transition: all $transition-duration ease;
+    opacity: 0;
+    color: $text-base;
+    font-size:1rem;
+
+  }
+}
+
+
+
+
+//
+//
+//
+//
+//
+
+//.quick-menu{
+//  position: fixed;
+//  right: 30px;
+//  //bottom: 15px;
+//  top:50%;
+//  z-index: 100;
+//  transform: translateY(-50%);
+//
+//}
+//.quick-menu-inner{
+//  position: relative;
+//}
+//.quick-menu-item {
+//  //position: absolute;
+//  //right: 30px;
+//  //bottom: 15px;
+//  //z-index: 100;
+//  //transition: all 300ms ease-in-out;
+//  will-change: bottom;
+//  transition-delay: 250ms;
+//  transition-property: display, transform;
+//  margin:20px 0;
+//
+//}
+//.inner-fabs{
+//
+//  display: none;
+//  transform: translateY(300px);
+//
+//  transition-property: display, transform;
+//  transition-duration: 250ms;
+//
+//
+//
+//  .quick-menu-item{
+//    //position: absolute;
+//    //right: 30px;
+//    //bottom: 15px;
+//    transition: all 300ms ease-in-out;
+//    display: none;
+//    will-change: bottom;
+//    transform: translateY(-300px);
+//    text-align: right;
+//
+//    p ,
+//    .fab{
+//      display: inline-block;
+//    }
+//    p{
+//      margin-right:22px;
+//      display: none;
+//      transition-duration: 250ms;
+//      transition-delay: 250ms;
+//      transition-property: display;
+//      color:$text-base;
+//    }
+//  }
+//}
+//.round{
+//  border-radius: 50%
+//}
+//.fab{
+//  transition: all 300ms ease-in-out;
+//  width: 4rem;
+//  height: 4rem;
+//  //background-color: $fab-color;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  //position: absolute;
+//  //right: 30px;
+//  //bottom: 15px;
+//  user-select: none;
+//  cursor: pointer;
+//  color: white;
+//  font-size: 2em;
+//  //box-shadow: 0px 3px 10px rgba(0,0,0,.16), 0px 3px 10px rgba(0,0,0,.16);
+//  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//  text-align: center;
+//  line-height: 4rem;
+//  margin-left:auto;
+//}
+//.fab i{
+//  transition: all 300ms ease-in-out;
+//  will-change: transform;
+//  font-size: 1.867rem;
+//}
+//
+//.inner-fabs .fab{
+//  //width: 40px;
+//  //height: 40px;
+//  //right: 38px;
+//  //bottom: 23px;
+//  will-change: bottom;
+//}
+//
+//#fab1{
+//  background-color: $lighter-black;
+//
+//  i{
+//    font-size: 2.2rem;
+//  }
+//}
+//#fab2{
+//  background-color: $warning;
+//}
+//#fab3{
+//  background-color: $danger;
+//}
+//#fab4{
+//  background-color: $primary;
+//}
+//#fab5{
+//  background-color: $additional;
+//}
+//
+//// from 0 through ${number of inner fabs}
+//@for $i from 0 through 5{
+//  .inner-fabs.show .quick-menu-item{
+//    &:nth-child(#{$i + 1}){
+//      bottom: #{$i * 5 + 4}rem
+//    }
+//  }
+//}
+//
+////Did that so the box-shadow doesn't rotate too
+//.inner-fabs.show + .quick-menu-item .fab i{
+//  transform: rotate(135deg);
+//
+//}
+//.inner-fabs.show{
+//  //.fab:hover:before{
+//  //  content: attr(data-tooltip);
+//  //  visibility: visible;
+//  //  opacity: 1;
+//  //}
+//  display: block;
+//  transform: translateY(0);
+//
+//  //transition-delay: 250ms;
+//  //transition-property: height, display, transform;
+//  //transition-duration:250ms;
+//
+//  .quick-menu-item{
+//    display: block;
+//    transform: translateY(0);
+//    transition-delay: 250ms;
+//    transition-property: display, transform;
+//  }
+//  .quick-menu-item p{
+//    display: inline-block;
+//  }
+//}

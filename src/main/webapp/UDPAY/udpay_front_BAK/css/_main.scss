@@ -1,0 +1,1944 @@
+/* ----------------------------------------------------------------
+ main
+ -----------------------------------------------------------------*/
+#mainVisual {
+  background: $white-grey;
+  position: relative;
+  .deco {
+    width: 1170px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .deco:after {
+    content: '';
+    width: 846px;
+    height: 522px;
+    background: url('../images/main/visual_deco.png') no-repeat top center;
+    position: absolute;
+    right: -75px;
+    bottom: 50px;
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 2s infinite alternate;
+  }
+  .centerThis:before {
+    content: '';
+    width: 825px;
+    height: 400px;
+    background: url('../images/main/visual_bg.png') no-repeat bottom center;
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+    position: absolute;
+    right: -75px;
+    bottom: 0;
+  }
+
+  .textBox {
+    padding: 120px 0;
+    float: left;
+    display: inline-block;
+    /*img {
+      max-height: 43px;
+    }*/
+    .pLogo{
+      margin-bottom:20px;
+    }
+    h2 {
+      font-size: $font-size-xlg;
+      color: $black;
+      line-height: 1.3em;
+      letter-spacing: -2px;
+      font-weight: $font-weight-light;
+      @include fontSt;
+    }
+    h3 {
+      font-size: 21px;
+      font-weight: $font-weight-bold;
+      color:$black;
+      margin-top: 40px;
+      @include fontSt;
+    }
+    .expText{
+      font-size: $font-size-base;
+      color:$base;
+      margin-top: 30px;
+      @include fontSt;
+    }
+    .hashBox {
+      margin-top: 30px;
+    }
+    .hashBox span {
+      @extend .rd50;
+      display: inline-block;
+      padding: 5px 1.2em;
+      margin: 5px;
+      font-weight: $font-weight-bold;
+      @include fontSt;
+      &:first-child {
+        margin-left: 0px;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+      &.cblue {
+        background: $blue_a;
+      }
+      &.cred {
+        background: $red_a;
+      }
+      &.cgreen {
+        background: $green_a;
+      }
+      &.ccyan {
+        background: $cyan_a;
+      }
+      &.cpurple {
+        background: $purple_a;
+      }
+      &.corg {
+        background: $orange_a;
+      }
+    }
+  }
+  .imgBox {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 680px;
+    height: 100%;
+    .inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .phone {
+      position: absolute;
+      bottom: 80px;
+      left: 0px;
+    }
+    .laptop {
+      position: absolute;
+      bottom: 80px;
+      right: 0px;
+    }
+    img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      z-index: 3;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #mainVisual {
+    .centerThis {
+      &:before {
+        height: 350px;
+        background-size: 80%;
+      }
+    }
+    .textBox {
+      h3 {
+        margin-top: 15px;
+      }
+      .hashBox {
+        margin-top: 15px;
+      }
+      img {
+        max-height: 30px;
+      }
+    }
+    .deco {
+      width: 100%;
+      &:after {
+        background-size: 70%;
+        bottom: -60px;
+      }
+    }
+    .textBox {
+      padding: 60px 0;
+    }
+    .imgBox {
+      right: 30px;
+      width: 540px;
+    }
+    .laptop {
+      bottom: 60px !important;
+      img {
+      }
+    }
+    .phone {
+      bottom: 60px !important;
+      img {
+        width: 90%;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+
+  #mainVisual {
+    .centerThis {
+      &:before {
+        background-size: 80%;
+        height: 300px;
+        right: -100px;
+      }
+    }
+    .deco {
+      &:after {
+        background-size: 60%;
+        bottom: -100px;
+      }
+    }
+    .imgBox {
+      width: 500px;
+    }
+    .phone {
+      img {
+        width: 120px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #mainVisual {
+    h2 {
+      font-size: 1.6rem !important;
+    }
+    .centerThis {
+      &:before {
+        background-size: 70%;
+        height: 320px;
+        right: -150px;
+      }
+    }
+    .deco {
+      &:after {
+        background-size: 60%;
+        bottom: -185px;
+        right: -200px;
+      }
+    }
+    .textBox {
+      padding: 40px 0;
+    }
+    .imgBox {
+      width: 360px;
+    }
+    .laptop {
+      bottom: 70px !important;
+    }
+    .phone {
+      bottom: 70px !important;
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mainVisual {
+    .centerThis {
+      padding: 0 15px;
+      &:before {
+        background: none;
+      }
+    }
+    .deco {
+      width: 100%;
+      &:after {
+        background: none;
+      }
+    }
+    .textBox {
+      float: inherit;
+      display: block;
+      padding: 40px 0 20px 0;
+      text-align: center;
+      h2 {
+        word-break: keep-all;
+        font-size: 2rem !important;
+        letter-spacing: -2px !important;
+      }
+      h3, .hashBox {
+        margin-top: 15px;
+      }
+      img {
+        position: relative;
+        top: 10px;
+      }
+    }
+    .imgBox {
+      padding-bottom: 40px;
+      position: inherit;
+      position: relative;
+      text-align: center;
+      right: inherit;
+      width: 100%;
+      .laptop {
+        position: inherit;
+        right: inherit;
+        bottom: inherit !important;
+        width: 100%;
+        img {
+          max-width: 90%;
+          padding-left: 10%;
+        }
+      }
+      .phone {
+        bottom: 0px !important;
+        left: 0 !important;
+        width: 20%;
+
+        z-index: 3;
+        img {
+          max-width: 100%;
+          width: 100% !important;
+          padding-left: 38%;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #mainVisual {
+    .hashBox {
+      font-size: 0.9em;
+      span {
+        padding: 2px 1.2em !important;
+        margin: 3px 2px !important;
+      }
+    }
+  }
+}
+
+
+.mSIn {
+  padding: 6% 0;
+  .titleBox {
+    text-align: center;
+    margin-bottom: 50px;
+    img {
+      position: relative;
+      top: 6px;
+    }
+    h2 {
+      font-size: $font-size-mlg;
+      line-height: 1.4em;
+      letter-spacing: -2px;
+      color:$black;
+      @include fontSt;
+      strong {
+        //font-weight: $font-weight-base;
+      }
+    }
+    h3 {
+      margin-top: 35px;
+      font-size: $font-size-bmiddle;
+      line-height: 1.5em;
+      color:$black;
+      @include fontSt;
+    }
+    .logo_img {
+      height: 33px;
+    }
+    .expText{
+      margin-top: 15px;
+      font-size: 1.06rem;
+      line-height: 1.76;
+      color:$base;
+      @include fontSt;
+
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .mSIn {
+    .titleBox {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .mSIn {
+    .titleBox h2, .tt {
+      font-size: 1.6rem !important;
+    }
+    .titleBox {
+      margin-bottom: 30px;
+      img {
+        height: 30px;
+        position: relative;
+        top: 4px;
+      }
+    }
+    .logo_img {
+      height: 26px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mSIn {
+    .titleBox h3 {
+      font-size: 1rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mSIn{
+    .titleBox {
+      margin-bottom: 15px !important;
+      h3 {
+        margin-top: 10px;
+      }
+    }
+    .apiLink {
+      margin-top: 15px !important;
+    }
+  }
+}
+
+/* 리뉴얼 - 쉬운 연동은 기본 */
+#easy{
+  position: relative;
+  .titleBox{
+    float: left;
+    display: inline-block;
+    padding: 120px 0;
+    text-align: left;
+  }
+  .imgBox{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 680px;
+    height: 100%;
+
+    .monitor{
+      width:100%;
+      height:100%;
+      text-align: center;
+      &:before,
+      &:after{
+        width:100%;
+        height:100%;
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+      }
+      &:before{
+        background: url("../images/main/sec2_peaple.png") no-repeat;
+        z-index: -1;
+      }
+      &:after{
+        background: url("../images/main/sec2_deco.png") no-repeat;
+        z-index: -2;
+        -webkit-animation: mover 2s infinite alternate;
+        animation: mover 2s infinite alternate;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 1100px) {
+  #easy {
+    .imgBox{
+      right: 50px;
+
+      .monitor {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #easy {
+    .titleBox{
+      padding: 40px 0;
+    }
+    .imgBox{
+      width:360px;
+      img{
+        width:100%;
+      }
+      .monitor {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        &:before,
+        &:after {
+          background-size: cover;
+        }
+        &:before{
+          left:-80px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #easy {
+    .titleBox{
+      float: none;
+      display: block;
+      padding: 0;
+      text-align: center;
+    }
+    .imgBox{
+      position: static;
+      width:100%;
+      height: 100%;
+      img{
+        width:55%;
+      }
+
+      .monitor {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        &:before,
+        &:after {
+          background-size: contain;
+        }
+        &:before{
+          left:0;
+        }
+      }
+
+    }
+  }
+}
+/* 리뉴얼 - 연동 즉시 결제받기 가능 */
+#fast{
+  background: $white-grey url("../images/main/sec3_bg.png") right 150% no-repeat;
+
+  .systemWrap{
+    width:920px;
+    margin:0 auto;
+    &:after{
+      content: "";
+      display: block;
+      clear:both;
+    }
+    > li{
+      float: left;
+      width: 48.5%;
+      background: $white;
+      border-radius: 5px;
+      overflow: hidden;
+      &:first-child{
+        margin-right:3%;
+      }
+    }
+    .systemTT{
+      height:160px;
+      padding: 40px;
+      font-size: $font-size-bmiddle;
+      color:$white;
+      text-align: center;
+      vertical-align: middle;
+      .sub{
+        font-size: $font-size-middle;
+        margin-top:10px;
+        @include fontSt;
+      }
+    }
+    .systemCont{
+      height:270px;
+      padding:45px 35px;
+      font-size: 1.2rem;
+      color:$black;
+      @include fontSt;
+      li{
+        margin-top:15px;
+        padding-left: 50px;
+        text-indent: -26px;
+        &:first-child{
+          margin-top:0;
+        }
+        &:before{
+          display: inline-block;
+          content:"\f2f2";
+          font-family: LineAwesome;
+          //width:35px;
+          //height:35px;
+          margin-right:20px;
+          font-size: 150%;
+          transform: translateY(0.3rem);
+        }
+
+        &.i_before1{
+          &:before{ content:"\f17b"; }
+        }
+        &.i_before2{
+          &:before{ content:"\f2f2"; }
+        }
+        &.i_before3{
+          &:before{ content:"\f18e"; }
+        }
+        &.i_before4{
+          &:before{ content:"\f12e"; }
+        }
+        &.i_before5{
+          &:before{ content:"\f2b0"; }
+        }
+        &.i_before6{
+          &:before{ content:"\f1aa"; }
+        }
+      }
+    }
+
+    .standard{
+      .systemTT{
+        background: $skyBlue;
+      }
+      .systemCont{
+        li {
+          &:before {
+            color:$skyBlue;
+          }
+        }
+      }
+    }
+    .custom{
+      .systemTT{
+        background: $lightPurple;
+      }
+      .systemCont{
+        li {
+          &:before {
+            color:$lightPurple;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1279px) {
+
+}
+@media screen and (max-width: 970px) {
+  #fast {
+    .systemWrap {
+      width: 100%;
+      padding:5px 25px;
+      .systemTT {
+        height: 130px;
+        padding: 25px 40px;
+      }
+      .systemCont {
+        padding: 25px 35px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 800px) {
+
+
+}
+@media screen and (max-width: 800px) {
+  #fast {
+    .systemWrap {
+      > li {
+        float: none;
+        width: 100%;
+        &:first-child {
+          margin-right: 0;
+          margin-bottom:20px;
+        }
+      }
+      .systemTT {
+        height: auto;
+        padding: 15px;
+      }
+      .systemCont{
+        height: auto;
+        padding: 30px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+}
+
+@media screen and (max-width: 425px) {
+  #fast {
+    .systemWrap {
+      padding:0;
+      .systemTT {
+        .sub{
+          font-size: 1rem;
+        }
+      }
+      .systemCont {
+        padding: 15px;
+        li {
+          margin-top: 8px;
+          padding-left: 34px;
+          text-indent: -16px;
+          &:before {
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* 리뉴얼 - 통합결제창 제공 */
+#allPay{
+  background: $white;
+  padding-bottom:0;
+  .titleBox{
+    .big_btn{
+      margin-top: 3%;
+    }
+  }
+
+  .paymentlistWrap{
+    padding:25px;
+    background: $white-grey;
+    border-radius: 13px;
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+    @include fontSt;
+    ul{
+      &:after{
+        display: block;
+        clear:both;
+        content:"";
+      }
+    }
+    li{
+      float:left;
+      width:25%;
+      text-align: center;
+      padding:25px 0;
+      span{
+        &:before{
+          display: block;
+          content: "";
+          background: url("../images/main/image_sprit.png") no-repeat;
+          background-size: 800px 500px;
+          background-position: 0 0;
+          width: 51px;
+          min-height: 39px;
+          margin: 0 auto 20px auto;
+        }
+      }
+
+      &.i_pay_before2 span:before{
+          background-position: -61px 0;
+      }
+      &.i_pay_before3 span:before{
+          background-position: -122px 0;
+      }
+      &.i_pay_before4 span:before{
+          width: 48px;
+          height:55px;
+          background-position: -183px 0;
+      }
+      &.i_pay_before5 span:before{
+          width: 84px;
+          height:33px;
+          background-position: -242px 0;
+      }
+      &.i_pay_before6 span:before{
+          width: 94px;
+          height:39px;
+          background-position: -335px 0;
+      }
+      &.i_pay_before7 span:before{
+          width: 90px;
+          height:20px;
+          background-position: -438px 0;
+      }
+      &.i_pay_before8 span:before{
+          width: 182px;
+          height:34px;
+          background-position: -538px 0;
+      }
+
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  #allPay {
+    .paymentlistWrap {
+      padding: 10px 25px;
+      li {
+        padding: 15px 0;
+        span {
+          &:before {
+            background-size: 600px 375px;
+            width:39px;
+            min-height: 44px;
+            margin: 0 auto 5px auto;
+          }
+        }
+
+        &.i_pay_before2 span:before{
+          background-position: -46px 0;
+        }
+        &.i_pay_before3 span:before{
+          background-position: -91px 0;
+        }
+        &.i_pay_before4 span:before{
+          width: 37px;
+          height:42px;
+          background-position: -137px 0;
+        }
+        &.i_pay_before5 span:before{
+          width: 64px;
+          height:25px;
+          background-position: -180px 0;
+        }
+
+        &.i_pay_before6 span:before{
+          width: 71px;
+          height:30px;
+          background-position: -251px 0;
+        }
+        &.i_pay_before7 span:before{
+          width: 68px;
+          height:15px;
+          background-position: -328px 8px;
+        }
+        &.i_pay_before8 span:before{
+          width: 116px;
+          height:22px;
+          background-size: 480px 299px;
+          background-position: -322px 6px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  #allPay {
+    .paymentlistWrap {
+      padding: 10px 25px;
+      font-size: 1rem;
+      li {
+        width:33.333%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  #allPay {
+    .paymentlistWrap {
+      padding: 10px;
+    }
+  }
+}
+
+/* 임대형/독립형의 장점들만 모았다 */
+#picxell{
+  display: none;
+  margin: 3% 0 3% 0;
+  padding: 3% 0 0 0;
+  overflow: hidden;
+  .picxellMeritWrap{
+    overflow: hidden;
+    li{
+      float:left;
+      width:33.333%;
+      padding:1.4% 0;
+      font-size:$font-size-middle;
+      &:before{
+        content:"";
+        display: table-cell;
+        width:98px;
+        height:98px;
+        background: $white-grey url("../images/main/image_sprit.png") no-repeat;
+        background-size: 800px 500px;
+        background-position:0 -64px;
+        border-radius: 13px;
+      }
+      span{
+        display: table-cell;
+        padding-left: 15px;
+        //line-height: 98px;
+        vertical-align: middle;
+      }
+
+      &.i_picxell2:before{
+        background-position:-98px -64px;
+      }
+      &.i_picxell3:before{
+        background-position:-196px -64px;
+      }
+      &.i_picxell4:before{
+        background-position:-294px -64px;
+      }
+      &.i_picxell5:before{
+        background-position:-392px -64px;
+      }
+      &.i_picxell6:before{
+        background-position:-490px -64px;
+      }
+      &.i_picxell7:before{
+        background-position:-588px -64px;
+      }
+      &.i_picxell8:before{
+        background-position:-686px -64px;
+      }
+      &.i_picxell9:before{
+        background-position:0 -162px;
+      }
+      &.i_picxell10:before{
+        background-position:-98px -162px;
+      }
+      &.i_picxell11:before{
+        background-position:-196px -162px;
+      }
+      &.i_picxell12:before{
+        background-position:-294px -162px;
+      }
+      &.i_picxell13:before{
+        background-position:-392px -162px;
+      }
+      &.i_picxell14:before{
+        background-position:-490px -162px;
+      }
+      &.i_picxell15:before{
+        background-position:-588px -162px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  #picxell {
+    .picxellMeritWrap {
+      li {
+        width: 50%;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  #picxell {
+    max-height: 205px;
+    height:auto !important;
+    .picxellMeritWrap {
+      li {
+        width: 100%;
+        float: none;
+        //padding-right: 15px;
+        padding-right:0;
+        text-align:center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  #picxell {
+    .picxellMeritWrap {
+      li {
+        width: 100%;
+        padding: 0 8%;
+      }
+    }
+  }
+}
+
+
+#freeApi, #etcApi{
+  @extend %desBox;
+
+  .desBox li {
+    border-radius: 13px;
+  }
+  .nameTitle:before {
+    content: '';
+    width: 96px;
+    height: 96px;
+    display: block;
+    background: url('../images/main/image_sprit2.png') no-repeat;
+    background-size: 768px 384px;
+    background-position: 0 0;
+    margin: 0 auto;
+  }
+  .i_api2 .nameTitle:before{
+    background-position: -96px 0;
+  }
+  .i_api3 .nameTitle:before{
+    background-position: -191px 0;
+  }
+  .i_api4 .nameTitle:before{
+    background-position: -288px 0;
+  }
+  .i_api5 .nameTitle:before{
+    background-position: -384px 0;
+  }
+  .i_api6 .nameTitle:before{
+    background-position: -480px 0;
+  }
+  .i_api7 .nameTitle:before{
+    background-position: -576px 0;
+  }
+  .i_api8 .nameTitle:before{
+    background-position: -672px 0;
+  }
+  .i_api9 .nameTitle:before{
+    background-position: 0px -96px;
+  }
+  .i_api10 .nameTitle:before{
+    background-position: -96px -96px;
+  }
+  .i_api11 .nameTitle:before{
+    background-position: -192px -96px;
+  }
+  .i_api12 .nameTitle:before{
+    background-position: -288px -96px;
+  }
+  .i_api13 .nameTitle:before{
+    background-position: -384px -96px;
+  }
+  .i_api14 .nameTitle:before{
+    background-position: -480px -96px;
+  }
+}
+#freeApi{
+  .desBox{
+    li{
+      height:198px;
+    }
+  }
+}
+#etcApi{
+  padding-top:2%;
+  .desBox{
+    li{
+      height:233px;
+    }
+  }
+  .nameTitle:before {
+    margin-bottom:20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #freeApi, #etcApi {
+    .nameTitle:before {
+      width: 75px;
+      height: 75px;
+      background: url('../images/main/image_sprit2.png') no-repeat;
+      background-size: 600px 300px;
+      background-position: 0 0;
+    }
+    .i_api2 .nameTitle:before {
+      background-position: -75px 0;
+    }
+    .i_api3 .nameTitle:before {
+      background-position: -149px 0;
+    }
+    .i_api4 .nameTitle:before {
+      background-position: -225px 0;
+    }
+    .i_api5 .nameTitle:before {
+      background-position: -300px 0;
+    }
+    .i_api6 .nameTitle:before {
+      background-position: -375px 0;
+    }
+    .i_api7 .nameTitle:before {
+      background-position: -450px 0;
+    }
+    .i_api8 .nameTitle:before {
+      background-position: -525px 0;
+    }
+    .i_api9 .nameTitle:before {
+      background-position: 0px -75px;
+    }
+    .i_api10 .nameTitle:before {
+      background-position: -75px -75px;
+    }
+    .i_api11 .nameTitle:before {
+      background-position: -150px -75px;
+    }
+    .i_api12 .nameTitle:before {
+      background-position: -225px -75px;
+    }
+    .i_api13 .nameTitle:before {
+      background-position: -300px -75px;
+    }
+    .i_api14 .nameTitle:before {
+      background-position: -375px -75px;
+    }
+  }
+
+  #freeApi {
+    .desBox {
+      li {
+        height: 172px;
+      }
+    }
+  }
+  #etcApi {
+    .desBox {
+      li {
+        height: 172px;
+      }
+    }
+    .nameTitle:before {
+      margin-bottom:0;
+    }
+  }
+
+
+
+
+}
+
+
+#mSec {
+  dt:before {
+    content: '';
+    width: 140px;
+    height: 100px;
+    display: block;
+    background: url('../images/main/icon_mSec.png') no-repeat;
+    background-size: 560px 300px;
+    margin: 0 auto;
+  }
+  .icon2 dt:before {
+    background-position: -140px 0;
+  }
+  .icon3 dt:before {
+    background-position: -280px 0;
+  }
+  .icon4 dt:before {
+    background-position: -420px 0;
+  }
+  .icon5 dt:before {
+    background-position: 0px -100px;
+  }
+  .icon6 dt:before {
+    background-position: -140px -100px;
+  }
+  .icon7 dt:before {
+    background-position: -280px -100px;
+  }
+  .icon8 dt:before {
+    background-position: -420px -100px;
+  }
+  .icon9 dt:before {
+    background-position: 0px -200px;
+  }
+  .icon10 dt:before {
+    background-position: -140px -200px;
+  }
+  .icon11 dt:before {
+    background-position: -280px -200px;
+  }
+  .icon12 dt:before {
+    background-position: -420px -200px;
+  }
+  dd {
+    min-height: 70px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec {
+    .desBox {
+      dt {
+        margin-bottom: 8px;
+      }
+      dt:before {
+        margin-bottom: 0px;
+      }
+      li {
+        width: 31.5%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  #mSec {
+    .desBox {
+      li {
+        width: 48%;
+      }
+    }
+  }
+}
+
+
+
+
+
+#mSec, #mSec5 {
+  @extend %desBox;
+}
+
+@media screen and (max-width: 800px) {
+  #mSec, #mSec5 {
+
+    dt {
+      font-size: 1.3rem !important;
+    }
+    dd {
+      font-size: 1.1rem !important;
+      word-break: keep-all;
+    }
+  }
+}
+
+#mSec3, #mSec4 dl:first-child {
+  @extend %dasBoxLine;
+}
+
+#mSec2, #mSec4 {
+  background: $white-grey;
+  .desBox {
+    display: table;
+    width: 100%;
+    dl {
+      display: table-cell;
+      padding: 0 40px;
+      width: 50%;
+      &:first-child {
+        padding-left: 0px;
+      }
+      &:last-child {
+        padding-right: 0px;
+      }
+      dt {
+        text-align: center;
+        font-size: $font-size-lg;
+        color: $black;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+#mSec2 {
+  .imgBox {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      -webkit-animation: mover 2s infinite alternate;
+      animation: mover 2s infinite alternate;
+    }
+    img {
+      position: relative;
+    }
+  }
+  .info {
+    width: 110px;
+    height: 110px;
+    border-radius: 50em;
+    padding: 8px;
+    color: $white;
+    font-size: $font-size-base;
+    letter-spacing: -1px;
+    line-height: 1.3em;
+    display: table;
+    border: 8px solid rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    p {
+      display: table-cell;
+      vertical-align: middle;
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .phoneBox .imgBox {
+    &:before {
+      width: 423px;
+      height: 377px;
+      background: url('../images/main/img_deco.png') no-repeat 0 0;
+      left: 52px;
+      top: 100px;
+    }
+    .info {
+      background: $blue;
+      right: 20%;
+    }
+  }
+  .lapBox .imgBox {
+    padding-top: 70px;
+    &:before {
+      width: 542px;
+      height: 406px;
+      background: url('../images/main/img_deco2.png') no-repeat 0 0;
+      right: -70px;
+      bottom: 50px;
+      left: 0px;
+      top: 40px;
+    }
+    .info {
+      background: $green;
+      top: 40px;
+    }
+  }
+
+  .pgBox {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid $line-light;
+    h3 {
+      font-size: $font-size-middle;
+      text-align: center;
+      color: $black;
+      margin-bottom: 40px;
+      img {
+        max-height: 23px;
+        position: relative;
+        top: 6px;
+      }
+    }
+    ul {
+      display: table;
+      width: 100%;
+    }
+    li {
+      display: table-cell;
+      width: 20%;
+      text-align: center;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1279px) {
+
+  #mSec2 {
+    .phone img {
+      max-width: 180px;
+    }
+    .laptop img {
+      max-width: 400px;
+    }
+    .imgBox:before {
+      background-size: 80% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #mSec2 {
+    .phoneBox {
+      .info {
+        right: 13% !important;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+
+  #mSec2 {
+    .tt span {
+      display: block;
+      width: 80px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
+
+    .phoneBox {
+      .tt {
+        color: $blue;
+      }
+      .imgBox {
+        margin-top: 20px;
+        &:before {
+          width: 100%;
+          top: 0px;
+          left: 25%;
+          background-size: 50% !important;
+        }
+      }
+      img {
+        max-width: 100px;
+      }
+    }
+    .lapBox {
+      .tt {
+        color: $green;
+      }
+      .imgBox {
+        margin-top: 0px;
+        padding-top: 30px;
+        &:before {
+          width: 100%;
+          top: 20px;
+          left: 25%;
+          background-size: 60% !important;
+        }
+      }
+      img {
+        max-width: 240px;
+      }
+    }
+    .pgBox {
+      margin-top: 30px;
+      padding-top: 30px;
+      ul {
+        display: block !Important;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+      }
+      h3 img {
+        height: 18px;
+      }
+
+      .mSlider2 {
+        li {
+          width: 100% !important;
+          display: inline-block !important;
+        }
+        .dl {
+          height: 80px;
+          border: 1px solid $line;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          background: $white;
+          text-align: center;
+          width: 100%;
+          display: table;
+          .inner {
+            vertical-align: middle;
+            display: table-cell;
+            margin: 0 auto;
+          }
+          img {
+            height: 33px;
+            width: inherit;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#mSec3 {
+  .msTabBox {
+    display: table;
+    width: 100%;
+    margin: 0 -30px;
+  }
+  .tab, .tab-content {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 30px;
+  }
+  .tab {
+    width: 35%;
+    i {
+      margin-right: 8px;
+    }
+  }
+  .apiLink {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec3 {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .tab, .tab-content {
+      display: block;
+      padding: 0px;
+      width: 100%;
+    }
+    .tab {
+      a {
+        padding: 10px !important;
+        font-size: 1rem !important;
+      }
+      i {
+        display: block;
+        vertical-align: middle;
+        margin: 0px;
+        margin-bottom: 5px;
+      }
+    }
+    .tab-content {
+      margin-top: 15px;
+      text-align: center;
+      iframe {
+        height: 250px;
+      }
+    }
+    .msTabBox {
+      margin: 0px;
+    }
+    .link {
+      display: none;
+    }
+    .desBox_line {
+      display: table;
+      width: 100%;
+      li {
+        display: table-cell;
+        text-align: center;
+        width: 25%;
+        border: 0px;
+      }
+    }
+  }
+}
+
+#mSec4 {
+  .iconBox {
+    li {
+      position: relative;
+      a {
+        padding-left: 65px !important;
+      }
+      &:before {
+        content: '';
+        background: url('../images/main/icon_mSec4.png') no-repeat 0 0;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        position: absolute;
+        @extend %top50;
+        left: 20px;
+      }
+      &.icon2:before {
+        background-position: 0 -35px;
+      }
+      &.icon3:before {
+        background-position: 0 -70px;
+      }
+      &.icon4:before {
+        background-position: 0 -105px;
+      }
+      &.icon5:before {
+        background-position: 0 -140px;
+      }
+      &.icon6:before {
+        background-position: 0 -175px;
+      }
+    }
+  }
+  .freeBox {
+    border: 1px solid $line;
+    background: $white;
+
+    @extend %button-radius;
+    overflow: hidden;
+    li {
+      position: relative;
+      padding: 10px 35px;
+      font-size: 1.2rem;
+      &:first-child {
+        margin-top: 20px;
+      }
+      &:last-child {
+        margin-bottom: 20px;
+      }
+      .free {
+        position: absolute;
+        @extend %top50;
+        right: 20px;
+        color: $blue;
+      }
+      .free:before {
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        margin-right: 10px;
+        font-size: $font-size-middle;
+        color: rgba($blue,0.4);
+      }
+    }
+    .info {
+      padding: 20px 25px;
+      background: $blue;
+      color: $white;
+      strong {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec4 {
+    .desBox dl {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mSec4 {
+    ul {
+      display: block !Important;
+    }
+    .iconBox li:before {
+      left: 13px !important;
+    }
+    .freeBox li {
+      padding: 6px 25px;
+    }
+    dd{
+      padding: 0px;
+    }
+  }
+}
+
+#mSec5 {
+
+  .desBox{
+    li {
+      width: 31.333%;
+    }
+  }
+  .step {
+    @extend .rd50;
+    display: inline-block;
+    padding: 5px 1.2em;
+    font-size: $font-size-base;
+    background: $white;
+    color:$black;
+  }
+  dl {
+    position: relative;
+    padding: 30px !important;
+    text-align: left;
+    font-size: $font-size-middle;
+    color:$black;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 30px;
+      top: 17px;
+      background: url('../images/main/image_sprit.png') no-repeat 0 0;
+      background-size: 800px 500px;
+      width: 60px;
+      height: 60px;
+      display: block;
+    }
+    h3 {
+      margin-top: 15px;
+      font-size: $font-size-middle;
+      font-weight: $font-weight-bold;
+      @include fontSt;
+
+    }
+
+    &.dl {
+      &:after {
+        background-position: 0 -260px;
+      }
+    }
+    &.dl2 {
+      &:after {
+        background-position: -60px -260px;
+      }
+    }
+    &.dl3 {
+      &:after {
+        background-position: -120px -260px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  #mSec5 {
+    .sellBan {
+      margin-top: 10px;
+      padding: 20px;
+      background-size: contain;
+      .big_btn {
+        margin-top: 20px;
+      }
+    }
+    .mSlider3{
+      li {
+        width: 100% !important;
+        display: inline-block !important;
+      }
+      dl {
+        padding: 20px !important;
+        &:after {
+          right: 20px;
+          top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #mSec5 dl:after {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #mSec5{
+    dd{
+      text-align: center;
+    }
+  }
+}
+
+
+
+/* 배너 */
+// 픽셀 서비스 안내배너
+.picxellBan{
+  margin-top:5%;
+  padding: 45px;
+  text-align: center;
+  background: $white;
+  border:1px solid $line;
+  border-radius: 13px;
+  color:$black;
+
+  .banImg, .banTxt{
+    display: table-cell;
+    width:50%;
+    vertical-align: middle;
+  }
+  .banImg{
+
+  }
+  .banTxt{
+    text-align: left;
+    padding-left:30px;
+  }
+  h2 {
+    font-size: $font-size-slg;
+    line-height: 1.5;
+    .tt1{
+      color:$purple;
+    }
+    .tt2{
+      color:$black;
+    }
+  }
+  .free_balloon{
+    vertical-align: text-bottom;
+  }
+  .ban_subtt {
+    margin-top: 20px;
+    font-size: $font-size-middle;
+    @include fontSt;
+
+    img{
+      vertical-align: middle;
+    }
+  }
+  .link_under{
+    margin-top:20px;
+    padding-bottom:3px;
+    color:$purple;
+    cursor: pointer;
+    span{
+      border-bottom:1px solid $purple;
+      &:after{
+        display: inline-block;
+        content: '\f110';
+        font-family: LineAwesome;
+        margin-left:10px;
+      }
+    }
+  }
+  .big_btn {
+    margin-top: 30px;
+    background: #231f20 !important;
+    border-color: #231f20;
+    font-weight: $font-weight-bold;
+    color: $white !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .picxellBan{
+    padding:25px;
+    .banImg, .banTxt{
+      display: block;
+      width:100%;
+    }
+    .banImg{
+      img{
+        width:70%;
+      }
+    }
+    .banTxt{
+      padding-left:0;
+      margin-top:30px;
+      text-align: center;
+
+    }
+    .free_balloon {
+      height: 45px;
+    }
+
+  }
+}
+@media screen and (max-width: 425px) {
+  .picxellBan {
+    .ban_subtt {
+      img {
+        height:27px;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 375px) {
+  .picxellBan {
+    padding: 25px 15px;
+  }
+}
+
+
+// 결제앱 주요기능 배너
+.sellBan {
+  margin-top: 40px;
+  background: $green_bg url('../images/main/banner_bg.png') no-repeat center center;
+  padding: 45px;
+  text-align: center;
+  color: $white;
+  border-radius: 13px;
+  h2 {
+    font-size: $font-size-slg;
+  }
+  .free_balloon{
+    vertical-align: text-bottom;
+  }
+  .ban_subtt {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    @include fontSt;
+  }
+  .big_btn {
+    margin-top: 30px;
+    background: $white !important;
+    border-color: $green_bg;
+    font-weight: $font-weight-bold;
+    color: $green !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sellBan {
+    padding: 25px;
+
+    .free_balloon {
+      height: 45px;
+    }
+    .ban_subtt {
+      font-size: 1.1rem !important;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .sellBan {
+    padding: 25px 15px;
+  }
+}
+
+
+// 카톡문의 배너
+.kakaoBan{
+  position: relative;
+  padding:35px 40px;
+  background: #f9e000;
+  color:#3b1f1e;
+  font-size: 1.2rem;
+  font-weight: $font-weight-bold;
+  border-radius: 5px;
+  @include fontSt;
+  &:after{
+    display: inline-block;
+    content: "";
+    background: url("../images/main/image_sprit.png");
+    background-size: 800px 500px;
+    background-position: -206px -298px;
+    width:79px;
+    height:23px;
+    position: absolute;
+    right:40px;
+    bottom:47px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .kakaoBan {
+    padding:25px 25px;
+    margin-top:30px;
+    @include fontSt;
+    &:after {
+      background-size: 600px 375px;
+      background-position: -154px -223px;
+      width:60px;
+      height:18px;
+      right:25px;
+      bottom:27px;
+    }
+    img{
+      width:125px;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .kakaoBan {
+    padding: 25px 15px;
+  }
+}
+

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.loginForm {
+  display: table;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  .inn {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  h1 {
+    img {
+      position: relative;
+      width: 120px;
+      height: 59px;
+    }
+  }
+  .loginBox {
+    width: 440px;
+    margin: 0 auto;
+    border: 1px solid $line;
+    padding: 40px;
+  }
+}

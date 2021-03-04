@@ -1,0 +1,535 @@
+@charset "utf-8";
+@import url('xeicon.min.css');
+@import url('reset.css');
+@import url('modal.css');
+@import url('terms.css');
+
+
+/* ----------------------------------------------------------------
+ 							LAYOUT
+ -----------------------------------------------------------------*/
+html{
+    min-height:100%;
+}
+body {
+    height: auto;
+    padding-top: 1px;
+    margin-top: -1px;
+    background: #f5f5f5;
+}
+.wrapper{
+    position: relative;
+    width:100%;
+    background: #f5f5f5;
+    box-sizing:border-box;
+}
+#content_inner {
+    width: 100%;
+}
+#content_inner.main_list {
+    margin-top:7px;
+}
+#content_inner.withBtn{
+    padding-bottom:50px;
+    margin-bottom:7px;
+}
+#content_inner.withTab{
+    padding-top:44px;
+    margin-top:7px;
+}
+.inner{
+    width:100%;
+    padding: 0 14px 14px 14px;
+    box-sizing:border-box;
+}
+
+
+/* ----------------------------------------------------------------
+                     General Styling
+ -----------------------------------------------------------------*/
+/* header */
+.headerTabFixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+#header {
+    position: relative;
+    width: 100%;
+    height: 43px;
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+}
+#header h1 {
+    display: block;
+    line-height: 43px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+#header h1 img {
+    width: 85px;
+    vertical-align: middle;
+}
+#header h1 span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+}
+@media (min-width: 600px) {
+    #header {
+        height: 60px;
+    }
+    #header h1 {
+        line-height: 60px;
+    }
+    #header h1 img {
+        width:110px;
+        width:auto;
+    }
+}
+
+
+/* button */
+.btn_bottom{
+    width: 100%;
+    background: #fff;
+}
+.btn_bottom .col_2 .btn_global{
+    width: 50% !important;
+}
+.withBtn .btn_bottom a{
+    float:left;
+    border: none;
+}
+#fixedBtn_bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:50;
+}
+
+.btn_global {
+    display:inline-block;
+    width:100%;
+    height:48px;
+    line-height:48px;
+    font-size:16px;
+    color:#6e6e6e;
+    border:1px solid #ccc;
+    background:#fff;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.btn_small {
+    display:inline-block;
+    min-width:80px;
+    height:30px;
+    line-height:30px;
+    font-size:12px;
+    font-weight:bold;
+    color:#6e6e6e;
+    border:1px solid #ccc;
+    background:#fff;
+    text-align:center;
+    vertical-align:middle;
+    white-space:nowrap;
+    cursor:pointer;
+}
+.btn_md {
+    display:inline-block;
+    width:100%;
+    height:45px;
+    line-height:45px;
+    font-size:16px;
+    font-weight:400;
+    color:#666;
+    border:1px solid #ccc;
+    background:#fff;
+    text-align:center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* button background & color */
+.bcgray {
+    background: #ccc !important;
+    border-color: #ccc !important;
+    color: #fff !important;
+}
+.bgreen {
+    background: #00cdb6 !important;
+    border-color: #00cdb6 !important;
+    color: #fff !important;
+}
+
+.md-btn{
+    border-radius:5px;
+    text-align: center;
+    color: #222;
+    border: 1px solid #d8d8d8;
+    height: 43px;
+    line-height: 43px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box
+}
+
+.btn-viewAll{
+    border:1px solid #e2e2e2;
+    padding:3px 8px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+@media (min-width: 600px) {
+    .md-btn{
+        height:45px;
+        line-height: 45px;
+    }
+}
+
+
+/* 회원가입 폼 입력 페이지 */
+.cardWrap{
+    width:100%;
+    padding:23px 15px;
+    background: #fff;
+    font-size:13px;
+    box-sizing: border-box;
+}
+.formWrap{
+    width:100%;
+    padding:23px 15px;
+    background: #fff;
+    font-size:13px;
+    box-sizing: border-box;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+/* 회원가입 폼 타이틀 */
+.contTTBox{
+    padding: 14px 14px 20px 14px;
+    background: #fff;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom:20px;
+}
+.contT{
+    font-size:17px;
+    font-weight: 600;
+    color:#222;
+}
+.contsubT{
+    font-size:13px;
+    /*color:#999;*/
+    margin-top:8px;
+    text-align: center;
+    line-height: 1.6em;
+}
+
+/* 회원가입 입력항목 */
+.intGroupWrap.bd{
+    border-top: 1px solid #e8e8e8;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+.intGroup{
+    display:block;
+    width:100%;
+    height:100%;
+    margin-top:17px;
+    font-size:13px;
+}
+.intGroup.first{
+    margin-top:0 !important;
+}
+label.wrapLabel,
+legend.wrapLabel{
+    display: block; width:100%;
+}
+.inputName{
+    margin-bottom:10px;
+    color:#666;
+}
+.inputName.alone{
+    display: block;
+    margin-top:17px;
+}
+.intGroup.first .inputName.alone{
+    margin-top:0;
+}
+.intGroup .inputName{
+    font-weight: 700;
+    color: #333;
+}
+/* 필수값 표시 */
+.required-data{
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    text-align: center;
+    border-radius: 50rem;
+    background-color: #00cdb6;
+    text-indent: -9999px;
+}
+.intGroup .inputName,
+.intGroup .inputName + .required-data{
+    display: inline-block !important;
+}
+.intGroup .inputName + .required-data{
+    margin-left:5px;
+}
+/* 인풋 + 버튼 구조 */
+.input_btn{
+    display: table;
+    width: 100%;
+}
+.input_btn span{
+    display: table-cell;
+    vertical-align: top;
+}
+.input_btn .inputBtn{
+    width: 100px;
+    padding-left: 5px;
+}
+
+/* 미입력이나 오입력시 안내 */
+.intGroup .errorMsg{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size:12px; color:#ff2960;
+}
+.intGroup.alert .inputName{
+    color:#ff2960;
+}
+.intGroup.alert input,
+.intGroup.alert select{
+    border: 1px solid #ff2960;
+}
+.intGroup.alert .inputWrap .int-add{
+    border-right: none;
+}
+@media (min-width: 600px) {
+    .intGroupWrap{
+        padding: 30px;
+    }
+    .intGroupWrap.bd{
+        margin-top:0 !important;
+    }
+    .intGroup{
+        margin-top:20px;
+        font-size:14px;
+    }
+    .intGroup .errorMsg{
+        font-size:14px;
+    }
+}
+
+
+/* 라디오버튼 */
+.schOpt {
+    width: 100%;
+}
+.schOpt li{
+    float:left;
+    height:43px;
+    line-height: 43px;
+    text-align: center;
+    background: #f5f5f5;
+    font-size:13px;
+    color:#999;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.schOpt.col2 li{
+    width: 50%;
+}
+input[type="radio"].radio_toggle + label{
+    width:100%;
+}
+.schOpt li input[type="radio"].radio_toggle + label {
+    background: #fff;
+    border-top: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+.schOpt li:first-child input[type="radio"].radio_toggle + label {
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #e2e2e2;
+}
+.schOpt li:last-child input[type="radio"].radio_toggle + label {
+    border-radius: 0 4px 4px 0;
+    border-right: 1px solid #e2e2e2;
+}
+
+/* 웹앱 동시 대응 */
+@media (min-width: 600px) {
+    /* layout */
+    html{
+        height:100%;
+    }
+    body {
+        height: 100%;
+        overflow: visible;
+    }
+    .wrapper{
+        height:100%;
+    }
+    .mobile {
+        display: block;
+    }
+    #content_inner{
+        display: table;
+        width: 100%;
+        height: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        padding-top: 61px !important;
+        box-sizing: border-box;
+    }
+    .cont-vc {
+        display: table-cell;
+        width: 500px;
+        min-width: 320px;
+        padding: 30px 0;
+        height: inherit;
+        vertical-align: middle;
+    }
+    .cont-vc .table-fixed {
+        display: inherit;
+        width: 500px;
+        margin: 0 auto;
+        background: #fff !important;
+        border: 1px solid #e2e2e2;
+    }
+    #fixedBtn_bottom {
+        position: inherit;
+    }
+    #fixedBtn_bottom a{
+        height: 60px;
+        line-height:60px;
+        font-size:19px;
+        font-weight: 600;
+    }
+    .formWrap{
+        padding:0;
+        border:0;
+    }
+    .cardWrap{
+        padding:0;
+    }
+
+    /* title */
+    .contTTBox{
+        display: block;
+        text-align: center;
+        margin: 0;
+        padding:30px 20px;
+        background: none;
+    }
+    .contT{
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: -1.5px;
+    }
+    .contsubT{
+        font-size:14px;
+        margin-top:15px;
+        color: #333;
+    }
+    .contsubT strong{
+        font-weight: 700;
+    }
+}
+
+
+/* 회원가입 완료 > 완료 문구 */
+.fin-info-wrap{
+    display:table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+.fin-info{
+    position: relative;
+    display:table-cell;
+    vertical-align: middle;
+}
+.fin-info:before{
+    content:"";
+    display:block;
+    width:60px;
+    height:60px;
+    margin:0 auto;
+    background:url("../image/icon_fin.png") 0 0 no-repeat;
+    background-size:60px 60px;
+}
+.fin-info-action{
+    margin-top:40px;
+}
+.fin-info .fin-info-title{
+    margin-top: 10px;
+    font-weight:600;
+    line-height: 1.6;
+    color:#2e2e2e;
+    font-size: 15px
+}
+.fin-info .fin-info-desc{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5em
+}
+@media (min-width: 600px){
+    .fin-info-wrap{
+        padding: 60px 0;
+    }
+    .fin-info:before{
+        width: 84px;
+        height: 84px;
+        background-size: 84px 84px;
+    }
+    .fin-info .fin-info-title{
+        margin-top: 20px;
+        font-size:17px;
+        font-weight: 600;
+    }
+}
+
+/* 회원가입 완료 > 앱다운로드 버튼 */
+.btn-col-group .btn{
+    display: inline-block;
+}
+.btn-col-group .btn + .btn{
+    margin-left:5px;
+}
+.btn-row-group .btn{
+    width:100%;
+    display: block;
+}
+.btn-row-group .btn-appInstall{
+    width:55%;
+    margin: 12px auto 0;
+}
+.btn-row-group .btn-appInstall:first-child{
+    margin-top:0;
+}
+.btn-row-group .btn-appInstall img{
+    width:100%;
+}
+@media (min-width: 600px){
+    .btn-row-group .btn-appInstall{
+        max-width:255px;
+        margin: 20px auto 0;
+    }
+}

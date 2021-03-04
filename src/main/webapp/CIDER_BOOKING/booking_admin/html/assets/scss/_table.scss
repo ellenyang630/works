@@ -1,0 +1,923 @@
+@charset "UTF-8";
+
+table {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  background: $white;
+  font-size: 14px;
+  .btn {
+    position: relative;
+    letter-spacing: -0.5px;
+  }
+  th, td {
+    word-break: break-all;
+  }
+  .num {
+    font-size: 1.1em;
+    position: relative;
+    top: -0.5px;
+  }
+  .no_data {
+    height: 200px;
+    display: table;
+    width: 100%;
+    color: $gray-9;
+    .inn {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+    i {
+      font-size: 1.7em;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  min-height: 0.01%;
+  font-size: 13.5px;
+}
+
+@media screen and (max-width: 1440px) {
+  .table-responsive {
+    width: 100%;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .table-responsive > .table {
+    margin-bottom: 0;
+    min-width:1070px;
+  }
+  .table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  table {
+    table-layout: inherit;
+  }
+  table td, table th {
+    font-size: 0.9em;
+  }
+}
+
+.thead {
+  margin-bottom: 10px;
+  height: 30px;
+  display: flex;
+  flex: 1;
+  > *{
+    //flex: 0 1 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &.right{
+      flex: none;
+      margin-left: auto;
+    }
+  }
+  .thead_total {
+    line-height: 30px;
+  }
+  // .theadRight {
+  //   display: table;
+  //   .thead_select, .thead_btn {
+  //     display: table-cell;
+  //     vertical-align: middle;
+  //   }
+  // }
+  .thead_text{
+    height: 30px;
+    line-height: 30px;
+    margin-right: 13px;
+    letter-spacing: 0;
+  }
+  .thead_btn {
+    padding-left: 13px;
+    .btn{
+      i{
+        font-weight: normal;
+        font-size:1.4em;
+        color:$mainColor;
+        position: relative;
+        top: 0.5px;
+        &.xi-refresh{
+          font-size:1.25em;
+        }
+      }
+    }
+  }
+  .thead_info {
+    line-height: 30px;
+    color:$gray-6;
+  }
+}
+
+.tbList {
+  border: 1px solid $LineColorD;
+  //border-top: 2px solid $gray-9;
+  thead {
+    th {
+      padding: 7px 10px;
+      border-bottom: 1px solid $LineColorD;
+      background-color: $lightGray;
+      font-size: 13px;  
+      font-weight: 600;
+      text-align: center;
+      color: $mainDarkColor;
+    }
+    .th_inRow{
+      th{
+        padding: 4px 10px;
+      }
+    }
+    .th_cate{
+      th{
+        color:$basicBlack;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $LineColorE;
+      /*&:last-child {
+        border-bottom-width: 0;
+      }*/
+      // 예약현황 색상 조정
+      &.tr_time{
+        height:87px;
+      }
+      &.tr_now{
+        th{
+          border:2px solid $mainGreen;
+          font-size: 16px;
+          color:$mainGreen;
+          .i_icon{
+            color:$mainGreen;
+          }
+        }
+        td{
+          background: rgba($mainGreen, 0.07);
+        }
+        &:last-child{
+          border-bottom-width: 0;
+        }
+      }
+      &:last-child{
+        border-bottom-width: 0;
+      }
+    }
+    th, td {
+      padding: 10px 13px;
+      line-height: 1.4em;
+      //letter-spacing: 0px;
+      border-right: 1px solid $LineColorE;
+      color: $mainDarkColor;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td {
+      text-align: center;
+      &.text-left{
+        text-align:left;
+      }
+    }
+
+  }
+
+  .btnBox {
+    max-width:200px;
+    font-size:13px;
+    vertical-align: middle;
+    span {
+      display: block;
+      width: 90px;
+      text-align: center;
+      margin: 0 auto;
+      margin: 4px 0;
+      //margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      a , button {
+        width: 100%;
+      }
+    }
+    &.inline{
+      span {
+        display: inline-block;
+        width: auto;
+        margin: 2px;
+        //margin-left: 4px;
+        &:first-child{
+          margin-left:0;
+        }
+      }
+    }
+  }
+
+  &.bdt0{
+    border-width:0;
+    border-bottom-width:1px;
+    tbody{
+      th{
+        vertical-align: middle;
+      }
+    }
+  }
+  .int{
+    width:100%;
+  }
+
+  // 왼쪽정렬
+  &.text-left{
+    tbody{
+      th, td{
+        text-align:left;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:1239px){
+  .tbList{
+    .btn-group{
+      max-width:108px;
+    }
+    .btnBox{
+      max-width:117px;
+      &.inline{
+        span{
+          display: block;
+          margin-left:0;
+          margin-top:5px;
+        }
+      }
+    }
+  }
+}
+
+.cardText .tbList{
+  border-width: 0;
+}
+
+.tbLine{
+  thead {
+    th {
+      padding:2.5px 10px;
+      border-left:1px solid rgba($LineColor9, 0.5);
+      [colspan*="4"]{
+        border-bottom:1px solid rgba($LineColor9, 0.5);
+      }
+      
+    }
+    tr{
+      &:first-child{
+        th{
+          border-bottom:1px solid red !important;  
+        }
+
+        th:first-child{
+          border-left-width:0;
+        }
+      }
+    }
+  }
+}
+
+
+.tbWrap{
+  width:100%;
+  height:100%;
+  display: table;
+}
+.tbCaption{
+  min-width:140px;
+  width:10%;
+  height:100%;
+  background: #f0f1f3;
+  border-right:1px solid $LineColorA;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size:16px;
+  font-weight: $font-weight-exbold;
+  color:$basicBlack;
+  & + div{
+    display: table-cell;
+    width:100%;
+  }
+}
+.tbInfo{
+  border: 1px solid $LineColorA;
+  table{
+    
+  }
+  thead{
+    th{
+      padding:2.5px 10px;
+      background: #f0f1f3;
+      border-color:#8e8e8e;
+      border-left:1px solid $LineColorC2;
+      border-bottom-color: $LineColorA;
+      &:first-child{
+        border-left-width:0;
+      }
+    }
+    tr{
+      &:first-child{
+        th{
+          border-bottom:1px solid $LineColorC2;  
+        }
+      }
+      .bottomLine{
+        border-bottom:1px solid $LineColorA !important;
+      }
+    }
+  }
+}
+// 아이콘 
+.th_ico{
+  span{
+    display: inline-block;
+    width:53px;
+    height:53px;
+    line-height: 53px;
+    margin-bottom:15px;
+    background: $white;
+    border: 1px solid $LineColorB;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  i{
+    display: inline-block;
+    margin-bottom:3px;
+    font-size:180%;
+    color:$mainColor;
+    transform: translateY(10%);
+  }
+}
+
+.tbOpt {
+  tr {
+    border-bottom: 1px solid rgba($LineColor9, 0.4);
+    &:last-child{
+      border-width:0;
+    }
+  }
+  th, td {
+    padding: 9px 13px;
+    color: $basicBlack;
+    text-align: left;
+  }
+  th {
+    position: relative;
+    //min-width:90px;
+    min-width: 140px;
+    width: 10%;
+    background: $white-lgray;
+    border-left: 1px solid $LineColorD;
+    border-right: 1px solid $LineColorD;
+    font-weight: $font-weight-exbold;
+    font-size:13px;
+    color: $mainTextColor;
+    &:first-child{
+      border-left-width:0;
+    }
+    small {
+      display: block;
+    }
+  }
+  td{
+    // &.blank{
+    //   border-left:1px solid $LineColor9;
+    // }
+  }
+  
+  input, select {
+    width: 100%;
+  }
+  thead tr {
+    //border-bottom: 1px solid $LineColorE;
+    th {
+      background: $bgMainColor;
+    }
+    th:last-child {
+      border-right: 0;
+    }
+  }
+  .thSwitch {
+    margin-top: 8px;
+  }
+}
+
+// @media(max-width: 800px) {
+//   .tbOpt {
+//     th, td {
+//       display: block;
+//       width: 100%;
+//       background: $white;
+//     }
+//     tbody th {
+//       padding-bottom: 0px;
+//       border: 0;
+//       small {
+//         display: inline;
+//       }
+//     }
+//   }
+// }
+
+.tgGroup, .tgGroup2 {
+  display: table;
+  width: 100%;
+  span {
+    display: table-cell;
+    //vertical-align: top;
+    vertical-align: middle;
+  }
+  .intAmong {
+    text-align: center;
+    color: $gray-9;
+    vertical-align: middle;
+    padding: 0 3px;
+  }
+}
+
+.tgGroup {
+  .btn {
+    width: 100%;
+  }
+
+  > span{
+    &:first-child {
+      width: calc(100% - 100px);
+    }
+    // &:last-child {
+    //   padding-left: 10px;
+    //   width: 90px;
+    // }
+    &.withBtn{
+      padding-left: 10px;
+      width: 90px;
+    }
+  }
+}
+
+.dlBox {
+  tbody {
+    th, td {
+      vertical-align: top;
+    }
+  }
+
+  dl {
+    display: table;
+    width: 100%;
+    margin-bottom: 2px;
+    font-size:13px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    dt, dd {
+      display: table-cell;
+      vertical-align: top;
+    }
+    dt {
+      text-align: left;
+      color: $gray-9;
+      min-width: 65px;
+    }
+    dd {
+      text-align: right;
+      color: $gray-9;
+    }
+  }
+  .pinfo {
+    color: $gray-9;
+    display: block;
+    .bookByAdm{
+      position: absolute;
+      top: 0.2rem;
+      left: -10px;
+      display: inline-block;
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius: 50%;
+      background: $mainRed;
+      -webkit-box-shadow: 6px 6px 12px rgba($mainRed,.13);
+      box-shadow: 6px 6px 12px rgba($mainRed,.12);
+      animation: shadow-pulse 1s infinite;
+    }
+  }
+}
+.info{
+  dl {
+    dd {
+      color: $basicBlack;
+    }
+  }
+  .infoWrap{
+    margin: 0 -13px;
+    ul {
+      display: table;
+      width: 100%;
+    }
+    li{
+      display: table-cell;
+      vertical-align: top;
+      width: 50%;
+      padding: 0 13px;
+    }
+  }
+}
+
+.opDlBox {
+  dt {
+    color: $gray-9;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  dd {
+    margin-top: 6px;
+  }
+  border-top: 1px solid $white-gray;
+  padding-top: 8px;
+  margin-top: 8px;
+  &:first-child {
+    padding-top: 0px;
+    border-top: 0px;
+    margin-top: 0px;
+  }
+}
+
+.opDlTT{
+  max-width: 350px;
+}
+.opDlTTop {
+  position: absolute;
+  top: -3px;
+  right: 0px;
+}
+
+.opDlColBox {
+  margin-top: 10px;
+  display: table;
+  width: 100%;
+  dl {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  dt, dd {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  dt {
+    min-width: 100px;
+    color: $gray-6;
+    letter-spacing: -1px;
+  }
+  dd {
+    width: 250px;
+    padding-left: 6px;
+    &:first-child {
+      padding-left: 0px;
+    }
+  }
+}
+
+.opDlDate {
+  max-width: 350px;
+  border: 1px solid $line-dark;
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  label, .int, em {
+    float: left;
+    display: inline-block;
+    text-align: center;
+  }
+  label{
+    width: 15%;
+    line-height: 32px;
+    color: $gray-6;
+  }
+  em{
+    width: 10%;
+    line-height: 32px;
+    color: $gray-9;
+  }
+  .int{
+    width: 30%;
+    border:0;
+    cursor: pointer;
+  }
+
+  // 개발서버
+  .label_picker,
+  .fromTo,
+  .vue__time-picker{
+    float: left;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+  }
+  .label_picker{
+    width: 15%;
+    color:$gray-6;
+  }
+  .fromTo{
+    width: 10%;
+    color:$gray-9;
+  }
+  .vue__time-picker{
+    width: 30%;
+    cursor: pointer;
+    input.display-time{
+      border-width:0;
+    }
+  }
+}
+
+/* 테이블 하단 안내 문구 */
+.tbFoot{
+  margin-top:15px;
+}
+
+
+
+/* pagination */
+.pagBox {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.pagination {
+  display: table;
+  text-align: center;
+  padding-left: 0;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid $line-dark;
+  > li{
+    display: inline;  
+    > a, > span{
+      position: relative;
+      float: left;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0px 12px;
+      text-decoration: none;
+      color: $gray-9;
+      background-color: $white;
+      margin-left: -1px;
+      &:hover, &:focus{
+        z-index: 2;
+        color: $mainColor;
+        background-color: rgba($mainColor, 0.15);
+      }
+    }
+    &:first-child{
+      > a, > span{
+        margin-left: 0;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+      }
+    }
+    &:last-child{
+      > a, > span{
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
+  }
+  .arrow {
+    font-size: 1.2em;
+    font-weight: $font-weight-exbold;
+  }
+
+  > .active{
+    > a, > span{
+      z-index: 3;
+      color: $white;
+      background-color: $mainColor;
+      cursor: default;
+      &:hover, &:focus{
+        z-index: 3;
+        color: $white;
+        background-color: $mainColor;
+        cursor: default;
+      }
+    }
+  }
+
+  > .disabled{
+    > a, > span{
+      color: $gray-9;
+      background-color: $white;
+      border-color: $line-dark;
+      cursor: not-allowed;
+      &:hover, &:focus{
+        color: $gray-9;
+        background-color: $white;
+        border-color: $line-dark;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+
+// table bg color
+// 사용중지
+.blocking{
+  *{
+    color:$gray-9 !important;
+  }
+}
+// 새로 추가
+.new{
+  background: rgba($mainColor,0.06);
+}
+
+.td_func{
+  min-width: 140px;
+  width: 10%;
+  background: rgba($mainColor,0.06);
+  text-align:center;
+  margin:0 auto;
+}
+
+// table fixed height
+.tr_height_sm{
+  height:59px;
+}
+
+// 리스트 단에 썸네일 이미지 
+.td_thumbImg{
+  padding:3px 13px !important;
+  img{
+    height:50px;
+  }
+}
+
+// 글쓰기 폼에서 안내메시지와 인풋창 같이 있는 경우
+.td_flex{
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  margin:auto 0;
+  > .text-info{
+    margin-left:8px;
+    vertical-align: middle;
+  }
+  @media screen and (max-width:1239px){
+    &{
+      flex-direction: column;
+      align-items: flex-start;
+      > .text-info{
+        margin-left:0;
+        margin-top:3px;
+      }
+    }
+  }
+}
+
+
+// tblTitle
+.tblTitle{
+  position: relative;
+  width:100%;
+  height:33px;
+  padding:0 13px;
+  background: $mainLightBg;
+  border-bottom:1px solid $LineColor9;
+  font-size:13px;
+  font-weight: $font-weight-exbold;
+  color:$mainDarkColor;
+  text-align:center;
+} 
+.tblTit{
+  line-height:33px; 
+  .case{
+    margin-left:22px;
+    color:$mainColor;
+  }
+}
+.tblTitCt{
+  margin-right:10px;
+  .btn{
+    width:33px;
+    height:100%;
+    vertical-align: top;
+    border-radius: 0;
+    &:hover,
+    &.active{
+      i{
+        animation: spin-inf 1s infinite;
+        margin-right:0;
+        vertical-align:middle;
+      }
+    }
+  }
+}
+.tblCt{
+  position:absolute;
+  right:0;
+  top:-1px;
+  height:33px;
+  line-height: 32px;
+  .btn{
+    width:79px;
+    height:100%;
+    border-radius:0;
+    font-size:13px;
+  }
+}
+.status{
+  //padding:0 10px;
+  padding-right:14px;
+  font-size:13px;
+  font-weight: $font-weight-exbold;
+  &:before{
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right:7px;
+    transform: translateY(-25%);
+    border-radius: 50%;
+    background: inherit;
+    color: inherit
+    
+  }
+  //등록
+  &.enroll{
+    color: $subGreen;
+    &:before{
+      background: $subGreen;
+      -webkit-box-shadow: 6px 6px 12px rgba($subGreen, 0.13);
+      box-shadow: 6px 6px 12px rgba($subGreen, 0.12);
+      animation: shadow-pulse1 1s infinite;        
+    }
+  }
+  //승인
+  &.approval{
+    color: $mainColor;
+    &:before{
+      background: $mainColor;
+      -webkit-box-shadow: 6px 6px 12px rgba(240, 42, 37, 0.13);
+      box-shadow: 6px 6px 12px rgba(240, 42, 37, 0.12);
+      animation: shadow-pulse2 1s infinite;
+    }
+  }
+  //재 요청
+  &.reReq{
+    color: $mainRed;
+    &:before{
+      background: $mainRed;
+      -webkit-box-shadow: 6px 6px 12px rgba($mainRed, 0.13);
+      box-shadow: 6px 6px 12px rgba($mainRed, 0.12);
+      animation: shadow-pulse3 1s infinite;
+    }
+  }
+  //보완 완료
+  &.fixGap{
+    color:$subBaseColor;
+    &:before{
+      background: $subBaseColor;
+      -webkit-box-shadow: 6px 6px 12px rgba($subBaseColor, 0.13);
+      box-shadow: 6px 6px 12px rgba($subBaseColor, 0.12);
+      animation: shadow-pulse4 1s infinite;
+    }
+  }
+
+  //등록
+  &.confirmed{
+    color: $mainColor;
+    &:before{
+      content:"";
+      display: none;
+    }
+   i{
+     font-size:120%;
+     font-weight: $font-weight-exbold;
+   }
+  }
+}

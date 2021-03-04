@@ -1,0 +1,364 @@
+@charset "UTF-8";
+/* _tables.scss */
+
+
+// table responsive
+.table-responsive{
+  overflow-x: auto;
+  min-height: 0.01%;
+
+  .el-table{
+    overflow-x: auto;
+    min-height: 0.01%;
+  }
+
+  .table{
+    width: 100%;
+    min-width: 1280px;
+    table-layout: inherit;
+  }
+
+
+  @media screen and (max-width: 1440px) {
+    .el-table{
+      overflow-y: hidden;
+      width: 100%;
+      margin-bottom: 15px;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .table{
+      thead,
+      tbody,
+      tfoot{
+        > tr {
+          > th,
+          > td{
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+// table init
+.el-table{
+  text-align: center;
+  font-size: $--font-size-smaller;
+
+  .cell{
+    overflow: visible;
+    padding:0 1.333rem;
+  }
+
+  table{
+    width:100%;
+    max-width:100%;
+  }
+  th, td{
+    text-align: center;
+  }
+  tr{
+    .hover-row,
+    .current-row{
+      td{
+        background: rgba($--color-primary,.9) !important;
+      }
+    }
+  }
+  td{
+    transition-duration: 300ms;
+    transition-property: background-color;
+    font-size: $--font-size-base;
+  }
+  .td-content{
+    width: 360px;
+  }
+  td.td-content{
+    text-align: left;
+  }
+  .cell{
+    .el-button{
+      vertical-align: top;
+    }
+  }
+
+
+  // el-table__header
+  &__header{
+    .label-outer{
+      margin-left: .4rem;
+    }
+  }
+
+  // el-table__body
+  &__body{
+    tr{
+      // 뷴류가 베스트 또는 기획전일 때 리스트 상단에 고정
+      &.pinned{
+        td{
+          background-color: rgba($--color-text-placeholder, .1);
+        }
+      }
+      // 리스트 체크했을 때,
+      &.checked{
+        td{
+          background-color: rgba($--color-success, .1);
+        }
+      }
+
+      &.canceled{
+        td{
+          background-color: rgba($--color-danger, .1);
+        }
+      }
+    }
+
+    .td-content{
+      width: 330px;
+    }
+  }
+
+
+  .cell-chk{
+    width: 47px;
+  }
+  .cell-mover{
+    width: 47px;
+  }
+}
+
+// table noList (tbody)
+.el-table__empty{
+  th, td{
+    border-bottom: 0;
+  }
+  td{
+    padding: 3rem 0 !important;
+  }
+  .empty-text{
+    display: flex;
+    min-height: 190px;
+    color: $text-light;
+    font-size: $--font-size-base;
+    align-items: center;
+
+    i{
+      vertical-align: middle;
+      font-size:170%;
+      font-weight: $font-weight-bold;
+    }
+    small{
+      margin-top: 4px;
+      font-size: $--font-size-small;
+    }
+
+    &__cell{
+      width: 100%;
+
+      img{
+        margin-bottom: 1.333rem;
+      }
+    }
+  }
+}
+
+// 테이블 다른 스타일들
+.el-table{
+  .table.table-default {
+    th, td{
+      padding: 1.4rem 0;
+    }
+
+    .el-table__header {
+      th {
+        padding: .5333rem 0;
+        border-bottom: 1px solid $--border-color-base;
+
+        &.bdb0 {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .table.table-thead-light{
+    th, td{
+      padding: .9333rem 0;
+    }
+    td{
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+    }
+    .el-table__header{
+      th{
+        padding: .8rem 0;
+        color:$--color-white;
+        border-bottom: 1px solid $text-light;
+        background-color: $text-light;
+      }
+    }
+    .goods-name{
+      display: flex;
+      width: 100%;
+      margin-bottom: 0;
+      align-items: center;
+
+      > span{
+        &.name{
+          overflow: hidden;
+          white-space: nowrap;
+          text-decoration: none;
+          text-overflow: ellipsis;
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+        &.label-outer{
+          flex: 0 1 88px;
+        }
+      }
+    }
+    .goods-quantity{
+      margin-top: 6px;
+    }
+  }
+
+  .table.table-thead-primary{
+    th, td{
+      padding: .9333rem 0;
+    }
+    .cell{
+      padding:0 .3333rem;
+    }
+
+    .el-table__header{
+      th{
+        padding: .8rem 0;
+        color:$--color-white;
+        border-bottom: 1px solid $--color-primary;
+        background-color: $--color-primary;
+      }
+    }
+    .goods-name{
+      display: flex;
+      width: 100%;
+      margin-bottom: 0;
+      align-items: center;
+
+      > span{
+        &.name{
+          overflow: hidden;
+          white-space: nowrap;
+          text-decoration: none;
+          text-overflow: ellipsis;
+          color: #333;
+          flex: 1 1 auto;
+        }
+        &.label-outer{
+          flex: 0 1 100px;
+        }
+      }
+    }
+    .goods-quantity{
+      margin-top: 6px;
+    }
+  }
+
+  .table.table--scroll-body{
+    .el-table__header{
+      float:left;
+      width:500px;
+
+      tr{
+        display:table;
+        width:500px;
+      }
+    }
+    .el-table__body{
+      float:left;
+      overflow-x:hidden;
+      overflow-y:auto;
+      width:500px;
+      height:496px;
+
+      tr{
+        display:table;
+        width:500px;
+      }
+    }
+  }
+
+  .table.table--scroll-memo{
+    .el-table__header{
+      float:left;
+      width:100%;
+
+      tr{
+        display:table;
+        width:100%;
+        table-layout: fixed;
+      }
+    }
+    .el-table__body{
+      float:left;
+      overflow-x:hidden;
+      overflow-y:auto;
+      width:100%;
+      height:192px;
+
+      tr{
+        display:table;
+        width:100%;
+      }
+    }
+
+    th,
+    td{
+      &:nth-child(1){
+        width: 160px;
+      }
+      &:nth-child(2){
+        //width: 160px;
+      }
+      &:nth-child(3){
+        width: 200px;
+      }
+      &:nth-child(4){
+        width: 100px;
+      }
+    }
+  }
+
+  .table.table-bordered{
+    border: 1px solid $--border-color-base;
+  }
+}
+
+
+// 리스트 정렬 소팅 버튼
+.sort{
+  &:focus{
+    outline: none;
+  }
+
+  .sort-up,
+  .sort-down{
+    display: inline-block;
+    margin: 0 -2px;
+    transition-duration: 300ms;
+    transition-property: fill;
+  }
+
+  &.descending{
+    .sort-down{
+      fill:#000000 !important;
+    }
+  }
+  &.ascending{
+    .sort-up{
+      fill:#000000 !important;
+    }
+  }
+}

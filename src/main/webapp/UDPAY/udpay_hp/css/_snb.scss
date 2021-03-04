@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+#subGnbWrap {
+  position: absolute;
+  bottom: -30px;
+  height: 60px;
+  transition: .5s;
+  z-index: 3;
+  width: 100%;
+  z-index: 9;
+  a {
+    color: $white;
+  }
+  &.web {
+    .snb-inner-box {
+      margin: 0 auto;
+      width: 1200px;
+      position: relative;
+    }
+  }
+  &.fixed {
+    position: fixed;
+    top: 303px;
+    width: 100%;
+    left: 0px;
+    top: 0px !important;
+  }
+}
+
+.subWrap {
+  &.pdt {
+    padding-top: 80px !important;
+    @extend %trans;
+  }
+}
+
+.nav-down {
+  top: 0px !important;
+}
+
+.nav-up {
+  top: 303px !important;
+}
+
+.snb-inner-box {
+  position: relative;
+  z-index: 10;
+  background: $blue;
+  color: $white;
+  @extend %group;
+  .snb-home {
+    display: block;
+    width: 60px;
+    line-height: 60px;
+    height: 60px;
+    float: left;
+    position: relative;
+    font-size: $font-size-middle;
+    border-right: 1px solid rgba($white, 0.15);
+    background: darken($blue, 3);
+  }
+}
+
+.snb-depth {
+  float: left;
+  position: relative;
+  .current-snb {
+    display: block;
+    line-height: 60px;
+    position: relative;
+    padding: 0 70px 0 25px;
+    min-width: 200px;
+    border-right: 1px solid rgba($white, 0.15);
+    transition: .3s;
+    font-size: $font-size-base;
+    text-align: left;
+    &.none:after {
+      content: '';
+    }
+    &:after {
+      font-family: xeicon_v2;
+      content: "\e941";
+      display: block;
+      position: absolute;
+      @extend %top50;
+      right: 20px;
+    }
+  }
+}
+
+.snb-depth {
+  ul {
+    border: 1px solid rgba($black, 0.15);
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 57px;
+    right: 0;
+    border-top: 0;
+    background: $blue-black;
+    text-align: left;
+    li {
+      border-bottom: 1px solid rgba($white, 0.05);
+      &:hover {
+        background: rgba($white, 0.05);
+      }
+      a {
+        display: block;
+        padding: 11px 20px;
+        font-size: $font-size-sm;
+        &:hover {
+          text-decoration: none;
+          color: $blue;
+        }
+      }
+    }
+  }
+}

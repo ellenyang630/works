@@ -1,0 +1,907 @@
+@charset "UTF-8";
+
+@import url('reset.css');
+@import url('grid.css');
+@import url('simple-line-icons.css');
+@import url('line-awesome.min.css');
+
+
+body {
+  font-family: Roboto, Malgun Gothic, '맑은고딕', Dotum, '돋움';
+  font-size: 14px;
+  line-height: 1.6em;
+  letter-spacing: -0.5px;
+  color: #3e3e3e;
+}
+@media (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* default */
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 10px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	box-sizing: border-box;
+}
+table .btn {
+    font-size: 13px;
+    padding: 8px 10px;
+    position: relative;
+    /* top: -1px; */
+}
+
+.footArea .btn-md, .cardBtnWrap .btn-md {
+	border-radius: 50em;
+	transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+.footArea .btn-md:hover, .cardBtnWrap .btn-md:hover {
+	-webkit-transform: translateY(-5px);
+	-ms-transform: translateY(-5px);
+	transform: translateY(-5px);
+}
+.footArea .bmainblue, .cardBtnWrap .bmainblue {
+	box-shadow: 0 4px 20px 0px rgba(49, 135, 253, 0.4);
+}
+.footArea .bgreen, .cardBtnWrap .bgreen {
+	box-shadow: 0 4px 20px 0px rgba(1, 184, 181, 0.4);
+}
+.footArea .bgrayblue, .cardBtnWrap .bgrayblue {
+	box-shadow: 0 4px 20px 0px rgba(171, 183, 193, 0.4);
+}
+
+@media(max-width:800px){
+  .btn-md{
+    font-size:12px;
+  }
+}
+
+
+
+/*cardBtnWrap */
+.cardBtnWrap {
+  margin-top: 20px; 
+}
+.cardBtnWrap a {
+  width: 100%;
+}
+/*card group */
+.cardHead:before, .cardHead:after, .cardBox:before, .cardBox:after {
+  content: "";
+  display: table;
+}
+
+/*-------- 0531 BIZ 회원가입 폼 --------*/
+.joinBizWrap {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.joinBizCont {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 75px 0;
+}
+
+.joinBizTit {
+  font-size: 32px;
+  letter-spacing: -2px;
+  color: #022222;
+  text-align: center;
+}
+
+.joinBizStep {
+  width: 100%;
+  padding: 32px 0;
+  margin: 40px 0;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+.joinBizStep li {
+  float: left;
+  width: 28.888%;
+  font-size: 17px;
+  color: #2e2e2e;
+  text-align: center;
+}
+.joinBizStep li small {
+  font-size: 13.5px;
+  color: #2e2e2e;
+}
+
+.joinBizStep .arrow {
+  width: 6.66667%;
+  line-height: 77px;
+}
+
+.joinBizStep .arrow i {
+  font-size: 30px;
+  font-weight: bold;
+  color: #dedede;
+  vertical-align: middle;
+}
+.step_act {
+  color: #007aff !important;
+}
+.step_act small {
+  color: #007aff !important;
+}
+
+.joinBizStep li span {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background-position: 0 -232px;
+}
+.joinBizStep li p {
+  display: inline-block;
+  vertical-align: super;
+  margin-left: 15px;
+}
+
+.s01 .images {
+  background-position: 0 -232px;
+}
+.s02 .images {
+  background-position: -80px -232px;
+}
+.s03 .images {
+  background-position: -160px -232px;
+}
+
+.s01.step_act .images {
+  background-position: 0px -312px;
+}
+.s02.step_act .images {
+  background-position: -80px -312px;
+}
+.s03.step_act .images {
+  background-position: -160px -312px;
+}
+
+.agreeAll {
+  width: 100%;
+  padding: 25px;
+  background: #f0f1f2;
+  text-align: left;
+}
+
+.termsWrap {
+  width: 100%;
+  text-align: left;
+}
+.terms {
+  margin-top: 30px;
+}
+.termsTit {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.termsCont {
+  width: 100%;
+  height: 215px;
+  padding: 20px;
+  border: 1px solid #c8c8c8;
+  box-sizing: border-box;
+  line-height: 25px;
+  color: #999;
+  overflow-y: scroll;
+}
+.termsAgree {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.infoBox {
+  width: 100%;
+  padding: 25px;
+  margin-bottom: 50px;
+  background: #f0f1f2;
+  text-align: left;
+}
+.infoBox small {
+  /*font-size: 16px;*/
+  color: #999;
+}
+.joinBizCont .mypage-tbtext {
+    font-size: 19px;
+    font-weight: 600;
+    color: #2e2e2e;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 10px;
+    text-align:left;
+}
+.joinBizCont .mypage-tbtext small {
+  font-size: 17px;
+  font-weight: 400;
+  color: #999;
+}
+.joinBizCont .mypage-tbtext .goodText {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.joinBizCont .mypage-tbtext .btn {
+  padding: 5px 10px;
+}
+.joinBizCont .mypage-tbtext .btn i {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.joinBizCont .tbSimple2 tbody th, .joinBizCont .tbSimple2 tbody td {
+  padding-left: 0;
+  padding-right: 0;
+  border-top: none;
+  padding: 10px 0;
+  text-align: left;
+}
+/*.docWrapper .tbSimple2 th, .docWrapper .tbSimple2 td {
+ border-bottom: 1px dotted #ccc;
+ }*/
+
+.joinBizCont .tbSimple2 tbody th {
+  color: #2e2e2e;
+}
+
+.joinBizCont .tbSimple2 tbody th small {
+  display: block;
+  color: #999;
+}
+.joinBizCont .tbSimple2 tbody td {
+  padding: 15px 0 15px 20px;
+}
+
+.joinBizCont .tbnoLine th {
+  min-width: 120px !important;
+  padding-right: 10px !important;
+}
+
+/* 셀렉트 박스 */
+.joinBizCont .selectWrap {
+  position: relative;
+}
+.joinBizCont .selectWrap:after {
+  font-family: FontAwesome;
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  /*-webkit-transform: translateY(-50%);*/
+  /*-moz-transform: translateY(-50%);*/
+  /*-ms-transform: translateY(-50%);*/
+  /*transform: translateY(-50%);*/
+  content: '\f107';
+  font-size: 19px;
+  color: #a6a6a6;
+  width:0;
+  height:0;
+  pointer-events: none;
+}
+.joinBizCont .selectWrap.bdn:after {
+  right: 0px;
+}
+.joinBizCont .selectWrap.inputDate:after {
+  content: '\f073';
+}
+
+.joinBizCont .selectBox {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  background: #fff;
+  border: 1px solid #ddd !important;
+  font-size: 13.5px;
+  /*color: #999;*/
+  box-sizing: border-box;
+
+  margin: 0;
+  padding-right: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  line-height: normal;
+
+
+}
+
+.joinBizCont  select {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 8px;
+  -webkit-appearance: listbox;
+}
+.joinBizCont select::-ms-expand {
+  display: none;
+}
+
+.btnAt {
+  width: 10%;
+  text-align: center;
+}
+
+.joinBizWrap .w26pc {
+  width: 26% !important;
+  text-align: center;
+  margin-left: 3%;
+}
+.joinBizWrap  .w26pc:first-child {
+  margin-left: 0 !important;
+}
+
+.joinBizWrap  .w27pc {
+  width: 27% !important;
+  display: table-cell;
+  text-align: center;
+  margin-left: 3%;
+}
+.joinBizWrap  .w27pc:first-child {
+  margin-left: 0 !important;
+}
+
+.joinBizWrap  .w30pc {
+  width: 31% !important;
+  display: table-cell;
+  text-align: center;
+  margin-left: 3%;
+}
+.joinBizWrap  .w30pc:first-child {
+  width: 32% !important;
+  margin-left: 0 !important;
+}
+
+.joinBizWrap  .w42pc {
+  width: 42% !important;
+  margin-left: 3%;
+}
+.joinBizWrap  .w45pc {
+  width: 45% !important;
+}
+.joinBizWrap  .w45pc:first-child {
+  margin-left: 0 !important;
+}
+.joinBizWrap .w48pc{
+  width:48% !important;
+}
+
+.joinBizWrap  .w70pc {
+  width: 70% !important;
+  margin-left: 3%;
+}
+.joinBizWrap  .w70pc:first-child {
+  margin-left: 0 !important;
+}
+
+.fileUp {
+  display: none;
+}
+.vertical-top{
+  vertical-align: sub;
+  padding-top:20px !important;
+}
+@media (max-width:800px){
+  .vertical-top{
+    padding-top:10px;
+  }
+}
+
+.mem_tag {
+  display: inline-block;
+  padding: 0 1.2em;
+  height: 35px;
+  line-height: 35px;
+  font-weight: normal;
+  vertical-align: middle;
+  border-radius: 50em;
+  border: 1px solid #ccc;
+  color: #6e6e6e;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+.mem_tag.smblue {
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 0.8em;
+  font-size: 11px;
+  background: #fff !important;
+  border-color: #007aff !important; /* 180508 수정 */
+  color: #007aff !important; /* 180508 수정 */
+  margin-right: 13px;
+  min-width: 80px;
+}
+.mem_tag.sm {
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 0.8em;
+  font-size: 11px;
+}
+.mem_tag.md {
+  height: 26px;
+  line-height: 26px;
+  padding: 0px 0.8em;
+  font-size: 12px;
+}
+.mem_tag.smnone {
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 0.8em;
+  font-size: 11px;
+  margin-right: 0px;
+}
+.smbox {
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  font-size: 11px;
+  margin-right: 0px;
+  border-radius: 0px;
+  border: 1px solid;
+}
+table .mem_tag {
+  margin-right: 6px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.mem_tag.redBg {
+  background: #f93047;
+  border-color: #dd0019;
+  color: #ffffff;
+}
+.mem_tag .remove {
+  cursor: pointer;
+  margin-left: 10px;
+}
+.tbList.td_tr .mem_tagGroup span {
+  margin: 2px 1px;
+  padding: 3px 5px 3px 13px;
+  cursor: pointer;
+  font-size: 13.5px;
+}
+
+.informBox {
+  width: 100%;
+  padding: 25px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  background: #f0f1f2;
+  text-align: left;
+}
+.informBox .informTit {
+  font-size: 17px;
+  font-weight: 600;
+  color: #007aff;
+  margin-bottom: 15px;
+}
+.informBox .informTit i {
+  font-size: 28px;
+  color: #007aff;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.informBox li {
+  font-size: 16px;
+  line-height: 30px;
+  color: #2e2e2e;
+}
+.informBox li span {
+  font-weight: 600;
+  margin-right: 10px;
+}
+.informBox strong {
+  font-weight: 600;
+}
+
+.docWrapper {
+  margin-top: 90px;
+}
+
+.intEq td {
+  position: relative;
+}
+.intEq .int {
+  padding-right: 90px;
+}
+.validTime {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  font-size: 12px;
+  transform: translateY(-50%);
+}
+
+.joinBizFin {
+  padding: 50px;
+  border: 1px solid #c8c8c8;
+  text-align: center;
+}
+.joinBizFinP1 {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.joinBizFinP2 {
+  margin-top: 20px;
+  font-size: 19px;
+}
+.joinBizFin .cardBtnWrap i {
+  margin-left: 30px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.sbefore:before {
+  display: inline-block;
+  content: '※';
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+}
+
+.docBox {
+  padding-bottom: 5px;
+}
+.docBox li:before, .docBox li:after {
+  content: "";
+  display: table;
+}
+.docBox li:after {
+  clear: both;
+}
+.docBox li {
+  zoom: 1;
+  margin-top: 5px;
+}
+.docBox li span {
+  float: right;
+}
+.docBox li span.first {
+  float: left;
+  line-height: 32px;
+}
+
+.docBox li span.first i {
+  margin-right: 4px;
+}
+
+.joinBizWrap .docBox .btn {
+  padding: 5px 10px !important;
+}
+
+/* BIZ가입 시, 타입선택*/
+.joinBizWrap.oneSection {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.joinBizWrap.oneSection .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+.choose_biz {
+  width: 100%;
+  margin-top: 80px;
+}
+.choose_biz:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.bizType {
+  display: block;
+  float: left;
+  width: 50%;
+  padding: 0 5%;
+  /*height:360px;
+     max-height:360px;*/
+  min-height: 360px;
+  text-align: center !important;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.bizType1 {
+  margin-left: 0 !important;
+}
+
+.bizType .bizTypeInner {
+  height: 100%;
+  /*border:1px solid #dbdadf;*/
+}
+.bizType1 .bizTypeInner {
+  border: 1px solid #007aff;
+}
+.bizType2 .bizTypeInner {
+  border: 1px solid #01b8b5;
+}
+
+.bizType .bizTyIcon {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto 25px auto;
+  text-align: center;
+  line-height: 95px;
+  border-radius: 50%;
+  background: #f0f1f3;
+}
+.bizType1 .bizTyIcon {
+  background: #d9ebff;
+}
+.bizType2 .bizTyIcon {
+  background: rgba(1,187,181,0.2);
+}
+
+.bizType .bizTyIcon i {
+  font-size: 60px;
+  color: #c8c9cb;
+  vertical-align: middle;
+}
+.bizType1 .bizTyIcon i {
+  color: #007aff;
+}
+.bizType2 .bizTyIcon i {
+  color: #01b8b4;
+}
+
+.bizType .bizT {
+  font-size: 17px;
+  font-weight: bold;
+}
+.bizType .btn {
+  display: inline-block;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 50em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.bizType1 .btn {
+  background: #007aff;
+  box-shadow: 0 4px 20px 0px rgba(49, 135, 253, 0.4);
+}
+.bizType2 .btn {
+  background: #01b8b5;
+  box-shadow: 0 4px 20px 0px rgba(1, 184, 181, 0.4);
+}
+
+.bizType1:hover .bizTypeInner, .bizType1:active .bizTypeInner, .bizType1:focus .bizTypeInner {
+  background: #1e89ff;
+  border: 1px solid #1e89ff;
+  color: #fff !important;
+  box-shadow: 0 4px 24px 7px rgba(49, 135, 253, 0.4);
+}
+.bizType1:hover .bizTyIcon, .bizType1:active .bizTyIcon, .bizType1:focus .bizTyIcon {
+  background: #007aff;
+}
+.bizType1:hover .bizTyIcon i, .bizType1:active .bizTyIcon i, .bizType1:focus .bizTyIcon i {
+  color: #fff;
+}
+.bizType1:hover .btn, .bizType1:active .btn, .bizType1:focus .btn {
+  background: #fff;
+  color: #007aff;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.bizType2:hover .bizTypeInner, .bizType2:active .bizTypeInner, .bizType2:focus .bizTypeInner {
+  background: #01b8b5;
+  color: #fff !important;
+  box-shadow: 0 4px 24px 7px rgba(1, 184, 181, 0.4);
+}
+.bizType2:hover .bizTyIcon, .bizType2:active .bizTyIcon, .bizType2:focus .bizTyIcon {
+  background: #08a19e;
+}
+.bizType2:hover .bizTyIcon i, .bizType2:active .bizTyIcon i, .bizType2:focus .bizTyIcon i {
+  color: #fff;
+}
+.bizType2:hover .btn, .bizType2:active .btn, .bizType2:focus .btn {
+  background: #fff;
+  color: #01b8b4;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* 반응형 */
+@media (max-width: 800px) {
+  .joinBizWrap {
+    text-align: left;
+  }
+
+  .joinBizCont {
+    padding: 0 10px;
+  }
+
+  .joinBizTit {
+    font-size: 25px;
+  }
+  .termsTit {
+    font-size: 16px;
+  }
+  .joinBizCont .mypage-tbtext {
+    font-size: 16px;
+  }
+  .joinBizCont .mypage-tbtext small {
+    font-size: 13.5px;
+    margin-left: 5px;
+  }
+  .joinBizCont .mypage-tbtext .input_chk {
+    font-size: 13.5px;
+  }
+
+  .joinBizCont .tbSimple2 tbody th {
+    font-weight: 600;
+  }
+  .joinBizCont .tbSimple2 tbody td {
+    padding: 15px 0 15px 0;
+  }
+  .informBox .informTit {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  .informBox .informTit i {
+    font-size: 1.5em;
+  }
+  .informBox li {
+    font-size: 0.9em;
+    line-height: 1.7;
+  }
+
+  .docWrapper {
+    margin-top: 0px !important;
+  }
+  .infoBox {
+    margin-bottom: 0;
+  }
+  .joinBizCont .col-xs-12 {
+    margin-top: 50px;
+  }
+  /*.docWrapper .tbSimple2 th, .docWrapper .tbSimple2 td {
+     border-bottom:none;
+     }*/
+
+  .joinBizCont .tbSimple2 td:last-child {
+    /*padding-top: 0;*/
+  }
+  .joinBizCont .tbSimple2 tbody th small {
+    display: inline-block;
+  }
+  .infoBox small {
+    display: inline-block;
+  }
+  .validTime {
+    /*margin-top: -8px;*/
+  }
+
+  .joinBizStep li p {
+    display: block;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .joinBizStep li p, .joinBizStep li small {
+    font-size: 13.5px;
+  }
+
+  .joinBizStep .arrow {
+    line-height: 130px;
+  }
+
+  .joinBizFin {
+    padding: 30px 20px;
+  }
+  .joinBizFinP1 {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .joinBizFinP2 {
+    font-size: 13.5px;
+    margin-top: 10px;
+  }
+  .informBox {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  .joinBizFin .cardBtnWrap .col-xs-12 {
+    margin-top: 0 !important;
+  }
+
+  .choose_biz {
+    margin-top: 50px;
+  }
+  .bizType {
+    padding: 0 5px;
+  }
+  .bizType .bizTyIcon {
+    width: 85px;
+    height: 85px;
+    line-height: 80px;
+  }
+  .bizType .bizTyIcon i {
+    font-size: 50px;
+  }
+  .bizType .bizT {
+    font-size: 13.5px;
+  }
+  .bizType .btn {
+    margin-top: 25px;
+  }
+}
+
+/*@media (min-width: 1281px) {
+    .joinBizCont .selectBox {
+        font-size: 16px;
+    }
+}*/
+/*--------// 0531 BIZ 회원가입 폼 --------*/
+
+.joinBizCont .int::-webkit-input-placeholder {
+  color: #c8c8c8;
+}
+.joinBizCont .int::-moz-placeholder {
+  color: #c8c8c8;
+}
+.joinBizCont .int::-ms-placeholder {
+  color: #c8c8c8;
+}
+.joinBizCont .int:-ms-input-placeholder {
+  color: #c8c8c8;
+}
+.joinBizCont .int::placeholder {
+  color: #c8c8c8;
+}
+
+
+.attachFile{
+  float:left;
+}
+.attachWrap{
+  float:left;
+  margin-left:10px;
+}
+@media (max-width:800px){
+  .attachWrap{
+    margin-top:10px;
+    margin-left:0;
+  }
+
+}
+
+@media (max-width:1040px){
+  .inner{
+    padding:0 10px;
+  }
+}
+@media (max-width:470px){
+  table .input_chk{
+    display:block;
+    margin-left:0 !important;
+    margin-top:5px;
+  }
+}

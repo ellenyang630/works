@@ -1,0 +1,769 @@
+@charset "UTF-8";
+
+// 이미지업로드 파일박스
+input[type="file"].up-goods-file {
+  display: none;
+  cursor: pointer;
+}
+.fileWrap{
+  margin: 0 -6px;
+  dl{
+    width:100%;
+    dd{
+      display: inline-block;
+      float:left;
+      padding: 0 6px;
+      label{
+      }
+    }
+  }
+}
+.fileInfo{
+  margin-top: 6px;
+  color: $gray-9;
+}
+
+.fileUpload {
+  label{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid $line-dark;
+    cursor: pointer;
+    display: block;
+  }
+  .up-img{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: $white;
+    box-sizing: border-box;
+  }
+}
+.goodsImgWrap{
+  position: relative;
+}
+.delFile {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  z-index: 99;
+  cursor: pointer;
+  i {
+    z-index: 99;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: $white;
+    font-size: 1.2em;
+    display: block;
+    background: rgba(0,0,0,0.8);
+  }
+}
+
+// 파일첨부
+input[type="file"].up-file {
+  display: none;
+  cursor: pointer;
+}
+.fileUp {
+  text-align: left;
+  
+  label{
+    position: relative;
+    display: block;
+    width: calc(100% - 100px) !important;
+    height: 30px;
+    
+    cursor: pointer;
+    &:after{
+      position: absolute;
+      top:0;
+      right:-100px;
+      display:block;
+      min-width:90px;
+      height:100%;
+      padding: 0 10px;
+      background: $mainDarkColor;
+      border-radius: 5px;
+      display: inline-block;
+      content:"찾아보기";
+      font-size:13px;
+      font-weight: $font-weight-exbold;
+      color:$white;
+      text-align: center;
+    }
+  }
+  .up-img{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: $white;
+    box-sizing: border-box;
+  }
+  .placeholder{
+    // display: none;
+    color:$gray-9;
+  }
+  .file_name{
+    // display: none;
+    color:$basicBlack;
+  }
+}
+.goodsImgWrap{
+  position: relative;
+}
+.delFile {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  z-index: 99;
+  cursor: pointer;
+  i {
+    z-index: 99;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: $white;
+    font-size: 1.2em;
+    display: block;
+    background: rgba(0,0,0,0.8);
+  }
+}
+
+
+
+.input_line {
+  .input_chk,
+  .input_radio{
+    margin-left: 0;
+  }
+  dd{
+    margin: 6px 0;
+  }
+  br + small{
+    padding-left:23px;
+    line-height: 2;
+  }
+}
+
+// input_chk, input_radio
+input[type="checkbox"], input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  vertical-align: middle;
+  overflow: hidden;
+  -webkit-appearance: none;
+  border: 0;
+  background: 0;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+.input_chk,
+.input_radio {
+  position: relative;
+  display: inline-block !important;
+  height: 18px;
+  margin-left: 8px;
+  line-height: 18px;
+  &.first{
+    margin-left: 0;
+  }
+  
+}
+
+.input_chk input[type="checkbox"],
+.input_radio input[type="radio"]{
+  & + label{
+    padding-left: 23px;
+    margin-left:0;
+    font-weight: 400;
+    color: $gray-6;
+    cursor: pointer;
+
+    &:before{
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      background: url("../img/input.png") no-repeat;
+      -webkit-background-size: 18px 121px;
+      cursor: pointer;
+    }
+  }
+  &:focus, &:hover{
+    @include prefix(box-shadow, inset 0 3px 5px rgba(0,0,0,.105), webkit ms moz o);
+  }
+}
+
+.input_chk{
+  input[type="checkbox"]{
+    & + label:before{
+      background-position: 0px -22px;
+    }
+    &:checked{
+      + label:before {
+        background-position: 0 0;
+      }
+    }
+  }
+
+  &.alone{
+    margin-left:0;
+    input[type="checkbox"]{
+      & + label{
+        padding-left:18px;
+      }
+    }
+  }
+}
+
+.input_radio{
+  input[type="radio"]{
+    & + label:before{
+      background-position: 0px -43px;
+      top: 2px;
+    }
+    &:checked + label:before {
+      background-position: 0px -63px;
+      top: 2px;
+    }
+  }
+
+  //disabled 추가
+  input[type="radio"][disabled]{
+    & + label{
+      color:$gray-9;
+      &:before{
+        background-position: 0px -84px;
+      }
+    }
+    &:checked + label{
+      color:$gray-9;
+      &:before{
+        background-position: 0px -105px;
+      }
+    }
+  }
+}
+.input_chkWrap{
+
+}
+
+
+/*---------------------------
+ * switch toggle
+ -----------------------------*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 27px;
+  input {
+    display: none;
+  }
+}
+.check_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $line-dark;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.check_slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .check_slider {
+  background-color: $mainGreen;
+}
+input:focus + .check_slider {
+  box-shadow: 0 0 1px $mainGreen;
+}
+input:checked + .check_slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.check_slider.round {
+  border-radius: 50em;
+}
+.check_slider.round:before {
+  border-radius: 50em;
+}
+
+// 재고페이지 작은 스위치 버튼
+.switch.sm{
+  width:68px;
+  height:18px;
+  vertical-align: middle;
+  .check_slider{
+    width: 40px;
+    height: 18px;
+    margin-left: 27px;
+
+    &:before{
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      bottom: 3px;
+    }
+    &:after{
+      display: inline-block;
+      content:"불가";
+      width:30px;
+      position: absolute;
+      left:-30px;
+    }
+  }
+  input:checked {
+    & + .check_slider{
+      &:before {
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+      }
+      &:after {
+        content:"가능";
+      }
+    }
+  }
+}
+
+.switch.sm.sell{
+  input:checked {
+    & + .check_slider{
+      &:after {
+        content:"판매";
+      }
+    }
+  }
+}
+
+
+// 요일 선택 체크박스
+input[type="checkbox"]{
+  &.check_toggle {
+    position: relative;
+    display: none;
+
+    & + label{
+      display: inline-block;
+      float: left;
+      color: $gray-9;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: $white;
+      border: 1px solid $line-light;
+      border-left: 0px;
+      height: 35px;
+      line-height: 34px;
+      padding: 0;
+      margin: 0px;
+    }
+    &:first-child{
+      & + label{
+        border-left: 1px solid $line-light;
+      }
+    }
+    // checked
+    &:checked{
+      & + label{
+        background: rgba($mainGreen, 0.65);
+        color: $white;
+        font-weight: $font-weight-exbold;
+        border-color: #00d593;
+      }
+    }
+  }
+}
+.btnGroup input[type="checkbox"].check_toggle + label {
+  width: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+// 선택된 날짜
+.mem_tagGroup {
+  > span,
+  > button{
+    margin-top: 5px;
+    margin-bottom:5px;
+    margin-left:5px;
+    &:first-child{
+      margin-left:0;
+    }
+  }
+  button{
+    &.active{
+      border-color: $mainGreen;
+      color: $mainGreen;
+    }
+  }
+}
+.mem_tag {
+  display: inline-block;
+  width: auto !important;
+  max-height: 28px;
+  padding: 2px 7px;
+  margin-top: 5px;
+  margin-bottom:5px;
+  margin-left:5px;
+
+  line-height: 1.7;
+  font-size: $font-size-base;
+  font-weight: normal;
+  vertical-align: middle;
+  border-radius: 50em;
+  border: 1px solid $line-dark;
+  color: $gray-6;
+  background: $white;
+  text-align: center;
+
+  .remove {
+    cursor: pointer;
+    margin-left: 10px;
+    &:hover, &:focus, &:active{
+      color: $mainGreen;
+    }
+  }
+}
+
+// 수량 컨트롤러 추가
+.number-group {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  overflow: hidden;
+  margin: 0 auto;
+
+  .int {
+    width: 100%;
+    min-width: 30px;
+    //height: 36px;
+    padding-left:0;
+    //line-height: 36px;
+    //border: 1px solid $line;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    text-align: center;
+    //font-weight: bold;
+    /*color: $disabled;*/
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    & {
+      -moz-appearance:textfield; /* Firefox */
+    }
+  }
+
+  button {
+    min-width: 30px;
+    height: 30px;
+    padding: 0px !important;
+    border-radius:0;
+    border-color: $line;
+    font-size:14px;
+    font-weight: bold !important;
+    /*color: $disabled;*/
+  }
+
+  .input-group-btn {
+    display: table-cell;
+    width: 30px;
+    vertical-align: top;
+    border-radius: 0;
+  }
+
+  &.on {
+    .int {
+      /*color: $light-black;*/
+    }
+    button {
+      /*color: $light-black;*/
+    }
+  }
+}
+
+// period radio button toggle
+.schOpt {
+  width: 100%;
+  //@include clearfix;
+  display: flex;
+  flex: 1;
+  li{
+    //float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: $white;
+    font-size: 12px;
+    color: $gray-6;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  &.col6 li{
+    width: 16.66666%;
+  }
+  &.col5 li{
+    width: 20%;
+  }
+  &.col3 li{
+    width: 33.33333%;
+  }
+  &.col2 li{
+    width: 50%;
+  }
+}
+
+
+// 기간 선택
+input[type="radio"]{
+  //input[type="radio"].radio_toggle
+  &.radio_toggle{
+    position: relative;
+    display: none;
+    & + label {
+      display: inline-block;
+      float: left;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      font-weight: $font-weight-exbold;
+      color: $mainDarkColor;
+      background: $mainLightBg;
+      border-right: 1px solid $LineColor9;
+      border-top: 1px solid $LineColor9;
+      border-bottom: 1px solid $LineColor9;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    @at-root{
+      .schOpt li:first-child input[type="radio"].radio_toggle + label {
+        border-left: 1px solid $LineColor9;
+      }
+    }
+    &:checked,
+    &:focus,
+    &:active,
+    &:hover{
+      + label{
+        font-weight: $font-weight-exbold;
+        color: $white;
+        background: rgba($mainColor, 0.9) !important;
+        border: 1px solid rgba($mainColor, 0.9) !important;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/* BUTTON */
+.btn {
+	@extend %box;
+	@extend .mp_none;
+	@extend .hand;
+	@extend %button-radius;
+	font-weight: $font-weight-exbold;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+	text-decoration: none !important;
+	color: $basicBlack;
+	background: $white;
+	border: 1px solid $LineColorC2;
+	&:hover, &:focus, &:active{
+		text-decoration: none !important;
+  }
+  @include btnActive($LineColorC2);
+
+	i{
+		position: relative;
+		top: -0.5px;
+    margin-right:3px;
+    //font-size: 1.1em;
+    font-size:123%;
+    font-weight: $font-weight-exbold;
+  }
+}
+
+.btn-group{
+  min-width:140px;
+
+  // 순서 이동 버튼
+  &.btn-move-group{
+    @include clearfix;    
+    .btn{
+      padding:0;
+      margin:0;
+      width:40px;
+      height:40px;
+      border-radius: 0;
+      border-color:$LineColor9;
+      color:$LineColor9;
+      display: inline-block;
+      margin-left:-6px;
+
+      background: $LineColorE2;
+      color:$mainColor;
+      &-up{
+        &:before{
+          @include font-family(LineAwesome);
+          @include content-val("\f113");
+        }
+      }
+      &-down{
+        &:before{
+          @include font-family(LineAwesome);
+          @include content-val("\f110");
+        } 
+      }
+      // &:hover, &:active, &:focus, &.active{
+      //   background: $LineColorE2;
+      //   color:$mainColor;
+      // }
+      &:disabled{
+        //background: $lightGray;
+        background: $white;
+        color:$LineColor9;
+        cursor: initial;
+        cursor: default;
+        cursor: not-allowed;
+        &:hover, &:active, &:focus, &.active{
+          background: $white;
+          color:$LineColor9;
+        }
+      }
+    }
+  }
+} 
+
+
+
+.btn-sm {
+	height: 30px;
+	line-height: 28px !important;
+	padding: 0px 8px;
+	font-size:$font-size-sm;
+	min-width: 30px;
+}
+.tbList .btn-sm{
+	height: 25px;
+	line-height: 24px !important;
+}
+
+.btn-md {
+	height: 38px;
+	line-height: 36px !important;
+	padding: 0 15px;
+	min-width: 40px;
+	// font-size: $font-size-sm;
+	font-size:0.8rem;
+
+}
+
+.btn-big{
+	height: 60px;
+	line-height: 56px !important;
+	padding: 0 18px;
+	min-width:  200px;
+	font-size: $font-size-middle;
+}
+
+// 글 정렬 바꾸는 버튼
+.btn_sort{
+  i{
+    margin-left:2px;
+    font-weight: $font-weight-exbold;
+    color:rgba($mainDarkColor, 0.5);
+
+  }
+}
+
+
+
+
+
+
+
+// button bg & color style
+.btn-pri{
+  background: $mainColor !important;
+  border-color: $mainColor !important;
+  color:$white !important;
+  @include btnActive($mainColor);
+} 
+.btn-line-pri{
+  background: $white;
+  border-color: $mainColor;
+  color:$mainColor;
+  @include btnActive($mainColor);
+}
+.btn-darken{
+  background: #2c3f52;
+  border-color: #2c3f52;
+  color:$white;
+  @include btnActive(#2c3f52);
+}
+
+.btn-alert{
+  background: $mainRed;
+  border-color: $mainRed;
+  color:$white;
+  @include btnActive($mainRed);
+}
+.btn-line-alert{        
+  background: $white;
+  border-color: $mainRed;
+  color:$mainRed;
+  @include btnActive($mainRed);
+}

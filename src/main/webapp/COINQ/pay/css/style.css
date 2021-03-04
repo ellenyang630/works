@@ -1,0 +1,1297 @@
+@charset "utf-8";
+@import url('reset.css');
+@import url('layout.css');
+@import url('table.css');
+@import url('modal.css');
+@import url('simple-line-icons.css');
+@import url('line-awesome.min.css');
+
+/* ----------------------------------------------------------------
+ main Content 메인
+ -----------------------------------------------------------------*/
+body {
+	-webkit-overflow-scrolling: touch;
+	padding-top: 1px;
+	margin-top: -1px;
+	height: auto;
+	overflow: hidden;
+}
+#content_inner {
+	width: 100%
+}
+#content_inner.main_list {
+	margin-top: 87px;
+	padding-bottom: 80px;
+	position: relative;
+}
+#content_inner.custom_list {
+	margin-top: 48px;
+	position: relative;
+}
+#content_inner.main_list .searchBoxWrap {
+	position: fixed;
+	top: 87px;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	display: none;
+	background: #f9f9f9;
+}
+.meunAddWrap.searchBoxWrap {
+	position: fixed;
+	top: 48px;
+	left: 0;
+	right: 0;
+	z-index: 4;
+	background: #f9f9f9;
+}
+#content_inner.custom_list .searchBoxWrap {
+	position: fixed;
+	top: 48px;
+	left: 0;
+	right: 0;
+	z-index: 3;
+	display: none;
+	background: #f9f9f9;
+}
+/* ----------------------------------------------------------------
+ box layout
+ -----------------------------------------------------------------*/
+.main_box {
+	padding-top: 10px;
+}
+.main_box li {
+	display: table;
+	width: 100%;
+	margin-bottom: 6px;
+	background: #ffffff;
+	cursor: pointer;
+	border: 1px solid #e2e6e9;
+}
+
+.fixedBtn_bottom {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #f3f5f9;
+}
+.fixedBtn_bottom .centerThis {
+	padding: 20px 15px;
+}
+
+/* ----------------------------------------------------------------
+ 로그인
+ -----------------------------------------------------------------*/
+
+.login_wrap .centerThis {
+	padding: 0 33px;
+}
+.login_inputBox {
+	margin-bottom: 15px;
+}
+.input_row {
+	margin-bottom: 5px;
+}
+.input_row:last-child {
+	margin-bottom: 0;
+}
+
+.login_logo {
+	display: block;
+	width: 158px;
+	height: 43px;
+	margin: 0 auto;
+	margin-bottom: 53px;
+	text-align: center;
+	background-position: -108px -223px;
+}
+
+.member_m {
+	margin-top: 15px;
+	color: #ddd;
+	text-align: center;
+	font-size: 13px;
+}
+.member_m span {
+	display: inline-block;
+	padding: 0 13px;
+}
+.member_m a {
+	color: #333;
+}
+
+.snsLoginBox {
+	width: 100%;
+	margin-top: 50px;
+	border-top: 1px solid #ddd;
+}
+
+.snsLoginBox p {
+	margin: 13px 0;
+	text-align: center;
+}
+.snsLoginBox ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.snsLoginBox li {
+	float: left;
+	display: inline-block;
+	margin-left: 10px;
+}
+.snsLoginBox li:first-child {
+	margin-left: 0px;
+}
+.snsBox {
+	color: #999;
+}
+.snsBox ul {
+	width: 178px;
+	margin: 0 auto;
+}
+.facebook {
+	width: 37px;
+	height: 37px;
+	background-position: -114px 0;
+}
+.kakao {
+	width: 37px;
+	height: 37px;
+	background-position: -114px -43px;
+}
+.google {
+	width: 37px;
+	height: 37px;
+	background-position: -115px -86px;
+}
+.twit {
+	width: 37px;
+	height: 37px;
+	background-position: -115px -129px;
+}
+.insta {
+	width: 37px;
+	height: 37px;
+	background-position: -114px -172px;
+}
+
+.notyet {
+	margin-bottom: 20px;
+	font-size: 14px;
+	text-align: center;
+}
+.notyet a {
+	display: inline-block;
+	color: #007aff;
+	border-bottom: 1px solid #007aff;
+	padding-bottom: 2px;
+}
+
+/* ----------------------------------------------------------------
+ Content 서브
+ -----------------------------------------------------------------*/
+#content_inner.sub_list {
+	margin-top: 48px;
+	background: #f3f5f9;
+	padding: 20px 0;
+}
+#content_inner.sub_list.fix {
+	padding-bottom: 80px;
+}
+
+/* 결제선택, 지갑선택, 암호화폐선택 layout */
+.main_box {
+	-webkit-box-shadow: 2px 2px 16px 0px rgba(183,192,211,0.3);
+	-moz-box-shadow: 2px 2px 16px 0px rgba(183,192,211,0.3);
+	box-shadow: 2px 2px 16px 0px rgba(183,192,211,0.3);
+	padding-top: 0;
+}
+.main_box li {
+	display: table;
+	width: 100%;
+	margin-bottom: 0;
+	background: #ffffff;
+	cursor: pointer;
+	border: none;
+	border-bottom: 1px solid #efefef;
+}
+.main_box li:last-child {
+	border-bottom: none;
+}
+
+.mListBox {
+	width: auto;
+	padding: 15px 20px;
+}
+.overseas .mListBox{
+	padding: 15px 20px 25px 20px !important;
+}
+.mListBox span, .mListBox h3 {
+	display: table-cell;
+	vertical-align: middle;
+}
+.mListBox h3 {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-left: 15px;
+	font-size: 15px;
+	color: #0e1a35;
+}
+.mListBox h3:after {
+	font-family: FontAwesome;
+	content: '\f105';
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	font-size: 17px;
+	color: #c5c5c5;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.mListBox h3 small {
+	display: block;
+	margin-top: 5px;
+	font-size: 13px;
+	color: #999;
+}
+
+/* 추가 */
+.mListBox p {
+	font-size: 13px;
+	line-height: 18px;
+	color: #999;
+}
+
+.mListBox p:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.mListBox small .cAmount {
+	padding-right: 10px;
+}
+.mListBox small .cExch {
+	padding: 0 7px;
+}
+.mListBox small .cUnit {
+	padding-left: 3px;
+	font-size: 11px;
+	color: #c5c5c5;
+}
+.mListBox small .f18 {
+	top: 0px;
+	line-height: 18px; /* 삭제 */
+}
+
+/* 0516 */
+.tbList .coinImgExp {
+	vertical-align: middle;
+}
+.tbList .coinImg img {
+	width: 23px;
+	height: 22px;
+	margin-right: 5px;
+	vertical-align: bottom;
+}
+
+.mListBox .coinImg img {
+	width: 37px;
+	height: 37px;
+	margin-top: 3px;
+}
+
+/* 결제선택, 지갑선택 페이지 - 아이콘 */
+.mListBox i {
+	display: block;
+	width: 37px;
+	height: 37px;
+}
+.mListBox .payw1 i {
+	background-position: 0 -27px !important;
+}
+.mListBox .paywo1 i {
+	background-position: -46px -202px !important;
+}
+.mListBox .payw2 i {
+	background-position: 0 -69px !important;
+}
+.mListBox .paywo2 i {
+	background-position: -165px -119px !important;
+}
+.mListBox .payw3 i {
+	background-position: 0 -112px !important;
+}
+
+.mListBox .payw4 i {
+	background-position: 0 -155px !important;
+}
+
+.mListBox .payw5 i {
+	background-position: 0 -202px !important;
+}
+
+.mListBox .payw6 i {
+	background-position: -46px -26px !important;
+}
+
+.mListBox .payw7 i {
+	background-position: -46px -69px !important;
+}
+
+.mListBox .payw8 i {
+	background-position: -46px -112px !important;
+}
+
+.mListBox .payw9 i {
+	background-position: -164px -26px !important;
+}
+.mListBox .payw10 i {
+	background-position: -164px -72px !important;
+}
+.mListBox .payw11 i {
+	background-position: -46px -155px !important;
+}
+
+.mListDl{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #8e8e8e;
+	margin-top: 15px;
+	padding: 15px;
+	background: #f5f7f8;
+	border: 1px solid #e5e7e8;
+}
+.mListDl dt{
+	color: #007aff;
+	font-weight: 700;
+	margin-bottom: 15px;
+}
+.mListDl dd{
+	margin-top: 10px;
+	font-size: 13px;
+	padding-left: 10px;
+	background: url(../images/dot.png) no-repeat left 6px;
+}
+
+/* 하단 버튼 */
+.centerInner .btnArea {
+	/*padding: 15px 0;*/
+}
+.btnArea {
+	padding: 0 15px;
+}
+.btnArea a {
+	border-radius: 3px;
+}
+.btnArea .btn_back, .btnArea .btn_next {
+	padding: 0 5px;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+.btnArea .btn_back {
+	float: left;
+	width: 33.333%;
+}
+.btnArea .btn_next {
+	float: right;
+	width: 64.666%;
+	margin-left: 2%;
+}
+.btnArea i {
+	margin: 0 5px;
+}
+
+.btnArea.alnBtn {
+	padding: 0 !important;
+}
+.btnArea.alnBtn .btn_md {
+	border: none !important;
+	height: 48px !important;
+	line-height: 48px !important;
+	border-radius: 0 !important;
+	font-size: 15px;
+	color: #fff !important;
+	background: #1c2536 !important;
+	border-top: 1px solid #111620 !important;
+}
+.btnArea.alnBtn .btn_md i {
+	color: #007aff;
+}
+
+/* QR코드 */
+.qrcodeBox {
+	padding: 20px 15px 30px 15px;
+	text-align: center;
+}
+.qrcodeBox .validTime{
+	margin-top:10px;
+}
+.qrcodeBox .validTime span {
+	font-weight: 700;
+}
+.qrcodeBox .qrImg {
+	width: 150px;
+	height: 150px;
+	margin: 10px auto;
+	background: #fff;
+	border: 1px solid #d8d8d8;
+	overflow: hidden;
+}
+.qrcodeBox .qrImg img {
+	width: 100%;
+	vertical-align: middle;
+}
+
+
+.payValid {
+	padding: 20px 15px 50px 15px;
+	margin: 0 auto;
+	text-align: center;
+}
+.payValid span {
+	display: inline-block;
+	height: 31px;
+	padding: 0 15px;
+	margin: 0 auto;
+	line-height: 31px;
+	background: #fff;
+	border: 1px solid #d8d8d8;
+	border-radius: 50em;
+	box-sizing: border-box;
+	color: #999;
+}
+.payValid span strong {
+	margin-left: 5px;
+}
+
+
+/* 유효시간 통일작업 */
+.validTime{
+	font-size:17px;
+	margin:30px auto;
+	text-align:center;
+}
+
+/*-- 유효시간 통일작업 */
+
+.centerInner .agreeInfo {
+	padding: 20px 0;
+}
+
+.agreeInfo {
+	padding: 15px;
+	color: #999;
+	font-size: 13px;
+}
+.agreeInfo li {
+	margin: 5px 0;
+}
+
+.infoTxt {
+	margin: 15px 0;
+	font-size: 12px;
+	color: #999;
+}
+.infoTxt2 {
+	margin: 0 0;
+	color: #999;
+	font-size: 12px;
+}
+.infoTxt2 a {
+	font-size: 12px;
+	color: #999;
+	border-bottom: 1px solid #999;
+	vertical-align: text-bottom;
+}
+
+.notiTxt {
+	margin: 10px 0 30px 0;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1.5;
+	text-align: center;
+}
+
+/* 로그인, 구매취소 접수 레이아웃 */
+.wayFin {
+	position: fixed;
+	width: 100%;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	left: 0px;
+	text-align: center;
+	line-height: 1.5em;
+	box-sizing: border-box;
+	color: #6e6e6e;
+	padding: 0 15px;
+}
+.wayFin.noFix{
+	position: inherit;
+	top: inherit;
+	-webkit-transform: inherit;
+	transform: inherit;
+	margin-bottom: 20px;
+}
+.wayFin .iconFin {
+	margin-bottom:17px;
+}
+.wayFin .iconFin img {
+	width: 86px;
+	height: 86px;
+}
+
+.wayFin .btnArea {
+	width: 205px;
+	margin: 50px auto 0 auto;
+}
+.wayFin .btnArea a {
+	border-radius: 50em;
+	box-shadow: 0 4px 20px 0px rgba(49, 135, 253, 0.4);
+}
+
+/* 팝업창 */
+.popWrap {
+	display: table;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 999;
+	background: rgba(0,0,0,0.8);
+	left: 0;
+	top: 0;
+}
+.loadImg {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.loadImg .inn {
+	background: #fff;
+	border-radius: 50em;
+	width: 70px;
+	height: 70px;
+	display: table;
+	margin: 0 auto;
+}
+.loadImg .inn span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.loadImg .inn img {
+	width: 30px;
+}
+.loadImg p {
+	color: #fff;
+	margin-top: 10px;
+}
+@-webkit-keyframes blinker {
+	from {
+		opacity: 1.0;
+	}
+	to {
+		opacity: 0.0;
+	}
+}
+.blink {
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-direction: alternate;
+}
+
+@media (max-width: 380px) {
+	.mListBox small .cAmount {
+		display: block;
+	}
+}
+
+/* 결제 진행 바 */
+.payLoader {
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	position: relative;
+	animation: loader12-u6338d783 1s linear alternate infinite;
+	top: 50%;
+	margin: -20px auto 0;
+}
+
+@keyframes loader12-u6338d783 {
+	0% {
+		box-shadow: -60px 40px 0 2px #007aff, -30px 40px 0 0 rgba(0, 122, 255, 0.2), 0 40px 0 0 rgba(0, 122, 255, 0.2), 30px 40px 0 0 rgba(0, 122, 255, 0.2), 60px 40px 0 0 rgba(0, 122, 255, 0.2); }
+	25% {
+		box-shadow: -60px 40px 0 0 rgba(0, 122, 255, 0.2), -30px 40px 0 2px #007aff, 0 40px 0 0 rgba(0, 122, 255, 0.2), 30px 40px 0 0 rgba(0, 122, 255, 0.2), 60px 40px 0 0 rgba(0, 122, 255, 0.2); }
+	50% {
+		box-shadow: -60px 40px 0 0 rgba(0, 122, 255, 0.2), -30px 40px 0 0 rgba(0, 122, 255, 0.2), 0 40px 0 2px #007aff, 30px 40px 0 0 rgba(0, 122, 255, 0.2), 60px 40px 0 0 rgba(0, 122, 255, 0.2); }
+	75% {
+		box-shadow: -60px 40px 0 0 rgba(0, 122, 255, 0.2), -30px 40px 0 0 rgba(0, 122, 255, 0.2), 0 40px 0 0 rgba(0, 122, 255, 0.2), 30px 40px 0 2px #007aff, 60px 40px 0 0 rgba(0, 122, 255, 0.2); }
+	100% {
+		box-shadow: -60px 40px 0 0 rgba(0, 122, 255, 0.2), -30px 40px 0 0 rgba(0, 122, 255, 0.2), 0 40px 0 0 rgba(0, 122, 255, 0.2), 30px 40px 0 0 rgba(0, 122, 255, 0.2), 60px 40px 0 2px #007aff; }
+}
+
+
+/* -------------- comLoader -------------- */
+
+.comLoaderBox{
+	position: relative;
+	transition: all .2s ease;
+	padding-right: 25px;
+}
+
+
+.comLoader:before{
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: -25px;
+	height: 12px;
+	width: 12px;
+	border-radius: 12px;
+	-webkit-animation: comLoaderg 3s ease-in-out infinite;
+	animation: comLoaderg 3s ease-in-out infinite;
+}
+
+.comLoader{
+	position: relative;
+	width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	-webkit-animation: comLoaderm 3s ease-in-out infinite;
+	animation: comLoaderm 3s ease-in-out infinite;
+}
+
+
+.comLoader:after{
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 25px;
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+	-webkit-animation: comLoaderd 3s ease-in-out infinite;
+	animation: comLoaderd 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes comLoaderg{
+	0%{background-color: rgba(0, 122, 255, .2);}
+	25%{background-color: rgba(0, 122, 255, 1);}
+	50%{background-color: rgba(0, 122, 255, .2);}
+	75%{background-color: rgba(0, 122, 255, .2);}
+	100%{background-color: rgba(0, 122, 255, .2);}
+}
+@keyframes comLoaderg{
+	0%{background-color: rgba(0, 122, 255, .2);}
+	25%{background-color: rgba(0, 122, 255, 1);}
+	50%{background-color: rgba(0, 122, 255, .2);}
+	75%{background-color: rgba(0, 122, 255, .2);}
+	100%{background-color: rgba(0, 122, 255, .2);}
+}
+
+@-webkit-keyframes comLoaderm{
+	0%{background-color: rgba(0, 122, 255, .2);}
+	25%{background-color: rgba(0, 122, 255, .2);}
+	50%{background-color: rgba(0, 122, 255, 1);}
+	75%{background-color: rgba(0, 122, 255, .2);}
+	100%{background-color: rgba(0, 122, 255, .2);}
+}
+@keyframes comLoaderm{
+	0%{background-color: rgba(0, 122, 255, .2);}
+	25%{background-color: rgba(0, 122, 255, .2);}
+	50%{background-color: rgba(0, 122, 255, 1);}
+	75%{background-color: rgba(0, 122, 255, .2);}
+	100%{background-color: rgba(0, 122, 255, .2);}
+}
+
+@-webkit-keyframes comLoaderd{
+	0%{background-color: rgba(0, 122, 255, .2);}
+	25%{background-color: rgba(0, 122, 255, .2);}
+	50%{background-color: rgba(0, 122, 255, .2);}
+	75%{background-color: rgba(0, 122, 255, 1);}
+	100%{background-color: rgba(0, 122, 255, .2);}
+}
+@keyframes comLoaderd{
+	0%{background-color: rgba(0, 122, 255, .2);}
+	25%{background-color: rgba(0, 122, 255, .2);}
+	50%{background-color: rgba(0, 122, 255, .2);}
+	75%{background-color: rgba(0, 122, 255, 1);}
+	100%{background-color: rgba(0, 122, 255, .2);}
+}
+
+/* password - 비밀번호 착기  */
+.captchaBox {
+	position: relative;
+	width: 100%;
+	min-height: 50px;
+	padding: 0 8px;
+	background: #ffffff !important;
+	border: 1px solid #ddd !important;
+	font-size: 13px;
+	color: #999;
+	box-sizing: border-box;
+}
+.captchaBox .btn {
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* 코인큐 OTP 비밀번호 설정 */
+.intoCheck {
+	position: relative;
+	height:40px;
+}
+.intoCheck:after {
+	content: '\f00c';
+	font-family: FontAwesome;
+	position: absolute;
+	color: #a6a6a6;
+	right: 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+/* 오른쪽 체크 아이콘이랑 겹치지 않기 위해서 */
+.intoCheck .inputBox{
+	padding-right:30px;
+}
+.intoCheck.active .inputBox {
+	color: #007aff;
+	border-color: #007aff !important;
+}
+.intoCheck.active:after {
+	color: #007aff;
+}
+
+/* 컨펌횟수 */
+.payInfo {
+	margin: 0 auto;
+	text-align: center;
+	background: rgba(35,141,229,0.15);
+	border-radius: 50em;
+	width: 200px;
+	padding: 10px 5px;
+	margin-bottom: 15px;
+}
+.payInfo label {
+	margin-right: 10px;
+	letter-spacing: 0.7px;
+}
+.payInfo strong {
+	font-size: 1.2em;
+}
+.payInfo strong.cmainblue {
+	font-size: 1.6em;
+	position: relative;
+	top: 2px;
+}
+/* dropdown */
+.dropdown-menu {
+	display: none;
+}
+.open > .dropdown-menu {
+	display: block;
+}
+.open > a {
+	outline: 0;
+}
+.dropWrap {
+	cursor: pointer;
+	position: relative;
+}
+#userMenu_popover {
+	position: absolute;
+	top: 54px;
+	right: -1px;
+	width: 330px;
+	background: #fff;
+	border: 1px solid #007aff;
+	box-sizing: border-box;
+	-webkit-box-shadow: 0px 2px 12px 4px rgba(85,132,255,0.24);
+	-moz-box-shadow: 0px 2px 12px 4px rgba(85,132,255,0.24);
+	box-shadow: 0px 2px 12px 4px rgba(85,132,255,0.24);
+	text-align: center;
+	display: none;
+	font-size: 21px;
+	z-index: 999;
+}
+.pwTouch td {
+	display: table-cell;
+	text-align: center;
+}
+.pwTouch span {
+	cursor: pointer;
+	display: block;
+	padding: 20px 0;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	color: #2e2e2e;
+}
+.pwTouch td {
+	border: 1px solid #e8e9ee;
+	padding: 0px !important;
+}
+.pwTouch td:hover {
+	background: #007aff !important;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+.pwTouch td:hover span, .pwTouch td:hover a, .pwTouch td:focus span, .pwTouch td:focus a, .pwTouch td:active span, .pwTouch td:active a {
+	color: #fff;
+}
+.pwTouch  .pwNone {
+	background: #f5f5f5 !important;
+	cursor: default;
+}
+.pwTouch  td.pwNone:hover {
+	cursor: default;
+	background: #f5f5f5 !important;
+}
+.divInt {
+	display: inline-block;
+	line-height: 38px;
+	height: 38px;
+	padding: 0 8px;
+	box-sizing: border-box;
+}
+
+@media (min-width: 801px) {
+	body {
+		overflow: visible;
+		height: 100%
+	}
+	body, .tbList, .tbList2, #content_inner {
+		font-size: 16px;
+	}
+	.inputBox {
+		font-size: 16px;
+		height: 40px;
+	}
+	.divInt {
+		height: 38px;
+		line-height: 38px;
+	}
+	.f18 {
+		font-size: 21px !important;
+	}
+	.selectBox, .inputBtn {
+		height: 40px;
+		font-size: 16px;
+	}
+	.wSelect-selected {
+		font-size: 16px;
+	}
+	.selectWrap:after {
+		font-size: 24px;
+	}
+	.coinq_hd h1 .logoImg {
+		height: 34px;
+		width: auto;
+	}
+	.headerTabFixed {
+		position: inherit;
+	}
+	#header {
+		height: 52px;
+		background: #f5f7f8;
+		border-bottom: 1px solid #c8c8c8;
+	}
+	#header h1 {
+		font-size: 17px;
+		line-height: 52px;
+	}
+	#header_close, #header_back {
+		height: 52px;
+		width: 52px;
+	}
+	#header i {
+		top: 19px;
+	}
+	#header_back i {
+		left: 20px;
+	}
+	#header_close i {
+		right: 20px;
+	}
+	.login_logo {
+		margin-bottom: 30px;
+	}
+	#content {
+		height: inherit;
+		display: table-cell;
+		vertical-align: middle;
+		width: 600px;
+		padding: 30px 0;
+	}
+	#content:before {
+		content: '';
+		background: url(../images/images.png) no-repeat;
+		-webkit-background-size: 240px 240px;
+		background-size: 240px 240px;
+		display: block;
+		width: 142px;
+		height: 39px;
+		background-position: -98px -201px;
+		position: relative;
+		top: 8px;
+		margin: 0 auto;
+		margin-bottom: 40px;
+	}
+	.logoNone:before {
+		display: none !important;
+	}
+	#content #table-fixed {
+		display: inherit;
+		width: 600px;
+		margin: 0 auto;
+		background: #fff !important;
+		border: 1px solid #c8c8c8;
+		-webkit-box-shadow: 2px 2px 16px 0px rgba(183,192,211,0.3);
+		-moz-box-shadow: 2px 2px 16px 0px rgba(183,192,211,0.3);
+		box-shadow: 2px 2px 16px 0px rgba(183,192,211,0.3);
+	}
+	#content_inner {
+		border: 0px;
+	}
+	#content_inner.payBox {
+		border-top: 0px;
+	}
+	#content_inner.payBox  #header_close {
+		top: 12px;
+	}
+	#content_inner.payBox .sub_header {
+		padding: 0px;
+	}
+	#content_inner.login_wrap {
+		border: 0px;
+	}
+	#content_inner.sub_list {
+		background: #fff !important;
+		padding: 0;
+		margin-top: 30px;
+	}
+	#content_inner.sub_list.choose {
+		margin-top: 0px;
+	}
+	.choose .centerInner {
+		padding: 0px !important;
+	}
+	.centerInner2 {
+		padding: 0 15px !important;
+		background: #fff;
+	}
+	.btn_md {
+		font-size: 16px;
+		height: 48px;
+		line-height: 48px;
+	}
+	table .btn_md{
+		height: 40px;
+		line-height: 40px;
+	}
+	.btnArea .btn_md {
+		font-size: 17px;
+	}
+	.td_tr thead th {
+		border-color: #2e2e2e;
+		color: #2e2e2e;
+		font-size: 16px;
+		font-weight: 600;
+		border-bottom: 0px;
+		height: auto;
+		padding-top: 0px;
+	}
+	.tbList.total th i {
+		vertical-align: middle;
+	}
+	.comNumber th, .comNumber td {
+		border: 0px;
+		font-size: 17px;
+		padding-bottom: 20px;
+	}
+	.comNumber th {
+		font-weight: 700;
+	}
+	.fixedBtn_bottom {
+		position: inherit;
+		background: none;
+		padding-bottom: 20px;
+	}
+	.fixedBtn_bottom.last {
+		padding-bottom: 0px;
+	}
+	.mListBox h3 {
+		text-align: left;
+	}
+	.mListBox h3:after {
+		font-size: 27px;
+	}
+	.mListBox {
+		padding: 25px 20px;
+	}
+	.main_box {
+		-webkit-box-shadow: 0;
+		-moz-box-shadow: 0;
+		box-shadow: 0;
+	}
+	.btnArea {
+		padding-bottom: 20px;
+	}
+	.btnArea.alnBtn .btn_md {
+		font-size: 17px;
+	}
+	.tbList thead th {
+		color: #2e2e2e;
+	}
+	.wayFin {
+		position: inherit;
+		top: inherit;
+		left: inherit;
+		-webkit-transform: inherit;
+		transform: inherit;
+		padding: 55px 30px 40px 30px; /*로그인포함*/
+	}
+	.wayFin.noFix{
+		padding: 15px 0 30px 0;
+		margin-bottom: 8px;
+		border-bottom: 1px solid #c8c8c8;
+	}
+	.wayFin strong {
+		font-size: 17px;
+		margin-bottom: 6px;
+		display: block;
+	}
+	.wayFin .btnArea {
+		margin-top: 30px;
+	}
+	.notiTxt {
+		font-size: 17px;
+	}
+	.mListBox h3 {
+		font-size: 17px;
+	}
+	.mListBox h3 small {
+		font-size: 14px;
+	}
+	.coinq_hd h1 {
+		padding: 3px 0
+	}
+	.agreeInfo {
+		font-size: 14px;
+	}
+	.mgb_cont {
+		padding-bottom: 0px;
+	}
+	.payLoader {
+		margin-bottom: 55px;
+	}
+	.mobile {
+		display: none;
+	}
+	.infoPrice{
+		margin:40px auto 0 auto !important;
+	}
+
+}
+
+@media (max-width: 800px) {
+	.mobile {
+		display: block;
+	}
+	#userMenu_popover {
+		position: fixed;
+		width: 93%;
+		margin: 0 auto;
+		box-sizing: border-box;
+		left: 50%;
+		top: 155px;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		font-size: 19px;
+	}
+	.pwTouch span {
+		padding: 15px 0;
+	}
+	.errorBox {
+		padding: 20px;
+		position: relative;
+		margin-top: 50%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		border-top: 1px solid #c8c8c8;
+		border-bottom: 1px solid #c8c8c8;
+	}
+	.errorBox p {
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+/* 결제안내 */
+#header.borderNone{
+	border: none !important;
+	background:#fff;
+}
+
+.pageTit{
+	display: inline-block;
+	margin-bottom: 20px;
+	padding:0 10px;
+	font-size:18px;
+	font-weight:600;
+	color:#2e2e2e;
+	border-bottom: 3px solid #ffeb64;
+	line-height: 0.5;
+}
+.pageTxt{
+	font-weight:600;
+}
+
+.infoPrice{
+	width:85%;
+	margin:40px auto 80px auto;
+	padding:15px 0;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+}
+.infoPrice dl{
+	margin-top:10px;
+	padding:0 15px;
+}
+.infoPrice dl:first-child{
+	margin-top:0;
+}
+.infoPrice dl:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.infoPrice dt, .infoPrice dd{
+	font-weight:600;
+}
+
+.infoPrice dt{
+	float:left;
+	text-align:left;
+	color:#6e6e6e;
+}
+
+.infoPrice dd{
+	float:right;
+	max-width: 100%;
+	height: auto;
+	text-align:right;
+	word-break: break-all;
+	color:#2e2e2e;
+}
+
+.infoPrice small {
+	color: #999;
+	font-size:14px;
+	margin-left: 5px;
+}
+
+/* 180626 추가 */
+.tbList tr td * {
+	vertical-align:middle;
+}
+
+
+
+
+/* 코인큐 약관 동의 */
+.agreeCont {
+	/*width: 100%;*/
+	width:1000px;
+	height:650px;
+	/*min-height:650px;*/
+	padding: 0px 15px 20px 15px;
+	background: #fff;
+	/*border: 1px solid #dfdfdf;*/
+	color: #666;
+	font-size: 12px;
+	line-height: 1.5;
+	text-align: left;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+@media(max-width:800px){
+	.agreeCont{
+		width:100%;
+	}
+}
+.agreeCont h3{
+	font-weight: bold !important;
+	color:#222;
+	margin-top:20px;
+}
+.agreeCont h4{
+	margin-top:15px;
+}
+.agreeCont ol li{
+	margin-left: 18px;
+	margin-bottom:3px;
+	text-indent: -14px;
+}
+.agreeCont ol ol.num>li{
+	list-style: decimal;
+	text-indent: 0;
+}
+.agreeCont table{
+	margin:15px 0;
+	background:#fff;
+	word-break: break-all;
+	text-indent: 0;
+}
+.agreeCon table th{
+	background: #f3f8fe;
+	border-top:2px solid #d8d8d8;
+	text-align:center;
+	padding:8px 0;
+}
+.agreeCon table td{
+	border-top:1px solid #d8d8d8;
+	padding: 10px;
+}
+.agreeCon table tr:last-child td{
+	border-bottom:1px solid #d8d8d8;
+}
+
+.agreeCon .case{
+	text-indent:3px;
+	font-weight: bold;
+}
+.agreeCon .dash li{
+	text-indent:0 !important;
+}
+.agreeCon .dash > li{
+	/*text-indent:0 !important;*/
+	margin-left:0 !important;
+}
+.agreeCon .dash > li > ol{
+	margin-bottom: 7px;
+}
+.agreeCon .dash > li > ol > li{
+	margin-left: 6px !important;
+}
+/*--// 코인큐 약관 동의 끝 */

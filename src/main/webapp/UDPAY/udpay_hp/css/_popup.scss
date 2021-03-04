@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+.popup {
+  display: none;
+  background-color: $white;
+  display: none;
+  min-height: 150px;
+  min-width: 400px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.popTT{
+  position: relative;
+  border-bottom: 1px solid $line-dark;
+  padding: 13px;
+  background: $white-light;
+  h2{
+    font-size:$font-size-xmiddle;
+    text-align: center;
+  }
+  .b-close {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    font-size: $font-size-xxmiddle;
+    color: $black;
+  }
+}
+.popCon{
+  padding:15px 20px;
+}
+.allmenuBox {
+  padding: 40px;
+  > ul {
+    display: table;
+    margin: 0 -30px;
+    > li {
+      width: 200px;
+      display: table-cell;
+      vertical-align: top;
+      padding: 0 30px;
+      border-left: 1px solid $line-light;
+      &:first-child{
+        border-left: 0px;
+      }
+      &:first-child{
+        .allmenutt{
+          border-bottom:0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+  a{
+    padding:  0 6px;
+    &:hover, &:active, &:focus{
+      @extend %under;
+    }
+  }
+  h2{
+    font-size: $font-size-xmiddle;
+    a{
+      color:$blue;
+    }
+  }
+  .allmenutt{
+    margin-bottom: 20px;
+  }
+  ol{
+    li{
+      margin-bottom: 15px;
+      font-weight: $font-weight-base;
+      dl{
+        margin-top: 10px;
+      }
+    }
+  }
+  dd{
+    margin-bottom: 10px;
+    font-size: $font-size-sm;
+    a{
+      color:$gray-light;
+    }
+  }
+  .allmenuol{
+    display: table;
+    width: 100%;
+    ol{
+      display: table-cell;
+      &:first-child{
+        width: 150px;
+      }
+      &:last-child{
+        width: 110px;
+      }
+    }
+  }
+}
+
+
+
+/* 무이자 할부 이벤트 */
+#cardInfo_popup{
+  max-width:600px;
+  width:90%;
+  margin:0 auto;
+}
+.card-info{
+  &:not(:first-child){
+    margin-top: 15px;
+  }
+  &__tbl{
+    padding-top:0;
+    padding-bottom:0;
+    font-size: 12px;
+    table{
+      white-space: normal !important;
+    }
+    caption{
+      padding-bottom:5px;
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      text-align: left;
+    }
+    th, td{
+      padding-top:8px;
+      padding-bottom:8px;
+      border-bottom:1px solid $line-light;
+      vertical-align: middle;
+    }
+    th{
+      padding:0 10px;
+      color:$black;
+      text-align: center;
+    }
+    td{
+      padding-left:20px;
+      padding-right: 20px;
+      color:$base;
+    }
+    tr{
+      &:first-child{
+        th, td{
+          border-top:1px solid $line-light;
+        }
+      }
+    }
+    .card-name{
+      span{
+        margin:0 2px;
+        vertical-align: middle;
+      }
+      img{
+        width:39px;
+        vertical-align: middle;
+      }
+    }
+    .card-interest{
+      line-height: 1.5;
+      strong{
+        font-weight:$font-weight-bold;
+      }
+    }
+  }
+
+  &__alert{
+    margin-top:15px;
+    font-size:13px;
+    dt{
+      font-weight: bold;
+      color: #333;
+    }
+    dd{
+      line-height: 1.6em;
+      font-size: 12px;
+      color: $base;
+    }
+  }
+}

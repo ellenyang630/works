@@ -1,0 +1,362 @@
+@charset "UTF-8";
+.joinForm {
+  display: table;
+  width: 100vw;
+  height: 100vh;
+  background: #f5f6f7;
+  .inn {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    .joinBox {
+      padding: 30px 0 40px 0;
+      position: relative;
+      width: 600px;
+      margin: 0 auto;
+      &.srcBox{
+        width: 1200px;
+        .ttBox{
+          strong{
+            color: $blue;
+          }
+        }
+        h3{
+          em{
+            margin-right: 13px;
+          }
+          i{
+            margin-right: 4px;
+            font-size: 1.3rem;
+            position: relative;
+            top: 4px;
+          }
+        }
+      }
+      .con {
+        border: 1px solid $line;
+        background: $white;
+        margin-top: 15px;
+      }
+      .ttBox {
+        padding: 20px 13px;
+        border-bottom: 1px solid $line-light;
+        /* background: $white url(../images/deco_join_udpay.png) no-repeat center center;
+         -webkit-animation: mover 2s infinite alternate;
+         animation: mover 2s infinite alternate;*/
+        h2 {
+          font-size: $font-size-xxmiddle;
+          margin-bottom: 6px;
+        }
+        h3 {
+          color: $gray-light;
+        }
+      }
+      .finBox {
+        padding: 60px 13px;
+        h2 {
+          font-size: $font-size-xxmiddle;
+          margin-bottom: 6px;
+        }
+        h3 {
+          color: $gray-light;
+        }
+      }
+      .bot {
+        a, button {
+          width: 100%;
+          &:disabled {
+            border: 1px solid $line !important;
+            border-top: 0px !important;
+          }
+        }
+      }
+    }
+    h1 {
+      img {
+        position: relative;
+        top: 5px;
+        width: 100px;
+        height: 39px;
+      }
+    }
+  }
+
+  .scCon {
+    padding: 40px 60px;
+  }
+}
+
+.joinSecBox {
+  margin: 30px 0;
+  ul {
+    margin: 0 -13px;
+    li {
+      position: relative;
+      dl {
+        margin: 0 13px;
+        padding: 25px 13px;
+        background: $white;
+        cursor: pointer;
+        transition: transform .3s;
+        border-radius: 1.5em;
+        border: 1px solid $line;
+      }
+      input[type="radio"] {
+        width: 150px;
+        height: 150px;
+      }
+      input[type="radio"]:checked + label {
+        dl {
+          background: $blue;
+          color: $white;
+          border-color: $blue;
+          @extend %trans;
+          -webkit-transform: translateY(8px);
+          -ms-transform: translateY(8px);
+          transform: translateY(8px);
+          -webkit-box-shadow: 0px 10px 36px -13px rgba($blue, 0.8);
+          -moz-box-shadow: 0px 10px 36px -13px rgba($blue, 0.8);
+          box-shadow: 0px 10px 36px -13px rgba($blue, 0.8);
+          dd, p {
+            color: $white;
+          }
+          span {
+            background: $white;
+            color: $blue;
+            @extend %trans;
+          }
+        }
+      }
+    }
+
+  }
+
+  dt {
+    margin-bottom: 13px;
+  }
+  dd {
+    line-height: 1.3em;
+    font-size: $font-size-middle;
+    font-weight: $font-weight-base;
+    color: $black;
+    small {
+      color: $gray-light;
+      font-size: $font-size-xsm;
+    }
+  }
+  span {
+    position: relative;
+    display: table;
+    width: 60px;
+    height: 60px;
+    background: $white-blue-light;
+    border-radius: 1.5em/1.5em;
+    color: $gray-blue;
+    text-align: center;
+    margin: 0 auto;
+    i {
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      font-size: $font-size-slg;
+    }
+  }
+}
+
+.joinAgree {
+  text-align: left;
+}
+
+.agreeTT {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  position: relative;
+  @extend %group;
+  h2 {
+    float: left;
+  }
+  .checkArea {
+    float: right;
+  }
+}
+
+.joinInput {
+  text-align: left;
+  em {
+    margin-left: 4px;
+    font-size: $font-size-middle;
+    color: $blue;
+  }
+  li {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  dt {
+    margin-bottom: 5px;
+  }
+  dd {
+    border: 1px solid $line;
+    padding: 5px;
+    .int, select {
+      padding: 10px;
+      border: 0px;
+      width: 100%;
+    }
+    .textBtn, .textSel {
+      display: table;
+      width: 100%;
+      span {
+        display: table-cell;
+        &:first-child {
+          padding-right: 3px;
+        }
+        &:last-child {
+          padding-left: 3px;
+        }
+      }
+    }
+    .textBtn {
+      span:last-child {
+        width: 110px;
+      }
+      a {
+        width: 100%;
+        text-align: center;
+        font-size: $font-size-sm;
+      }
+    }
+    .textSel {
+      span {
+        width: 50%;
+      }
+    }
+    .radioSel {
+      padding: 8px 10px;
+    }
+    li {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .textWarning {
+    font-size: $font-size-xsm;
+    margin-top: 4px;
+    color: $red;
+  }
+}
+
+.joinTip {
+  margin: 20px 0;
+  padding: 20px;
+  text-align: left;
+  background: $white-blue-light;
+  i {
+    margin-right: 3px;
+    position: relative;
+    top: 1px;
+  }
+  dt {
+    margin-bottom: 5px;
+  }
+  dd {
+    font-size: $font-size-xsm;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.33em;
+    margin-bottom: 3px;
+    &:before {
+      position: absolute;
+      top: 4px;
+      left: 0px;
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      background-color: $line;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+
+.circle-loader {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-left-color: $white;
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 30px;
+}
+
+.load-complete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: rgba($blue,0.7);
+  transition: border 500ms ease-out;
+}
+
+.checkmark {
+  display: none;
+}
+
+.checkmark.draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg);
+}
+
+.checkmark:after {
+  opacity: 1;
+  height: 1.5em;
+  width: 0.8em;
+  transform-origin: left top;
+  border-right: 3px solid $blue;
+  border-top: 3px solid $blue;
+  content: "";
+  position: absolute;
+  @extend %top50;
+  left: 30%;
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 0.8em;
+    opacity: 1;
+  }
+  40% {
+    height: 1.5em;
+    width: 0.8em;
+    opacity: 1;
+  }
+  100% {
+    height: 1.5em;
+    width: 0.8em;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* _mixins.scss */
+
+/// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+	@each $prefix in $prefixes {
+		#{'-' + $prefix + '-' + $property}: $value;
+	}
+	// Output standard non-prefixed declaration
+	#{$property}: $value;
+}
+
+// font-family
+@mixin font-family($fontFam) {
+	font-family: $fontFam;
+}
+
+// content value init
+@mixin content-val($content) {
+	display:inline-block;
+	content: $content;
+}
+
+// float clear both
+@mixin clearfix {
+	&:after{
+		display: block;
+		clear:both;
+		content:"";
+	}
+}
+
+//@mixin btnActive($shadowColor){
+//	&:active, &:focus, &:hover, &.active{
+//		@include prefix(box-shadow, 0px 0px 4px 0px rgba($shadowColor, 0.3), webkit ms moz o);
+//	}
+//}
+
+// button active
+@mixin btnActive($bgColor, $borderColor, $color){
+	&:active, &:focus, &:hover, &.active{
+		transition: all 0.2s ease-in-out;
+		color: $color;
+		border-color: $borderColor;
+		background-color: $bgColor;
+	}
+}
+
+// button active - slideIn
+@mixin btnSlideIn($bgColor, $borderColor, $color){
+	&:after{
+		background-color: $bgColor;
+	}
+	&.is-reversed{
+		&:after{
+			width:300%;
+		}
+		&:hover{
+			color: $color;
+			&:after{
+				width:0;
+			}
+		}
+	}
+	&:hover, &.active{
+		color: $bgColor;
+	}
+	&.is-reversed{
+		color: $bgColor;
+	}
+	&, &:hover{
+		-webkit-transition: color 0.5s  ease-in-out;
+		transition: color 0.5s  ease-in-out;
+	}
+	&:after{
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		content:"";
+		-webkit-transition: width 0.5s ease-in-out;
+		transition: width 0.5s ease-in-out;
+		background-color: $bgColor;
+	}
+	&:hover, &.active{
+		&:after{
+			width: 100%;
+			-webkit-transition: width 0.5s ease-in-out;
+			transition: width 0.5s ease-in-out;
+		}
+	}
+	&.active{
+		&:after{
+			width: 300%;
+		}
+	}
+}
+
+@mixin btnSlideUp($bgColor, $color){
+	&{
+		position: relative;
+		overflow: hidden;
+		-webkit-transition: all 175ms ease-out;
+		transition: all 175ms ease-out;
+		.btn-bg {
+			background-color: $bgColor;
+		}
+		&:hover{
+			.btn-bg {
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+			.btn-ico{
+				color: $color;
+			}
+		}
+	}
+}
+
+
+// animation keyframes 
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+
+// placeholder
+@mixin placeholder(){
+	input::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder{
+		@content;
+	}
+	input:-moz-placeholder,
+	textarea:-moz-placeholder {
+		@content;
+	}
+	input::-moz-placeholder,
+	textarea::-moz-placeholder{
+		@content;
+	}
+	input:-ms-input-placeholder,
+	textarea:-ms-input-placeholder{
+		@content;
+	}
+	input::placeholder,
+	textarea::placeholder{
+		@content;
+	}
+}

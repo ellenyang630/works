@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* _fonts.scss */
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,600,700|Roboto&subset=korean&display=swap');
+@import "../css/remixicon.css";
+
+// 고도체 웹폰트
+@font-face {
+  font-family: 'Godo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'),
+  url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Godo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'),
+  url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+  font-display: swap;
+}
+
+
+// GmarketSans 웹폰트
+@font-face {
+  font-family: 'GmarketSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/gmarketSans/gmarketSansTTFLight.eot');
+  src: url('../fonts/gmarketSans/gmarketSansTTFLight.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/gmarketSans/gmarketSansTTFLight.woff2') format('woff2'),
+  url('../fonts/gmarketSans/gmarketSansTTFLight.woff') format('woff'),
+  url('../fonts/gmarketSans/gmarketSansTTFLight.svg#GmarketSansTTFLight') format('svg');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/gmarketSans/gmarketSansTTFMedium.eot');
+  src: url('../fonts/gmarketSans/gmarketSansTTFMedium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/gmarketSans/gmarketSansTTFMedium.woff2') format('woff2'),
+  url('../fonts/gmarketSans/gmarketSansTTFMedium.woff') format('woff'),
+  url('../fonts/gmarketSans/gmarketSansTTFMedium.svg#GmarketSansTTFMedium') format('svg');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'GmarketSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/gmarketSans/gmarketSansTTFBold.eot');
+  src: url('../fonts/gmarketSans/gmarketSansTTFBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/gmarketSans/gmarketSansTTFBold.woff2') format('woff2'),
+  url('../fonts/gmarketSans/gmarketSansTTFBold.woff') format('woff'),
+  url('../fonts/gmarketSans/gmarketSansTTFBold.svg#GmarketSansTTFBold') format('svg');
+  font-display: swap;
+}

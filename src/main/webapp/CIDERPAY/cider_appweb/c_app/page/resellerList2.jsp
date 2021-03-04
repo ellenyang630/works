@@ -1,0 +1,200 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+	<title>사이다페이</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/font-awesome.min.css" media="all" >
+
+	<link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+
+	<script src="../js/jquery-1.11.0.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/swiper.min.js"></script>
+	<script src="../js/style.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<div id="content_inner" class="main_list">
+		<div class="inner">
+			<div class="listTopArea clearfix">
+				<div class="countNumBox fl">
+					<p>서류처리대상 <em>5</em>건</p>
+				</div>
+				<!--<div class="searchBox fr">-->
+					<!--<span class="btn bgray"><i class="la la-search icon search"></i> 검색</span>-->
+				<!--</div>-->
+			</div>
+			<!--<a href="#" class="btn_global wHalf fl lblue" data-target="#receiptSend" data-toggle="modal" data-backdrop="static" data-keyboard="false">현금영수증발행</a>-->
+
+			<div class="resellLIstWrap">
+                <div class="noData">
+                    <div class="tblCellCon">
+                        <p class=""><img src="../image/list_icon_none_grey.png" alt="이미지"></p>
+                        <p class="infoTxt">내역이 없습니다.</p>
+                    </div>
+                </div>
+                <!--// resellLIst -->
+
+				<!--<div class="resellLIst first">-->
+					<!--<div class="resellTit">-->
+						<!--<div class="tt clearfix">-->
+							<!--<div class="lbBox fl">-->
+								<!--<span class="lb blred">가맹비미납</span>-->
+								<!--<span class="lb blred">서류미결</span>-->
+							<!--</div>-->
+							<!--<div class="dateBox fr">-->
+								<!--<p>2019-11-11 12:00:00</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="tm">-->
+							<!--<p class="rstit">타미하우스 구로디지털단지점</p>-->
+						<!--</div>-->
+						<!--<div class="tb">-->
+							<!--<ul class="rsInfoBox">-->
+								<!--<li>-->
+									<!--<span class="imgIcon"><img src="../image/icon01.png" alt="사람모양 아이콘"></span>-->
+									<!--<span class="rsInfoTxt">미스터타미</span>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<span class="imgIcon"><img src="../image/icon02.png" alt="핸드폰모양 아이콘"></span>-->
+									<!--<span class="rsInfoTxt">010-1234-5678</span>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--&lt;!&ndash;// .resellTit &ndash;&gt;-->
+					<!--<div class="resellCon">-->
+						<!--<div class="ct">-->
+							<!--<ul class="rsBtnBox col_4 clearfix">-->
+								<!--<li>-->
+									<!--<span><img src="../image/btn_icon01.png" alt="핸드폰 아이콘" class="threetimes "></span>-->
+									<!--<span class="rsbt">통화</span>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<span><img src="../image/btn_icon02.png" alt="문자 아이콘"  class="threetimes"></span>-->
+									<!--<span class="rsbt">문자</span>-->
+								<!--</li>-->
+								<!--<li onClick="location.href='resellerView1.jsp'">-->
+									<!--<span><img src="../image/btn_icon03.png" alt="수납관리 아이콘"  class="threetimes"></span>-->
+									<!--<span class="rsbt">수납관리</span>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<span><img src="../image/btn_icon04.png" alt="서류관리 아이콘"  class="threetimes"></span>-->
+									<!--<span class="rsbt">서류관리</span>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+						<!--<div class="cb">-->
+							<!--<div class="rsMgsBox hand" >-->
+								<!--<p>이번달말까지 입금하신다고 하심.</p>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--&lt;!&ndash;// .resellCon &ndash;&gt;-->
+				<!--</div>-->
+				<!--&lt;!&ndash;// resellLIst &ndash;&gt;-->
+
+				<!--<div class="resellLIst">-->
+					<!--<div class="resellTit">-->
+						<!--<div class="tt clearfix">-->
+							<!--<div class="lbBox fl">-->
+								<!--<span class="lb blred">가맹비미납</span>-->
+								<!--<span class="lb blgreen">서류완납</span>-->
+							<!--</div>-->
+							<!--<div class="dateBox fr">-->
+								<!--<p>2019-11-11 12:00:00</p>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="tm">-->
+							<!--<p class="rstit">타미하우스 구로디지털단지점</p>-->
+						<!--</div>-->
+						<!--<div class="tb">-->
+							<!--<ul class="rsInfoBox">-->
+								<!--<li>-->
+									<!--<span class="imgIcon"><img src="../image/icon01.png" alt="사람모양 아이콘"></span>-->
+									<!--<span class="rsInfoTxt">미스터타미</span>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<span class="imgIcon"><img src="../image/icon02.png" alt="핸드폰모양 아이콘"></span>-->
+									<!--<span class="rsInfoTxt">010-1234-5678</span>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--&lt;!&ndash;// .resellTit &ndash;&gt;-->
+					<!--<div class="resellCon">-->
+						<!--<div class="ct">-->
+							<!--<ul class="rsBtnBox col_4 clearfix">-->
+								<!--<li>-->
+									<!--<span><img src="../image/btn_icon01.png" alt="핸드폰 아이콘" class="threetimes "></span>-->
+									<!--<span class="rsbt">통화</span>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<span><img src="../image/btn_icon02.png" alt="문자 아이콘"  class="threetimes"></span>-->
+									<!--<span class="rsbt">문자</span>-->
+								<!--</li>-->
+								<!--<li onClick="location.href='resellerView2.jsp'">-->
+									<!--<span><img src="../image/btn_icon03.png" alt="수납관리 아이콘"  class="threetimes"></span>-->
+									<!--<span class="rsbt">수납관리</span>-->
+								<!--</li>-->
+								<!--<li>-->
+									<!--<span><img src="../image/btn_icon04.png" alt="서류관리 아이콘"  class="threetimes"></span>-->
+									<!--<span class="rsbt">서류관리</span>-->
+								<!--</li>-->
+							<!--</ul>-->
+						<!--</div>-->
+						<!--<div class="cb">-->
+							<!--<div class="rsMgsBox noMsg">-->
+								<!--<p>비고란</p>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--&lt;!&ndash;// .resellCon &ndash;&gt;-->
+				<!--</div>-->
+				<!--&lt;!&ndash;// resellLIst &ndash;&gt;-->
+			</div>
+			<!--// resellLIstWrap -->
+		</div>
+		<!--// .inner -->
+	</div>
+	<!-- #content_inner -->
+</div><!--// wrapper -->
+</body>
+</html>
+
+
+
+<!-- 예시 팝업  -->
+<div class="modal fade" id="memoPop" role="dialog" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<p class="modal-title">비고메모</p>
+			</div>
+			<div class="modal-body withTxtArea">
+				<div class="modal-textarea">
+					<textarea>이번달말까지 입금하신다고 하심.</textarea>
+				</div>
+			</div>
+			<!--//.modal-body-->
+			<div class="modal-footer group">
+				<button type="button" class="btn_md fl" data-dismiss="modal">
+					닫기
+				</button>
+				<button type="button" class="btn_md fr cgreen">
+					저장
+				</button>
+			</div>
+			<!--//.modal-footer-->
+		</div>
+		<!--//.modal-content-->
+	</div>
+	<!--//.modal-dialog-->
+</div>
+<!--//.modal-->
+<!--// 예시 팝업 -->

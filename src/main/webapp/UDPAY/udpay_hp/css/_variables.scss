@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+//color
+$white: #ffffff !default;
+$white-light: #f9f9f9 !default;
+$white-blue-light: #f2f4f9 !default;
+//$white-blue-light2 : #f9fbff !default;
+$blue: #1369fa !default;
+$blue-black: #11384e !default;
+$green: #04b894 !default;
+$red: #ff3f44 !default;
+$black: #2a3445 !default;
+$purple: #992cd7 !default;
+$yellow: #f3bd17 !default;
+$orange: #f37f17 !default;
+$green: #43b58a !default;
+$turquoise: #26b7a8 !default;
+
+$gray-light: #888888 !default;
+$gray-blue:  #acb9ce !default;
+
+$base: #606368 !default;
+
+//line
+$line: #d6d6dd !default;
+$line-light: #e7e9ef !default;
+$line-dark: #bebebe !default;
+
+//font
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+  src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//fontstyle
+$font-family: 'NanumBarunGothic', Malgun Gothic, Dotum,"Apple SD Gothic Neo", Roboto, Arial !default;
+$font-family-us: Roboto, Tahoma, Arial, Helvetica, sans-serif;
+$font-icon: FontAwesome;
+
+$font-size-xlg: 2.588rem !default;
+$font-size-mlg: 2.217rem !default;
+$font-size-lg: 2rem !default;
+$font-size-slg: 1.6rem !default;
+$font-size-xxmiddle: 1.4rem !default;
+$font-size-xmmiddle: 1.21rem !default;
+$font-size-xmiddle: 1.15rem !default;
+$font-size-middle: 1.07rem !default;
+$font-size-base: 1rem !default;
+$font-size-sm: 0.91rem !default; //뭉개짐 인증번호발송(발)
+$font-size-xsm: 0.85rem !default;
+
+$font-weight-light: 300 !default;
+$font-weight-base: 400 !default;
+$font-weight-bold: 700 !default;
+
+$normal: normal;
+
+//radius
+$radius-50: 50em !default;
+
+%button-radius {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+%box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//vertical
+%top50 {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+%left50 {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+%bdr50{
+  border-radius: 50em;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+//clearfix
+%group {
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//animation
+%trans {
+  transition: color .30s ease-in-out, background-color .30s ease-in-out, border-color .30s ease-in-out, box-shadow .30s ease-in-out;
+}
+
+%under{
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+}

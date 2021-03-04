@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+		<meta name="format-detection" content="telephone=no">
+		<title>유디페이</title>
+        <link rel="shortcut icon" href="images/udpay/favicon.ico" type="image/x-icon">
+		<!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/IE9.js"></script>
+		<script src="js/respond.js"></script>
+		<script src="js/css3-mediaqueries.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery-latest.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src='js/jquery.secureKeyboard.js'></script>
+		<script type="text/javascript" src="js/placeholders.min.js"></script>
+		<script type="text/javascript"  src="js/design.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+
+		<div class="mask">
+			<div class="inn">
+
+				<!--마스크 없이 팝업창에만 띄울경우-->
+				<div class="wrap">
+					<div class="headFixed">
+						<div class="headInn">
+							<h1 class="logo"><img src="images/udpay/logo.png" alt="pay"></h1>
+							<span class="btnClose"></span>
+						</div>
+					</div>
+					<!--//headInn-->
+					<div class="contentScroll">
+						<div class="ttBox whiteBox">
+							<p>
+								<strong>판매자</strong><span>벨라쿠진<em>(02.0000.0000)</em></span>
+							</p>
+							<h2>벨라쿠진 스테인 리스 3L</h2>
+							<h3><strong class="num">34,600</strong><small>원</small></h3>
+						</div>
+						<div class="intWrap">
+							<div class="intDlWrap">
+								<dl>
+									<dt>
+										카드번호
+									</dt>
+									<dd>
+										<div class="intBox">
+											<ul>
+												<li>
+													<span class="intSpan">
+														<input type="number" name="card_1" class="int text-center"  placeholder="●●●●"  maxlength="4" oninput="maxLengthCheck(this)"  pattern="[0-9]*">
+													</span>
+												</li>
+												<li>
+													<span class="intSpan">
+														<input type="number" name="card_2" class="int text-center"  placeholder="●●●●"  maxlength="4" oninput="maxLengthCheck(this)"  pattern="[0-9]*">
+													</span>
+												</li>
+												<li>
+													<span class="intSpan">
+														<input type="password" name="card_3" class="int text-center"  placeholder="●●●●"  maxlength="4" oninput="maxLengthCheck(this)"  pattern="[0-9]*">
+													</span>
+												</li>
+												<li>
+													<span class="intSpan">
+														<input type="number" name="card_4" class="int text-center"  placeholder="●●●●"  maxlength="4" oninput="maxLengthCheck(this)"  pattern="[0-9]*">
+													</span>
+												</li>
+											</ul>
+										</div>
+									</dd>
+								</dl>
+							</div>
+							<div class="intDlWrap col_2">
+								<dl>
+									<dt>
+										유효기간
+									</dt>
+									<dd>
+										<div class="intBox">
+											<ul>
+												<li>
+													<span class="intSpan">
+														<input type="number" name="yy" class="int intWon text-center"  placeholder="YY"  maxlength="2"  oninput="maxLengthCheck(this)" pattern="[0-9]*">
+														<small>년</small></span>
+												</li>
+												<li>
+													<span class="intSpan">
+														<input type="number" name="mm" class="int intWon text-center"  placeholder="MM"  maxlength="2"  oninput="maxLengthCheck(this)" pattern="[0-9]*">
+														<small>월</small></span>
+												</li>
+											</ul>
+										</div>
+									</dd>
+								</dl>
+								<dl>
+									<dt>
+										할부
+									</dt>
+									<dd>
+										<span class="selSpan">
+											<select class="intSel">
+												<option>일시불</option>
+											</select> 
+											</span>
+									</dd>
+								</dl>
+							</div>
+							
+							
+						</div>
+						<!--//intWrap-->
+						<p class="textInfo">
+							<a href="javascript();">무이자할부 안내</a>
+						</p>
+					</div>
+					<!--//content.scroll-->
+					<div class="btnFixed">
+						<div class="btnWrap">
+							<span class="sW"> <a href="javascript();" class="btn big_btn lgray"> 취소 </a> </span>
+							<span class="bW"> <a href="fin_ing.html" class="btn big_btn bblue disabled"> 결제 </a> </span>
+						</div>
+					</div>
+					<!--//BtnFixed-->
+				</div>
+				<!--//마스크 없이 팝업창에만 띄울경우-->
+
+			</div>
+			<!--//inn-->
+		</div>
+		<!--//pMask-->
+
+	</body>
+
+</html>

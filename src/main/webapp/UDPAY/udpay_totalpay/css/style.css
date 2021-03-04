@@ -1,0 +1,1227 @@
+@charset "UTF-8";
+.sm_btn, .md_btn, .big_btn, .mask .wrap, .whiteBox, .intWrap, .colBox dl,
+.listWrap dl {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px; }
+
+.lgray, .mask .wrap, .whiteBox, .intWrap, .colBox dl,
+.listWrap dl, .recWrap {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05); }
+
+.bblue, .load-complete {
+  box-shadow: 0 4px 8px 0 rgba(0, 109, 255, 0.4);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 109, 255, 0.4); }
+
+.disabled {
+  box-shadow: 0 4px 8px 0 rgba(160, 169, 184, 0.4);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(160, 169, 184, 0.4); }
+
+.btn.lgray:hover, .btn.lgray:active, .btn.lgray:focus, .colBox dl:hover, .colBox dl:focus, .colBox dl:active,
+.listWrap dl:hover,
+.listWrap dl:focus,
+.listWrap dl:active {
+  box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.15); }
+
+input, select, textarea, button, body, *, .sm_btn, .md_btn, .big_btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.listWrap li:before, .listWrap dl:after, .checkmark:after {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.mask, .contentScroll, .btnWrap, .intDlWrap, .intDlWrap ul, .colBox, .colBox.col_1 li, .listWrap li, .recCon dl {
+  display: table;
+  width: 100%; }
+
+.mask .inn, .btnWrap span, .intDlWrap dl, .intDlWrap ul li, .colBox li, .colBox.col_1 dl:before, .colBox.col_1 dl dt, .listWrap dl, .ingBox_text, .recCon dl dt, .recCon dl dd {
+  display: table-cell;
+  vertical-align: middle; }
+
+.ie9 {
+  display: none \9 !important; }
+
+.ie9_view {
+  display: none; }
+
+.ie9_view {
+  display: block \9 !important; }
+
+/* ----------------------------------------------------------------
+ color
+ -----------------------------------------------------------------*/
+.cblue {
+  color: #006dff !important; }
+
+.lgray {
+  border-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #2e2e2e !important; }
+
+.bblue {
+  border-color: #006dff !important;
+  background: #006dff !important;
+  color: #ffffff !important; }
+
+.disabled {
+  border-color: #a0a9b8 !important;
+  background: #a0a9b8 !important;
+  color: #ffffff !important;
+  pointer-events: none !important; }
+
+.btn.bblue:hover, .btn.bblue:active, .btn.bblue:focus {
+  box-shadow: 0 1px 10px 0px #006dff;
+  background-color: #0062e6 !important;
+  border-color: #0062e6 !important; }
+.btn.lgray:hover, .btn.lgray:active, .btn.lgray:focus {
+  background-color: #fafafa !important;
+  border-color: #fafafa !important; }
+
+/* ----------------------------------------------------------------
+ Helper Classes
+ -----------------------------------------------------------------*/
+.pull-left {
+  float: left !important; }
+
+.pull-right {
+  float: right !important; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.vm {
+  vertical-align: middle; }
+
+.clearFix {
+  clear: both; }
+
+.group {
+  zoom: 1; }
+  .group:before, .group:after {
+    content: "";
+    display: table; }
+  .group:after {
+    clear: both; }
+
+.hand, .sm_btn, .md_btn, .big_btn {
+  cursor: pointer; }
+
+.rd50 {
+  border-radius: 50em;
+  padding-right: 1em;
+  padding-left: 1em; }
+
+.fade.in {
+  opacity: 1; }
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transform: opacity .15s linear;
+  transition: opacity .15s linear; }
+
+/* ----------------------------------------------------------------
+ margin padding
+ -----------------------------------------------------------------*/
+.mp_none, *, html, body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, blockquote, p, address, pre, cite, form, fieldset, input, textarea, select, table, th, td, header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption, .sm_btn, .md_btn, .big_btn {
+  margin: 0px;
+  padding: 0px; }
+
+.mg10 {
+  margin: 10px 0px; }
+
+.mgt0 {
+  margin-top: 0px !important; }
+
+.mgt5 {
+  margin-top: 5px !important; }
+
+.mgt10 {
+  margin-top: 10px !important; }
+
+.mgt15 {
+  margin-top: 15px !important; }
+
+.mgt20 {
+  margin-top: 20px !important; }
+
+.mgt30 {
+  margin-top: 30px !important; }
+
+.mgt40 {
+  margin-top: 40px !important; }
+
+.mgt60 {
+  margin-top: 60px !important; }
+
+.mgt70 {
+  margin-top: 70px !important; }
+
+.mgt80 {
+  margin-top: 80px !important; }
+
+.mgb0 {
+  margin-bottom: 0px !important; }
+
+.mgb5 {
+  margin-bottom: 5px !important; }
+
+.mgb10 {
+  margin-bottom: 10px !important; }
+
+.mgb20 {
+  margin-bottom: 20px !important; }
+
+.mgl10 {
+  margin-left: 10px !important; }
+
+.mgl20 {
+  margin-left: 20px !important; }
+
+.mgr10 {
+  margin-right: 10px !important; }
+
+/* ----------------------------------------------------------------
+ Reset
+ -----------------------------------------------------------------*/
+* {
+  outline: none !important; }
+
+@media (min-width: 578px) {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
+header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+  display: block; }
+
+fieldset, img, abbr, acronym {
+  border: 0px; }
+
+ol, ul, li {
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border: 0px; }
+
+address, caption, strong, em, cite {
+  font-weight: 700;
+  font-style: normal; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: ""; }
+
+legend, caption {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0; }
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+a {
+  color: #656c7f;
+  outline: none !important;
+  text-decoration: none !important; }
+
+button {
+  border: 0px; }
+
+input, select, textarea, button, textarea {
+  outline: none !important;
+  font-family: "Apple SD Gothic Neo", arial, sans-serif;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0; }
+
+small {
+  font-weight: normal;
+  font-size: 0.85rem; }
+
+input + label, input + small {
+  margin-left: 3px; }
+
+select::-ms-expand {
+  display: none; }
+
+/* ----------------------------------------------------------------
+ keyframes
+ -----------------------------------------------------------------*/
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-20px); } }
+@keyframes mover {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(-20px); } }
+/* ----------------------------------------------------------------
+ tab
+ -----------------------------------------------------------------*/
+.tab-content > .tab-pane {
+  display: none; }
+.tab-content > .active {
+  display: block; }
+
+/*------------------------------------------------------------------
+ collapse
+ -----------------------------------------------------------------*/
+.collapse {
+  display: none; }
+  .collapse.in {
+    display: block; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden; }
+
+/*------------------------------------------------------------------
+input
+ -----------------------------------------------------------------*/
+/* IE9 이하를 위한 css */
+.placeholder {
+  color: #999999; }
+
+/* IE10 이상을 위한 css */
+input::placeholder {
+  color: #999999;
+  opacity: 1;
+  /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */ }
+
+input::-webkit-input-placeholder {
+  color: #999999; }
+
+/* IE */
+input:-ms-input-placeholder {
+  color: #999999; }
+
+/* Firefox */
+input:-mos-input-placeholder {
+  color: #999999; }
+
+/* input 기본 스타일 초기화 */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  outline: none; }
+
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input::-ms-clear {
+  display: none; }
+
+/* input type number 에서 화살표 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+/* Select box 스타일 초기화 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  background-image: none; }
+
+/* IE 에서 Select box 화살표 제거 */
+select::-ms-expand {
+  display: none; }
+
+.selSpan:after {
+  display: none \9 !important; }
+
+.selSpan select {
+  appearance: default \9; }
+
+select {
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: none;
+  padding: 0 !important;
+  margin: 0 !important; }
+
+@media (min-width: 578px) {
+  select {
+    text-indent: -2px; } }
+.selSpan {
+  position: relative;
+  display: block;
+  height: 30px;
+  cursor: pointer; }
+
+.selSpan:after {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+  background: url(../../../../../../../../scss_project/udpay_totalpay/images/udpay/icon-arrow-down.png) no-repeat;
+  background-size: 13px 8px;
+  width: 13px;
+  height: 8px; }
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+.intSpan {
+  position: relative;
+  height: 30px;
+  display: block; }
+
+.int {
+  background: transparent;
+  width: 100%;
+  position: relative;
+  height: 30px;
+  padding: 0px;
+  border-bottom: 1px solid #e1e4e7;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out; }
+
+.intSel {
+  background: transparent;
+  width: 100%;
+  height: 30px;
+  padding: 0px;
+  border-bottom: 1px solid #e1e4e7;
+  box-sizing: border-box !important; }
+
+.intWon {
+  width: calc(100% - 20px); }
+
+.intSpan .int:focus {
+  border: 0px;
+  color: #006dff; }
+
+.intSpan:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0;
+  width: 0%;
+  background: #006dff;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out; }
+
+.intSpan.focus:after {
+  width: 100%;
+  opacity: 1; }
+
+input[type="checkbox"], input[type="radio"] {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  *overflow: hidden;
+  -webkit-appearance: none;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  border: 0;
+  background: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px; }
+
+input[type="checkbox"] + label, input[type="radio"] + label {
+  padding-left: 25px;
+  margin-right: 25px;
+  display: block;
+  cursor: pointer; }
+
+.input_chk {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  line-height: 20px; }
+
+.input_chk input[type="checkbox"] + label:before, .input_chk input[type="radio"] + label:before, .input_chk span + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url(../../../../../../../../scss_project/udpay_totalpay/images/udpay/check-set.png) no-repeat;
+  background-size: 40px 20px;
+  cursor: pointer; }
+
+.input_chk input[type="checkbox"] + label:before {
+  background-position: 0px 0px; }
+
+.input_chk input[type="checkbox"]:checked + label:before {
+  background-position: 0px 0px;
+  background: url(../../../../../../../../scss_project/udpay_totalpay/images/udpay/check-set-on.png) no-repeat;
+  background-size: 40px 20px; }
+
+.input_chk input[type="radio"] + label:before {
+  background-position: -20px 0; }
+
+.input_chk input[type="radio"]:checked + label:before {
+  background-position: -20px 0;
+  background: url(../../../../../../../../scss_project/udpay_totalpay/images/udpay/check-set-on.png) no-repeat;
+  background-size: 40px 20px; }
+
+/* ----------------------------------------------------------------
+ default Styling
+ -----------------------------------------------------------------*/
+html {
+  overflow-x: hidden; }
+
+body {
+  font-family: "Apple SD Gothic Neo", arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  letter-spacing: -0.55px;
+  word-spacing: -0.5px;
+  color: #656c7f;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 1px;
+  margin-top: -1px; }
+
+.us {
+  font-family: Roboto, Tahoma, Arial, Helvetica, sans-serif;
+  letter-spacing: 1px; }
+
+input,
+select,
+textarea,
+button,
+textarea {
+  font-family: "Apple SD Gothic Neo", arial, sans-serif; }
+
+input[type="text"] {
+  padding: 10px;
+  border-bottom: 1px solid #d5d8db;
+  background: #ffffff; }
+
+/* ----------------------------------------------------------------
+ layout
+ -----------------------------------------------------------------*/
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+.headFixed {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; }
+
+.btnFixed {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 13px;
+  margin: 0 -6px; }
+
+.headInn {
+  height: 48px;
+  position: relative;
+  padding: 10px; }
+
+.logo {
+  text-align: center;
+  line-height: 48px; }
+  .logo img {
+    max-width: 92px;
+    position: relative;
+    top: 3px; }
+
+/*--반응형--*/
+@media (max-width: 576px) {
+  body {
+    background: #f5f6f7; }
+
+  .mask, .inn {
+    height: 100%; }
+
+  .wrap {
+    width: 100% !important;
+    height: 100vh;
+    border-radius: 0px !important;
+    box-shadow: none !important; }
+
+  .headFixed, .btnFixed {
+    position: fixed !important;
+    background: #f5f6f7; }
+
+  .contentScroll {
+    padding: 60px 13px 130px 13px !important;
+    height: calc(100% - 107px) !important; }
+    .contentScroll.index {
+      padding-bottom: 30px !important; }
+
+  .headInn {
+    padding: 0px; }
+
+  .btnClose {
+    margin: 0px !important; }
+
+  .ingBox {
+    top: inherit;
+    -webkit-transform: inherit;
+    transform: inherit;
+    padding-top: 30%; } }
+/*--//반응형--*/
+.sm_btn, .md_btn, .big_btn {
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  text-decoration: none !important;
+  width: 100%; }
+  .sm_btn:hover, .sm_btn:focus, .sm_btn:active, .md_btn:hover, .md_btn:focus, .md_btn:active, .big_btn:hover, .big_btn:focus, .big_btn:active {
+    text-decoration: none !important;
+    transition: all .25s ease; }
+
+.sm_btn {
+  height: 25px;
+  line-height: 24px;
+  padding: 0px 8px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.85em;
+  min-width: 30px; }
+
+.md_btn {
+  height: 38px;
+  line-height: 36px;
+  padding: 0 15px;
+  border-width: 1px;
+  border-style: solid;
+  min-width: 40px;
+  font-size: 0.85em; }
+
+.big_btn {
+  height: 55px;
+  line-height: 54px;
+  padding: 0 18px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 1em; }
+
+.mask {
+  background: rgba(46, 46, 46, 0.9);
+  width: 100%;
+  height: 100%; }
+  .mask .inn {
+    vertical-align: middle; }
+  .mask .wrap {
+    width: 400px;
+    box-shadow: 6px 7px 24px 0 rgba(0, 0, 0, 0.19); }
+  .mask .btnClose {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 48px;
+    width: 48px;
+    background: url(../images/udpay/icon-back.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    margin: 10px; }
+  .mask .headFixed, .mask .btnFixed {
+    position: static; }
+
+.wrap {
+  background: #f5f6f7;
+  margin: 0 auto;
+  position: relative; }
+
+.contentScroll {
+  padding: 20px;
+  padding-top: 25px;
+  padding-bottom: 0px;
+  overflow-y: auto;
+  height: 505px;
+  width: 100%; }
+  .contentScroll.index {
+    height: 612px; }
+
+.btnWrap {
+  padding: 13px; }
+  .btnWrap span {
+    padding: 0 6px; }
+    .btnWrap span.sW {
+      width: 30%; }
+    .btnWrap span.bW {
+      width: 70%; }
+
+.whiteBox {
+  background: #ffffff;
+  padding: 20px; }
+
+.num {
+  font-size: 1.6em;
+  letter-spacing: 0.5px; }
+
+.num + small {
+  font-size: 0.85em;
+  position: relative;
+  top: -2px;
+  margin-left: 2px;
+  font-weight: 700; }
+
+.ttBox p {
+  font-size: 0.85em; }
+  .ttBox p strong {
+    margin-right: 7px; }
+  .ttBox p em {
+    letter-spacing: 0px; }
+.ttBox h2 {
+  font-size: 1.17em;
+  font-weight: 700;
+  color: #2e2e2e;
+  margin-top: 3px; }
+.ttBox h3 {
+  color: #006dff;
+  margin-top: 8px;
+  font-size: 1em;
+  font-weight: 700; }
+
+.checkArea {
+  margin-top: 15px;
+  font-size: 700; }
+
+.intWrap {
+  background: #ffffff;
+  padding: 20px 14px;
+  margin-top: 20px; }
+
+.intDlWrap {
+  margin-top: 13px; }
+  .intDlWrap .int, .intDlWrap .intSel {
+    font-size: 1.05em; }
+  .intDlWrap:first-child {
+    margin-top: 0px; }
+  .intDlWrap.col_2 dl {
+    width: 50%;
+    padding: 0 15px; }
+    .intDlWrap.col_2 dl:first-child {
+      padding-left: 6px; }
+    .intDlWrap.col_2 dl:last-child {
+      padding-right: 6px; }
+  .intDlWrap dl {
+    vertical-align: top;
+    padding: 0 6px; }
+  .intDlWrap dt {
+    font-size: 0.85em;
+    text-align: left;
+    color: #2e2e2e;
+    font-weight: 700; }
+  .intDlWrap .intBox {
+    margin: 0 -6px; }
+    .intDlWrap .intBox.col_4 li {
+      width: 25%; }
+  .intDlWrap ul li {
+    padding: 0 6px; }
+
+.colWrap {
+  margin: 0 -6px;
+  margin-top: 20px; }
+
+.colBox li,
+.listWrap li {
+  transition: transform .3s; }
+  .colBox li:hover, .colBox li:focus, .colBox li:active,
+  .listWrap li:hover,
+  .listWrap li:focus,
+  .listWrap li:active {
+    -webkit-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px); }
+.colBox dl,
+.listWrap dl {
+  position: relative;
+  background: #ffffff;
+  font-weight: 700;
+  color: #2e2e2e;
+  cursor: pointer; }
+  .colBox dl:hover, .colBox dl:focus, .colBox dl:active,
+  .listWrap dl:hover,
+  .listWrap dl:focus,
+  .listWrap dl:active {
+    background: #fafafa; }
+
+.colBox dl {
+  padding: 20px 0; }
+.colBox li {
+  text-align: center;
+  font-weight: 700;
+  color: #2e2e2e;
+  padding: 0 6px; }
+.colBox.col_1 li {
+  width: 100%; }
+.colBox.col_1 dl {
+  padding: 20px; }
+  .colBox.col_1 dl:before {
+    margin: 0;
+    width: 30px;
+    background-size: 100%; }
+  .colBox.col_1 dl dt {
+    padding-left: 14px; }
+.colBox.col_2 li {
+  width: 50%; }
+.colBox.col_3 li {
+  width: 33.33%; }
+
+.listWrap {
+  margin-top: 25px; }
+  .listWrap li {
+    margin-bottom: 13px;
+    position: relative; }
+    .listWrap li:last-child {
+      margin-bottom: 0px; }
+    .listWrap li:before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      background: url(../images/udpay/pay-icon-set.png) no-repeat;
+      background-size: 90px 60px;
+      width: 30px;
+      height: 30px;
+      z-index: 3; }
+    .listWrap li.icon_card:before {
+      background-position: 0px 0px; }
+    .listWrap li.icon_phone:before {
+      background-position: -30px 0px; }
+    .listWrap li.icon_account:before {
+      background-position: -60px 0px; }
+    .listWrap li.icon_ps:before {
+      background-position: -30px -30px; }
+    .listWrap li.icon_isp:before {
+      background-position: 0px -30px; }
+  .listWrap dl {
+    padding: 15px 20px;
+    height: 70px;
+    position: relative;
+    padding-left: 64px; }
+    .listWrap dl:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 20px;
+      background: url(../images/udpay/icon-arrow.png) no-repeat;
+      background-size: 100%;
+      width: 9px;
+      height: 16px; }
+    .listWrap dl dd {
+      color: #999999;
+      font-size: 0.85em;
+      font-weight: 400; }
+
+.logoLinkBox dl:before {
+  display: block;
+  content: '';
+  background: url(../images/udpay/logo-set.png) no-repeat;
+  background-size: 60px 90px;
+  width: 60px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 13px; }
+.logoLinkBox dl.icon_kakao:before {
+  background-position: 0px -60px; }
+.logoLinkBox dl.icon_payco:before {
+  background-position: 0px -30px; }
+.logoLinkBox dl.icon_samsung:before {
+  background-position: 0px 0px; }
+
+.textInfo {
+  margin-top: 25px;
+  text-align: center; }
+  .textInfo a {
+    text-decoration: underline !important;
+    color: #999999 !important;
+    font-size: 0.85em; }
+
+.ingBox {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 35%; }
+  .ingBox h2 {
+    margin-top: 20px;
+    font-size: 1.17em;
+    font-weight: 700;
+    color: #2e2e2e;
+    word-spacing: -1px; }
+  .ingBox h3 {
+    margin-top: 6px;
+    font-size: 1em; }
+
+.ingBox_text {
+  text-align: center;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%; }
+  .ingBox_text h2 {
+    margin-top: 20px;
+    font-size: 1.17em;
+    font-weight: 700;
+    color: #2e2e2e;
+    word-spacing: -1px; }
+  .ingBox_text h3 {
+    margin-top: 6px;
+    font-size: 1em; }
+
+/*Huge thanks to @tobiasahlin at http://tobiasahlin.com/spinkit/ */
+.spinner {
+  width: 100px;
+  margin: 0 auto; }
+
+.spinner > div {
+  width: 14px;
+  height: 14px;
+  background-color: #006dff;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.62s;
+  animation-delay: -0.62s;
+  opacity: 0.1; }
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.48s;
+  animation-delay: -0.48s;
+  opacity: 0.3; }
+
+.spinner .bounce3 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+  opacity: 0.5; }
+
+.spinner .bounce4 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+  opacity: 0.7; }
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+.circle-loader {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-left-color: #006dff;
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px; }
+
+.load-complete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: #006dff;
+  transition: border 500ms ease-out;
+  background-color: #006dff; }
+
+.checkmark {
+  display: none; }
+
+.checkmark.draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg); }
+
+.checkmark:after {
+  opacity: 1;
+  height: 1.9em;
+  width: 0.8em;
+  transform-origin: left top;
+  border-right: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
+  content: "";
+  position: absolute;
+  left: 30%; }
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1; }
+  20% {
+    height: 0;
+    width: 0.8em;
+    opacity: 1; }
+  40% {
+    height: 1.9em;
+    width: 0.8em;
+    opacity: 1; }
+  100% {
+    height: 1.9em;
+    width: 0.8em;
+    opacity: 1; } }
+.recWrap {
+  width: 100%;
+  background: #ffffff;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
+  .recWrap:after {
+    content: " ";
+    display: block;
+    position: relative;
+    width: 100%;
+    bottom: -15px;
+    height: 15px;
+    background: url(../images/udpay/bg-rec.png) repeat-x; }
+
+.recBox {
+  padding: 20px;
+  padding-bottom: 0px; }
+
+.recTT {
+  text-align: center; }
+  .recTT h2 {
+    font-size: 1.3em;
+    color: #2e2e2e;
+    font-weight: 700; }
+  .recTT h3 {
+    font-size: 1em;
+    margin-top: 3px; }
+    .recTT h3 label {
+      margin-right: 6px; }
+    .recTT h3 em {
+      letter-spacing: 0.5px;
+      font-weight: normal; }
+
+.recCon {
+  margin-top: 20px; }
+  .recCon dl dt, .recCon dl dd {
+    padding: 2px 0; }
+  .recCon dl dt {
+    color: #999999; }
+  .recCon dl dd {
+    text-align: right;
+    color: #2e2e2e;
+    letter-spacing: 0.2px; }
+  .recCon li {
+    padding: 13px 0; }
+    .recCon li:first-child {
+      border-top: 3px double #d5d8db;
+      border-bottom: 1px dashed #d5d8db; }
+    .recCon li:last-child {
+      border-top: 3px double #d5d8db; }
+
+.recTotal dt {
+  color: #2e2e2e !important;
+  font-weight: 700; }
+.recTotal dd {
+  color: #006dff !important; }
+
+.recInt {
+  padding: 13px; }
+  .recInt dl dd {
+    width: 100%; }
+    .recInt dl dd .intSpan {
+      width: 100%; }
+
+/* keboard */
+.pwdField {
+  background: transparent;
+  width: 100%;
+  position: relative;
+  height: 30px;
+  padding: 0px;
+  border-bottom: 1px solid #e1e4e7;
+  text-align: center;
+  font-size: 1.05em;
+  color: #999999; }
+
+.keyboard {
+  z-index: 10000;
+  opacity: 1;
+  background: #122831;
+  position: absolute;
+  top: 418px;
+  width: 100.1%;
+  list-style: none;
+  text-align: center;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  /* ie10 */
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-border-bottom-right-radius: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomright: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px; }
+  .keyboard > div {
+    display: table;
+    width: 100%; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .keyboard {
+    width: 100%; } }
+@media (max-width: 576px) {
+  .pwdField {
+    font-size: 1.05em; }
+
+  .keyboard {
+    position: fixed;
+    top: inherit;
+    bottom: 0px;
+    width: 100%; } }
+.numberWrap {
+  display: table-cell;
+  width: 25%;
+  padding: 3px;
+  vertical-align: top; }
+
+.number {
+  width: 100%;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  background: #243b48;
+  font-size: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out; }
+
+.number.close {
+  font-size: 15px;
+  background: #006dff; }
+
+.number.del {
+  background: #243b48; }
+
+.number:hover {
+  background: #1a7cff; }
+
+.number:active,
+.number:focus {
+  background: #0062e6; }
+
+.keyInfo {
+  color: #f5f6f7;
+  padding: 8px 0px;
+  font-size: 12px;
+  background: #132f3a; }
+  .keyInfo:after {
+    content: '';
+    background: url(../images/udpay/loading2.gif) no-repeat left center;
+    width: 20px;
+    height: 5px;
+    margin-left: 6px;
+    display: inline-block;
+    position: relative;
+    top: -1px; }
+
+.line1, .line2, .line3, .line4 {
+  padding: 0px 10px; }
+
+.line1 {
+  padding-top: 10px; }
+
+.line4 {
+  padding-bottom: 10px; }
+
+/*# sourceMappingURL=style.css.map */

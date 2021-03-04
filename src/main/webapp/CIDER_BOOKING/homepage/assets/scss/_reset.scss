@@ -1,0 +1,423 @@
+@charset "UTF-8";
+/* _reset.scss */
+
+html { background: $white !important; font-size: 15px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body { color: inherit; background: $white !important; font-family: $font-family; font-weight: 400; line-height: 1.42857143;}
+input, button, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  @include prefix(box-sizing, border-box, webkit ms moz o);
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  border: 0;
+}
+// Set html5 elements to block
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,main,nav,section,summary{display:block;}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,font,img,ins,q,s,samp,strike,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{ padding:0; /*line-height:1.5;*/ margin:0;border:0 none;}
+body{position:relative;word-break:break-all;-ms-text-size-adjust:100%;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+header,h1{font-size:100%;}
+html,body{/*height:100%;*/}
+caption,legend{position:absolute;top:-9999px;left:-9999px;visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;}
+caption{display:none;}
+img{vertical-align:top;border:none;}
+select,input{vertical-align:top;border:0px;border-radius:0;background-color:transparent;box-shadow: none;}
+hr{display:none;border:0 none;}
+ol,ul,ul li{padding:0;margin:0;list-style:none;}
+dl, dt, dd{padding:0; margin:0;}
+em{font-style:normal;}
+menu li{list-style:none;}
+address{display:inline;font-style:normal;}
+button{cursor:pointer;border:0px;border-radius:0;background-color:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+button:active{ outline:none;}
+//button:focus{ outline:none;}
+table{border-spacing:0;border-collapse:collapse;}
+input,textarea,keygen,select,button{font-family:$font-family;}
+strong{font-weight:800;}
+dfn{font-style:normal;}
+// Link Style
+a{ color: inherit; }
+a,a:hover,a:link,a:visited,a:active,a:focus{cursor:pointer;text-decoration:none;/*color:inherit;*/}
+a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+// Forms
+fieldset{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select,input[type=radio],input[type=submit],input[type=search]{cursor:pointer;border:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select::-ms-expand {display:none;}
+input:focus,button:focus,textarea:focus{}
+select,div{}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button,input[type=date]::-webkit-inner-spin-button,input[type=date]::-webkit-outer-spin-button{ margin: 0; -webkit-appearance: none;}
+input[type=date]::-webkit-calendar-picker-indicator {z-index:1;color:transparent;background:none;}
+textarea{width:100%;resize: none;color:$text-light-color;border:none;background:none;}
+// heading
+body,input,textarea,select,button{font-family: $font-family;}
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;}
+img{height:auto;vertical-align:top;-ms-interpolation-mode:bicubic;}
+small{color:inherit;font-size:88%;font-weight:400;}
+
+@media(min-width:578px){
+  * {
+    //블루 드래그방지
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+    &:focus, &:hover, &:active{
+      //블루 드래그방지
+      -webkit-user-select: none;  /* Chrome all / Safari all */
+      -moz-user-select: none;     /* Firefox all */
+      -ms-user-select: none;      /* IE 10+ */
+      user-select: none;          /* Likely future */
+      outline:none;
+    }
+  }
+}
+
+//== Help Style
+
+// only screen reader
+.invisible {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+// text decoration
+.under {
+  cursor: pointer;
+  text-decoration: underline !important;
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+}
+.del {
+  text-decoration: line-through;
+}
+.en{
+  letter-spacing: 0 !important;
+}
+.link-hover{
+  &:hover, &:focus, &:active{
+    color: $primary;
+  }
+}
+
+// ie9 전용 css
+.ie9{
+  display:none \9 !important;
+}
+.ie9_view{
+  display:none;
+}
+.ie9_view{
+  display:block \9 !important;
+}
+
+// margin
+.mg{
+  // top
+  &t5{
+    margin-top: 5px;
+  }
+  &t10{
+    margin-top: 10px;
+  }
+  &t15{
+    margin-top: 15px;
+  }
+  &t20{
+    margin-top: 20px;
+  }
+  &t25{
+    margin-top: 25px;
+  }
+  &t30{
+    margin-top: 30px;
+  }
+  &t40{
+    margin-top: 40px !important;
+  }
+
+  // bottom
+  &b15{
+    margin-bottom: 15px !important;
+  }
+
+  //left
+  &l-auto{
+    margin-left: auto;
+  }
+
+  &l5{
+    margin-left:5px !important;
+  }
+  &l10{
+    margin-left:10px !important;
+  }
+  &l20{
+    margin-left:20px !important;
+  }
+  &l30{
+    margin-left:30px !important;
+  }
+  &l40{
+    margin-left:40px !important;
+  }
+  &l50{
+    margin-left:50px !important;
+  }
+}
+
+// additional style
+.clearfix{
+  @include clearfix;
+}
+.pull{
+  &-left{
+    float: left !important;
+  }
+  &-right{
+    float: right !important;
+  }
+}
+// text-align
+.text{
+  &-left{
+    text-align: left !important;
+  }
+  &-center{
+    text-align: center !important;
+  }
+  &-right{
+    text-align: right !important;
+  }
+}
+// vertical-align
+.vertical{
+  &-mid{
+    vertical-align: middle !important;
+  }
+}
+.hand {
+  cursor: pointer;
+}
+
+//== Custom Elements
+select {
+  @extend %hand;
+
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0 8px;
+  border: none;
+  font-size: $font-size-base;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  // appearance:  \0/IE9; /*IE9적용*/
+  // -webkit-appearance: listbox \0/IE9;
+  // -moz-appearance: listbox \0/IE9;
+  // appearance: listbox \0/IE9;
+}
+select::-ms-expand {
+  display: none;
+}
+.selectWrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  height: 100%;
+}
+.selectWrap:after {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: none \0/IE9;
+  content: '\e913';
+  /*pointer-events: none;*/
+
+  content: '' \0/IE9;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #a6a6a6;
+
+  font-family: "xeicon";
+  font-size: 15px;
+  @extend %top50;
+}
+
+//== IE 크로스브라우징
+// @media screen\0{
+//   .selectWrap:after { content:'';}
+// }
+// @media all and (-ms-high-contrast:none){
+//     .selectWrap:after { right: 10px !important; } /* IE10 */
+//     *::-ms-backdrop, .selWselectWrap:after { right: 10px !important;} /* IE11 */
+// }
+
+.selectBox{
+  min-width: 200px;
+  padding: 3px 6px;
+  color: $white;
+}
+.selectWrap:after{
+  color: $white;
+}
+option{
+  padding: 0 3px;
+  color: $black;
+}
+
+//== Custom Animation Style
+
+// use of keyframes mixin
+@include keyframes(shadow-pulse1) {
+  0% { box-shadow: 0 0 0 0px rgba($primary, 0.3); }
+  100% { box-shadow: 0 0 0 12px rgba($primary, 0); }
+}
+@include keyframes(shadow-sm-pulse1) {
+  0% { box-shadow: 0 0 0 0px rgba($primary, 0.3); }
+  100% { box-shadow: 0 0 0 5px rgba($primary, 0); }
+}
+@include keyframes(shadow-pulse2) {
+  0% {box-shadow: 0 0 0 0px rgba($primary, 0.3);}
+  100% {box-shadow: 0 0 0 12px rgba($primary, 0);}
+}
+@include keyframes(shadow-pulse3) {
+  0% { box-shadow: 0 0 0 0px rgba($danger, 0.3);}
+  100% { box-shadow: 0 0 0 12px rgba($danger, 0);}
+}
+
+// 새로고침 animaiton
+@keyframes spin-inf {
+  100%{ transform:rotate(360deg);}
+}
+
+// menu hover animaiton
+@include keyframes(burger-hover) {
+  0% { width: 100%; }
+  50% { width: 50%; }
+  100% { width: 100%;}
+}
+
+// tv box icon animation
+@include keyframes(icon-ani) {
+  0% {transform: scaleX(1);}
+  25% {transform: scaleX(0);}
+  50% {transform: scaleX(1);}
+  75% {transform: scaleX(0);}
+  100% {transform: scaleX(1);}
+}
+
+// arrow icon animation
+@include keyframes(arrow-icon-ani) {
+  0% {margin-left:0px;}
+  50% {margin-left:7px;}
+  100% {margin-left:0px;}
+}
+// titBox bg moving animation
+@include keyframes(bg-ani) {
+  0% { background-position: 50% 45%; background-size: 100%; }
+  50% { background-position: 50% 50%; background-size: 95%; }
+  100%{ background-position: 50% 45%; background-size: 100%; }
+}
+
+// loader animation
+@keyframes osc-l{
+  0%{left:20%;}
+  50%{left:50%;}
+  100%{left:20%;}
+}
+@keyframes osc-r{
+  0%{left:80%;}
+  50%{left:50%;}
+  100%{left:80%;}
+}
+
+// btn for payment in dashboard
+@keyframes ripple {
+  from { transform: scale3d(0.75,0.75,1); opacity: 1; }
+  to { transform: scale3d(1.5,1.5,1); opacity: 0;}
+}
+
+// page loader transition
+@-webkit-keyframes load8 {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes load8 {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+// select-box show & hide
+@keyframes fadeInUp {
+  from { opacity: 0; @include prefix(transform, translate3d(0, 20px, 0), webkit ms moz o);}
+  to { transform: none; opacity: 1;}
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+// animation
+@keyframes gradient {
+  0% {
+    background-position: 0% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+// bg element animation
+@keyframes moving {
+  0% {
+    background-position: top center ;
+    // background-position: 0% 0;
+    background-size: 100% 100%;
+  }
+  50% {
+    background-position: top center ;
+    // background-position: 0 100%;
+    background-size: 103% 103%;
+  }
+  100% {
+    background-position: top center ;
+    // background-position: 0% 0;
+    background-size: 100% 100%;
+  }
+}
+
+// app image scroll
+@include keyframes(scrolling) {
+  0% { transform: translateX(0%); }
+  14% { transform: translateX(0%); }
+  28%{ transform: translateX(-25%); }
+  42%{ transform: translateX(-25%); }
+  56%{ transform: translateX(-50%); }
+  70%{ transform: translateX(-50%); }
+  84%{ transform: translateX(-75%); }
+  100%{ transform: translateX(-75%); }
+}

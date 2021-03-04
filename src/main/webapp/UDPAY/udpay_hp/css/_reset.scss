@@ -1,0 +1,696 @@
+@charset "UTF-8";
+
+* {
+  outline: none !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/* input 기본 스타일 초기화 */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input::-ms-clear {
+  display: none;
+}
+
+/* input type number 에서 화살표 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Select box 스타일 초기화 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $white url(../images/select.png) no-repeat right 50%;
+}
+
+/* IE 에서 Select box 화살표 제거 */
+select::-ms-expand {
+  display: none;
+}
+
+input, select, button, textarea {
+  font-size: $font-size-base;
+  font-family: $font-family;
+  &:disabled {
+    background: $white-blue-light !important;
+    border-color: $white-blue-light !important;
+    cursor: not-allowed !important;
+    color: $base !important;
+  }
+}
+
+input::placeholder, textarea::placeholder {
+  color: $gray-light;
+  font-weight: 100 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: $gray-light;
+  font-weight: 100 !important;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  *overflow: hidden;
+  -webkit-appearance: none;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  border: 0;
+  background: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+/* 체크박스 버튼 */
+.input_chk {
+  position: relative;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  margin-left: 30px;
+  &:first-child {
+    margin-left: 0px;
+  }
+  label {
+    cursor: pointer;
+  }
+}
+
+.input_chk input[type="checkbox"] + label:before, .input_chk input[type="radio"] + label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  color: transparent;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url("../images/input_check.png") no-repeat;
+  -webkit-background-size: 50px 50px;
+  background-size: 50px 50px;
+  @extend %trans;
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+.input_chk input[type="checkbox"] + label:before {
+  background-position: 0 0;
+}
+
+.input_chk input[type="checkbox"]:checked + label:before {
+  background-position: 0 -25px;
+  transition: transform .2s;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.input_chk input[type="radio"] + label:before {
+  background-position: -25px 0;
+}
+
+.input_chk input[type="radio"]:checked + label:before {
+  background-position: -25px -25px;
+  transition: transform .2s;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.input_chk input[type="checkbox"] + label, .input_chk input[type="radio"] + label {
+  padding-left: 33px;
+  transition: transform .2s;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+img{
+  image-rendering: -moz-auto; /* firefox */
+  image-rendering: -o-auto; /* opera */
+  image-rendering: -webkit-optimize-contrast; /* webkit*/
+  image-rendering: auto;
+  -ms-interpolation-mode: nearest-neighbor; /* IE */
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.group {
+  @extend %group;
+}
+
+//font
+.text-primary {
+  color: $blue !important;
+}
+
+.text-warning {
+  color: $red !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+//btn
+.btn {
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 1rem;
+  text-decoration: none !important;
+  transition: background 250ms ease-in-out,
+  transform 150ms ease;
+  i {
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+  }
+  &:hover, &:active, &:focus {
+    @extend %trans;
+    text-decoration: none !important;
+  }
+}
+
+.btn-md {
+  padding: .375rem .75rem;
+}
+
+.btn-lg {
+  padding: 1.25rem 2rem;
+  font-size: $font-size-middle;
+}
+
+.btn-primary {
+  background: $blue;
+  color: $white !important;
+  border-color: $blue;
+  &:hover, &:active, &:focus {
+    background-color: darken($blue, 10%);
+    border-color: darken($blue, 10%);
+  }
+}
+
+.btn-disable {
+  background: $line-light;
+  border-color: $line-light;
+  color: $base;
+  cursor: default;
+}
+
+.btn-outline-primary {
+  background: $white;
+  color: $blue;
+  border-color: $blue;
+  &:hover, &:active, &:focus {
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
+  }
+}
+
+.btn-outline-light {
+  background: $white;
+  color: $black;
+  border-color: $line-light;
+  i {
+    color: $blue;
+  }
+  &:hover, &:active, &:focus {
+    color: $white;
+    background-color: $blue;
+    border-color: $blue;
+    i {
+      color: $white;
+    }
+  }
+}
+
+.btn-dark {
+  background: $black;
+  color: $white;
+  border-color: $black;
+  &:hover, &:active, &:focus {
+    background-color: lighten($black, 10%);
+    border-color: lighten($black, 10%);
+  }
+}
+
+.btn-outline-dark {
+  background: $white;
+  color: $black;
+  border-color: $black;
+  &:hover, &:active, &:focus {
+    color: $white;
+    background-color: $black;
+    border-color: $black;
+    text-decoration: none !important;
+  }
+}
+
+.bdr50 {
+  border-radius: 50em;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+//animation
+
+@-webkit-keyframes mover {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -20px;
+  }
+}
+
+@keyframes mover {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -20px;
+  }
+}
+
+@-webkit-keyframes mover2 {
+  0% {
+    background-position: right 5px;
+  }
+  100% {
+    background-position: right 15px;
+  }
+}
+
+@keyframes mover2 {
+  0% {
+    background-position: right 5px;
+  }
+  100% {
+    background-position: right 15px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  @extend %box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  font-weight: 300;
+  overflow-x: hidden;
+  letter-spacing: -0.7px;
+  line-height: 1.66em;
+  color: $base;
+}
+
+.wrap {
+}
+
+h2, dt {
+  color: $black;
+  font-weight: $font-weight-base;
+}
+
+h3,h4,h5 {
+  font-weight: $font-weight-light;
+}
+
+.mgt0 {
+  margin-top: 0px !important;
+}
+
+.mgb0 {
+  margin-bottom: 0px !important;
+}
+
+//layout
+.centerThis {
+  margin: 0 auto;
+  width: 1200px;
+  position: relative;
+  @extend %group;
+}
+
+header {
+  height: 83px;
+  padding: 13px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: All 0.2s ease;
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
+  background: $white;
+  z-index: 9991;
+  border-bottom: 1px solid $line-light;
+  h1 {
+    float: left;
+    a {
+      display: inline-block;
+    }
+    img {
+      position: relative;
+      top: 5px;
+      width: 100px;
+      height: 39px;
+    }
+  }
+  nav {
+    position: relative;
+    float: left;
+    margin-left: 40px;
+  }
+  .utilArea {
+    float: right;
+    display: table;
+    height: 50px;
+    font-size: $font-size-sm;
+    .util {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 40px;
+      li {
+        float: left;
+        padding: 0 13px;
+        &:first-child {
+          padding-left: 0px;
+          border-right: 1px solid $line-light;
+        }
+        &:last-child {
+          padding-right: 0px;
+        }
+      }
+    }
+    .allmenu {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    a {
+      color: $gray-light;
+    }
+  }
+}
+
+//float
+
+.garoCell {
+  @extend %group;
+  li, .li {
+    float: left;
+    text-align: center;
+  }
+}
+
+.garoTBCell {
+  display: table;
+  width: 100%;
+  li, .li {
+    display: table-cell;
+  }
+}
+
+.garoTBCell, .garoCell {
+  &.col_8 {
+    li, .li {
+      width: 12.5%;
+    }
+  }
+  &.col_7 {
+    li, .li {
+      width: 14.2%;
+    }
+  }
+  &.col_6 {
+    li, .li {
+      width: 16.66%;
+    }
+  }
+  &.col_5 {
+    li, .li {
+      width: 20%;
+    }
+  }
+  &.col_4 {
+    li, .li {
+      width: 25%;
+    }
+  }
+  &.col_3 {
+    li, .li {
+      width: 33.333%;
+    }
+  }
+  &.col_2 {
+    li, .li {
+      width: 50%;
+    }
+  }
+}
+
+.lineCell {
+  border-top: 1px solid $line-light;
+  border-right: 1px solid $line-light;
+  li, .li {
+    border-left: 1px solid $line-light;
+    border-bottom: 1px solid $line-light;
+  }
+}
+
+//deco
+.arrow_moving {
+  animation: slide1 1s ease-in-out infinite;
+  margin-left: 9px;
+  position: relative;
+  top: 1px;
+  font-size: $font-size-middle;
+}
+
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+//footer
+footer {
+  margin-top: 60px;
+  background: $white-light;
+  padding: 40px 0 20px 0;
+}
+
+.footArea {
+  display: table;
+  width: 100%;
+  dt {
+    margin-bottom: 13px;
+  }
+  .telCus, .footMenu, .footLink {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .telCus {
+    strong {
+      font-family: GmarketSansMedium;
+      letter-spacing: 1.5px;
+      font-size: $font-size-slg;
+      color: $blue;
+      margin-top: 5px;
+      display: inline-block;
+    }
+    dd:last-child {
+      margin-top: 10px;
+      font-size: $font-size-sm;
+    }
+  }
+  .footMenu {
+    width: 780px;
+    @extend %group;
+    li {
+      float: left;
+      width: 25%;
+    }
+    dd {
+      font-size: $font-size-sm;
+      margin-bottom: 10px;
+      a {
+        color: $base;
+        @extend %under;
+      }
+    }
+  }
+  .footLink {
+    width: 150px;
+  }
+}
+
+address {
+  margin-top: 10px;
+  font-size: $font-size-sm;
+  dl {
+  }
+  dt {
+    margin-bottom: 6px;
+  }
+  dd {
+    margin: 0 -3px;
+    font-size: $font-size-xsm;
+    letter-spacing: 0.5px;
+    color: $gray-light;
+    font-weight: $font-weight-light;
+    line-height: 1.5em;
+    em {
+      display: inline-block;
+      height: 16px;
+      line-height: 16px;
+      margin-right: 5px;
+      padding: 0 4px;
+      font-size: 11px;
+      border: 1px solid $line-dark;
+    }
+    span {
+      padding: 0 3px;
+    }
+    p:last-child {
+      margin-top: 5px;
+    }
+
+  }
+}
+
+.familyBox {
+  position: relative;
+  * {
+    cursor: pointer;
+  }
+  label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: 1px;
+    color: $black;
+    font-weight: $font-weight-base;
+    font-size: $font-size-base;
+    width: 100%;
+    &:after {
+      font-family: xeicon_v2;
+      content: '\e93e';
+      color: $gray-light;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.familySite {
+  width: 100%;
+  display: inline-block;
+  height: 24px;
+  min-height: 24px;
+  line-height: 24px;
+  opacity: 0;
+  filter: alpha(opacity=0); /* IE 8 */
+}

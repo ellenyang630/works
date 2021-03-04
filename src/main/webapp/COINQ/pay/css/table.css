@@ -1,0 +1,369 @@
+.tbList {
+	font-size: 13px;
+	text-align: center;
+	border-bottom: 1px solid #efefef;
+}
+
+.tbList tr td:last-child {
+	padding-left: 8px;
+}
+
+.tbList th, .tbList td {
+	height: 41px;
+	padding: 0px 15px;
+	line-height: 1.4em;
+	background: #ffffff;
+	border-top: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+}
+
+.tbList th {
+	padding-right: 0px;
+	text-align: left;
+}
+
+.tbList td strong {
+	color: #2e2e2e;
+	font-weight: bold;
+}
+.tbList td small {
+	color: #999;
+	margin-left: 5px;
+}
+.tbList td small.standard {
+	margin-left: 0 !important;
+	margin-right: 5px;
+}
+.tbList td small.standard img {
+	max-height: 15px;
+	vertical-align: text-bottom;
+	/*vertical-align: text-top;*/
+}
+
+.tbList thead th {
+	color: #9da1a9;
+	font-weight: bold;
+	background: none;
+	border: none;
+}
+.tbList thead th small {
+	margin-left: 5px;
+}
+
+.tbList tbody th {
+	color: #2e2e2e;
+}
+.tbList tbody td {
+	text-align: right;
+	color: #6e6e6e;
+}
+
+.tbList tbody tr:last-child th, .tbList tbody tr:last-child td {
+	border-bottom: none;
+}
+
+/* 총 합계 금액 */
+.tbList.total {
+	border-top: 1px solid rgba(0,0,0,0.05);
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.tbList.total th, .tbList.total td {
+	width: 50% !important;
+	background: rgba(35,141,229,0.15);
+	overflow: hidden;
+}
+
+.tbList.total th {
+	font-weight: bold;
+}
+.tbList.total th i {
+	width: 13px;
+	height: 15px;
+	margin-right: 5px;
+	background-position: -253px -21px;
+	vertical-align: top;
+}
+
+.tbList.total td {
+	text-align: right;
+}
+.tbList.total td strong {
+	color: #2e2e2e;
+	font-weight: bold;
+}
+.tbList.total .totalWayAdd {
+	padding: 0 5px;
+	color: #999;
+}
+.tbList.total2 th {
+	width: 30% !important;
+}
+.tbList.total2 td {
+	width: 70% !important;
+}
+
+/* tbList2 코인큐 주문내역 */
+
+.tbList2 {
+	/* 주문정보 코인큐 공통 레이아웃 */
+	font-size: 14px;
+	text-align: left;
+}
+.tbList2 small {
+	margin-left: 5px;
+	font-size: 12px;
+	color: #999;
+}
+
+.tbList2.tblInfo {
+	background: #f3f8fe;
+	padding: 15px;
+	border-bottom: 1px solid #d0d0d0;
+}
+.tbList2.tblInfo th, .tbList2.tblInfo td {
+	padding: 5px 0;
+}
+.tbList2.tblInfo th {
+	width: 80px;
+	padding-left: 15px;
+	font-weight: 600;
+	text-align: left;
+}
+.tbList2.tblInfo td {
+	color: #6e6e6e;
+}
+.tbList2.tblInfo tr:first-child th, .tbList2.tblInfo tr:first-child td {
+	padding-top: 20px;
+}
+.tbList2.tblInfo tr:last-child th, .tbList2.tblInfo tr:last-child td {
+	padding-bottom: 20px;
+}
+
+.tbList2.tblPay {
+	background: #fff;
+}
+.tbList2.tblPay thead th {
+	font-size: 15px;
+	font-weight: 600;
+	padding-top: 20px;
+	text-align: left;
+}
+.tbList2.tblPay th, .tbList2.tblPay td {
+	display: block;
+	padding: 0 15px;
+}
+.tbList2.tblPay p {
+	font-size: 15px;
+	color: #2e2e2e;
+}
+.tbList2.tblPay .price {
+	font-weight: 600;
+	color: #5e5e5;
+	margin-top: 5px;
+}
+.tbList2.tblPay .inner_border .group {
+	/*margin-top: 3px;*/
+	height: 30px;
+	line-height: 30px;
+}
+.tbList2.tblPay .selectBox {
+	min-width: 80px;
+	height: 30px;
+}
+
+.tbList2.total {
+	background: #fff;
+}
+.tbList2.total th, .tbList2.total td {
+	padding: 20px 15px;
+}
+.tbList2.total th {
+	text-align: left;
+}
+.tbList2.total td {
+	text-align: right;
+}
+
+.inner_border {
+	border-bottom: 1px solid #e8e8e8;
+	padding: 15px 0 10px 0;
+}
+
+.shadowBox {
+	/*padding: 15px;*/
+	box-sizing: border-box;
+	-webkit-box-shadow: 3px 8px 12px 0px rgba(107,107,107,0.17);
+	-moz-box-shadow: 3px 8px 12px 0px rgba(107,107,107,0.17);
+	box-shadow: 3px 8px 12px 0px rgba(107,107,107,0.17);
+	border: 1px solid #c8c8c8;
+}
+.shadowBox:first-child {
+	border-top: 0px;
+}
+
+/*180604 추가*/
+.errorBox {
+	text-align: center;
+	color: #8e8e8e;
+	padding: 80px 20px;
+	line-height: 1.4em;
+	background: #fff;
+}
+.errorBox i {
+	font-size: 2.6em;
+	display: block;
+	margin-bottom: 10px;
+}
+
+/* th, td block style */
+.td_tr {
+	border-bottom: 1px solid #efefef;
+	background:#fff;
+}
+
+.td_tr th, .td_tr td {
+	display: block;
+	padding: 0px 15px;
+	text-align: left !important;
+	background: #fff;
+	border: none;
+	box-sizing: border-box;
+}
+.td_tr_cell small {
+	color: #999;
+	margin-left: 5px;
+}
+.td_tr th {
+	padding: 15px 15px 0px 15px;
+	vertical-align: middle;
+}
+.td_tr td {
+	padding: 8px 15px 0 15px;
+}
+.td_tr tr:last-child td {
+	padding-bottom: 15px;
+}
+.td_tr tr:first-child td {
+	padding-top: 15px;
+}
+.td_tr td input {
+	width: 100%;
+}
+
+.td_tr thead th {
+	color: #9da1a9;
+	font-weight: bold;
+	background: none;
+	border-bottom: 1px solid #efefef;
+	height: 41px;
+}
+
+.td_tr thead th small {
+	margin-left: 5px;
+	font-size: 11px;
+}
+
+.td_tr .input_chk {
+	display: block;
+	margin: 3px 0;
+}
+.td_tr .input_chk small {
+	color: #999;
+	margin-left: 3px;
+}
+
+@media (max-width: 360px) {
+	.td_tr .input_chk {
+		height: 45px;
+		line-height: 17px;
+	}
+	.td_tr .input_chk small {
+		display: block;
+		margin-left: 0;
+		margin-top: 3px;
+	}
+}
+
+.td_tr_cell th, .td_tr_cell td {
+	display: table-cell;
+	padding: 8px 15px;
+}
+.td_tr_cell td:first-child {
+	text-align: left !important;
+}
+.td_tr_cell tr:first-child td {
+	padding-top: 15px;
+}
+.td_tr_cell td {
+	text-align: right !important;
+}
+
+/* td_tr2 */
+.td_tr2 {
+	border-bottom: none !important;
+}
+.td_tr2 th, .td_tr2 td {
+	background: none !important;
+}
+.td_tr2 thead th {
+	border-bottom: none;
+}
+.td_tr2 tr:last-child td {
+	padding-bottom: 0px;
+}
+
+.td_tr.eng th {
+	padding: 8px 15px 0px 15px;
+}
+.td_tr.eng tr:first-child th{
+	padding-top:15px;
+}
+.td_tr.eng tr:first-child td {
+	padding-top: 8px;
+}
+
+
+/* 공통 레이아웃 */
+.th_hidden {
+	display: none !important;
+}
+
+.intForm1 .w25pc {
+	width: 25%;
+}
+.intForm1 .w35pc {
+	width: 35%;
+}
+.intForm1 .w75pc {
+	width: 75%;
+}
+.intForm1 .w65pc {
+	width: 65%;
+}
+.w50pc {
+	width:50%;
+	/*width: calc(50% - 8px);*/
+}
+
+.borderLnone, .borderLnone input, .borderLnone button, .borderLnone select {
+	border-left: none !important;
+}
+
+.depositAddress {
+	display: inline-block;
+	margin-top: 5px;
+	padding: 5px 10px;
+	background: rgba(35,141,229,0.15);
+	color: #238de5;
+}
+.depositAddress a{
+	color: #238de5;
+}
+
+.h90px {
+	height: 90px !important;
+}
+
+.borderB_none {
+	border-bottom: none;
+}

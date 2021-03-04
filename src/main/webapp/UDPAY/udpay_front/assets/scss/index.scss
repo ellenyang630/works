@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* index.scss */
+
+// core
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "reset";
+
+// function
+@import "forms";
+@import "button";
+@import "table";
+@import "common";
+@import "layout";
+@import "modal";
+@import "findpay";
+
+// main page
+@import "page/topBanner";
+@import "page/mainPage";
+
+// sub page
+@import "page/subPage";
+@import "page/quickMenu";
+
+// etc.
+@import "page/terms";
+
+
+
+
+
+
+
+
+
+
+

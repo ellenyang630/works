@@ -1,0 +1,48 @@
+@charset "UTF-8";
+ .sm_btn, .md_btn, .big_btn {
+	@extend %box;
+	@extend .mp_none;
+	@extend .hand;
+	@extend %button-radius;
+	font-weight: $font-weight-bold;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+	text-decoration: none !important;
+	width: 100%;
+	&:hover, &:focus, &:active{
+		text-decoration: none !important;
+  transition: all .25s ease;
+	}
+}
+
+.sm_btn {
+	height: 25px;
+	line-height: 24px;
+	padding: 0px 8px;
+  border-width: 1px;
+  border-style: solid;
+	font-size:$font-size-sm;
+	min-width: 30px;
+}
+
+.md_btn {
+	height: 38px;
+	line-height: 36px;
+	padding: 0 15px;
+  border-width: 1px;
+  border-style: solid;
+	min-width: 40px;
+	font-size: $font-size-sm;
+}
+
+.big_btn{
+	height: 55px;
+	line-height: 54px;
+	padding: 0 18px;
+	border-width: 1px;
+	border-style: solid;
+	font-size: $font-size-base;
+}
