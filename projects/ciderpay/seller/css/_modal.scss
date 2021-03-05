@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+/*-------------------------------- MODAL POPUP CLASS ---------------------------------------*/
+
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+
+  &.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -moz-transition: -moz-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+  }
+  &.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  &.show .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  &-open {
+    overflow: hidden;
+
+    .modal {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &-dialog {
+    display: table;
+    vertical-align: middle;
+    width: auto;
+    width: 100%;
+    height: 100%;
+  }
+  &-wrap {
+    max-width: 580px;
+    margin: 0 auto;
+    background: #fff;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    border: 4px solid $blue-sub;
+  }
+  &-content {
+    position: relative;
+    margin: 0 auto;
+    display: table-cell;
+    border-radius: 6px;
+    vertical-align: middle;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+  }
+  &-content-s {
+    width: 400px;
+    margin: 0px auto;
+  }
+  &-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+    &.fade {
+      opacity: 0;
+      filter: alpha(opacity=0);
+
+    }
+    &.in {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
+    &.show {
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+    }
+  }
+  &-header {
+    position: relative;
+    padding: 11px 13px;
+    background: $blue-sub;
+
+    .close {
+      position: absolute;
+      right: 13px;
+      top: 5px;
+      font-size: 21px;
+      opacity: 1;
+      color: $white;
+    }
+  }
+  &-title {
+    margin: 0;
+    line-height: 1.42857143;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+
+  }
+  &-body {
+    position: relative;
+    padding: 30px 25px;
+    text-align: center;
+    background: #fff;
+    .modal-sm, .modal-md, .modal-lg {
+      min-width: auto;
+    }
+    &.alert-popup {
+      padding: 50px 25px;
+    }
+  }
+
+  //modal-footer
+  &-footer {
+    padding: 30px;
+    padding-top: 0;
+    text-align: center;
+    background: #fff;
+    .btn + .btn {
+      margin-left: 5px;
+      margin-bottom: 0;
+    }
+    .btn-group .btn + .btn {
+      margin-left: -1px;
+    }
+    .btn-block + .btn-block {
+      margin-left: 0;
+    }
+    span {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+    a {
+      min-width: 95px;
+      border-radius: 0;
+      padding: 7px 10px;
+      .modal-sm & {
+        min-width: 100px;
+      }
+    }
+  }
+
+  &-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+  }
+
+  &-top {
+    margin-bottom: 20px;
+
+    @media (max-width: 800px) {
+      & .bt {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  //modaltext
+  &text {
+    text-align: left;
+    font-size: $font-size-mbase;
+    margin-bottom: 10px;
+    strong {
+      color: $blue-main;
+    }
+  }
+}
+
+// alertInfo
+.alertInfo {
+  h3, h4 {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+  }
+  p {
+    margin-top: 12px;
+    color: $gray-6;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.modal-content-s {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.modal-wrap {
+  .modal-md & {
+    width: 440px;
+  }
+  .modal-sm & {
+    width: 360px;
+  }
+  .modal-lg & {
+    width: 800px;
+    max-width: 800px;
+  }
+
+  @media (max-width: 800px) {
+    .modal-lg & {
+      width: 500px;
+      max-width: 560px;
+    }
+  }
+  @media (max-width: 550px) {
+    .modal-md & {
+      width: 440px;
+    }
+    .modal-sm & {
+      width: 360px;
+    }
+    .modal-lg & {
+      width: 800px;
+    }
+  }
+}
+
+// 메모팝업
+.textareaWrap{
+  textarea{
+    min-height: 180px;
+    padding:15px;
+  }
+
+}

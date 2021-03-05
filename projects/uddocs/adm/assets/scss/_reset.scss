@@ -1,0 +1,395 @@
+@charset "UTF-8";
+/* _reset.scss */
+
+@import "../css/xeicon.min.css";
+@import "../css/line-awesome.min.css";
+@import "../css/font-awesome.min.css";
+
+
+//
+// Web Fonts Setting
+// --------------------------------------------------
+
+// 나눔바른고딕 경량화 웹폰트 https://github.com/moonspam/NanumBarunGothic
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-weight: 700;
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicBoldSubset.eot);
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicBoldSubset.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicBoldSubset.woff2) format('woff2'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicBoldSubset.woff) format('woff'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicBoldSubset.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-weight: 400;
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicSubset.eot);
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicSubset.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicSubset.woff2) format('woff2'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicSubset.woff) format('woff'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicSubset.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-weight: 300;
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicLightSubset.eot);
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicLightSubset.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicLightSubset.woff2) format('woff2'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicLightSubset.woff) format('woff'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicLightSubset.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-weight: 200;
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicUltraLightSubset.eot);
+  src: url(../fonts/nanumBarunGothic/nanumBarunGothicUltraLightSubset.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicUltraLightSubset.woff2) format('woff2'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicUltraLightSubset.woff) format('woff'),
+  url(../fonts/nanumBarunGothic/nanumBarunGothicUltraLightSubset.ttf) format('truetype');
+}
+
+
+// roboto 웹폰트
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url(../fonts/roboto/roboto-Regular.eot);
+  src: url(../fonts/roboto/roboto-Regular.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/roboto/roboto-Regular.woff2) format('woff2'),
+  url(../fonts/roboto/roboto-Regular.woff) format('woff'),
+  url(../fonts/roboto/roboto-Regular.ttf) format('truetype');
+}
+
+
+//
+// Reset Style
+// --------------------------------------------------
+html { background: $bg-base !important; font-size: 15px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body { line-height: 1.42857143; background: $bg-base !important; font-family: $font-family; font-size: 15px; font-weight: 400; color: lighten($--color-black, 13%); letter-spacing: -0.15px;}
+input, button, select, textarea { line-height: inherit; font-family: inherit; font-size: inherit;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { padding: 0;
+  margin: 0; border: 0; vertical-align: baseline; @include prefix(box-sizing, border-box, webkit ms moz o);
+}
+// Set html5 elements to block
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,main,nav,section,summary{display:block;}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,font,img,ins,q,s,samp,strike,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{ padding:0; /*line-height:1.5;*/ margin:0;border:0 none;}
+body{position:relative;word-break:break-all;-ms-text-size-adjust:100%;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+header,h1{font-size:100%;}
+body {padding-right: 0 !important;}
+caption,legend{position:absolute;top:-9999px;left:-9999px;width:0;height:0;font-size:0;visibility:hidden;overflow:hidden;}
+caption{display:none;}
+img{border:none;vertical-align:top;}
+select,input{background-color:transparent;border:0px;vertical-align:top;border-radius:0;box-shadow: none;}
+hr{display:none;border:0 none;}
+ol,ul,ul li{padding:0;margin:0;list-style:none;}
+dl, dt, dd{padding:0; margin:0;}
+em{font-style:normal;}
+menu li{list-style:none;}
+address{display:inline;font-style:normal;}
+button{background-color:transparent;border:0px;border-radius:0;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+button:active{ outline:none;}
+//button:focus{ outline:none;}
+table{border-spacing:0;border-collapse:collapse;}
+input,textarea,keygen,select,button{font-family:$font-family;}
+strong{font-weight:800;}
+dfn{font-style:normal;}
+// Link Style
+a{ color: inherit; }
+a,a:hover,a:link,a:visited,a:active,a:focus{text-decoration:none;cursor:pointer;/*color:inherit;*/}
+a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+// Forms
+fieldset{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select,input[type=radio],input[type=submit],input[type=search]{border:0px;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select::-ms-expand {display:none;}
+input:focus,button:focus,textarea:focus{}
+select,div{}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button,input[type=date]::-webkit-inner-spin-button,input[type=date]::-webkit-outer-spin-button{ margin: 0; -webkit-appearance: none;}
+input[type=date]::-webkit-calendar-picker-indicator {background:none;color:transparent;z-index:1;}
+textarea{width:100%;background:none;border:none;color:$--color-text-regular;resize: none;}
+// heading
+body,input,textarea,select,button{font-family: $font-family;}
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;}
+img{height:auto;vertical-align:top;max-width:100%;-ms-interpolation-mode:bicubic;}
+small{font-size:88%;font-weight:400;color:$--color-info;}
+
+
+
+
+//
+//  Skip Navigation
+// --------------------------------------------------
+
+.skipNav {
+  position: absolute;
+  left: -300%;
+  background: #555;
+  font-size: 2em;
+  color: #fff;
+  &:focus,
+  &:hover {
+    display: block;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 99999;
+    text-decoration: none;
+  }
+}
+
+
+//
+//  Help Style
+// --------------------------------------------------
+
+// only screen reader
+.invisible {
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
+}
+
+// text decoration
+.under {
+  text-decoration: underline !important;
+  cursor: pointer;
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+}
+.del {
+  text-decoration: line-through;
+}
+.en{
+  letter-spacing: 0 !important;
+}
+.link-hover{
+  &:hover,
+  &:focus,
+  &:active{
+    color: $--color-primary;
+  }
+}
+
+
+// margin
+.mg{
+  // top
+  &t5{
+    margin-top: 5px;
+  }
+  &t10{
+    margin-top: 10px;
+  }
+  &t15{
+    margin-top: 15px;
+  }
+  &t20{
+    margin-top: 20px;
+  }
+  &t25{
+    margin-top: 25px;
+  }
+  &t30{
+    margin-top: 30px;
+  }
+  &t40{
+    margin-top: 40px !important;
+  }
+
+  // bottom
+  &b15{
+    margin-bottom: 15px !important;
+  }
+
+  //left
+  &l-auto{
+    margin-left: auto;
+  }
+
+  &l5{
+    margin-left:5px !important;
+  }
+  &l10{
+    margin-left:10px !important;
+  }
+  &l20{
+    margin-left:20px !important;
+  }
+  &l30{
+    margin-left:30px !important;
+  }
+  &l40{
+    margin-left:40px !important;
+  }
+  &l50{
+    margin-left:50px !important;
+  }
+}
+
+// border style
+.bdt-1{
+  border-top:1px solid $bg-base;
+}
+.bdb-1{
+  border-bottom:1px solid $--border-color-base;
+}
+
+
+// additional style
+.pull{
+  &-left{
+    display: inline-block;
+    float:left;
+  }
+  &-right{
+    display: inline-block;
+    float: right;
+  }
+}
+
+.text{
+  &-left{
+    text-align: left !important;
+  }
+  &-center{
+    text-align: center !important;
+  }
+  &-right{
+    text-align: right !important;
+  }
+}
+
+.vertical{
+  &-mid{
+    vertical-align: middle !important;
+  }
+}
+
+.hand {
+  cursor: pointer;
+}
+
+@mixin btnActive($shadowColor){
+	&:active,
+	&:focus,
+	&:hover,
+	&.active{
+		@include prefix(box-shadow, 0px 0px 4px 0px rgba($shadowColor, 0.3), webkit ms moz o);
+	}
+}
+
+
+//
+//  Custom Animation Style
+// --------------------------------------------------
+
+// use of keyframes mixin
+@include keyframes(shadow-pulse1) {
+  0% { box-shadow: 0 0 0 0px rgba($--color-primary, 0.3); }
+  100% { box-shadow: 0 0 0 12px rgba($--color-primary, 0); }
+}
+@include keyframes(shadow-sm-pulse1) {
+  0% { box-shadow: 0 0 0 0px rgba($--color-primary, 0.3); }
+  100% { box-shadow: 0 0 0 5px rgba($--color-primary, 0); }
+}
+@include keyframes(shadow-pulse2) {
+  0% {box-shadow: 0 0 0 0px rgba($--color-primary, 0.3);}
+  100% {box-shadow: 0 0 0 12px rgba($--color-primary, 0);}
+}
+@include keyframes(shadow-pulse3) {
+  0% { box-shadow: 0 0 0 0px rgba($--color-danger, 0.3);}
+  100% { box-shadow: 0 0 0 12px rgba($--color-danger, 0);}
+}
+@include keyframes(shadow-pulse4) {
+  0% { box-shadow: 0 0 0 0px rgba($--color-text-regular, 0.3); }
+  100% { box-shadow: 0 0 0 12px rgba($--color-text-regular, 0); }
+}
+
+// 새로고침 animaiton
+@keyframes spin-inf {
+  100%{ transform:rotate(360deg);}
+}
+
+// menu hover animaiton
+@include keyframes(burger-hover) {
+  0% { width: 100%; }
+  50% { width: 50%; }
+  100% { width: 100%;}
+}
+
+// tv box icon animation
+@include keyframes(icon-ani) {
+  0% {transform: scaleX(1);}
+  25% {transform: scaleX(0);}
+  50% {transform: scaleX(1);}
+  75% {transform: scaleX(0);}
+  100% {transform: scaleX(1);}
+}
+
+// arrow icon animation
+@include keyframes(arrow-icon-ani) {
+  0% {margin-left:0px;}
+  50% {margin-left:7px;}
+  100% {margin-left:0px;}
+}
+// titBox bg moving animation
+@include keyframes(bg-ani) {
+  0% { background-position: 50% 45%; background-size: 100%; }
+  50% { background-position: 50% 50%; background-size: 95%; }
+  100%{ background-position: 50% 45%; background-size: 100%; }
+}
+
+// loader animation
+@keyframes osc-l{
+  0%{left:20%;}
+  50%{left:50%;}
+  100%{left:20%;}
+}
+@keyframes osc-r{
+  0%{left:80%;}
+  50%{left:50%;}
+  100%{left:80%;}
+}
+
+// btn for payment in dashboard
+@keyframes ripple {
+  from { opacity: 1; transform: scale3d(0.75,0.75,1); }
+  to { opacity: 0; transform: scale3d(1.5,1.5,1);}
+}
+
+// page loader transition
+@-webkit-keyframes load8 {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes load8 {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+
+@include keyframes(spin360) {
+  100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); }
+}

@@ -1,0 +1,633 @@
+
+<h2 class="sr_only">팝업 컨텐츠</h2>
+
+<!-- 결제취소 요청 -->
+<div class="modal fade" id="payCancReq" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-md">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">결제취소요청</h3>
+				</div>
+				<div class="modal-body">
+					<div class="alertInfo mgb25">
+						<h4>
+							취소금액 <span class="cgreen">33,000원</span>을 아래 계좌로 <br/>
+							입금해 주셔야 취소처리가 가능합니다.
+						</h4>
+						<p>
+							입금계좌 : <strong>140-012-559222</strong> / 입금은행 : 신한은행 / 예금주 : ㈜쏘다
+						</p>
+					</div>
+					<table class="table tbView">
+						<colgroup>
+							<col width="150">
+							<col width="*">
+						</colgroup>
+						<thead></thead>
+						<tbody>
+							<tr>
+								<th>구매자 휴대폰번호</th>
+								<td>010-1234-5678</td>
+							</tr>
+							<tr>
+								<th>결제상품</th>
+								<td>에어맥스 95 </td>
+							</tr>
+							<tr>
+								<th>결제금액</th>
+								<td><strong class="num">30,000</strong> 원</td>
+							</tr>
+							<tr class="intTr">
+								<th>입금자명</th>
+								<td>
+									<div class="inputBox">
+										<label class="sr_only" for="accountName">입금자명</label>
+										<input type="text" id="accountName" name="accountName" placeholder="입금자명을 입력해 주세요.">
+									</div>
+								</td>
+							</tr>
+							<tr class="intTr">
+								<th>비밀번호</th>
+								<td>
+									<div class="inputBox">
+										<label class="sr_only" for="password">비밀번호</label>
+										<input type="password" id="password" name="password" placeholder="비밀번호를 입력해 주세요.">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="alert_text red">
+						<em class="round_lb">주의</em>
+						입금자명이 다른 경우 취소처리가 지연될 수 있습니다.
+					</div>
+				</div>
+				<!--//modal-body-->
+
+				<div class="modal-footer">
+					<span><a href="#" class="btn btn-sm bluegrey" data-dismiss="modal">취소</a></span>
+					<span><a href="#" class="btn btn-sm blue-sub">확인</a></span>
+				</div>
+				<!--//modal-footer-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+	</div>
+	<!--//modal-dialog-->
+</div>
+
+<!-- 결제요청 취소 -->
+<div class="modal fade" id="payReqCanc" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-md">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">안내</h3>
+				</div>
+				<div class="modal-body alert-popup">
+					<div class="alertInfo">
+						<h4>결제요청건을 취소 하시겠습니까?</h4>
+					</div>
+				</div>
+				<!--//modal-body-->
+				<div class="modal-footer">
+					<span><a href="#" class="btn btn-sm bluegrey" data-dismiss="modal">취소</a></span>
+					<span><a href="#" class="btn btn-sm blue-sub">확인</a></span>
+				</div>
+				<!--//modal-footer-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+	</div>
+	<!--//modal-dialog-->
+</div>
+
+<!-- 현금영수증 취소 -->
+<div class="modal fade" id="payReceCanc" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-md">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">안내</h3>
+				</div>
+				<div class="modal-body alert-popup">
+					<div class="alertInfo">
+						<h4>현금영수증을 취소 하시겠습니까?</h4>
+					</div>
+				</div>
+				<!--//modal-body-->
+				<div class="modal-footer">
+					<span><a href="#" class="btn btn-sm bluegrey" data-dismiss="modal">취소</a></span>
+					<span><a href="#" class="btn btn-sm blue-sub">확인</a></span>
+				</div>
+				<!--//modal-footer-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+	</div>
+	<!--//modal-dialog-->
+</div>
+
+<!-- 상품선택삭제 -->
+<div class="modal fade" id="deleteGoods" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-md">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">안내</h3>
+				</div>
+				<div class="modal-body alert-popup">
+					<div class="alertInfo">
+						<h4>해당 상품을 취소 하시겠습니까?</h4>
+					</div>
+				</div>
+				<!--//modal-body-->
+				<div class="modal-footer">
+					<span><a href="#" class="btn btn-sm bluegrey" data-dismiss="modal">취소</a></span>
+					<span><a href="#" class="btn btn-sm blue-sub">확인</a></span>
+				</div>
+				<!--//modal-footer-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+
+	</div>
+	<!--//modal-dialog-->
+</div>
+
+<!-- 메모 저장 -->
+<div class="modal fade" id="memoPop" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-md">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">메모</h3>
+				</div>
+				<div class="modal-body">
+					<div class="textareaWrap">
+						<textarea id="memoTextarea" name="memoTextarea" placeholder="메모를 입력해주세요." value="이번달실적없음">이번달실적없음</textarea>
+					</div>
+				</div>
+				<!--//modal-body-->
+				<div class="modal-footer">
+					<span><a href="#" class="btn btn-sm bluegrey" data-dismiss="modal">취소</a></span>
+					<span><a href="#" class="btn btn-sm blue-sub">확인</a></span>
+				</div>
+				<!--//modal-footer-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+
+	</div>
+	<!--//modal-dialog-->
+</div>
+
+<!-- 부가세 신고 자료 인쇄 미리보기 -->
+<div class="modal fade" id="previewPrint" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-lg">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">부가세 신고 자료 인쇄 미리보기</h3>
+				</div>
+				<div class="modal-body">
+					<div class="alertInfo mgb25">
+						<h4>
+							부가세 신고 자료
+						</h4>
+						<p>
+							<span class="simpleli"><strong>조회일</strong> : 2019-04-09</span> <span  class="simpleli"><strong>조회기간</strong> : 2019-02-28~2019-03-29</span>
+						</p>
+					</div>
+
+					<div class="ttBox3">
+						<h2 class="tt">기본정보</h2>
+					</div>
+					<table class="table tbView">
+						<colgroup>
+							<col width="150">
+							<col width="*">
+						</colgroup>
+						<thead></thead>
+						<tbody>
+						<tr>
+							<th>가맹점 상호명</th>
+							<td>㈜나이키</td>
+						</tr>
+						<tr>
+							<th>사업자등록번호</th>
+							<td>224-25-54185</td>
+						</tr>
+						<tr>
+							<th>대표자명</th>
+							<td>홍길동</td>
+						</tr>
+						<tr>
+							<th>연락처</th>
+							<td>010-1234-5678</td>
+						</tr>
+						</tbody>
+					</table>
+
+					<div class="ttBox3 mgt20">
+						<h2 class="tt">매출내역</h2>
+					</div>
+					<div class="table-responsive">
+						<table class="tbList">
+							<caption class="sr_only">부가세 신고 자료 리스트</caption>
+							<colgroup>
+								<col width="100">
+								<col width="*">
+								<col width="12%">
+								<col width="12%">
+								<col width="*">
+								<col width="10%">
+								<col width="10%">
+								<col width="10%">
+							</colgroup>
+							<thead>
+							<tr>
+								<th>매출월</th>
+								<th>항목구분</th>
+								<th>거래구분</th>
+								<th>거래건수</th>
+								<th>거래금액</th>
+								<th>면세</th>
+								<th>과세</th>
+								<th>부가세</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr class="height_sm">
+								<td rowspan="4" scope="row">
+									2019년 3월
+								</td>
+								<td rowspan="2">
+									신용카드
+								</td>
+								<td>
+									승인
+
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							<tr class="height_sm">
+								<td>
+									취소
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							<tr class="height_sm">
+								<td rowspan="2">
+									휴대폰
+								</td>
+								<td>
+									승인
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							<tr class="height_sm">
+								<td>
+									취소
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+
+							<tr class="height_sm">
+								<td rowspan="4" scope="row">
+									2019년 2월
+								</td>
+								<td rowspan="2">
+									신용카드
+								</td>
+								<td>
+									승인
+
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							<tr class="height_sm">
+								<td>
+									취소
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							<tr class="height_sm">
+								<td rowspan="2">
+									휴대폰
+								</td>
+								<td>
+									승인
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							<tr class="height_sm">
+								<td>
+									취소
+								</td>
+								<td>
+									1 건
+								</td>
+								<td>
+									<p class="price_txt">
+										<strong class="">120,000</strong><small>원</small>
+									</p>
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+								<td>
+									0
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<!--// tbList -->
+					</div>
+				<!--// table-responsive -->
+
+
+					<div class="alert_text red mgb5">
+						<em class="round_lb">주의</em>
+						해당 자료는 부가세 신고 참고용으로만 사용해주시기 바랍니다.
+					</div>
+					<p class="mgt20 mgb5"><img src="images/ssoda@2x.png" alt="ssoda logo" width="80" ></p>
+				</div>
+				<!--//modal-body-->
+
+				<div class="modal-footer">
+					<span><a href="#" class="btn btn-sm bluegrey" data-dismiss="modal">취소</a></span>
+					<span><a href="#" class="btn btn-sm blue-sub">인쇄하기</a></span>
+				</div>
+				<!--//modal-footer-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+	</div>
+	<!--//modal-dialog-->
+</div>
+
+<!-- 정산완료 상세 팝업 -->
+<div class="modal fade" id="calendarDetail" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content modal-md">
+			<div class="modal-wrap">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+					<h3 class="modal-title">정산완료 : 2019-03-07</h3>
+				</div>
+				<div class="modal-body">
+					<table class="tbPopList">
+						<colgroup>
+							<col width="33.333%">
+							<col width="33.333%">
+							<col width="33.333%">
+						</colgroup>
+						<thead></thead>
+						<tbody>
+						<tr>
+							<th>
+								<p class="popTh">카메라결제</p>
+							</th>
+							<td>
+								<p class="price_txt sm cgreen">
+									<strong class="">45,005,000</strong><small>원</small>
+								</p>
+							</td>
+							<td>
+								<p class="price_txt sm">
+									<strong class="">1,000</strong><small>건</small>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<p class="popTh">NFC결제</p>
+							</th>
+							<td>
+								<p class="price_txt sm cgreen">
+									<strong class="">45,005,000</strong><small>원</small>
+								</p>
+							</td>
+							<td>
+								<p class="price_txt sm">
+									<strong class="">1,000</strong><small>건</small>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<p class="popTh">리더기결제</p>
+							</th>
+							<td>
+								<p class="price_txt sm cgreen">
+									<strong class="">45,005,000</strong><small>원</small>
+								</p>
+							</td>
+							<td>
+								<p class="price_txt sm">
+									<strong class="">1,000</strong><small>건</small>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<p class="popTh">수기결제</p>
+							</th>
+							<td>
+								<p class="price_txt sm cgreen">
+									<strong class="">45,005,000</strong><small>원</small>
+								</p>
+							</td>
+							<td>
+								<p class="price_txt sm">
+									<strong class="">1,000</strong><small>건</small>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<p class="popTh">삼성페이결제</p>
+							</th>
+							<td>
+								<p class="price_txt sm cgreen">
+									<strong class="">45,005,000</strong><small>원</small>
+								</p>
+							</td>
+							<td>
+								<p class="price_txt sm">
+									<strong class="">1,000</strong><small>건</small>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<p class="popTh">원격결제</p>
+							</th>
+							<td>
+								<p class="price_txt sm cgreen">
+									<strong class="">45,005,000</strong><small>원</small>
+								</p>
+							</td>
+							<td>
+								<p class="price_txt sm">
+									<strong class="">1,000</strong><small>건</small>
+								</p>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<!-- // tbPopList -->
+				</div>
+				<!--//modal-body-->
+			</div>
+			<!--//modal-wrap-->
+		</div>
+		<!--//modal-content-->
+
+	</div>
+	<!--//modal-dialog-->
+</div>

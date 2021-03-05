@@ -1,0 +1,1151 @@
+@charset "UTF-8";
+/* _pages.scss */
+
+//==  Element UI Style
+//## layout and components for used across Element UI Library.
+
+
+//
+//  Breadcrumb
+// --------------------------------------------------
+.el-breadcrumb{
+  font-size: 0.8667rem;
+  &__inner{
+    color: $link-base-color;
+  }
+  &__item:last-child .el-breadcrumb__inner,
+  &__item:last-child .el-breadcrumb__inner:hover{
+    font-weight: $font-weight-bold;
+    color: $link-base-color;
+  }
+  &__separator[class*=icon] {
+    margin: 0 4px;
+  }
+}
+
+//
+//  Card
+// --------------------------------------------------
+.el-card{
+  border:0 ;
+  border-radius: 8px;
+  &__body{
+    padding:30px;
+  }
+  &.no_padding{
+    .el-card__body{
+      padding:0;
+    }
+  }
+}
+
+//
+//  Table
+// --------------------------------------------------
+
+.el-table__body-wrapper{
+  overflow: visible;
+}
+.el-table{
+  font-size: 0.9333rem;
+  color: $--color-text-primary;
+  table{
+    width:100%;
+    max-width:100%;
+    overflow: visible;
+  }
+  thead{
+    font-weight: $font-weight-bold;
+    color:$--color-text-secondary;
+    color:desaturate($--color-info, 17%);
+  }
+  th, td{
+    text-align: center;
+  }
+  th {
+    padding: 7px 0;
+    background-color:$--background-color-base;
+    text-align: center;
+    border-top: 1px solid $bg-base;
+    border-bottom: 1px solid $bg-base;
+    font-size: 0.8667rem;
+    font-weight: $font-weight-bold;
+  }
+  .cell{
+    padding:0 0.4rem; // 0 6px
+    .el-button{
+      vertical-align: top;
+    }
+  }
+
+  // 관리버튼
+  .in-btn{
+    .el-button--mini{
+      padding: 4px 7px;
+      font-size: 1.067rem;
+    }
+    .el-radio-group{
+      margin-left:10px;
+    }
+    .el-radio-button--small .el-radio-button__inner {
+      padding: 9px 11px;
+    }
+    .btn-upDown{
+      margin-left:10px;
+    }
+  }
+
+  // 호버 시, 스타일
+  &--enable-row-hover{
+    .el-table__body tr:hover > td{
+      background-color: rgba($--color-primary,0.05);
+    }
+  }
+
+  // 하위트리 추가 시, tr  (el-table__row--level-0) :: 상세페이지
+  &__row--level-common{
+    &:hover{
+      > td{
+        background-color: $--background-color-base !important;
+      }
+    }
+    > td{
+      position: relative;
+      padding: 10px 0 10px 30px;
+      background-color: $--background-color-base !important;
+      border-bottom:1px solid $--border-color-lighter;
+
+      .el-table{
+        border-top:1px solid $--border-color-lighter;
+        border-bottom:1px solid $--border-color-lighter;
+        border-right: 0;
+        overflow: visible;
+
+        &::before{
+          background-color: $--color-white;
+          display: none;
+        }
+        th{
+          padding: 4px 0;
+          background-color: $--border-color-lighter;
+        }
+        td{
+          //border-bottom: 0;
+        }
+      }
+      > .el-table > .el-table__body-wrapper > .el-table__body > tbody{
+        &:last-child{
+          tr td{
+            border-bottom: 0;
+          }
+        }
+
+        td{
+          &:first-child{
+            border-left:1px solid $--border-color-lighter;
+          }
+        }
+
+        > tr:last-child td{
+          //border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__row--level-common{
+    &:hover{
+      > td{
+        background-color: $--background-color-base !important;
+      }
+    }
+
+    > td {
+      border-left:0 !important;
+      border-right:0 !important;
+
+      .el-table {
+        tbody{
+          position: relative;
+          overflow: visible;
+          tr{
+            td:first-child{
+              &:before{
+                content: "\e97e";
+                display: inline-block;
+                position: absolute;
+                //top: 7px;
+                left: -20px;
+                font-family: xeicon;
+                color: darken($--border-color-light, 16%);
+                text-align: center;
+                z-index: 15;
+              }
+            }
+            td[colspan]{
+              &:before{
+                display: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 홀수 뎁스 일 경우, bgColor 주기
+  &__row--level-odd{
+    > td > .el-table > .el-table__body-wrapper > .el-table__body > tbody {
+      > tr > td {
+        background-color: mix($--color-white, $color-assort-4, 97%);
+      }
+    }
+  }
+
+  &__row--level-even{
+    > td > .el-table > .el-table__body-wrapper > .el-table__body > tbody {
+      > tr > td {
+        background-color:$--color-white;
+      }
+    }
+  }
+
+  // 하위트리 추가 시, tr :: 리스트페이지
+  &-sub{
+    &:hover{
+      > td{
+        background-color: #f7fafc !important;
+        background-color: $--color-white !important;
+      }
+    }
+
+    > td {
+      position: relative;
+      padding: 10px 0 10px 30px !important;
+      background-color: #f7fafc !important;
+      background-color: $--color-white !important;
+
+      .el-table {
+        border-top: 1px solid $--border-color-lighter;
+        border-bottom: 0;
+        border-right: 0;
+        margin-top: 0;
+
+        &::before {
+          background-color: $--color-white;
+          display: none;
+        }
+        td {
+          padding-top: 4px;
+          padding-bottom: 4px;
+
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      td{
+        border-bottom:0;
+      }
+
+      > .el-table > .el-table__body-wrapper > .el-table__body > tbody{
+
+        > .el-table-sub{
+          > td[colspan]{
+            border-top:1px solid $--border-color-lighter;
+            border-bottom:1px solid $--border-color-lighter;
+          }
+        }
+
+        &:last-child {
+          > tr:last-child{
+            > td{
+              //border-bottom:0 !important;
+              border-bottom:1px solid $--border-color-lighter !important;
+              &[colspan]{
+                border-bottom:0 !important;
+              }
+            }
+          }
+        }
+
+        &:first-child {
+          > tr:first-child{
+            > td{
+              border-bottom:1px solid $--border-color-lighter !important;
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  &__body{
+    position: relative;
+    // 공통세트 값 못 바꾸게 막기.
+    .table-blocking{
+      width:100%;
+      height:100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: not-allowed;
+    }
+  }
+
+  // input창 label invisible
+  .el-form-item__label{
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+  }
+
+
+  // 리스트 데이터 값이 없을 경우
+  &__empty-block {
+    padding:25px 0;
+    .empty__ico{
+      display: inline-block;
+      width:60px;
+      height:60px;
+      margin-bottom:15px;
+      background-color: lighten($--color-text-secondary, 19%);
+      color:$--color-white;
+      border-radius: 37%;
+      i{
+        font-size:180%;
+        vertical-align: middle;
+      }
+    }
+    .empty__info-text{
+      margin-bottom: 25px;
+      line-height: 1.5;
+      font-size:1.067rem;
+    }
+    .el-button {
+      &--primary {
+        &.is-plain {
+          @include prefix(box-shadow, 0 2px 8px 0 rgba($--color-primary, 0.28), webkit ms moz o);
+        }
+      }
+    }
+  }
+}
+
+//
+//  Button
+// --------------------------------------------------
+.el-button{
+  &--icon{
+    i{
+      margin-right:5px;
+    }
+  }
+  i{
+    transform: translateY(1px);
+  }
+
+  &--default{
+    &.is-plain{
+      &:hover, &:focus{
+        background-color: $--border-color-base;
+        border-color:$--border-color-base;
+        color:$--color-text-regular;
+      }
+    }
+  }
+  &--primary, &--success, &--info, &--warning, &--danger{
+    &.is-plain{
+      background-color: $--color-white;
+    }
+  }
+  &--block{
+    width:100%;
+    height:100%;
+  }
+  &--bigger{
+    min-width:175px;
+    padding: 1.267rem 1.667rem;  // 19px 25px
+    font-size:1.133rem;
+    @include prefix(box-shadow, 0 2px 8px 0 rgba(26,107,250,0.28), webkit ms moz o);
+  }
+}
+
+//
+//  Switch
+// --------------------------------------------------
+.el-switch{
+  @at-root .el-alert{
+    .el-switch{
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+    }
+  }
+  &__core{
+    position: relative;
+    border-radius: 50em !important;
+  }
+
+
+  /* 수정중. */
+
+  &__core{
+    position: relative;
+    width: 7.333rem !important;
+    height: 2.333rem;
+    border-radius: 50em !important;
+    &:after{
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .el-switch__label{
+    display: none;
+    position: absolute;
+    color:$--color-white;
+    transition-delay: 3ms;
+    *{
+      font-size: 0.9333rem;
+    }
+    &--left{
+      top:9px;
+      right:5px;
+
+      margin-right: 8px;
+      z-index: 1;
+    }
+    &--right{
+      top:9px;
+      left:10px;
+      z-index: 1;
+    }
+    &.is-active{
+      display: inline-block;
+    }
+  }
+  // switch on
+  &.is-checked{
+    .el-switch__core::after{
+      margin-left: -1.667rem;
+    }
+  }
+
+
+
+  &__mini{
+    height: 28px;
+    .el-switch__core{
+      position: relative;
+      width: 60px !important;
+      height: 1.733rem;
+      &:after{
+        width: 1.467rem;
+        height: 1.467rem;
+      }
+    }
+    .el-switch__label{
+      top:4px !important;
+      *{
+        font-size: 0.8rem;
+      }
+      &--left{
+        right:0;
+      }
+      &--right{
+        left:0;
+      }
+    }
+    &.is-checked{
+      .el-switch__core::after{
+        margin-left: -1.533rem;
+      }
+    }
+  }
+
+
+  &__small{
+    height: 28px;
+    .el-switch__core{
+      position: relative;
+      width: 82px !important;
+      height: 1.867rem;
+      &:after{
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+    .el-switch__label{
+      top:4px !important;
+    }
+  }
+
+  &__medium{
+    height: 36px;
+    .el-switch__core{
+      position: relative;
+      width: 7.333rem !important;
+      height: 2.333rem;
+      border-radius: 50em !important;
+      &:after{
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+//
+//  Form
+// --------------------------------------------------
+.el-form{
+
+  // 로그인 input
+  &-item--group{
+    .el-input--prefix .el-input__inner{
+      height:50px;
+      padding-left: 36px;
+    }
+    .el-input__icon {
+      width: 27px;
+      height: 100%;
+      line-height: 50px;
+      font-size: 1.2rem;
+      text-align: center;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+    }
+    .el-form-item{
+      margin-bottom:0;
+      &:first-child{
+        .el-input__inner {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom:0;
+        }
+      }
+      &:last-child{
+        .el-input__inner {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }
+    }
+  }
+
+  // el-form-item
+  &-item{
+    //margin-bottom:0 !important;
+    margin-bottom:17px;
+    &:last-child{
+      margin-bottom:0 !important;
+    }
+    &__inner{
+      display: inline-block;
+      position: relative;
+      width:100%;
+      font-size: 14px;
+      > .el-select,
+      > .el-input,
+      > .el-button{
+        width:100%;
+      }
+    }
+    &__label {
+      padding-bottom: 10px;
+      line-height: 14px;
+      text-align: left;
+    }
+    &__tip {
+      padding: 10px 15px;
+      margin-top: 7px;
+      line-height: 1.69;
+      background: rgba($--color-primary, 0.08);
+      font-size: 0.8667rem;
+      color: $--table-header-font-color !important;
+      border-radius: $--border-radius-small;
+      .tip-tit {
+        margin-bottom: 5px;
+        font-size: 0.9333rem;
+      }
+    }
+  }
+}
+
+//
+// Checkbox
+// --------------------------------------------------
+.el-checkbox{
+  &__inner{
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+  &__medium{
+    .el-checkbox__inner{
+      width: 20px;
+      height: 20px;
+      &:after{
+        left: 6px;
+        height: 9px;
+      }
+    }
+  }
+  &.no_label{
+    .el-checkbox__label{
+      padding-left:0;
+    }
+  }
+}
+
+//
+// Radio Button
+// --------------------------------------------------
+.el-radio{
+  &-button{
+    &:first-child{
+      .el-radio-button__inner{
+        border-color:$--color-primary;
+      }
+    }
+    &:focus:not(.is-focus):not(:active):not(.is-disabled){
+      box-shadow: none;
+    }
+    &--small .el-radio-button__inner{
+      padding: 9px 22px;
+    }
+  }
+  &-button__inner{
+    width: 100%;
+    border-color:$--color-primary;
+    font-size:1rem;
+    color:$--color-primary;
+  }
+}
+
+//
+// textarea
+// --------------------------------------------------
+.el-textarea {
+  .el-textarea__inner{
+    padding:12px 15px;
+  }
+  &.mini{
+    .el-textarea__inner {
+      height: 100px !important;
+    }
+  }
+  &.small{
+    .el-textarea__inner {
+      height: 140px !important;
+    }
+  }
+}
+.el-table{
+  .el-textarea {
+    .el-textarea__inner{
+      min-height: 32px !important;
+      //height: 32px !important;
+      padding:4px 15px;
+    }
+  }
+}
+
+//
+// popover
+// --------------------------------------------------
+.el-popover{
+  padding:0;
+  min-width:115px;
+  .popover-menu{
+    padding:7px 0;
+  }
+  button{
+    display: block;
+    width:100%;
+    margin-left:0 !important;
+  }
+}
+
+//
+// Message Box
+// --------------------------------------------------
+.el-message-box{
+  padding-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+  &__header{
+    padding: 20px 40px 10px 40px;
+  }
+  &__title{
+    font-size:1.2rem;
+    font-weight: $font-weight-bold;
+    color: $--color-black;
+  }
+  &__headerbtn{
+    font-size: 1.667rem;
+    font-weight: $font-weight-bold;
+  }
+  &__content{
+    padding: 20px 15px;
+  }
+  &__btns{
+    text-align: center;
+    .el-button--small{
+      padding: 10px 40px;
+      font-size: 1rem;
+    }
+  }
+}
+
+//
+// Dialog
+// --------------------------------------------------
+.el-dialog{
+  width:450px;
+  border-radius: 13px;
+  overflow: hidden;
+  .md &{
+    width:510px;
+  }
+  .lg &{
+    width:700px;
+  }
+  .xlg &{
+    width:800px;
+  }
+  &__header{
+    padding: 30px 40px 10px 40px;
+    font-size:1.2rem;
+    font-weight: $font-weight-bold;
+    text-align: center;
+  }
+  &__title{
+    font-weight: $font-weight-bold;
+  }
+  &__headerbtn {
+    top: 25px;
+    right: 25px;
+    font-size: 1.667rem;
+  }
+  &__body{
+    padding: 20px 40px 30px 40px;
+  }
+  &__footer{
+    padding:0 !important;
+    .dialog-footer,
+    .el-button{
+      width:100%;
+    }
+    .el-button{
+      padding: 18px 27px;
+      font-size: 1.067rem;
+      border-radius: 0;
+      //border-radius: 12px;
+      //border-top-left-radius: 0;
+      //border-top-right-radius: 0;
+    }
+    // 버튼 여러개일 경우,
+    .d_flex{
+      background: #000;
+      .el-button + .el-button{
+        margin-left:0 !important;
+      }
+    }
+  }
+  .no-pd &{
+    .el-dialog__body{
+      padding-right:0;
+      padding-bottom:0;
+      padding-left:0;
+    }
+  }
+
+  // dialog > table
+  .el-table{
+    td{
+      padding: 9px 0;
+    }
+  }
+}
+.dialog-text{
+  font-size:1.2rem;
+  font-weight:$font-weight-bold;
+}
+
+//허용값 관리 팝업
+#dialog-manage-invalid{
+  .el-dialog__body{
+    padding-right:0;
+    padding-left:0;
+  }
+  .el-table{
+    thead{
+      th{
+        border-top:1px solid $bg-base;
+      }
+    }
+  }
+}
+
+
+
+//== Additional Custom Style
+
+
+//
+//  Login & Join  Page
+// --------------------------------------------------
+.simple_content{
+  width:100%;
+}
+.fixed-table{
+  display: table;
+  width: 100%;
+  height: 100vh;
+  table-layout: fixed;
+}
+.cell-vm{
+  display:table-cell;
+  width: 100%;
+  height: 100vh;
+  vertical-align: middle;
+}
+.login-card, .join-card{
+  margin:0 auto;
+  .login-logo{
+    margin-bottom:1.667rem;
+    text-align: center;
+  }
+  .el-button__block{
+    @include prefix(box-shadow, 2px 4px 12px 2px rgba($--color-primary, 0.45), webkit ms moz o);
+  }
+}
+.login-card{
+  width:440px;
+  .el-card__body{
+    padding:60px 50px 50px 50px !important;
+  }
+}
+.join-card{
+  width:540px;
+  .el-card__body{
+    padding:45px 50px !important;
+  }
+  .el-form-item__label{
+    width:100px;
+  }
+  .login-logo{
+    img{
+      width:112px;
+    }
+  }
+  .logo-tit{
+    margin-left:5px;
+    font-size:1.267rem;
+    font-weight: $font-weight-bold;
+  }
+  .el-textarea .el-textarea__inner{
+    height:100px;
+  }
+}
+.join-agree{
+  padding-bottom: 1.667rem;
+  margin-bottom:1.667rem;
+  border-bottom:1px solid $--border-color-light;
+  .el-textarea__inner{
+    padding:1rem;
+  }
+  &__term {
+    border: 1px solid $--border-color-light;
+    border-radius: 8px;
+    width:100%;
+    height: 205px !important;
+    padding: 12px 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+//
+//  Intro Page (연동 API 프로젝트)
+// --------------------------------------------------
+
+// 인트로 > 상단 배경 타이틀
+.bg-title-box{
+  height: 300px;
+  padding-top:70px;
+  background: #1d2a3f url("../img/bg_top_container.png") center center no-repeat;
+  color:$--color-white;
+  text-align: center;
+  background-size: cover;
+  .tit-ads{
+    font-size:2.2rem;
+  }
+  .total-project{
+    display: inline-block;
+    height: 55px;
+    padding: 0 28px;
+    margin:23px auto 0;
+    line-height: 51px;
+    background-color: desaturate($--color-primary, 15%);
+    border-radius: 50em;
+    &__label{
+      font-size:1.133rem;
+      color:rgba($--color-white, 0.8);
+    }
+    &__sum{
+      margin-left:3rem;
+      strong{
+        font-size: 1.6rem;
+      }
+      small{
+        margin-left:10px;
+        font-size: 1.067rem;
+        color:$--color-white;
+      }
+    }
+  }
+}
+
+// 인트로 > api 프로젝트 리스트
+.api-project {
+  &-item__list{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    flex-wrap: wrap;
+    &.align-center{
+      justify-content: center;
+    }
+    &.align-stack{
+      justify-content: flex-start;
+    }
+  }
+  &-item {
+    margin-bottom: 20px;
+    .el-card:hover{
+      transform: scale(.97, .97);
+    }
+    .el-card__body {
+      padding: 2rem !important;
+      min-height: 180px;
+    }
+
+    // 프로젝트 생성 카드
+    .add-api-project {
+      width: 100%;
+      text-align: center;
+      .add {
+        font-size: 1.133rem;
+        font-weight: $font-weight-bold;
+        color: $--color-primary;
+        &:before {
+          content: "\e913";
+          display: block;
+          width: 50px;
+          height: 50px;
+          margin: 0 auto 20px auto;
+          line-height: 50px;
+          background-color: lighten($--color-primary, 38%);
+          border-color: lighten($--color-primary, 38%);
+          font-family: xeicon;
+          text-align: center;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  // 프로젝트 생성 버튼 카드
+  &-item__default{
+    .el-card{
+      cursor:pointer;
+    }
+    .el-card__body{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+  // api 프로젝트 네임
+  &-name {
+    .kor {
+      font-size: 1.267rem;
+      font-weight: $font-weight-bold;
+      color: lighten($--color-black, 18%); //#2e2e2e
+    }
+    .id {
+      color: $--color-primary;
+      letter-spacing: 0.5px;
+    }
+  }
+  // api 관리버튼
+  &-controller {
+    margin-top: 2.2rem;
+    button {
+      i {
+        font-size: 1.267rem;
+      }
+    }
+  }
+}
+
+//
+//  UseTerms Style
+// --------------------------------------------------
+.terms_wrapper{
+  font-size: 13px;
+  line-height: 1.7;
+  color:lighten($--color-black,40%);
+  scroll-behavior: smooth;
+  strong{
+    font-weight: $font-weight-regular;
+  }
+  .tit_rule{
+    margin-top:2vh;
+    margin-bottom:5px;
+    font-size:14px;
+    color: lighten($--color-black,20%);
+    &.first{
+      margin-top:0;
+    }
+    &.st{
+      font-size:16px;
+      font-weight:$font-weight-bold;
+      color: $--color-black;
+      + .tit_rule{
+        margin-top:0;
+      }
+    }
+  }
+  .paragraph_rule{
+    margin-bottom:10px;
+  }
+  .list_rule{
+    &.first{
+      margin-top:10px;
+    }
+    &.last{
+      margin-bottom:10px;
+    }
+  }
+  .list_case{
+    padding-left:15px;
+  }
+}
+
+//
+//  API Template Style
+// --------------------------------------------------
+.template {
+  height: 100%;
+  margin:5%;
+
+  .title_box{
+    padding-top: 5%;
+  }
+
+  .lang-group {
+    margin-bottom: 30px;
+  }
+
+  .box {
+    font-size: 1.1em;
+
+    .active {
+      background: $--color-info;
+      color: $--color-white;
+    }
+  }
+
+  .form {
+    padding: 25px;
+    margin-top: 25px;
+    border: 1px solid $--border-color-base;
+
+    .template{
+      &-type{
+        margin-bottom: 20px;
+      }
+      &-form{
+        dt{
+          margin-bottom:10px;
+        }
+      }
+      &-preview{
+        height: 341px;
+        padding: 13px;
+        font-size: 14px;
+        color: $--color-text-regular;
+        border: 1px solid $--border-color-lighter;
+        overflow-y: scroll;
+        border-radius: $--border-radius-base;
+      }
+    }
+  }
+}
+
+
+//
+//  Selected Style-color
+// --------------------------------------------------
+.style-color{
+  position: relative;
+  padding-left:42px;
+  &:after{
+    display: block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    //background-color: #212226;
+    border:4px solid ;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__base:after{
+    border-color: #1369fa;
+  }
+
+  &__red:after{
+    border-color: #ff2951;
+  }
+
+  &__orange:after{
+    border-color: #f03613;
+  }
+
+  &__yellow:after{
+    border-color: #edc02c;
+  }
+
+  &__green:after{
+    border-color: #00d593;
+  }
+
+  &__indigo:after{
+     border-color: #193059;
+   }
+
+  &__purple:after{
+    border-color: #964ec2;
+  }
+
+  &__black:after{
+    border-color: #212226;
+  }
+}

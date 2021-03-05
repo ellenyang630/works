@@ -1,0 +1,51 @@
+// Pagination
+
+@mixin pagination-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  > li {
+    > a,
+    > span {
+      padding: $padding-vertical $padding-horizontal;
+      font-size: $font-size;
+      line-height: $line-height;
+
+      position: relative;
+      float: left;
+      height: 35px;
+      text-decoration: none;
+      color: $gray-9;
+      background-color: $white;
+      border: 1px solid $line-c;
+      margin-left: -1px;
+    }
+    &:first-child {
+      > a,
+      > span {
+        @include border-left-radius($border-radius);
+        background: $blue-light;
+        color: $white;
+        margin-right:10px;
+        border-color:$blue-light;
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        @include border-right-radius($border-radius);
+        background: $blue-light;
+        color: $white;
+        margin-left:10px;
+        border-color:$blue-light;
+      }
+    }
+
+    &.active{
+      a,
+      span{
+
+        color: $gray-3;
+        border:1px solid $gray-3;
+        margin-right:1px;
+      }
+    }
+  }
+}

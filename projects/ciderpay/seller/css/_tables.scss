@@ -1,0 +1,842 @@
+@charset "UTF-8";
+/* Tables */
+
+//
+// Tables
+// --------------------------------------------------
+
+
+table {
+  background-color: $table-bg;
+  width:100%;
+  background: $white;
+}
+caption {
+  padding-top: $table-cell-padding;
+  padding-bottom: $table-cell-padding;
+  color: $text-muted;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+
+
+// Baseline styles
+
+.tbInfo{
+  margin: 8px 0;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  /*margin-bottom: $line-height-computed;*/
+  border: 1px solid $line-c;
+  border-top: 2px solid $blue-light;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-cell-padding;
+        line-height: $line-height-base;
+        vertical-align: middle;
+        border-top: 1px solid $line-e;
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $table-border-color;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 2px solid $table-border-color;
+  }
+
+  // Nesting
+  .table {
+    background-color: $body-bg;
+  }
+}
+
+
+// Condensed table w/ half padding
+
+.table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: 1px solid $line-c;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $line-e;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      //border-bottom-width: 2px;
+    }
+  }
+
+
+
+  > thead{
+    th{
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom-color: $line-c;
+    }
+    th:first-child{
+      border-left-color: $line-c;
+    }
+    th:last-child{
+      border-right-color: $line-c;
+    }
+  }
+
+  > tbody {
+    td{
+      &:first-child{
+        border-left-color:$line-c;
+      }
+      &:last-child {
+        border-right-color:$line-c;
+      }
+    }
+    tr:last-child{
+      td{
+        border-bottom-color:$line-c;
+      }
+    }
+  }
+
+}
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: $table-bg-accent;
+  }
+}
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  > tbody > tr:hover {
+    background-color: $table-bg-hover;
+  }
+}
+
+
+// Table cell sizing
+//
+// Reset default table behavior
+
+table col[class*="col-"] {
+  position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+  float: none;
+  display: table-column;
+}
+table {
+  td,
+  th {
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+      float: none;
+      display: table-cell;
+    }
+  }
+}
+
+
+// Responsive tables
+//
+// Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+// by enabling horizontal scrolling. Only applies <768px. Everything above that
+// will display normally.
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: 100%;
+    margin-bottom: ($line-height-computed * 0.75);
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  /*  border: 1px solid $table-border-color;*/
+
+    // Tighten up spacing
+    > .table {
+      margin-bottom: 0;
+
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table-bordered {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+      // chances are there will be only one `tr` in a `thead` and that would
+      // remove the border altogether.
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+.tbList{
+  width:100%;
+  min-width:1000px;
+  border: 1px solid $line-c;
+  table-layout: inherit;
+  width:100%;
+
+  // tbList
+  &{
+    font-size:12px;
+
+    thead{
+      th{
+        padding: 7px 13px !important;
+        border-bottom: 1px solid $line-d;
+        //background-color: rgba($light-blue-sky, .2);
+        background: #fcfcfc;
+        font-size: 12px;
+        font-weight:600;
+        text-align: center;
+        color: $th-color;
+      }
+    }
+    tbody{
+      tr th,
+      td{
+        padding: 8px 11px !important;
+        border-bottom: 1px solid $line-e;
+        border-left:1px solid $line-e;
+        border-right:1px solid $line-e;
+        line-height: 1.4em;
+        letter-spacing: 0;
+        background: $white;
+        &:first-child{
+          border-left-color: $line-c;
+        }
+        &:last-child {
+          border-right-color: $line-c;
+        }
+      }
+      td{
+        //min-height: 120px;
+        text-align: center;
+        color: $gray-6;
+      }
+      tr{
+        &:last-child{
+          td{
+            border-bottom-color: $line-c;
+          }
+        }
+      }
+    }
+    td{
+      &.text-left {
+        padding-left: 15px;
+        text-align:left !important;
+      }
+      th,td{
+        white-space: nowrap;
+      }
+    }
+
+
+    //tbLIst.text-left
+    &.text-left{
+      th,
+      td{
+        text-align: left;
+      }
+      th{
+        color: #999;
+        background: #f9fafc;
+        border-right: 1px solid #ebeef3;
+      }
+
+      tbody{
+        th,
+        td{
+          padding: 15px 13px;
+        }
+        tr:nth-last-of-type{
+          th,
+          td{
+            border-bottom: 1px solid #c8c8c8;
+          }
+        }
+        .intTr{
+          th,
+          td{
+            padding: 6.5px 13px;
+          }
+        }
+      }
+    }
+
+    // For With input checkbox
+    .input_chk_wrap{
+      padding: 12px 10px !important;
+    }
+  }
+
+
+
+  // tbList2
+  &2{
+    font-size: 11px;
+    background: $white;
+
+
+    thead{
+      border:1px solid $line-c;
+    }
+    tbody{
+      tr{
+        height:79px;
+        line-height: 1.4em;
+        letter-spacing: 0;
+        border:1px solid $line-e;
+        &:first-child{
+          th,
+          td {
+            border-top: 1px solid $line-c;
+          }
+        }
+        &:last-child{
+          border-bottom: 1px solid $line-c;
+        }
+      }
+      th{
+        border-right:1px solid $line-c;
+        border-left:1px solid $line-c;
+        min-width: inherit;
+        padding: 8px 10px;
+        text-align:center;
+
+        &:first-child{
+          border-left: 1px solid $line-c;
+        }
+        img{
+          width:75%;
+        }
+      }
+
+      td{
+        padding: 8px 20px !important;
+        border-right: 1px solid $line-e;
+        cursor: pointer;
+        &:first-child{
+          border-left: 1px solid $line-c;
+        }
+
+        &:last-child{
+          border-right: 1px solid $line-c;
+          min-width: inherit;
+        }
+        &:hover,
+        &:active,
+        &:focus,
+        &.active{
+          background: $yellow-bg;
+            .tdtitle{
+            font-weight: 700;
+            color: $blue-sub;
+          }
+        }
+        .clearfix:last-child{
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  // 고정 높이 주기
+  & .height_lg{
+    th,
+    td{
+      height:125px;
+    }
+  }
+  & .height_md{
+    th,
+    td{
+      height:75px;
+    }
+  }
+  & .height_sm{
+    tr th,
+    th,
+    td{
+      padding: 6px 10px !important;
+    }
+  }
+}
+
+.notice_text{
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-align: left;width: 350px;
+  line-height: 25px;
+  height: 25px;
+}
+
+
+.notice_memo{
+  vertical-align: top;
+  min-height: 230px;
+  padding: 13px 0;
+}
+@media(max-width: 800px){
+  .notice_memo{
+    min-height: 100px;
+  }
+}
+.notice_file {
+  span{
+    margin-right: 20px;
+  }
+  a{
+    text-decoration: underline;
+  }
+  i{
+    font-size: 14px;
+  }
+}
+
+// 테이블 안 p 태그 (알림내역)
+.td_textBox{
+  p{
+    margin-top:5px;
+    color:$gray-3;
+    &:first-child{
+      margin-top:0;
+    }
+  }
+
+}
+
+
+.tbView{
+  tr:first-child{
+    th,td{border-top: 0px !important}
+  }
+  th{
+    background: $lwhite2;
+    border-right: 1px solid $line-e;
+  }
+  th, td{
+    padding: 13px 18px !important;
+  }
+  td + th {
+    border-left: 1px solid $line-e;
+  }
+  .tbdl{
+    dl{
+      display: table;
+      width: 100%;
+    }
+    dt, dd{
+      display: table-cell;
+      vertical-align: middle;
+      line-height: 1.8em;
+    }
+    dt{
+      width: 90px;
+      letter-spacing: -0.7px;
+      color: $th-color;
+    }
+  }
+  .inputdl{
+    dl{
+      margin-bottom: 3px;
+      &:last-child{
+        margin-bottom: 0px;
+      }
+    }
+  }
+  //small dl
+  .smdl{
+    dl{
+      margin-bottom: 6px;
+      &:last-child{
+        margin-bottom: 0px;
+      }
+    }
+    dt{
+      width: 200px;
+      color: inherit;
+    }
+  }
+}
+
+.stbBox{
+  width: 400px;
+  border: 1px solid $line-c;
+  thead *{
+    background: $line-e;
+    border-bottom: 1px solid $line-d;
+  }
+  th{
+    border-color: $line-d;
+  }
+  th,td{
+    padding: 6px 3px !important;
+    text-align: center;
+  }
+}
+
+@media(max-width: 800px){
+  .tbView{
+    tr:first-child{
+      th:nth-child(n+2){border-top: 1px solid $line-e !important}
+    }
+    td + th{
+      border-left: 0px !important;
+    }
+    th, td{
+      display: block;
+    }
+    th{
+      border-right: 0px !important;
+      padding-bottom: 0px !important;
+    }
+    td{
+      border-top: 0px !important;
+    }
+  }
+  .stbBox{
+    th, td{
+      display: table-cell;
+    }
+  }
+}
+
+
+
+
+// modal > tbList
+.modal-content{
+  .tbList{
+    min-width:740px;
+    thead{
+      th{
+        padding: 5px 3px;
+      }
+    }
+    tbody{
+      tr th,
+      td{
+        padding: 11px 10px;
+      }
+    }
+    .intTr{
+      th,
+      td{
+        padding: 3px 10px;
+      }
+    }
+  }
+  .tbView{
+    th{
+      color:#8b929e;
+    }
+    td{
+      color:$gray-6;
+      text-align:left;
+      .num{
+        color:$gray-3;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.table-lnline-th {
+  border: 1px solid $line-c;
+  background: $white;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $line-e;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      //border-bottom-width: 2px;
+    }
+  }
+
+
+  > thead{
+    th{
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom-color: $line-c;
+    }
+    th:first-child{
+      border-left-color: $line-c;
+    }
+    th:last-child{
+      border-right-color: $line-c;
+    }
+  }
+
+  > tbody {
+    > th{
+      border-right-color: $line-c;
+    }
+  }
+}
+
+// with INPUT TAG in table
+.intTr{
+  td{
+    padding: 6px !important;
+  }
+}
+
+
+
+@media(max-width: 800px){
+  .tbList{
+    th,td{
+      white-space: nowrap;
+    }
+  }
+}
+
+
+
+// 리스트 TD 안에 다중 리스트
+.multiTd{
+  width:100%;
+  &_Li{
+    display:table;
+    width: 100%;
+    margin-top: 5px;
+
+
+    &:first-child{
+      margin-top:0 !important;
+    }
+
+    &:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+    &Dt{
+      display: inline-block;
+      display:table-cell;
+      text-align:left;
+      color:#8b929e;
+    }
+    &Dd{
+      display: inline-block;
+      display:table-cell;
+      text-align:right;
+      color:#333;
+      strong{
+        font-weight: 600;
+      }
+    }
+  }
+
+  &.block{
+    .multiTd_Li{
+      margin-top:4px;
+    }
+    .multiTd_LiDt{
+      display: block;
+      margin-bottom: 2px;
+      text-align:center;
+    }
+    .multiTd_LiDd{
+      display: block;
+      text-align:center;
+      color: $gray-6;
+      word-break: keep-all;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    &.md{
+      min-width:120px;
+    }
+    &.lg{
+      min-width:200px;
+    }
+
+  }
+}
+
+// noData
+.no_data{
+  min-height:150px;
+  padding:50px 0;
+  i{
+    font-size:19px;
+    color: $th-color;
+    margin-bottom:10px;
+    font-weight: 600;
+  }
+}
+
+
+// 알림내역 리스트 읽음/읽지않음 표시
+.unread{
+  th,
+  td,
+  *{
+    color:$black !important;
+  }
+}
+.read{
+  th,
+  td,
+  *{
+    color:$gray-9 !important;
+  }
+}
+
+
+// 캘린더 상세 팝업
+.tbPopList{
+  tbody{
+    th,
+    td{
+      padding:10px 6px;
+      border-bottom: 1px solid $line-e;
+    }
+    th{
+      font-size:12px;
+      color: $gray-6;
+      .popTh{
+        position: relative;
+        &:before{
+          content:"";
+          display: inline-block;
+          width:5px;
+          height:5px;
+          margin-right:6px;
+          background: $bluegray;
+          //position: absolute;
+          //top: 50%;
+          transform: translateY(-50%);
+
+        }
+      }
+    }
+    td{
+      text-align: right;
+    }
+
+    tr{
+      &:last-child{
+        th,
+        td{
+          border-bottom:none;
+        }
+      }
+    }
+  }
+}
