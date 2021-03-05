@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="inc/header_inner.jsp"/>
+<? include "inc/header_inner.html"; ?>
 
 <div class="page-header">
         <div class="page-title">
@@ -342,7 +342,7 @@
             <article class="card sm card-col__deck">
                 <div class="card-header">
                     <h4 class="card-title">공지사항</h4>
-                    <a href="list_notice.jsp" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
+                    <a href="list_notice.html" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
                 </div>
                 <div class="card-body">
                     <ul class="bbs-latest">
@@ -383,7 +383,7 @@
             <article class="card sm card-col__deck">
                 <div class="card-header">
                     <h4 class="card-title">자주묻는질문</h4>
-                    <a href="list_faq.jsp" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
+                    <a href="list_faq.html" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
                 </div>
                 <div class="card-body">
                     <ul class="bbs-latest">
@@ -470,7 +470,7 @@
 
     <button type="button" class="btn-open-payment" title="결제요청 바로하기"><i class="xi-pen"></i></button>
 
-<jsp:include page="inc/footer.jsp"/>
+<? include "inc/footer.html.html"; ?>
 
 
 <!-- bootstrap date -->
