@@ -1,0 +1,491 @@
+@charset "UTF-8";
+
+.cancel_list {
+  background: $red_a;
+  * {
+    color: $gray-9;
+  }
+}
+.fin_list {
+  background: $green_a;
+}
+.disabled_list {
+  background: rgba($base, 0.05);
+}
+.active_list{
+  background: #fffae0;
+}
+
+
+
+
+table {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  background: $white;
+  font-size: 13px;
+  .btn {
+    position: relative;
+    letter-spacing: -0.5px;
+  }
+  th, td {
+    word-break: break-all;
+  }
+  .num {
+    font-size: 1.1em;
+    position: relative;
+    top: -0.5px;
+  }
+  .no_data {
+    height: 200px;
+    display: table;
+    width: 100%;
+    color: $gray-9;
+    .inn {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+    i {
+      font-size: 1.7em;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  min-height: 0.01%;
+  font-size: 13.5px;
+}
+
+@media screen and (max-width: 1023px) {
+  .table-responsive {
+    width: 100%;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  .table-responsive > .table > thead > tr > th, .table-responsive > .table > tbody > tr > th, .table-responsive > .table > tfoot > tr > th, .table-responsive > .table > thead > tr > td, .table-responsive > .table > tbody > tr > td, .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  table {
+    table-layout: inherit;
+  }
+  table td, table th {
+    font-size: 0.9em;
+  }
+}
+
+.thead {
+  margin-bottom: 10px;
+  height: 30px;
+  .thead_total {
+    line-height: 30px;
+  }
+  .theadRight {
+    display: table;
+    .thead_select, .thead_btn {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .thead_btn {
+      padding-left: 13px;
+    }
+  }
+  .thead_info {
+    line-height: 30px;
+    color:$gray-6;
+  }
+}
+
+.tbList {
+  border: 1px solid $line-dark;
+  border-top: 2px solid $gray-9;
+  thead {
+    th {
+      color: $gray-9;
+      padding: 8px 10px;
+      border-bottom: 1px solid $line-light;
+      background-color: $white-lgray;
+      font-size: 12px;
+      text-align: center;
+    }
+    .th_inRow{
+      th{
+        padding: 4px 10px;
+      }
+    }
+    .th_cate{
+      th{
+        color:$black;
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $line-light;
+      &:last-child {
+        border-bottom-width: 0;
+      }
+      // 예약현황 색상 조정
+      &.tr_time{
+        height:87px;
+      }
+      &.tr_now{
+        th{
+          border:2px solid $green;
+          font-size: 16px;
+          color:$green;
+          .i_icon{
+            color:$green;
+          }
+        }
+        td{
+          background: rgba($green, 0.07);
+        }
+        &:last-child{
+          border-bottom-width: 0;
+        }
+      }
+    }
+    th, td {
+      padding: 10px 13px;
+      line-height: 1.4em;
+      letter-spacing: 0px;
+      border-right: 1px solid $white-gray;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td {
+      text-align: center;
+    }
+  }
+  .btnBox {
+    vertical-align: middle;
+    span {
+      display: block;
+      width: 90px;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  &.bdt0{
+    border-width:0;
+    border-bottom-width:1px;
+    tbody{
+      th{
+        vertical-align: middle;
+      }
+    }
+  }
+}
+.cardText .tbList{
+  border-width: 0;
+}
+
+.tbOpt {
+  tr {
+    border-bottom: 1px solid $white-gray;
+  }
+  th {
+    text-align: left;
+    width: 130px;
+    background: $white-lgray;
+    border-right: 1px solid $line-light;
+    font-weight: $font-weight-base;
+    position: relative;
+
+    small {
+      display: block;
+    }
+  }
+  th, td {
+    padding: 10px 13px;
+  }
+  input, select {
+    width: 100%;
+  }
+  thead tr {
+    border-bottom: 1px solid $line-light;
+    th {
+      background: #fffae0;
+    }
+    th:last-child {
+      border-right: 0;
+    }
+  }
+  .thSwitch {
+    margin-top: 8px;
+  }
+}
+
+@media(max-width: 800px) {
+  .tbOpt {
+    th, td {
+      display: block;
+      width: 100%;
+      background: $white;
+    }
+    tbody th {
+      padding-bottom: 0px;
+      border: 0;
+      small {
+        display: inline;
+      }
+    }
+  }
+
+  .thSwitch {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -3px;
+    right: 13px;
+  }
+}
+.modal {
+  .tbOpt{
+    tr:first-child{
+      th, td{
+        border-top:1px solid $line-light;
+      }
+    }
+  }
+}
+
+.tgGroup, .tgGroup2 {
+  display: table;
+  width: 100%;
+  span {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .intAmong {
+    text-align: center;
+    color: $gray-9;
+    vertical-align: middle;
+    padding: 0 3px;
+  }
+}
+
+.tgGroup {
+  .btn {
+    width: 100%;
+  }
+  span:first-child {
+    width: calc(100% - 100px);
+  }
+  span:last-child {
+    padding-left: 10px;
+    width: 90px;
+  }
+}
+
+.dlBox {
+  tbody {
+    th, td {
+      vertical-align: top;
+    }
+  }
+
+  dl {
+    display: table;
+    width: 100%;
+    margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    dt, dd {
+      display: table-cell;
+      vertical-align: top;
+    }
+    dt {
+      text-align: left;
+      color: $gray-9;
+      min-width: 65px;
+    }
+    dd {
+      text-align: right;
+    }
+  }
+  .pinfo {
+    color: $gray-9;
+    display: block;
+  }
+}
+
+.opDlBox {
+  dt {
+    color: $gray-9;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  dd {
+    margin-top: 6px;
+  }
+  border-top: 1px solid $white-gray;
+  padding-top: 8px;
+  margin-top: 8px;
+  &:first-child {
+    padding-top: 0px;
+    border-top: 0px;
+    margin-top: 0px;
+  }
+}
+
+.opDlTT{
+  max-width: 350px;
+}
+.opDlTTop {
+  position: absolute;
+  top: -3px;
+  right: 0px;
+}
+
+.opDlColBox {
+  margin-top: 10px;
+  display: table;
+  width: 100%;
+  dl {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  dt, dd {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  dt {
+    min-width: 100px;
+    color: $gray-6;
+    letter-spacing: -1px;
+  }
+  dd {
+    width: 250px;
+    padding-left: 6px;
+    &:first-child {
+      padding-left: 0px;
+    }
+  }
+}
+
+.opDlDate {
+  max-width: 350px;
+  border: 1px solid $line-dark;
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  label, .int, em {
+    float: left;
+    display: inline-block;
+    text-align: center;
+  }
+  label{
+    width: 15%;
+    line-height: 32px;
+    color: $gray-6;
+  }
+  em{
+    width: 10%;
+    line-height: 32px;
+    color: $gray-9;
+  }
+  .int{
+    width: 30%;
+    border:0;
+    cursor: pointer;
+  }
+}
+
+/* pagination */
+.pagBox {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.pagination {
+  display: table;
+  text-align: center;
+  padding-left: 0;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 1px solid $line-dark;
+}
+
+.pagination > li {
+  display: inline;
+}
+
+.pagination > li > a, .pagination > li > span {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 12px;
+  text-decoration: none;
+  color: $gray-9;
+  background-color: $white;
+  margin-left: -1px;
+}
+
+.pagination .arrow {
+  font-size: 1.2em;
+  font-weight: $font-weight-exbold;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+  z-index: 2;
+  color: $green;
+  background-color: $green_a;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  z-index: 3;
+  color: $white;
+  background-color: $green;
+  cursor: default;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  color: $gray-9;
+  background-color: $white;
+  border-color: $line-dark;
+  cursor: not-allowed;
+}

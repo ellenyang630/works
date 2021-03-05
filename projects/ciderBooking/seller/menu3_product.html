@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=IE9" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- IE edge link 막기  -->
+    <title>사이다예약</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/IE9.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/line-awesome.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/lnb.js" type="text/javascript"></script>
+    <script src="js/design.js" type="text/javascript"></script>
+
+    <!-- calendar &datepicker -->
+    <link rel='stylesheet' href='css/bootstrap-datetimepicker.min.css'>
+    <script src='js/calendar/moment.min.js'></script>
+    <script src='js/calendar/moment-locale-ko.js'></script>
+    <script src='js/calendar/bootstrap-datetimepicker.js'></script>
+</head>
+<body>
+<div id="header" class="clearfix">
+    <div class="ltnav_btn web">
+        <div class="inner">
+            <i class="la la-bars"></i>
+        </div>
+    </div>
+    <div class="ltnav_btn mb active">
+        <div class="inner">
+            <i class="la la-bars"></i>
+        </div>
+    </div>
+    <div class="utilWrap toparea clearfix">
+        <div class="utilHello">
+            <strong><i class="la la-clock-o"></i> cider_reserve</strong>님, 안녕하세요.
+            <span><em>접속시간</em>2019-11-11 11:22:11</span>
+        </div>
+        <div class="utilBox">
+            <ul class="userMenu group">
+                <li class="alarm active">
+                    <a href="#">
+                        <i class="la la-bell"></i>
+                        <em></em>
+                    </a>
+                </li>
+                <li class="mypage">
+                    <a href="#"><i class="la la-user"></i></a>
+                </li>
+                <li class="logout">
+                    <a href="#"><i class="la la-sign-out"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--#header-->
+<div id="content_wrap" class="clearfix">
+    <div id="ltnav" class="lnb">
+        <div class="logoBox">
+            <h1><a href="menu1_book.html"><img src="images/logo.png" alt="사이다예약"></a></h1>
+        </div>
+        <div id="cssmenu">
+            <ul>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-calendar-check-o"></i> 예약관리</span></a>
+                    <ul>
+                        <li>
+                            <a href="menu1_book.html"><span>예약현황 요약</span></a>
+                        </li>
+                        <li>
+                            <a href="menu1_list.html"><span>예약현황 리스트</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>예약현황 상세보기</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-archive"></i> 판매관리</span></a>
+                    <ul>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>요금/재고관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="menu2_price.html"><span>요금설정</span></a>
+                                </li>
+                                <li>
+                                    <a href="menu2_stock.html"><span>재고설정</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>결제현황</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>판매현황</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-cog"></i> 서비스설정</span></a>
+                    <ul>
+                        <li>
+                            <a href="menu3_option.html"><span>업체정보 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="menu3_info.html"><span>예약정보 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="menu3_product.html"><span>예약상품 설정</span></a>
+                        </li>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>SMS 설정</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span>문자충전</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>문자발송내역</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-bar-chart"></i> 매출관리</span></a>
+                    <ul>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>정산현황</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span>월별 정산</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>기간별 정산</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>매출통계</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>정산정보설정</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-comment"></i> 커뮤니티</span></a>
+                    <ul>
+                        <li>
+                            <a href="#"><span>공지사항</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>FAQ</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>문의하기</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//cssmenu-->
+        <div class="csInfo">
+            <p class="cs_tt"><i class="la la-headphones"></i> 고객상담센터</p>
+            <p class="cs_tel">1544-6893</p>
+            <p class="cs_time">평일 오전 9시 ~ 오후 6시</p>
+        </div>
+    </div>
+    <!--//ltnav-->
+    <div id="content">
+        <div id="table-fixed">
+
+            <div id="content_inner">
+
+
+                <div class="title_box clearfix">
+                    <div class="ttBox">
+                        <h2>예약상품 설정</h2>
+                        <h3>예약사이트 운영에 필요한 영업정보를 설정합니다.
+                        </h3>
+                    </div>
+                    <div class="location">
+                        <ul class="clearfix">
+                            <li class="first">
+                                <a href="#"><i class="la la-home"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">서비스설정</a>
+                            </li>
+                            <li>
+                                <strong class="active">예약상품설정</strong>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--//.location-->
+                </div>
+                <!--//.title_box-->
+
+                <div class="tabGroup col_4">
+                    <div class="centerThis group">
+                        <a href="/cider_booking_seller/menu3_product.html" class="active">상품 설정</a>
+                        <a href="/cider_booking_seller/menu3_product2.html">일정/회차 설정</a>
+                        <a href="/cider_booking_seller/menu3_product3.html">가격 설정</a>
+                        <a href="/cider_booking_seller/menu3_product4.html">옵션 설정</a>
+                    </div>
+                </div>
+                <!--// tabGroup -->
+
+                <div class="cardBox">
+                    <div class="cardTT">
+                        <h2>상품 설정 </h2>
+                        <small>예약상품의 상세정보를 작성합니다. 작성된 정보는 고객이 예약하는 화면에 그대로 노출됩니다. </small>
+                    </div>
+                    <div class="cardText">
+                        <table class="tbOpt">
+                            <tbody>
+                            <tr>
+                                <th>상품 이미지<small>(선택)</small></th>
+                                <td>
+                                    <div class="fileUpload goods fileWrap">
+                                        <dl class="clearfix">
+                                            <dd>
+                                                <div class="goodsImgWrap">
+                                                    <label for="goodsImg2">
+                                                        <input type="file" id="goodsImg2" name="imgFile" class="up-goods-file">
+                                                        <img id="goodsImg_img2" class="up-img"
+                                                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OTICsMm2P43N-umlO7MAgqLTODED7eFEDaHhg6GE3OwFTCvW">
+                                                    </label>
+                                                    <div class="delFile">
+                                                        <i class="la la-close"></i>
+                                                    </div>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="fileInfo">
+                                        - 20MB , 1242 * 1242 권장<br/>
+                                        - [삭제]: 등록된 이미지 우측상단  x 버튼 클릭 시, 삭제가 가능합니다.<br/>
+                                        - [미리 보기] : 등록된 이미지 썸네일 클릭 시, 미리 보기가 가능합니다.
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상품명</th>
+                                <td><input type="text" class="int" placeholder="상품명을 입력해 주세요.">
+                                    <p class="text-right">
+                                        <small><strong>55</strong>/20자 이내</small>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상품 설명<small>(선택)</small></th>
+                                <td><textarea class="int hsInt"></textarea>
+                                    <p class="text-right">
+                                        <small><strong>55</strong>/200자 이내</small>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>예약 가능 개수</th>
+                                <td>
+                                    <dl class="opDlBox">
+                                        <dt>
+                                            예약진행 시, 최소 예약 건 수는 기본 1건 이상이며, 최대 1인이 예약할 수 있는 건 수도 설정할 수 있습니다.
+                                        </dt>
+                                    </dl>
+                                    <div class="opDlColBox">
+                                        <dl>
+                                            <dt>최소 예약 건수
+                                            </dt>
+                                            <dd><input type="text" class="int wsInt"></dd>
+                                            <dt>최대 예약 건수
+                                            </dt>
+                                            <dd><input type="text" class="int wsInt"></dd>
+                                        </dl>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>예약 시 주의사항<small>(선택)</small></th>
+                                <td>
+                                    <dl class="opDlBox">
+                                        <dt>
+                                            등록된 내용은 고객이 예약진행 시, 확인 창으로 안내됩니다. 등록된 별도의 내용이 없을 경우, 확인 창 없이 바로 예약이 진행됩니다.
+                                        </dt>
+                                        <dd>
+                                            <textarea class="int hsInt" placeholder="주의사항을 입력해 주세요."></textarea>
+                                            <p class="text-right">
+                                                <small><strong>55</strong>/200자 이내</small>
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="btnArea clearfix">
+                <span> <a href="#" class="btn btn-md">취소</a> </span>
+                <span> <a href="#" class="btn btn-md bgreen">저장</a> </span>
+            </div>
+
+
+        </div>
+        <!--//#content_inner-->
+    </div>
+    <!--//#table-fixed-->
+    <div id="footer">
+        <p>
+            copyright ⓒ SSODA All right reserved.
+        </p>
+    </div>
+    <!--//#footer-->
+</div>
+<!--//#content-->
+</div>
+<!--//#content_wrap-->
+<div class="modal-container">
+    <!-- 휴무일 직접 설정 -->
+    <transition name="modal" class="modal" id="setHolidayDir">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">휴무일 직접 설정</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('setHolidayDir')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+                        <p class="text-info first">* 한번 클릭하여 선택한 일자를 휴무일로 설정할 수 있습니다.</p>
+                        <div class="datePicker-wrap">
+                            캘린더 추가
+                        </div>
+
+                        <div class="cellLayout">
+                            <dl>
+                                <dt class="date2">선택된 일자</dt>
+                                <dd>
+                                    <div class="mem_tagGroup">
+                                        <span class="mem_tag">9/21(토)<button type="button" class="remove"><i class="la la-times" aria-hidden="true"></i></button></span>
+                                        <span class="mem_tag">9/29(토)<button type="button" class="remove"><i class="la la-times" aria-hidden="true"></i></button></span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!--// cellLayout -->
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md">계속 입력</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">저장</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 요일별 운영회차 설정 -->
+    <transition name="modal" class="modal" id="setHolidayByDay">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">요일별 운영회차 설정</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('setHolidayByDay')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+
+
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker({
+                                    inline: true,
+                                    sideBySide: true,
+                                    format: 'mm:hh:ii a',
+                                    minDate: moment()
+                                });
+                            });
+                        </script>
+
+                        <div class="timePicker-wrap">
+                            <div id="datetimepicker1"></div>
+                        </div>
+
+                        <div class="input_chk first">
+                            <input type="checkbox" id="applyAllDay" name="applyAllDay" value="true">
+                            <label for="applyAllDay">모든 요일 동일 회차 적용</label>
+                        </div>
+                        <!--// input_chk -->
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md">계속 입력</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">저장</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 일자별 운영회차 설정 -->
+    <transition name="modal" class="modal" id="setHolidayByDate">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">일자별 운영회차 설정</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('setHolidayByDate')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+
+
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker2').datetimepicker({
+                                    inline: true,
+                                    sideBySide: true,
+                                    format: 'mm:hh:ii a',
+                                    minDate: moment(),
+                                    icons: {
+                                        up: 'la la-angle-up',
+                                        down: 'la la-angle-down',
+                                        previous: 'la la-angle-left',
+                                        next: 'la la-angle-right'
+                                    },
+                                });
+                            });
+                        </script>
+
+                        <div class="timePicker-wrap">
+                            <div id="datetimepicker2"></div>
+                        </div>
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md">계속 입력</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">저장</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 가격정보 설정 -->
+    <transition name="modal" class="modal sm" id="addPriceInfo">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">가격정보 설정</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('addPriceInfo')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+                        <table class="tbOpt">
+                            <tr>
+                                <th>
+                                    <label for="typeName">분류명</label>
+                                </th>
+                                <td><input type="text" class="int" id="typeName" value="" placeholder="" ></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="price">가격</label>
+                                </th>
+                                <td><input type="text" class="int" id="price" value="" placeholder="" ></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="priceExp">가격설명</label>
+                                </th>
+                                <td><input type="text" class="int" id="priceExp" value="" placeholder="" ></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="priceExp">적용구분</label>
+                                </th>
+                                <td>
+                                    <select class="int">
+                                        <option disabled selected>선택하세요.</option>
+                                        <option value="">주중(영업일 기준)</option>
+                                        <option value="">주말(영업일 기준)</option>
+                                        <option value="">매일 동일하게</option>
+                                        <option value="">특정일 적용</option>
+                                    </select>
+
+                                    <div class="tgGroup mgt10">
+                                        <div class="int_date"><input type="text" class="int" readonly="" placeholder="2019-11-22"></div>
+                                        <span><a href="#" class="btn btn-sm lgreen">추가</a></span>
+                                    </div>
+
+                                    <div class="mem_tagGroup mgt5">
+                                        <span class="mem_tag">8/5 (토)<button type="button" class="remove"><i class="la la-times" aria-hidden="true"></i></button></span>
+                                        <span class="mem_tag">8/5 (토)<button type="button" class="remove"><i class="la la-times" aria-hidden="true"></i></button></span>
+                                        <span class="mem_tag">8/5 (토)<button type="button" class="remove"><i class="la la-times" aria-hidden="true"></i></button></span>
+                                        <span class="mem_tag">8/5 (토)<button type="button" class="remove"><i class="la la-times" aria-hidden="true"></i></button></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--// cellLayout -->
+                        <p class="text-info">* 수정된 정보는 저장된 후에 예약 건부터 적용됩니다.</p>
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md">계속 입력</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">저장</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 재고 설정 -->
+    <transition name="modal" class="modal" id="uploadStock">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">재고 설정</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('uploadStock')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+                        <table class="tbOpt">
+                            <tr>
+                                <th>
+                                    <label for="stock">재고</label>
+                                </th>
+                                <td>
+                                    <dl class="opDlBox">
+                                        <dd>
+                                            <input type="number" class="int w80Int" id="stock" min="0" placeholder="0" value="">  대
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--// cellLayout -->
+                        <div class="text-info">
+                            <div class="input_chk first">
+                                <input type="checkbox" id="applyDay" name="applyDay" value="true">
+                                <label for="applyDay">해당일 전체 적용 (모든 가격구분에 동일하게 적용)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="button" class="btn btn-md" onclick="fnHidePop('uploadStock')">취소</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">확인</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 재고 일괄등록 -->
+    <transition name="modal" class="modal" id="uploadAllStock">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">재고 일괄등록</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('uploadAllStock')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+                        <table class="tbOpt">
+                            <tr>
+                                <th>
+                                    <label for="stock">재고</label>
+                                </th>
+                                <td>
+                                    <dl class="opDlBox">
+                                        <dd>
+                                            <input type="number" class="int w80Int" id="stock" min="0" placeholder="0" value="">  대
+                                        </dd>
+                                    </dl>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--// cellLayout -->
+                        <p class="text-info">* 9/23(월) ~9/29(일)까지 동일한 재고로 설정됩니다.</p>
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="button" class="btn btn-md" onclick="fnHidePop('uploadAllStock')">취소</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">확인</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 이용완료처리 -->
+    <transition name="modal" class="modal md" id="setUseFin">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container simple-modal">
+                    <div class="modal-body">
+                        <div class="modal-alert">
+                            <div class="inn_i_back">
+                                <p class="alert-txt">이용완료 처리하시겠습니까?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// modal-body -->
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md bgreen" onclick="fnHidePop('setUseFin')">확인</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 예약취소 -->
+    <transition name="modal" class="modal md" id="cancleBooking">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container simple-modal">
+                    <div class="modal-body">
+                        <div class="modal-alert">
+                            <div class="inn_i_back">
+                                <p class="alert-txt">예약을 취소하시겠습니까?</p>
+                                <p class="alert-subtxt">
+                                    해당 건은 취소/환불규정에 따라 결제금액의 50%만 환불됩니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// modal-body -->
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="button" class="btn btn-md" onclick="fnHidePop('cancleBooking')">취소</button> </span>
+                            <span> <button type="submit" class="btn btn-md bgreen">확인</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 관리자 직접예약 -->
+    <transition name="modal" class="modal md" id="bookingByAdmin">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <p class="modal-tt">관리자 직접예약</p>
+                        <button type="button" class="modal-close" onclick="fnHidePop('bookingByAdmin')">팝업닫기</button>
+                    </div>
+                    <!--// modal-header -->
+
+                    <div class="modal-body">
+                        <div class="cardBox first">
+                            <div class="cardTT">
+                                <h2>예약정보 (N2019091012)</h2>
+                            </div>
+                            <div class="cardText">
+                                <table class="tbOpt">
+                                    <tbody>
+                                    <tr>
+                                        <th>예약일자 선택</th>
+                                        <td>
+                                            <div class="int_date"><input type="text" readonly="" placeholder="2019-11-22" class="int"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>이용회차 선택</th>
+                                        <td>
+                                            <select class="int">
+                                                <option disabled selected>선택하세요.</option>
+                                                <option>10:30</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>가격/수량 선택</th>
+                                        <td>
+                                            <div class="cellLayout">
+                                                <dl>
+                                                    <dt class="date">주중 2인승 <small>(잔여 49대)</small></dt>
+                                                    <dd class="text-right">25,000 원</dd>
+                                                    <dd class="inBtn">
+                                                        <div class="number-group">
+                                                        <span class="input-group-btn" onclick="">
+                                                            <button type="button" class="btn btn-default btn-number btn-minus">
+                                                                <i class="la la-minus"></i>
+                                                            </button>
+                                                        </span>
+                                                            <input type="number" class="int" min="0" max="9999999" step="1" value="0" readonly="">
+                                                            <span class="input-group-btn" onclick="">
+                                                            <button type="button" class="btn btn-default btn-number btn-plus">
+                                                                <i class="la la-plus"></i>
+                                                            </button>
+                                                        </span>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt class="date">주중 4인승 <small>(잔여 49대)</small></dt>
+                                                    <dd class="text-right">38,000 원</dd>
+                                                    <dd class="inBtn">
+                                                        <div class="number-group">
+                                                        <span class="input-group-btn" onclick="">
+                                                            <button type="button" class="btn btn-default btn-number btn-minus">
+                                                                <i class="la la-minus"></i>
+                                                            </button>
+                                                        </span>
+                                                            <input type="number" class="int" min="0" max="9999999" step="1" value="0" readonly="">
+                                                            <span class="input-group-btn" onclick="">
+                                                            <button type="button" class="btn btn-default btn-number btn-plus">
+                                                                <i class="la la-plus"></i>
+                                                            </button>
+                                                        </span>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <!--// cellLayout -->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="clearfix totalBox">
+                            <div class="pull-left tdtitle">
+                                총 결제금액
+                            </div>
+                            <div class="pull-right">
+                                <p class="price_txt md">
+                                    <strong class="">63,000</strong><small>원</small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="cardBox">
+                            <div class="cardTT">
+                                <h2>예약자정보</h2>
+                            </div>
+                            <div class="cardText">
+                                <table class="tbOpt">
+                                    <tbody>
+                                    <tr>
+                                        <th>
+                                            <em class="im_bullet">*</em>
+                                            예약자
+                                        </th>
+                                        <td><input type="text" class="int"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <em class="im_bullet">*</em>
+                                            연락처
+                                        </th>
+                                        <td><input type="text" class="int"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>이메일</th>
+                                        <td>
+                                            <div class="tgGroup2">
+                                                <span><input type="text" class="int"></span>
+                                                <span class="intAmong">@</span>
+                                                <span><select class="int"><option>선택하세요.</option></select></span>
+                                            </div>
+                                            <input type="text" class="int int_plus">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <p class="text-info">
+                            * 고객이 예약내역을 확인할 때, 휴대전화번호 뒷 4자리를 입력하여 확인 할 수 있습니다.
+                        </p>
+                        <div class="text-info">
+                            <div class="input_chk first">
+                                <input type="checkbox" id="chkSendSms" name="chkSendSms" value="true">
+                                <label for="chkSendSms">예약과 함께 고객에게 예약이용에 대한 안내문자를 발송합니다.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// modal-body -->
+
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md bgreen" onclick="fnShowPop('FinBooking')">확인</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+
+    <!-- 예약완료 -->
+    <transition name="modal" class="modal md" id="FinBooking">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container simple-modal">
+                    <div class="modal-body">
+                        <div class="modal-alert">
+                            <div class="inn_i_back">
+                                <p class="alert-txt">예약이 완료되었습니다.</p>
+                                <p class="alert-subtxt">
+                                    고객이 금일 자정까지(00:00) 결제를 완료하지 않는 경우,<br/> 예약이 자동으로 취소됩니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// modal-body -->
+                    <div class="modal-footer">
+                        <div class="btnArea clearfix">
+                            <span> <button type="submit" class="btn btn-md bgreen" onclick="fnHidePop('FinBooking')">확인</button> </span>
+                        </div>
+                    </div>
+                    <!--// modal-footer -->
+                </div>
+                <!--// modal-container -->
+            </div>
+            <!--// modal-wrapper -->
+        </div>
+    </transition>
+</div>
+
+</body>
+</html>

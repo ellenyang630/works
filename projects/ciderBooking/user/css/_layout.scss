@@ -321,9 +321,15 @@ strong,.strong{
   }
 
 
-  @media (max-width:320px){
+  @media (max-width:375px){
     &{
-      padding:10px;
+      height:47px;
+      padding: 14px 0;
+      .logo{
+        width:110px;
+        height:19px;
+        background-size: 110px 19px;
+      }
     }
   }
 }
@@ -912,6 +918,13 @@ strong,.strong{
       color:$light-gray;
       transform: translateY(0.15em);
     }
+    small{
+      margin-left:5px;
+      font-size: 12.5px !important;
+      font-weight: 400;
+      color:$gray-6;
+    }
+
   }
   .data{
     width: 100%;
@@ -979,6 +992,15 @@ strong,.strong{
     }
   }
 }
+// 가격/수량 선택
+.inline_mobile {
+  .inline_form {
+    .label {
+      min-width: 120px;
+    }
+  }
+}
+
 
 @media (max-width:425px) {
 

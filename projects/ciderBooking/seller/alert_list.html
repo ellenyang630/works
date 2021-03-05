@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=IE9" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- IE edge link 막기  -->
+    <title>사이다예약</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/IE9.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/line-awesome.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/lnb.js" type="text/javascript"></script>
+    <script src="js/design.js" type="text/javascript"></script>
+
+    <!-- calendar &datepicker -->
+    <link rel='stylesheet' href='css/bootstrap-datetimepicker.min.css'>
+    <script src='js/calendar/moment.min.js'></script>
+    <script src='js/calendar/moment-locale-ko.js'></script>
+    <script src='js/calendar/bootstrap-datetimepicker.js'></script>
+</head>
+<body>
+<div id="header" class="clearfix">
+    <div class="ltnav_btn web">
+        <div class="inner">
+            <i class="la la-bars"></i>
+        </div>
+    </div>
+    <div class="ltnav_btn mb active">
+        <div class="inner">
+            <i class="la la-bars"></i>
+        </div>
+    </div>
+    <div class="utilWrap toparea clearfix">
+        <div class="utilHello">
+            <strong><i class="la la-clock-o"></i> cider_reserve</strong>님, 안녕하세요.
+            <span><em>접속시간</em>2019-11-11 11:22:11</span>
+        </div>
+        <div class="utilBox">
+            <ul class="userMenu group">
+                <li class="alarm active">
+                    <a href="#">
+                        <i class="la la-bell"></i>
+                        <em></em>
+                    </a>
+                </li>
+                <li class="mypage">
+                    <a href="#"><i class="la la-user"></i></a>
+                </li>
+                <li class="logout">
+                    <a href="#"><i class="la la-sign-out"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--#header-->
+<div id="content_wrap" class="clearfix">
+    <div id="ltnav" class="lnb">
+        <div class="logoBox">
+            <h1><a href="menu1_book.html"><img src="images/logo.png" alt="사이다예약"></a></h1>
+        </div>
+        <div id="cssmenu">
+            <ul>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-calendar-check-o"></i> 예약관리</span></a>
+                    <ul>
+                        <li>
+                            <a href="menu1_book.html"><span>예약현황 요약</span></a>
+                        </li>
+                        <li>
+                            <a href="menu1_list.html"><span>예약현황 리스트</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>예약현황 상세보기</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-archive"></i> 판매관리</span></a>
+                    <ul>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>요금/재고관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="menu2_price.html"><span>요금설정</span></a>
+                                </li>
+                                <li>
+                                    <a href="menu2_stock.html"><span>재고설정</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>결제현황</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>판매현황</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-cog"></i> 서비스설정</span></a>
+                    <ul>
+                        <li>
+                            <a href="menu3_option.html"><span>업체정보 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="menu3_info.html"><span>예약정보 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="menu3_product.html"><span>예약상품 설정</span></a>
+                        </li>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>SMS 설정</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span>문자충전</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>문자발송내역</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-bar-chart"></i> 매출관리</span></a>
+                    <ul>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>정산현황</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span>월별 정산</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>기간별 정산</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>매출통계</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>정산정보설정</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-comment"></i> 커뮤니티</span></a>
+                    <ul>
+                        <li>
+                            <a href="#"><span>공지사항</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>FAQ</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>문의하기</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//cssmenu-->
+        <div class="csInfo">
+            <p class="cs_tt"><i class="la la-headphones"></i> 고객상담센터</p>
+            <p class="cs_tel">1544-6893</p>
+            <p class="cs_time">평일 오전 9시 ~ 오후 6시</p>
+        </div>
+    </div>
+    <!--//ltnav-->
+    <div id="content">
+        <div id="table-fixed">
+
+            <div id="content_inner">
+
+
+
+            <div class="title_box clearfix">
+    <div class="ttBox">
+        <h2>알림내역</h2>
+    </div>
+    <div class="location">
+        <ul class="clearfix">
+            <li class="first">
+                <a href="#"><i class="la la-home"></i></a>
+            </li>
+            <li>
+                <strong class="active">알림내역</strong>
+            </li>
+        </ul>
+    </div>
+    <!--//.location-->
+</div>
+<!--//.title_box-->
+
+
+<div class="thead clearfix">
+    <div class="pull-left">
+        <div class="thead_total">총 <strong>100</strong>건</div>
+    </div>
+    <div class="pull-right theadRight">
+        <div class="thead_btn"><a href="#" class="btn btn-sm"><i class="icon-envelope-open"></i> 읽음 표시</a></div>
+        <div class="thead_btn"><a href="#" class="btn btn-sm"><i class="la la-trash-o"></i> 선택삭제</a></div>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <div class="table-responsive">
+        <table class="table tbList">
+            <colgroup>
+                <col width="55">
+                <col width="8%">
+                <col width="*">
+                <col width="11%">
+                <col width="13%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>
+                    <span class="input_chk first">
+                        <input type="checkbox">
+                        <label><span class="sr-only">전체선택</span></label>
+                    </span>
+                </th>
+                <th>구분</th>
+                <th>상세내용</th>
+                <th>일자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="read">
+                <td>
+                    <span class="input_chk first">
+                        <input type="checkbox">
+                        <label><span class="sr-only">선택</span></label>
+                    </span>
+                </td>
+                <td> 입금완료 </td>
+                <td class="text-left">
+                    <p>
+                        <a href="#">
+                            <i class="icon-envelope-open"></i>
+                            홍길동님의 <strong>5,000 원</strong> 입금 내역이 있습니다.
+                        </a>
+                    </p>
+                </td>
+                <td> 2018-11-11 11:11:11</td>
+            </tr>
+            <tr class="unread">
+                <td>
+                    <span class="input_chk first">
+                        <input type="checkbox">
+                        <label><span class="sr-only">선택</span></label>
+                    </span>
+                </td>
+                <td> 결제완료 </td>
+                <td class="text-left">
+                    <p>
+                        <a href="#">
+                            <i class="icon-envelope"></i>
+                            터미널라운지의 <strong>5,000 원</strong> 결제가 완료되었습니다.
+                        </a>
+                    </p>
+                </td>
+                <td>2018-11-11 11:11:11</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div class="no_data">
+                        <div class="inn">
+                            <p>
+                                <i class="la la-exclamation-circle"></i>
+                            </p>
+                            해당내역이 없습니다.
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="pagBox">
+    <ul class="pagination">
+        <li class="arrow">
+            <a href="#"><i class="la la-angle-left"></i></a>
+        </li>
+        <li class="active">
+            <a href="#">1</a>
+        </li>
+        <li>
+            <a href="#">2</a>
+        </li>
+        <li>
+            <a href="#">3</a>
+        </li>
+        <li>
+            <a href="#">4</a>
+        </li>
+        <li>
+            <a href="#">5</a>
+        </li>
+        <li class="arrow">
+            <a href="#"><i class="la la-angle-right"></i></a>
+        </li>
+    </ul>
+</div>
+<!--//pageBox-->
+
+</div>
+<!--//#content_inner-->
+</div>
+<!--//#table-fixed-->
+<div id="footer">
+    <p>
+        copyright ⓒ SSODA All right reserved.
+    </p>
+</div>
+<!--//#footer-->
+</div>
+<!--//#content-->
+</div>
+<!--//#content_wrap-->
+</body>
+</html>

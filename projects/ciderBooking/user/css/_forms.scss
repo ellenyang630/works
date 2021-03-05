@@ -302,6 +302,12 @@ select {
       appearance: none;
     }
   }
+  option{
+    &[disabled] {
+      display: none;
+      color:$gray-9 !important;
+    }
+  }
 }
 
 // input_chk, input_radio
@@ -484,5 +490,385 @@ input[type="checkbox"], input[type="radio"] {
   text-align: center;
   button {
     width: 100%;
+  }
+}
+
+
+
+
+
+/* Buttons */
+
+// Base styles
+// --------------------------------------------------
+a[class*="btn"],
+button[class*="btn"],
+a[class*="btn-"],
+button[class*="btn"],
+label[class*="btn"]{
+  position: relative;
+  z-index:2;
+  overflow: hidden;
+
+  &:hover,
+  &:active,
+  &:focus{
+    //@include prefix(box-shadow, inset 0 3px 5px rgba(0,0,0,.105), webkit ms moz o);
+  }
+}
+
+
+.btnArea{
+  text-align: center;
+  span{
+    padding: 0 3px;
+    &:first-child{
+      padding-left:0;
+    }
+    &:last-child{
+      padding-right:0;
+    }
+    a,
+    button {
+      min-width: 120px;
+    }
+  }
+
+  &.half{
+    span{
+      display: inline-block;
+      float:left;
+      padding:0;
+      &:first-child{
+        width:34%;
+      }
+      &:last-child{
+        width:66%;
+      }
+    }
+    &:after{
+      @include clearfix;
+    }
+  }
+
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: $btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-base);
+  font-size: 12px;
+  @include user-select(none);
+  font-weight: 700;
+  background: $white;
+  border-radius: 0;
+
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      //@include tab-focus;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    //@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+
+  // [converter] extracted a& to a.btn
+}
+
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: $link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+  border-radius: 0;
+}
+.btn-sm {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+  font-size:12px;
+  font-weight: 700;
+}
+.btn-xs {
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+}
+
+.rd50{
+  border-radius: 50em;
+  box-sizing: border-box;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+}
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+// for button layout
+.btnWrap{
+  position: relative;
+  width:100%;
+  margin:10px auto 0 auto;
+  text-align: center;
+  .btn{
+    width:125px;
+    & + .btn{
+      margin-left:13px;
+    }
+  }
+  .btn_search{
+    &:before{
+      @include font-family(LineAwesome);
+      @include content-val('\f2eb');
+      display: inline-block;
+      margin-right:10px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  //상단 검색폼 버튼 컨트롤
+  @at-root .search_filter{
+    .btn{
+      border-radius: 50em;
+      padding:7px 12px;
+    }
+  }
+}
+
+
+.search_more{
+  display:none;
+  position: absolute;
+  right: 0px;
+  bottom:6px;
+  font-size:12px;
+  color: #8b929e;
+  button{
+    padding:5px 0;
+  }
+  i{
+    margin-left:5px;
+  }
+  &.detail{
+    display:block;
+    transition: 0.15s ease;
+  }
+  &.basic{
+    //display:block;
+    transition: 0.15s ease;
+  }
+}
+
+// for buttons in table tbLIst
+.tdBtnWrap{
+  .btn{
+    display: block;
+    width: 100%;
+    padding:1px 5px 2px 5px;
+    margin-top: 6px;
+    border: 1px solid $line-c;
+    font-size: $font-size-xs;
+    font-weight:400;
+    color: $black;
+    border-radius:3px;
+    &:first-child{
+      margin-top:0;
+    }
+  }
+}
+
+
+//btn color
+.blue-sub{
+  background: $blue-sub;
+  color: $white !important;
+}
+.bluegrey{
+  background: $bluegray;
+  color: $white !important;
+}
+.whitegrey{
+  background: $white;
+  border:1px solid $line-c;
+  color: $blue-sub !important;
+}
+.lgreen{
+  background: $white;
+  border:1px solid $green_dark !important;
+  color: $green_dark !important;
+}
+.lgreen2{
+  background: $white;
+  border:1px solid rgba($green_dark,0.8) !important;
+  color: $green_dark !important;
+}
+.green{
+  background: $green;
+  border:1px solid $green !important;
+  color: $white !important;
+}
+.whiteblack{
+  background: $white;
+  border:1px solid $line-c;
+  color: #2e2e2e !important;
+}
+.lblack{
+  border: 1px solid rgba($blue-sub,0.3) !important;
+}
+.lred{
+  border: 1px solid rgba($pink,0.5) !important;
+}
+
+
+// 리스트 내 인라인버튼 묶음
+.btn-inline-wrap{
+  margin-top:10px;
+  .btn{
+    padding: 3px 10px;
+    font-weight: 500;
+  }
+}
+
+
+.goodsImg{
+  width:80px;
+  height:80px;
+  border:1px solid $line-d;
+  &.onView{
+    width:40px;
+    height:40px;
+  }
+}
+
+.qrImg{
+  width:80px;
+  height:80px;
+  border:1px solid $line-d;
+}
+
+.textarea_wrap textarea{
+  height:100px;
+  padding: 13px;
+  border: 1px solid #c5c7c8;
+}
+
+
+.browser_search .btn{
+  padding: 7px 12px;
+  border-radius: 0;
+}
+
+.modal{
+  .pagination > li:first-child > a, .pagination > li:first-child > span{
+    background: $white;
+    border-color: $line-c;
+    color: $green;
+    font-weight: 700 !important;
+  }
+  .pagination > li:last-child > a, .pagination > li:last-child > span{
+    background: $white;
+    border-color: $line-c;
+    color: $green;
+    font-weight: 700 !important;
+  }
+  .pagination > li:first-child > a i
+  .pagination > li:last-child > a i {
+    font-weight: 600 !important;
+  }
+  .pageNav{
+    margin-top:0;
+    margin-bottom:15px;
   }
 }

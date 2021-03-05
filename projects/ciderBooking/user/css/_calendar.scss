@@ -121,12 +121,21 @@
             color:$blue-purple;
             line-height:34px;
             &:after{
-              display: block;
-              content:"오늘";
-              font-size: 11px;
-              color: $blue-purple;
-              margin-top:-5px;
-              line-height: 1;
+              display: block !important;
+              content:"오늘" !important;
+              font-size: 11px !important;
+              color: $blue-purple !important;
+              margin-top:-5px !important;
+              line-height: 1 !important;
+            }
+          }
+          &:hover{
+            .day_em{
+              &:after{
+                display: block;
+                // color: $disabled !important;
+                color:$white !important;
+              }
             }
           }
         }
@@ -144,7 +153,7 @@
             color: $white;
             //text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
             &:after{
-              color:$white;
+              color:$white !important;
             }
           }
         }
@@ -154,7 +163,7 @@
           color:$disabled !important;
           &:hover{
             background: none;
-            color:inherit;
+            color:$disabled !important;
             text-shadow: none;
             .day_em{
               background: none;
@@ -162,6 +171,30 @@
               text-shadow: none;
             }
           }
+
+          //&.today{
+          //  &:after{
+          //    display: block;
+          //    color: $blue-purple;
+          //  }
+          //  &:hover{
+          //    color:$blue-purple;
+          //    &:after{
+          //      color: $blue-purple;
+          //    }
+          //  }
+          //}
+          //&.active{
+          //  color: $blue-purple !important;
+          //  &:hover{
+          //    color: $blue-purple !important;
+          //    &:after{
+          //      display: inline-block;
+          //      color: $disabled !important;
+          //    }
+          //  }
+          //}
+
         }
       }
     }

@@ -1,165 +1,254 @@
-<? include "include/header.html"; ?>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<section id="content">
-	<h1 class="sr_only">사이다예약 폼</h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<!-- IE edge link 막기  -->
+	<title>사이다예약</title>
+	<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/IE9.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/line-awesome.css">
 
-	<div id="content_inner">
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="skipNav_wrap">
+	<a href="#content_wrap" class="skipNav">본문 영역 바로가기</a>
+</div>
+<!--// skipNav_wrap -->
 
-		<div class="booking_step step_3">
-			<ul>
-				<li><i class="la la-calendar-check-o"></i> 예약정보선택</li>
-				<li><i class="la la-pencil-square"></i> 약관동의/정보입력</li>
-				<li class="active"><i class="la la-check-square-o"></i> 결제/예약완료</li>
-			</ul>
-		</div>
-		<!--// booking_step -->
+<div class="header">
+	<a href="#">
+		<h1 class="logo"> 사이다예약</h1>
+	</a>
+</div>
+<!--// header -->
 
-		<div class="booking_fin_txt">
-			<p class="fin_tt"><i class="la la-bookmark"></i> <strong>예약이 완료 되었습니다.</strong></p>
-			<p class="fin_info">
-				풍경열차는 정시 출발로 탑승권은 출발 20분전까지 미리 발행 해주시기 바랍니다.<br/>
-				탑승시간 10분전, 풍경열차에 탑승이 시작됩니다.<br/>
-				<span class="under">예매번호 확인 후, 현장에서 종이티켓으로 발권하셔야 합니다.</span>
-			</p>
-		</div>
-		<!--// booking_fin_txt -->
+<main id="content_wrap" class="clearfix" name="content_wrap">
+	<h1 class="sr_only">본문 내용</h1>
 
-		<form action="" method="post">
-			<div class="flex_wrap">
-				<div class="flex_box">
-					<div class="section_booking seller" id="sellerInfoWrap">
-						<div class="section_tit open in" id="sellerInfoTT" data-toggle="collapse" data-target="#sellerInfo" aria-expanded="false" aria-controls="sellerInfo">
-							<h2>판매자 정보</h2>
+	<section id="content">
+		<h1 class="sr_only">사이다예약 폼</h1>
+
+		<div id="content_inner">
+
+			<div class="booking_step step_3">
+				<ul>
+					<li><i class="la la-calendar-check-o"></i> 예약정보선택</li>
+					<li><i class="la la-pencil-square"></i> 약관동의/정보입력</li>
+					<li class="active"><i class="la la-check-square-o"></i> 결제/예약완료</li>
+				</ul>
+			</div>
+			<!--// booking_step -->
+
+			<div class="booking_fin_txt">
+				<p class="fin_tt"><i class="la la-bookmark"></i> <strong>예약이 완료 되었습니다.</strong></p>
+				<p class="fin_info">
+					풍경열차는 정시 출발로 탑승권은 출발 20분전까지 미리 발행 해주시기 바랍니다.<br/>
+					탑승시간 10분전, 풍경열차에 탑승이 시작됩니다.<br/>
+					<span class="under">예매번호 확인 후, 현장에서 종이티켓으로 발권하셔야 합니다.</span>
+				</p>
+			</div>
+			<!--// booking_fin_txt -->
+
+			<form action="" method="post">
+				<div class="flex_wrap">
+					<div class="flex_box">
+						<div class="section_booking seller" id="sellerInfoWrap">
+							<div class="section_tit open in" id="sellerInfoTT" data-toggle="collapse" data-target="#sellerInfo" aria-expanded="false" aria-controls="sellerInfo">
+								<h2>판매자 정보</h2>
+							</div>
+							<div id="sellerInfo" class="in" aria-labelledby="sellerInfoTT" data-parent="#sellerInfoWrap" aria-expanded="false">
+								<div class="section_cont">
+									<div class="section_form view">
+										<div class="inline_form">
+											<p class="label">상호</p>
+											<p class="data">공식협력사-(주)블루티앤알</p>
+										</div>
+										<div class="inline_form">
+											<p class="label">예약문의</p>
+											<p class="data">02-1234-4578</p>
+										</div>
+										<div class="inline_form">
+											<p class="label">홈페이지</p>
+											<p class="data"><a href="http://www.travice.kr" target="_blank">http://www.travice.kr</a></p>
+										</div>
+										<div class="inline_form">
+											<p class="label vertical-top">주소</p>
+											<p class="data">
+												(신) 원주시 지정면 간현로 163<br/>
+												(구) 원주시 지정면 간현리 870-6번지<br/>
+												(네비게이션 : OO레일파크)
+											</p>
+										</div>
+										<div class="inline_form">
+											<p class="label">결제관련문의</p>
+											<p class="data">사이다페이 https://ciderpay.com</p>
+										</div>
+									</div>
+									<!--// section_form -->
+								</div>
+								<!--// section_cont -->
+								<div class="map_wrap">
+									<a href="https://map.naver.com/?lng=68a2608e61387cab4d63250f73de4c68&mapMode=0&lat=8cdbbe0db85935c7b3b0a58dfc3cd41d&dlevel=11&enc=b64&menu=location" target="_blank">
+										<img src="http://prt.map.naver.com/mashupmap/print?key=p1568773940125_1421986051" alt="지도 크게 보기" title="지도 크게 보기" border="0" style="vertical-align:top;"/>
+									</a>
+								</div>
+								<!--// map_wrap -->
+							</div>
 						</div>
-						<div id="sellerInfo" class="in" aria-labelledby="sellerInfoTT" data-parent="#sellerInfoWrap" aria-expanded="false">
+						<!--// section_booking -->
+					</div>
+					<!--// flex_box -->
+
+					<div class="flex_box">
+						<div class="section_booking  booker">
+							<div class="section_tit">
+								<h2>예약자 정보</h2>
+							</div>
 							<div class="section_cont">
-								<div class="section_form view">
+								<div class="section_form  view">
 									<div class="inline_form">
-										<p class="label">상호</p>
-										<p class="data">공식협력사-(주)블루티앤알</p>
+										<p class="label">예약자</p>
+										<p class="data">홍길동</p>
 									</div>
 									<div class="inline_form">
-										<p class="label">예약문의</p>
-										<p class="data">02-1234-4578</p>
+										<p class="label">연락처</p>
+										<p class="data">01012345678</p>
 									</div>
+
 									<div class="inline_form">
-										<p class="label">홈페이지</p>
-										<p class="data"><a href="http://www.travice.kr" target="_blank">http://www.travice.kr</a></p>
-									</div>
-									<div class="inline_form">
-										<p class="label vertical-top">주소</p>
-										<p class="data">
-											(신) 원주시 지정면 간현로 163<br/>
-											(구) 원주시 지정면 간현리 870-6번지<br/>
-											(네비게이션 : OO레일파크)
-										</p>
-									</div>
-									<div class="inline_form">
-										<p class="label">결제관련문의</p>
-										<p class="data">사이다페이 https://ciderpay.com</p>
+										<p class="label">이메일</p>
+										<p class="data">test011@naver.com</p>
 									</div>
 								</div>
 								<!--// section_form -->
 							</div>
 							<!--// section_cont -->
-							<div class="map_wrap">
-								<a href="https://map.naver.com/?lng=68a2608e61387cab4d63250f73de4c68&mapMode=0&lat=8cdbbe0db85935c7b3b0a58dfc3cd41d&dlevel=11&enc=b64&menu=location" target="_blank">
-									<img src="http://prt.map.naver.com/mashupmap/print?key=p1568773940125_1421986051" alt="지도 크게 보기" title="지도 크게 보기" border="0" style="vertical-align:top;"/>
-								</a>
+						</div>
+						<!--// section_booking -->
+
+						<div class="section_booking">
+							<div class="section_tit">
+								<h2>예약정보</h2>
 							</div>
-							<!--// map_wrap -->
-						</div>
-					</div>
-					<!--// section_booking -->
-				</div>
-				<!--// flex_box -->
-
-				<div class="flex_box">
-					<div class="section_booking  booker">
-						<div class="section_tit">
-							<h2>예약자 정보</h2>
-						</div>
-						<div class="section_cont">
-							<div class="section_form  view">
-								<div class="inline_form">
-									<p class="label">예약자</p>
-									<p class="data">홍길동</p>
-								</div>
-								<div class="inline_form">
-									<p class="label">연락처</p>
-									<p class="data">01012345678</p>
-								</div>
-
-								<div class="inline_form">
-									<p class="label">이메일</p>
-									<p class="data">test011@naver.com</p>
-								</div>
-							</div>
-							<!--// section_form -->
-						</div>
-						<!--// section_cont -->
-					</div>
-					<!--// section_booking -->
-
-					<div class="section_booking">
-						<div class="section_tit">
-							<h2>예약정보</h2>
-						</div>
-						<div class="section_cont">
-							<div class="section_form  view text-right">
-								<div class="inline_form">
-									<p class="label">예약번호</p>
-									<p class="data">N20157987899</p>
-								</div>
-								<div class="inline_form">
-									<p class="label">예약상태</p>
-									<p class="data">
-										<span class="cgreen">예약확정</span>
-									</p>
-								</div>
-								<div class="inline_form">
-									<p class="label"><i class="la la-calendar-check-o"></i> 이용일자</p>
-									<p class="data">2019.09.07(토)</p>
-								</div>
-								<div class="inline_form">
-									<p class="label"><i class="la la-clock-o"></i> 이용시간</p>
-									<p class="data">오전 09:30</p>
-								</div>
-								<div class="inline_form">
-									<p class="label vertical-top">예약권종</p>
-									<div class="data">
-										<ul class="booking_type">
-											<li>주중 2인승 <span class="clgray2">x 2</span></li>
-											<li>주중 4인승 <span class="clgray2">x 1</span></li>
-										</ul>
+							<div class="section_cont">
+								<div class="section_form  view text-right">
+									<div class="inline_form">
+										<p class="label">예약번호</p>
+										<p class="data">N20157987899</p>
+									</div>
+									<div class="inline_form">
+										<p class="label">예약상태</p>
+										<p class="data">
+											<span class="cgreen">예약확정</span>
+										</p>
+									</div>
+									<div class="inline_form">
+										<p class="label"><i class="la la-calendar-check-o"></i> 이용일자</p>
+										<p class="data">2019.09.07(토)</p>
+									</div>
+									<div class="inline_form">
+										<p class="label"><i class="la la-clock-o"></i> 이용시간</p>
+										<p class="data">오전 09:30</p>
+									</div>
+									<div class="inline_form">
+										<p class="label vertical-top">예약권종</p>
+										<div class="data">
+											<ul class="booking_type">
+												<li>주중 2인승 <span class="clgray2">x 2</span></li>
+												<li>주중 4인승 <span class="clgray2">x 1</span></li>
+											</ul>
+										</div>
+									</div>
+									<div class="inline_form total">
+										<p class="label vertical-top">총 결제금액</p>
+										<div class="data">
+											<p class="price_txt lg"><strong>45,000</strong> <small>원</small></p>
+											<p class="clgray2">신용카드</p>
+										</div>
 									</div>
 								</div>
-								<div class="inline_form total">
-									<p class="label vertical-top">총 결제금액</p>
-									<div class="data">
-										<p class="price_txt lg"><strong>45,000</strong> <small>원</small></p>
-										<p class="clgray2">신용카드</p>
-									</div>
-								</div>
+								<!--// section_form -->
 							</div>
-							<!--// section_form -->
+							<!--// section_cont -->
 						</div>
-						<!--// section_cont -->
+						<!--// section_booking -->
 					</div>
-					<!--// section_booking -->
+					<!--// flex_box -->
 				</div>
-				<!--// flex_box -->
-			</div>
-			<!--// flex_wrap -->
+				<!--// flex_wrap -->
 
-			<div class="section_button">
-				<button type="button" class="btn green btn-wb">예약정보 SMS로 받기</button>
+				<div class="section_button">
+					<button type="button" class="btn green btn-wb">예약정보 SMS로 받기</button>
+				</div>
+				<!--// section_button -->
+			</form>
+		</div>
+		<!--//#content_inner-->
+	</section>
+	<!--//#content-->
+	<div class="footer">
+		<h1 class="sr_only">푸터정보</h1>
+
+		<address class="ft_addr">
+			<p class="addr_tit">서비스 제공</p>
+			<p class="addr_info">
+				<strong>㈜쏘다</strong>
+				사업자등록번호 : 277-81-01253
+				<span class="co_bar">|</span>
+				통신판매업신고번호 : 제 2019-서울구로-0331호
+				<span class="co_bar">|</span>
+				대표자 : 장신호
+				<span class="co_bar">|</span>
+				이메일 : ssoda@ssoda.co.kr
+				<span class="co_bar">|</span>
+				주소 : 서울특별시 구로구 디지털로 26길 61, 1801호(구로동, 에이스하이엔드타워2차)
+			</p>
+
+			<p class="addr_tit second">결제대행 및 정산</p>
+			<p class="addr_info">
+				<strong>㈜유디아이디</strong>
+				사업자등록번호 : 113-86-56537
+				<span class="co_bar">|</span>
+				통신판매업신고번호 : 제 2012-서울구로-0239호
+				<span class="co_bar">|</span>
+				대표자 : 김재인
+				<span class="co_bar">|</span>
+				이메일 : payapp@udid.co.kr
+				<span class="co_bar">|</span>
+				주소 : 서울특별시 구로구 디지털로26길 61, 1202호(구로동, 에이스하이엔드타워 2차)
+			</p>
+		</address>
+		<!--// ft_addr -->
+
+		<div class="ft_cs_wrap">
+			<div class="ft_cs">
+				<div class="cs_tit">
+					<div class="i_wrap">
+						<i class="la la-phone"></i>
+					</div>
+					<!--<p class="cs_name">고객센터</p>-->
+				</div>
+				<div class="cs_txt">
+					<p class="cs_tt">1544-6893</p>
+					<p class="cs_tc">평일 09 ~ 18시 운영</p>
+				</div>
 			</div>
-			<!--// section_button -->
-		</form>
+		</div>
+		<!--// ft_cs_wrap -->
 	</div>
-	<!--//#content_inner-->
-</section>
-<!--//#content-->
-
-<? include "include/footer.html"; ?>
+	<!--// footer -->
+</main>
+<!--// main#content_wrap -->
+</body>
+</html>

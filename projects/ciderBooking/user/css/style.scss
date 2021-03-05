@@ -11,13 +11,11 @@
 @import "normalize";
 @import "layout";
 // Core CSS
-@import "grid";
+//@import "grid";
 @import "forms";
-@import "buttons";
-// Components
-@import "modal";
 // calendar
 @import "calendar";
+
 
 
 
@@ -101,11 +99,12 @@
   @include clearfix;
   li{
     float:left;
-    width: 50%;
+    //width: 50%;
+    width:100%;
     padding: 2px 5px;
     font-size:14px;
 
-    &:first-child,
+   /* &:first-child,
     &:nth-child(2){
       padding-top:0;
     }
@@ -114,9 +113,14 @@
     }
     &:nth-child(even){
       padding-right:0;
-    }
+    }*/
   }
-  button{
+  .radio_intWrap{
+    position: relative;
+  }
+  button,
+  input,
+  label{
     display: block;
     width:100%;
     height:35px;
@@ -125,6 +129,7 @@
     background: rgba($line-d, .2);
     border:1px solid $line-d;
     color: $disabled;
+    font-weight: 400;
     @include clearfix;
 
     &:hover,
@@ -134,18 +139,56 @@
       background: rgba( $green, .2 );
       border:1px solid $green;
       color:$light-black;
+      font-weight: 400;
+    }
+    &:checked{
+      + label{
+        background: rgba( $green, .2 );
+        border:1px solid $green;
+        color:$light-black;
+        font-weight: 400;
+      }
     }
   }
-  .type{
-    float:left;
-  }
-  .quant {
-    float:right;
-    text-align: right;
+  .time, .timeVac{
+    display: table-cell;
+    vertical-align: middle;
+
   }
 
+  .time{
+    /*float:left;
+    text-align: left;*/
+    padding-right:15px;
+    min-width:90px;
+    width:auto;
+    font-weight: 600;
+    color:$green;
+    text-align: left;
 
 
+  }
+  .timeVac{
+    width:100%;
+    text-align: left;
+  }
+  .timeAva{
+    display: inline-block;
+    width:49%;
+    padding:0 8px;
+    box-sizing: border-box;
+
+    &:nth-child(2n){
+      text-align: right;
+    }
+
+    .type, .quant{
+      display: inline-block;
+    }
+    .quant {
+      text-align: right;
+    }
+  }
   @media (max-width:425px) {
     // vacant
     &{

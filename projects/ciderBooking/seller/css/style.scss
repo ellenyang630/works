@@ -1,0 +1,683 @@
+@charset "UTF-8";
+@import "variables";
+@import "reset";
+@import "grid";
+@import "layout";
+@import "table";
+@import "buttons";
+@import "forms";
+@import "modal";
+
+
+
+/* 일정/회차 설정 */
+.cellLayout{
+  & + .cellLayout{
+    margin-top:10px;
+  }
+
+  dt,
+  dd,
+  > div{
+    display: table-cell;
+    vertical-align: middle;
+    // padding: 5px 10px;
+    width: 100%;
+  }
+
+  dt{
+    &:first-child{
+      padding-left:0;
+    }
+    &.day{
+      min-width:50px;
+      width:auto;
+      background: $white-lgray;
+      border-right: 1px solid $line-light;
+      text-align: center;
+    }
+    &.date{
+      min-width:130px;
+      width:auto;
+    }
+    &.date2{
+      min-width:80px;
+      width:auto;
+    }
+
+  }
+  dd{
+    width:100%;
+    &:last-child{
+      padding-right:0;
+    }
+  }
+  > div {
+    &:first-child{
+      padding-left:0;
+    }
+    &:last-child{
+      padding-right:0;
+    }
+  }
+
+  .input_chk{
+    margin-top:8px;
+  }
+
+  .inBtn{
+    padding-left: 10px;
+    &.right{
+      display: block;
+      text-align:right;
+    }
+    .btn{
+      display: inline-block;
+      min-width:80px;
+      &.btn-dir{
+        min-width:115px;
+      }
+    }
+    .number-group{
+        width:90px;
+      .btn{
+        min-width:100%;
+      }
+    }
+    &.md{
+      .btn{
+
+      }
+    }
+  }
+
+
+  // border 있는 레이아웃
+  &.withBorder{
+    dt,
+    dd,
+    > div{
+      height: 43px;
+      padding:5px 10px;
+      border-top: 1px solid $line-light;
+    }
+    dt{
+      border-left: 1px solid $line-light;
+    }
+    dd{
+      &:last-child{
+        border-right: 1px solid $line-light;
+      }
+    }
+
+    dl{
+      &:last-child{
+        dt, dd{
+          border-bottom: 1px solid $line-light;
+        }
+      }
+    }
+  }
+
+  // 단독으로 사용하는 경우
+  &.exc{
+    margin-top:20px;
+    margin-bottom:10px;
+  }
+}
+.modal{
+  .cellLayout{
+    dl{
+      margin-top: 5px;
+    }
+  }
+}
+
+// 캘린더
+.calendarWrap{
+  width:100%;
+  min-height:550px;
+  background: $white-lgray;
+  border:1px solid $line-light;
+  margin:10px 0;
+}
+
+// 일정 컨트롤 헤드
+.calendarhead{
+  margin: 0 auto 20px auto;
+  text-align: center;
+  .calendarWBefore,
+  .calendarWAfter,
+  .calendarWCycle{
+    display: inline-block;
+  }
+  .calendarWBefore,
+  .calendarWAfter{
+    font-size: 1.5em;
+    font-weight: bold;
+    color:$gray-9;
+    &:hover,
+    &:active,
+    &:focus{
+      border-radius: 3px;
+    }
+  }
+  .calendarWCycle{
+    padding:0 20px 0 20px;
+    font-family: Roboto;
+    font-size: 1.3em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+  }
+}
+// 월별 예약현황
+.calendarArea{
+  background: $white;
+  .calendarhead{
+    padding: 7px 10px;
+    margin-bottom:0;
+    border-bottom: 1px solid $line-light;
+  }
+  .calendarheadInner{
+    display: table;
+    margin: 0 auto;
+    .calendarWBefore,
+    .calendarWAfter,
+    .calendarWCycle{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .calendarWCycle{
+      line-height: 28px;
+    }
+  }
+  .calendarbody{
+    min-height:638px;
+  }
+}
+
+// 리스트내 바로 수정
+.EditOnList{
+  dt, dd{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+  }
+  dt{
+    text-align: left;
+  }
+  dd{
+    min-width:42px;
+    width: auto;
+    text-align: right;
+  }
+  .int{
+    max-width:102px;
+    height:25px;
+    line-height:25px;
+  }
+}
+
+
+.totalBox{
+  padding:10px 13px;
+  margin-top:20px;
+  border: 1px solid #e3dcb6;
+  background: #fffae0;
+}
+
+.tdtitle {
+  font-size: 14px;
+  color: $gray-6;
+}
+
+// for price text ( 금액, 건수)
+.price_txt {
+  font-size: 12px;
+  strong {
+    font-weight: 600;
+  }
+  small {
+    font-size: 100%;
+    margin-left: 3px;
+  }
+
+  &.lg {
+    strong {
+      font-size: 19px;
+      font-weight: 600;
+    }
+    small {
+      font-size: 14px;
+    }
+  }
+  &.md {
+    strong {
+      font-size: 17px;
+      font-weight: 600;
+    }
+    small {
+      font-size: 14px;
+    }
+  }
+
+  &.sm {
+    strong {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &.lg {
+      strong {
+        font-size: 15px;
+      }
+      small {
+        font-size: 13px;
+      }
+    }
+    &.md {
+      strong {
+        font-size: 14px;
+      }
+      small {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+
+
+/* 섹션박스별 스타일 */
+.section_booking{
+  margin-top:-1px;
+  border:1px solid $line;
+  &:first-child{
+    margin-top: 0;
+  }
+  .section_booking{
+    margin-top:-1px;
+  }
+}
+.section_tit {
+  position: relative;
+  padding: 10px 15px;
+  //background: $white;
+
+  > * {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -1.2px;
+  }
+}
+.section_cont{
+  //min-height:46px;
+  //padding:15px;
+  background: $white;
+  border-top:1px solid $line;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.inn{
+    padding:0;
+    .section_booking{
+      border-width: 0;
+      border-top-width:1px;
+      &:first-child{
+        border-width: 0;
+      }
+      .section_tit{
+        padding: 4px 15px;
+        > * {
+          font-size: 12px;
+        }
+      }
+    }
+    .section_cont{
+      &:last-child{
+        border-bottom:1px solid $line;
+      }
+    }
+  }
+  &.scrollY_section{
+    height: 682px;
+    overflow-y: auto;
+    line-height:1.7;
+
+    // 스크롤바
+    /*
+    scrollbar-3dLight-Color: #efefef; scrollbar-arrow-color: #dfdfdf; scrollbar-base-color: #efefef; scrollbar-Face-Color: #dfdfdf; scrollbar-Track-Color: #efefef; scrollbar-DarkShadow-Color: #efefef; scrollbar-Highlight-Color: #efefef; scrollbar-Shadow-Color: #efefef
+    &::-webkit-scrollbar {width: 8px; height: 8px; border: 3px solid #fff; }
+    &::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background: url('./images/bg.png') #efefef}
+    &::-webkit-scrollbar-track {background: #efefef; -webkit-border-radius: 10px; border-radius:10px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.2)}
+    &::-webkit-scrollbar-thumb {height: 50px; width: 50px; background: rgba(0,0,0,.2); -webkit-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.1)}
+    */
+  }
+  &.noPadding{
+    padding:0;
+  }
+}
+
+
+.section_tit.open{
+  background: $white-lgray;
+  cursor: pointer;
+  &:after{
+    position: absolute;
+    top: 50%;
+    right:15px;
+    transform: translateY(-50%);
+    font-family: LineAwesome;
+    content:'\f113';
+    display: inline-block;
+    font-size:16px;
+    /*color:$disabled;*/
+  }
+
+  &.collapsed{
+    &:after{
+      font-family: LineAwesome;
+      content:'\f110';
+      display: inline-block;
+    }
+  }
+}
+
+// 예약가능 & 불가 힌트
+.hint_avail{
+  width:auto;
+  font-size:13px;
+  font-weight: 600;
+  text-align: right;
+  &:after{
+    display: block;
+    clear: both;
+    content:'';
+  }
+  li{
+    float:left;
+    margin-left:15px;
+
+    &:first-child{
+      margin-left:0;
+    }
+    &:before{
+      content:"";
+      display: inline-block;
+      width:8px;
+      height:8px;
+      margin-right:1px;
+      border-radius: 50%;
+    }
+    &.poss{
+      color:$green;
+      &:before{
+        background: $green;
+        border:1px solid $green;
+      }
+    }
+    &.imposs{
+      color:$red;
+      &:before{
+        background: $red;
+        border:1px solid $red;
+      }
+    }
+  }
+
+  // 이용회차
+  &.time{
+    li{
+      &.poss{
+        &:before{
+          //background: lighten($green, 40%);
+          background: rgba( $green, .2 );
+          border:1px solid $green;
+        }
+      }
+      &.imposs{
+        &:before{
+          //background: lighten($line-d, 40%);
+          background: rgba($red, .2);
+          border:1px solid $red;
+        }
+      }
+    }
+  }
+}
+
+// 타이틀 옆 가능여부 힌트
+.section_tit.with_hint{
+  display: table;
+  width:100%;
+  padding-right:40px;
+
+  h2,
+  .hint_avail{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  h2{
+    width:100%;
+  }
+
+  .hint_avail{
+    font-size:12px;
+    min-width:60px;
+    width:auto;
+
+    li{
+      float:left;
+      margin-left:15px;
+
+      &:first-child{
+        margin-left:0;
+      }
+      &:before{
+        content:"";
+        display: inline-block;
+        width:8px;
+        height:8px;
+        margin-right:1px;
+        border-radius: 50%;
+      }
+      &.poss{
+        &:before{
+          background: $green;
+          border:1px solid $green;
+        }
+      }
+      &.imposs{
+        &:before{
+          background: $red;
+          border:1px solid $red;
+
+        }
+      }
+    }
+
+    // 이용회차
+    &.time{
+      li{
+        &.poss{
+          &:before{
+            //background: lighten($green, 40%);
+            background: rgba( $green, .2 );
+            border:1px solid $green;
+          }
+        }
+        &.imposs{
+          &:before{
+            //background: lighten($line-d, 40%);
+            background: rgba($red, .2);
+            border:1px solid $red;
+          }
+        }
+      }
+
+    }
+
+
+
+  }
+
+}
+
+// 타이틀 옆 건수
+.section_tit.with_num {
+  display: table;
+  width: 100%;
+  h2, .num {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  h2 {
+    width: 100%;
+    color:#2e2e2e;
+  }
+  .num {
+    min-width: 50px;
+    width: auto;
+    font-size: 92%;
+    font-weight: 400;
+    color:$gray-6;
+    text-align: right;
+    strong{
+      font-size: 14px;
+    }
+  }
+  &.fin_list{
+    .num{
+      strong{ color:$green; }
+    }
+  }
+  &.cancel_list{
+    .num{
+      strong{ color:$red; }
+    }
+  }
+}
+
+
+
+// booking_info
+.booking_info{
+  padding:10px 15px;
+  &:after{
+    content:"";
+    display: block;
+    clear: both;
+  }
+  dl{
+    width:50%;
+    float:left;
+    display: inline-block;
+    &:last-child{
+      width:100%;
+      clear: both;
+    }
+  }
+  dt, dd{
+    display: table-cell;
+    vertical-align: middle;
+    // padding:1px 0;
+    font-size: 13px;
+  }
+  dt{
+    min-width:80px;
+    width:auto;
+    font-weight: bold;
+  }
+  dd{
+    width:100%;
+  }
+}
+
+// booking_btn
+.booking_btn{
+  width: 100%;
+  display: table;
+  padding: 0 15px 15px 15px;
+  .btn{
+    display: table-cell;
+    width: 32%;
+    height: 28px;
+    margin:0 1%;
+    font-size: 12px;
+    &:first-child{
+      margin-left:0;
+    }
+    &:last-child{
+      margin-right:0;
+    }
+  }
+}
+// 일별예약현황 상세수량
+.stocks_cal{
+  dt, dd{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .booking_ava{
+    margin-bottom:15px;
+    dt{
+      min-width:70px;
+      width:auto;
+    }
+    dd{
+      width:100%;
+      text-align: right;
+    }
+
+    // 잔여
+    .residual{
+      display: inline-block;
+      padding:0 7px;
+      background: $white-lgray;
+      border:1px solid $line;
+      border-radius: 2px;
+      font-size:12px;
+      color:$gray-9;
+      vertical-align: middle;
+
+      .residual_tt, .residual_quat{
+        display: table-cell;
+      }
+      .residual_tt{
+        padding-right:13px;
+      }
+    }
+  }
+  .booking_status{
+    display: table;
+    width:100%;
+    font-size:14px;
+    dl{
+      width:33.333%;
+      display: table-cell;
+      padding:0 15px;
+      color:$gray-9;
+      &:first-child{
+        padding-left:0;
+      }
+      &:last-child{
+        padding-right:0;
+      }
+    }
+    dt{
+      min-width:50px;
+      text-align: left;
+    }
+    dd{
+      width: 100%;
+      text-align: right;
+      .num{
+        font-size:17px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.btn {
+	@extend %box;
+	@extend .mp_none;
+	@extend .hand;
+	@extend %button-radius;
+	font-weight: $font-weight-exbold;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+	text-decoration: none !important;
+	color: $black;
+	background: $white;
+	border: 1px solid $line-dark;
+	&:hover, &:focus, &:active{
+		text-decoration: none !important;
+	}
+	i{
+		font-weight: $font-weight-exbold;
+		font-size: 1.1em;
+		position: relative;
+		top: -0.5px;
+	}
+}
+
+.btn-sm {
+	height: 30px;
+	line-height: 29px;
+	padding: 0px 8px;
+	font-size:$font-size-sm;
+	min-width: 30px;
+}
+.tbList .btn-sm{
+	height: 25px;
+	line-height: 24px;
+}
+
+.btn-md {
+	height: 38px;
+	line-height: 36px;
+	padding: 0 15px;
+	min-width: 40px;
+	font-size: $font-size-sm;
+}
+
+.btn-big{
+	height: 60px;
+	line-height: 56px;
+	padding: 0 18px;
+	min-width:  200px;
+	font-size: $font-size-middle;
+}
