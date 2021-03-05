@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <? include "inc/header_inner.html"; ?>
 
 <div class="page-header">
@@ -470,7 +470,7 @@
 
     <button type="button" class="btn-open-payment" title="결제요청 바로하기"><i class="xi-pen"></i></button>
 
-<? include "inc/footer.html.html"; ?>
+<? include "inc/footer.html"; ?>
 
 
 <!-- bootstrap date -->
