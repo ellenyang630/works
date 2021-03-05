@@ -1,104 +1,264 @@
-<? include "include/header.html"; ?>	
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+	<title>코인큐</title>
+	<!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+	<script src="js/IE9.js"></script>
+	<script src="js/css3-mediaqueries.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="all"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+	<link rel='stylesheet' href='css/owl.carousel.min.css'>
+
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.touchSwipe.min.js"></script>
+
+	<script src="js/owl.js"></script>
+
+
+	<script src="js/swiper.min.js"></script>
+
+
+	<script src="js/style.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script>
+        new WOW().init();
+	</script>
+
+</head>
+
 <body>
-	<div class="sub_pg_hd">
-		<? include "include/gnb.html"; ?>
-	</div>
-
-	<div class="subContent">
-		<div class="inner">
-			<!-- 약관 전문 시작 -->
-			<div class="agreeCont">
-				<h2 class="text-center pd20">암호화폐 위험안내</h2>
-
-				<p>
-					본 문서는 회원이 (주)코인큐(이하"회사")의 서비스이용약관 및 판매회원 계약서를 동의,
-					수락하고 참여하는 암호화폐와 관련된 위험사항 고지를 목적으로 작성하였습니다.
-				</p>
-				<p>
-					코인큐 결제서비스는 회원 간의 상품거래에 있어 암호화폐를 결제수단으로 사용하는
-					서비스로, 회사는 어떠한 경우에도 일체의 암호화폐의 가치 및 환금성을 보증하지 아니하고,
-					회원이 암호화폐를 결제수단으로 사용하여 발생하는 경제적인 이해관계는 전적으로 회원이
-					부담하여야 함으로 회원은 다음의 기재사항이 이해가 되지 않는 경우에는 암호화폐 결제수단
-					사용에 대한 허용 행위를 하지 않으시기 바랍니다.
-				</p>
-				<p>
-					본 암호화폐 결제서비스를 통하여 획득된 암호화폐의 현금 시세는 보장되지 않습니다. 이에
-					따라 암호화폐 결제서비스를 통하여 획득된 원금과 현금 시세에 따른 수익률에 대하여 전부
-					또는 일부에 손실의 위험이 존재하며, 다음 사항에서 설명되는 암호화폐 및 수익률에 대한
-					모든 위험은 전적으로 자기책임원칙 하에 사용자본인이 부담하며, 귀하의 행위를 처리하기
-					위하여 서비스를 수행하는 회사 및 어떠한 당사자도 손실에 대하여 책임을 지지 않습니다.
-				</p>
-				<h4 class="heading_txt">가. 일반위험</h4>
-				<ol class="num mgt5">
-					<li>
-						1. 암호화폐와 현금 환전시세의 손실 위험
-						<ol class="circle">
-							<li>코인큐 결제서비스는 회원 간의 상품거래에 있어 암호화폐를 결제수단으로 사용하는
-								서비스로, 회사는 어떠한 경우에도 일체의 암호화폐의 가치 및 환금성을 보증하지 아니하고,
-								회원이 암호화폐를 결제수단으로 사용하여 발생하는 경제적인 이해관계는 전적으로 회원이
-								부담하여야 합니다.
-							</li>
-						</ol>
-					</li>
-					<li>
-						2. 암호화폐에 대한 국가별 법률/제도 위험
-						<ol class="circle">
-							<li>대한민국을 포함한 세계 각 국의 법률, 대한민국을 포함한 세계 각 국의 정책, 유권해석,
-								경제환경 등에 따라 매우 큰 변동성이 있을 수 있습니다. 특히, 암호화폐의 거래에 대한
-								법률행위의 해석은 국가 별로 상이하여 법정화폐와 다른 특유의 위험성이 내재되어
-								있으므로, 회원은 반드시 이 점에 주의하여야 합니다.
-							</li>
-						</ol>
-					</li>
-					<li>
-						3. 암호화폐에 대한 대한민국 정책 변경 위험
-						<ol class="circle">
-							<li>코인큐는 대한민국 현행법에 따라 설립되어 운영되며, 대한민국은 암호화폐의 법적 지위를
-								공식적으로 인정하고 있지 않고 있습니다. 따라서 대한민국의 정책 변경에 따라 암호화폐의
-								법적 지위 및 가치 변동이 발생할 수 있습니다.
-							</li>
-						</ol>
-					</li>
-					<li>
-						4. 각국 거래소 시세적용에 대한 손실 위험
-						<ol class="circle">
-							<li>암호화폐는 수많은 거래소를 통하여 거래가 되고 있으며, 각 거래소의 시세차이는 일시적,
-								장기적으로 크게 차이가 날 수 있습니다.
-							</li>
-						</ol>
-					</li>
-				</ol>
-
-				<h4 class="heading_txt">나. 특수위험</h4>
-				<ol class="num mgt5">
-					<li>
-						1. 암호화폐 사업자(회사)의 사업운용위험
-						<ol class="circle">
-							<li>회사가 영위하는 사업의 지속적 손실 발생, 사업성 저하, 기타 부득이한 사유로 플랫폼
-								사업자가 더 이상 사업운용을 할 수 없게 되는 경우 더 이상 회사가 제공하는 서비스를
-								이용할 수 없습니다.
-							</li>
-						</ol>
-					</li>
-					<li>
-						2. 암호화폐 결제 플랫폼 사업자의 신규 사업에 대한 법적판단 위험
-						<ol class="circle">
-							<li>회사에 대한 제 3 자로부터 압류(가압류 포함), 추심행위 등이 발생하더라도 회원의
-								암호화폐를 안전하게 관리, 보관하여 해당 암호화폐에 대한 압류(가압류 포함)가 배제되도록
-								운용 관리하고 있으나, 암호화폐 결제 플랫폼 사업자의 업무가 아직 판례 등으로 확정되지
-								않은 신규성이 높은 업무임을 고려 시, 향후 법적 분쟁에 따라 당해 판결이 완료될 때
-								까지는 자금의 인출이 제한될 가능성이 있으며, 법원의 법적 판결이 달리 판단되어
-								압류(가압류 포함) 효력이 인정되는 경우에는 암호화폐에 손해가 발생할 수 있습니다.
-							</li>
-						</ol>
-					</li>
-				</ol>
-
-			</div>
-			<!--// 약관 전문 끝 -->
+<div class="sub_pg_hd">
+	<!-- mobile header -->
+	<header id="mobile_hd">
+		<div class="m_hdWrap">
+			<h1 class="logo main"><a href="index.html"><img src="images/logo_coinq.png" alt="코인큐로고" ></a></h1>
+			<h1 class="logo sub"><a href="index.html"><img src="images/logo_coinq_black.png" alt="코인큐로고" ></a></h1>
+			<button class="menu_opener btnMenu"><i class="la la-bars"></i></button>
 		</div>
-		<!--//inner -->
-	</div>
-	<!--//subContent-->
 
-<? include "include/footer.html"; ?>	
+	</header>
+	<!-- 태블릿디바이스 헤더하단 링크 -->
+	<div id="snbWrap" class="snbWrap">
+		<nav>
+			<ul>
+				<li class="has-sub">
+					<a href="#"><i class="la la-exclamation-circle"></i> 서비스안내</a>
+					<ul>
+						<li onclick="location.href='requestPay.html'">결제요청</li>
+						<li onclick="location.href='cancel.html'">취소,환불</li>
+						<li onclick="location.href='calculate.html'">맞춤형 정산</li>
+						<li onclick="location.href='remit.html'">송금서비스</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="#"><i class="la la-file-text"></i> 판매자 이용안내</a>
+					<ul>
+						<li onclick="location.href='useInfo.html'">이용안내</li>
+						<li onclick="location.href='commission.html'">수수료 안내</li>
+						<li onclick="location.href='dnw.html'">입출금 안내</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="#"><i class="la la-headphones"></i> 고객센터</a>
+					<ul>
+						<li onclick="location.href='faq.html'">자주묻는질문</li>
+						<li onclick="location.href='info_all.html'">1:1 문의</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<a href="#" class="btnSnbCls"><i class="la la-close"></i></a>
+	</div>
+	<div class="snbBg"></div>
+
+	<!-- pc header -->
+	<header id="pc_hd">
+		<div class="inner">
+			<div class="hd_left">
+				<h1 class="logo main" title="코인큐로고"><a href="index.html"><img src="images/logo_coinq.png" alt="코인큐로고" ></a></h1>
+				<h1 class="logo sub"><a href="index.html"><img src="images/logo_coinq_black.png" alt="코인큐로고" ></a></h1>
+				<ul class="gnb clearboth">
+					<li class="first"><a href="requestPay.html"><h2>서비스안내</h2></a></li>
+					<li><a href="useInfo.html"><h2>판매자 이용안내</h2></a></li>
+					<li><a href="faq.html"><h2>고객센터</h2></a></li>
+				</ul>
+			</div>
+			<div class="hd_right">
+				<ul class="user_m clearboth">
+					<li class="first"><a href="https://se.coinq.com/#/login" target='_blank'><span><i class="icon login"></i></span>로그인</a></li>
+					<li><a href="https://se.coinq.com/#/j/join" target='_blank'><span><i class="icon join"></i></span>회원가입</a></li>
+					<li>
+						<label>
+							<span class="label-stacked"><i class="icon globe"></i></span>
+							<span class="plain-select">
+							<select class="langM" name="langMenu">
+								<option value="korean">KOR</option>
+								<option value="english">ENG</option>
+								<option value="japanease">JPN</option>
+								<option value="chinese">CHN</option>
+							</select>
+						</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+</div>
+
+<div class="subContent">
+	<div class="inner">
+		<!-- 약관 전문 시작 -->
+		<div class="agreeCont">
+			<h2 class="text-center pd20">암호화폐 위험안내</h2>
+
+			<p>
+				본 문서는 회원이 (주)코인큐(이하"회사")의 서비스이용약관 및 판매회원 계약서를 동의,
+				수락하고 참여하는 암호화폐와 관련된 위험사항 고지를 목적으로 작성하였습니다.
+			</p>
+			<p>
+				코인큐 결제서비스는 회원 간의 상품거래에 있어 암호화폐를 결제수단으로 사용하는
+				서비스로, 회사는 어떠한 경우에도 일체의 암호화폐의 가치 및 환금성을 보증하지 아니하고,
+				회원이 암호화폐를 결제수단으로 사용하여 발생하는 경제적인 이해관계는 전적으로 회원이
+				부담하여야 함으로 회원은 다음의 기재사항이 이해가 되지 않는 경우에는 암호화폐 결제수단
+				사용에 대한 허용 행위를 하지 않으시기 바랍니다.
+			</p>
+			<p>
+				본 암호화폐 결제서비스를 통하여 획득된 암호화폐의 현금 시세는 보장되지 않습니다. 이에
+				따라 암호화폐 결제서비스를 통하여 획득된 원금과 현금 시세에 따른 수익률에 대하여 전부
+				또는 일부에 손실의 위험이 존재하며, 다음 사항에서 설명되는 암호화폐 및 수익률에 대한
+				모든 위험은 전적으로 자기책임원칙 하에 사용자본인이 부담하며, 귀하의 행위를 처리하기
+				위하여 서비스를 수행하는 회사 및 어떠한 당사자도 손실에 대하여 책임을 지지 않습니다.
+			</p>
+			<h4 class="heading_txt">가. 일반위험</h4>
+			<ol class="num mgt5">
+				<li>
+					1. 암호화폐와 현금 환전시세의 손실 위험
+					<ol class="circle">
+						<li>코인큐 결제서비스는 회원 간의 상품거래에 있어 암호화폐를 결제수단으로 사용하는
+							서비스로, 회사는 어떠한 경우에도 일체의 암호화폐의 가치 및 환금성을 보증하지 아니하고,
+							회원이 암호화폐를 결제수단으로 사용하여 발생하는 경제적인 이해관계는 전적으로 회원이
+							부담하여야 합니다.
+						</li>
+					</ol>
+				</li>
+				<li>
+					2. 암호화폐에 대한 국가별 법률/제도 위험
+					<ol class="circle">
+						<li>대한민국을 포함한 세계 각 국의 법률, 대한민국을 포함한 세계 각 국의 정책, 유권해석,
+							경제환경 등에 따라 매우 큰 변동성이 있을 수 있습니다. 특히, 암호화폐의 거래에 대한
+							법률행위의 해석은 국가 별로 상이하여 법정화폐와 다른 특유의 위험성이 내재되어
+							있으므로, 회원은 반드시 이 점에 주의하여야 합니다.
+						</li>
+					</ol>
+				</li>
+				<li>
+					3. 암호화폐에 대한 대한민국 정책 변경 위험
+					<ol class="circle">
+						<li>코인큐는 대한민국 현행법에 따라 설립되어 운영되며, 대한민국은 암호화폐의 법적 지위를
+							공식적으로 인정하고 있지 않고 있습니다. 따라서 대한민국의 정책 변경에 따라 암호화폐의
+							법적 지위 및 가치 변동이 발생할 수 있습니다.
+						</li>
+					</ol>
+				</li>
+				<li>
+					4. 각국 거래소 시세적용에 대한 손실 위험
+					<ol class="circle">
+						<li>암호화폐는 수많은 거래소를 통하여 거래가 되고 있으며, 각 거래소의 시세차이는 일시적,
+							장기적으로 크게 차이가 날 수 있습니다.
+						</li>
+					</ol>
+				</li>
+			</ol>
+
+			<h4 class="heading_txt">나. 특수위험</h4>
+			<ol class="num mgt5">
+				<li>
+					1. 암호화폐 사업자(회사)의 사업운용위험
+					<ol class="circle">
+						<li>회사가 영위하는 사업의 지속적 손실 발생, 사업성 저하, 기타 부득이한 사유로 플랫폼
+							사업자가 더 이상 사업운용을 할 수 없게 되는 경우 더 이상 회사가 제공하는 서비스를
+							이용할 수 없습니다.
+						</li>
+					</ol>
+				</li>
+				<li>
+					2. 암호화폐 결제 플랫폼 사업자의 신규 사업에 대한 법적판단 위험
+					<ol class="circle">
+						<li>회사에 대한 제 3 자로부터 압류(가압류 포함), 추심행위 등이 발생하더라도 회원의
+							암호화폐를 안전하게 관리, 보관하여 해당 암호화폐에 대한 압류(가압류 포함)가 배제되도록
+							운용 관리하고 있으나, 암호화폐 결제 플랫폼 사업자의 업무가 아직 판례 등으로 확정되지
+							않은 신규성이 높은 업무임을 고려 시, 향후 법적 분쟁에 따라 당해 판결이 완료될 때
+							까지는 자금의 인출이 제한될 가능성이 있으며, 법원의 법적 판결이 달리 판단되어
+							압류(가압류 포함) 효력이 인정되는 경우에는 암호화폐에 손해가 발생할 수 있습니다.
+						</li>
+					</ol>
+				</li>
+			</ol>
+
+		</div>
+		<!--// 약관 전문 끝 -->
+	</div>
+	<!--//inner -->
+</div>
+<!--//subContent-->
+
+<!--footer include-->
+<div class="footer">
+	<div class="ftRow1 clearboth">
+		<div class="inner">
+			<p class="privacy_menu fleft">
+				<span class="first"><a href="terms.html">서비스이용약관</a></span>
+				<span><a href="privacy.html">개인정보처리방침</a></span>
+				<span><a href="cryptocurrency.html">암호화폐위험안내</a></span>
+				<span><a href="terms_cancel.html">취소/환불방침</a></span>
+			</p>
+			<div class="select_wrap fright">
+				<select onchange="window.open(this.value)" class="family_site">
+					<option>COINQ 계열사 사이트</option>
+					<option value="http://payapp.kr/">페이앱</option>
+					<option value="http://blogpay.co.kr/">블로그페이</option>
+					<option value="http://snssell.com/shop/">B2B market</option>
+					<option value="http://snssell.com/">SNSsell</option>
+					<option value="http://ezposting.co.kr/">이지포스팅</option>
+					<option value="https://www.bootpay.co.kr/">부트페이</option>
+					<option value="http://www.dabedal.com/index.udid">다배달</option>
+					<option value="https://www.daosem.com/">다오셈</option>
+					<option value="https://zipsa.net/">집사</option>
+					<option value="https://noshowstop.com">노쇼스탑</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="ftRow2">
+		<div class="inner clearboth">
+			<div class="fleft">
+				<a href="#coinQ"><img class="ft_logo main" src="images/logo_coinq.png" alt="코인큐 로고" title="상단으로 이동하기"></a>
+				<img class="ft_logo sub" src="images/logo_coinq.png" alt="코인큐 로고" title="상단으로 이동하기">
+			</div>
+			<div class="fleft">
+				<p class="add">
+					<span>코인큐</span><span>사업자등록번호: 891-81-00922</span><span>대표자 : 천지후</span>
+					<span>서울특별시 구로구 디지털로 26길 61, 1801호(구로동, 에이스하이엔드타워2차)</span>
+					<br class="web"/>
+				</p>
+				<p class="copy">
+					Copyright © 2019 UDID Company. All rights reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!--//footer include-->
+</body>
+</html>

@@ -1,231 +1,391 @@
-<? include "include/header.html"; ?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+    <title>코인큐</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <script src="js/IE9.js"></script>
+    <script src="js/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="all"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <link rel='stylesheet' href='css/owl.carousel.min.css'>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+
+    <script src="js/owl.js"></script>
+
+
+    <script src="js/swiper.min.js"></script>
+
+
+    <script src="js/style.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+</head>
+
 <body>
-    <div class="sub_pg_hd">
-        <? include "include/gnb.html"; ?>
-    </div>
-    <div class="subContent">
-        <div class="inner">
-            <!-- location -->
-            <div class="page_location clearboth">
-                <ul class="clearboth">
-                    <li class="home"><i class="icon"></i></li>
-                    <li>판매자 이용안내</li>
-                    <li class="present">입출금안내</li>
-                </ul>
-            </div>
-            <!--// location -->
+<div class="sub_pg_hd">
+    <!-- mobile header -->
+    <header id="mobile_hd">
+        <div class="m_hdWrap">
+            <h1 class="logo main"><a href="index.html"><img src="images/logo_coinq.png" alt="코인큐로고" ></a></h1>
+            <h1 class="logo sub"><a href="index.html"><img src="images/logo_coinq_black.png" alt="코인큐로고" ></a></h1>
+            <button class="menu_opener btnMenu"><i class="la la-bars"></i></button>
+        </div>
 
-            <!-- tabGroup -->
-            <div class="tabGroup">
-                <ul class="tabDep1 col_3 clearboth">
-                    <li><a href="useInfo.html"><h3>이용안내</h3></a></li>
-                    <li><a href="commission.html"><h3>수수료 안내</h3></a></li>
-                    <li class="active"><a href="dnw.html"><h3>입출금 안내</h3></a></li>
-                </ul>
-            </div>
-            <!--// tabGroup -->
-
-            <div class="infoTxtWrap">
-                <div class="infoTxtDummy">
-                    <h5>입금지원 화폐종류 <em>지원 가능한 암호화폐 추가 예정</em></h5>
-                    <table class="infoTbl ">
-                        <caption>암호화폐 매출</caption>
-                        <colgroup>
-                            <col width="140">
-                            <col width="*">
-                        </colgroup>
-                        <thead></thead>
-                        <tbody>
-                        <tr>
-                            <th>현금</th>
-                            <td>
-                                <p class="marking cred">
-                                    <strong>입금불가</strong> <br/>
-                                    <small class="cgray">단, 판매회원의 대금정산은 현금으로 정산이 가능합니다.</small>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>암호화폐</th>
-                            <td>
-                                <ul class="group currencyList">
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images subbtcThumb"></i>
-                                            BTC 비트코인
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images btgThumb"></i>
-                                            BTG 비트코인골드
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images bchThumb"></i>
-                                            BCH 비트코인캐시
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images ltcThumb"></i>
-                                            LTC 라이트코인
-                                        </div>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="infoTxtDummy">
-                    <h5>출금지원 화폐종류 <em>지원 가능한 암호화폐 추가 예정</em></h5>
-                    <table class="infoTbl ">
-                        <caption>암호화폐 매출</caption>
-                        <colgroup>
-                            <col width="140">
-                            <col width="*">
-                        </colgroup>
-                        <thead></thead>
-                        <tbody>
-                        <tr>
-                            <th>현금</th>
-                            <td>
-                                <ul class="group currencyList">
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images subkrwThumb"></i> 원화<small class="cgray">KRW</small>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images subusdThumb"></i> 달러<small class="cgray">USD</small>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <p class="marking cgray mgt15">
-                                    달러(USD) 정산 : 미국 현지에 입금 가능한 판매회원 명의의 계좌를 보유해야 하고 아래의 정보가 필요합니다.
-                                </p>
-                                <p class="marking cmainblue mgt5">
-                                    영문이름 / 은행코드(Electronic Routing No. 숫자 9자리) / 계좌번호 / 수신자 주소
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>암호화폐</th>
-                            <td>
-                                <ul class="group currencyList">
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images subbtcThumb"></i>
-                                            BTC 비트코인
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images btgThumb"></i>
-                                            BTG 비트코인골드
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images bchThumb"></i>
-                                            BCH 비트코인캐시
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="tableCell">
-                                            <i class="images ltcThumb"></i>
-                                            LTC 라이트코인
-                                        </div>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <a href="#" id="grade" name="grade"></a>
-                <div class="infoTxtDummy">
-                    <h5>보안등급 별 1일 입/출금 한도</h5>
-                    <ul class="edgeList">
-                        <li>1일 출금한도는 매일 00시에 초기화됩니다.</li>
-                        <li>암호화폐는 출금 시점의 원화 환산금액을 반영해 1일 출금한도가 관리됩니다.</li>
-                        <li>부정거래가 의심되는 경우 KRW, USD 및 암호화폐 입출금이 제한될 수 있습니다.</li>
+    </header>
+    <!-- 태블릿디바이스 헤더하단 링크 -->
+    <div id="snbWrap" class="snbWrap">
+        <nav>
+            <ul>
+                <li class="has-sub">
+                    <a href="#"><i class="la la-exclamation-circle"></i> 서비스안내</a>
+                    <ul>
+                        <li onclick="location.href='requestPay.html'">결제요청</li>
+                        <li onclick="location.href='cancel.html'">취소,환불</li>
+                        <li onclick="location.href='calculate.html'">맞춤형 정산</li>
+                        <li onclick="location.href='remit.html'">송금서비스</li>
                     </ul>
-                    <div class="table-responsive ">
-                        <table class="infoTbl tblLine tblKeepall text-center">
-                            <caption>보안등급 별 1일 입/출금 한도</caption>
-                            <colgroup>
-                                <col width="10%">
-                                <col width="10%">
-                                <col width="20%">
-                                <col width="20%">
-                                <col width="20%">
-                                <col width="20%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th scope="col" colspan="2">그룹</th>
-                                    <th scope="col">레벨1</th>
-                                    <th scope="col">레벨2</th>
-                                    <th scope="col">레벨3</th>
-                                    <th scope="col">레벨4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row" colspan="2">인증수단</th>
-                                <td>이메일인증</td>
-                                <td>휴대폰인증</td>
-                                <td>KYC(신분증인증) / OTP등록</td>
-                                <td>신청에 따른 심사</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" rowspan="3">입금</th>
-                                <th>KRW 원화</th>
-                                <td colspan="4" class="cred">입금불가</td>
-                            </tr>
-                            <tr>
-                                <th>USD 달러</th>
-                                <td colspan="4" class="cred">입금불가</td>
-                            </tr>
-                            <tr>
-                                <th>암호화폐</th>
-                                <td colspan="4" class="cmainblue">무제한</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" rowspan="3">출금</th>
-                                <th>KRW 원화</th>
-                                <td rowspan="3" class="cred">출금불가</td>
-                                <td>5,000,000 <small class="cgray">KRW</small></td>
-                                <td>25,000,000 <small class="cgray">KRW</small></td>
-                                <td>25,000,000 <small class="cgray">KRW 이상</small></td>
-                            </tr>
-                            <tr>
-                                <th>USD 달러</th>
-                                <td>5,000<small class="cgray">USD</small></td>
-                                <td>25,000<small class="cgray">USD</small></td>
-                                <td>25,000<small class="cgray">USD 이상</small></td>
-                            </tr>
-                            <tr>
-                                <th>암호화폐</th>
-                                <td>10,000,000<small class="cgray">KRW</small></td>
-                                <td>50,000,000<small class="cgray">KRW</small></td>
-                                <td>50,000,000<small class="cgray">KRW 이상</small></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!--// infoTxtDummy -->
+                </li>
+                <li class="has-sub">
+                    <a href="#"><i class="la la-file-text"></i> 판매자 이용안내</a>
+                    <ul>
+                        <li onclick="location.href='useInfo.html'">이용안내</li>
+                        <li onclick="location.href='commission.html'">수수료 안내</li>
+                        <li onclick="location.href='dnw.html'">입출금 안내</li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="#"><i class="la la-headphones"></i> 고객센터</a>
+                    <ul>
+                        <li onclick="location.href='faq.html'">자주묻는질문</li>
+                        <li onclick="location.href='info_all.html'">1:1 문의</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <a href="#" class="btnSnbCls"><i class="la la-close"></i></a>
+    </div>
+    <div class="snbBg"></div>
+
+    <!-- pc header -->
+    <header id="pc_hd">
+        <div class="inner">
+            <div class="hd_left">
+                <h1 class="logo main" title="코인큐로고"><a href="index.html"><img src="images/logo_coinq.png" alt="코인큐로고" ></a></h1>
+                <h1 class="logo sub"><a href="index.html"><img src="images/logo_coinq_black.png" alt="코인큐로고" ></a></h1>
+                <ul class="gnb clearboth">
+                    <li class="first"><a href="requestPay.html"><h2>서비스안내</h2></a></li>
+                    <li><a href="useInfo.html"><h2>판매자 이용안내</h2></a></li>
+                    <li><a href="faq.html"><h2>고객센터</h2></a></li>
+                </ul>
+            </div>
+            <div class="hd_right">
+                <ul class="user_m clearboth">
+                    <li class="first"><a href="https://se.coinq.com/#/login" target='_blank'><span><i class="icon login"></i></span>로그인</a></li>
+                    <li><a href="https://se.coinq.com/#/j/join" target='_blank'><span><i class="icon join"></i></span>회원가입</a></li>
+                    <li>
+                        <label>
+                            <span class="label-stacked"><i class="icon globe"></i></span>
+                            <span class="plain-select">
+							<select class="langM" name="langMenu">
+								<option value="korean">KOR</option>
+								<option value="english">ENG</option>
+								<option value="japanease">JPN</option>
+								<option value="chinese">CHN</option>
+							</select>
+						</span>
+                        </label>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!--//inner -->
-    </div>
-    <!--//subContent-->
+    </header>
+</div>
+<div class="subContent">
+    <div class="inner">
+        <!-- location -->
+        <div class="page_location clearboth">
+            <ul class="clearboth">
+                <li class="home"><i class="icon"></i></li>
+                <li>판매자 이용안내</li>
+                <li class="present">입출금안내</li>
+            </ul>
+        </div>
+        <!--// location -->
 
-<? include "include/footer.html"; ?>
+        <!-- tabGroup -->
+        <div class="tabGroup">
+            <ul class="tabDep1 col_3 clearboth">
+                <li><a href="useInfo.html"><h3>이용안내</h3></a></li>
+                <li><a href="commission.html"><h3>수수료 안내</h3></a></li>
+                <li class="active"><a href="dnw.html"><h3>입출금 안내</h3></a></li>
+            </ul>
+        </div>
+        <!--// tabGroup -->
+
+        <div class="infoTxtWrap">
+            <div class="infoTxtDummy">
+                <h5>입금지원 화폐종류 <em>지원 가능한 암호화폐 추가 예정</em></h5>
+                <table class="infoTbl ">
+                    <caption>암호화폐 매출</caption>
+                    <colgroup>
+                        <col width="140">
+                        <col width="*">
+                    </colgroup>
+                    <thead></thead>
+                    <tbody>
+                    <tr>
+                        <th>현금</th>
+                        <td>
+                            <p class="marking cred">
+                                <strong>입금불가</strong> <br/>
+                                <small class="cgray">단, 판매회원의 대금정산은 현금으로 정산이 가능합니다.</small>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>암호화폐</th>
+                        <td>
+                            <ul class="group currencyList">
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images subbtcThumb"></i>
+                                        BTC 비트코인
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images btgThumb"></i>
+                                        BTG 비트코인골드
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images bchThumb"></i>
+                                        BCH 비트코인캐시
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images ltcThumb"></i>
+                                        LTC 라이트코인
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="infoTxtDummy">
+                <h5>출금지원 화폐종류 <em>지원 가능한 암호화폐 추가 예정</em></h5>
+                <table class="infoTbl ">
+                    <caption>암호화폐 매출</caption>
+                    <colgroup>
+                        <col width="140">
+                        <col width="*">
+                    </colgroup>
+                    <thead></thead>
+                    <tbody>
+                    <tr>
+                        <th>현금</th>
+                        <td>
+                            <ul class="group currencyList">
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images subkrwThumb"></i> 원화<small class="cgray">KRW</small>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images subusdThumb"></i> 달러<small class="cgray">USD</small>
+                                    </div>
+                                </li>
+                            </ul>
+                            <p class="marking cgray mgt15">
+                                달러(USD) 정산 : 미국 현지에 입금 가능한 판매회원 명의의 계좌를 보유해야 하고 아래의 정보가 필요합니다.
+                            </p>
+                            <p class="marking cmainblue mgt5">
+                                영문이름 / 은행코드(Electronic Routing No. 숫자 9자리) / 계좌번호 / 수신자 주소
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>암호화폐</th>
+                        <td>
+                            <ul class="group currencyList">
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images subbtcThumb"></i>
+                                        BTC 비트코인
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images btgThumb"></i>
+                                        BTG 비트코인골드
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images bchThumb"></i>
+                                        BCH 비트코인캐시
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tableCell">
+                                        <i class="images ltcThumb"></i>
+                                        LTC 라이트코인
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="#" id="grade" name="grade"></a>
+            <div class="infoTxtDummy">
+                <h5>보안등급 별 1일 입/출금 한도</h5>
+                <ul class="edgeList">
+                    <li>1일 출금한도는 매일 00시에 초기화됩니다.</li>
+                    <li>암호화폐는 출금 시점의 원화 환산금액을 반영해 1일 출금한도가 관리됩니다.</li>
+                    <li>부정거래가 의심되는 경우 KRW, USD 및 암호화폐 입출금이 제한될 수 있습니다.</li>
+                </ul>
+                <div class="table-responsive ">
+                    <table class="infoTbl tblLine tblKeepall text-center">
+                        <caption>보안등급 별 1일 입/출금 한도</caption>
+                        <colgroup>
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th scope="col" colspan="2">그룹</th>
+                            <th scope="col">레벨1</th>
+                            <th scope="col">레벨2</th>
+                            <th scope="col">레벨3</th>
+                            <th scope="col">레벨4</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row" colspan="2">인증수단</th>
+                            <td>이메일인증</td>
+                            <td>휴대폰인증</td>
+                            <td>KYC(신분증인증) / OTP등록</td>
+                            <td>신청에 따른 심사</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="3">입금</th>
+                            <th>KRW 원화</th>
+                            <td colspan="4" class="cred">입금불가</td>
+                        </tr>
+                        <tr>
+                            <th>USD 달러</th>
+                            <td colspan="4" class="cred">입금불가</td>
+                        </tr>
+                        <tr>
+                            <th>암호화폐</th>
+                            <td colspan="4" class="cmainblue">무제한</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="3">출금</th>
+                            <th>KRW 원화</th>
+                            <td rowspan="3" class="cred">출금불가</td>
+                            <td>5,000,000 <small class="cgray">KRW</small></td>
+                            <td>25,000,000 <small class="cgray">KRW</small></td>
+                            <td>25,000,000 <small class="cgray">KRW 이상</small></td>
+                        </tr>
+                        <tr>
+                            <th>USD 달러</th>
+                            <td>5,000<small class="cgray">USD</small></td>
+                            <td>25,000<small class="cgray">USD</small></td>
+                            <td>25,000<small class="cgray">USD 이상</small></td>
+                        </tr>
+                        <tr>
+                            <th>암호화폐</th>
+                            <td>10,000,000<small class="cgray">KRW</small></td>
+                            <td>50,000,000<small class="cgray">KRW</small></td>
+                            <td>50,000,000<small class="cgray">KRW 이상</small></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--// infoTxtDummy -->
+        </div>
+    </div>
+    <!--//inner -->
+</div>
+<!--//subContent-->
+
+<!--footer include-->
+<div class="footer">
+    <div class="ftRow1 clearboth">
+        <div class="inner">
+            <p class="privacy_menu fleft">
+                <span class="first"><a href="terms.html">서비스이용약관</a></span>
+                <span><a href="privacy.html">개인정보처리방침</a></span>
+                <span><a href="cryptocurrency.html">암호화폐위험안내</a></span>
+                <span><a href="terms_cancel.html">취소/환불방침</a></span>
+            </p>
+            <div class="select_wrap fright">
+                <select onchange="window.open(this.value)" class="family_site">
+                    <option>COINQ 계열사 사이트</option>
+                    <option value="http://payapp.kr/">페이앱</option>
+                    <option value="http://blogpay.co.kr/">블로그페이</option>
+                    <option value="http://snssell.com/shop/">B2B market</option>
+                    <option value="http://snssell.com/">SNSsell</option>
+                    <option value="http://ezposting.co.kr/">이지포스팅</option>
+                    <option value="https://www.bootpay.co.kr/">부트페이</option>
+                    <option value="http://www.dabedal.com/index.udid">다배달</option>
+                    <option value="https://www.daosem.com/">다오셈</option>
+                    <option value="https://zipsa.net/">집사</option>
+                    <option value="https://noshowstop.com">노쇼스탑</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="ftRow2">
+        <div class="inner clearboth">
+            <div class="fleft">
+                <a href="#coinQ"><img class="ft_logo main" src="images/logo_coinq.png" alt="코인큐 로고" title="상단으로 이동하기"></a>
+                <img class="ft_logo sub" src="images/logo_coinq.png" alt="코인큐 로고" title="상단으로 이동하기">
+            </div>
+            <div class="fleft">
+                <p class="add">
+                    <span>코인큐</span><span>사업자등록번호: 891-81-00922</span><span>대표자 : 천지후</span>
+                    <span>서울특별시 구로구 디지털로 26길 61, 1801호(구로동, 에이스하이엔드타워2차)</span>
+                    <br class="web"/>
+                </p>
+                <p class="copy">
+                    Copyright © 2019 UDID Company. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//footer include-->
+</body>
+</html>
