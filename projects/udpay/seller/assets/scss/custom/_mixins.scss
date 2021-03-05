@@ -1,0 +1,546 @@
+@charset "UTF-8";
+/* _mixins.scss */
+
+/// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// font-family
+@mixin font-family($fontFam) {
+  font-family: $fontFam;
+}
+
+// content value init
+@mixin content-val($content) {
+  display:inline-block;
+  content: $content;
+}
+
+// float clear both
+@mixin clearfix() {
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}
+
+// button active
+@mixin btnActive($shadowColor){
+  &:active,
+  &:focus,
+  &:hover,
+  &.active{
+    @include prefix(box-shadow, 0px 0px 4px 0px rgba($shadowColor, 0.3), webkit ms moz o);
+  }
+}
+
+// animation keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// placeholder
+@mixin placeholder(){
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder{
+    @content
+  }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    @content
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder{
+    @content
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder{
+    @content
+  }
+  input::placeholder,
+  textarea::placeholder{
+    @content
+  }
+}
+
+@mixin roundBox-variant($color1) {
+  background-color: $color1;
+  i, .txt, .num{
+    color:$white;
+  }
+}
+
+@mixin roundBox-light-variant($color1) {
+  background-color: lighten($color1, 30%);
+  //background-color: mix(white, $color1, 20%);
+  i, .txt, .num{
+    color:$color1;
+  }
+}
+
+// 티비박스 믹스인
+@mixin roundBoxPrime($color1) {
+  .roundbox-shape{
+    fill: $color1;
+    transition: all 0.2s ease-in-out;
+  }
+  i, .ico, .txt, .num {
+    color: $white;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// 티비박스 라이트 믹스인
+@mixin roundBoxWhite($color1) {
+  .roundbox-shape{
+    fill: $white;
+    transition: all 0.2s ease-in-out;
+  }
+  i, .ico, .txt, .num {
+    color: $color1;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// 티비박스 라이트 믹스인
+@mixin roundBoxLight($color1) {
+  .roundbox-shape{
+    fill: mix($white, $color1, 88%);
+    transition: all 0.2s ease-in-out;
+  }
+  i, .ico, .txt, .num {
+    color: $color1;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@mixin roundBoxLightHover($color1) {
+  .roundbox-shape{
+    fill: $white;
+    transition: all 0.2s ease-in-out;
+  }
+  i, .ico, .txt, .num {
+    color: $color1;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+// 티비박스 믹스인 사용해서 각 색상별로 만들기
+@each $color, $value in $theme-colors {
+  .roundbox-#{$color} {
+    @include roundBoxPrime($value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .roundbox-#{$color}-white {
+    @include roundBoxWhite($value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .roundbox-#{$color}-light {
+    @include roundBoxLight($value);
+  }
+}
+
+// 상단 써머리 li 호버시, 색상 전환되는거
+@mixin summaryRoundBox($bgColor) {
+  &{
+    transition: all 0.2s ease-in-out;
+
+    .num-txt.emphasis{
+      color: $bgColor;
+    }
+  }
+}
+@mixin summaryRoundBox-hover($bgColor) {
+  //&{
+  //  cursor:pointer;
+  //  transition: all 0.2s ease-in-out;
+  //
+  //  .num-txt.emphasis{
+  //    color: $bgColor;
+  //  }
+  //}
+  &:hover, &.active{
+    cursor:pointer;
+    background-color: $bgColor;
+    //transform:translateY(-0.5em);
+    transition: all 0.2s ease-in-out;
+
+    dl{
+      border-left:0;
+    }
+    .roundbox-wrap{
+      @include roundBoxWhite($bgColor);
+    }
+    .num-txt{
+      color: $white;
+      opacity: 0.75;
+    }
+    .num-txt.emphasis{
+      opacity: 1;
+    }
+  }
+
+  &:hover{
+    transform: translateY(-0.5em);
+  }
+}
+
+
+@each $color, $value in $round-box-colors{
+  .summary-info-wrap{
+    .summary-#{$color} {
+      @include summaryRoundBox($value);
+    }
+  }
+
+  .summary-info-wrap.is-hover{
+    .summary-#{$color} {
+      @include summaryRoundBox-hover($value);
+    }
+  }
+}
+
+
+//@mixin summary-variant($bg) {
+//  &{
+//    //background-color: $white;
+//    transition: all 0.2s ease-in-out;
+//    .roundbox-shape{
+//      fill: mix($white, $bg, 88%);
+//    }
+//    .tv{
+//      background-color:lighten($bg, 27%);
+//      color: $bg;
+//      i, .txt, .num{
+//        color: $bg;
+//      }
+//    }
+//    dd{
+//      color: $bg;
+//    }
+//
+//    &:hover, &:active, &.active{
+//      background-color: $bg;
+//      transition: all 0.2s ease-in-out;
+//      transform:translateY(-10px);
+//      //transform:scale(1.08);
+//      .tv{
+//        background-color: $white;
+//      }
+//
+//      dl{
+//        border-left:0 !important;
+//      }
+//
+//      dd{
+//        color: $white;
+//      }
+//    }
+//  }
+//}
+//
+//@each $color, $value in $round-box-colors{
+//  .summary-#{$color} {
+//    @include summary-variant($value);
+//  }
+//}
+
+
+
+
+// 검색창, 결제창 열기 버튼
+@mixin btnShape ($theme-color){
+  width:4.667rem; // 70px
+  height:4.667rem; // 70px
+  border-radius: 50%;
+  color:$white;
+  position: fixed;
+  right:20px;
+  bottom:20px;
+  z-index:1050;
+  font-size:1.933rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background: $theme-color;
+  box-shadow: 5px 5px 12px rgba($theme-color, 0.5);
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:4.667rem; // 70px
+    height:4.667rem; // 70px
+    border-radius: 50%;
+    border: 1px solid $theme-color;
+    filter: blur(0);
+    transform-origin: 50%;
+    z-index: -1;
+    box-sizing: border-box;
+  }
+  &:hover, &:focus, &:active{
+    background: $theme-color;
+    color:$white;
+    opacity: 1;
+    &:before, &:after{
+      opacity: 1;
+      z-index:-1;
+      border-color: transparent;
+      filter: blur(0.5px);
+      transform: scale(1.5);
+      transition: 1s transform ease, 2.1s blur ease, 0.9s border-color ease;
+    }
+    &:after {
+      transition-delay: 0.1s;
+    }
+  }
+}
+
+// 텍스트&넘버 라운드 박스
+@mixin roundBox(){
+  width:2.867rem; /*43px*/
+  height: 3.467rem; /*52px*/
+  margin: 0 auto;
+  background: $text-light;
+  border-radius: 50% / 15%;
+  color: darken($text-light, 35%);
+  text-align: center;
+  text-indent: .1em;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 7%;
+    bottom: 8%;
+    right: -11%;
+    left: -12%;
+    background: inherit;
+    border-radius: 18% / 50%;
+  }
+  i{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-55%, -50%);
+    font-size:1.8rem;
+    //color:$white;
+    color: darken($text-light, 35%);
+    z-index: 5;
+  }
+  .num{
+    font-size:1.6rem;
+    font-weight: 600;
+    position: absolute;
+    top:50%;
+    left:50%;
+    color:$primary-dark;
+    transform: translate(-55%, -50%);
+  }
+  .txt{
+    font-size:1rem;
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    //color:$white;
+    color: darken($text-light, 35%);
+    transform: translate(-55%, -50%);
+    line-height: 1.2;
+  }
+}
+
+
+
+
+@mixin bgColor($color1) {
+  &{
+    background-color: mix($white, $color1, 96%);
+  }
+}
+
+// background color
+@each $color, $value in $theme-colors{
+  .bg-#{$color}-light {
+    @include bgColor($value);
+  }
+}
+
+// li with ordering number
+@mixin numliLayout($color1) {
+  &{
+    counter-reset: section;
+
+    li{
+      padding-left: 22px;
+      text-indent: -11px;
+      word-break: break-all;
+      color: rgba($primary-dark, 0.6);
+
+      &:not(:first-child){
+        margin-top: 10px;
+      }
+
+      &:before{
+        content: counter(section);
+        counter-increment: section;
+        display: inline-block;
+        vertical-align: middle;
+        color:$color1;
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+@mixin stepLiLayout {
+  &{
+    counter-reset: step;
+
+    li{
+      position: relative;
+      padding-left: 75px;
+      word-break: keep-all;
+      color: rgba($primary-dark, 0.6);
+
+      &:not(:first-child){
+        margin-top: 15px;
+      }
+
+      &:before{
+        content: counter(step);
+        counter-increment: step;
+        display: inline-block;
+        width:53px;
+        height: 53px;
+        background-color:$primary-dark;
+        border-radius: 50%;
+        vertical-align: middle;
+        color:$white;
+        font-size:1.067rem;
+        font-weight: $font-weight-bolder;
+        line-height: 2.5;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:after{
+        content: "step";
+        display: inline-block;
+        color:rgba($white,0.6);
+        text-transform: uppercase;
+
+        vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        left: 0;
+        width: 53px;
+        font-size:0.7333rem;
+      }
+
+    }
+  }
+}
+
+// li with ordering number
+@mixin iconliLayout($bgColor, $iconColor) {
+  &{
+    position: relative;
+
+    &:before{
+      content: "\ea2d";
+      font-family: xeicon;
+      //background: url("../../img/shape_icon.svg") no-repeat;
+      //background: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 55 55'><path d='M49.092,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.543-.112-17.085-1.181-21.594-5.907C1.179,44.584.11,36.042,0,27.5,0.11,18.957,1.179,10.414,5.9,5.905,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.092,5.905,53.818,10.414,54.887,18.957,55,27.5,54.887,36.042,53.818,44.585,49.092,49.094Z'/></svg>");
+
+      background-color: $bgColor;
+      -webkit-mask-image: url("../../img/shape_icon.svg");
+      mask-image: url("../../img/shape_icon.svg");
+      -webkit-mask-size: cover;
+      mask-size: cover;
+
+      color:$iconColor;
+      display: inline-block;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      line-height: 55px;
+      font-size: 160%;
+      position: absolute;
+      left:0;
+    }
+    .alert-text__inner{
+      display: block;
+      width: 100%;
+      color: $primary-dark;
+      font-size: 0.9333rem;
+    }
+
+    .text-em{
+      color: $bgColor;
+    }
+  }
+}
+
+
+// list-style mixin
+@mixin bulletLi($radius, $bgcolor) {
+  > li{
+    position:relative;
+    word-break: keep-all;
+
+    &:before{
+      content:"";
+      display: inline-block;
+      width:3px;
+      height: 3px;
+      border-radius: $radius;
+      background-color: $bgcolor;
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+  }
+}
+
+@mixin numberLi() {
+  &{
+    counter-reset: section;
+
+    > li{
+      padding-left: 15px;
+      text-indent: -8px;
+      word-break: keep-all;
+
+      &:before {
+        content: counter(section);
+        counter-increment: section;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+}

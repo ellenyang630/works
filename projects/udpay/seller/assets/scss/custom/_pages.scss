@@ -1,0 +1,547 @@
+@charset "UTF-8";
+/* _pages.scss */
+//## The detailed style for each page
+
+//
+//  Login & Join  Page
+// --------------------------------------------------
+.simple_content{
+  width:100%;
+}
+.fixed-table{
+  display: table;
+  width: 100%;
+  height: 100vh;
+  table-layout: fixed;
+}
+.cell-vm{
+  display:table-cell;
+  width: 100%;
+  height: 100vh;
+  vertical-align: middle;
+}
+.login-card{
+  width:440px;
+  margin:0 auto;
+
+  .login-logo{
+    margin-bottom:2rem;
+    text-align: center;
+  }
+  .login-btn{
+    margin-top: 2.5rem;
+  }
+
+  .form-group{
+    margin-bottom:0;
+
+    &:first-child{
+      .form-control{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .input-group-text{
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    &:last-child{
+      margin-top: -1px;
+
+      .form-control{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .input-group-text{
+        border-top-left-radius: 0;
+      }
+    }
+  }
+  .form-control{
+    border-left:0;
+    font-size: 1rem;
+  }
+  .btn-lg{
+    font-size: 1.05rem;
+  }
+}
+
+
+//
+//  Dash Board
+// --------------------------------------------------
+
+// 오늘자 결제/정산 건 써머리
+.sum-list__wrap{
+  > dl{
+    padding:25px 0;
+    border-bottom:1px solid $line-lighter;
+
+    &:first-child{
+      padding-top:0;
+    }
+    &:last-child{
+      padding-bottom:0;
+      border-bottom:0;
+    }
+    dd{
+      > dl{
+        padding:5px 0;
+      }
+    }
+  }
+}
+
+// 내정보
+.my-info{
+  width: 100%;
+  color:$white;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .top, .bottom{
+    width:100%;
+    box-sizing: border-box;
+  }
+  .top{
+    padding-bottom:25px;
+  }
+  .bottom{
+    padding-top:25px;
+    border-top: 1px solid rgba($white, 0.1);
+  }
+
+  // 정산불가상태
+  &.unavailable{
+    background-color: $info;
+
+    .roundbox-wrap{
+      i{
+        color:$info;
+      }
+    }
+    .bottom{
+      .btn{
+        min-width:263px;
+        padding: 0.7rem 1rem;
+        margin-top:25px;
+        background: $white;
+        border-color:$white;
+        font-size:1rem;
+        color:$info;
+      }
+    }
+  }
+
+  // 정산가능상태
+  &.available{
+    background-color: $primary;
+
+    .roundbox-wrap{
+      i{
+        color:$primary;
+      }
+    }
+  }
+}
+
+.my{
+  // 내정보 > 수수료 정보
+  &-fee-info{
+    display: table;
+    width:100%;
+
+    li{
+      display: table-cell;
+      width:50%;
+      text-align: center;
+      vertical-align: middle;
+
+      &:first-child{
+        padding-right:2vw;
+      }
+      &:last-child{
+        padding-left:2vw;
+      }
+    }
+  }
+  // 내정보 > 정산 정보
+  &-adjust-info{
+    &{
+      padding: 5px 0;
+    }
+    &__wrap &{
+      flex-grow: 1;
+    }
+    dt{
+      color: rgba($white, 0.6);
+    }
+    dd{
+      margin-left:1.5rem;
+      color: $white;
+    }
+  }
+}
+
+// 월 매출현황 / 구매자 결제패턴 분석 그래프
+.graph-box{
+  position: relative;
+  margin-top:26px;
+  text-align: center;
+}
+
+// api 연동 링크 배너
+.system-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+
+  .roundbox-wrap{
+    margin:0;
+    margin-right: 50px;
+  }
+  .btn{
+    padding: 0.56rem 1.2rem;
+  }
+}
+
+// 공지사항, 자주묻는질문 최신글
+.bbs {
+  &-latest {
+    li {
+      width: 100%;
+      padding: 5px 0;
+      display: table;
+      table-layout: fixed;
+      cursor: pointer;
+
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        span:not(.bbs-cate) {
+          color: $primary;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  &-subject,
+  &-cate {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &-subject {
+    font-size: 1.067rem;
+    color: $text-dark;
+    width: 75%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    word-break: break-all;
+  }
+  &-cate {
+    display: inline-block;
+    width: 4.867rem; // 73px
+    height: 1.867rem; // 28px
+    line-height: 1.867rem; // 28px
+    margin-right: 10px;
+    text-align: center;
+    font-size: 0.9333rem;
+    font-weight: 600;
+    background: $text-light;
+    border-radius: 8px;
+  }
+  &-date {
+    min-width: 95px;
+    width: auto;
+    padding-left: 15px;
+    font-size: 1rem;
+    color: $text-default;
+    text-align: right;
+  }
+}
+
+
+//
+//  정산관리
+// --------------------------------------------------
+
+// 정산안내
+.title__flow-adjust{
+  font-size:1.133rem;
+  font-weight: $font-weight-bolder;
+  color:$primary-dark;
+  margin-bottom: 6px;
+}
+.flow-adjust{
+  @include stepLiLayout();
+}
+
+// 정산내역
+.top-info{
+  margin-bottom: 1rem;
+  zoom: 1;
+
+  dt{
+    i{
+      font-size: $font-size-base * 1.1;
+      position: relative;
+      top: 2px;
+      color:$base-lighter;
+      cursor: pointer;
+    }
+  }
+  dd{
+    margin-left: 20px !important;
+
+    span{
+      margin-right: 20px;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// 익일정산 신청
+.title__flow-adjust-nextDay{
+  font-size:1.133rem;
+  font-weight: $font-weight-bolder;
+  color:$primary-dark;
+  margin-bottom: 10px;
+}
+.flow-adjust-nextDay{
+  @include numliLayout($primary-dark);
+}
+
+.alert{
+  &-text {
+    @include iconliLayout($danger, $white);
+    padding-left: 73px;
+
+    .info{
+      opacity: 0.6;
+    }
+  }
+  &-adjust{
+    @include numliLayout($danger);
+    line-height: 1.4;
+  }
+}
+
+
+//
+//  부계정 관리
+// --------------------------------------------------
+
+// 부계정 등록
+.rowBox li{
+  margin: 25px 0;
+
+  &:first-child{
+    margin-top: 10px;
+  }
+  &:last-child{
+    margin-bottom: 10px;
+  }
+}
+
+
+//
+//  설정
+// --------------------------------------------------
+
+// 결제 옵션 설정
+.payment-logo-preview{
+  height: 21px;
+
+  .img-logo{
+    height: 100%;
+  }
+  .txt-logo{
+    font-family: GmarketSansBold !important;
+    font-size: 21px;
+  }
+}
+
+// 비사업자 판매 시 유의사항
+.alert-noDealer{
+  .alert-p{
+    padding:18px 9px;
+    background-color: rgba($danger, 0.05);
+    border-top: 1px solid rgba($danger, 0.15);
+    border-bottom: 1px solid rgba($danger, 0.15);
+    font-size: 1rem;
+    font-weight: $font-weight-bolder;
+    color:$danger;
+    text-align: center;
+
+    &:before{
+      content:"\ea2d";
+      display: inline-block;
+      font-family: xeicon;
+      font-size: 2.667rem;
+      margin-right: 10px;
+    }
+    p{
+      display: inline-block;
+    }
+  }
+  .alert-p-last{
+    padding: 8px;
+    background-color: $danger;
+    color:$white;
+    text-align: center;
+  }
+}
+
+
+//
+//  고객센터
+// --------------------------------------------------
+
+// 게시판 공통 레이아웃
+.board-cont{
+  &__head{
+    padding-bottom: 1.667rem;
+    border-bottom:1px dashed $line-light;
+  }
+  &__head-subj{
+    display: flex;
+  }
+  &__tit{
+    color:$primary;
+
+    .badge{
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 0.9333rem;
+    }
+
+    strong{
+      font-size:1.267rem;
+    }
+  }
+  &__btn{
+    margin-left:auto;
+    flex-basis: 150px;
+    text-align: right;
+
+    .btn{
+      margin:0 5px;
+    }
+  }
+  &__info{
+    margin-top:5px;
+    font-size:0.9333rem;
+  }
+  &__body{
+    min-height: 200px;
+    padding:30px 0;
+    color:$base-dark;
+    line-height:1.6;
+
+    > * {
+      color:$base-dark;
+      line-height:1.6;
+    }
+  }
+}
+
+// 자주묻는질문
+.above-search__area{
+  margin-bottom:40px;
+}
+.input-search{
+  width:310px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 0;
+  border:0;
+  background: none;
+  position: relative;
+
+  input{
+    width: 100%;
+    height: 100%;
+    padding:0.8667rem 0 0.8667rem 2rem;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+  &:before{
+    font-family:xeicon;
+    content:"\e97a";
+    display: inline-block;
+    position:absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.467rem;
+    color:$text-default;
+  }
+  &:after{
+    content:"";
+    display: block;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:3px;
+    background-color: $line-light;
+  }
+  &.focus{
+    outline:0;
+
+    &:after{
+      width:100%;
+      background-color:$primary;
+    }
+  }
+}
+.cate-group{
+  margin-bottom: 35px;
+  text-align: center;
+
+  .btn{
+    background: #e2e8ef;
+    border: 1px solid #e2e8ef;
+    color: #a4b1bd;
+    border-radius: 15px;
+    padding: 0.6rem 1.8rem;
+    margin-bottom:0.6667rem;
+
+    &.active,
+    &:hover,
+    &:focus{
+      background: $primary;
+      border-color: $primary;
+      color:$white;
+    }
+    &:not(:last-child){
+      margin-right:0.6667rem;
+    }
+  }
+}
+.faq-abbr{
+  display: inline-block;
+  width: 2.2rem; /*33px*/
+  height: 2.2rem;
+  line-height: 2.2rem;
+  //margin-right:15px;
+  border-radius: 50em;
+  background: rgba($primary,0.15);
+  color:$primary;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.067rem;
+  font-weight: $font-weight-bolder;
+  transition: all 0.2s ease-in-out;
+}

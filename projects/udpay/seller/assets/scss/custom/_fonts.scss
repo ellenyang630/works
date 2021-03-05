@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* _fonts.scss */
+
+@import "../../css/xeicon.min.css";
+@import "../../css/line-awesome.min.css";
+@import "../../css/font-awesome.min.css";
+
+//
+//   Web font Setting
+// --------------------------------------------------
+
+// 나눔스퀘어라운드 웹폰트 v1.11 https://github.com/innks/NanumSquareRound
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 300;
+  src: local("nanumSquareRoundL"), /* computer */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundL.eot"), /* IE9 Compat Modes */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundL.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundL.woff2") format("woff2"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundL.woff") format("woff"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundL.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 400;
+  src: local("nanumSquareRoundR"), /* computer */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundR.eot"), /* IE9 Compat Modes */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundR.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundR.woff2") format("woff2"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundR.woff") format("woff"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundR.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 700;
+  src: local("nanumSquareRoundB"), /* computer */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundB.eot"), /* IE9 Compat Modes */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundB.woff2") format("woff2"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundB.woff") format("woff"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundB.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 600;
+  src: local("nanumSquareRoundEB"), /* computer */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundEB.eot"), /* IE9 Compat Modes */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundEB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundEB.woff2") format("woff2"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundEB.woff") format("woff"), /* Modern Browsers */
+  url("../../fonts/nanumSquareRound/nanumSquareRoundEB.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+// 지마켓산스 웹폰트
+@font-face {
+  font-family: 'GmarketSansBold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../fonts/gmarketSans/gmarketSansTTFBold.eot');
+  src: url('../../fonts/gmarketSans/gmarketSansTTFBold.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/gmarketSans/gmarketSansTTFBold.svg#GmarketSansTTFBold') format('svg'),
+  url('../../fonts/gmarketSans/gmarketSansTTFBold.woff') format('woff'),
+  url('../../fonts/gmarketSans/gmarketSansTTFBold.woff2') format('woff2');
+}
