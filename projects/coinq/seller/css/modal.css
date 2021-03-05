@@ -1,0 +1,492 @@
+@charset "UTF-8";
+
+.modal-open {
+	overflow: hidden;
+}
+.modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	height: 100%;
+	text-align: center; /*180525추가-모달 전체 가운데 정렬*/
+}
+.modal .btn {
+	padding: 7px 10px;
+}
+.modal.fade .modal-dialog {
+	-webkit-transform: translate(0, -25%);
+	-ms-transform: translate(0, -25%);
+	-o-transform: translate(0, -25%);
+	transform: translate(0, -25%);
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	-moz-transition: -moz-transform 0.3s ease-out;
+	-o-transition: -o-transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+}
+.modal.in .modal-dialog {
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+	width: 100%;
+}
+.modal-dialog {
+	/*position: absolute;*/
+	display: table;
+	vertical-align: middle;
+	width: auto;
+	/*top: 50%;*/
+	width: 100%;
+	height: 100%;
+	/*-webkit-transform: translateY(-50%) !important;
+       transform: translateY(-50%) !important;*/
+}
+.modal-wrap {
+	max-width: 580px;
+	margin: 0 auto;
+	background: #fff;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	border: 1px solid #c8c8c8;
+	position: relative;/* 안에 프로그레스바 때문에 추가 180712*/
+	overflow: hidden;/* 안에 프로그레스바 때문에 추가 180712*/
+}
+.modal-content {
+	position: relative;
+	border-radius: 6px;
+	display: table-cell;
+	vertical-align: middle;
+	/*-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+       box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);*/
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	outline: 0;
+	margin: 0 auto;
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000;
+}
+.modal-backdrop.fade {
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.modal-backdrop.in {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.modal-header {
+	padding: 30px 30px 20px 30px;
+	position: relative;
+	background: #fff;
+}
+.modal-header .close {
+	right: 30px;
+	top: 20px;
+	position: absolute;
+	font-size: 34px;
+	opacity: 1;
+	color: #3e3e3e;
+}
+.modal-title {
+	margin: 0;
+	line-height: 1.42857143;
+	text-align: left;
+	font-size: 18px;
+	font-weight:700;
+}
+.modal-body {
+	position: relative;
+	padding: 30px;
+	padding-top: 0px;
+	text-align: center; /*180525추가-모달 전체 가운데 정렬*/
+	background: #fff;
+}
+.modal-sm .modal-body, .modal-md .modal-body, .modal-lg .modal-body {
+	min-width: auto;
+}
+.modal-footer {
+	padding: 30px;
+	padding-top: 0;
+	text-align: center;
+	background: #fff;
+}
+.modal-footer .btn + .btn {
+	margin-left: 5px;
+	margin-bottom: 0;
+}
+.modal-footer .btn-group .btn + .btn {
+	margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+	margin-left: 0;
+}
+.modal-footer span {
+	margin-right: 10px;
+}
+.modal-footer span:last-child {
+	margin-right: 0;
+}
+.modal-footer a {
+	min-width: 120px;
+}
+.modal-sm .modal-footer a {
+	min-width: 100px;
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+.modal-top {
+	margin-bottom: 20px;
+}
+@media (max-width: 800px) {
+	.modal-top .bt {
+		margin-bottom: 10px;
+	}
+}
+.modaltext {
+	text-align: left;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.modaltext strong {
+	color: #007aff;
+}
+.alertInfo h3, .alertInfo h4 {
+	font-size: 13.5px;
+}
+.alertInfo h3 {
+	font-weight: 700;
+}
+.alertInfo p {
+	margin-top: 13px;
+	color: #6e6e6e;
+}
+.alertInfo p:first-child {
+	margin-top: 0;
+}
+
+/* 180419 */
+.regular_modal {
+	width: 600px;
+}
+.regular_modal .modal-body {
+	padding: 0 48px 30px 48px;
+}
+
+.modal-content-s {
+	width: 400px;
+	margin: 0 auto;
+}/*0322*/
+
+/* width change */
+.modal-md .modal-wrap {
+	width: 440px;
+}
+.modal-sm  .modal-wrap {
+	width: 360px;
+}
+.modal-lg  .modal-wrap {
+	width: 800px;
+	max-width: 800px;
+}
+
+@media (max-width: 800px) {
+	.modal-lg .modal-wrap {
+		width: 500px;
+	}
+	.modal-lg  .modal-wrap {
+		max-width: 560px;
+	}
+}
+
+@media (min-width: 550px) {
+	/*	.modal-content {
+       -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+       }*/
+	.modal-md .modal-wrap {
+		width: 440px;
+	}
+	.modal-sm .modal-wrap {
+		width: 360px;
+	}
+	.modal-lg .modal-wrap {
+		width: 800px;
+	}
+}
+
+/* 180424 for_global - 판매국가 해외 선택  */
+.chk_contin {
+	position: relative;
+	width: 100%; /*height: 42px; border-bottom:1px solid #5584ff; color:#5584ff;*/
+}
+
+/*
+.chk_contin .btn {
+	width: 100%;
+	text-align: left;
+	color: #5584ff;
+	padding: 10px 10px 0 0;
+}
+.chk_contin .icn_up:after {
+	font-family: FontAwesome;
+	content: '\f107';
+	display: inline-block;
+	float: right;
+	font-size: 20px;
+}
+.chk_contin .icn_down:after {
+	font-family: FontAwesome;
+	content: '\f106';
+}
+.chk_contin_box {
+	display: none;
+	position: absolute;
+	top: 49px;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #5584ff;
+	color: #3e3e3e;
+}
+.chk_contin_box li {
+	float: left;
+	width: 25%;
+	margin: 5px 0;
+}
+*/
+
+
+.chk_country {
+	float: left;
+	width: 20%;
+	height: 80px;
+	padding: 0 5px;
+	margin-top: 15px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.chk_country .chk_box {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	word-break: break-all;
+	cursor: pointer;
+	overflow: hidden;
+	border: 1px solid #d7d7d7;
+}
+.chk_country img {
+	max-width: 30px;
+	max-height: 20px;
+	margin-top: 13px;
+}
+.chk_country p {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	padding-top: 30px;
+	font-size: 12px;
+	line-height: 1;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	word-break: break-all;
+}
+
+.chk_country .chk_box:hover,
+.chk_country .chk_box:active,
+.chk_country .chk_box:focus,
+.chk_country .chk_box.active {
+	word-break: break-alll;
+	background: #007aff;
+	color: #fff;
+	transition: all 0.5s;
+}
+
+.chk_country .chk_box:hover img, .chk_country .chk_box:active img, .chk_country .chk_box:focus img, .chk_country .chk_box.active img {
+	display: none;
+}
+
+.chk_country .chk_box:hover p, .chk_country .chk_box:active p, .chk_country .chk_box:focus p, .chk_country .chk_box.active p {
+	padding-top: 0;
+	font-size: 13.5px;
+	line-height: 1.3em;
+}
+
+@media (max-width: 800px) {
+	.carousel-inner li {
+		width: 25%;
+	}
+	.chk_contin_box li {
+		width: 33.3333%;
+	}
+}
+
+/* 180508 purchase - 구매취소 팝업 */
+/* 로컬에서는 팝업이 아닌 새창으로 띄운다고 함*/
+.step_loc {
+	width: 100%;
+}
+.step_loc li {
+	float: left;
+	width: 20%;
+	color: #999;
+	line-height: 37px;
+	text-align: center;
+}
+.step_loc .arrow {
+	width: 6.66667%;
+	text-align: center;
+}
+.step_loc li span {
+	display: inline-block;
+	width: 37px;
+	height: 37px;
+	margin-right: 7px;
+	line-height: 35px;
+	background: #ececec;
+	color: #999;
+	border-radius: 50%;
+	text-align: center;
+	box-sizing: border-box;
+}
+.step_loc .step_act {
+	color: #238de5;
+}
+.step_loc .step_act > span {
+	background: #fff;
+	border: 2px solid #238de5;
+	color: #238de5;
+	line-height: 35px;
+}
+.fin_canReq {
+	width: 62px;
+	height: 62px;
+	margin: 0 auto;
+	background: url("../images/images.png") -438px -119px no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+.refundStep {
+	width: 100%;
+	margin-top: 10px;
+	border-top: 2px solid #999;
+}
+.refundStep li {
+	margin: 10px 0;
+}
+.refundStep li:first-child {
+	margin-top: 15px;
+}
+.refundStep .re_nation {
+	width: 45%;
+}
+.refundStep .re_contact {
+	width: 55%;
+}
+.refundStep .re_contact input {
+	border-left: none;
+}
+
+#canReqPop1 .agreeInfo .btn-sm {
+	width: 105px;
+}
+#canReqPop1 .modal-content, #canReqPop2 .modal-content, #canReqPop3 .modal-content {
+	height: 940px;
+}
+
+/* 180508 수정 */
+.stepArea {
+	margin-top: 20px;
+	padding-top: 50px;
+	margin-bottom: 30px;
+	border-top: 1px solid #e8e8e8;
+}
+
+
+
+/* 엑셀등록 */
+
+.fileBoxWrpper .filebox{
+	width:330px;
+}
+
+.sampleFile{
+	display:block;
+	width:110px;
+}
+.sampleFile a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	padding: 2px 10px 5px 10px !important;
+}
+.sampleFile label{
+	vertical-align:text-bottom;
+}
+.icon_sampleFile{
+	background-position: -405px -94px;
+	width:19px;
+	height:22px;
+}
+
+.tbInfo.excel{
+	position:relative;
+	border-bottom:1px solid #d8dbe2;
+}
+.tbInfo.excel p:first-child{
+	margin-bottom:10px;
+}
+.tbInfo.excel .titNum{
+	font-size:13px;
+}
+.tbInfo.excel .guideLine{
+	position:absolute;
+	top:55px;
+	right:30px;
+}
+.tbInfo.excel .guideLine .mem_tag{
+	margin-right:5px;
+}
+.columnGuide{
+	font-size:12px;
+	color:#666;
+}
+.columnGuide td{
+	padding: 3px 0;
+}
+.columnGuide strong{
+	font-weight:600;
+	color:#333;
+}
+.columnGuide .mem_tag{
+	font-size:12px;
+	width:52px;
+}
