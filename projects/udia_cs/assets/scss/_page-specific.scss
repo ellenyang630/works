@@ -1,0 +1,324 @@
+@charset "UTF-8";
+/* _page-specific.scss */
+
+
+// Login Page
+
+.wide-main{
+  .fixed-table{
+    display: table;
+    width: 100%;
+    height: 100vh;
+    table-layout: fixed;
+
+    &-cell{
+      display:table-cell;
+      width: 100%;
+      height: 100vh;
+      vertical-align: middle;
+    }
+
+    .address-item{
+      width:600px;
+      margin:0 auto;
+      text-align: center;
+    }
+  }
+}
+
+.login{
+  &-wrapper{
+    width: 600px;
+    height: 530px;
+    padding: 40px 140px 60px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: $--color-white;
+    box-shadow: 0 4px 20px rgba(54,64,84,0.1);
+  }
+  &-logo{
+    height: 45px;
+    margin: 0 auto 40px;
+    text-align: center;
+
+    img{
+      width: auto;
+      height: 33px;
+      text-align: center;
+    }
+  }
+  &-form{
+    .el-form-item{
+      &:not(:first-child){
+        margin-top:20px;
+      }
+    }
+    .el-input {
+      width:100%;
+    }
+    .el-checkbox{
+      //font-weight: 600;
+      color: $--color-dark;
+    }
+  }
+  &-button{
+    margin-top: 40px;
+
+    button{
+      width:100%;
+      font-size: 16px;
+    }
+  }
+
+  &-footer{
+    width:600px;
+    margin:30px auto 0;
+    text-align: center;
+
+    > *{
+      display: inline-block;
+      margin:0 4px;
+      vertical-align: middle;
+      font-size: $--font-size-extra-small;
+    }
+    .corp{
+      color:$--color-info;
+    }
+    .copyright{
+      color:$--color-dark-light;
+    }
+  }
+}
+
+
+
+// Error Page
+@include keyframes(flash-alpha) {
+  0% { opacity: 0.8; }
+  100% { opacity: 1;}
+}
+
+.error{
+  &-page {
+    width:526px;
+    margin:0 auto;
+    text-align: center;
+
+    &:after{
+      display: block;
+      width: 209px;
+      height: 334px;
+      margin: 100px auto 0;
+      content:"";
+      animation: flash-alpha 1s infinite ease-in-out alternate;
+      background: url("../img/img_forbidden.jpg") center center no-repeat;
+      background-size: 209px 334px;
+    }
+  }
+  &-page-status{
+    text-transform: uppercase;
+    color:$--color-danger;
+    font-size: 50px;
+    font-weight: $font-weight-bold;
+
+    i{
+      margin-right: 10px;
+      transform: translateY(-4px);
+      vertical-align: middle;
+      font-size: 120%;
+    }
+  }
+  &-page-desc{
+    margin-top:10px;
+    color:$--color-danger;
+    font-size: 30px;
+  }
+}
+
+// 대시보드 > 준비중
+.is-ready{
+  max-width:900px;
+  width:100%;
+  margin: auto;
+  text-align: center;
+
+  > div {
+    display:table;
+    width:100%;
+    height:100%;
+
+    > div{
+      display:table-cell;
+      vertical-align:middle;
+
+      img{
+        min-width:520px;
+      }
+    }
+  }
+}
+
+
+// 대시보드 >
+.data-card{
+  position: relative;
+  width:100%;
+  height:186px;
+
+  &:before{
+    position: absolute;
+    top:0;
+    right:20px;
+    display: block;
+    color:$--border-color-base;
+    font-family: $font-family-icon;
+    font-size: 40px;
+  }
+
+  .el-card__body{
+    height: 100%;
+
+    > div{
+      height: 100%;
+    }
+  }
+
+  &__title{
+    margin-bottom:20px;
+    color:$--color-info;
+    font-size:$--font-size-medium;
+    font-weight: $font-weight-bold;
+  }
+  &__number{
+    color:$--color-dark;
+    font-size:32px;
+    font-weight: $font-weight-bold;
+  }
+  &__ratio{
+    .data-is-rise,
+    .data-is-fall{
+      font-size: $--font-size-large;
+      font-weight: $font-weight-bold;
+    }
+
+    .data-is-rise{
+      color:$--color-success;
+
+    }
+    .data-is-fall{
+      color:$--color-danger;
+
+    }
+    .data-standard{
+      margin-left:10px;
+      color:$--color-dark-light;
+      font-size: $--font-size-medium;
+    }
+  }
+
+
+  // 회원 수 카드
+  &.data-member{
+    &:before{
+      content:"\ea04";
+    }
+  }
+  // 누적 조회수 카드
+  &.data-review{
+    margin-top:20px;
+
+    &:before{
+      content:"\e950";
+    }
+  }
+}
+
+.graph-card1{
+  height: 392px;
+}
+.graph-card2{
+  height: 458px;
+}
+.latest-member-card{
+  height: 458px;
+}
+
+@media screen and (max-width: 767px){
+  .data-card,
+  .graph-card1,
+  .graph-card2,
+  .latest-member-card{
+    height:auto;
+  }
+
+  .graph-card1,
+  .latest-member-card{
+    margin-top:20px;
+  }
+  .data-card.data-review{
+    margin-top:0;
+  }
+}
+
+
+// 대시보드 > 그래프
+.graph{
+  &-wrapper{
+    width:100%;
+    margin-bottom:20px;
+  }
+  &-container{
+    position: relative;
+    //height: 280px;
+
+    img{
+      width:100%;
+      height: 100%;
+    }
+
+    .color-chip{
+      position: absolute;
+      top:-30px;
+      left:30px;
+      padding:15px;
+      border:1px solid $--border-color-base;
+      background: $--color-white;
+    }
+  }
+}
+
+
+
+// 정산관리 > 영업 수수료 정산
+.month-data-nav{
+  text-align: center;
+  border-bottom: 30px;
+
+  .calendar-month{
+    @include clearfix;
+    text-align: center;
+
+    > *{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &-btn{
+      width:42px;
+      height: 42px;
+      text-align: center;
+      border:1px solid $--border-color-base;
+      border-radius: 4px;
+      background-color: $--color-white;
+      font-size: $--font-size-large;
+    }
+    &-current{
+      padding:0 20px;
+      font-size: $--font-size-large;
+      font-weight: $font-weight-bold;
+      line-height: 42px;
+    }
+  }
+}
+.month-data-content{
+
+}

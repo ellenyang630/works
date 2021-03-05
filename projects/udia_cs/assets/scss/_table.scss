@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* _table.scss */
+
+// 테이블 리스트 반응형
+.table-responsive{
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 0.01%;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+
+  .el-table{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    .table{
+      width:100%;
+      min-width:1000px;
+      max-width: 100%;
+    }
+  }
+}
+
+// 빈 데이터 일 때
+.el-table__empty{
+  &-block {
+    padding: 41px 0;
+    border-bottom: 1px solid $--color-dark-lighter;
+  }
+  &-text {
+    line-height: 1.618;
+  }
+  &-icon{
+    display: inline-block;
+    width:60px;
+    height:60px;
+    margin-bottom:15px;
+    text-align: center;
+    color:$--color-dark-light;
+    border-radius: 50%;
+    background-color: $--color-dark-lighter;
+    font-size: $--font-size-extra-large;
+    line-height: 60px;
+  }
+}
+
+
+// 공통 테이블 스타일
+.table{
+  width:100%;
+  font-size: $--font-size-base;
+}
+
+.table-default{
+  th, td{
+    max-width: 250px;
+    color:$--color-dark;
+    border-bottom:1px solid $--color-dark-lighter;
+  }
+  td{
+    &.td-checkbox{
+      width: 50px;
+      text-align: center;
+    }
+    &.td-number{
+      width: 50px;
+      text-align: center;
+    }
+    &.td-btns{
+      width: 200px;
+      text-align: center;
+    }
+  }
+  thead{
+    th{
+      padding: 7px 0;
+      color:$--color-dark-light;
+      border-top: 1px solid $--border-color-base;
+      border-bottom: 2px solid $--border-color-base;
+      font-size: $--font-size-small;
+      font-weight: $font-weight-bold;
+    }
+  }
+  tbody{
+    th, td{
+      height: 58px;
+    }
+  }
+}
+
+.table-small{
+  thead{
+    th{
+      padding: 5px 0;
+    }
+  }
+  tbody{
+    th, td{
+      height: 36px;
+      padding: 5px 0;
+    }
+  }
+}
+
+
+// 총 합계
+.table-totalData{
+  th, td{
+    background-color: #fff7e5;
+  }
+}
+
+
+
+// popover 안에 있는 table
+.table-mini{
+  margin:8px 0;
+
+  th, td{
+    padding: 4px 10px;
+  }
+  th{
+    text-align: right;
+    color:$--color-info;
+    font-weight: $font-family-base;
+  }
+  td{
+    color:$--color-dark;
+  }
+}

@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* _element-component.scss */
+
+// layout
+.el-row {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+// el-button
+.el-button{
+  &--primary{
+    &[class*="plain"]{
+      border-color: $--color-primary-light-9;
+    }
+  }
+}
+
+// el-radio
+.el-radio--medium{
+  .el-radio__inner {
+    width:22px;
+    height:22px;
+
+    &::after{
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  .el-radio:focus:not(.is-focus):not(:active):not(.is-disabled){
+    .el-radio__inner {
+      box-shadow: 0 0 0 2px rgba($--color-primary, 0.3);
+    }
+  }
+}
+
+// el-checkbox
+.el-checkbox--medium{
+  .el-checkbox__inner{
+    width:22px;
+    height:22px;
+
+    &::after{
+      top: 2px;
+      left: 7px;
+      width: 5px;
+      height: 10px;
+    }
+  }
+}
+
+// el-input
+.el-input__inner:focus {
+  border-color: #41B7CA;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba($--color-primary, 0.25);
+}
+
+// el-select
+.el-select{
+  .el-input__inner{
+    &::placeholder{
+      color:$--color-dark;
+    }
+  }
+  .el-input .el-select__caret{
+    color:$--color-dark;
+  }
+}
+
+
+// el-tag
+.el-tag {
+  border:0;
+
+  &-round{
+    border-radius: 8px;
+  }
+}
+
+// el-pager & el-pagination
+.el-pager{
+  li{
+    min-width: 42px;
+    height: 42px;
+    border-radius: 5px;
+    line-height: 42px;
+  }
+}
+.el-pagination{
+  padding: 0;
+  color:$--color-dark-light;
+
+  span:not([class*=suffix]),
+  button{
+    width:42px;
+    height: 42px;
+    border-radius: 5px;
+    line-height: 42px;
+  }
+
+  .btn-prev,
+  .btn-next{
+    color:$--color-primary;
+    background-color: rgba($--color-primary, 0.1);
+  }
+  .btn-prev{
+    padding-right: 6px;
+  }
+  .btn-next{
+    padding-left: 6px;
+  }
+}
+
+// el-dialog
+.el-dialog{
+  width:480px;
+
+  &__header {
+    padding: 13px 20px;
+    color: $--color-white;
+    border-radius: 4px 4px 0 0;
+    background: $--color-dark;
+    font-size: $--font-size-base;
+
+    &btn{
+      top: 0;
+      right: 5px;
+      padding: 7px 12px;
+      font-size: 23px;
+
+      .el-dialog__close{
+        color: $--color-white;
+      }
+    }
+  }
+
+  &__body {
+    padding: 30px 40px;
+  }
+
+  &__footer {
+    padding: 30px;
+    padding-top: 10px;
+    text-align: center;
+
+    .el-button{
+      min-width:88px;
+    }
+  }
+}
+
+// el-tooltip
+.el-tooltip{
+
+}
+
+// el-popover
+.el-popover{
+  padding:12px 0;
+
+  li{
+    height: 38px;
+    padding:0 20px;
+    color:$--color-info;
+    font-size: $--font-size-base;
+    line-height: 38px;
+
+    &:hover,
+    &:focus{
+      background-color: rgba($--color-primary, 0.1);
+
+      a{
+        color:$--color-primary;
+      }
+    }
+
+    a{
+      display: block;
+      width:100%;
+    }
+  }
+}
+
+// el-card
+.el-card{
+  &-container{
+    padding:20px;
+  }
+
+  &__header{
+    padding-bottom:7px;
+    color:$--color-info;
+    border-bottom:0;
+    font-size:$--font-size-medium;
+    font-weight: $font-weight-bold;
+
+    &-help{
+      color: $--color-dark-light;
+      font-size: $--font-size-extra-small;
+    }
+  }
+  &__body{
+    &-buttons{
+      margin-top:37px;
+      text-align: center;
+    }
+  }
+}

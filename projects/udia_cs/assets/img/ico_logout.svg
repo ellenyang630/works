@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="26px" viewBox="0 0 20 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>icon/ico_logout</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/ico_logout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Path" fill="#364054" fill-rule="nonzero" points="15.3216374 18 19.3138402 13.7615894 20 13 19.3138402 12.2384106 15.3216374 8 13.8869396 9.52317881 16.1637427 11.9403974 5 11.9403974 5 14.0596026 16.1637427 14.0596026 13.8869396 16.4768212"></polygon>
+        <polygon id="Path" fill="#364054" fill-rule="nonzero" points="20 0 0 0 0 26 20 26 20 21 18 21 18 24 2 24 2 2 18 2 18 5 20 5"></polygon>
+    </g>
+</svg>

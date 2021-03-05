@@ -1,0 +1,426 @@
+@charset "UTF-8";
+/* _form.scss */
+
+// 필수값 표시
+.required-data{
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  text-align: center;
+  vertical-align: text-top;
+  text-indent: -9999px;
+  border-radius: 50%;
+  background-color: $--color-primary;
+}
+
+
+.checkbox-default{
+  position:relative;
+  width:20px;
+  height: 20px;
+
+  input[type="checkbox"] {
+    position:absolute;
+    top:0;
+    left:0;
+    width:18px;
+    height:18px;
+    @include prefix(appearance, none, webkit moz);
+
+    &:focus{
+      outline:none;
+    }
+  }
+  label {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:10;
+    padding-left:33px;
+    line-height:26px;
+    cursor:pointer;
+  }
+  label:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    width:18px;
+    height:18px;
+    line-height:18px;
+    background:#fff;
+    border:1px solid #DEE2E6;
+    border-radius: 4px;
+
+    transition: transform .15s ease-in .05s;
+    transform-origin: center;
+  }
+  input[type=checkbox]:checked + label:before {
+    content:"\e928";
+    font-family: $font-family-icon;
+    text-align:center;
+    font-weight:800;
+    line-height:18px;
+    color:$--color-white;
+
+    background-color: #41B7CA;
+    border-color: #41B7CA;
+    transform: scaleY(1);
+  }
+}
+
+
+
+// el-input
+.el-input {
+  // .el-input__label
+  &__label {
+    @include clearfix;
+    @include boxSizing;
+    padding: 0 12px 10px 0;
+    text-align: left;
+    vertical-align: middle;
+    color: $--color-text-regular;
+    font-size: $--font-size-base;
+    line-height: 0.9333rem;
+  }
+
+  // .el-input__wrap
+  &__wrap{
+    width:100%;
+  }
+}
+
+// 기간 검색
+.daterange {
+  &-picker {
+
+  }
+
+  &-select {
+    margin-left: 10px;
+
+    .el-radio-button .el-radio-button__inner {
+      color: $--color-info;
+      border-color: $--color-dark-lighter;
+      border-right: 0;
+      background-color: $--color-dark-lighter;
+      font-weight: $font-weight-base;
+    }
+
+    .el-radio-button:last-child .el-radio-button__inner {
+      border-right: 1px solid $--color-dark-lighter;
+    }
+
+    .el-radio-button__orig-radio:checked + .el-radio-button__inner {
+      color: $--color-white;
+      border-color: $--color-primary;
+      background-color: $--color-primary;
+      box-shadow: -1px 0 0 0 $--color-primary;
+      font-weight: $font-weight-bold;
+    }
+
+    .el-radio-button--medium .el-radio-button__inner {
+      padding: 13px 12px;
+      font-size: $--font-size-base;
+    }
+  }
+}
+
+
+
+
+
+
+// el-form
+.el-form-container{
+  width:100%;
+  max-width:590px;
+  margin:0 auto;
+}
+
+.el-form{
+  .el-select,
+  .el-input{
+    width:100%;
+  }
+
+  // 레이블 & 인풋 각각 block 요소로
+  &.top-block{
+    .el-input__wrap{
+      &:not(.first){
+        margin-top:20px;
+      }
+    }
+  }
+
+  // 레이블 & 인풋 각각 table-cell 요소로
+  &.top-inline{
+    .el-input__wrap{
+      @include clearfix;
+      display: table;
+      width:100%;
+
+
+      &:not(:first-child){
+        margin-top:20px;
+      }
+    }
+
+    .el-input__label,
+    .el-input__area{
+      display: table-cell;
+    }
+
+    .el-input__label{
+      width:130px;
+      padding: 12px 20px 10px 0;
+      text-align: right;
+      vertical-align: baseline;
+    }
+
+    .el-input__area{
+      position: relative;
+
+
+      .el-input__suffix{
+        vertical-align: middle;
+        font-size: $--font-size-extra-large;
+      }
+
+
+      // 현재 비밀번호 인풋창
+      &.el-input__area-password{
+        .el-input__suffix{
+          display: none;
+        }
+      }
+
+      // 현재 비밀번호 입력시, 일치할 경우
+      &.is-correct{
+        .el-input__suffix{
+          display: block;
+          padding-right:10px;
+          font-size: $--font-size-extra-large;
+
+          i{
+            vertical-align: text-bottom;
+            transform: translateY(3px);
+            right: 12px;
+          }
+        }
+      }
+    }
+
+    // table cell
+    .el-input__cell{
+      display: table;
+      width:100%;
+
+      &.last{
+        margin-top:10px;
+      }
+
+      .el-input,
+      .el-button{
+        display: table-cell;
+        vertical-align: top;
+      }
+      .el-button{
+        margin-left:5px;
+      }
+    }
+  }
+}
+
+
+//== 리스트 상단 > 검색 영역
+.search-area-card{
+
+}
+.search-area {
+  position: relative;
+
+  &__form{
+    overflow: hidden;
+  }
+
+  // 검색 버튼
+  .search-fixed-btn {
+    text-align: right;
+    position: absolute;
+    right: 13px;
+    bottom: 0;
+
+    .btn-expand {
+      i {
+        margin-left: 6px;
+      }
+    }
+
+    @media screen and (max-width: 767px){
+      &{
+        text-align: center;
+        margin-top:30px;
+
+        position: static;
+        right: 13px;
+        bottom: 0;
+      }
+    }
+  }
+
+
+  // 간편검색일 때,
+  &--collapse {
+    overflow: hidden;
+    //max-height: 60px;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+    transition-property: height, max-height;
+
+    .el-form.top-block {
+      transition-delay: 200ms;
+      transition-timing-function: ease-in;
+      transition-duration: 350ms;
+      transition-property: opacity, transform;
+      //transform: translateY(100px);
+      opacity: 0;
+    }
+
+    .search-fixed-btn {
+      .btn-expand {
+        i {
+          transform: rotateZ(0deg);
+        }
+      }
+    }
+
+    // 2줄
+    &.smaller {
+      .search-area__form{
+        height: 42px;
+
+        @media screen and (max-width: 767px){
+          &{
+            height:94px;
+          }
+        }
+      }
+    }
+
+    // 3줄
+    &.bigger {
+      .search-area__form{
+        height: 42px;
+
+        @media screen and (max-width: 767px){
+          &{
+            height:94px;
+          }
+        }
+      }
+    }
+  }
+
+
+  // 상세검색일 때,
+  &--expand {
+    height: auto;
+    transition-timing-function: linear;
+    transition-duration: 300ms;
+    transition-property: height, max-height;
+
+    .el-form.top-block {
+      transition-delay: 100ms;
+      transition-timing-function: ease-in-out;
+      transition-duration: 350ms;
+      transition-property: opacity, transform;
+      //transform: translateY(0);
+      opacity: 1;
+    }
+
+
+
+    .search-fixed-btn {
+      transition: all 0.2s ease-in-out;
+
+      .btn-expand {
+        i {
+          transform: rotateZ(180deg);
+        }
+      }
+    }
+
+    // 2줄
+    &.smaller {
+      .search-area__form{
+        height: 127px;
+
+        @media screen and (max-width: 767px){
+          &{
+            height:178px;
+          }
+        }
+      }
+    }
+
+    // 3줄
+    &.bigger {
+      .search-area__form{
+        height: 212px;
+
+        @media screen and (max-width: 767px){
+          &{
+            height:328px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 상세 일자 검색
+.el-input__wrap-datepicker{
+  display: table;
+
+  .el-input__label{
+    text-align: left;
+    font-weight: $font-weight-bold;
+    padding: 0 12px 0 0;
+  }
+  .el-input__label,
+  .el-input__area{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  @media screen and (max-width: 767px){
+    &{
+      .daterange-picker{
+        width:100%;
+      }
+
+      .daterange-select{
+        display: block;
+        display: flex;
+        width:100%;
+        margin-left:0;
+        margin-top:10px;
+
+        .el-radio-button{
+          width:100%;
+          flex-grow:1;
+
+          .el-radio-button__inner{
+            width:100%;
+          }
+        }
+      }
+
+
+
+    }
+  }
+}

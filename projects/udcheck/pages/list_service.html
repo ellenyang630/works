@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>서비스 목록 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="format-detection" content="telephone=no"/>
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/IE9.js"></script>
+  <![endif]-->
+    
+  <!-- import CSS -->
+  <link rel="stylesheet" href="../assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+
+  <!-- import el-elment CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="wrapper">
+      <div id="ltnav" class="lnb">
+        <div class="logoBox">
+          <h1><a href="./index.html">유디체크</a></h1>
+        </div>
+        <!--// logoBox -->
+        <div id="cssmenu">
+          <h2 class="invisible">현재 위치한 페이지 하위 메뉴</h2>
+          <div class="user_infoBox">
+            <div class="user_info_top">
+                <dl>
+                    <dt>접속ID</dt>
+                    <dd>admin</dd>
+                </dl>
+                <dl>
+                    <dt>접속자</dt>
+                    <dd>관리자</dd>
+                </dl>
+                <dl>
+                    <dt>IP주소</dt>
+                    <dd>218.232.75.133</dd>
+                </dl>
+            </div>
+            <div class="user_info_bottom">
+                <button type="button" class="btn btn_logout btn-pri">로그아웃</button>
+            </div>
+          </div>
+          <!--// user_infoBox -->
+
+          <ul>
+            <li class="dep1 active menu2">
+              <a href="javascript:void(0);"><span><i class="la la-check-circle"></i> 서비스 설정</span></a>
+              <ul>
+                <li class="active">
+                  <a href="list_service.html"><span>서비스 목록</span></a>
+                </li>
+                <li>
+                  <a href="write_service.html"><span>서비스 등록</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--// cssmenu -->
+      </div>
+      <!--// ltnav -->
+      <div id="header">
+        <nav class="gnbWrap">
+          <h2 class="invisible">상단메뉴</h2>
+          <ul class="gnb">
+              <li class="menu_btn show_lnb"><a href="#"><i class="la la-bars"></i></a></li>
+              <li class="menu_item"><a href="index.html"><h3><i class="la la-folder"></i> 서류 관리</h3></a></li>
+              <li class="menu_item current"><a href="list_service.html"><h3><i class="la la-check-circle"></i> 서비스 설정</h3></a></li>
+              <li class="menu_item"><a href="list_adm.html"><h3><i class="la la-user"></i> 관리자 설정</h3></a></li>
+              <li class="menu_item"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
+              <li class="menu_item"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
+              <div class="nav-underline"></div>
+          </ul>
+        </nav>
+      </div>
+      <!--// header -->
+
+      <div id="content_wrap" class="clearfix">
+        <div id="content">
+          <div id="table-fixed">
+              <h2 class="invisible">본문영역</h2>
+            
+              <div id="content_inner">
+              
+              <!-- include -->
+                <div class="title_box clearfix">
+                    <div class="ttBox">
+                        <h3 class="tt">서비스 목록</h3>
+                        <p class="subtt"><span class="en">UDCHECK</span> 사용자 <span class="en">APP</span>에서 노출되는 순서 : 해당 목록 순서와 동일</p>
+                    </div>
+                    <div class="location">
+                        <ul class="clearfix">
+                            <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
+                            <li><a href="#">서비스 설정</a></li>
+                            <li><strong class="active">서비스 목록</strong></li>
+                        </ul>
+                    </div>
+                    <!--// location-->
+                </div>
+                <!--// title_box-->
+                <div class="cardBox">
+                  <div class="cardText">
+                    <table class="table tbList">
+                      <caption>등록된 서비스 내역</caption>
+                      <colgroup>
+                        <col width="10%">
+                        <col width="17%">
+                        <col width="17%">
+                        <col width="*">
+                        <col width="17%">
+                        <col width="15%">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">순서</th>
+                          <th scope="col">서비스 ID</th>
+                          <th scope="col">서비스명</th>
+                          <th scope="col">서비스 로고 이미지</th>
+                          <th scope="col">등록일시</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="btn-group btn-move-group">
+                            <div> 
+                              <button type="button" class="btn btn-up" disabled><span class="invisible">위로</span></button>
+                              <button type="button" class="btn btn-down active"><span class="invisible">아래로</span></button>
+                            </div>
+                          </td>
+                          <td class="en">
+                            <p><strong>PAYAPP</strong></p>  
+                          </td>
+                          <td class="en">
+                            <p><strong>PAYAPP</strong></p>  
+                          </td>
+                          <td>
+                            <img src="../assets/img/service/logo_payapp.png" alt="페이앱 로고" />
+                          </td>
+                          <td class="text-lighter en">2019-08-08 14:14:14</td>
+                          <td class="btnBox inline">
+                            <span><a href="write_service.html" class="btn btn-sm btn-line-pri w80Int">수정</a></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</a></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="btn-group btn-move-group">
+                            <div> 
+                              <button type="button" class="btn btn-up"><span class="invisible">위로</span></button>
+                              <button type="button" class="btn btn-down"><span class="invisible">아래로</span></button>
+                            </div>
+                          </td>
+                          <td class="en">
+                            <p><strong>blogpay</strong></p>  
+                          </td>
+                          <td class="en">
+                            <p><strong>Blogpay</strong></p>  
+                          </td>
+                          <td>
+                            <img src="../assets/img/service/logo_blogpay.png" alt="블로그페이 로고" />
+                          </td>
+                          <td class="text-lighter en">2019-08-08 14:14:14</td>
+                          <td class="btnBox inline">
+                            <span><a href="write_service.html" class="btn btn-sm btn-line-pri w80Int">수정</a></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</a></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="btn-group btn-move-group">
+                            <div> 
+                              <button type="button" class="btn btn-up"><span class="invisible">위로</span></button>
+                              <button type="button" class="btn btn-down"><span class="invisible">아래로</span></button>
+                            </div>
+                          </td>
+                          <td class="en">
+                            <p><strong>Payapplite</strong></p>  
+                          </td>
+                          <td class="en">
+                            <p><strong>Payapp Lite</strong></p>  
+                          </td>
+                          <td>
+                            <img src="../assets/img/service/logo_payappLite.png" alt="페이앱라이트 로고" />
+                          </td>
+                          <td class="text-lighter en">2019-08-08 14:14:14</td>
+                          <td class="btnBox inline">
+                            <span><a href="write_service.html" class="btn btn-sm btn-line-pri w80Int">수정</a></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</a></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="btn-group btn-move-group">
+                            <div> 
+                              <button type="button" class="btn btn-up"><span class="invisible">위로</span></button>
+                              <button type="button" class="btn btn-down" disabled><span class="invisible">아래로</span></button>
+                            </div>
+                          </td>
+                          <td class="en">
+                            <p><strong>ciderpay</strong></p>  
+                          </td>
+                          <td class="en">
+                            <p><strong>Ciderpay</strong></p>  
+                          </td>
+                          <td>
+                            <img src="../assets/img/service/logo_ciderpay.png" alt="사이다페이 로고" />
+                          </td>
+                          <td class="text-lighter en">2019-08-08 14:14:14</td>
+                          <td class="btnBox inline">
+                            <span><a href="write_service.html" class="btn btn-sm btn-line-pri w80Int">수정</a></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</a></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">
+                            <div class="no_data">
+                              <div class="inn">
+                                <p><i class="la la-exclamation-circle"></i></p>
+                                <p>내역이 없습니다.</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--// cardText -->   
+                </div>
+                <!--// cardBox -->
+
+                <div class="pagBox">
+                  <ul class="pagination">
+                    <li class="arrow">
+                        <a href="#"><i class="la la-angle-left"></i></a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li class="arrow">
+                        <a href="#"><i class="la la-angle-right"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <!--// pageBox -->
+
+              <!--// include -->
+
+
+              </div>
+              <!--//#content_inner-->
+          </div>
+          <!--//#table-fixed-->
+        </div>
+        <!--//#content-->
+      </div>
+      <!--//#content_wrap-->
+    </div>
+    <!--// wrapper -->
+  </div>
+  <!--// #app -->
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data () {
+      return {
+        
+      }
+    },
+    methods: {
+    
+    }
+  })
+</script>
+<script src="../assets/js/jquery-latest.min.js"></script>
+<script src="../assets/js/design.js"></script>
+</html>

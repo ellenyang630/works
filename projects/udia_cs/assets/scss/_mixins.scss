@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* _mixins.scss */
+
+/// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+// Mixin to box-sizing
+@mixin boxSizing{
+  @include prefix(box-sizing, border-box, webkit ms moz o);
+}
+
+// float clear both
+@mixin clearfix {
+  &:after{
+    display: block;
+    clear:both;
+    content:"";
+  }
+}
+
+// animation keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+// placeholder
+@mixin placeholder(){
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder{
+    @content
+  }
+  input:-moz-placeholder,
+  textarea:-moz-placeholder {
+    @content
+  }
+  input::-moz-placeholder,
+  textarea::-moz-placeholder{
+    @content
+  }
+  input:-ms-input-placeholder,
+  textarea:-ms-input-placeholder{
+    @content
+  }
+  input::placeholder,
+  textarea::placeholder{
+    @content
+  }
+}

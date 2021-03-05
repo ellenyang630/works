@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>메모 로그 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="format-detection" content="telephone=no"/>
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/IE9.js"></script>
+  <![endif]-->
+    
+  <!-- import CSS -->
+  <link rel="stylesheet" href="../assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+
+  <!-- import el-elment CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="wrapper">
+      <div id="ltnav" class="lnb">
+        <div class="logoBox">
+          <h1><a href="./index.html">유디체크</a></h1>
+        </div>
+        <!--// logoBox -->
+        <div id="cssmenu">
+          <h2 class="invisible">현재 위치한 페이지 하위 메뉴</h2>
+          <div class="user_infoBox">
+            <div class="user_info_top">
+                <dl>
+                    <dt>접속ID</dt>
+                    <dd>admin</dd>
+                </dl>
+                <dl>
+                    <dt>접속자</dt>
+                    <dd>관리자</dd>
+                </dl>
+                <dl>
+                    <dt>IP주소</dt>
+                    <dd>218.232.75.133</dd>
+                </dl>
+            </div>
+            <div class="user_info_bottom">
+                <button type="button" class="btn btn_logout btn-pri">로그아웃</button>
+            </div>
+          </div>
+          <!--// user_infoBox -->
+
+          <ul>
+            <li class="dep1 active menu5">
+              <a href="javascript:void(0);"><span><i class="la la-history"></i> 로그 관리</span></a>
+              <ul>
+                <li>
+                  <a href="list_systemLog.html"><span>시스템 로그</span></a>
+                </li>
+                <li class="active">
+                  <a href="list_memoLog.html"><span>메모 로그</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--// cssmenu -->
+      </div>
+      <!--// ltnav -->
+      <div id="header">
+        <nav class="gnbWrap">
+          <h2 class="invisible">상단메뉴</h2>
+          <ul class="gnb">
+              <li class="menu_btn show_lnb"><a href="#"><i class="la la-bars"></i></a></li>
+              <li class="menu_item"><a href="index.html"><h3><i class="la la-folder"></i> 서류 관리</h3></a></li>
+              <li class="menu_item"><a href="list_service.html"><h3><i class="la la-check-circle"></i> 서비스 설정</h3></a></li>
+              <li class="menu_item"><a href="list_adm.html"><h3><i class="la la-user"></i> 관리자 설정</h3></a></li>
+              <li class="menu_item"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
+              <li class="menu_item current"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
+              <div class="nav-underline"></div>
+          </ul>
+        </nav>
+      </div>
+      <!--// header -->
+
+      <div id="content_wrap" class="clearfix">
+        <div id="content">
+          <div id="table-fixed">
+              <h2 class="invisible">본문영역</h2>
+            
+              <div id="content_inner">
+              
+              <!-- include -->
+                <div class="title_box clearfix">
+                    <div class="ttBox">
+                        <h3 class="tt">메모 로그</h3>
+                    </div>
+                    <div class="location">
+                        <ul class="clearfix">
+                            <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
+                            <li><a href="#">로그 관리</a></li>
+                            <li><strong class="active">메모 로그</strong></li>
+                        </ul>
+                    </div>
+                    <!--// location-->
+                </div>
+                <!--// title_box-->
+
+                <div class="searchBox">
+                  <div class="searchFtWrap">
+                    <div class="searchFt clearfix">
+                      <dl class="dl_date">
+                          <dt>변경일</dt>
+                          <dd>
+                              <span class="int_date"><input type="text" readonly placeholder="2019-11-22" class="int"></span><span class="intAmong">~</span><span class="int_date"><input type="text" readonly placeholder="2019-11-22" class="int"></span>
+                          </dd>
+                      </dl>
+                      <dl class="dl_dayChk">
+                        <dt class="invisible">기간선택</dt>
+                        <dd>
+                          <ul class="schOpt col3">
+                            <li>
+                                <input class="radio_toggle" type="radio" name="dateRange" value="d1" id="d1" checked>
+                                <label for="d1">오늘</label>
+                            </li>
+                            <li>
+                                <input class="radio_toggle" type="radio" name="dateRange" value="d2" id="d2">
+                                <label for="d2">어제</label>
+                            </li>
+                            <li>
+                                <input class="radio_toggle" type="radio" name="dateRange" value="d3" id="d3">
+                                <label for="d3">일주일</label>
+                            </li>
+                          </ul>
+                        </dd>
+                      </dl>
+                      <dl class="dl_select">
+                        <dt>타입</dt>
+                        <dd>
+                          <div class="selectWrap">
+                            <select class="int">
+                              <option>등록</option>
+                              <option>수정</option>
+                              <option>삭제</option>
+                              <option>시스템</option>
+                            </select>
+                          </div>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><label for="">서비스 <span class="en">ID</span></label></dt>
+                        <dd>
+                            <input type="text" class="int" placeholder="">
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt><label for="">관리자 <span class="en">ID</span></label></dt>
+                        <dd>
+                            <input type="text" class="int" placeholder="">
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="searchFtBtnWrap">
+                    <a href="#" class="searchFtBtn"><span>검색</span></a>
+                  </div>
+                </div>
+                <!--// searchBox -->
+  
+                <div class="cardBox">
+                  <div class="cardText">
+                    <table class="table tbList">
+                      <caption>메모 로그 내역</caption>
+                      <colgroup>
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="10%">
+                        <col width="8%">
+                        <col width="*">
+                        <col width="10%">
+                        <col width="12%">
+                        <col width="10%">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">NO.</th>
+                          <th scope="col">관리자 <span class="en">ID</span></th>
+                          <th scope="col">프로젝트 <span class="en">ID</span></th>
+                          <th scope="col">타입</th>
+                          <th scope="col">메모 내용</th>  
+                          <th scope="col"><span class="en">IP</span></th>
+                          <th scope="col">변경일시</th>
+                          <th scope="col">관리</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="tr_height_sm">
+                          <td class="text-lighter en">46993</td>
+                          <td class="en">
+                            <p><strong>devwy</strong></p>
+                          </td>
+                          <td class="en">
+                            <p><strong>payapp</strong></p>
+                          </td>
+                          <td>
+                            <p class="text-pri"><strong>등록</strong></p>
+                          </td>
+                          <td class="text-left text-lighter">등록한 메모 내용</td>
+                          <td class="en">127.0.0.1</td>
+                          <td class="text-lighter en">2019-08-08 13:13:13</td>
+                          <td class="btnBox inline">
+                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
+                          </td>
+                        </tr>
+                        <tr class="tr_height_sm">
+                          <td class="text-lighter en">46993</td>
+                          <td class="en">
+                            <p><strong>devwy</strong></p>
+                          </td>
+                          <td class="en">
+                            <p><strong>ciderpay</strong></p>
+                          </td>
+                          <td>
+                            <p class="text-lighter"><strong>수정</strong></p>
+                          </td>
+                          <td class="text-left text-lighter">
+                            (수정 전) 수정 전 메모 내용 <br/>
+                            > (수정 후) 수정 후 메모 내용
+                          </td>
+                          <td class="en">127.0.0.1</td>
+                          <td class="text-lighter en">2019-08-08 13:13:13</td>
+                          <td class="btnBox inline">
+                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
+                          </td>
+                        </tr>
+                        <tr class="tr_height_sm">
+                          <td class="text-lighter en">46993</td>
+                          <td class="en">
+                            <p><strong>devwy</strong></p>
+                          </td>
+                          <td class="en">
+                            <p><strong>ciderpay</strong></p>
+                          </td>
+                          <td>
+                            <p class="text-alert"><strong>삭제</strong></p>
+                          </td>
+                          <td class="text-left text-lighter">
+                              (삭제) 삭제 전 메모내용
+                          </td>
+                          <td class="en">127.0.0.1</td>
+                          <td class="text-lighter en">2019-08-08 13:13:13</td>
+                          <td class="btnBox inline">
+                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
+                          </td>
+                        </tr>
+                        <tr class="tr_height_sm">
+                          <td class="text-lighter en">46993</td>
+                          <td class="en">
+                            <p><strong>SYSTEM</strong></p>
+                          </td>
+                          <td class="en">
+                            <p><strong>ciderpay</strong></p>
+                          </td>
+                          <td>
+                            <p class="text-succ"><strong>시스템</strong></p>
+                          </td>
+                          <td class="text-left text-lighter">
+                              시스템에서 자동으로 생성된 메모 표시 
+                          </td>
+                          <td class="en">127.0.0.1</td>
+                          <td class="text-lighter en">2019-08-08 13:13:13</td>
+                          <td class="btnBox inline">
+                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="8">
+                            <div class="no_data">
+                              <div class="inn">
+                                <p><i class="la la-exclamation-circle"></i></p>
+                                <p>내역이 없습니다.</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--// cardText -->   
+                </div>
+                <!--// cardBox -->
+
+                <div class="pagBox">
+                  <ul class="pagination">
+                    <li class="arrow">
+                        <a href="#"><i class="la la-angle-left"></i></a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li class="arrow">
+                        <a href="#"><i class="la la-angle-right"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <!--// pageBox -->
+
+              <!--// include -->
+
+
+              </div>
+              <!--//#content_inner-->
+          </div>
+          <!--//#table-fixed-->
+        </div>
+        <!--//#content-->
+      </div>
+      <!--//#content_wrap-->
+    </div>
+    <!--// wrapper -->
+  </div>
+  <!--// #app -->
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data () {
+      return {
+       
+      }
+    },
+    methods: {
+    
+    }
+  })
+</script>
+<script src="../assets/js/jquery-latest.min.js"></script>
+<script src="../assets/js/design.js"></script>
+</html>

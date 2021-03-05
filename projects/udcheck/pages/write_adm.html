@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>관리자 등록 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="format-detection" content="telephone=no"/>
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/IE9.js"></script>
+  <![endif]-->
+    
+  <!-- import CSS -->
+  <link rel="stylesheet" href="../assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+
+  <!-- import el-elment CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="wrapper">
+      <div id="ltnav" class="lnb">
+        <div class="logoBox">
+          <h1><a href="./index.html">유디체크</a></h1>
+        </div>
+        <!--// logoBox -->
+        <div id="cssmenu">
+          <h2 class="invisible">현재 위치한 페이지 하위 메뉴</h2>
+          <div class="user_infoBox">
+            <div class="user_info_top">
+                <dl>
+                    <dt>접속ID</dt>
+                    <dd>admin</dd>
+                </dl>
+                <dl>
+                    <dt>접속자</dt>
+                    <dd>관리자</dd>
+                </dl>
+                <dl>
+                    <dt>IP주소</dt>
+                    <dd>218.232.75.133</dd>
+                </dl>
+            </div>
+            <div class="user_info_bottom">
+                <button type="button" class="btn btn_logout btn-pri">로그아웃</button>
+            </div>
+          </div>
+          <!--// user_infoBox -->
+
+          <ul>
+            <li class="dep1 active">
+              <a href="javascript:void(0);"><span><i class="la la-user"></i> 관리자 설정</span></a>
+              <ul>
+                <li>
+                  <a href="list_adm.html"><span>관리자 목록</span></a>
+                </li>
+                <li class="active">
+                  <a href="write_adm.html"><span>관리자 등록</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--// cssmenu -->
+      </div>
+      <!--// ltnav -->
+      <div id="header">
+        <nav class="gnbWrap">
+          <h2 class="invisible">상단메뉴</h2>
+          <ul class="gnb">
+              <li class="menu_btn show_lnb"><a href="#"><i class="la la-bars"></i></a></li>
+              <li class="menu_item"><a href="index.html"><h3><i class="la la-folder"></i> 서류 관리</h3></a></li>
+              <li class="menu_item"><a href="list_service.html"><h3><i class="la la-check-circle"></i> 서비스 설정</h3></a></li>
+              <li class="menu_item current"><a href="list_adm.html"><h3><i class="la la-user"></i> 관리자 설정</h3></a></li>
+              <li class="menu_item"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
+              <li class="menu_item"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
+              <div class="nav-underline"></div>
+          </ul>
+        </nav>
+      </div>
+      <!--// header -->
+
+      <div id="content_wrap" class="clearfix">
+        <div id="content">
+          <div id="table-fixed">
+              <h2 class="invisible">본문영역</h2>
+              <div id="content_inner">
+              
+              <!-- include -->
+                <div class="title_box clearfix">
+                    <div class="ttBox">
+                        <h3 class="tt">관리자 등록</h3>
+                    </div>
+                    <div class="location">
+                        <ul class="clearfix">
+                            <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
+                            <li><a href="#">관리자 설정</a></li>
+                            <li><strong class="active">관리자 등록</strong></li>
+                        </ul>
+                    </div>
+                    <!--// location-->
+                </div>
+                <!--// title_box-->
+
+                <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+
+
+
+                <div class="cardBox">
+                  <div class="cardText">
+                    <table class="tbOpt">
+                      <caption>관리자 등록</caption>
+                      <!-- <colgroup>
+                        <col width="10%">
+                        <col width="40%">
+                        <col width="10%">
+                        <col width="40%">
+                      </colgroup> -->
+                      <tbody>
+                      <tr>
+                        <th class="en" scope="row">
+                          <label for="admId"><em class="im_bullet">*</em> ID</label>
+                        </th>
+                        <td>  
+                          <!-- 등록페이지 -->
+                          <div class="tgGroup">
+                            <span><input type="text" class="int w300Int en" placeholder=""></span>
+                          </div>
+                          <!-- 수정페이지 -->
+                          <div class="tgGroup">
+                            <span class="en">
+                              tester001
+                            </span>
+                            <span class="withBtn"><button type="button" class="btn btn-sm btn-line-alert">사용중지</button></span>
+                          </div>
+                        </td>
+                        <th scope="row">
+                          <label for="admPassword"><em class="im_bullet">*</em> 패스워드</label>
+                        </th>
+                        <td>
+                          <input type="password" class="int w300Int" id="admPassword" placeholder="" required>
+                        </td>
+                      </tr>                             
+                      <tr>
+                        <th scope="row">
+                          <label for="admName"><em class="im_bullet">*</em> 관리자 이름</label>
+                        </th>
+                        <td>
+                          <input type="text" class="int w300Int" id="admName" placeholder="" required>
+                        </td>
+                        <th class="en" scope="row">
+                          <label for="">E-mail</label>
+                        </th>
+                        <td>
+                          <input type="email" class="int w300Int" placeholder="" >
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for=""><em class="im_bullet">*</em> 관리자 레벨</label>
+                        </th>
+                        <td>
+                          <div class="selectWrap w300Int">
+                            <select class="int" required>
+                              <option disabled selected>선택하세요.</option>
+                              <option>일반 관리자</option>
+                              <option>마케팅 관리자</option>
+                              <option>슈퍼 관리자</option>
+                              <option>시스템 관리자</option>
+                            </select>
+                          </div>
+                        </td>
+                        <td colspan="2" class="blank"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!--// cardBox -->
+                <div class="cardBox tbInfo">
+                  <div class="cardText tbWrap clearfix">
+                    <div class="tbCaption">
+                      <p class="th_ico"><span><i class="la la-bookmark"></i></span></p>
+                      관리자 레벨 안내
+                    </div>
+                    <div>
+                      <table class="table tbList">
+                      <caption>레벨에 따른 관리자 권한 설명</caption>
+                        <colgroup>
+                          <col width="15%">
+                          <col width="15%">
+                          <col width="15%">
+                          <col width="15%">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th rowspan="2" class="bottomLine">메뉴</th>
+                            <th colspan="3">레벨에 따른 권한</th>
+                          </tr>
+                          <tr>
+                            <th>서류 관리자</th>
+                            <th>마케팅 관리자</th>
+                            <th>슈퍼 관리자</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>서류 관리</td>
+                            <td>
+                              <p>서류 조회<br/>서류 상태변경<br/>파일 업로드<br/>파일 다운로드</p>
+                            </td>
+                            <td>-</td>
+                            <td>
+                              <p>서류 조회<br/>서류 상태변경<br/>파일 업로드<br/>파일 다운로드<br/>파일 삭제</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>메모</td>
+                            <td>
+                              <p>본인 메모 - 수정 및 삭제</p>
+                            </td>
+                            <td>-</td>
+                            <td>
+                              <p>본인 메모 - 수정 및 삭제</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>서비스 설정</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                              <p>조회, 수정</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>관리자 설정</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                              <p>등록, 조회, 수정, 사용중지</p>
+                              <p><small>(시스템 관리자 제외)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>기타 설정</td>
+                            <td>-</td>
+                            <td>
+                              <p>등록, 조회, 수정, 삭제</p>
+                            </td>
+                            <td>
+                              <p>등록, 조회, 수정, 삭제</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>로그 관리</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><p>조회</p></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--// cardBox -->
+                <div class="btnArea clearfix">
+                    <span><button type="button" class="btn btn-md">목록으로</button></span>
+                    <!-- 새글등록일때 -->
+                    <span><button type="button" class="btn btn-md btn-pri" @click="submit">등록</button></span>
+                    <!-- 수정일때 -->
+                    <span><button type="button" class="btn btn-md btn-pri" @click="submit">변경사항 저장</button></span>
+                </div>
+              </v-form>
+              <!--// include -->
+              
+
+              </div>
+              <!--//#content_inner-->
+          </div>
+          <!--//#table-fixed-->
+        </div>
+        <!--//#content-->
+      </div>
+      <!--//#content_wrap-->
+    </div>
+    <!--// wrapper -->
+  </div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data () {
+      return {
+        dialog: false,
+      }
+    },
+    methods: {
+    
+    }
+  })
+</script>
+<script src="../assets/js/jquery-latest.min.js"></script>
+<script src="../assets/js/design.js"></script>
+</html>

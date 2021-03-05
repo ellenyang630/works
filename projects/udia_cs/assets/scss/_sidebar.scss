@@ -1,0 +1,170 @@
+@charset "UTF-8";
+/* _sidebar.scss */
+
+// left sidebar nav (lnb)
+.sidebar{
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  transition: left 0.2s ease;
+  vertical-align: top;
+
+  // 메뉴 show&hide
+  &.hide{
+    left:-250px;
+    transition: left 0.2s ease;
+  }
+  &.show{
+    left:0;
+    transition: left 0.2s ease;
+  }
+
+  //.sidebar-nav
+  &-nav{
+    position: relative;
+    width: 100%;
+    background: $--color-white;
+    background: none;
+  }
+
+  .el-menu{
+    border-right:0;
+    background-color: #364054;
+    font-size: $--font-size-base;
+
+  }
+
+  .nav-depth1{
+    color:rgba($--color-white, 0.7);
+    font-size: 16px;
+
+    .el-submenu__title{
+      color:rgba($--color-white, 0.7);
+      font-size: 16px;
+    }
+    i{
+      vertical-align: middle;
+      color:rgba($--color-white, 0.7);
+      font-size: 130%;
+
+    }
+    .nav-depth1__ico{
+      margin-right: 10px;
+      transform: translateY(2px);
+    }
+  }
+
+
+  //.el-menu-item{
+  //  color:$--color-white;
+  //}
+
+  .el-submenu__title{
+    //font-size: 16px;
+    //color:$--color-white;
+  }
+  .el-submenu__title:hover {
+    background-color: #283041;
+  }
+  .el-menu-item:hover,
+  .el-menu-item:focus,
+  .el-submenu__title:hover,
+  .el-submenu__title:focus {
+    outline: none;
+    background-color: #283041;
+
+    i{
+      color:$--color-white;
+    }
+  }
+
+  .el-menu-item.is-active{
+    color:$--color-white;
+    background-color: #283041;
+    font-weight: $font-weight-bold;
+
+    i{
+      color:$--color-white;
+    }
+  }
+
+  .el-submenu{
+
+    &.is-opened{
+      background-color: #283041;
+      font-weight: $font-weight-bold;
+
+      .el-submenu__title{
+        color:$--color-white;
+      }
+      .el-menu{
+        background-color: #283041;
+        font-weight: $font-weight-bold;
+      }
+      .el-menu-item{
+        color:$--color-white;
+      }
+    }
+  }
+
+  .el-submenu .el-menu-item {
+    height: 35px;
+    padding-left:50px !important;
+    line-height: 35px;
+
+    &:last-child{
+      margin-bottom:21px;
+    }
+  }
+}
+
+// 고객상담문의
+.cs{
+  // .cs-info
+  &-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 20px;
+    color: $--color-white;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+  }
+
+  &-tit,
+  &-tel,
+  &-time{
+    font-weight: $font-weight-bold;
+  }
+
+  // .cs-tit
+  &-tit {
+    margin-top:0;
+    font-size: $--font-size-small;
+
+    i{
+      position: relative;
+      top: 0.25rem;
+      margin-right: 4px;
+      font-size: $--font-size-large;
+      font-weight: $font-weight-base;
+    }
+  }
+
+  // .cs-tel
+  &-tel {
+    margin-bottom:17px;
+    letter-spacing: 2px;
+    color: $--color-primary;
+    font-size: 1.6rem;
+    font-weight: $font-weight-bold;
+  }
+
+  // .cs-time
+  &-time {
+    color:$--color-dark-light;
+    font-size: $--font-size-small;
+  }
+}

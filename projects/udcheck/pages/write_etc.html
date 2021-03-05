@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>앱 배너 등록 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta name="format-detection" content="telephone=no"/>
+  <!--[if lt IE 9]>
+  <script src="js/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/IE9.js"></script>
+  <![endif]-->
+    
+  <!-- import CSS -->
+  <link rel="stylesheet" href="../assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+
+  <!-- import el-elment CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+
+    <div class="wrapper">
+      <div id="ltnav" class="lnb">
+        <div class="logoBox">
+          <h1><a href="./index.html">유디체크</a></h1>
+        </div>
+        <!--// logoBox -->
+        <div id="cssmenu">
+          <h2 class="invisible">현재 위치한 페이지 하위 메뉴</h2>
+          <div class="user_infoBox">
+            <div class="user_info_top">
+                <dl>
+                    <dt>접속ID</dt>
+                    <dd>admin</dd>
+                </dl>
+                <dl>
+                    <dt>접속자</dt>
+                    <dd>관리자</dd>
+                </dl>
+                <dl>
+                    <dt>IP주소</dt>
+                    <dd>218.232.75.133</dd>
+                </dl>
+            </div>
+            <div class="user_info_bottom">
+                <button type="button" class="btn btn_logout btn-pri">로그아웃</button>
+            </div>
+          </div>
+          <!--// user_infoBox -->
+
+          <ul>
+            <li class="dep1 active menu4">
+              <a href="javascript:void(0);"><span><i class="la la-cog"></i> 기타 설정</span></a>
+              <ul>
+                <li>
+                  <a href="list_etc.html"><span>앱 배너 목록</span></a>
+                </li>
+                <li class="active">
+                  <a href="write_etc.html"><span>앱 배너 등록</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--// cssmenu -->
+      </div>
+      <!--// ltnav -->
+      <div id="header">
+        <nav class="gnbWrap">
+          <h2 class="invisible">상단메뉴</h2>
+          <ul class="gnb">
+              <li class="menu_btn show_lnb"><a href="#"><i class="la la-bars"></i></a></li>
+              <li class="menu_item"><a href="index.html"><h3><i class="la la-folder"></i> 서류 관리</h3></a></li>
+              <li class="menu_item"><a href="list_service.html"><h3><i class="la la-check-circle"></i> 서비스 설정</h3></a></li>
+              <li class="menu_item"><a href="list_adm.html"><h3><i class="la la-user"></i> 관리자 설정</h3></a></li>
+              <li class="menu_item current"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
+              <li class="menu_item"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
+              <div class="nav-underline"></div>
+          </ul>
+        </nav>
+      </div>
+      <!--// header -->
+
+      <div id="content_wrap" class="clearfix">
+        <div id="content">
+          <div id="table-fixed">
+              <h2 class="invisible">본문영역</h2>
+              <div id="content_inner">
+              
+              <!-- include -->
+                <div class="title_box clearfix">
+                    <div class="ttBox">
+                        <h3 class="tt">앱 배너 등록</h3>
+                    </div>
+                    <div class="location">
+                        <ul class="clearfix">
+                            <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
+                            <li><a href="#">기타 설정</a></li>
+                            <li><strong class="active">앱 배너 등록</strong></li>
+                        </ul>
+                    </div>
+                    <!--// location-->
+                </div>
+                <!--// title_box-->
+
+                <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+              >
+                <div class="cardBox">
+                  <div class="cardText">
+                    <table class="tbOpt">
+                      <caption>앱 배너 등록</caption>
+                      <!-- <colgroup>
+                        <col width="10%">
+                        <col width="40%">
+                        <col width="10%">
+                        <col width="40%">
+                      </colgroup> -->
+                      <tbody>                            
+                      <tr>
+                        <th scope="row">
+                          <label for="bannName"><em class="im_bullet">*</em> 앱 배너 이름</label>
+                        </th>
+                        <td>
+                          <input type="text" class="int w300Int" id="bannName" placeholder="" required>
+                        </td>
+                        <th scope="row">
+                          <label for="bannUrl"><em class="im_bullet">*</em> 앱 배너 <span class="en">URL</span></label>
+                        </th>
+                        <td class="td_flex">
+                          <input type="url" class="int w300Int" id="bannUrl" placeholder="" required>
+                          <div class="text-info alone">
+                              <i class="la la-info-circle"></i> 배너 이미지 클릭 시, 안내되는 <span class="en">URL</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="bannImg"><em class="im_bullet">*</em> 배너 이미지</label>
+                        </th>
+                        <td class="td_flex">
+                          <!-- <input type="file" class="int w300Int" id="bannImg" placeholder="" required> -->
+                          <div class="fileUp">
+                            <label for="bannImg" class="int w300Int">
+                              <input type="file" class="up-file" id="bannImg" placeholder="" required>
+                            </label>
+                          </div>
+                          <div class="text-info alone">
+                              <i class="la la-info-circle"></i> 앱 배너에 표시되는 이미지 업로드
+                          </div>
+                        </td>
+                        <td colspan="2" class="blank"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!--// cardBox -->
+                <div class="btnArea clearfix">
+                  <span><button type="button" class="btn btn-md">목록으로</button></span>
+                  <!-- 새글등록일때 -->
+                  <span><button type="submit" class="btn btn-md btn-pri" @click="submit">등록</button></span>
+                  <!-- 수정일때 -->
+                  <span><button type="submit" class="btn btn-md btn-pri" @click="submit">변경사항 저장</button></span>
+                </div>
+              </v-form>
+              <!--// include -->
+              
+
+              </div>
+              <!--//#content_inner-->
+          </div>
+          <!--//#table-fixed-->
+        </div>
+        <!--//#content-->
+      </div>
+      <!--//#content_wrap-->
+    </div>
+    <!--// wrapper -->
+  </div>
+</body>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data () {
+      return {
+        
+      }
+    },
+    methods: {
+    
+    }
+  })
+</script>
+<script src="../assets/js/jquery-latest.min.js"></script>
+<script src="../assets/js/design.js"></script>
+</html>
