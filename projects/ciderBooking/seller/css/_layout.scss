@@ -10,11 +10,11 @@ body {
 
 @media (max-width: 800px) {
   body {
-    overflow-x: hidden;
+    //overflow-x: hidden;
   }
 }
 
-@media(max-width: 800px) {
+@media(max-width: 900px) {
   .utilHello {
     display: none;
   }
@@ -28,19 +28,28 @@ body {
   right: 0;
   min-width: 580px;
   z-index: 999;
-  background: $blue-black;
+  background: $white;
+  border-bottom: 1px solid $line;
+
   .utilWrap {
     height: 50px;
+    @include clearfix;
+  }
+  .user-menu{
+    float:right;
+    @include clearfix;
   }
   .utilHello {
-    color: $white;
-    position: absolute;
-    right: 200px;
+    color: $gray-6;
+    //position: absolute;
+    //right: 200px;
     text-align: right;
     height: 50px;
     line-height: 50px;
+    margin-right:30px;
     font-size: 13px;
     letter-spacing: 0;
+    float:left;
     i {
       font-size: 1.4em;
       position: relative;
@@ -51,9 +60,14 @@ body {
     }
     span {
       margin-left: 8px;
-      color: $line-light;
+      color: $gray-9;
       em {
-        margin-right: 5px;
+        padding: 3px 5px;
+        margin-right: 8px;
+        border: 1px solid $line;
+        font-size: 11px;
+        letter-spacing: -0.5px;
+        border-radius: 8px;
       }
     }
   }
@@ -61,7 +75,8 @@ body {
     color: $gray-9;
     display: table;
     padding-right: 30px;
-    float: right;
+    //float: right;
+    float:left;
   }
   .util li {
     float: left;
@@ -76,7 +91,7 @@ body {
       display: table-cell;
       vertical-align: middle;
       text-align: center;
-      width: 50px;
+      width: 43px;
       a {
         display: block;
         width: 100%;
@@ -87,9 +102,11 @@ body {
         }
       }
     }
-    i {
-      color: $white;
+    i{
+      color: $gray-6;
       font-size: 1.7em;
+      position: relative;
+      top: 1px;
     }
     .alarm {
       position: relative;
@@ -107,6 +124,59 @@ body {
         background: $green;
       }
     }
+    // 사이다페이 전환버튼
+    .convert{
+      button{
+        width:34px;
+        height:34px;
+        border:2px solid $green;
+        border-radius: 50em;
+        color: $gray-6;
+        transition: width, border-color, 0.1s cubic-bezier(.23,.67,.89,.5);
+        //transform: scale(1.4);
+
+        content:"\f021";
+        overflow: hidden;
+        .btn_inn{
+          display: block;
+          width:120px;
+          text-align: left;
+          font-weight: $font-weight-exbold;
+        }
+      }
+      .t, .iconify{
+        display: inline-block;
+        color:$green;
+        //vertical-align: middle;
+        vertical-align: text-top;
+      }
+      .t{
+        letter-spacing: -1.6px;
+      }
+      .iconify{
+        padding:0 6.5px;
+        font-size: 1.25em;
+        font-weight: 600;
+        vertical-align: text-top;
+      }
+      &:hover,
+      &:focus,
+      &:active,
+      &.active{
+        button{
+          width:120px;
+          padding:0 14px;
+          border-color:$green;
+          transition: width, border-color, 0.2s cubic-bezier(.23,.67,.89,.5);
+        }
+        .t, .iconify{
+          display: inline-block;
+        }
+        .iconify{
+          padding-left:0;
+        }
+      }
+    }
     li.active * {
       color: $green !important;
     }
@@ -117,19 +187,18 @@ body {
     text-align: center;
     border: 0;
     z-index: 3;
-    top: 0px;
+    top: 0;
     left: 210px;
     overflow: hidden;
-    background: $blue-black-dark;
-    border-right: 1px solid rgba($white, 0.01);
     i {
       display: block;
       height: 50px;
       line-height: 50px;
-      width: 50px;
+      width: 60px;
       cursor: pointer;
       color: $green;
-      font-size: 1.7em;
+      font-size: 2em;
+      position: relative;
     }
   }
 }
@@ -150,10 +219,12 @@ body {
     height: 80px;
     line-height: 80px;
     text-align: center;
-    img {
-      max-width: 130px;
-      position: relative;
-      //top: 5px;
+    h1{
+      background: url("../images/logo.png") center center no-repeat;
+      background-size: 128px;
+      text-indent: -9999px;
+      overflow: hidden;
+      cursor: pointer;
     }
   }
 }
@@ -170,6 +241,7 @@ body {
   background: $white;
   background: none;
   position: relative;
+
   > ul > li > a > span > i {
     font-size: 1.4em;
     font-weight: $font-weight-base;
@@ -193,6 +265,7 @@ body {
       position: relative;
     }
   }
+  > ul > li.active,
   > ul > li.dep1.active {
     background: $blue-black-dark;
   }
@@ -205,8 +278,9 @@ body {
     display: block;
     position: absolute;
     right: 20px;
-    font-size: 1.3em;
+    font-size: 0.9em;
     @extend %top50;
+    color: $white-lgray;
     font-weight: $font-weight-base;
   }
   .dep2 > a span:after {
@@ -247,7 +321,7 @@ body {
   color: $white;
   border-top: 1px solid rgba(242, 248, 255, .05);
   border-bottom: 1px solid rgba(242, 248, 255, .05);
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 }
 
 .csInfo p {
@@ -298,7 +372,11 @@ body {
 #content_inner {
   min-width: 580px;
 }
-
+@media (max-width: 840px){
+#content_inner{
+  padding: 20px 15px 30px 15px !important;
+}
+}
 @media (min-width: 801px) {
   #content #table-fixed {
     display: block;
@@ -363,21 +441,41 @@ body {
   display: table;
   width: 100%;
   position: relative;
+  margin-bottom: 20px;
   .ttBox {
     float: left;
     display: inline-block;
-    margin-bottom: 20px;
-    h2 {
+    //margin-bottom: 20px;
+    //h2 {
+    //  font-size: 19px;
+    //  font-weight: $font-weight-exbold;
+    //  letter-spacing: -1px;
+    //  line-height: 27px;
+    //}
+    //h3 {
+    //  margin-top: 5px;
+    //  color: $gray-6;
+    //  font-size: 14px;
+    //}
+    .title{
       font-size: 19px;
       font-weight: $font-weight-exbold;
       letter-spacing: -1px;
       line-height: 27px;
     }
-    h3 {
+    .title-desc{
       margin-top: 5px;
       color: $gray-6;
       font-size: 14px;
     }
+  }
+}
+.ttBox2{
+  > .tt{
+    font-size: 15px;
+    font-weight: $font-weight-exbold;
+    letter-spacing: -1px;
+    line-height: 27px;
   }
 }
 
@@ -434,12 +532,15 @@ body {
   height: 100%;
   dl {
     display: inline-block;
-    width: 25%;
-    margin-top: 13px;
+    width: 24.55%;
+    margin-top: 10px;
     &.dl_date {
       width: 37%;
     }
     &.dl_search {
+      width: 49%;
+    }
+    &.dl_search2 {
       width: 49%;
     }
     dt, dd {
@@ -453,7 +554,7 @@ body {
     dd {
       display: table;
       width: 100%;
-      span {
+      > span {
         display: table-cell;
       }
     }
@@ -528,7 +629,7 @@ body {
   }
   .cardTT {
     background: $white-gray;
-    padding: 6px 13px;
+    padding: 18px;
     border-top: 1px solid $line-dark;
     border-bottom: 1px solid $line-dark;
     small {
@@ -539,16 +640,28 @@ body {
     }
     h2 {
       display: inline-block;
-      font-size: 13px;
+      font-size: 15px;
+      font-weight: $font-weight-exbold;
+    }
+    .tt {
+      display: inline-block;
+      font-size: 15px;
       font-weight: $font-weight-exbold;
     }
     small {
       color: $gray-9;
-      margin-left: 3px;
+      margin-left: 7px;
     }
   }
   .cardText{
     background: $white;
+    &.row{
+      margin-left:0;
+      margin-right:0;
+      [class*="col-"]{
+        padding:0;
+      }
+    }
   }
   .im_bullet {
     color: $green;
@@ -561,13 +674,15 @@ body {
   //라인 없는거
   &.noline{
     border-width:0;
+    margin-top:0;
+    border-bottom:1px solid $line-dark;  //메인때문에 주석처리
 
     .cardTT{
       border: 1px solid $line-dark;
     }
     .cardText{
-      border: 1px solid $line-dark;
-      border-top-width: 0;
+      //border: 1px solid $line-dark;
+      //border-top-width: 0;
     }
   }
   // 마진 없는거
@@ -583,6 +698,20 @@ body {
       margin-bottom:0;
     }
   }
+}
+
+// wrap
+.row .cardBox{
+  margin-top:0
+}
+.row.wrap{
+  margin-top:-12px;  // row flex로 되어잇는 경우, 주석풀기
+}
+.row.wrap2{
+  //margin-top:-24px;  // row flex로 되어있는 경우, 주석풀기
+}
+.cardWrap{
+  margin-top:20px;
 }
 
 .text-info {
@@ -603,7 +732,9 @@ body {
     margin-top:20px;
   }
 }
-
+.booking_main{
+  margin-top:-12px;
+}
 .btnArea {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -660,18 +791,24 @@ body {
 
 .info_alert {
   dt {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: $font-weight-exbold;
     margin-bottom: 4px;
     i {
-      font-size: 1.15em;
+      font-weight: 700;
+      font-size: 1.2em;
     }
+  }
+  dd{
+    color: $gray-9;
   }
   width: 100%;
   padding: 13px;
   font-size: 13px;
-  border: 1px solid #e3dcb6;
-  background: #fffae0;
+  border: 1px solid $line;
+  /*background: #fffae0;*/
+  background: #fff;
+  border-left: 5px solid $green;
 }
 
 
@@ -690,10 +827,10 @@ body {
   a {
     display: table-cell;
     text-align: center;
-    background: $white;
-    border: 1px solid $green;
-    border-left: 0px;
-    color: $green;
+    background: $white-lgray;
+    border: 1px solid $line-dark;
+    border-left-width: 0;
+    color: $gray-9;
     height: 40px;
     vertical-align: middle;
     &:first-child {
@@ -703,7 +840,7 @@ body {
       -moz-border-radius-bottomleft: 5px;
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
-      border-left: 1px solid $green;
+      border-left: 1px solid $line-dark;
     }
     &:last-child {
       -webkit-border-top-right-radius: 5px;
@@ -714,8 +851,9 @@ body {
       border-bottom-right-radius: 5px;
     }
     &.active {
-      background: $green;
-      color: #fff;
+      background: $white;
+      border: 1px solid $green;
+      color: $green;
       font-weight: bold;
     }
   }
@@ -724,21 +862,21 @@ body {
     width: 25%;
   }
   &.col_3 a{
-    width: 33.33%;
+    width: 33.333%;
   }
   &.col_2 a{
     width: 50%;
   }
 
   &.list{
-    margin-bottom:30px;
+    margin-bottom:20px;
   }
 }
 
 @media(max-width: 1036px) {
   .searchBox {
     dl {
-      width: 33%;
+      width: 32.7%;
       &.dl_date {
         width: 66%;
         min-width: 240px;
@@ -753,5 +891,55 @@ body {
 @media screen and (max-width: 1036px) {
   .tabGroup{
     width:100%;
+  }
+}
+
+// 수정된 값 표시
+.modified{
+  position: relative;
+  //border:1px solid !important;
+  background: #fcf8e3;
+  &.top{
+    //border-color: darken(#fcf8e3, 25%) !important;
+    //border-bottom:0 !important;
+    &:after{
+      position: absolute;
+      top: 3px;
+      right: 5px;
+      display: inline-block;
+      font-family: LineAwesome;
+      content:"\f1c1";
+      font-size:12px;
+      color: darken(#fcf8e3, 70%);
+    }
+  }
+  &.mid{
+    //border-color: darken(#fcf8e3, 25%) !important;
+    //border-top:1px solid $line !important;
+    //border-bottom:0 !important;
+  }
+  &.bottom{
+    //border-color: darken(#fcf8e3, 25%) !important;
+    //border-top:0 !important;
+  }
+}
+
+
+// 텍스트 라벨처리
+.labeling{
+  display: inline-block;
+  padding:0px 6px 1px 4px;
+  margin-left:10px;
+  background: $green;
+  border:1px solid $green;
+  border-radius: 3px;
+  line-height: 15px;
+  font-size:11px;
+  color:$white;
+  //-webkit-box-shadow: 6px 6px 12px rgba($green,.13);
+  //box-shadow: 6px 6px 12px rgba($green,.12);
+  //animation: shadow-pulse-green 1s infinite;
+  i{
+    font-size:12px;
   }
 }

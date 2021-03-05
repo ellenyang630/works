@@ -5,8 +5,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title>시스템 로그 - 유디체크</title>
-  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <title>앱 배너 목록 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="format-detection" content="telephone=no"/>
   <!--[if lt IE 9]>
   <script src="js/html5.js"></script>
@@ -14,12 +14,12 @@
   <!--[if lt IE 9]>
   <script src="js/IE9.js"></script>
   <![endif]-->
-    
+  
   <!-- import CSS -->
-  <link rel="stylesheet" href="../assets/scss/style.css">
-  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
-  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
-  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+  <link rel="stylesheet" href="assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="assets/css/xe.css">
 
   <!-- import el-elment CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -57,14 +57,14 @@
           <!--// user_infoBox -->
 
           <ul>
-            <li class="dep1 active menu5">
-              <a href="javascript:void(0);"><span><i class="la la-history"></i> 로그 관리</span></a>
+            <li class="dep1 active menu4">
+              <a href="javascript:void(0);"><span><i class="la la-cog"></i> 기타 설정</span></a>
               <ul>
                 <li class="active">
-                  <a href="list_systemLog.html"><span>시스템 로그</span></a>
+                  <a href="list_etc.html"><span>앱 배너 목록</span></a>
                 </li>
                 <li>
-                  <a href="list_memoLog.html"><span>메모 로그</span></a>
+                  <a href="write_etc.html"><span>앱 배너 등록</span></a>
                 </li>
               </ul>
             </li>
@@ -81,8 +81,8 @@
               <li class="menu_item"><a href="index.html"><h3><i class="la la-folder"></i> 서류 관리</h3></a></li>
               <li class="menu_item"><a href="list_service.html"><h3><i class="la la-check-circle"></i> 서비스 설정</h3></a></li>
               <li class="menu_item"><a href="list_adm.html"><h3><i class="la la-user"></i> 관리자 설정</h3></a></li>
-              <li class="menu_item"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
-              <li class="menu_item current"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
+              <li class="menu_item current"><a href="list_etc.html"><h3><i class="la la-cog"></i> 기타 설정</h3></a></li>
+              <li class="menu_item"><a href="list_systemLog.html"><h3><i class="la la-history"></i> 로그 관리</h3></a></li>
               <div class="nav-underline"></div>
           </ul>
         </nav>
@@ -99,107 +99,80 @@
               <!-- include -->
                 <div class="title_box clearfix">
                     <div class="ttBox">
-                        <h3 class="tt">시스템 로그</h3>
+                        <h3 class="tt">앱 배너 목록</h3>
+                        <p class="subtt"><span class="en">UDCHECK</span> 사용자 앱 배너에서 노출되는 순서 : 해당 목록 순서와 동일</p>
                     </div>
                     <div class="location">
                         <ul class="clearfix">
                             <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
-                            <li><a href="#">로그 관리</a></li>
-                            <li><strong class="active">시스템 로그</strong></li>
+                            <li><a href="#">기타 설정</a></li>
+                            <li><strong class="active">앱 배너 목록</strong></li>
                         </ul>
                     </div>
                     <!--// location-->
                 </div>
                 <!--// title_box-->
-
-                <div class="searchBox">
-                  <div class="searchFtWrap">
-                    <div class="searchFt clearfix">
-                      <dl class="dl_date">
-                          <dt>요청일</dt>
-                          <dd>
-                              <span class="int_date"><input type="text" readonly placeholder="2019-11-22" class="int"></span><span class="intAmong">~</span><span class="int_date"><input type="text" readonly placeholder="2019-11-22" class="int"></span>
-                          </dd>
-                      </dl>
-                      <dl class="dl_dayChk">
-                        <dt class="invisible">기간선택</dt>
-                        <dd>
-                          <ul class="schOpt col3">
-                            <li>
-                                <input class="radio_toggle" type="radio" name="dateRange" value="d1" id="d1" checked>
-                                <label for="d1">오늘</label>
-                            </li>
-                            <li>
-                                <input class="radio_toggle" type="radio" name="dateRange" value="d2" id="d2">
-                                <label for="d2">어제</label>
-                            </li>
-                            <li>
-                                <input class="radio_toggle" type="radio" name="dateRange" value="d3" id="d3">
-                                <label for="d3">일주일</label>
-                            </li>
-                          </ul>
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt><label for="">서비스 <span class="en">ID</span></label></dt>
-                        <dd>
-                            <input type="text" class="int" placeholder="">
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt><label for=""><span class="en">URL</span></label></dt>
-                        <dd>
-                            <input type="text" class="int" placeholder="">
-                        </dd>
-                      </dl>
-                    </div>
-                  </div>
-                  <div class="searchFtBtnWrap">
-                    <a href="#" class="searchFtBtn"><span>검색</span></a>
-                  </div>
-                </div>
-
                 <div class="cardBox">
                   <div class="cardText">
                     <table class="table tbList">
-                      <caption>시스템 로그 내역</caption>
+                      <caption>등록된 앱 배너 내역</caption>
                       <colgroup>
                         <col width="10%">
-                        <col width="10%">
-                        <col width="20%">
                         <col width="*">
-                        <col width="10%">
-                        <col width="10%">
-                        <col width="10%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="12%">
+                        <col width="15%">
+                        <col width="15%">
                       </colgroup>
                       <thead>
                         <tr>
-                          <th class="en" scope="col">NO.</th>
-                          <th scope="col">서비스 <span class="en">ID</span></th>
-                          <th class="en"  scope="col">URL</th>
-                          <th scope="col">요청 및 수신 데이터</th>  
-                          <th class="en" scope="col">IP</th>
-                          <th scope="col">요쳥일</th>
+                          <th scope="col">순서</th>
+                          <th scope="col">앱 배너 이름</th>
+                          <th scope="col">앱 배너 URL</th>
+                          <th scope="col">배너 이미지</th>
+                          <th scope="col">등록자</th>
+                          <th scope="col">등록일시</th>
                           <th scope="col">관리</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td class="text-lighter en">46993</td>
-                          <td class="en">
-                            <p><strong>payapp</strong></p>
+                          <td class="btn-group btn-move-group">
+                            <div> 
+                              <button type="button" class="btn btn-up" disabled><span class="invisible">위로</span></button>
+                              <button type="button" class="btn btn-down"><span class="invisible">아래로</span></button>
+                            </div>
                           </td>
-                          <td class="en">/oapi/document/create/payapp</td>
-                          <td class="en">
-                              {"projID":"ciderpay","memberID":"jh21036","orderNo
-                              ":"R201911130000119637","orderIdx":0,"goodName"
-                              ,"subNodeCnt":0,"var1":"5dcb9c88435acb4741cb8fb
-                              8","adTypeID":"BASE","currencyID":"KRW",}}]{
+                          <td>UDCHECK 사용법 안내</td>
+                          <td class="en">https://ciderpay.com</td>
+                          <td class="td_thumbImg">
+                            <img src="assets/img/banner.png" alt="배너">
                           </td>
-                          <td class="en">127.0.0.1</td>
-                          <td class="text-lighter en">2019-08-08</td>
+                          <td>관리자 <span class="en">(admin)</span></td>
+                          <td class="text-lighter en">2019-08-08 14:14:14</td>
                           <td class="btnBox inline">
-                            <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
+                            <span><a href="write_etc.html" class="btn btn-sm btn-line-pri w80Int">수정</a></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</a></span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="btn-group btn-move-group">
+                            <div> 
+                              <button type="button" class="btn btn-up"><span class="invisible">위로</span></button>
+                              <button type="button" class="btn btn-down" disabled><span class="invisible">아래로</span></button>
+                            </div>
+                          </td>
+                          <td>UDCHECK 사용법 안내</td>
+                          <td class="en">https://ciderpay.com</td>
+                          <td class="td_thumbImg">
+                            <img src="assets/img/banner.png" alt="배너">
+                          </td>
+                          <td>관리자<span class="en">(admin)</span></td>
+                          <td class="text-lighter en">2019-08-08 14:14:14</td>
+                          <td class="btnBox inline">
+                            <span><a href="write_etc.html" class="btn btn-sm btn-line-pri w80Int">수정</a></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</a></span>
                           </td>
                         </tr>
                         <tr>
@@ -249,7 +222,6 @@
       <!--//#content_wrap-->
     </div>
     <!--// wrapper -->
-
   </div>
   <!--// #app -->
 </body>
@@ -271,6 +243,6 @@
     }
   })
 </script>
-<script src="../assets/js/jquery-latest.min.js"></script>
-<script src="../assets/js/design.js"></script>
+<script src="assets/js/jquery-latest.min.js"></script>
+<script src="assets/js/design.js"></script>
 </html>

@@ -7,7 +7,8 @@
   }
 }
 .fin_list {
-  background: $green_a;
+  background: $white-lgray;
+  border-top: 1px solid $line;
 }
 .disabled_list {
   background: rgba($base, 0.05);
@@ -15,7 +16,16 @@
 .active_list{
   background: #fffae0;
 }
-
+.read{
+  *{
+    color:$gray-9;
+  }
+}
+.unread{
+  *{
+    color:$black !important;
+  }
+}
 
 
 
@@ -28,6 +38,9 @@ table {
   .btn {
     position: relative;
     letter-spacing: -0.5px;
+    &.first{
+      margin-right:5px;
+    }
   }
   th, td {
     word-break: break-all;
@@ -37,19 +50,32 @@ table {
     position: relative;
     top: -0.5px;
   }
-  .no_data {
-    height: 200px;
-    display: table;
-    width: 100%;
-    color: $gray-9;
-    .inn {
-      display: table-cell;
-      text-align: center;
-      vertical-align: middle;
+}
+.no_data {
+  display: table;
+  width: 100%;
+  height: 149px;
+  color: $gray-9;
+  .inn {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  i {
+    font-size: 1.7em;
+    margin-bottom: 6px;
+  }
+  @at-root .section_booking .no_data{
+    height: 340px;
+    font-size:13px;
+    p > i{
+      font-size: 260%;
     }
-    i {
-      font-size: 1.7em;
-      margin-bottom: 6px;
+    .dirbtn{
+      margin-top:20px;
+      .btn{
+        line-height: 29px !important;
+      }
     }
   }
 }
@@ -82,11 +108,14 @@ table {
   table td, table th {
     font-size: 0.9em;
   }
+  table th{
+    color: $gray-6;
+  }
 }
 
 .thead {
   margin-bottom: 10px;
-  height: 30px;
+  //height: 30px;
   .thead_total {
     line-height: 30px;
   }
@@ -101,18 +130,43 @@ table {
     }
   }
   .thead_info {
-    line-height: 30px;
-    color:$gray-6;
+    //line-height: 30px;
+    color:$gray-9;
+    font-size: 0.9em;
+  }
+  .thead_select{
+    > span{
+      display: inline-block;
+      margin-right:5px;
+      &:last-child{
+        margin-right:0;
+      }
+    }
+  }
+}
+@media screen and (max-width:800px){
+  .thead{
+    .thead_info{
+      font-size:12px;
+    }
+  }
+}
+
+
+.noList{
+  tbody {
+    th, td {
+      padding: 14px 13px !important;
+    }
   }
 }
 
 .tbList {
   border: 1px solid $line-dark;
-  border-top: 2px solid $gray-9;
   thead {
     th {
       color: $gray-9;
-      padding: 8px 10px;
+      padding:4px 10px;
       border-bottom: 1px solid $line-light;
       background-color: $white-lgray;
       font-size: 12px;
@@ -131,9 +185,13 @@ table {
   }
   tbody {
     tr {
-      border-bottom: 1px solid $line-light;
+      th,td{
+        border-bottom: 1px solid $line-light;
+      }
       &:last-child {
-        border-bottom-width: 0;
+        th,td{
+        border-bottom: 0px !important;
+        }
       }
       // 예약현황 색상 조정
       &.tr_time{
@@ -152,7 +210,7 @@ table {
           background: rgba($green, 0.07);
         }
         &:last-child{
-          border-bottom-width: 0;
+          border-bottom: 0;
         }
       }
     }
@@ -161,13 +219,25 @@ table {
       line-height: 1.4em;
       letter-spacing: 0px;
       border-right: 1px solid $white-gray;
+      word-break: keep-all;
       &:last-child {
         border-right: 0;
       }
     }
     td {
       text-align: center;
+      &.text-left{
+        text-align:left;
+      }
     }
+
+  }
+  // tbody 반복 시, 라인 추가
+  tbody + tbody{
+    border-top:1px solid $line-light;
+  }
+  tbody:first-child{
+    border-top:0;
   }
   .btnBox {
     vertical-align: middle;
@@ -180,74 +250,259 @@ table {
       &:last-child {
         margin-bottom: 0px;
       }
-      a {
+      a , button {
         width: 100%;
+      }
+    }
+    &.inline{
+      span {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        margin:2px;
+        //&:first-child{
+        //  margin-left:0;
+        //}
       }
     }
   }
 
   &.bdt0{
     border-width:0;
-    border-bottom-width:1px;
+    border-bottom:1px;
     tbody{
       th{
         vertical-align: middle;
       }
     }
   }
-}
-.cardText .tbList{
-  border-width: 0;
-}
 
+
+  // 공지사항, FAQ, 문의사항
+  &.tblBBS{
+    & + &{
+      margin-top:20px;
+    }
+    tbody{
+      th, td{
+        padding: 12px 20px;
+        text-align: left;
+        border-left-width:0;
+        border-right-width:0;
+      }
+      .text-center{
+        text-align: center;
+      }
+      .text-right{
+        text-align: right;
+      }
+    }
+    a{
+      color:$black;
+    }
+
+
+   .bbs_heading{
+     font-size: 13px;
+     font-weight: 700;
+   }
+
+    // 자주묻는질문
+    .faqWrap{
+      th,td{
+        padding:0;
+      }
+      .bbs_content{
+        display: none;
+        //padding: 20px;
+        height:0;
+        //color:red;
+        visibility: visible;
+        //transition: height 0.35s, visibility 0.35s;
+        transition: color 0.3s  ease-in;
+      }
+      .bbs_heading{
+        cursor: pointer;
+        position: relative;;
+        padding: 14px 20px;
+        &:after{
+          content:"\f110";
+          display: inline-block;
+          font-family: LineAwesome;
+          position: absolute;
+          right: 20px;
+          font-size: 130%;
+          top: 50%;
+          transform: translateY(-50%);
+          color:$gray-9;
+        }
+
+        &.opened{
+          border-bottom:1px solid $line;
+          color:$green;
+          &:after{
+            content:"\f113";
+          }
+          & + .bbs_content{
+            display: block;
+            visibility: visible;
+            //opacity: 1;
+
+          //color:blue;
+            position:relative;
+            min-height:auto;
+            height:auto;
+            padding:20px;
+            overflow:hidden;
+            transition: color 0.3s ease-in;
+          }
+        }
+      }
+    }
+  }
+}
+// tbOpt 상세정보입력폼 (운영회차 달력 일자별직접설정때문에 > 사용)
 .tbOpt {
-  tr {
-    border-bottom: 1px solid $white-gray;
+  > tr{
+    > th{
+      text-align: left;
+      //width: 130px;
+      background: $white-lgray;
+      border-right: 1px solid $line-light;
+      font-weight: $font-weight-base;
+      position: relative;
+      small {
+        display: block;
+      }
+    }
+    > th, > td{
+      padding: 13px 18px;
+      border-bottom: 1px solid $white-gray;
+    }
+    .int, select.int{
+      width: 100%;
+    }
   }
-  th {
-    text-align: left;
-    width: 130px;
-    background: $white-lgray;
-    border-right: 1px solid $line-light;
-    font-weight: $font-weight-base;
-    position: relative;
 
-    small {
-      display: block;
+  tbody{
+    > tr{
+      > th, > td{
+        border-bottom: 1px solid $white-gray;
+      }
+      > th{
+        text-align: left;
+        //width: 130px;
+        background: $white-lgray;
+        border-right: 1px solid $line-light;
+        font-weight: $font-weight-base;
+        position: relative;
+        small {
+          display: block;
+        }
+      }
     }
   }
-  th, td {
-    padding: 10px 13px;
-  }
-  input, select {
-    width: 100%;
-  }
-  thead tr {
-    border-bottom: 1px solid $line-light;
-    th {
-      background: #fffae0;
+  > thead {
+    > tr {
+      > th, > td{
+        padding: 10px 13px;
+        border-bottom: 1px solid $line-light !important;
+      }
+      > th {
+        font-weight: 400;
+        text-align: left;
+        background: #fffae0;
+        &:last-child {
+          border-right: 0;
+        }
+      }
     }
-    th:last-child {
-      border-right: 0;
+  }
+  > tbody{
+    > tr{
+      > th, > td{
+        padding: 10px 13px;
+        input.int, select.int{
+          width: 100%;
+        }
+      }
+      > th{
+        .thSwitch {
+          margin-top: 8px;
+        }
+      }
     }
   }
-  .thSwitch {
-    margin-top: 8px;
-  }
+
+
+  //tr {
+  //  border-bottom: 1px solid $white-gray;
+  //  &:last-child{
+  //    border-color: $line-dark;
+  //  }
+  //}
+  //th {
+  //  text-align: left;
+  //  //width: 130px;
+  //  background: $white-lgray;
+  //  border-right: 1px solid $line-light;
+  //  font-weight: $font-weight-base;
+  //  position: relative;
+  // th:last-child{
+  // }
+  //  small {
+  //    display: block;
+  //  }
+  //}
+
+
+  //th, td {
+  //  padding: 10px 13px;
+  //}
+  //input, select {
+  //  width: 100%;
+  //}
+
+  //thead tr {
+  //  border-bottom: 1px solid $line-light !important;
+  //  th {
+  //    background: #fffae0;
+  //  }
+  //  th:last-child {
+  //    border-right: 0;
+  //  }
+  //}
+  //.thSwitch {
+  //  margin-top: 8px;
+  //}
 }
 
 @media(max-width: 800px) {
   .tbOpt {
-    th, td {
-      display: block;
-      width: 100%;
-      background: $white;
+    > tr{
+      > th, > td {
+        display: block;
+        width: 100%;
+        background: $white;
+      }
     }
-    tbody th {
-      padding-bottom: 0px;
-      border: 0;
-      small {
-        display: inline;
+
+
+
+    > tbody{
+      > tr{
+        > th, > td {
+          display: block;
+          width: 100%;
+          background: $white;
+        }
+        > th {
+          padding-bottom: 0px;
+          border: 0;
+          small {
+            display: inline;
+          }
+        }
       }
     }
   }
@@ -270,6 +525,28 @@ table {
   }
 }
 
+
+/* 라인 */
+.tblLine{
+  tr{
+    &:first-child{
+      th,td{ border-top:1px solid $line-dark !important;}
+    }
+    &:last-child{
+      th,td{
+      border-bottom:1px solid $line-dark !important;}
+    }
+    th, td{
+      &:first-child{
+        border-left:1px solid $line-dark !important;
+      }
+      &:last-child{
+        border-right:1px solid $line-dark !important;
+      }
+    }
+  }
+}
+
 .tgGroup, .tgGroup2 {
   display: table;
   width: 100%;
@@ -284,17 +561,23 @@ table {
     padding: 0 3px;
   }
 }
-
 .tgGroup {
   .btn {
     width: 100%;
   }
-  span:first-child {
+  > span:first-child {
     width: calc(100% - 100px);
   }
-  span:last-child {
+  > span:last-child {
     padding-left: 10px;
     width: 90px;
+  }
+}
+.el-dialog{
+  .tgGroup {
+    > span:last-child {
+      width: 70px;
+    }
   }
 }
 
@@ -328,6 +611,57 @@ table {
   .pinfo {
     color: $gray-9;
     display: block;
+    .bookByAdm{
+      position: relative;
+      color: rgba($green, 0.9);
+      &:before{
+        position: absolute;
+        top: 0.2rem;
+        left: -9px;
+        display: inline-block;
+        content:"";
+        width:5px;
+        height:5px;
+        border-radius: 50%;
+        background: $green;
+        -webkit-box-shadow: 6px 6px 12px rgba($green,.13);
+        box-shadow: 6px 6px 12px rgba($green,.12);
+        animation: shadow-pulse-green 1s infinite;
+      }
+    }
+  }
+}
+
+.dlBox2  {
+  tbody td{
+    vertical-align: middle;
+  }
+  .dlBoxLink{
+    text-align: left;
+    p{
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    dl{
+      margin: 0;
+      font-size: 12px;
+    }
+    dd{
+      color: $gray-6;
+    }
+  }
+}
+
+.alarmDl{
+  display: table;
+  width: 100%;
+  dl{
+    display: table-cell;
+    width: 50%;
+    dd{
+      color: $black !important;
+    }
   }
 }
 
@@ -335,10 +669,12 @@ table {
   dt {
     color: $gray-9;
     position: relative;
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
+    font-size: 12px;
   }
   dd {
-    margin-top: 6px;
+    //margin-top: 6px;
+    margin-top:12px;
   }
   border-top: 1px solid $white-gray;
   padding-top: 8px;
@@ -418,7 +754,107 @@ table {
     border:0;
     cursor: pointer;
   }
+
+  // 개발서버
+  .label_picker,
+  .fromTo,
+  .vue__time-picker{
+    float: left;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+  }
+  .label_picker{
+    width: 15%;
+    color:$gray-6;
+  }
+  .fromTo{
+    width: 10%;
+    color:$gray-9;
+  }
+  .vue__time-picker{
+    width: 30%;
+    cursor: pointer;
+    input.display-time{
+      border-width:0;
+    }
+  }
 }
+
+/* 테이블 하단 안내 문구 */
+.tbFoot{
+  margin-top:15px;
+  font-size: 0.95em;
+  color: $gray-9;
+  p:first-child{
+    margin-bottom:2px;
+  }
+}
+
+// cardBox 안에 테이블 구조
+.cardText .tbList{
+  border-bottom: 0;
+}
+.cardBox{
+  .tbList {
+    border-top: 0;
+    border-bottom: 0;
+    tbody{
+      tr {
+        &:last-child {
+          th,td{
+          border-bottom: 0 !important;
+          }
+        }
+      }
+    }
+  }
+  .tbOpt{
+    tr{
+      &:last-child{
+        th,td{
+        border-bottom:0;
+        }
+      }
+    }
+  }
+  .tbList.complex{
+    th,td{
+      border-bottom: 1px solid $line-light;
+    }
+    .bdb0{
+      border-bottom: 1px solid $line-dark !important;
+    }
+    tr:last-child{
+      th,td{
+        border-bottom: 1px solid $line-dark !important;
+      }
+    }
+    tbody:last-child{
+      .bdb0{
+        border-bottom: 0px !important;
+      }
+      tr:last-child{
+        th,td{
+          border-bottom: 0px !important;
+        }
+      }
+    }
+
+  }
+
+  .complex2{
+    tbody{
+
+    }
+  }
+}
+
+
+
+
+
 
 /* pagination */
 .pagBox {
@@ -441,7 +877,7 @@ table {
   display: inline;
 }
 
-.pagination > li > a, .pagination > li > span {
+.pagination > li > button, .pagination > li > a, .pagination > li > span {
   position: relative;
   float: left;
   width: 40px;
@@ -459,24 +895,32 @@ table {
   font-weight: $font-weight-exbold;
 }
 
-.pagination > li:first-child > a, .pagination > li:first-child > span {
+.pagination > li:first-child > button,  .pagination > li:first-child > a, .pagination > li:first-child > span {
   margin-left: 0;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
 }
 
-.pagination > li:last-child > a, .pagination > li:last-child > span {
+.pagination > li:last-child > button, .pagination > li:last-child > a, .pagination > li:last-child > span {
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
 }
 
-.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+.pagination > li > button:hover, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > button:focus, .pagination > li > a:focus, .pagination > li > span:focus {
   z-index: 2;
   color: $green;
   background-color: $green_a;
 }
 
-.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+.pagination > .active > button,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > button:hover,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > button:focus,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
   z-index: 3;
   color: $white;
   background-color: $green;

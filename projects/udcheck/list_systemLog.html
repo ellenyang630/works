@@ -5,8 +5,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title>메모 로그 - 유디체크</title>
-  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <title>시스템 로그 - 유디체크</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="format-detection" content="telephone=no"/>
   <!--[if lt IE 9]>
   <script src="js/html5.js"></script>
@@ -16,10 +16,10 @@
   <![endif]-->
     
   <!-- import CSS -->
-  <link rel="stylesheet" href="../assets/scss/style.css">
-  <link data-n-head="true" rel="stylesheet" href="../assets/css/font-awesome.min.css">
-  <link data-n-head="true" rel="stylesheet" href="../assets/css/line-awesome.min.css">
-  <link data-n-head="true" rel="stylesheet" href="../assets/css/xe.css">
+  <link rel="stylesheet" href="assets/scss/style.css">
+  <link data-n-head="true" rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="assets/css/line-awesome.min.css">
+  <link data-n-head="true" rel="stylesheet" href="assets/css/xe.css">
 
   <!-- import el-elment CSS -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -30,7 +30,7 @@
     <div class="wrapper">
       <div id="ltnav" class="lnb">
         <div class="logoBox">
-          <h1><a href="./index.html">유디체크</a></h1>
+          <h1><a href="index.html">유디체크</a></h1>
         </div>
         <!--// logoBox -->
         <div id="cssmenu">
@@ -60,10 +60,10 @@
             <li class="dep1 active menu5">
               <a href="javascript:void(0);"><span><i class="la la-history"></i> 로그 관리</span></a>
               <ul>
-                <li>
+                <li class="active">
                   <a href="list_systemLog.html"><span>시스템 로그</span></a>
                 </li>
-                <li class="active">
+                <li>
                   <a href="list_memoLog.html"><span>메모 로그</span></a>
                 </li>
               </ul>
@@ -99,13 +99,13 @@
               <!-- include -->
                 <div class="title_box clearfix">
                     <div class="ttBox">
-                        <h3 class="tt">메모 로그</h3>
+                        <h3 class="tt">시스템 로그</h3>
                     </div>
                     <div class="location">
                         <ul class="clearfix">
                             <li class="first"><a href="index.html"><i class="la la-home"></i></a></li>
                             <li><a href="#">로그 관리</a></li>
-                            <li><strong class="active">메모 로그</strong></li>
+                            <li><strong class="active">시스템 로그</strong></li>
                         </ul>
                     </div>
                     <!--// location-->
@@ -116,7 +116,7 @@
                   <div class="searchFtWrap">
                     <div class="searchFt clearfix">
                       <dl class="dl_date">
-                          <dt>변경일</dt>
+                          <dt>요청일</dt>
                           <dd>
                               <span class="int_date"><input type="text" readonly placeholder="2019-11-22" class="int"></span><span class="intAmong">~</span><span class="int_date"><input type="text" readonly placeholder="2019-11-22" class="int"></span>
                           </dd>
@@ -140,19 +140,6 @@
                           </ul>
                         </dd>
                       </dl>
-                      <dl class="dl_select">
-                        <dt>타입</dt>
-                        <dd>
-                          <div class="selectWrap">
-                            <select class="int">
-                              <option>등록</option>
-                              <option>수정</option>
-                              <option>삭제</option>
-                              <option>시스템</option>
-                            </select>
-                          </div>
-                        </dd>
-                      </dl>
                       <dl>
                         <dt><label for="">서비스 <span class="en">ID</span></label></dt>
                         <dd>
@@ -160,7 +147,7 @@
                         </dd>
                       </dl>
                       <dl>
-                        <dt><label for="">관리자 <span class="en">ID</span></label></dt>
+                        <dt><label for=""><span class="en">URL</span></label></dt>
                         <dd>
                             <input type="text" class="int" placeholder="">
                         </dd>
@@ -171,116 +158,52 @@
                     <a href="#" class="searchFtBtn"><span>검색</span></a>
                   </div>
                 </div>
-                <!--// searchBox -->
-  
+
                 <div class="cardBox">
                   <div class="cardText">
                     <table class="table tbList">
-                      <caption>메모 로그 내역</caption>
+                      <caption>시스템 로그 내역</caption>
                       <colgroup>
                         <col width="10%">
                         <col width="10%">
-                        <col width="10%">
-                        <col width="8%">
+                        <col width="20%">
                         <col width="*">
                         <col width="10%">
-                        <col width="12%">
+                        <col width="10%">
                         <col width="10%">
                       </colgroup>
                       <thead>
                         <tr>
-                          <th scope="col">NO.</th>
-                          <th scope="col">관리자 <span class="en">ID</span></th>
-                          <th scope="col">프로젝트 <span class="en">ID</span></th>
-                          <th scope="col">타입</th>
-                          <th scope="col">메모 내용</th>  
-                          <th scope="col"><span class="en">IP</span></th>
-                          <th scope="col">변경일시</th>
+                          <th class="en" scope="col">NO.</th>
+                          <th scope="col">서비스 <span class="en">ID</span></th>
+                          <th class="en"  scope="col">URL</th>
+                          <th scope="col">요청 및 수신 데이터</th>  
+                          <th class="en" scope="col">IP</th>
+                          <th scope="col">요쳥일</th>
                           <th scope="col">관리</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="tr_height_sm">
+                        <tr>
                           <td class="text-lighter en">46993</td>
-                          <td class="en">
-                            <p><strong>devwy</strong></p>
-                          </td>
                           <td class="en">
                             <p><strong>payapp</strong></p>
                           </td>
-                          <td>
-                            <p class="text-pri"><strong>등록</strong></p>
-                          </td>
-                          <td class="text-left text-lighter">등록한 메모 내용</td>
-                          <td class="en">127.0.0.1</td>
-                          <td class="text-lighter en">2019-08-08 13:13:13</td>
-                          <td class="btnBox inline">
-                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
-                          </td>
-                        </tr>
-                        <tr class="tr_height_sm">
-                          <td class="text-lighter en">46993</td>
+                          <td class="en">/oapi/document/create/payapp</td>
                           <td class="en">
-                            <p><strong>devwy</strong></p>
-                          </td>
-                          <td class="en">
-                            <p><strong>ciderpay</strong></p>
-                          </td>
-                          <td>
-                            <p class="text-lighter"><strong>수정</strong></p>
-                          </td>
-                          <td class="text-left text-lighter">
-                            (수정 전) 수정 전 메모 내용 <br/>
-                            > (수정 후) 수정 후 메모 내용
+                              {"projID":"ciderpay","memberID":"jh21036","orderNo
+                              ":"R201911130000119637","orderIdx":0,"goodName"
+                              ,"subNodeCnt":0,"var1":"5dcb9c88435acb4741cb8fb
+                              8","adTypeID":"BASE","currencyID":"KRW",}}]{
                           </td>
                           <td class="en">127.0.0.1</td>
-                          <td class="text-lighter en">2019-08-08 13:13:13</td>
+                          <td class="text-lighter en">2019-08-08</td>
                           <td class="btnBox inline">
-                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
-                          </td>
-                        </tr>
-                        <tr class="tr_height_sm">
-                          <td class="text-lighter en">46993</td>
-                          <td class="en">
-                            <p><strong>devwy</strong></p>
-                          </td>
-                          <td class="en">
-                            <p><strong>ciderpay</strong></p>
-                          </td>
-                          <td>
-                            <p class="text-alert"><strong>삭제</strong></p>
-                          </td>
-                          <td class="text-left text-lighter">
-                              (삭제) 삭제 전 메모내용
-                          </td>
-                          <td class="en">127.0.0.1</td>
-                          <td class="text-lighter en">2019-08-08 13:13:13</td>
-                          <td class="btnBox inline">
-                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
-                          </td>
-                        </tr>
-                        <tr class="tr_height_sm">
-                          <td class="text-lighter en">46993</td>
-                          <td class="en">
-                            <p><strong>SYSTEM</strong></p>
-                          </td>
-                          <td class="en">
-                            <p><strong>ciderpay</strong></p>
-                          </td>
-                          <td>
-                            <p class="text-succ"><strong>시스템</strong></p>
-                          </td>
-                          <td class="text-left text-lighter">
-                              시스템에서 자동으로 생성된 메모 표시 
-                          </td>
-                          <td class="en">127.0.0.1</td>
-                          <td class="text-lighter en">2019-08-08 13:13:13</td>
-                          <td class="btnBox inline">
-                              <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
+                            <span><button type="button" class="btn btn-sm w80Int">삭제</button></span>
                           </td>
                         </tr>
                         <tr>
-                          <td colspan="8">
+                          <td colspan="7">
                             <div class="no_data">
                               <div class="inn">
                                 <p><i class="la la-exclamation-circle"></i></p>
@@ -326,6 +249,7 @@
       <!--//#content_wrap-->
     </div>
     <!--// wrapper -->
+
   </div>
   <!--// #app -->
 </body>
@@ -339,7 +263,7 @@
     el: '#app',
     data () {
       return {
-       
+        
       }
     },
     methods: {
@@ -347,6 +271,6 @@
     }
   })
 </script>
-<script src="../assets/js/jquery-latest.min.js"></script>
-<script src="../assets/js/design.js"></script>
+<script src="assets/js/jquery-latest.min.js"></script>
+<script src="assets/js/design.js"></script>
 </html>
