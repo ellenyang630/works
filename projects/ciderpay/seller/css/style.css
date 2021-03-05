@@ -3417,11 +3417,11 @@ table th[class*="col-"] {
   width: 215px;
   padding-top: 3px; }
   .logoBox .logo_img {
-    width: 85px; }
+    height: 18px; }
     .logoBox .logo_img img {
       width: 85px; }
   .logoBox .logo_txt {
-    width: 72px;
+    height: 14px;
     margin-left: 2px; }
     .logoBox .logo_txt img {
       width: 72px;
