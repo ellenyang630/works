@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=IE9" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- IE edge link 막기  -->
+    <title>사이다예약</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/IE9.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/line-awesome.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/lnb.js" type="text/javascript"></script>
+    <script src="js/design.js" type="text/javascript"></script>
+
+    <!-- calendar &datepicker -->
+    <link rel='stylesheet' href='css/bootstrap-datetimepicker.min.css'>
+    <script src='js/calendar/moment.min.js'></script>
+    <script src='js/calendar/moment-locale-ko.js'></script>
+    <script src='js/calendar/bootstrap-datetimepicker.js'></script>
+</head>
+<body>
+<div id="header" class="clearfix">
+    <div class="ltnav_btn web">
+        <div class="inner">
+            <i class="la la-bars"></i>
+        </div>
+    </div>
+    <div class="ltnav_btn mb active">
+        <div class="inner">
+            <i class="la la-bars"></i>
+        </div>
+    </div>
+    <div class="utilWrap toparea clearfix">
+        <div class="utilHello">
+            <strong><i class="la la-clock-o"></i> cider_reserve</strong>님, 안녕하세요.
+            <span><em>접속시간</em>2019-11-11 11:22:11</span>
+        </div>
+        <div class="utilBox">
+            <ul class="userMenu group">
+                <li class="alarm active">
+                    <a href="#">
+                        <i class="la la-bell"></i>
+                        <em></em>
+                    </a>
+                </li>
+                <li class="mypage">
+                    <a href="#"><i class="la la-user"></i></a>
+                </li>
+                <li class="logout">
+                    <a href="#"><i class="la la-sign-out"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--#header-->
+<div id="content_wrap" class="clearfix">
+    <div id="ltnav" class="lnb">
+        <div class="logoBox">
+            <h1><a href="menu1_book.html"><img src="images/logo.png" alt="사이다예약"></a></h1>
+        </div>
+        <div id="cssmenu">
+            <ul>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-calendar-check-o"></i> 예약관리</span></a>
+                    <ul>
+                        <li>
+                            <a href="menu1_book.html"><span>예약현황 요약</span></a>
+                        </li>
+                        <li>
+                            <a href="menu1_list.html"><span>예약현황 리스트</span></a>
+                        </li>
+                        <li>
+                            <a href=""><span>예약현황 상세보기</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-archive"></i> 판매관리</span></a>
+                    <ul>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>요금/재고관리</span></a>
+                            <ul>
+                                <li>
+                                    <a href="menu2_price.html"><span>요금설정</span></a>
+                                </li>
+                                <li>
+                                    <a href="menu2_stock.html"><span>재고설정</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>결제현황</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>판매현황</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-cog"></i> 서비스설정</span></a>
+                    <ul>
+                        <li>
+                            <a href="menu3_option.html"><span>업체정보 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="menu3_info.html"><span>예약정보 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="menu3_product.html"><span>예약상품 설정</span></a>
+                        </li>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>SMS 설정</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span>문자충전</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>문자발송내역</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-bar-chart"></i> 매출관리</span></a>
+                    <ul>
+                        <li class="dep1 dep2">
+                            <a href="javascript:void(0);"><span>정산현황</span></a>
+                            <ul>
+                                <li>
+                                    <a href="#"><span>월별 정산</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span>기간별 정산</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>매출통계</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>정산정보설정</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dep1">
+                    <a href="javascript:void(0);"><span><i class="la la-comment"></i> 커뮤니티</span></a>
+                    <ul>
+                        <li>
+                            <a href="#"><span>공지사항</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>FAQ</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>문의하기</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//cssmenu-->
+        <div class="csInfo">
+            <p class="cs_tt"><i class="la la-headphones"></i> 고객상담센터</p>
+            <p class="cs_tel">1544-6893</p>
+            <p class="cs_time">평일 오전 9시 ~ 오후 6시</p>
+        </div>
+    </div>
+    <!--//ltnav-->
+    <div id="content">
+        <div id="table-fixed">
+
+<section id="content_inner"><h2 class="sr-only">본문내용</h2><div><div class="title_box clearfix"><div class="ttBox"><h3 class="title">Dashboard</h3><p class="title-desc"></p></div><div class="location"><ul class="clearfix"><li class="first"><a href="javascript:void(0)"><i class="xi-home-o"></i></a></li><!----><li><strong class="active">Dashboard</strong></li></ul></div></div><div class="mdMask" style="display: none;"><div class="mdGuideWrap"><div class="mdGuide"><div class="mdGInn"><div class="mdGuidTT"><h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANAAAAAVCAYAAAA3gWBzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACqZJREFUeNrsXA1wXEUd39jYlq+2FygFtGqb4EiwAl7kQ0GqvY5SRB1qolbEjkg6KhFFNBG/AGe0kaGiB9iWgh8MjvbQakCm056MSitj6TlCrSH0coqIhVpIa8FiWxP//9vfJv+3t++9fXdXayX/mV9z+96+3X27/+/d1wa1NassejlhE6GdsBHX3kT4CeFcwjZcu5hwE+G1hH+ocTpsaKT1ivFJqBM14m8LBGYqYTrhREI34Y+430o4nvBlwl9x7WzCTMJSCNBOwg/F/XrReYRXEe4h7IqodyThGMJzhOcj6r0FSiKuPR86C3N2P+FAFc+/nnAaxsLzN4NwAaFA2BLyTBNhGmE/4W+Ef4es60WECYSfVjm2cfKgBrJAb6e/awgvhSDwpE8BE+5DvYmEowh7xGJMJhxB2E0YxqLy/XmEzR59fwBC+nfCEkLRUeejhFvxexsE+YDFKFznI4Q55ffR1E+4g/BNMJqhjxFuCWmvgzCXcFzEmFlQluN3N5SHggC806q7AHVOw5xugcVejfuvJmzFO/TDkg9AmfGYTxcK7GjC5zFnM0UfLxDyhOusOb+Z8HH8/hHhfWEWqKGhIRnHFLOzVUtXqSpuq+XZejxv2lBqiNoZqpcA/QFabD5hBxaSF/u9YrE7sBBvJDyIa1cRbiScRNhOeCVcvn60FUWTIXgTwxYZdBdhkSi3on0FplwDTRtGeTD2XpRZG79L3D+F8Cjea6PnnM2ElWWGTePaMJjc9PMezJ2LOxcTvke4kHCvuD7NsogsLD/AXG0QfbloH9rLC+XQIoRsNeb4vkgB0sxllEJPBbMWs4P0r2HAJlxjJZGJGBvX7aB660W9pgAD634rSfZfzJr55ueanQKg22kfXfuWroJ1fymUmirzaEtXXtzjOUp5rL9+H6HBmSlvgPAoaL12M9mge8Hgm8S178JqbEf5ccJaD+FhmiSEh+llCV1OBatzUUz9DCbsWsfzClZXQdv70H4wpLLG/xKUjQB9VQjPCARsAsrXQ4B86XJLeNhi/5zwGrjRZizfwlraY2MBvBSKY1pMX92CAYfgGUgyjC4ZrVNcD9P6GatOelTYNeO2hzxXIGZts/pMBZ7X9dJQErOt5/U7tHTlRL+uMWRCx+AeVze12WsYihf6FZYW2QWtLOkZxA+S/mk9d7znECZVaTE/SVgHbbrYuvc5wrcxEbdZmvzamHanWOUNIRbpfsQqLmJX8064ZSeL65chVlmLMs/1VxCH+dBcq/wOKDJet4cEU5yCGOrpkHZ2HKQwoEPwQLdg9F4IYams6YvZsOcLDguWGmVywawRLtl68cyQaCNVFqxiNmhtKi0djy8vxpHDuMJopa3ROQ46sw6TeZxnYD7ZKu/1bP/DwL+EtmV6FgvG2n4V4VPifgs08r4E77Ec7mMSWgThtV1Rdqf+Yl37QoJ2baU0ICzbgKVVpzsEiJXcB4XrXV/SblJBuHPmek/EU6shUCtRr9cSCmmVZseMYKkQHnbb5qONFbCORrDzMe2kAgISJXAOl2g5NHitdCt88aQWKGEkW2YUaTWeA0NJgZJ0REIBGqkhq5mqM4vudbzLbvFbWUkF15jmQbFtT8BEyYJsLTwpl5sT0c/s0DgjbpwmGRBUIL1CgJdQnU7hyivvd/cUHuO7Hwo6NqYcRk8g9rrzfzCj+SCyfAMedfuESxdHj1rl6+GuXWzFm89jfmyaiHH92KOvjOVa+QpPu0g+jFkGDvzdCYIOJAI6QlpMx4yDLdRgRbY3AeN7ZOq87jV6WIqF8MNT8KPzSNvWsrcwK6YcRheq8P2RQ00XwDKc61GXkzZT4TrH0e1Kp+obRVLhcke978C1DaPdiSyIUisQxJdinpOukrEC7bAu6TKjF7MdjkxWKUIY08IS5SIsVCEgbJwMcAuRjzWVdQYRE9lCnUI/OSP8URaITx88hljgUpQ588UnEn5PeF0NzDbHKk9DcD1OlfQw4qqdEXW+T/iMKMu6TyJunBujVbsdLs1mZLjCnuu0hKenHNO0dDVbjJ/21PyZsuAGY5EhpwXjNLpm4oKVRZSCbchn76jHEqKMhZSrvTALxFr0F2jwEph/9q+PRpm1zK+V3okfqIIpXKnuedCiLwY6BnPpSzz/62CB5yBZ8wIWkq/3W/U/jbiW1/cTKrgl4RKezYFAXLfbiWvrkcVyuVI54fb1BurovZ902RJxGrmYLY0G8y4roS2gdAPzMYkIyfiGwTPUzrOOeC6+HZ2Ja0Zb7Y5Y1iRL8lKoG0OCTk7T7YEg8V4Pb5LybvdVWBhOn25AvfMTMg9brraQDNuLRYDuS1h/Btw9dqkfBwydB9i0TOn0+a/CGm0YvDllCU8J2n0IgpUZFSJ9hMhmuiHEM1oQ9WZpmKUyTNjruLfUYtjCaLvxjF+Ci2g2Qu1EyBLv2Ei/Ty7EbYzMwkk6H0Hq1WrseA27bx9SOkW8AS94CzQdC8Qjnv1xtu3rEVbv3UqfFhinID2ggntLSYgF5A0RSQMpPG2j2pXTwWOnB3xiiIxntitjCWN3hbWI2vcJsx7cpnYB0wGLEXdkp5hNqWozpyS8LgFqi9CSbIV4s/JupXfDWYBOTyBArGneJsojKpjCXoWF9GlvlxrbWZ+Cdkz6+USr7t7/IrPvOwhtNtXwLK/nCYSn7BsjzVfkyAp1CJdpyGKQ+SJdHMdMK8GMLkqJ+CRlBfs9cBfzETFPEkFKmokbrFqAitm8S4COxF95ormIDNwZSm+43i3uy03RsKTERGSTLrGuX41rZ6B8LLQtb/z1xQyf07tniyTEdeiD07vNol5/FUxtH9o0xFmutaoytaxCAngm3rPab107GVa+z3M8CzCmyZ5WfqEldE0uAQLT5WJdJH8GjjoxYDJzrv5z6tBRScVv1oY+ywL0BEw8/z4gkgIsKGYHfRP8cEln4e9jQpDYDXvamTWpFB7OHH0DTPQAtKSxJnch0I6iFUKAmL4IuDJUcbTHwbALQupe47Bwkv6EOTDzdYclQDuwaElOfmxSwXOIcXSSCm5oT6gTs5m0caGKZ6vaqAwkFbSlKlXZvxm/cUnzGEtbLRPCQsMbc7fBymwTjHsNmNulvafCfTNuHdc5FUyzMISpjLvGzPQ1pc+njaDfc5Q+eXyOMKsukt++8IHMuYjNooL1ZaI8bN03O/dbEjJCozWWYTFPIwiUlwnrKOlG1LfHMhJTTkLDdWxLWovqmE27gTLWqqbvJarycGvSNnq8MnIJBWgVtOIiuFCsjX+j9GHSNciOSasyC8zO+za/VGMbqnm4UK6sz0Zo3FNhbexJ/DOs11thicwuPW/Yvh+C94ga+xrWMMVipdPtnbCikzCezdD8t1vMxO2ZE9wPC0HllPxl6H+6it4fWw1Xrk+NneJea8VZN2F8nxXWaics7g0oP4R2eMy/VfpbLD4J3wph/F0N67pevOegNW+Hmgrq/4gaHJ90G/qS0l+g8iLzKeQn4Su+GfevVGMflx1MOhMxwz0q/tPxo1T016gKVm4WkiC7axzbfFiYn0XEWSdAIJ9yWIZWuER9GEsKjM9MtrXGsfG+Gp/45k9RngmYo1o+qKuWTLar1g/iDiMBUtDqV8JvnIF4aR3ckH41Tocljf+fCPWj/wgwAHSXCbM7OQQYAAAAAElFTkSuQmCC"></h2></div><div class="mdGuideCon"><ul class="mdGuideBox"><li><dl><dt><h2>예약상품설정</h2><p>예약상품, 일정, 가격구분 등을<br>
+    가장먼저 설정해주세요.</p></dt><dd><ol><li><strong>상품 설정</strong> : 실제 운영하실 예약상품정보를 설정합니다.
+</li><li><strong>일정/회차 설정</strong> : 예약 운영일자 및 시간을 설정합니다.</li><li><strong>가격 설정</strong> : 상품의 구분을 설정합니다.
+    <small>(예: 2인승, 4인승)</small></li></ol></dd></dl></li><li><dl><dt><h2>운영정보 설정</h2><p>예약방식 및 예약 가능일자 등<br>
+    예약 운영에 필요한 정보를 설정해주세요.
+</p></dt><dd><ol><li><strong>운영 설정</strong> : 예약확정 및 사용처리에 대해 설정합니다.
+</li><li><strong>예약정보 추가</strong> : 기본정보 외의 정보를 받을 경우 사용합니다.</li><li><strong>예약 알림</strong> :예약현황에 대한 알림을 설정합니다.
+</li></ol></dd></dl></li><li><dl><dt><h2>업체정보설정</h2><p>고객 예약 및 예약정보 확인 시 노출되는<br>
+    업체정보를 설정해주세요.
+</p></dt><dd><ol><li>
+    무통장입금을 사용하실 경우, 계좌정보를 입력하셔서 안내하실 수 있습니다.
+</li></ol></dd></dl></li></ul><ul class="mdGuideBox"><li><dl><dt><h2>재고 설정/확인</h2><p>일자 별, 운영 회차 별 재고를<br>
+    상세확인 및 관리하세요. </p></dt><dd><ol><li>
+    기본 재고는 가격설정에서 설정됩니다.
+</li><li><small>단, 상세 재고를 별도 운영할 경우 사용하세요.</small></li></ol></dd></dl></li><li><dl><dt><h2>상품예약 URL 적용</h2><p>만들어진 URL을 운영 중이신 홈페이지나<br>
+    사이트에 연동해서 사용하세요.   </p></dt><dd><ol><li>
+    기본 설정이 완료되면 고객 예약 URL이 만들어집니다.
+</li><li>
+    변경되는 정보들은 URL에서 바로 확인하실 수 있습니다.
+</li></ol></dd></dl></li><li><div class="mdGuideBann"><h2>서비스 사용시작</h2><h3>모든 기본준비를 완료하시고<br>
+    사이다 예약으로 운영을 시작해보세요. </h3><p><a href="javascript:void(0)" class="btn btn-md bubbly-button">시작하기</a></p></div></li></ul></div></div></div></div></div><div class="mdUrl"><dl><dt><h2>사이다예약 URL</h2><p>URL 주소를 복사하여 고객에게 전송하세요.</p></dt><dd><div class="mdUrlInn"><input type="text" readonly="readonly" class="int"><span><a href="javascript:void(0)" class="btn btn-md bblack"><i class="la la-copy"></i> URL 복사하기</a></span><span><a href="https://booking.ciderpay.com/P210305551820" target="_blank" class="btn btn-md bgreen"><label>사이트 </label>바로가기</a></span></div></dd></dl></div><div class="mdBox"><div class="mdTT"><h2>2021년 03월 05일 예약현황</h2><div class="mdUpdate"><span class="btn_update"><a href="javascript:void(0)"><em><i class="la la-refresh"></i></em> 업데이트</a></span>22:33:22
+</div></div><div class="mdCol"><dl><dt>예약확정</dt><dd><strong class="num">17</strong> 건</dd></dl><dl><dt>예약대기</dt><dd><strong class="num">10</strong> 건</dd></dl><dl><dt>예약취소</dt><dd><strong class="num">4</strong> 건</dd></dl><dl><dt>총 잔여</dt><dd><strong class="num">24</strong> 건</dd></dl></div></div><div class="mdBox"><div class="mdInn"><div class="mdTT"><h2>당일 매출 현황</h2><div class="mdDate">
+    2021.03.05
+</div></div><div class="mdDl"><dl><dt>결제완료 금액</dt><dd><strong>255,000</strong> 원</dd></dl><dl><dt>결제취소 금액</dt><dd><strong>- 60,000</strong> 원</dd></dl></div><div class="mdTotal"><dl><dt>총 매출액</dt><dd><strong class="num">195,000</strong> 원</dd></dl></div></div><div class="mdInn"><div class="mdTT"><h2>이번달 매출 현황</h2><div class="mdDate">
+    03.01 ~ 03.31
+</div></div><div class="mdDl"><dl><dt>결제완료 금액</dt><dd><strong>450,000</strong> 원</dd></dl><dl><dt>결제취소 금액</dt><dd><strong>- 120,000</strong> 원</dd></dl></div><div class="mdTotal"><dl><dt>총 매출액</dt><dd><span><small class="">
+                                전월대비 12%
+                            </small></span><strong class="num">330,000</strong> 원
+</dd></dl></div></div></div><div class="mdBoxWrap"><div class="mdInn"><div class="mdBox mdCharge"><div class="mdTT"><h2>문자 충전현황</h2></div><div class="mdChargeCon"><dl><dt>
+    현재 잔액
+</dt><dd><strong class="num">50,000</strong> 원
+
+</dd></dl><div class="mdText"><span class="mdTextBtnInt"><input type="text" readonly="readonly" class="int"></span><span class="mdTextBtn"><a href="javascript:void(0)" class="btn btn-md bblue"><span class="krw">\</span> 문자 충전하기</a></span></div></div></div></div><div class="mdInn"><div class="mdBox mdCall"><div class="mdTT"><h2>고객센터</h2></div><dl><dt>
+    1544-6893
+</dt><dd><strong>평일 09:00~18:00 <label>(점심 12:00~13:00)</label></strong></dd><dd>
+    주말,공휴일 휴무
+</dd></dl></div></div></div></div></section>
+
+            <!--//#content_inner-->
+        </div>
+        <!--//#table-fixed-->
+        <div id="footer">
+            <p>
+                copyright ⓒ SSODA All right reserved.
+            </p>
+        </div>
+        <!--//#footer-->
+    </div>
+    <!--//#content-->
+</div>
+<!--//#content_wrap-->
+</body>
+</html>
