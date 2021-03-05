@@ -14,7 +14,6 @@
   vertical-align: baseline;
   @include border-radius($badge-border-radius);
   @include transition($badge-transition);
-
   @at-root a#{&} {
     @include hover-focus() {
       text-decoration: none;
@@ -66,12 +65,20 @@
   }
 }
 
+.badge-lighten{
+  background-color: #d8dde1;
+  color:$white;
+}
 
 //
 // Badge Sizes
 //
 .badge-sm{
   padding: $badge-padding-y-sm $badge-padding-x-sm;
+}
+.badge-md{
+  padding: $badge-padding-y-md $badge-padding-x-md;
+  font-size: 1rem;
 }
 
 

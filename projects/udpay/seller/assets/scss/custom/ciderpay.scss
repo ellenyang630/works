@@ -1,20 +1,17 @@
 @charset "UTF-8";
 // bootstrap core scss
-@import "../bootstrap/bootstrap-reboot_udpay";
-@import "../bootstrap/bootstrap-grid_udpay";
-@import "../bootstrap/bootstrap_udpay";
+@import "../bootstrap/bootstrap-reboot_ciderpay.css";
+@import "../bootstrap/bootstrap-grid_ciderpay.css";
+@import "../bootstrap/bootstrap_ciderpay.css";
 @import "../bootstrap/functions";
-@import "../bootstrap/variables_udpay";
+@import "../bootstrap/variables_ciderpay";
 @import "../bootstrap/mixins";
 @import "../../css/animate.min.css";
 
 // custom scss
-@import "fonts";
 @import "mixins";
+@import "fonts";
 @import "reset";
-
-// Motion Styles
-@import "animation";
 
 // components
 @import "table";
@@ -28,4 +25,6 @@
 @import "topBanner";
 @import "element-component";
 
-
+// Motion Styles
+@import "animation";
+@import "transition";

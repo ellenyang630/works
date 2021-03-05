@@ -5,6 +5,49 @@
 //  Table
 // --------------------------------------------------
 .table {
+  .ri-more-2-fill{
+    cursor: pointer;
+    /*더보기버튼*/
+  }
+  th,td{
+    border-top: $table-border-width solid rgba($table-border-color,0.35);
+    border-bottom: $table-border-width solid rgba($table-border-color,0.35);
+  }
+  thead{
+    th{
+      word-break: keep-all;
+    }
+  }
+  tbody{
+    tr:first-child{
+      th, td{
+        border-top:0;
+      }
+    }
+    tr:last-child{
+      th,td{
+        //border-bottom: $table-border-width solid $table-border-color;
+      }
+    }
+
+    &:last-child{
+      tr:last-child {
+        th, td {
+          border-bottom: $table-border-width solid $table-border-color;
+        }
+
+        @include media-breakpoint-down(sm) {
+          th{
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.table {
   &-list-head {
     display: flex;
     flex: 1;
@@ -16,23 +59,19 @@
 
   &-list-foot {
     display: flex;
-    //flex: 1;
-    //flex-wrap: wrap;
     align-items: center;
-    //justify-content: space-between;
-    //margin-bottom: 10px;
   }
 
   // table-view (상세페이지 - 데이터 테이블)
   &-view {
-    font-size: 1rem;
+    //font-size: $font-size-base;
     margin-bottom: 0;
     border-top: 2px solid $text-dark;
     border-color: $line-gray;
 
     tbody {
       th, td {
-        padding: 1rem 0.75rem;
+        padding: 1rem .75rem;
         font-weight: $font-weight-normal;
       }
       th {
@@ -60,7 +99,7 @@
             padding-bottom: 0;
           }
           td{
-            padding-top: 0.5rem;
+            padding-top: .5rem;
           }
         }
       }
@@ -69,7 +108,7 @@
 
   // table-view-info (상세정보 테이블)
   &-view-info {
-    font-size: 0.9333rem;
+    font-size: $font-size-sm;
     margin-bottom: 0;
 
     thead{
@@ -77,11 +116,11 @@
         color: $primary-dark;
         color:$base-lighter;
         background-color: $bg-base;
-        padding: 0.3333rem 0.75rem;
+        padding: .3333rem .75rem;
         text-align: center;
         vertical-align: middle;
         font-weight: $font-weight-bolder;
-        border:0;
+        border:0 !important;
 
         &:first-child{
           border-top-left-radius: 8px;
@@ -96,7 +135,7 @@
 
     tbody {
       th, td {
-        padding: 0.75rem;
+        padding: .75rem;
         font-weight: $font-weight-normal;
         color: $text-dark;
       }
@@ -127,10 +166,10 @@
   &-excel {
     border: 1px solid $line-gray;
     width: 100%;
-    font-size: 13px;
+    font-size: $font-size-xs;
 
     th, td {
-      padding: 0.22rem;
+      padding: .22rem;
 
       &:first-child {
         border-left: 0;
@@ -166,6 +205,16 @@
     }
   }
 
+  &-hover{
+
+  }
+
+  &-link{
+    tr{
+      cursor: pointer;
+    }
+  }
+
   // table-bd0 (등록&정기결제 > 상세페이지 - 결제 데이터 테이블)
   &-bd0 {
     tbody {
@@ -179,16 +228,18 @@
 
   // table-empty__block (전체 데이터 테이블 내역 없을 경우)
   &-empty__block {
-    padding: 4rem 0;
+    padding: 6rem 0;
     text-align: center;
 
     .empty-info__text {
-      font-size: 1.067rem;
-      color: $base-dark;
+      font-size: $font-size-more-medium;
+      color: $base-light;
 
       p {
-        margin-top: 1rem;
-
+        i{
+          font-size: 120%;
+          vertical-align: middle;
+        }
         & + button{
           margin-top: 1.2rem;
         }
@@ -199,7 +250,7 @@
         padding:1.5rem 0;
 
       .empty-info__text {
-        font-size: 1rem;
+        font-size: $font-size-base;
       }
     }
   }
@@ -213,25 +264,69 @@
 
 // table tr 색상
 .tr {
-  &-total {
+  &-totalSub {
     th, td {
-      background-color: rgba($primary, 0.045);
+      background-color: rgba($info, .045);
+      //font-weight: $font-weight-bolder;
+    }
+  }
+  &-totalAll {
+    th, td {
+      background-color: rgba($primary, .045);
       font-weight: $font-weight-bolder;
     }
   }
 
   &-read {
     th, td {
-      opacity: 0.6;
+      opacity: .6;
+    }
+  }
+
+  &-cancel{
+    th, td {
+      background-color: rgba($danger, .045);
+    }
+  }
+}
+.td{
+  &-date{
+    //width:147px;
+  }
+}
+
+
+
+// 반응형 테이블
+.table-responsive-md{
+
+
+  @include media-breakpoint-down(sm){
+    width:100%;
+    overflow-x: auto;
+
+    //.scrolly{
+    //  min-width:970px;
+    //  width:100%;
+
+    //  &.lg{
+    //    min-width: 1400px;
+    //  }
+    //}
+
+    .table{
+      min-width:970px;
+      &.lg{
+        min-width: 1400px;
+      }
     }
   }
 }
 
-// 반응형 테이블
-.table-responsive-md{
-  @include media-breakpoint-down(sm){
-    .table{
-      min-width:970px;
-    }
+
+.noData-wrapper{
+  background: transparent;
+  tr, td{
+    display:block;
   }
 }

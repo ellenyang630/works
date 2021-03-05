@@ -46,7 +46,7 @@
     }
   }
   i{
-    font-size:127%;
+    font-size:118%;
     vertical-align: middle;
   }
 }
@@ -118,9 +118,19 @@ fieldset:disabled a.btn {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
 }
 
+.btn-md {
+  @include button-size($btn-padding-y-md, $btn-padding-x-md, $btn-font-size-md, $btn-line-height-md, $btn-border-radius-md)
+}
+
 .btn-xs {
   @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-line-height-xs, $btn-border-radius-xs);
 }
+
+.btn-xxs {
+  @include button-size(0.25rem, 0.4333rem, 0.77rem, 1, 0.2rem);
+}
+
+
 
 
 //

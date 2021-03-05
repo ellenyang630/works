@@ -1,0 +1,420 @@
+@charset "UTF-8";
+/* custom/_forms-item.scss */
+//## for form, input, checkbox, radio elements
+
+
+//
+//  Form
+// --------------------------------------------------
+.form {
+  // form-control
+  &-control__wrap {
+    padding: 0;
+  }
+  &-control__wrap &-control {
+    border: 0;
+  }
+  // form-group
+  &-group {
+    .form-label {
+      margin-bottom: 4px;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+      color: $gray-666;
+    }
+    &.inline-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-group__row{
+    .form-label{
+      margin-top:1px;
+      margin-bottom:5px;
+    }
+  }
+  // form-group__item
+  &-group__item {
+
+  }
+
+
+  // textarea with text-count
+  &-control__with-count{
+    position: relative;
+  }
+  &-control__count{
+    color: $gray-999;
+    background: transparent;
+    position: absolute;
+    font-size: $font-size-xsmaller;
+    bottom: 9px;
+    right: 10px;
+
+    span{
+      &:first-child{
+        color:#777;
+      }
+    }
+  }
+}
+
+
+//
+//  Select
+// --------------------------------------------------
+.custom-select{
+  & + &{
+    margin-left:10px;
+  }
+}
+
+// 대시보드에서 기간 셀렉트 툴
+.card-filter{
+  .custom-select{
+    background: $custom-select-bg $custom-select-background2;
+    border: $custom-select-border-width solid rgba(161,168,171,.2);
+    width:100px;
+    height:40px;
+    box-shadow: 1px 1px 9px -2px rgba(220,227,237,.8);
+  }
+}
+
+
+//
+//  Checkbox
+// --------------------------------------------------
+.custom-checkbox{
+  .custom-control-label {
+    &::before {
+      width:18px;
+      height:18px;
+
+    }
+    &::after {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+
+//
+//  Radio
+// --------------------------------------------------
+.custom-radio{
+  &.custom-control{
+    padding-left: 2rem;
+  }
+  .custom-control-label {
+    &::before {
+      width:20px;
+      height:20px;
+      top:.15rem;
+      left: -30px;
+    }
+    &::after {
+      width:20px;
+      height:20px;
+      top:.15rem;
+      left: -30px;
+    }
+  }
+}
+
+
+
+//
+//  Input
+// --------------------------------------------------
+.input {
+
+  // .input-group-wrap
+  &-group-wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media-breakpoint-down(sm) {
+      &{
+        width: 100%;
+      }
+    }
+    .form-control {
+      background-color: inherit;
+    }
+    .input-joint {
+      margin-left: 10px;
+
+      button, a{
+        width: 100%;
+        white-space: nowrap;
+      }
+    }
+    .input-joint2{
+      margin-left: 20px;
+    }
+    > *:not(.input-joint) {
+      flex-grow: 1;
+    }
+    .input-text{
+      min-width:210px;
+    }
+  }
+
+  // .input-joint
+  &-joint {
+    &.center {
+      margin-right: 10px;
+    }
+  }
+
+  // .input-text
+  &-text{
+    &__name{
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+    }
+    &__desc{
+      margin-top: 4px;
+      font-size: $font-size-sm;
+      color: $base-lighter;
+    }
+  }
+
+  // .input-date-group
+  &-date-group{
+    overflow: hidden;
+    border-radius: 0.25rem;
+
+    .input-joint.center {
+      line-height: 34px;
+    }
+
+    .el-date-editor.el-input, .el-date-editor.el-input__inner{
+      width:auto;
+      width:100%;
+      vertical-align: top;
+    }
+    .el-input.is-active .el-input__inner, .el-input__inner:focus{
+      box-shadow: none;
+      //border:0;
+    }
+
+    .el-input__inner{
+      height:37px;
+      line-height:37px;
+    }
+    .el-input__inner::placeholder{
+      color:$gray-999;
+    }
+    .el-input__prefix,
+    .el-input__suffix{
+      color: lighten($gray-999, 15%);
+    }
+    .el-input__icon{
+      min-width:20px;
+      line-height:37px;
+      font-size:$font-size-large;
+    }
+    .el-input__prefix{
+      left:10px;
+    }
+    .el-input--prefix .el-input__inner{
+      padding-left:42px;
+    }
+  }
+}
+
+.input-group-wrap{
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner{
+    width:100%;
+  }
+  .el-input__inner{
+    border:0;
+    border-radius:0;
+  }
+}
+
+
+// 상단 검색단
+//.list-search{
+//
+//  // 데이터 피커 인풋
+//  .input-date-group{
+//    height:37px;
+//    .el-input{
+//      vertical-align: top;
+//    }
+//    .el-input__inner{
+//      border-radius:4px;
+//      height:35px;
+//      line-height:35px;
+//    }
+//  }
+//
+//  // 기간 선택 검색
+//  .date-range-form{
+//    .form-group:last-child{
+//      padding-top:26px;
+//    }
+//    .btn-group-toggle{
+//      flex-wrap:wrap;
+//
+//      .el-button{
+//        padding:10px 0;
+//      }
+//    }
+//  }
+//}
+
+
+// 이미지 업로드
+.goodsImgWrap{
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+
+  img{
+    //max-width: 120px;
+    //max-height: 120px;
+    width:100%;
+    min-width: 120px;
+    min-height: 120px;
+  }
+  label{
+    cursor: pointer;
+  }
+  input[type="file"].up-goods-file {
+    display: none;
+  }
+}
+
+.delFile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  cursor: pointer;
+  width: 32px;
+  height:32px;
+  //display: table;
+  background: rgba(0, 0, 0, .8);
+  cursor: pointer;
+
+  i {
+    //display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: $white;
+  }
+}
+
+// 파일찾기 버튼형
+input[type="file"]#custom-input-file {
+  display: none;
+  cursor: pointer;
+}
+
+.custom-file-label{
+  padding-right: 98px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
+.custom-file-uploaded{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: calc(1.5em + .9334rem + 2px);
+  padding: .4667rem 1rem;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $gray-700;
+  background-color: $white;
+  border: 1px solid $gray-400;
+  border-radius: .25rem;
+  width:100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
+
+/* 상단 검색단 */
+.list-search{
+  .form-group{
+    margin-bottom: 0.5rem;
+  }
+  .btn-ct-bottom.inline{
+    margin-top: 20px;
+
+    .btn{
+      width: 100px;
+      min-width: initial;
+      font-size: $font-size-base;
+    }
+  }
+  // 기간 선택 검색
+  .date-range-form{
+    .form-group:last-child{
+      padding-top:28px;
+    }
+    .btn-group-toggle{
+      flex-wrap:wrap;
+
+      .el-button{
+        padding:10.5px 0;
+      }
+    }
+  }
+
+
+  // collapse 형식으로 변경 작업
+  .card-body{
+    padding-top:0;
+  }
+
+  .el-collapse {
+    border:1px solid lighten($base, 34%);
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+
+    &-item__header{
+      padding:1.333rem 2.7333rem;
+      height: auto;
+      line-height: inherit;
+      border-bottom: 0;
+    }
+    &-item__wrap{
+      border-bottom: 0;
+    }
+    &-item__content{
+      padding-bottom: 0;
+    }
+    &-item__arrow{
+      font-size: 205%;
+
+      &.el-icon-arrow-right:before{
+        font-family: $font-family-icon;
+        content:"\EA4E";
+      }
+
+      &.is-active {
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+}

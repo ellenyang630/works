@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+// Mixin to box-sizing
+@mixin boxSizing{
+  box-sizing: border-box;
+}
+
+// float clear both
+@mixin clearfix {
+  &:after{
+    display: block;
+    content:"";
+    clear:both;
+  }
+}
+
+//
+// BG-light Styles based in theme array
+//
+
+@mixin bgColor($color1) {
+  &{
+    background-color: mix($white, $color1, 96%);
+  }
+}
+
+
+//
+// Strong bigger Text Styles
+//
+
+@mixin strongText() {
+  &{
+    strong, small, span {
+      color: inherit;
+      vertical-align: middle;
+    }
+    strong {
+      font-size: $font-size-largest;
+      font-weight: $font-weight-bolder;
+    }
+    small {
+      font-size: $font-size-sm;
+      margin: 0 2px;
+      color: inherit;
+    }
+    strong + small{
+      margin-left:5px;
+    }
+    span{
+      display: inline-block;
+      margin: 0 2px;
+      color: inherit;
+    }
+
+    &__base{
+      strong, small, span {
+        color:$base-lighter;
+      }
+    }
+    &__xs{
+      color:rgba($text-dark,.4);
+
+      strong, small {
+        font-size: $font-size-sm;
+      }
+    }
+
+    &__sm{
+      strong {
+        font-size: $font-size-md;
+      }
+    }
+    &__md{
+      strong {
+        font-size: $font-size-largest;
+      }
+    }
+    &__lg{
+      strong {
+        font-size: 1.667rem;
+      }
+    }
+  }
+}
+
+
+//
+// Circle Bullet Styles
+//
+
+@mixin circleBullet($bgColor, $size){
+  display: inline-block;
+  width: $size;
+  height: $size;
+  position: relative;
+  text-align: center;
+  border-radius: 50em;
+  background-color: $bgColor;
+  opacity: .8;
+  text-indent:-9999px;
+  overflow: hidden;
+}
+
+
+//
+// list Styles
+//
+
+// list Styles with ordering number
+@mixin numliLayout($color1) {
+  &{
+    counter-reset: section;
+
+    li{
+      padding-left: 22px;
+      text-indent: -11px;
+      word-break: break-all;
+      color: rgba($primary-dark, .6);
+
+      &:not(:first-child){
+        margin-top: 10px;
+      }
+
+      &:before{
+        content: counter(section);
+        counter-increment: section;
+        display: inline-block;
+        vertical-align: middle;
+        color:$color1;
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+// list Styles with ordering number & text
+@mixin stepLiLayout {
+  &{
+    counter-reset: step;
+
+    li{
+      position: relative;
+      padding-left: 75px;
+      word-break: keep-all;
+      color: rgba($primary-dark, .6);
+
+      &:not(:first-child){
+        margin-top: 15px;
+      }
+
+      &:before{
+        content: counter(step);
+        counter-increment: step;
+        display: inline-block;
+        width:53px;
+        height: 53px;
+        background-color:$primary-dark;
+        border-radius: 50%;
+        vertical-align: middle;
+        color:$white;
+        font-size:$font-size-more-medium;
+        font-weight: $font-weight-bolder;
+        line-height: 2.5;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:after{
+        content: "step";
+        display: inline-block;
+        color:rgba($white,.6);
+        text-transform: uppercase;
+        vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        left: 0;
+        width: 53px;
+        font-size:$font-size-base * .734;
+      }
+    }
+  }
+}
+
+// list Styles with icon
+@mixin iconliLayout($bgColor, $iconColor) {
+  &{
+    position: relative;
+
+    &:before,
+    &:after{
+      content: "";
+      font-family: $font-family-icon;
+      display:inline-block;
+      text-align: center;
+      position: absolute;
+    }
+    &:before{
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      background-image: svg-url-with-replaced-fill($svg-icon-code, '#000000', rgba($bgColor,.23));
+      left:0;
+      top:0;
+    }
+    &:after{
+      content: "\EA20";
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      background-image: svg-url-with-replaced-fill($svg-icon-code, '#000000', $bgColor);
+      //font-size: 160%;
+      font-size:$font-size-extra-large;
+      color:$iconColor;
+      left:5px;
+      top:5px;
+    }
+    .alert-text__inner{
+      display: block;
+      width: 100%;
+      color: $primary-dark;
+      font-size: $font-size-sm;
+    }
+    .text-em{
+      color: $bgColor;
+    }
+  }
+}
+
+// list Styles with bullet
+@mixin bulletLi($radius, $bgcolor) {
+  > li{
+    position:relative;
+    word-break: keep-all;
+
+    &:before{
+      content:"";
+      display: inline-block;
+      width:3px;
+      height: 3px;
+      border-radius: $radius;
+      background-color: $bgcolor;
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+  }
+}
+
+// list Styles with only ordering Number
+@mixin numberLi() {
+  &{
+    counter-reset: section;
+
+    > li{
+      padding-left: 15px;
+      text-indent: -8px;
+      word-break: keep-all;
+
+      &:before {
+        content: counter(section);
+        counter-increment: section;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+
+
+
+
+// 검색창, 결제창 열기 버튼
+@mixin btnShape ($theme-color){
+  width:4.667rem; // 70px
+  height:4.667rem; // 70px
+  line-height:4.667rem;
+  border-radius: 50%;
+  color:$white;
+  position: fixed;
+  right:20px;
+  bottom:20px;
+  z-index:300;
+  font-size:1.933rem;
+  font-weight: $font-weight-bolder;
+  border: none;
+  outline: none;
+  background: $theme-color;
+  box-shadow: 5px 5px 12px rgba($theme-color, .5);
+  box-sizing: border-box;
+
+  &:before,
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:4.667rem; // 70px
+    height:4.667rem; // 70px
+    border-radius: 50%;
+    border: 1px solid $theme-color;
+    filter: blur(0);
+    transform-origin: 50%;
+    z-index: -1;
+    box-sizing: border-box;
+  }
+
+  @include hover-focus-active(){
+    background: $theme-color;
+    color:$white;
+    opacity: 1;
+
+    &:before, &:after{
+      opacity: 1;
+      z-index:-1;
+      border-color: transparent;
+      filter: blur(.5px);
+      transform: scale(1.5);
+      transition: 1s transform ease, 2.1s blur ease, .9s border-color ease;
+    }
+    &:after {
+      transition-delay: .1s;
+    }
+  }
+}

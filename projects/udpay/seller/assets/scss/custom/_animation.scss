@@ -1,0 +1,184 @@
+@charset "UTF-8";
+/* _animation.scss */
+
+
+//
+//   Custom Animation Style
+// --------------------------------------------------
+
+@include keyframes(shadow-pulse-primary) {
+  0% { box-shadow: 0 0 0 0 rgba($primary, .3); }
+  100% { box-shadow: 0 0 0 12px rgba($primary, 0); }
+}
+@include keyframes(shadow-pulse-danger) {
+  0% {box-shadow: 0 0 0 0 rgba($danger, .3);}
+  100% {box-shadow: 0 0 0 12px rgba($danger, 0);}
+}
+@include keyframes(shadow-pulse-success) {
+  0% { box-shadow: 0 0 0 0 rgba($success, .3);}
+  100% { box-shadow: 0 0 0 12px rgba($success, 0);}
+}
+@include keyframes(shadow-pulse-secondary) {
+  0% { box-shadow: 0 0 0 0 rgba($secondary, .3); }
+  100% { box-shadow: 0 0 0 12px rgba($secondary, 0); }
+}
+
+// 메뉴 햄버거 버튼 호버 애니메이션
+@include keyframes(burger-hover) {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+// API 바로가기 아이콘 애니메이션
+@include keyframes(spin-inf){
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+// 알림내역 있을 때, 아이콘 애니메이션
+@include keyframes(alarmShake) {
+  from{
+    -webkit-transform:scale3d(1,1,1);
+    transform:scale3d(1,1,1)
+  }
+  10%,20%{
+    -webkit-transform:scale3d(.95,.95,.95) rotate3d(0,0,1,-10deg);
+    transform:scale3d(.95,.95,.95) rotate3d(0,0,1,-10deg)
+  }
+  30%,50%,70%,90%{
+    -webkit-transform:scale3d(1,1,1) rotate3d(0,0,1,10deg);
+    transform:scale3d(1,1,1) rotate3d(0,0,1,10deg)
+  }
+  40%,60%,80%{
+    -webkit-transform:rotate3d(0,0,1,-10deg);
+    transform:rotate3d(0,0,1,-10deg)
+  }
+  to{
+    -webkit-transform:scale3d(1,1,1);
+    transform:scale3d(1,1,1)
+  }
+}
+
+// 마이페이지 아이콘 호버 애니메이션
+@include keyframes(spin360){
+  100% {
+    -webkit-transform-origin:50% 50%;
+    -webkit-transform: rotate(360deg);
+    transform-origin:50% 50%;
+    transform: rotate(360deg);
+  }
+}
+
+// 대시보드에서 바로 결제요청하기 버튼 클릭시, 컴포넌트 쇼잉 애니메이션
+@include keyframes(box-ani) {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+// 카드 헤더에 백그라운드 이미지 애니메이션
+@include keyframes(bg-ani) {
+  0% {
+    background-position: 50% 45%;
+    background-size: 100%;
+  }
+  50% {
+    background-position: 50% 50%;
+    background-size: 95%;
+  }
+  100%{
+    background-position: 50% 45%;
+    background-size: 100%;
+  }
+}
+
+// 전체 > 아이콘 있는 버튼 호버 애니메이션
+@include keyframes(btn-icon-move){
+  50% {
+    -webkit-transform: translate3d(0, -50%, 0) scale(.5);
+    transform: translate3d(0, -50%, 0) scale(.5);
+    transform-origin: center center;
+  }
+}
+
+// 로더 애니메이션
+@include keyframes(loaderPulse) {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .35;
+    transform: scale(.75);
+  }
+}
+
+@include keyframes(loaderTxt) {
+  50%{
+    opacity: .8
+  }
+}
+
+// 고객센터 최신글 더보기 버튼 호버 애니메이션 (변경해야함!)
+@include keyframes(wobble) {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+
+
+
+// 애니메이션 진입 및 진출은 다른 지속 시간 및 타이밍 기능을 사용할 수 있습니다.
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}

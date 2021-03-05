@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* _topBanner.scss */
+
+//  Event Banner Layout Style (상단 이벤트 배너)
+#top-banner{
+  @include boxSizing;
+  width:100%;
+  color:$white;
+  margin:0 auto;
+  position: relative;
+  height:0;
+  transition: height 250ms cubic-bezier(.000, .485, .665, -.055); /* custom */
+}
+
+.banner{
+  &-container{
+    @include boxSizing;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  &-slider{
+    height:100%;
+  }
+  &-item{
+    &:focus{
+      outline:0;
+    }
+  }
+  &-item1{
+    background-color: #E4ECF3;
+  }
+  &-item2{
+    background-color: #31C2BD;
+  }
+  &-item3{
+    background-color: #1369fa;
+  }
+  &-elm{
+    height:100%;
+
+    a{
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 930px;
+      height:100%;
+
+      img{
+        max-width: 930px;
+        height:100%;
+      }
+    }
+  }
+
+  &-mb{
+    height:100%;
+    display: none;
+    padding: 0 45px;
+
+    img{
+      //width: 100%;
+      height: 100%;
+    }
+  }
+  &-web{
+    display:block;
+    height:100%;
+  }
+
+  @include media-breakpoint-down(sm){
+    &{
+      &-mb {
+        display: block;
+      }
+      &-web{
+        display: none;
+      }
+    }
+  }
+}
+
+.btn-close-banner{
+  position: absolute;
+  top:50%;
+  right:calc(2.8rem + 90px);
+  z-index:100;
+  transform: translateY(-50%);
+  color:rgba($black,.56);
+  mix-blend-mode: multiply;
+  font-size:$font-size-xs;
+  padding-right:35px;
+
+  &:after{
+    content:"\EB99";
+    font-family: $font-family-icon;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top:0;
+    right:0;
+    //transform: translateY(-50%);
+    font-size:100%;
+    background-color: rgba($black, .18);
+    background-blend-mode: multiply;
+    padding: 2px 6px;
+    border-radius: 8px;
+    color:$white;
+    font-weight:$font-weight-bolder;
+  }
+  span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media-breakpoint-down(lg){
+    top: initial;
+    bottom: -11px;
+    right:calc(2.8rem + 25px);
+  }
+}
+
+// element-ui item carousel
+.el-carousel{
+  width:100%;
+  height:100%;
+
+  &__container {
+    width:100%;
+    height:100%;
+    @include prefix(transition, height .5s cubic-bezier(.5, -.5, .5, .5), webkit moz ms o);
+  }
+
+  &__arrow{
+    width: 2.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    color: $white;
+    background-color: rgba(0,0,0,.18);
+    font-size:115%;
+    vertical-align: middle;
+
+    i{
+      vertical-align: middle;
+    }
+  }
+}
+
+
+// 전체 페이지 로드 후 탑배너 showing animation
+.is-loaded{
+  #top-banner{
+    height:90px;
+
+    @include media-breakpoint-down(sm) {
+        height: 70px;
+      }
+  }
+}

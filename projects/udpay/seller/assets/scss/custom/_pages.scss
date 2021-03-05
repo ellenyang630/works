@@ -2,6 +2,62 @@
 /* _pages.scss */
 //## The detailed style for each page
 
+// 최신브라우저 안내 페이지
+#ieCheck{
+  max-width: 700px;
+  width:90%;
+  min-height: 400px;
+  margin: 100px auto 0;
+  padding: 4.5rem 3rem;
+  background-color: $white;
+  color:$gray-666;
+  text-align: center;
+  border-radius: $border-radius-lg;
+
+  &:before{
+    content:"";
+    display: block;
+    background: url("../../img/logo.svg");
+    width: 125px;
+    height:33px;
+    background-size: 125px 33px;
+    margin:0 auto 35px;
+  }
+
+  p{
+    &:first-child{
+      margin-bottom:2rem;
+    }
+    a{
+      display: inline-block;
+      font-size: 1rem;
+      margin-top:10px;
+      letter-spacing: .04688rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      outline: none;
+      padding: 10px 24px 10px 65px;
+      background-color: #1a73e8;
+      color: $white;
+      position: relative;
+
+      &:before{
+        content:"";
+        display: inline-block;
+        position: absolute;
+        left:24px;
+        top:50%;
+        transform: translateY(-50%);
+        background: url("../../img/chrome-logo.svg");
+        width: 27px;
+        height:27px;
+        background-size: 27px 27px;
+      }
+    }
+  }
+}
+
 //
 //  Login & Join  Page
 // --------------------------------------------------
@@ -21,15 +77,20 @@
   vertical-align: middle;
 }
 .login-card{
-  width:440px;
+  width:500px;
   margin:0 auto;
 
+//  @media (min-width: 768px)
+  .card-body {
+    padding: 4.5rem;
+  }
+
   .login-logo{
-    margin-bottom:2rem;
+    margin-bottom:2.5rem;
     text-align: center;
   }
   .login-btn{
-    margin-top: 2.5rem;
+    margin-top: 3rem;
   }
 
   .form-group{
@@ -40,9 +101,6 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
       }
-      .input-group-text{
-        border-bottom-left-radius: 0;
-      }
     }
 
     &:last-child{
@@ -52,18 +110,49 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
-      .input-group-text{
-        border-top-left-radius: 0;
-      }
     }
   }
   .form-control{
-    border-left:0;
-    font-size: 1rem;
+    font-size: $font-size-base;
   }
+
   .btn-lg{
-    font-size: 1.05rem;
+    font-size: $font-size-lg;
   }
+
+
+  .input-group-ico{
+    &:before{
+      content:"";
+      font-family:$font-family-icon;
+      display: block;
+      //font-size: $font-size-lg;
+      font-size: 130%;
+      position: absolute;
+      left:0;
+      top:50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      padding: 0 1.2rem;
+      opacity: .8;
+    }
+
+    .form-control{
+      width:100%;
+      padding-left:51px;
+    }
+  }
+  .input-userID{
+    &:before {
+      content: "\F264";
+    }
+  }
+  .input-userPW{
+    &:before {
+      content: "\EECC";
+    }
+  }
+
 }
 
 
@@ -71,139 +160,246 @@
 //  Dash Board
 // --------------------------------------------------
 
-// 오늘자 결제/정산 건 써머리
-.sum-list__wrap{
-  > dl{
-    padding:25px 0;
-    border-bottom:1px solid $line-lighter;
-
-    &:first-child{
-      padding-top:0;
-    }
-    &:last-child{
-      padding-bottom:0;
-      border-bottom:0;
-    }
-    dd{
-      > dl{
-        padding:5px 0;
-      }
-    }
-  }
-}
 
 // 내정보
-.my-info{
+.card-myInfo{
+  @include boxSizing;
   width: 100%;
+  background-color: $primary;
   color:$white;
   overflow: hidden;
-  box-sizing: border-box;
 
-  .top, .bottom{
-    width:100%;
-    box-sizing: border-box;
+  .card-body__container + .card-body__container{
+    border-color: rgba($bg-base,.1);
   }
-  .top{
-    padding-bottom:25px;
-  }
-  .bottom{
-    padding-top:25px;
-    border-top: 1px solid rgba($white, 0.1);
+  // card-action
+  .card-actions {
+    top: $card-spacer-y;
   }
 
-  // 정산불가상태
-  &.unavailable{
-    background-color: $info;
+  .btn-setting{
+    position: absolute;
+    top:-1rem;
+    right:-1.2rem;
+    display: inline-block;
+    width:44px;
+    height:44px;
+    object-fit: cover;
+    background-image: svg-url-with-replaced-fill($svg-icon-code, '#000000', rgba($white,.15));
+    font-weight:$font-weight-exbold;
+    color:$white;
+    text-align: center;
+    transition: background-image 100ms ease-in-out, color 250ms ease-in-out;
 
-    .roundbox-wrap{
-      i{
-        color:$info;
-      }
-    }
-    .bottom{
-      .btn{
-        min-width:263px;
-        padding: 0.7rem 1rem;
-        margin-top:25px;
-        background: $white;
-        border-color:$white;
-        font-size:1rem;
-        color:$info;
-      }
-    }
-  }
-
-  // 정산가능상태
-  &.available{
-    background-color: $primary;
-
-    .roundbox-wrap{
-      i{
-        color:$primary;
-      }
-    }
-  }
-}
-
-.my{
-  // 내정보 > 수수료 정보
-  &-fee-info{
-    display: table;
-    width:100%;
-
-    li{
-      display: table-cell;
-      width:50%;
-      text-align: center;
+    i{
+      font-size:160%;
       vertical-align: middle;
+      line-height: 44px;
+      font-weight: $font-weight-normal;
+    }
 
-      &:first-child{
-        padding-right:2vw;
-      }
-      &:last-child{
-        padding-left:2vw;
+    @include hover-focus-active(){
+      background-image: svg-url-with-replaced-fill($svg-icon-code, '#000000', rgba($white,.95));
+      color:$primary;
+    }
+
+    @include media-breakpoint-down(md) {
+      &{
+        //top:0;
+        right:0;
       }
     }
   }
-  // 내정보 > 정산 정보
-  &-adjust-info{
-    &{
-      padding: 5px 0;
+  .btn-adjustNextDay{
+    font-size:$font-size-base;
+    padding:5px 17px;
+    position: relative;
+    top:-4px;
+  }
+
+  .seller{
+    &-img{
+      background: $white;
+      width:70px;
+      height:70px;
+      border-radius: 50%;
+      text-align: center;
+      overflow: hidden;
+
+      img{
+        width:auto;
+        max-width:100%;
+        height:100%;
+      }
+      i{
+        font-size: 260%;
+        color:$primary;
+        line-height:70px;
+      }
     }
-    &__wrap &{
-      flex-grow: 1;
+    &-info{
+      &-name{
+        font-size: $font-size-largest;
+        font-weight:$font-weight-bolder;
+
+        strong,
+        small{
+          vertical-align: middle;
+        }
+        small{
+          font-size:$font-size-sm;
+          margin-left:7px;
+        }
+      }
+
+      .list-data__wrapper.is-white{
+        > .list-data__text.list-data__text-cate {
+            opacity: 1;
+            color:rgba($white,0.5);
+        }
+      }
     }
-    dt{
-      color: rgba($white, 0.6);
-    }
-    dd{
-      margin-left:1.5rem;
-      color: $white;
+  }
+
+  .card-body__container:last-child{
+    .card-title{
+      margin-bottom:19px;
     }
   }
 }
+
+// 오늘의 정산현황
+.info-status-payment{
+  .flex-item__wrap{
+    margin-top: $font-size-larger;
+    cursor: pointer;
+
+    &:first-child{
+      margin-top:0;
+    }
+  }
+  .flex-item-link{
+    position: relative;
+    padding-right:20px;
+
+    &:after{
+      content:"\EA6E";
+      font-family: $font-family-icon;
+      position: absolute;
+      top:50%;
+      right:0;
+      transform: translateY(-50%);
+      //font-size:$font-size-larger;
+      font-size: 180%;
+      font-weight: $font-weight-bolder;
+      color:rgba($text-dark,.3);
+    }
+  }
+}
+
+// 정산형황
+.status-item{
+  display: inline-block;
+
+  & + &{
+    margin-left:20px;
+  }
+
+  &-text{
+    &.text-success{
+      &:before{
+        content:"";
+        @include circleBullet($success, 6px);
+        border:2px solid rgba($success,.2);
+        box-shadow: 6px 6px 12px rgba($success, 0.12);
+        animation: shadow-pulse-success 1s infinite;
+        margin-right:5px;
+      }
+    }
+    &.text-secondary{
+      &:before{
+        content:"";
+        @include circleBullet($secondary, 6px);
+        border:2px solid rgba($secondary,.2);
+        animation: shadow-pulse-secondary 1s infinite;
+        margin-right:5px;
+      }
+    }
+    &.text-primary{
+      &:before{
+        content:"";
+        @include circleBullet($primary, 6px);
+        border:2px solid rgba($primary,.2);
+        animation: shadow-pulse-primary 1s infinite;
+        margin-right:5px;
+      }
+    }
+    &.text-danger{
+      &:before{
+        content:"";
+        @include circleBullet($danger, 6px);
+        border:2px solid rgba($danger,.2);
+        animation: shadow-pulse-danger 1s infinite;
+        margin-right:5px;
+      }
+    }
+  }
+}
+
+.card-adjust{
+  .is-inactive{
+    margin-top:10px;
+    text-align: center;
+
+    .btn{
+      margin-top:2.667rem;
+      font-size: $font-size-md;
+      width:55%;
+      padding:0.8rem;
+      box-shadow: 1px 1px 7px 1px rgba($primary, 0.13)
+    }
+  }
+  .is-active{
+    .list-data__wrapper{
+      &:not(:first-child){
+        margin-top:11px;
+      }
+    }
+  }
+}
+
+
+// 결제현황
+.info-status-payment{
+  .flex-item__wrap{
+    margin-top: 1.334rem;
+
+    &:first-child{
+      margin-top:0;
+    }
+  }
+}
+
 
 // 월 매출현황 / 구매자 결제패턴 분석 그래프
+
+.card-lineGraph{
+  .echarts {
+    width: 100%;
+    height: 254px;
+  }
+}
+.card-pieGraph{
+  .echarts {
+    width: 100%;
+    height: 225px;
+  }
+}
 .graph-box{
   position: relative;
-  margin-top:26px;
+  //margin-top:26px;
   text-align: center;
-}
-
-// api 연동 링크 배너
-.system-link{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-
-  .roundbox-wrap{
-    margin:0;
-    margin-right: 50px;
-  }
-  .btn{
-    padding: 0.56rem 1.2rem;
-  }
+  overflow: hidden;
 }
 
 // 공지사항, 자주묻는질문 최신글
@@ -222,12 +418,16 @@
       &:last-child {
         padding-bottom: 0;
       }
-      &:hover,
-      &:focus,
-      &:active {
+
+      span{
+        transition-property: color, font-weight;
+        transition-duration: 250ms;
+      }
+
+      @include hover-focus-active(){
         span:not(.bbs-cate) {
           color: $primary;
-          font-weight: 700;
+          font-weight: $font-weight-bolder;
         }
       }
     }
@@ -238,7 +438,7 @@
     vertical-align: middle;
   }
   &-subject {
-    font-size: 1.067rem;
+    font-size: $font-size-more-medium;
     color: $text-dark;
     width: 75%;
     text-overflow: ellipsis;
@@ -254,18 +454,188 @@
     line-height: 1.867rem; // 28px
     margin-right: 10px;
     text-align: center;
-    font-size: 0.9333rem;
-    font-weight: 600;
-    background: $text-light;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bolder;
+    background: #e8ecf0;
     border-radius: 8px;
   }
   &-date {
     min-width: 95px;
     width: auto;
     padding-left: 15px;
-    font-size: 1rem;
+    font-size: $font-size-base;
     color: $text-default;
     text-align: right;
+  }
+}
+
+// 가맹점 유의사항 및 약관 안내 팝업
+.agree-info-box{
+  padding: ($card-spacer-x-xs / 2) ($card-spacer-y-xs / 2);
+  background-color: $bg-base;
+  border:1px solid darken($bg-base, 10%);
+  border-radius: $border-radius-md;
+  margin-top:.5rem;
+
+  &__wrap{
+    margin-top:1.2rem;
+  }
+
+  &__btns{
+    margin-top:1rem;
+  }
+
+  .bullet-circle-list{
+    font-size: $font-size-xs;
+  }
+}
+
+
+//
+//  결제요청
+// --------------------------------------------------
+
+// 상품 불러오기할 때, 상품리스트 보여지기
+.goods{
+  &-list__wrap{
+    margin-top:10px;
+
+  }
+  &-list{
+    display: table;
+    //max-width:530px;
+    width:100%;
+    table-layout: fixed;
+    border-bottom:1px solid rgba($line-lighter,.5);
+    //background-color: red;
+
+    &:last-child{
+      border-bottom: 0;
+    }
+    &:first-child{
+
+    }
+  }
+  &-list__cell{
+    display: table-cell;
+    vertical-align: middle;
+    padding:10px;
+    //text-align: right;
+
+    &:first-child{
+      padding-left:0;
+      //text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &:nth-child(2){
+      width: 50px;
+    }
+    &:nth-child(3){
+      width: 90px;
+      //width:auto;
+      text-align: left;
+    }
+    &:nth-child(4){
+      width: 125px;
+    }
+    &:last-child{
+      width: 32px;
+      padding-right:0;
+    }
+  }
+}
+
+// 링크결제 최종 표시가격
+.link-payment-price{
+  &__wrap{
+    width:100%;
+    //max-width:260px;
+  }
+
+  &{
+    @include clearfix();
+    width:100%;
+    padding:0 10px;
+
+    &:not(:first-child){
+      margin-top:10px;
+    }
+
+    > *{
+      float:left;
+
+      &:last-child{
+        float:right;
+      }
+    }
+    dt{
+      font-size: $font-size-base;
+      color:$gray-666;
+    }
+    dd{
+      font-size: $font-size-base;
+      color:$text-dark;
+
+      strong{
+        font-size:$font-size-base;
+
+        &.num{
+          font-size: $font-size-more-medium;
+          //vertical-align:middle;
+        }
+      }
+    }
+    .none-price{
+      text-decoration: line-through;
+      color:$gray-666;
+    }
+
+
+    &.discounted-price{
+      dd{
+        p{
+          display:inline-block;
+        }
+      }
+      .discount{
+        color: $primary;
+        margin-right:5px;
+        font-size: $font-size-xsmaller;
+      }
+    }
+    &.total-price{
+      //border-top:1px solid $line-light;
+      //padding-top:10px;
+      //padding-bottom:10px;
+      padding:10px;
+      margin-top:15px;
+      background-color:rgba($primary,.1);
+      border-radius: $border-radius-lg;
+
+      dt, dd{
+        color:$primary;
+      }
+    }
+  }
+}
+
+// 리스트 요청사항 묶음
+.use-request-data{
+  > p{
+    display:inline-block;
+
+    &:not(:first-child){
+      margin-left:5px;
+    }
+  }
+
+  i{
+    font-size: 150%;
+    font-weight:$font-weight-bold;
+    vertical-align: middle;
+    margin-left:3px;
   }
 }
 
@@ -276,7 +646,7 @@
 
 // 정산안내
 .title__flow-adjust{
-  font-size:1.133rem;
+  font-size:$font-size-md;
   font-weight: $font-weight-bolder;
   color:$primary-dark;
   margin-bottom: 6px;
@@ -292,9 +662,10 @@
 
   dt{
     i{
-      font-size: $font-size-base * 1.1;
-      position: relative;
-      top: 2px;
+      font-size: 120%;
+      vertical-align: sub;
+      //position: relative;
+      //top: 2px;
       color:$base-lighter;
       cursor: pointer;
     }
@@ -311,7 +682,7 @@
 
 // 익일정산 신청
 .title__flow-adjust-nextDay{
-  font-size:1.133rem;
+  font-size:$font-size-md;
   font-weight: $font-weight-bolder;
   color:$primary-dark;
   margin-bottom: 10px;
@@ -326,7 +697,7 @@
     padding-left: 73px;
 
     .info{
-      opacity: 0.6;
+      opacity: .6;
     }
   }
   &-adjust{
@@ -366,26 +737,26 @@
   }
   .txt-logo{
     font-family: GmarketSansBold !important;
-    font-size: 21px;
+    font-size: $font-size-largest;
   }
 }
 
 // 비사업자 판매 시 유의사항
 .alert-noDealer{
   .alert-p{
-    padding:18px 9px;
-    background-color: rgba($danger, 0.05);
-    border-top: 1px solid rgba($danger, 0.15);
-    border-bottom: 1px solid rgba($danger, 0.15);
-    font-size: 1rem;
+    padding:9px;
+    background-color: rgba($danger, .05);
+    border-top: 1px solid rgba($danger, .15);
+    border-bottom: 1px solid rgba($danger, .15);
+    font-size: $font-size-base;
     font-weight: $font-weight-bolder;
     color:$danger;
     text-align: center;
 
     &:before{
-      content:"\ea2d";
+      content:"\EA20";
       display: inline-block;
-      font-family: xeicon;
+      font-family: $font-family-icon;
       font-size: 2.667rem;
       margin-right: 10px;
     }
@@ -396,7 +767,8 @@
   .alert-p-last{
     padding: 8px;
     background-color: $danger;
-    color:$white;
+
+   color:$white;
     text-align: center;
   }
 }
@@ -421,11 +793,11 @@
     .badge{
       padding: 7px 10px;
       border-radius: 8px;
-      font-size: 0.9333rem;
+      font-size: $font-size-sm;
     }
 
     strong{
-      font-size:1.267rem;
+      font-size:$font-size-large;
     }
   }
   &__btn{
@@ -439,10 +811,10 @@
   }
   &__info{
     margin-top:5px;
-    font-size:0.9333rem;
+    font-size:$font-size-sm;
   }
   &__body{
-    min-height: 200px;
+    min-height: 100px;
     padding:30px 0;
     color:$base-dark;
     line-height:1.6;
@@ -456,56 +828,60 @@
 
 // 자주묻는질문
 .above-search__area{
-  margin-bottom:40px;
-}
-.input-search{
-  width:310px;
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 0;
-  border:0;
-  background: none;
-  position: relative;
+  margin:0 auto 40px;
+  width:400px;
 
-  input{
-    width: 100%;
-    height: 100%;
-    padding:0.8667rem 0 0.8667rem 2rem;
+  .el-input{
+    border:0;
 
-    &:focus {
-      outline: 0;
+    &__inner{
+      border:0;
+      border-radius: 0;
+      background-color: inherit;
+      border-bottom: 3px solid $line-light;
+      font-size:$font-size-base;
+      transition-property: border;
+      transition-duration: 250ms;
+
+      &:focus{
+        outline:0;
+      }
+
+      &::placeholder{
+        color: $input-placeholder-color;
+      }
+    }
+    &__prefix{
+      font-size:146%;
+      color:$text-default;
+      transition: all 250ms;
+    }
+    &__icon{
+      transition: all 250ms;
+    }
+
+    &.el-input--prefix .el-input__inner{
+      padding-left:40px;
     }
   }
-  &:before{
-    font-family:xeicon;
-    content:"\e97a";
-    display: inline-block;
-    position:absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.467rem;
-    color:$text-default;
-  }
-  &:after{
-    content:"";
-    display: block;
-    position:absolute;
-    bottom: 0;
-    left: 0;
-    width:100%;
-    height:3px;
-    background-color: $line-light;
-  }
-  &.focus{
-    outline:0;
 
-    &:after{
-      width:100%;
-      background-color:$primary;
+  .el-input.is-active .el-input__inner,
+  .el-input__inner:focus{
+    box-shadow: none;
+    border-color: $primary;
+
+    + .el-input__prefix{
+        color:$primary;
+      }
+    }
+
+  @include media-breakpoint-down(sm) {
+    &{
+      width:80%;
     }
   }
 }
+
 .cate-group{
   margin-bottom: 35px;
   text-align: center;
@@ -515,33 +891,33 @@
     border: 1px solid #e2e8ef;
     color: #a4b1bd;
     border-radius: 15px;
-    padding: 0.6rem 1.8rem;
-    margin-bottom:0.6667rem;
+    padding: .6rem 1.8rem;
+    margin-bottom:.6667rem;
 
     &.active,
     &:hover,
+    &:active,
     &:focus{
       background: $primary;
       border-color: $primary;
       color:$white;
     }
     &:not(:last-child){
-      margin-right:0.6667rem;
+      margin-right:.6667rem;
     }
   }
 }
 .faq-abbr{
   display: inline-block;
-  width: 2.2rem; /*33px*/
+  width: 2.2rem;
   height: 2.2rem;
   line-height: 2.2rem;
-  //margin-right:15px;
   border-radius: 50em;
-  background: rgba($primary,0.15);
+  background: rgba($primary,.15);
   color:$primary;
   text-align: center;
   vertical-align: middle;
-  font-size: 1.067rem;
+  font-size: $font-size-more-medium;
   font-weight: $font-weight-bolder;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
 }

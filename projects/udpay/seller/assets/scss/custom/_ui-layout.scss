@@ -1,0 +1,1273 @@
+@charset "UTF-8";
+/* _ui-layout.scss */
+
+//
+//  Skip Navigation
+// --------------------------------------------------
+.skipNav {
+  position: absolute;
+  left: -300%;
+  font-size: 1em;
+  color: $white;
+  background: #555;
+
+  @include hover-focus() {
+    display: block;
+    position: fixed;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bolder;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    color: $white;
+    text-decoration: none
+  }
+}
+
+
+//
+//  Row & Col - Grid
+// --------------------------------------------------
+
+// 대시보드 > 결제요청 폼
+.col-fixed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  @include prefix(animation, box-ani .4s ease-in-out .5s, webkit moz);
+
+  .card {
+    min-height: 791px;
+    margin-bottom: 0;
+
+    button[type="submit"].btn {
+      margin-top: 132px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &{
+      .card {
+        min-height: 701px;
+
+        button[type="submit"].btn {
+          margin-top: 70px;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  Card
+// --------------------------------------------------
+.card {
+  //## card 형제 엘리먼트들
+
+  //card
+  height: auto;
+  margin-bottom: 2.2vh;
+
+  // card sizing
+  &-sm{
+    height: 180px;
+  }
+  &-md{
+    height: 380px;
+  }
+  &-sm,
+  &-md{
+    overflow: hidden;
+
+    @include media-breakpoint-down(sm) {
+      height: auto;
+    }
+  }
+
+  // card-line
+  &-line {
+    border: 1px solid lighten($base, 34%);
+
+    .card-body {
+      padding-top: 1rem;
+    }
+  }
+
+  // card-view( 상세페이지 : 결제정보, 요청정보, 승인정보 )
+  &-view {
+    .card-body {
+      padding-top: 1.2rem;
+    }
+  }
+
+  // card-totalSum( 리스트 상단 써머리 )
+  &-totalSum {
+    background-color: initial;
+  }
+
+  // 카드영역 padding zero
+  &.no-padding{
+    .card-header{
+      padding:0;
+    }
+    .card-footer{
+      background-color: $white;
+    }
+  }
+
+
+
+  //## card 하위 엘리먼트들
+
+  // card-inner
+  &-inner{
+    padding: 1rem;
+
+    &__sm{
+      padding:.5rem;
+    }
+  }
+
+  // card-actions
+  &-actions{
+    position: absolute;
+    top: $card-spacer-y - .9rem;
+    right: $card-spacer-x;
+
+
+    &__info{
+      top: $card-spacer-y - .1rem
+    }
+    &.card-filter{
+      top: $card-spacer-y - .6rem;
+    }
+
+    @include media-breakpoint-down(md){
+      //top: $card-spacer-y-xs;
+      top: $card-spacer-y-xs - .8rem;
+      right: $card-spacer-x-xs;
+
+      &__info{
+        top: $card-spacer-y-xs - .1rem;
+      }
+      &.card-filter{
+        top: $card-spacer-y-xs - .6rem;
+      }
+    }
+  }
+
+  // 백그라운드 엘리먼트가 있는 경우
+  .card-header__bg {
+    position: relative;
+    min-height: 125px;
+    padding: 1.8rem 2.667rem;
+    text-align: center;
+    background: $primary;
+    overflow: hidden;
+    background: $primary url("../../img/tit_bg.png") no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:$white;
+    @include prefix(animation, bg-ani 8s ease-in-out infinite, webkit moz);
+
+    .card-btitle{
+      opacity:.8;
+    }
+  }
+
+
+  // card-body__container
+  &-body__container{
+    & + &{
+      border-top:1px solid $bg-base;
+      padding-top: 2rem;
+    }
+
+    &:first-child{
+      padding-bottom:2rem;
+    }
+  }
+}
+
+.card-scrollable-y{
+  overflow-y: auto;
+
+  &__sm{
+    max-height:123px;
+  }
+}
+
+// 등록, 정기결제 상세페이지 > 결제정보
+.card-col{
+  &-wrap{
+    margin-top: -1.2rem;
+  }
+  &-wrap &{
+    margin-top: 1.2rem;
+  }
+
+  &{
+    @include border-radius($card-border-radius);
+    border: $table-border-width solid $table-border-color;
+    overflow:hidden;
+  }
+
+  &-title{
+    padding: 1rem 1.2rem;
+    background: $line-gray;
+
+    .tit{
+      color:$white;
+      font-size: $font-size-base * 1.1;
+    }
+  }
+
+  &-body{
+    padding: 0 1rem;
+  }
+
+  .table-view{
+    border-top: 0;
+
+    tbody{
+      tr{
+        &:first-child{
+          th,td{
+            border-top: 0;
+          }
+        }
+        &:last-child{
+          th, td{
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  Header
+// --------------------------------------------------
+#site-header {
+  width:100%;
+  min-width: 600px;
+  padding: 0 !important;
+  position: fixed;
+  top:0;
+  z-index: 200;
+  transition: top 250ms ease-in-out;
+
+  .header-area{
+    width: 100%;
+    display: flex;
+  }
+}
+
+.logo-box {
+  @include boxSizing;
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: $white url("../../img/logo.svg") center center no-repeat;
+  background-size: 99px 27px;
+  text-indent: -9999px;
+  overflow: hidden;
+  cursor: pointer;
+  //position: fixed;
+  //top: 0;
+  //left: -1px;
+  //z-index: 130;
+  //transition: top 250ms ease-in-out;
+  @include prefix(transition, (top, width) 250ms ease-in-out, webkit o);
+  @include prefix(box-shadow, 10px -10px 15px 0 rgba(220, 227, 237, .8), webkit moz);
+
+  h1, a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-breakpoint-down(sm){
+    &{
+      width: 158px;
+      background-size: 90px;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  //top: 60px;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top:60px;
+  background-color: $white;
+  border-right: 1px solid #edeff4;
+  width: 250px;
+  z-index: 100;
+  overflow-y: hidden;
+  @include prefix(transition, (padding-top, left, transform) 250ms ease-in-out, webkit o);
+  @include prefix(box-shadow, 14px 0px 15px 0px rgba(220, 227, 237, .8), webkit moz);
+
+  transform: translateX(0);
+
+  //&.show{
+  //  //left:0;
+  //  transform: translateX(0);
+  //}
+  //
+  //&.hide{
+  //  //left:-250px;
+  //  transform: translateX(-250px);
+  //}
+
+  @media (max-width: 1600px){
+    &{
+      //left: -250px;
+
+
+      //transform: translateX(0);
+      //transition: left .2s ease;
+
+
+      transform: translateX(-250px);
+    }
+
+    //&.show{
+    //  //left:0;
+    //  //transform: translateX(0);
+    //
+    //  transform: translateX(0);
+    //}
+    //
+    //&.hide{
+    //  //left:-250px;
+    //  //transform: translateX(-250px);
+    //
+    //  transform: translateX(-250px);
+    //}
+
+  }
+  @include media-breakpoint-down(sm){
+    box-shadow: none;
+  }
+
+  // .sidebar-content
+  &-content {
+    border-bottom: 1px solid #e9eef5;
+    padding: 15px 0 30px 0;
+  }
+
+  // 엘리먼트-ui 컴포넌트로 lnb 작업 (_element-ui.scss 수정)
+}
+
+
+
+.show{
+  transform: translateX(0) !important;
+
+  @include media-breakpoint-down(sm){
+
+    + #content{
+      &:before{
+        content:"";
+        display: block;
+        width:100%;
+        height:100%;
+        position: fixed;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background-color: rgba($black,.5);
+        z-index:50;
+      }
+    }
+  }
+}
+.hide{
+  transform: translateX(-250px) !important;
+}
+
+
+// top-navbar
+.top-navbar {
+  //position: fixed;
+  //top: 0;
+  //left: 0;
+  //right: 0;
+  //min-width: 580px;
+  //width: 100%;
+  height: 60px;
+  z-index: 150;
+  background-color: $white;
+  overflow: hidden;
+  flex-grow:1;
+  @include prefix(transition, top 250ms ease-in-out, webkit o);
+  @include prefix(box-shadow, 0 14px 15px 0 rgba(220, 227, 237, .1), webkit moz);
+
+  .user-menu {
+    @include clearfix;
+  }
+}
+
+// 상단배너도 같이 있는 경우
+.is-loaded {
+  .with-banner {
+
+    .logo-box {
+      top: 90px;
+    }
+    .top-navbar {
+      top: 90px;
+    }
+
+    //.sidebar{
+    //  padding-top:150px;
+    //}
+
+    @include media-breakpoint-down(sm) {
+      .logo-box {
+        top: 70px;
+      }
+      .top-navbar {
+        top: 70px;
+      }
+      .sidebar{
+        //padding-top:130px;
+      }
+    }
+  }
+}
+
+// 상단 네비 바 묶음
+.util-item {
+  line-height: 60px;
+  color: $base-lighter;
+
+  &.left {
+    float: left;
+  }
+  &.right {
+    float: right;
+    padding-right: 30px;
+
+    > button, .option-menu{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    > button{
+      margin-right: 1.2rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+      > button{
+        display: none;
+      }
+    }
+  }
+}
+
+// 수수료 안내
+.fee-info {
+  @include clearfix;
+  display: inline-block;
+  cursor: pointer;
+
+
+  // fee-info__item
+  &__item{
+    //display: inline-block;
+    float:left;
+    font-weight: $font-weight-bold;
+    vertical-align: middle;
+    margin-right: 12px;
+
+    > div{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .badge{
+      padding-right: .8em;
+      padding-left: .8em;
+      margin-right: .5rem;
+
+      span{
+        vertical-align: middle;
+        margin-left: 6px;
+      }
+      i {
+        font-size:120%;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &-card{
+    color: $primary;
+
+    .badge{
+      background-color: rgba($primary,.08);
+      border-color: rgba($primary,.08);
+    }
+  }
+  &-mobile{
+    color: $additional;
+
+    .badge{
+      background-color: rgba($additional,.08);
+      border-color: rgba($additional,.08);
+    }
+  }
+  &-kakao{
+    color: $kakao-color;
+
+    .badge{
+      background-color: rgba($kakao-color2,.18);
+      border-color: rgba($kakao-color2,.18);
+    }
+  }
+  &-naver{
+    //color:#19CE60;
+    color:$naver-color;
+
+    .badge{
+      background-color: rgba($naver-color,.08);
+      border-color: rgba($naver-color,.08);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+// 우측상단 버튼들
+.option-menu {
+  display: table;
+
+  li {
+    position: relative;
+    display: table-cell;
+    min-width: 43px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+
+    .option-menu__link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      vertical-align: sub;
+      margin: 0;
+      padding: 0;
+
+      @include hover-focus-active(){
+        i {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  i {
+    color: $primary-dark;
+    font-size:153%;
+    vertical-align: inherit;
+  }
+
+
+  // 환영문구
+  .hello {
+    letter-spacing: 0;
+    font-size: $font-size-base;
+    color: $base-lighter;
+
+    i {
+      font-size: 155%;
+      color: $base-lighter;
+      vertical-align: middle;
+      //@include prefix(transform, translateY(.25em), webkit ms);
+    }
+    strong {
+      color: $base-dark;
+      font-weight: $font-weight-bolder;
+    }
+
+    @include media-breakpoint-down(xl) {
+      &{
+        display: none;
+      }
+    }
+  }
+
+  // 사이다페이 전환버튼
+  .convert {
+    padding: 0 1rem;
+
+    button{
+      //display: inline-block;
+      vertical-align: middle;
+      border:2px solid $primary;
+      line-height:initial;
+      padding: 5px 4.5px;
+      border-radius: 50em;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-exbold;
+      overflow: hidden;
+      width:35px;
+      @include prefix(transition, all .5s cubic-bezier(.5, -.5, .5, .5) .3s, webkit moz ms o);
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        width:146px;
+        padding: 5px 15px;
+        @include prefix(transition, width .5s ease-in-out, webkit moz ms o);
+        @include prefix(box-shadow, 2px 2px 8px 1px rgba($primary, .18), webkit moz ms o);
+
+        .btn_inn{
+          min-width: 112px;
+
+          > span{
+            &:first-child{
+              padding-left:0;
+            }
+            &.t {
+              display: table-cell;
+            }
+          }
+        }
+
+        i{
+          @include prefix(animation, spin-inf 1.2s 2 .5s, webkit moz);
+        }
+      }
+    }
+
+    .btn_inn{
+      display: table;
+      min-width: 24px;
+      min-width: 113px;
+      text-align:left;
+
+      > span {
+        display: table-cell;
+        text-align:left;
+        vertical-align: middle;
+        color:$primary;
+
+        &:first-child{
+          padding-left:1px;
+        }
+        &.t{
+          padding-left:.5rem;
+        }
+        i{
+          color:inherit;
+        }
+      }
+    }
+  }
+
+  // 알림내역
+  .alarm {
+    position: relative;
+
+    &.active {
+      &:after {
+        content: "";
+        @include circleBullet($primary, 6px);
+        position: absolute;
+        right: 7px;
+        top: 15px;
+
+        @include prefix(animation, shadow-pulse-primary 1s infinite, webkit moz);
+        animation-fill-mode: forwards;
+      }
+      i{
+        @include prefix(animation, alarmShake 1.5s ease infinite, webkit moz);
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  // 마이페이지
+  .mypage{
+    @include hover() {
+      i{
+        @include prefix(animation, spin360 1.7s linear infinite, webkit moz);
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+
+// 고객상담문의
+.cs {
+  &-info {
+    padding: 20px 30px;
+    color: $text-dark;
+
+    &:not(:first-child) {
+      border-top: 1px solid #e9eef5;
+    }
+  }
+
+  &-tit,
+  &-time {
+    font-size: $font-size-sm;
+  }
+
+  &-tit {
+    i {
+      font-size: 142%;
+      vertical-align: middle;
+    }
+  }
+
+  &-tel {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: $font-size-extra-large;
+    font-weight: $font-weight-bolder;
+    letter-spacing: 2px;
+    color: $base;
+  }
+
+  &-time {
+    color: $base-lighter;
+    line-height: 1.468;
+  }
+}
+
+
+//
+//  footer
+// --------------------------------------------------
+#site-footer{
+  text-align: center;
+  padding: 15px 0;
+  color:$base-lighter;
+}
+
+
+//
+//  Contents Layout
+// --------------------------------------------------
+#content {
+
+  // #content-wrap
+  &-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 60px;
+    transition: padding-top 250ms ease-in-out;
+
+
+    // 상단배너도 같이 있는 경우
+    &.with-banner{
+      padding-top:150px;
+
+      @include media-breakpoint-down(sm) {
+          padding-top: 130px;
+      }
+    }
+  }
+
+  // #content
+  & {
+    width:100%;
+    //padding-top: 60px;
+    padding-left: 250px;
+    @include prefix(transition, padding 250ms ease, webkit o);
+
+
+
+
+
+    @include media-breakpoint-up(md){
+      &{
+        //min-width:1440px;
+        min-width: 1270px;
+      }
+    }
+    @media (max-width: 1600px){
+      &{
+        padding-left: 0;
+      }
+
+      //&.collapsed{
+      //  padding-left:250px;
+      //}
+      //&.expanded{
+      //  padding-left:0;
+      //}
+    }
+  }
+
+  // #content-inner
+  &-inner {
+    width: 100%;
+    min-height: 827px;
+    min-height: calc(100vh - 80px);
+    padding: 30px 25px;
+
+    @include media-breakpoint-up(lg){
+      &{
+        padding: 40px 40px 60px 40px;
+        //padding: 40px 80px 60px 80px;
+      }
+    }
+  }
+}
+
+
+.collapsed{
+  padding-left:250px !important;
+}
+.expanded{
+  padding-left:0 !important;
+}
+@media (max-width: 1600px){
+  .collapsed{
+    padding-left:250px !important;
+  }
+  .expanded{
+    padding-left:0 !important;
+  }
+}
+@include media-breakpoint-down(sm){
+  .collapsed{
+    padding-left:0 !important;
+  }
+}
+
+
+// 상단배너도 같이 있는 경우
+.with-banner{
+  padding-top:150px;
+
+  .sidebar{
+    padding-top:150px;
+  }
+
+  @include media-breakpoint-down(sm){
+    .sidebar {
+      padding-top: 130px;
+    }
+  }
+
+}
+
+
+//
+//  Title & Breadcrumb
+// --------------------------------------------------
+.page {
+  &-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &-header {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &-title {
+    color: $text-dark;
+
+    .title {
+      font-size: $font-size-largest;
+      font-weight: $font-weight-exbold;
+    }
+  }
+  &-location {
+    margin-left: auto;
+
+    .breadcrumb {
+      padding: 0;
+      margin: 0;
+
+      &-item{
+        color:$base-lighter;
+
+        i{
+          font-size: 115%;
+          //vertical-align: text-top;
+        }
+      }
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before{
+      content:"\EA6E";
+      font-family: $font-family-icon;
+      vertical-align: middle;
+      opacity:.4;
+    }
+  }
+  &-body {
+    position:relative;
+
+    // list & view 페이지 제외한 페이지에서 card-body padding 값 제어
+    &.page-info-body{
+      @include media-breakpoint-up(lg){
+        .card-header + .card-body{
+          padding-top: $card-spacer-y;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//  Top of the list Style
+// --------------------------------------------------
+.list {
+  // 리스트 총 건수
+  &-total {
+    font-size: $font-size-xs;
+    color: $base-lighter;
+  }
+
+  // 리스트 내 관리버튼
+  &-controller {
+    width: 50px;
+
+    a {
+      color: $base-lighter;
+    }
+
+    .btn-controller i {
+      font-size:146%;
+      vertical-align: middle;
+    }
+  }
+}
+
+// 리스트 상단 써머리 정보
+.summary{
+
+  &-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    &.item-3{
+      .summary-item{
+        flex-basis:33.333%;
+      }
+    }
+    &.item-4{
+      .summary-item{
+        flex-basis:25%;
+      }
+    }
+    &.item-6{
+      .summary-item{
+        flex-basis:16.6%;
+      }
+    }
+  }
+
+
+
+  &-item{
+    position: relative;
+    flex-grow: 1;
+    max-width: 100%;
+    //padding: 1.5333rem 2rem;
+    padding: .7666rem 1rem;
+    background-color: $white;
+    @include prefix(transition-property, flex-basis, webkit o);
+    @include prefix(transition-delay, 250ms, webkit o);
+
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: calc(100% - 1.5333rem);
+      background-color: $line-lighter;
+      position: absolute;
+      left: 0;
+    }
+
+
+    &:first-child {
+      border-top-left-radius: .5333rem;
+      border-bottom-left-radius: .5333rem;
+
+      &:before{
+        display: none;
+      }
+    }
+    &:last-child {
+      border-top-right-radius: .5333rem;
+      border-bottom-right-radius: .5333rem;
+    }
+  }
+
+  &-item__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:.7666rem 1rem;
+    @include prefix(transition-property, flex-basis, webkit o);
+    @include prefix(transition-delay, 250ms, webkit o);
+
+    @include media-breakpoint-down(sm) {
+      flex-flow: column;
+    }
+  }
+
+  &-item__title{
+
+  }
+
+  &-item__content{
+    text-align: right;
+
+    .num-txt,
+    .strong-txt{
+      strong {
+        font-size: $font-size-larger;
+      }
+      small {
+        font-size: $font-size-sm;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 1.2rem;
+      text-align: center;
+    }
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .summary-wrapper{
+    &.item-6 .summary-item {
+      flex-basis:33.333%;
+
+      &:first-child {
+        border-bottom-left-radius: 0;
+      }
+
+      &:nth-child(3) {
+        border-top-right-radius: .533rem;
+      }
+
+      &:nth-child(4) {
+        border-bottom-left-radius: .533rem;
+
+        .summary-item__container{
+          border-left:0;
+        }
+      }
+
+      &:nth-child(6) {
+        border-top-right-radius: 0;
+      }
+    }
+
+    &.item-4 .summary-item {
+      flex-basis:50%;
+
+      &:first-child {
+        border-bottom-left-radius: 0;
+      }
+
+      &:nth-child(2) {
+        border-top-right-radius: .533rem;
+      }
+
+      &:nth-child(3) {
+        border-bottom-left-radius: .533rem;
+
+        .summary-item__container{
+          border-left:0;
+        }
+      }
+
+      &:nth-child(4) {
+        border-top-right-radius: 0;
+      }
+    }
+
+    &.item-3 .summary-item {
+      flex-basis:33.333%;
+    }
+  }
+}
+
+
+
+.summary-info-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  li {
+    flex-grow: 1;
+    padding: 1.5333rem 0;
+    background-color: $white;
+    text-align: center;
+
+    &:first-child {
+      border-top-left-radius: .5333rem;
+      border-bottom-left-radius: .5333rem;
+
+      dl {
+        border-left: 0;
+      }
+    }
+
+    &:last-child {
+      border-top-right-radius: .5333rem;
+      border-bottom-right-radius: .5333rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      & {
+        flex-basis: 33.333%;
+        border-radius: 0;
+
+
+        //&:first-child{
+        //  border-top-left-radius: .5333rem;
+        //  border-top-right-radius: .5333rem;
+        //  border-bottom-left-radius: 0;
+        //
+        //}
+        //&:last-child{
+        //  border-bottom-left-radius: .5333rem;
+        //  border-bottom-right-radius: .5333rem;
+        //}
+
+        &:nth-child(3) ~ & {
+          border-top: 0;
+          border-top: 1px solid $border-color;
+        }
+      }
+    }
+  }
+
+  dl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    border-left: 1px solid $line-lighter;
+
+    @include media-breakpoint-down(sm) {
+      //border-left:0;
+      flex-flow: column;
+    }
+  }
+
+  dd {
+    text-align: right;
+
+    p {
+      strong {
+        font-size: $font-size-larger;
+      }
+
+      small {
+        font-size: $font-size-sm;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &.item-6 li {
+      &:first-child {
+        border-bottom-left-radius: 0;
+      }
+
+      &:nth-child(3) {
+        border-top-right-radius: .533rem;
+      }
+
+      &:nth-child(4) {
+        border-bottom-left-radius: .533rem;
+
+        dl{
+          border-left:0;
+        }
+      }
+
+      &:nth-child(6) {
+        border-top-right-radius: 0;
+      }
+    }
+
+    &.item-4 li {
+      flex-basis:50%;
+
+      &:first-child {
+        border-bottom-left-radius: 0;
+      }
+
+      &:nth-child(2) {
+        border-top-right-radius: .533rem;
+      }
+
+      &:nth-child(3) {
+        border-bottom-left-radius: .533rem;
+
+        dl{
+          border-left:0;
+        }
+      }
+
+      &:nth-child(4) {
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+
+
+
+/* 스크롤바 플러그인 */
+.scrolly{
+
+  .scrolly-bar{
+    &.axis-y{
+      width:20px;
+    }
+    &:before {
+      background: #d2d5d9;
+    }
+  }
+
+  //.table{
+  //  min-width:970px;
+  //}
+}

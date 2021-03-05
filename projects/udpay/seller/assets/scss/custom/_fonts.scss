@@ -3,7 +3,7 @@
 
 @import "../../css/xeicon.min.css";
 @import "../../css/line-awesome.min.css";
-@import "../../css/font-awesome.min.css";
+@import "../../css/remixicon.css";
 
 //
 //   Web font Setting
@@ -20,6 +20,7 @@
   url("../../fonts/nanumSquareRound/nanumSquareRoundL.woff2") format("woff2"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundL.woff") format("woff"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundL.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-display: swap;
 }
 @font-face {
   font-family: "NanumSquareRound";
@@ -31,6 +32,7 @@
   url("../../fonts/nanumSquareRound/nanumSquareRoundR.woff2") format("woff2"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundR.woff") format("woff"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundR.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-display: swap;
 }
 @font-face {
   font-family: "NanumSquareRound";
@@ -42,27 +44,40 @@
   url("../../fonts/nanumSquareRound/nanumSquareRoundB.woff2") format("woff2"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundB.woff") format("woff"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundB.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-display: swap;
 }
 @font-face {
   font-family: "NanumSquareRound";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   src: local("nanumSquareRoundEB"), /* computer */
   url("../../fonts/nanumSquareRound/nanumSquareRoundEB.eot"), /* IE9 Compat Modes */
   url("../../fonts/nanumSquareRound/nanumSquareRoundEB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
   url("../../fonts/nanumSquareRound/nanumSquareRoundEB.woff2") format("woff2"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundEB.woff") format("woff"), /* Modern Browsers */
   url("../../fonts/nanumSquareRound/nanumSquareRoundEB.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-display: swap;
 }
 
 // 지마켓산스 웹폰트
+@font-face {
+  font-family: 'GmarketSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../fonts/gmarketSans/gmarketSansTTFMedium.eot');
+  src: url('../../fonts/gmarketSans/gmarketSansTTFMedium.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/gmarketSans/gmarketSansTTFMedium.woff2') format('woff2'),
+  url('../../fonts/gmarketSans/gmarketSansTTFMedium.woff') format('woff'),
+  url('../../fonts/gmarketSans/gmarketSansTTFMedium.svg#GmarketSansTTFMedium') format('svg');
+  font-display: swap;
+}
 @font-face {
   font-family: 'GmarketSansBold';
   font-style: normal;
   font-weight: normal;
   src: url('../../fonts/gmarketSans/gmarketSansTTFBold.eot');
   src: url('../../fonts/gmarketSans/gmarketSansTTFBold.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/gmarketSans/gmarketSansTTFBold.svg#GmarketSansTTFBold') format('svg'),
+  url('../../fonts/gmarketSans/gmarketSansTTFBold.woff2') format('woff2'),
   url('../../fonts/gmarketSans/gmarketSansTTFBold.woff') format('woff'),
-  url('../../fonts/gmarketSans/gmarketSansTTFBold.woff2') format('woff2');
+  url('../../fonts/gmarketSans/gmarketSansTTFBold.svg#GmarketSansTTFBold') format('svg');
 }

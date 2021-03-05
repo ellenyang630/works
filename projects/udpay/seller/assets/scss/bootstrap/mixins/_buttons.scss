@@ -63,7 +63,8 @@
 
 @mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
   color: $color;
-  border-color: $color;
+  background-color: $white;
+  border-color: rgba($color,.5);
 
   @include hover() {
     color: $color-hover;
