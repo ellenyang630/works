@@ -1,0 +1,342 @@
+@charset "UTF-8";
+@import "../css/xeicon.min.css";
+@import "../css/line-awesome.min.css";
+@import "../css/font-awesome.min.css";
+
+
+/*=============== WEB FONT SET  ===============*/
+// 나눔스퀘어라운드 웹폰트 v1.11 https://github.com/innks/NanumSquareRound
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 300;
+  src: local("nanumSquareRoundL"), /* computer */
+  url("../fonts/nanumSquareRound/nanumSquareRoundL.eot"), /* IE9 Compat Modes */
+  url("../fonts/nanumSquareRound/nanumSquareRoundL.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/nanumSquareRound/nanumSquareRoundL.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundL.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundL.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 400;
+  src: local("nanumSquareRoundR"), /* computer */
+  url("../fonts/nanumSquareRound/nanumSquareRoundR.eot"), /* IE9 Compat Modes */
+  url("../fonts/nanumSquareRound/nanumSquareRoundR.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/nanumSquareRound/nanumSquareRoundR.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundR.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundR.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 700;
+  src: local("nanumSquareRoundB"), /* computer */
+  url("../fonts/nanumSquareRound/nanumSquareRoundB.eot"), /* IE9 Compat Modes */
+  url("../fonts/nanumSquareRound/nanumSquareRoundB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/nanumSquareRound/nanumSquareRoundB.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundB.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundB.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  font-style: normal;
+  font-weight: 600;
+  src: local("nanumSquareRoundEB"), /* computer */
+  url("../fonts/nanumSquareRound/nanumSquareRoundEB.eot"), /* IE9 Compat Modes */
+  url("../fonts/nanumSquareRound/nanumSquareRoundEB.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/nanumSquareRound/nanumSquareRoundEB.woff2") format("woff2"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundEB.woff") format("woff"), /* Modern Browsers */
+  url("../fonts/nanumSquareRound/nanumSquareRoundEB.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+
+
+
+/*=============== RESET STYLE ===============*/
+html { font-size: 15px; background: $--background-color-base; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+body { font-family: $font-family; font-size: 15px; font-weight: 400; line-height: 1.42857143; letter-spacing: -0.45px; background: $--background-color-base; color: $basicBlack;}
+input, button, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  @include prefix(box-sizing, border-box, webkit ms moz o);
+  vertical-align: baseline;
+}
+/* Set html5 elements to block */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,main,nav,section,summary{display:block;}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,font,img,ins,q,s,samp,strike,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{border:0 none; margin:0; padding:0; /*line-height:1.5;*/}
+body{position:relative;word-break:break-all;-ms-text-size-adjust:100%;text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+header,h1{font-size:100%;}
+html,body{height:100%;}
+caption,legend{position:absolute;top:-9999px;left:-9999px;visibility:hidden;width:0;height:0;font-size:0;overflow:hidden;}
+caption{display:none;}
+img{vertical-align:top;border:none;}
+select,input{vertical-align:top;border:0px;border-radius:0;background-color:transparent;box-shadow: none;}
+hr{display:none;border:0 none;}
+ol,ul,ul li{list-style:none;padding:0;margin:0;}
+dl, dt, dd{padding:0; margin:0;}
+em{font-style:normal;}
+menu li{list-style:none;}
+address{font-style:normal;display:inline;}
+button{cursor:pointer;border:0px;border-radius:0;background-color:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+button:active{ outline:none;}
+//button:focus{ outline:none;}
+table{border-spacing:0;border-collapse:collapse;}
+input,textarea,keygen,select,button{font-family:$font-family;}
+strong{font-weight:800;}
+dfn{font-style:normal;}
+/* Link Style */
+a,a:hover,a:link,a:visited,a:active,a:focus{text-decoration:none;color:inherit;cursor:pointer;}
+a:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+/* Forms */
+fieldset{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select,input[type=radio],input[type=submit],input[type=search]{cursor:pointer;border:0px;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select::-ms-expand {display:none;}
+input:focus,button:focus,textarea:focus{}
+select,div{}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button,input[type=date]::-webkit-inner-spin-button,input[type=date]::-webkit-outer-spin-button{ -webkit-appearance: none; margin: 0;}
+input[type=date]::-webkit-calendar-picker-indicator {color:transparent;background:none;z-index:1;}
+textarea{width:100%;border:none;background:none;resize: none;color:$gray-6;}
+/* heading */
+body,input,textarea,select,button{font-family: $font-family;}
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;}
+img{max-width:100%;height:auto;vertical-align:top;-ms-interpolation-mode:bicubic;}
+small{font-size:88%;font-weight:400;color:$--color-info;}
+
+
+
+/*=============== SKIP NAV ===============*/
+.skipNav {
+  position: absolute;
+  left: -300%;
+  font-size: 2em;
+  color: #fff;
+  background: #555;
+  &:focus,
+  &:hover {
+    display: block;
+    position: fixed;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    padding: 10px;
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none
+  }
+}
+
+
+/*=============== HELP STYLE ===============*/
+// for reading screen reader device
+.invisible {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+// for text decoration
+.under {
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+}
+.del {
+  text-decoration: line-through;
+}
+.en{
+  letter-spacing: 0 !important;
+}
+.link-hover{
+  &:hover,
+  &:focus,
+  &:active{
+    color: $--color-primary;
+  }
+}
+
+
+// for margin and padding
+.mp_none {
+  margin: 0px;
+  padding: 0px;
+}
+.bd_none{
+  border:0px;
+}
+.mgt5{
+  margin-top: 5px;
+}
+.mgt10{
+  margin-top: 10px;
+}
+.mgt15{
+  margin-top: 15px;
+}
+.mgt20{
+  margin-top: 20px;
+}
+.mgb15{
+  margin-bottom: 15px !important;
+}
+.mgl5{
+  margin-left:5px !important;
+}
+.mgl10{
+  margin-left:10px !important;
+}
+.mgl20{
+  margin-left:20px !important;
+}
+
+// for layout
+.pull-left{
+  float:left;
+  display: inline-block;
+}
+.pull-right{
+  float: right;
+  display: inline-block;
+}
+.text-right{
+  text-align: right !important;
+}
+.text-center{
+  text-align: center !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.vertical-mid {
+  vertical-align: middle !important;
+}
+
+// additional style
+.hand {
+  cursor: pointer;
+}
+.rd50 {
+  border-radius: $radius-50;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+@mixin btnActive($shadowColor){
+	&:active,
+	&:focus,
+	&:hover,
+	&.active{
+		@include prefix(box-shadow, 0px 0px 4px 0px rgba($shadowColor, 0.3), webkit ms moz o);
+	}
+}
+
+
+/*=============== CUSTOM ANIMATION STYLE ===============*/
+// use of keyframes mixin
+@include keyframes(shadow-pulse1) {
+  0% { box-shadow: 0 0 0 0px rgba($mainColor, 0.3); }
+  100% { box-shadow: 0 0 0 12px rgba($mainColor, 0); }
+}
+@include keyframes(shadow-sm-pulse1) {
+  0% { box-shadow: 0 0 0 0px rgba($mainColor, 0.3); }
+  100% { box-shadow: 0 0 0 5px rgba($mainColor, 0); }
+}
+@include keyframes(shadow-pulse2) {
+  0% {box-shadow: 0 0 0 0px rgba($mainColor, 0.3);}
+  100% {box-shadow: 0 0 0 12px rgba($mainColor, 0);}
+}
+@include keyframes(shadow-pulse3) {
+  0% { box-shadow: 0 0 0 0px rgba($mainRed, 0.3);}
+  100% { box-shadow: 0 0 0 12px rgba($mainRed, 0);}
+}
+@include keyframes(shadow-pulse4) {
+  0% { box-shadow: 0 0 0 0px rgba($gray-6, 0.3); }
+  100% { box-shadow: 0 0 0 12px rgba($gray-6, 0); }
+}
+
+// 새로고침 animaiton
+@keyframes spin-inf {
+  100%{ transform:rotate(360deg);}
+}
+
+// menu hover animaiton
+@include keyframes(burger-hover) {
+  0% { width: 100%; }
+  50% { width: 50%; }
+  100% { width: 100%;}
+}
+
+// icon animation
+@include keyframes(icon-ani) {
+  0% {transform: scaleX(1);}
+  25% {transform: scaleX(0);}
+  50% {transform: scaleX(1);}
+  75% {transform: scaleX(0);}
+  100% {transform: scaleX(1);}
+}
+
+// arrow icon animation
+@include keyframes(arrow-icon-ani) {
+  0% {margin-left:0px;}
+  50% {margin-left:7px;}
+  100% {margin-left:0px;}
+}
+// titBox bg moving animation
+@include keyframes(bg-ani) {
+  0% { background-position: 50% 45%; background-size: 100%; }
+  50% { background-position: 50% 50%; background-size: 95%; }
+  100%{ background-position: 50% 45%; background-size: 100%; }
+}
+
+// loader animation
+@keyframes osc-l{
+  0%{left:20%;}
+  50%{left:50%;}
+  100%{left:20%;}
+}
+@keyframes osc-r{
+  0%{left:80%;}
+  50%{left:50%;}
+  100%{left:80%;}
+}
+
+// btn for payment in dashboard
+@keyframes ripple {
+  from { opacity: 1; transform: scale3d(0.75,0.75,1); }
+  to { opacity: 0; transform: scale3d(1.5,1.5,1);}
+}
+
+
+// page loader transition
+@-webkit-keyframes load8 {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes load8 {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}

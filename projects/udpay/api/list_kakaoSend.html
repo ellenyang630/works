@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no"/>
+    <title>메인 : 유디페이API</title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/line-awesome.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/xeicon.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="scss/udapi.css"/>
+</head>
+<body>
+<div class="skipNav_wrap">
+    <a href="#header" class="skipNav">상단메뉴 바로가기</a>
+    <a href="#content_wrap" class="skipNav">본문 영역 바로가기</a>
+</div>
+<!--// skipNav_wrap -->
+
+<div id="app">
+
+    <!-- header -->
+    <el-header id="header">
+        <div class="topnavBar">
+            <div class="logoBox">
+                <h1><a>유디페이 : API관리</a></h1>
+            </div>
+            <div class="userMenu">
+                <div class="utilBox left">
+                    <button type="button" class="btnMenu_opener">
+              <span class="btnMenu_opener__inn">
+                <span class="bar top"></span>
+                <span class="bar mid"></span>
+                <span class="bar bottom"></span>
+              </span>
+                    </button>
+                    <!-- //btnMenu_opener -->
+                    <div class="hello">
+                        <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                    </div>
+                </div>
+                <!-- //utilBox.left -->
+
+                <div class="utilBox right">
+                    <ul class="tokenAva">
+                        <li class="use on"><span>연동토큰 사용가능</span></li>
+                        <!--<li class="use off"><span>연동토큰 사용중지</span></li>-->
+                    </ul>
+                    <ul class="topMenu">
+                        <li class="convert">
+                            <button type="button" title="유디페이 판매점 바로가기 새 창 열기">
+                  <span class="btn_inn">
+                      <span><i class="xi-renew"></i></span>
+                      <span class="t">유디페이</span>
+                  </span>
+                            </button>
+                        </li>
+                        <li class="alarm active">
+                            <a onclick="window.open('list_alarm.html', '_self')"><i class="la la-bell-o"></i><span class="invisible">알림내역</span></a>
+                        </li>
+                        <li class="mypage">
+                            <a onclick="window.open('set_mypage.html', '_self')"><i class="la la-cog"></i><span class="invisible">마이페이지</span></a>
+                        </li>
+                        <li class="logout">
+                            <a onclick="window.open('login.html', '_self')"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //utilBox.right -->
+            </div>
+        </div>
+        <!-- //topnavBar -->
+    </el-header>
+    <!-- //header -->
+    <el-container id="content_wrap">
+        <!-- #ltnav -->
+        <el-aside id="ltnav" class="lnb">
+            <h1 class="invisible">전체 메뉴</h1>
+            <el-menu id="cssmenu" :default-openeds="['1']" default-active="1" >
+                <el-menu-item index="1" class="dep1" onclick="window.open('index.html', '_self')"><i class="ico xi-dashboard-o"></i> Dashboard</el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title" class="dep1"><i class="ico xi-mail-o"></i> 문자 API</template>
+                    <el-menu-item-group>
+                        <el-menu-item index="2-1" onclick="window.open('set_msg.html', '_self')">설정</el-menu-item>
+                        <el-menu-item index="2-2" onclick="window.open('list_msgSend.html', '_self')">발송내역</el-menu-item>
+                        <el-menu-item index="2-3" onclick="window.open('list_msgUse.html', '_self')">사용현황</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="3">
+                    <template slot="title" class="dep1"><i class="ico xi-message-o"></i> 알림톡 API</template>
+                    <el-menu-item-group>
+                        <el-menu-item index="3-1" onclick="window.open('intro_kakao.html', '_self')">사전준비</el-menu-item>
+                        <el-menu-item index="3-2" onclick="window.open('set_kakao.html', '_self')">설정</el-menu-item>
+                        <el-menu-item index="3-3" onclick="window.open('list_kakaoSend.html', '_self')">발송내역</el-menu-item>
+                        <el-menu-item index="3-4" onclick="window.open('list_kakaoUse.html', '_self')">사용현황</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="4">
+                    <template slot="title" class="dep1"><i class="ico xi-shield-checked-o"></i> 본인인증 API</template>
+                    <el-menu-item-group>
+                        <el-menu-item index="4-1" onclick="window.open('set_auth.html', '_self')">설정</el-menu-item>
+                        <el-menu-item index="4-2" onclick="window.open('list_authConfirm.html', '_self')">인증내역</el-menu-item>
+                        <el-menu-item index="4-3" onclick="window.open('list_authUse.html', '_self')">사용현황</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="5">
+                    <template slot="title" class="dep1"><i class="ico xi-won"></i> 충전/입금관리</template>
+                    <el-menu-item-group>
+                        <el-submenu index="5-1">
+                            <template slot="title">결제하기</template>
+                            <el-menu-item index="5-1-1" onclick="window.open('form_pointCharge.html', '_self')">선불충전</el-menu-item>
+                            <el-menu-item index="5-1-2" onclick="window.open('form_pointPayment.html', '_self')">후불계약신청</el-menu-item>
+                        </el-submenu>
+                        <el-menu-item index="5-2" onclick="window.open('list_point.html', '_self')">충전/입금내역</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="6">
+                    <template slot="title" class="dep1"><i class="ico xi-help-o"></i> 고객센터</template>
+                    <el-menu-item-group>
+                        <el-menu-item index="6-1" onclick="window.open('list_notice.html', '_self')">공지사항</el-menu-item>
+                        <el-menu-item index="6-2" onclick="window.open('list_faq.html', '_self')">자주묻는질문</el-menu-item>
+                        <el-submenu index="6-3">
+                            <template slot="title">고객문의</template>
+                            <el-menu-item index="6-3-1" onclick="window.open('list_qna.html', '_self')">문의내역</el-menu-item>
+                            <el-menu-item index="6-3-2" onclick="window.open('form_qna.html', '_self')">문의하기</el-menu-item>
+                        </el-submenu>
+                        <%--<el-menu-item index="6-4">개발요청</el-menu-item>--%>
+                        <%--<el-menu-item index="6-5">사용가이드</el-menu-item>--%>
+                    </el-menu-item-group>
+                </el-submenu>
+            </el-menu>
+            <!-- //cssmenu -->
+
+            <div class="csInfo">
+                <p class="cs_tt"><i class="xi-emoticon-happy-o"></i> 고객상담문의</p>
+                <p class="cs_tel">1544-6893</p>
+                <p class="cs_time">
+                    평일&nbsp;&nbsp;&nbsp;9:00 ~ 18:00<br/>
+                    휴무&nbsp;&nbsp;&nbsp;주말, 공휴일 휴무
+                </p>
+            </div>
+        </el-aside>
+        <!-- //#ltnav -->
+
+        <section id="content">
+            <h1 class="invisible">본문</h1>
+            <section id="content_inner">
+                <div class="title_box clearfix">
+                    <div class="ttBox">
+                        <h1 class="tt">알림톡 발송내역</h1>
+                    </div>
+                    <div class="location">
+                        <el-breadcrumb separator-class="el-icon-arrow-right">
+                            <el-breadcrumb-item :to="{ path: '/' }"><i class="xi-home-o"></i></el-breadcrumb-item>
+                            <el-breadcrumb-item>알림톡 API</el-breadcrumb-item>
+                            <el-breadcrumb-item>발송내역</el-breadcrumb-item>
+                        </el-breadcrumb>
+                    </div>
+                </div>
+                <!--// title_box-->
+
+                <el-row>
+                    <el-col :span="24">
+                        <div role="alert" class="el-alert el-alert--error is-light list_head">
+                            <div class="el-alert__content">
+                                <span class="el-alert__title is-bold">알림톡 안내</span>
+                                <p class="el-alert__description">
+                                    <strong class="el-alert__em">카카오톡 플러스친구 아이디 및 발신프로필 키를 등록해주세요.</strong><br/>
+                                    최초 등록/인증 후, 알림톡 연동사용이 가능합니다.
+                                </p>
+                                <i class="el-alert__closebtn el-icon-close"></i>
+                            </div>
+                        </div>
+                        <!-- //el-alert--error -->
+                    </el-col>
+                </el-row>
+
+                <el-row>
+                    <el-col :span="24">
+                        <el-card shadow="always" class="no_padding">
+                            <div class="cardBox contains with_schBar">
+                                <div class="list_sch">
+                                    <el-form :inline="true" ref="form">
+                                        <el-form-item>
+                                            <el-select  placeholder="템플릿 구분" size="small">
+                                                <el-option label="입금확인" value=""></el-option>
+                                                <el-option label="주문확인" value=""></el-option>
+                                                <el-option label="주문" value=""></el-option>
+                                            </el-select>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <el-select placeholder="발송상태" size="small">
+                                                <el-option label="성공" value=""></el-option>
+                                                <el-option label="실패" value=""></el-option>
+                                            </el-select>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <el-select placeholder="기간조회" size="small">
+                                                <el-option label="일별 조회" value=""></el-option>
+                                                <el-option label="월별 조회" value=""></el-option>
+                                            </el-select>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <el-date-picker type="daterange" align="left" size="small" start-placeholder="시작일" end-placeholder="종료일"></el-date-picker>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <el-button type="primary" size="mini" icon="xi-search" plain>검색</el-button>
+                                        </el-form-item>
+                                        <div class="selected_date"><i class="xi-info-o"></i> 11/1 ~ 11/30 동안의 사용현황입니다.</div>
+                                    </el-form>
+                                </div>
+                                <!-- //list_sch -->
+
+                                <div class="list_wrap">
+                                    <div class="table_head">
+                                        <div class="list_total">
+                                            총 11건의 등록 내역이 있습니다.
+                                        </div>
+                                        <div class="list_ct_btn">
+                                            <el-button size="medium" type="success" icon="xi-file-download-o" plain>엑셀다운로드</el-button>
+                                        </div>
+                                    </div>
+                                    <!-- //table_head -->
+
+                                    <div class="table-responsive">
+                                        <div class="el-table el-table--fit el-table--enable-row-transition">
+                                            <div class="el-table__header-wrapper">
+                                                <table class="el-table__header">
+                                                    <thead class="has-gutter">
+                                                    <tr>
+                                                        <th><div class="cell">구분</div></th>
+                                                        <th><div class="cell">총 건수</div></th>
+                                                        <th><div class="cell">사용금액</div></th>
+                                                        <th><div class="cell">상태</div></th>
+                                                        <th class="td-content"><div class="cell">내용</div></th>
+                                                        <th><div class="cell">요청일</div></th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
+                                                <!-- //el-table__header -->
+                                            </div>
+                                            <!-- //el-table__header-wrapper -->
+
+                                            <div class="el-table__body-wrapper is-scrolling-none">
+                                                <table class="el-table__body">
+                                                    <tbody>
+                                                    <tr class="el-table__row">
+                                                        <td>
+                                                            <div class="cell">
+                                                                <div class="tag-group">
+                                                                    <el-tag type="info" size="medium" effect="plain" class="el-tag--round">입금확인</el-tag>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cell text-primary under" @click="dialogVisible2 = true">10건</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cell">70원</div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cell">
+                                                                <span class="text-primary">발송요청완료</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td-content">
+                                                            <div class="cell">
+                                                                테스트 템플릿입니다.
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="cell">2019-12-31 09:32:01</div>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- //el-table__row -->
+                                                    </tbody>
+                                                </table>
+                                                <!-- //el-table__body -->
+                                            </div>
+                                            <!-- //el-table__body-wrapper -->
+                                        </div>
+                                        <!-- //el-table -->
+                                        <div class="el-table__empty-block">
+                                            <div class="el-table__empty-text">
+                                                <div class="tv md info"><i class="xi-list"></i></div>
+                                                <p class="empty__info-text">알림톡 발송 내역이 없습니다.</p>
+                                            </div>
+                                        </div>
+                                        <!-- //el-table__empty-block -->
+                                    </div>
+                                    <!-- //table-responsive -->
+
+                                    <div class="table_foot">
+                                        <div class="list_sort">
+                                            <el-select placeholder="보기 구분">
+                                                <el-option label="20개씩 보기" value=""></el-option>
+                                                <el-option label="50개씩 보기" value=""></el-option>
+                                                <el-option label="100개씩 보기" value=""></el-option>
+                                            </el-select>
+                                        </div>
+                                    </div>
+                                    <!-- //table_foot -->
+                                </div>
+                                <!-- //list_wrap -->
+                            </div>
+                            <!-- //cardBox.contains -->
+                        </el-card>
+                    </el-col>
+                </el-row>
+
+                <!-- 발송내역 상세보기 -->
+                <el-dialog
+                        title="발송내역 상세보기"
+                        :visible.sync="dialogVisible2"
+                        :before-close="handleClose">
+
+                    <div class="el-table el-table--fit el-table--enable-row-transition">
+                        <div class="el-table__header-wrapper">
+                            <table class="el-table__header">
+                                <thead class="has-gutter">
+                                <tr>
+                                    <th><div class="cell">상태</div></th>
+                                    <th><div class="cell">수신번호</div></th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <!-- //el-table__header -->
+                        </div>
+                        <!-- //el-table__header-wrapper -->
+
+                        <div class="el-table__body-wrapper is-scrolling-none">
+                            <table class="el-table__body">
+                                <tbody>
+                                <tr class="el-table__row">
+                                    <td>
+                                        <div class="cell">
+                                            <span class="text-primary">발송성공</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cell">010-1234-5678</div>
+                                    </td>
+                                </tr>
+                                <!-- //el-table__row -->
+                                <tr class="el-table__row">
+                                    <td>
+                                        <div class="cell">
+                                            <span class="text-danger">발송실패</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cell">010-1234-5678</div>
+                                    </td>
+                                </tr>
+                                <!-- //el-table__row -->
+                                </tbody>
+                            </table>
+                            <!-- //el-table__body -->
+                        </div>
+                        <!-- //el-table__body-wrapper -->
+                    </div>
+                    <!-- //el-table -->
+                </el-dialog>
+                <!-- //발송내역 상세보기 -->
+
+
+            </section>
+            <!-- //content_inner -->
+        </section>
+        <!-- //content -->
+    </el-container>
+    <!-- //content_wrap -->
+</div>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+
+            }
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>
