@@ -149,7 +149,7 @@
                             <span>결제현황</span>
                         </template>
                         <el-menu-item index="3-1"><a href="#none" onclick="location.href='list_statusFin.html'">완료/취소</a></el-menu-item>
-                        <el-menu-item index="3-2"><a href="#none" onclick="location.href='list_payRegular.html'">결제요청</a></el-menu-item>
+                        <el-menu-item index="3-2"><a href="#none" onclick="location.href='list_statusReq.html'">결제요청</a></el-menu-item>
                         <el-menu-item index="3-3"><a href="#none" onclick="location.href='list_statusCancel.html'">취소요청</a></el-menu-item>
                     </el-submenu>
                     <el-submenu index="4" class="depth1-menu">
@@ -280,12 +280,13 @@
                                     <li class="summary-primary active">
                                         <dl>
                                             <dt>
-                                                <div class="roundbox-wrap roundbox-primary-light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                                    </svg>
-                                                    <span class="txt">등록 완료</span>
-                                                </div>
+                                                <!--<div class="roundbox-wrap roundbox-primary-light">-->
+                                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                                                    <!--</svg>-->
+                                                    <!--<span class="txt">등록 완료</span>-->
+                                                <!--</div>-->
+                                                <div class="svg-fill svg-fill-primary-light"><span class="txt">등록 완료</span></div>
                                             </dt>
                                             <dd class="list-data__text">
                                                 <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
@@ -295,12 +296,13 @@
                                     <li class="summary-additional">
                                         <dl>
                                             <dt>
-                                                <div class="roundbox-wrap roundbox-additional-light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                                    </svg>
-                                                    <span class="txt">등록 요청</span>
-                                                </div>
+                                                <!--<div class="roundbox-wrap roundbox-additional-light">-->
+                                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                                                    <!--</svg>-->
+                                                    <!--<span class="txt">등록 요청</span>-->
+                                                <!--</div>-->
+                                                <div class="svg-fill svg-fill-additional-light"><span class="txt">등록 요청</span></div>
                                             </dt>
                                             <dd class="list-data__text">
                                                 <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
@@ -310,12 +312,13 @@
                                     <li class="summary-info">
                                         <dl>
                                             <dt>
-                                                <div class="roundbox-wrap roundbox-info-light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                                    </svg>
-                                                    <span class="txt">등록 거절</span>
-                                                </div>
+                                                <!--<div class="roundbox-wrap roundbox-info-light">-->
+                                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                                                    <!--</svg>-->
+                                                    <!--<span class="txt">등록 거절</span>-->
+                                                <!--</div>-->
+                                                <div class="svg-fill svg-fill-info-light"><span class="txt">등록 거절</span></div>
                                             </dt>
                                             <dd>
                                                 <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
@@ -325,12 +328,13 @@
                                     <li class="summary-danger">
                                         <dl>
                                             <dt>
-                                                <div class="roundbox-wrap roundbox-danger-light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                                    </svg>
-                                                    <span class="txt">해지</span>
-                                                </div>
+                                                <!--<div class="roundbox-wrap roundbox-danger-light">-->
+                                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                                                    <!--</svg>-->
+                                                    <!--<span class="txt">해지</span>-->
+                                                <!--</div>-->
+                                                <div class="svg-fill svg-fill-danger-light"><span class="txt">해지</span></div>
                                             </dt>
                                             <dd>
                                                 <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
@@ -340,12 +344,13 @@
                                     <li class="summary-warning">
                                         <dl>
                                             <dt>
-                                                <div class="roundbox-wrap roundbox-warning-light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                                    </svg>
-                                                    <span class="txt">요청 취소</span>
-                                                </div>
+                                                <!--<div class="roundbox-wrap roundbox-warning-light">-->
+                                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                                                    <!--</svg>-->
+                                                    <!--<span class="txt">요청 취소</span>-->
+                                                <!--</div>-->
+                                                <div class="svg-fill svg-fill-warning-light"><span class="txt">해지</span></div>
                                             </dt>
                                             <dd>
                                                 <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
