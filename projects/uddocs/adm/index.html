@@ -83,9 +83,9 @@
                                             </div>
                                             <div class="mgl-auto">
                                                 <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light">
-                                                    <router-link to="/api/list">
+                                                    <a href="list_api.html">
                                                         <span class="invisible">API 프로젝트 보기</span>
-                                                    </router-link>
+                                                    </a>
                                                 </el-button>
                                                 <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light" @click="dialogVisible = true">
                                                     <span class="invisible">API 프로젝트 수정</span>
@@ -110,8 +110,14 @@
                                                 <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
                                             </div>
                                             <div class="mgl-auto">
-                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light"></el-button>
-                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light"></el-button>
+                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light">
+                                                    <a href="list_api.html">
+                                                        <span class="invisible">API 프로젝트 보기</span>
+                                                    </a>
+                                                </el-button>
+                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light" @click="dialogVisible = true">
+                                                    <span class="invisible">API 프로젝트 수정</span>
+                                                </el-button>
                                             </div>
                                         </div>
                                     </div>
@@ -132,8 +138,14 @@
                                                 <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
                                             </div>
                                             <div class="mgl-auto">
-                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light"></el-button>
-                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light"></el-button>
+                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light">
+                                                    <a href="list_api.html">
+                                                        <span class="invisible">API 프로젝트 보기</span>
+                                                    </a>
+                                                </el-button>
+                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light" @click="dialogVisible = true">
+                                                    <span class="invisible">API 프로젝트 수정</span>
+                                                </el-button>
                                             </div>
                                         </div>
                                     </div>
@@ -231,7 +243,7 @@
         el: '#app',
         data () {
             return {
-
+                dialogVisible: false,
             }
         },
         methods: {
