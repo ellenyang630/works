@@ -125,8 +125,8 @@
                             <el-menu-item index="6-3-1" onclick="window.open('list_qna.html', '_self')">문의내역</el-menu-item>
                             <el-menu-item index="6-3-2" onclick="window.open('form_qna.html', '_self')">문의하기</el-menu-item>
                         </el-submenu>
-                        <%--<el-menu-item index="6-4">개발요청</el-menu-item>--%>
-                        <%--<el-menu-item index="6-5">사용가이드</el-menu-item>--%>
+
+
                     </el-menu-item-group>
                 </el-submenu>
             </el-menu>
@@ -320,9 +320,9 @@
 
                                     <div class="list_sort">
                                         <el-select placeholder="보기 구분">
-                                            <el-option label="20개씩 보기" value=""></el-option>
-                                            <el-option label="50개씩 보기" value=""></el-option>
-                                            <el-option label="100개씩 보기" value=""></el-option>
+                                            <el-option label="20개씩 보기" ></el-option>
+                                            <el-option label="50개씩 보기" ></el-option>
+                                            <el-option label="100개씩 보기" ></el-option>
                                         </el-select>
                                     </div>
                                 </div>
@@ -338,7 +338,6 @@
                 <el-dialog
                         title="발신번호 등록"
                         :visible.sync="dialogVisible"
-                        :before-close="handleClose"
                         class="md" >
 
                     <el-radio-group v-model="radio1" class="radio_tab">
@@ -391,8 +390,6 @@
                             <el-upload
                                     class="upload-demo"
                                     action="https://jsonplaceholder.typicode.com/posts/"
-                                    :on-preview="handlePreview"
-                                    :on-remove="handleRemove"
                                     :before-remove="beforeRemove"
                                     multiple
                                     :limit="3"
@@ -449,7 +446,12 @@
         el: '#app',
         data(){
             return{
-                
+                value1: false,
+                dialogVisible: false,
+                radio1: false,
+                fileList:,
+
+
             }
         },
         methods: {

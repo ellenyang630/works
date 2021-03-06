@@ -127,8 +127,8 @@
                             <el-menu-item index="6-3-1" onclick="window.open('list_qna.html', '_self')">문의내역</el-menu-item>
                             <el-menu-item index="6-3-2" onclick="window.open('form_qna.html', '_self')">문의하기</el-menu-item>
                         </el-submenu>
-                        <%--<el-menu-item index="6-4">개발요청</el-menu-item>--%>
-                        <%--<el-menu-item index="6-5">사용가이드</el-menu-item>--%>
+
+
                     </el-menu-item-group>
                 </el-submenu>
             </el-menu>
@@ -175,20 +175,20 @@
                                                     <el-col :span="12">
                                                         <div class="el-form-item__inner">
                                                             <el-select size="medium" placeholder="선택해주세요.">
-                                                                <el-option label="전체" value=""></el-option>
-                                                                <el-option label="API 관련문의" value=""></el-option>
-                                                                <el-option label="결제문의" value=""></el-option>
-                                                                <el-option label="후불계약문의" value=""></el-option>
-                                                                <el-option label="일반사용문의" value=""></el-option>
+                                                                <el-option label="전체" ></el-option>
+                                                                <el-option label="API 관련문의" ></el-option>
+                                                                <el-option label="결제문의" ></el-option>
+                                                                <el-option label="후불계약문의" ></el-option>
+                                                                <el-option label="일반사용문의" ></el-option>
                                                             </el-select>
                                                         </div>
                                                     </el-col>
                                                     <el-col :span="12">
                                                         <div class="el-form-item__inner">
                                                             <el-select size="medium" placeholder="선택해주세요.">
-                                                                <el-option label="문자 API" value=""></el-option>
-                                                                <el-option label="알림톡 API" value=""></el-option>
-                                                                <el-option label="본인인증 API" value=""></el-option>
+                                                                <el-option label="문자 API" ></el-option>
+                                                                <el-option label="알림톡 API" ></el-option>
+                                                                <el-option label="본인인증 API" ></el-option>
                                                             </el-select>
                                                         </div>
                                                     </el-col>
@@ -291,7 +291,7 @@
         el: '#app',
         data(){
             return{
-
+                alertMsg: false,
             }
         },
         methods: {

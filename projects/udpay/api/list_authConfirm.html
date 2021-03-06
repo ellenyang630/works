@@ -126,8 +126,8 @@
                             <el-menu-item index="6-3-1" onclick="window.open('list_qna.html', '_self')">문의내역</el-menu-item>
                             <el-menu-item index="6-3-2" onclick="window.open('form_qna.html', '_self')">문의하기</el-menu-item>
                         </el-submenu>
-                        <%--<el-menu-item index="6-4">개발요청</el-menu-item>--%>
-                        <%--<el-menu-item index="6-5">사용가이드</el-menu-item>--%>
+
+
                     </el-menu-item-group>
                 </el-submenu>
             </el-menu>
@@ -169,15 +169,15 @@
                                     <el-form :inline="true" ref="form">
                                         <el-form-item>
                                             <el-select placeholder="인증상태" size="small">
-                                                <el-option label="전체" value=""></el-option>
-                                                <el-option label="성공" value=""></el-option>
-                                                <el-option label="실패" value=""></el-option>
+                                                <el-option label="전체" ></el-option>
+                                                <el-option label="성공" ></el-option>
+                                                <el-option label="실패" ></el-option>
                                             </el-select>
                                         </el-form-item>
                                         <el-form-item>
                                             <el-select placeholder="기간조회" size="small">
-                                                <el-option label="일별 조회" value=""></el-option>
-                                                <el-option label="월별 조회" value=""></el-option>
+                                                <el-option label="일별 조회" ></el-option>
+                                                <el-option label="월별 조회" ></el-option>
                                             </el-select>
                                         </el-form-item>
                                         <el-form-item>
@@ -289,9 +289,9 @@
                                     <div class="table_foot">
                                         <div class="list_sort">
                                             <el-select placeholder="보기 구분">
-                                                <el-option label="20개씩 보기" value=""></el-option>
-                                                <el-option label="50개씩 보기" value=""></el-option>
-                                                <el-option label="100개씩 보기" value=""></el-option>
+                                                <el-option label="20개씩 보기" ></el-option>
+                                                <el-option label="50개씩 보기" ></el-option>
+                                                <el-option label="100개씩 보기" ></el-option>
                                             </el-select>
                                         </div>
                                     </div>
@@ -320,7 +320,7 @@
         el: '#app',
         data(){
             return{
-                
+                // value : true,
             }
         },
         methods: {

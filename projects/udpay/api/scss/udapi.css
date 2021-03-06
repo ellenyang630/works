@@ -1379,7 +1379,6 @@ html {
   position: relative; }
 #content {
   width: 100%;
-  padding-top: 60px;
   padding-left: 250px;
   transition: padding 0.2s ease; }
 #content_inner {
