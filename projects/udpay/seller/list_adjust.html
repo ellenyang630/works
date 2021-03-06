@@ -278,8 +278,8 @@
                         <div class="col-12 col-md-8 order-2 order-md-1">
                             <div class="top-info d-flex">
                                 <div>
-                                    <dl class="list-data-text inline-layout stretch">
-                                        <dt>
+                                    <dl class="list-data__wrapper inline-layout stretch">
+                                        <dt class="list-data__text">
                                             <span>정산가능여부</span>
                                             <el-popover
                                                     placement="bottom-start"
@@ -313,8 +313,8 @@
                                     </dl>
                                 </div>
                                 <div class="ml-auto">
-                                    <dl class="list-data-text inline-layout stretch">
-                                        <dt>
+                                    <dl class="list-data__wrapper inline-layout stretch">
+                                        <dt class="list-data__text">
                                             <span>정산주기</span>
                                             <el-popover
                                                     placement="bottom-start"
@@ -369,7 +369,7 @@
                                                     <!--</svg>-->
                                                     <!--<span class="txt">완료</span>-->
                                                 <!--</div>-->
-                                                <div class="svg-fill svg-fill-primary-dark-light"><span class="txt">완료</span></div>
+                                                <div class="svg-fill svg-fill-primary-light"><span class="txt">완료</span></div>
                                             </dt>
                                             <dd>
                                                 <p class="num-txt"><strong>210</strong> <span>건</span></p>
@@ -433,17 +433,17 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>상품명</dt>
-                                                            <dd>테스트상품2</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">상품명</dt>
+                                                            <dt class="list-data__text">테스트상품2</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>결제일</dt>
-                                                            <dd>19/11/01 15:32:00</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">결제일</dt>
+                                                            <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>결제수단</dt>
-                                                            <dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">결제수단</dt>
+                                                            <dt class="list-data__text">
                                                                 <p>핸드폰-실물</p>
                                                                 <!-- 수단 :: 핸드폰-실물일때만 전화번호 표시 -->
                                                                 <p class="">
@@ -460,40 +460,40 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료율</dt>
-                                                            <dd>0.0%</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료율</dt>
+                                                            <dt class="list-data__text">0.0%</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료</dt>
-                                                            <dd>0원</dd>
-                                                        </dl>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>사업자구분</dt>
-                                                            <dd>영세</dd>
-                                                        </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료율</dt>
-                                                            <dd>1.0%</dd>
-                                                        </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료</dt>
-                                                            <dd>100원</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료</dt>
+                                                            <dt class="list-data__text">0원</dd>
                                                         </dl>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text block-layout center">
-                                                            <dt>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">사업자구분</dt>
+                                                            <dt class="list-data__text">영세</dd>
+                                                        </dl>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료율</dt>
+                                                            <dt class="list-data__text">1.0%</dd>
+                                                        </dl>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료</dt>
+                                                            <dt class="list-data__text">100원</dd>
+                                                        </dl>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        <dl class="list-data__wrapper block-layout center">
+                                                            <dt class="list-data__text">
                                                                 <!--<span class="badge badge-primary-light">정산완료</span>-->
                                                                 <span class="badge badge-info-light">정산대기</span>
                                                             </dt>
-                                                            <dd>
+                                                            <dt class="list-data__text">
                                                                 <p><strong>971원</strong></p>
                                                                 <p>19/03/23</p>
                                                             </dd>
@@ -502,7 +502,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <div class="list-data-text block-layout center">
+                                                        <div class="list-data__wrapper block-layout center">
                                                             <p>
                                                                 <span class="badge badge-info-light">미발행</span>
                                                             </p>
@@ -518,17 +518,17 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>상품명</dt>
-                                                            <dd>테스트상품2</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">상품명</dt>
+                                                            <dt class="list-data__text">테스트상품2</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>결제일</dt>
-                                                            <dd>19/11/01 15:32:00</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">결제일</dt>
+                                                            <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>결제수단</dt>
-                                                            <dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">결제수단</dt>
+                                                            <dt class="list-data__text">
                                                                 <p>NFC 결제</p>
                                                             </dd>
                                                         </dl>
@@ -541,40 +541,40 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료율</dt>
-                                                            <dd>0.0%</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료율</dt>
+                                                            <dt class="list-data__text">0.0%</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료</dt>
-                                                            <dd>0원</dd>
-                                                        </dl>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>사업자구분</dt>
-                                                            <dd>영세</dd>
-                                                        </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료율</dt>
-                                                            <dd>1.0%</dd>
-                                                        </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>수수료</dt>
-                                                            <dd>100원</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료</dt>
+                                                            <dt class="list-data__text">0원</dd>
                                                         </dl>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text block-layout center">
-                                                            <dt>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">사업자구분</dt>
+                                                            <dt class="list-data__text">영세</dd>
+                                                        </dl>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료율</dt>
+                                                            <dt class="list-data__text">1.0%</dd>
+                                                        </dl>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">수수료</dt>
+                                                            <dt class="list-data__text">100원</dd>
+                                                        </dl>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        <dl class="list-data__wrapper block-layout center">
+                                                            <dt class="list-data__text">
                                                                 <span class="badge badge-success-light">정산완료</span>
                                                                 <!--<span class="badge badge-info-light">정산대기</span>-->
                                                             </dt>
-                                                            <dd>
+                                                            <dt class="list-data__text">
                                                                 <p><strong>971원</strong></p>
                                                                 <p>19/03/23</p>
                                                             </dd>
@@ -583,7 +583,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <div class="list-data-text block-layout center">
+                                                        <div class="list-data__wrapper block-layout center">
                                                             <p>
                                                                 <span class="badge badge-primary-light">발행</span>
                                                             </p>

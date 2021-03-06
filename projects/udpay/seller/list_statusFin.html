@@ -277,7 +277,7 @@
                                 <ul class="summary-info-wrap is-hover">
                                     <li class="summary-primary-dark active">
                                         <dl>
-                                            <dt>
+                                            <dt class="list-data__text">
                                                 <div class="svg-fill svg-fill-primary-dark-light"><span class="txt">전체</span></div>
                                                 <!--<div class="roundbox-wrap roundbox-secondary-light">-->
                                                     <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
@@ -286,7 +286,7 @@
                                                     <!--<span class="txt">전체</span>-->
                                                 <!--</div>-->
                                             </dt>
-                                            <dd>
+                                            <dd class="list-data__text">
                                                 <p class="num-txt"><strong>210</strong> <span>건</span></p>
                                                 <p class="num-txt emphasis"><strong>1,230,000</strong> <span>원</span></p>
                                             </dd>
@@ -301,7 +301,7 @@
                                                     <!--</svg>-->
                                                     <!--<span class="txt">완료</span>-->
                                                 <!--</div>-->
-                                                <div class="svg-fill svg-fill-primary-dark-light"><span class="txt">완료</span></div>
+                                                <div class="svg-fill svg-fill-primary-light"><span class="txt">완료</span></div>
                                             </dt>
                                             <dd>
                                                 <p class="num-txt"><strong>210</strong> <span>건</span></p>
@@ -365,8 +365,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text block-layout">
-                                                            <dt>
+                                                        <dl class="list-data__wrapper block-layout">
+                                                            <dt class="list-data__text">
                                                                 <p class="inline-span-wrap">
                                                         <span>
                                                             <!--<span class="badge badge-primary-light">결제완료</span>-->
@@ -375,7 +375,7 @@
                                                                     <span>SMS 결제</span>
                                                                 </p>
                                                             </dt>
-                                                            <dd>
+                                                            <dt class="list-data__text">
                                                                 <p class="inline-span-wrap">
                                                                     <span>현대카드</span>
                                                                     <span> 321234****7878</span>
@@ -386,8 +386,8 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text block-layout">
-                                                            <dt>
+                                                        <dl class="list-data__wrapper block-layout">
+                                                            <dt class="list-data__text">
                                                                 <p class="inline-span-wrap">
                                                         <span>
                                                             <!--<span class="badge badge-primary-light">주계정</span>-->
@@ -397,7 +397,7 @@
                                                                     <span>고객번호?</span>
                                                                 </p>
                                                             </dt>
-                                                            <dd>
+                                                            <dt class="list-data__text">
                                                                 <p class="inline-span-wrap">
                                                                     <span>마동석</span>
                                                                     <span>010-1234-5678</span>
@@ -408,11 +408,11 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text block-layout">
-                                                            <dt>
+                                                        <dl class="list-data__wrapper block-layout">
+                                                            <dt class="list-data__text">
                                                                 맞춤형 귀걸이 19788
                                                             </dt>
-                                                            <dd>
+                                                            <dt class="list-data__text">
                                                                 10,000원
                                                             </dd>
                                                         </dl>
@@ -420,24 +420,24 @@
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>결제완료</dt>
-                                                            <dd>19/11/01 15:32:00</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">결제완료</dt>
+                                                            <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                         </dl>
-                                                        <dl class="list-data-text inline-layout stretch">
-                                                            <dt>취소완료</dt>
-                                                            <dd>19/11/01 15:32:00</dd>
+                                                        <dl class="list-data__wrapper inline-layout stretch">
+                                                            <dt class="list-data__text">취소완료</dt>
+                                                            <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                         </dl>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="td-cell">
-                                                        <dl class="list-data-text block-layout center">
-                                                            <dt>
+                                                        <dl class="list-data__wrapper block-layout center">
+                                                            <dt class="list-data__text">
                                                                 <span class="badge badge-success-light">정산완료</span>
                                                                 <!--<span class="badge badge-info-light">정산대기</span>-->
                                                             </dt>
-                                                            <dd>
+                                                            <dt class="list-data__text">
                                                                 <p><strong>971원</strong></p>
                                                                 <p>19/03/23</p>
                                                             </dd>
@@ -562,9 +562,9 @@
                                                 결제카드
                                             </th>
                                             <td>
-                                                <dl class="list-data-text inline-layout">
-                                                    <dt>현대카드</dt>
-                                                    <dd>321234****7878</dd>
+                                                <dl class="list-data__wrapper inline-layout">
+                                                    <dt class="list-data__text">현대카드</dt>
+                                                    <dt class="list-data__text">321234****7878</dd>
                                                 </dl>
                                             </td>
                                         </tr>
@@ -582,13 +582,13 @@
                                                 결제일시
                                             </th>
                                             <td>
-                                                <dl class="list-data-text inline-layout">
-                                                    <dt>결제요청</dt>
-                                                    <dd>19/11/01 15:32:00</dd>
+                                                <dl class="list-data__wrapper inline-layout">
+                                                    <dt class="list-data__text">결제요청</dt>
+                                                    <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                 </dl>
-                                                <dl class="list-data-text inline-layout">
-                                                    <dt>결제완료</dt>
-                                                    <dd>19/11/01 15:32:00</dd>
+                                                <dl class="list-data__wrapper inline-layout">
+                                                    <dt class="list-data__text">결제완료</dt>
+                                                    <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                 </dl>
                                             </td>
                                         </tr>
@@ -597,9 +597,9 @@
                                                 취소일시
                                             </th>
                                             <td>
-                                                <dl class="list-data-text inline-layout">
-                                                    <dt>취소완료</dt>
-                                                    <dd>19/11/01 15:32:00</dd>
+                                                <dl class="list-data__wrapper inline-layout">
+                                                    <dt class="list-data__text">취소완료</dt>
+                                                    <dt class="list-data__text">19/11/01 15:32:00</dd>
                                                 </dl>
                                             </td>
                                         </tr>
