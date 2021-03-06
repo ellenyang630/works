@@ -7,10 +7,6 @@
 .form-wrap{
   width: 400px;
 
-  &.fixed{
-    width:194px;
-  }
-
   @include media-breakpoint-down(sm){
     &{
       width: 100%;
@@ -69,13 +65,9 @@
   // HTML5 says that controls under a fieldset > legend:first-child won't be
   // disabled if the fieldset is disabled. Due to implementation difficulty, we
   // don't honor that edge case; we style them as disabled anyway.
-  &:disabled{
-    background-color: $input-disabled-bg;
-    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-    opacity: 1;
-  }
+  &:disabled,
   &[readonly] {
-    background-color: $input-bg;
+    background-color: $input-disabled-bg;
     // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
     opacity: 1;
   }

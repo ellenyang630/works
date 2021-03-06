@@ -34,11 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.html">유디페이 판매점</a></h1>
-        </div>
-        <!-- //logo-box -->
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
 
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                          <span class="btn_inn">
+                              <span><i class="xi-renew"></i></span>
+                              <span class="t">API 바로가기</span>
+                          </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
+        </div>
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
             <div class="sidebar-content">
@@ -98,23 +159,23 @@
                         <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.html'">정산안내</router-link></el-menu-item>
                         <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.html'">정산내역</router-link></el-menu-item>
                         <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.html'">익일정산 신청</router-link></el-menu-item>
-                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.jsp'">부가세 자료</router-link></el-menu-item>
+                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.html'">부가세 자료</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="5" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-paper-o depth1-ico"></i>
                             <span>현금영수증</span>
                         </template>
-                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.jsp'">현금영수증 내역</router-link></el-menu-item>
-                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.jsp'">현금영수증 발행</router-link></el-menu-item>
+                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.html'">현금영수증 내역</router-link></el-menu-item>
+                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.html'">현금영수증 발행</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="6" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-box depth1-ico"></i>
                             <span>상품관리</span>
                         </template>
-                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.jsp'">상품 내역</router-link></el-menu-item>
-                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.jsp'">상품 등록</router-link></el-menu-item>
+                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.html'">상품 내역</router-link></el-menu-item>
+                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.html'">상품 등록</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="7" class="depth1-menu">
                         <template slot="title">
@@ -123,10 +184,10 @@
                         </template>
                         <el-submenu index="7-1">
                             <template slot="title">부계정 관리</template>
-                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.jsp'">부계정 내역</router-link></el-menu-item>
-                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.jsp'">부계정 등록</router-link></el-menu-item>
+                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.html'">부계정 내역</router-link></el-menu-item>
+                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.html'">부계정 등록</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.jsp'">부계정 매출</router-link></el-menu-item>
+                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.html'">부계정 매출</router-link></el-menu-item>
                     </el-submenu>
                     <el-menu-item index="8" class="depth1-menu" onclick="location.href='http://uddocs.net/v/udpay'" target="_blank">
                         <i class="xi-all depth1-ico"></i>
@@ -137,22 +198,22 @@
                             <i class="xi-cog depth1-ico"></i>
                             <span>설정</span>
                         </template>
-                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.jsp'">결제설정</router-link></el-menu-item>
-                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.jsp'">정보변경</router-link></el-menu-item>
-                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.jsp'">결제 옵션 설정</router-link></el-menu-item>
-                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.jsp'">정산 정보</router-link></el-menu-item>
+                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.html'">결제설정</router-link></el-menu-item>
+                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.html'">정보변경</router-link></el-menu-item>
+                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.html'">결제 옵션 설정</router-link></el-menu-item>
+                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.html'">정산 정보</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="10" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-message-o depth1-ico"></i>
                             <span>고객센터</span>
                         </template>
-                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.jsp'">공지사항</router-link></el-menu-item>
-                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.jsp'">자주묻는질문</router-link></el-menu-item>
+                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.html'">공지사항</router-link></el-menu-item>
+                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.html'">자주묻는질문</router-link></el-menu-item>
                         <el-submenu index="10-3">
                             <template slot="title">고객문의</template>
-                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.jsp'">문의내역</router-link></el-menu-item>
-                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.jsp'">문의하기</router-link></el-menu-item>
+                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.html'">문의내역</router-link></el-menu-item>
+                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.html'">문의하기</router-link></el-menu-item>
                         </el-submenu>
                     </el-submenu>
                 </el-menu>
@@ -192,323 +253,263 @@
             <!-- //cs-info__wrap -->
         </nav>
         <!-- //sidebar -->
-
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.jsp">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.jsp">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.jsp'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-    <div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">등록요청</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a>
-                </li>
-                <li class="breadcrumb-item"><a href="#">결제요청</a></li>
-                <li class="breadcrumb-item"><a href="#">등록결제</a></li>
-                <li class="breadcrumb-item active" aria-current="page">등록요청</li>
-            </ol>
-        </div>
-    </div>
-    <!-- //page-header -->
-    <div class="page-body">
-        <form action="" method="post">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title en">기본정보</h4>
-                    <div class="card-btitle">
-                        <p class="card-title-exp">결제를 요청할 구매자의 정보를 작성해주세요. 구매자의 결제동의 및 등록 후에 실제 결제요청이 가능합니다.</p>
-                        <p>
-                            <em class="point"></em>이 표시된 항목은 필수 입력값입니다.
-                        </p>
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">등록요청</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#">결제요청</a></li>
+                                <li class="breadcrumb-item"><a href="#">등록결제</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">등록요청</li>
+                            </ol>
+                        </div>
                     </div>
-                </div>
-                <!-- //card-header -->
-                <div class="card-body">
-                    <table class="table table-view">
-                        <caption>등록요청 기본정보 입력 폼</caption>
-                        <colgroup>
-                            <col width="180">
-                            <col width="*">
-                            <col width="180">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <th scope="row">
-                                <label for="customNo">고객번호</label>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <input type="number" class="form-control" id="customNo" min="0" placeholder="고객번호를 입력해주세요.">
+                    <!-- //page-header -->
+                    <div class="page-body">
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title en">기본정보</h4>
+                                    <div class="card-btitle">
+                                        <p class="card-title-exp">결제를 요청할 구매자의 정보를 작성해주세요. 구매자의 결제동의 및 등록 후에 실제 결제요청이 가능합니다.</p>
+                                        <p>
+                                            <em class="point"></em>이 표시된 항목은 필수 입력값입니다.
+                                        </p>
+                                    </div>
                                 </div>
-                            </td>
-                            <th scope="row">
-                                <label for="customName">구매자 명</label>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <input type="text" class="form-control" id="customName" placeholder="구매자명을 입력해주세요.">
+                                <!-- //card-header -->
+                                <div class="card-body">
+                                    <table class="table table-view">
+                                        <caption>등록요청 기본정보 입력 폼</caption>
+                                        <colgroup>
+                                            <col width="180">
+                                            <col width="*">
+                                            <col width="180">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="customNo">고객번호</label>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <input type="number" class="form-control" id="customNo" min="0" placeholder="고객번호를 입력해주세요.">
+                                                </div>
+                                            </td>
+                                            <th scope="row">
+                                                <label for="customName">구매자 명</label>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <input type="text" class="form-control" id="customName" placeholder="구매자명을 입력해주세요.">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="customMobile">휴대폰번호</label><em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <input type="tel" class="form-control" id="customMobile" placeholder="휴대폰번호를 입력해주세요." required>
+                                                </div>
+                                            </td>
+                                            <th scope="row">
+                                                <label for="customEmail">이메일</label>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <input type="email" class="form-control" id="customEmail"
+                                                           placeholder="이메일 주소를 입력해주세요.">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="customMobile">휴대폰번호</label><em class="point"></em>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <input type="tel" class="form-control" id="customMobile" placeholder="휴대폰번호를 입력해주세요." required>
-                                </div>
-                            </td>
-                            <th scope="row">
-                                <label for="customEmail">이메일</label>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <input type="email" class="form-control" id="customEmail"
-                                           placeholder="이메일 주소를 입력해주세요.">
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- //card-body -->
-            </div>
-            <!-- //card -->
+                                <!-- //card-body -->
+                            </div>
+                            <!-- //card -->
 
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title en">등록요청 정보</h4>
-                    <div class="card-btitle">
-                        <p class="card-title-exp">결제요청 정보를 작성해주세요. 작성된 정보로 구매자에게 결제가 요청됩니다.</p>
-                        <p>
-                            <em class="point"></em>이 표시된 항목은 필수 입력값입니다.
-                        </p>
-                    </div>
-                </div>
-                <!-- //card-header -->
-                <div class="card-body">
-                    <table class="table table-view">
-                        <caption>등록요청 정보 입력 폼</caption>
-                        <colgroup>
-                            <col width="180">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <th scope="row">
-                                <label for="goodName">서비스 명</label><em class="point"></em>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <input type="text" class="form-control" id="goodName" maxlength="20" required
-                                           placeholder="서비스 명을 입력해주세요. (최대 20자)">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="expectPrice">예상 결제 금액</label>
-                            </th>
-                            <td>
-                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
-                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
-                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
-                                </el-button-group>
-                                <div class="form-wrap mt-3">
-                                    <div class="input-group-wrap">
-                                        <input type="number" class="form-control" name="expectPrice" id="expectPrice" min="1000"
-                                               max="10000000" placeholder="예상 결제 금액을 입력해주세요. (최소 1,000)">
-                                        <div class="input-joint">
-                                            원
-                                        </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title en">등록요청 정보</h4>
+                                    <div class="card-btitle">
+                                        <p class="card-title-exp">결제요청 정보를 작성해주세요. 작성된 정보로 구매자에게 결제가 요청됩니다.</p>
+                                        <p>
+                                            <em class="point"></em>이 표시된 항목은 필수 입력값입니다.
+                                        </p>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="maxPaymentPrice">결제 한도 금액(1회)</label>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <div class="input-group-wrap">
-                                        <input type="number" class="form-control" name="maxPaymentPrice" id="maxPaymentPrice" min="1000"
-                                               max="10000000" placeholder=" 결제요청 금액을 입력해주세요. (최소 1,000)">
-                                        <div class="input-joint">
-                                            원
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="reason">결제사유</label><em class="point"></em>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <select class="form-control custom-select" id="selectReason">
-                                        <option selected>직접입력</option>
-                                    </select>
-                                </div>
-                                <div class="mt-3">
+                                <!-- //card-header -->
+                                <div class="card-body">
+                                    <table class="table table-view">
+                                        <caption>등록요청 정보 입력 폼</caption>
+                                        <colgroup>
+                                            <col width="180">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="goodName">서비스 명</label><em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <input type="text" class="form-control" id="goodName" maxlength="20" required
+                                                           placeholder="서비스 명을 입력해주세요. (최대 20자)">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="expectPrice">예상 결제 금액</label>
+                                            </th>
+                                            <td>
+                                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
+                                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
+                                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
+                                                </el-button-group>
+                                                <div class="form-wrap mt-3">
+                                                    <div class="input-group-wrap">
+                                                        <input type="number" class="form-control" name="expectPrice" id="expectPrice" min="1000"
+                                                               max="10000000" placeholder="예상 결제 금액을 입력해주세요. (최소 1,000)">
+                                                        <div class="input-joint">
+                                                            원
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="maxPaymentPrice">결제 한도 금액(1회)</label>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <div class="input-group-wrap">
+                                                        <input type="number" class="form-control" name="maxPaymentPrice" id="maxPaymentPrice" min="1000"
+                                                               max="10000000" placeholder=" 결제요청 금액을 입력해주세요. (최소 1,000)">
+                                                        <div class="input-joint">
+                                                            원
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="reason">결제사유</label><em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <select class="form-control custom-select" id="selectReason">
+                                                        <option selected>직접입력</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mt-3">
                                     <textarea class="form-control" id="reason" rows="5"
                                               placeholder="결제 요청 시, 구매자에게 안내하는 상품의 상세 내용을 입력해주세요." required></textarea>
-                                </div>
-                                <span class="tip"><i class="xi-info-o"></i> 결제요청 사유에 대해 작성해주세요. 작성된 내용은 구매자에게 보내는 결제요청내용에서 보여집니다.</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="startLimitDate">결제 만료일</label>
-                            </th>
-                            <td>
-                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
-                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
-                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
-                                </el-button-group>
-                                <div class="form-wrap mt-3">
-                                    <div class="input-date-group">
-                                        <div class="input-date">
-                                            <input type="text" class="form-control fixed" id="startLimitDate" placeholder="연도/월/일">
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                                                </div>
+                                                <span class="tip"><i class="xi-info-o"></i> 결제요청 사유에 대해 작성해주세요. 작성된 내용은 구매자에게 보내는 결제요청내용에서 보여집니다.</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="startLimitDate">결제 만료일</label>
+                                            </th>
+                                            <td>
+                                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
+                                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
+                                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
+                                                </el-button-group>
+                                                <div class="form-wrap mt-3">
+                                                    <div class="input-date-group">
+                                                        <div class="input-date">
+                                                            <input type="text" class="form-control fixed" id="startLimitDate" placeholder="연도/월/일">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-                        <tr>
-                            <th scope="row">
-                                과세구분
-                            </th>
-                            <td>
-                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
-                                    <el-button size="medium" class="btn-toggle__active">과세</el-button>
-                                    <el-button size="medium">면세</el-button>
-                                </el-button-group>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                예상 결제일
-                            </th>
-                            <td>
-                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
-                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
-                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
-                                </el-button-group>
-                                <div class="mt-3">
-                                    <select class="form-control custom-select fixed" id="expectDateType "
-                                            name="expectDateType">
-                                        <option value="" disabled="" selected="">선택하세요</option>
-                                        <option value="MONTH">매월</option>
-                                        <option value="WEEK">매주</option>
-                                    </select>
-                                    <select class="form-control custom-select fixed ml-2" id="expectDateVal"
-                                            name="expectDateVal">
-                                        <option value="2">월요일</option>
-                                        <option value="3">화요일</option>
-                                        <option value="4">수요일</option>
-                                        <option value="5">목요일</option>
-                                        <option value="6">금요일</option>
-                                        <option value="7">토요일</option>
-                                        <option value="1">일요일</option>
-                                    </select>
+                                        <tr>
+                                            <th scope="row">
+                                                과세구분
+                                            </th>
+                                            <td>
+                                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
+                                                    <el-button size="medium" class="btn-toggle__active">과세</el-button>
+                                                    <el-button size="medium">면세</el-button>
+                                                </el-button-group>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                예상 결제일
+                                            </th>
+                                            <td>
+                                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
+                                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
+                                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
+                                                </el-button-group>
+                                                <div class="mt-3">
+                                                    <select class="form-control custom-select fixed" id="expectDateType "
+                                                            name="expectDateType">
+                                                        <option value="" disabled="" selected="">선택하세요</option>
+                                                        <option value="MONTH">매월</option>
+                                                        <option value="WEEK">매주</option>
+                                                    </select>
+                                                    <select class="form-control custom-select fixed ml-2" id="expectDateVal"
+                                                            name="expectDateVal">
+                                                        <option value="2">월요일</option>
+                                                        <option value="3">화요일</option>
+                                                        <option value="4">수요일</option>
+                                                        <option value="5">목요일</option>
+                                                        <option value="6">금요일</option>
+                                                        <option value="7">토요일</option>
+                                                        <option value="1">일요일</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <label for="confirmSelectAuthType">구매자 확인여부</label><em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <select class="form-control custom-select" id="confirmSelectAuthType"
+                                                            name="confirmSelectAuthType" required>
+                                                        <option value="SELECT" selected="">구매자 직접설정</option>
+                                                        <option value="CONFIRM">구매자 확인 후 결제</option>
+                                                        <option value="PASSWORD">구매자 확인+결제비밀번호 입력 후 결제</option>
+                                                    </select>
+                                                </div>
+                                                <span class="tip"><i class="xi-info-o"></i> 결제요청 시, 구매자가 결제내용을 확인 후 결제를 진행할 지 여부를 설정합니다.</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="confirmSelectAuthType">구매자 확인여부</label><em class="point"></em>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                    <select class="form-control custom-select" id="confirmSelectAuthType"
-                                            name="confirmSelectAuthType" required>
-                                        <option value="SELECT" selected="">구매자 직접설정</option>
-                                        <option value="CONFIRM">구매자 확인 후 결제</option>
-                                        <option value="PASSWORD">구매자 확인+결제비밀번호 입력 후 결제</option>
-                                    </select>
-                                </div>
-                                <span class="tip"><i class="xi-info-o"></i> 결제요청 시, 구매자가 결제내용을 확인 후 결제를 진행할 지 여부를 설정합니다.</span>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- //card-body -->
-            </div>
-            <!-- //card -->
-            <div class="btn-ct-bottom inline">
-                <button type="submit" class="btn btn-lg btn-primary rounded-sm">등록</button>
-            </div>
-        </form>
-    </div>
-    <!-- //page-body -->
+                                <!-- //card-body -->
+                            </div>
+                            <!-- //card -->
+                            <div class="btn-ct-bottom inline">
+                                <button type="submit" class="btn btn-lg btn-primary rounded-sm">등록</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- //page-body -->
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

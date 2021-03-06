@@ -34,10 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.jsp">유디페이 판매점</a></h1>
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
+
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                          <span class="btn_inn">
+                              <span><i class="xi-renew"></i></span>
+                              <span class="t">API 바로가기</span>
+                          </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
         </div>
-        <!-- //logo-box -->
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
 
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
@@ -60,61 +122,61 @@
                         </template>
                         <el-submenu index="2-1">
                             <template slot="title">원격결제</template>
-                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.jsp'">결제요청</router-link></el-menu-item>
-                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.jsp'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.html'">결제요청</router-link></el-menu-item>
+                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.html'">결제요청 (대량)</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.jsp'">링크결제</router-link></el-menu-item>
+                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.html'">링크결제</router-link></el-menu-item>
                         <el-submenu index="2-3">
                             <template slot="title">등록결제</template>
-                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.jsp'">등록요청</router-link></el-menu-item>
-                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.jsp'">등록내역</router-link></el-menu-item>
-                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.jsp'">등록요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.jsp'">결제요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.jsp'" >결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.html'">등록요청</router-link></el-menu-item>
+                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.html'">등록내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.html'">등록요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.html'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.html'" >결제내역</router-link></el-menu-item>
                         </el-submenu>
                         <el-submenu index="2-4">
                             <template slot="title">정기결제</template>
-                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.jsp'">승인요청</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.jsp'">승인요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">승인내역</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.jsp'">결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.html'">승인요청</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.html'">승인요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.html'">승인내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.html'">결제내역</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.jsp'">수기결제</router-link></el-menu-item>
+                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.html'">수기결제</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="3" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-list-dot depth1-ico"></i>
                             <span>결제현황</span>
                         </template>
-                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.jsp'">완료/취소</router-link></el-menu-item>
-                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">결제요청</router-link></el-menu-item>
-                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.jsp'">취소요청</router-link></el-menu-item>
+                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.html'">완료/취소</router-link></el-menu-item>
+                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.html'">결제요청</router-link></el-menu-item>
+                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.html'">취소요청</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="4" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-piggy-bank depth1-ico"></i>
                             <span>정산관리</span>
                         </template>
-                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.jsp'">정산안내</router-link></el-menu-item>
-                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.jsp'">정산내역</router-link></el-menu-item>
-                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.jsp'">익일정산 신청</router-link></el-menu-item>
-                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.jsp'">부가세 자료</router-link></el-menu-item>
+                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.html'">정산안내</router-link></el-menu-item>
+                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.html'">정산내역</router-link></el-menu-item>
+                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.html'">익일정산 신청</router-link></el-menu-item>
+                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.html'">부가세 자료</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="5" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-paper-o depth1-ico"></i>
                             <span>현금영수증</span>
                         </template>
-                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.jsp'">현금영수증 내역</router-link></el-menu-item>
-                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.jsp'">현금영수증 발행</router-link></el-menu-item>
+                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.html'">현금영수증 내역</router-link></el-menu-item>
+                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.html'">현금영수증 발행</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="6" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-box depth1-ico"></i>
                             <span>상품관리</span>
                         </template>
-                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.jsp'">상품 내역</router-link></el-menu-item>
-                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.jsp'">상품 등록</router-link></el-menu-item>
+                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.html'">상품 내역</router-link></el-menu-item>
+                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.html'">상품 등록</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="7" class="depth1-menu">
                         <template slot="title">
@@ -123,10 +185,10 @@
                         </template>
                         <el-submenu index="7-1">
                             <template slot="title">부계정 관리</template>
-                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.jsp'">부계정 내역</router-link></el-menu-item>
-                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.jsp'">부계정 등록</router-link></el-menu-item>
+                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.html'">부계정 내역</router-link></el-menu-item>
+                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.html'">부계정 등록</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.jsp'">부계정 매출</router-link></el-menu-item>
+                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.html'">부계정 매출</router-link></el-menu-item>
                     </el-submenu>
                     <el-menu-item index="8" class="depth1-menu" onclick="location.href='http://uddocs.net/v/udpay'" target="_blank">
                         <i class="xi-all depth1-ico"></i>
@@ -137,22 +199,22 @@
                             <i class="xi-cog depth1-ico"></i>
                             <span>설정</span>
                         </template>
-                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.jsp'">결제설정</router-link></el-menu-item>
-                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.jsp'">정보변경</router-link></el-menu-item>
-                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.jsp'">결제 옵션 설정</router-link></el-menu-item>
-                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.jsp'">정산 정보</router-link></el-menu-item>
+                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.html'">결제설정</router-link></el-menu-item>
+                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.html'">정보변경</router-link></el-menu-item>
+                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.html'">결제 옵션 설정</router-link></el-menu-item>
+                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.html'">정산 정보</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="10" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-message-o depth1-ico"></i>
                             <span>고객센터</span>
                         </template>
-                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.jsp'">공지사항</router-link></el-menu-item>
-                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.jsp'">자주묻는질문</router-link></el-menu-item>
+                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.html'">공지사항</router-link></el-menu-item>
+                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.html'">자주묻는질문</router-link></el-menu-item>
                         <el-submenu index="10-3">
                             <template slot="title">고객문의</template>
-                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.jsp'">문의내역</router-link></el-menu-item>
-                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.jsp'">문의하기</router-link></el-menu-item>
+                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.html'">문의내역</router-link></el-menu-item>
+                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.html'">문의하기</router-link></el-menu-item>
                         </el-submenu>
                     </el-submenu>
                 </el-menu>
@@ -193,955 +255,896 @@
         </nav>
         <!-- //sidebar -->
 
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.jsp">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.jsp">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.jsp'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-<div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">Dashboard</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-            </ol>
-        </div>
-    </div>
-<!-- //page-header -->
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">Dashboard</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- //page-header -->
 
-<div class="row page-body page-info-body">
-    <div class="col-12 col-md-4">
-        <!-- 클래스명 추가 =  정산가능상태(available) : 정산불가상태(unavailable) -->
-        <article class="card md my-info available">
-            <div class="card-header">
-                <h4 class="card-title">내 정보</h4>
-                <div class="float-right card-actions">
-                    <a href="" title="내 정보 변경하기">
-                        <i class="xi-cog"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="top">
-                    <div class="row justify-content-between">
-                        <div class="col-auto flex-grow-0">
-                            <!-- 판매점 이미지 -->
-                            <div class="" style="background: #fff; width:70px; height:70px; border-radius: 50%; overflow: hidden;">
+                    <div class="row page-body page-info-body">
+                        <div class="col-12 col-md-4">
+                            <!-- 클래스명 추가 =  정산가능상태(available) : 정산불가상태(unavailable) -->
+                            <article class="card md my-info available">
+                                <div class="card-header">
+                                    <h4 class="card-title">내 정보</h4>
+                                    <div class="float-right card-actions">
+                                        <a href="" title="내 정보 변경하기">
+                                            <i class="xi-cog"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="top">
+                                        <div class="row justify-content-between">
+                                            <div class="col-auto flex-grow-0">
+                                                <!-- 판매점 이미지 -->
+                                                <div class="" style="background: #fff; width:70px; height:70px; border-radius: 50%; overflow: hidden;">
 
+                                                </div>
+                                            </div>
+                                            <div class="col-auto flex-grow-1">
+                                                홍길동
+                                                <dl class="list-data-text is-white inline-layout inline-layout__fixed mt-3">
+                                                    <dt class="flex-item">아이디</dt>
+                                                    <dd class="flex-item">
+                                                        admin1234
+                                                    </dd>
+                                                </dl>
+                                                <dl class="list-data-text is-white inline-layout inline-layout__fixed mt-3">
+                                                    <dt class="flex-item">정산주기</dt>
+                                                    <dd class="flex-item">
+                                                        <div class="list-data-text is-white inline-layout stretch">
+                                                            <p class="flex-item ">D+3</p>
+                                                            <p class="flex-item">
+                                                                <a class="btn rounded-sm btn-white" @click="$router.push('/adjust/applyNextDay')">익일정산 신청</a>
+                                                            </p>
+                                                        </div>
+
+
+
+
+                                                    </dd>
+                                                </dl>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //top -->
+
+                                    <!-- available 일때, -->
+                                    <div class="bottom">
+                                        <h2 class="card-title">수수료</h2>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <dl class="list-data-text is-white inline-layout stretch">
+                                                    <dt>카드</dt>
+                                                    <dd>
+                                                        <p class="num-txt num-txt__sm">
+                                                            <strong>2.7</strong>
+                                                            <small>%</small>
+                                                        </p>
+                                                        <!--                                            {{feeInfo['CARD']||0 | calcSupplyFee}}%-->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-6">
+                                                <dl class="list-data-text is-white inline-layout stretch">
+                                                    <dt>휴대폰(실물)</dt>
+                                                    <dd>
+                                                        <p class="num-txt num-txt__sm">
+                                                            <strong>4.4</strong>
+                                                            <small>%</small>
+                                                        </p>
+                                                        <!--                                            {{feeInfo['MOBILE_GOODS']||0 | calcSupplyFee}}%-->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-6">
+                                                <dl class="list-data-text is-white inline-layout stretch">
+                                                    <dt>카카오</dt>
+                                                    <dd>
+                                                        <p class="num-txt num-txt__sm">
+                                                            <strong>2.9</strong>
+                                                            <small>%</small>
+                                                        </p>
+                                                        <!--                                            {{feeInfo['KAKAOPAY']||0 | calcSupplyFee}}%-->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="col-6">
+                                                <dl class="list-data-text is-white inline-layout stretch">
+                                                    <dt>휴대폰(디지털)</dt>
+                                                    <dd>
+                                                        <p class="num-txt num-txt__sm">
+                                                            <strong>4.4</strong>
+                                                            <small>%</small>
+                                                        </p>
+                                                        <!--                                            {{feeInfo['MOBILE_GOODS']||0 | calcSupplyFee}}%-->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //bottom -->
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- 선택일 결제,정산 상세 / 내 정보 -->
+                        <!--            <div class="col-12 col-md-4">-->
+                        <!--                <dashboard-calendar></dashboard-calendar>-->
+                        <!--            </div>-->
+
+                        <!-- 정산현황 -->
+                        <div class="col-12 col-md-4">
+                            <article class="card md">
+                                <div class="card-header">
+                                    <h4 class="card-title">오늘의 정산현황</h4>
+                                </div>
+                                <div class="card-body">
+
+                                </div>
+                            </article>
+                        </div>
+                        <!-- 결제현황 -->
+                        <div class="col-12 col-md-4">
+                            <dashboard-payment-info></dashboard-payment-info>
+                        </div>
+
+
+                        <!-- 월매출현황 / 구매자 결제패턴 분석 / 서비스 상세 -->
+                        <div class="col-12 col-md-8">
+                            <article class="card md">
+                                <div class="card-header">
+                                    <h4 class="card-title">결제현황 추이</h4>
+                                    <div class="float-right card-actions card-filter">
+                                        <select name="" id="" class="form-control custom-select custom-select-sm">
+                                            <option>전체</option>
+                                            <option>결제건수</option>
+                                            <option>결제금액</option>
+                                        </select>
+                                        <select name="" id="" class="form-control custom-select">
+                                            <option>전체</option>
+                                            <option>일주일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="graph-box">
+                                        <v-chart :options="lineChartOptions"></v-chart>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <article class="card md">
+                                <div class="card-header">
+                                    <h4 class="card-title">구매자 결제패턴 분석</h4>
+                                    <p class="card-btitle text-secondary">2020년 9월 11일 ~ 2020년 9월 18일</p>
+
+                                    <div class="float-right card-actions card-filter">
+                                        <select name="serviceChargePercent" id="serviceChargePercent" class="form-control custom-select">
+                                            <option>전체</option>
+                                            <option>일주일</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="graph-box">
+                                        <v-chart :options="pieChartOptions"></v-chart>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!--            <section class="col-12 col-md-4">-->
+                        <!--                <h4 class="invisible">그 외 연동 API 및 솔루션 소개</h4>-->
+                        <!--                <div class="card-row__deck">-->
+                        <!--                    <article class="card">-->
+                        <!--                        <h5 class="invisible">결제 API 연동</h5>-->
+                        <!--                        <div class="card-body card-body-flex">-->
+                        <!--                            <div class="system-link">-->
+                        <!--                                <div class="roundbox-wrap roundbox-wrap-md roundbox-primary-light">-->
+                        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                        <!--                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                        <!--                                    </svg>-->
+                        <!--                                    <span class="ico"><i class="xi-check"></i></span>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="system-link__text">-->
+                        <!--                                    <p class="sub-text md">-->
+                        <!--                                        모든 결제수단을 <br/>-->
+                        <!--                                        한번에 하나로 연동하세요.-->
+                        <!--                                    </p>-->
+                        <!--                                    <a href="#" class="btn btn-outline-primary rounded-pill mt-3">결제 API 연동 상세보기</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </article>-->
+                        <!--                    <article class="card">-->
+                        <!--                        <h5 class="invisible">솔루션 소개</h5>-->
+                        <!--                        <div class="card-body card-body-flex">-->
+                        <!--                            <div class="system-link">-->
+                        <!--                                <div class="roundbox-wrap roundbox-wrap-md roundbox-additional-light">-->
+                        <!--                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                        <!--                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                        <!--                                    </svg>-->
+                        <!--                                    <span class="ico"><i class="xi-cog"></i></span>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="system-link__text">-->
+                        <!--                                    <p class="sub-text md">-->
+                        <!--                                        간편하고 쉽게 연동 가능한 <br/>-->
+                        <!--                                        다양한 솔루션을 소개합니다.-->
+                        <!--                                    </p>-->
+                        <!--                                    <a href="#" class="btn btn-outline-additional rounded-pill mt-3">솔루션 소개 상세보기</a>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </article>-->
+                        <!--                </div>-->
+                        <!--            </section>-->
+
+                        <!-- 공지사항 / 자주묻는질문 -->
+                        <div class="col-12 col-md-7">
+                            <article class="card sm card-col__deck">
+                                <div class="card-header">
+                                    <h4 class="card-title">공지사항</h4>
+                                    <a href="list_notice.html" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="bbs-latest">
+                                        <li onclick="">
+                                            <p class="bbs-subject">
+                                                <span class="bbs-cate">전체공지</span>
+                                                <span>2019년 10월 15일 서버 이전작업으로 인한</span>
+                                            </p>
+                                            <p class="bbs-date">
+                                                2019.11.12
+                                            </p>
+                                        </li>
+                                        <li onclick="">
+                                            <p class="bbs-subject">
+                                                <span class="bbs-cate">서버작업</span>
+                                                <span>2019년 10월 15일 서버 이전작업으로 인한</span>
+                                            </p>
+                                            <p class="bbs-date">
+                                                2019.11.12
+                                            </p>
+                                        </li>
+                                        <li onclick="">
+                                            <p class="bbs-subject">
+                                                <span class="bbs-cate">전체공지</span>
+                                                <span>2019년 10월 카드사 무이자 할부 안내</span>
+                                            </p>
+                                            <p class="bbs-date">
+                                                2019.11.12
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <!-- //bbs-latest -->
+                                </div>
+                            </article>
+                            <!-- //card-col__deck -->
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <article class="card sm card-col__deck">
+                                <div class="card-header">
+                                    <h4 class="card-title">자주묻는질문</h4>
+                                    <a href="list_faq.html" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="bbs-latest">
+                                        <li onclick="">
+                                            <p class="bbs-subject">
+                                                <span class="bbs-cate">결제</span>
+                                                <span>결제 취소는 어떻게 하나요?</span>
+                                            </p>
+                                        </li>
+                                        <li onclick="">
+                                            <p class="bbs-subject">
+                                                <span class="bbs-cate">결제</span>
+                                                <span>원격결제는 무엇인가요?</span>
+                                            </p>
+                                        </li>
+                                        <li onclick="">
+                                            <p class="bbs-subject">
+                                                <span class="bbs-cate">수수료</span>
+                                                <span>결제수수료는 어떻게 되나요?</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <!-- //bbs-latest -->
+                                </div>
+                            </article>
+                            <!-- //card-col__deck -->
+                        </div>
+
+                        <!-- 결제요청창 -->
+                        <DashboardPaymentReq v-show="showPaymentModel" @close="showPaymentModel = false"></DashboardPaymentReq>
+
+                    </div>
+                    <!-- //page-info-body -->
+
+                    <button type="button" class="btn-open-payment" title="결제요청 바로하기"><i class="xi-pen"></i></button>
+
+                    <el-dialog :visible.sync="showModal" class="sm agree-dialog" :before-close="close">
+                        <div slot="title">
+                            <div class="el-dialog__title">
+                                가맹점 유의사항 및 약관 안내
                             </div>
                         </div>
-                        <div class="col-auto flex-grow-1">
-                            홍길동
-                            <dl class="list-data-text is-white inline-layout inline-layout__fixed mt-3">
-                                <dt class="flex-item">아이디</dt>
-                                <dd class="flex-item">
-                                    admin1234
-                                </dd>
-                            </dl>
-                            <dl class="list-data-text is-white inline-layout inline-layout__fixed mt-3">
-                                <dt class="flex-item">정산주기</dt>
-                                <dd class="flex-item">
-                                    <div class="list-data-text is-white inline-layout stretch">
-                                        <p class="flex-item ">D+3</p>
-                                        <p class="flex-item">
-                                            <a class="btn rounded-sm btn-white" @click="$router.push('/adjust/applyNextDay')">익일정산 신청</a>
-                                        </p>
+                        <div class="dialog-contents">
+                            <div class="agree-info">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="checkList" id="check1">
+                                    <label class="custom-control-label" for="check1">
+                                        <strong>판매점계약 및 보증보험안내, 유의업종 및 리스크 안내, 약관에 전부 동의합니다.</strong>
+                                    </label>
+                                </div>
+
+                                <div class="agree-info-box__wrap">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="checkList" id="check2">
+                                        <label class="custom-control-label" for="check2">
+                                            판매점 계약 및 보증보험 안내 <span class="text-primary">(필수)</span>
+                                        </label>
                                     </div>
+                                    <div class="agree-info-box">
+                                        <ul class="bullet-circle-list">
+                                            <li>
+                                                ㈜유디아이디는 건당 결제금액이 10만 원 이상이거나, 월간 결제금액이 300만 원 이상인 경우 별도 서면계약서 및 보증보험 제출을 요청드릴 수 있습니다.
+                                            </li>
+                                        </ul>
+                                        <div class="agree-info-box__btns row mt-2">
+                                            <div class="col-6">
+                                                <a href="" target="_blank" class="btn btn-block btn-outline-secondary">판매자 계약안내 보기</a>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="" target="_blank" class="btn btn-block btn-outline-secondary">보증보험 안내 보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="agree-info-box__wrap">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="checkList" id="check3">
+                                        <label class="custom-control-label" for="check3">
+                                            유의업종 및 리스크 안내 <span class="text-primary">(필수)</span>
+                                        </label>
+                                    </div>
+                                    <div class="agree-info-box">
+                                        <ul class="bullet-circle-list">
+                                            <li>
+                                                유의업종 및 리스크 업종의 경우 당사에서 요청하는 기간과 금액에 해당하는 보증보험에 대해 제출이 필요할 수 있습니다.
+                                            </li>
+                                            <li>
+                                                실물 상품을 제외한 상품판매에 대해서는 추가로 수수료가 조정될 수 있습니다. (방문판매, 다단계판매 포함)
+                                            </li>
+                                        </ul>
+                                        <div class="mt-2">
+                                            <a href="" target="_blank" class="btn btn-block btn-outline-secondary">유의업종 및 리스크업종 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-
-
-                                </dd>
-                            </dl>
-
+                                <div class="agree-info-box__wrap">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="checkList" id="check4">
+                                        <label class="custom-control-label" for="check4">
+                                            약관동의 <span class="text-primary">(필수)</span>
+                                        </label>
+                                    </div>
+                                    <div class="agree-info-box">
+                                        <div class="row justify-content-between">
+                                            <div class="col-full-auto">
+                                                서비스 이용약관
+                                            </div>
+                                            <div class="col-auto">
+                                                <a class="btn btn-xs btn-outline-secondary" href="#" target="_blank">전문보기</a>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-between mt-2">
+                                            <div class="col-full-auto">
+                                                개인정보처리방침
+                                            </div>
+                                            <div class="col-auto">
+                                                <a class="btn btn-xs btn-outline-secondary" href="#" target="_blank">전문보기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="tip"><i class="xi-info-o"></i> 요청 서류에 대해 미제출 시 결제대금의 정산이 보류될 수 있습니다.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- //top -->
-
-                <!-- available 일때, -->
-                <div class="bottom">
-                    <h2 class="card-title">수수료</h2>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <dl class="list-data-text is-white inline-layout stretch">
-                                <dt>카드</dt>
-                                <dd>
-                                    <p class="num-txt num-txt__sm">
-                                        <strong>2.7</strong>
-                                        <small>%</small>
-                                    </p>
-                                    <!--                                            {{feeInfo['CARD']||0 | calcSupplyFee}}%-->
-                                </dd>
-                            </dl>
+                        <div slot="footer">
+                            <button type="button" class="btn btn-lg btn-primary" @click="submit">동의 후 닫기</button>
                         </div>
-                        <div class="col-6">
-                            <dl class="list-data-text is-white inline-layout stretch">
-                                <dt>휴대폰(실물)</dt>
-                                <dd>
-                                    <p class="num-txt num-txt__sm">
-                                        <strong>4.4</strong>
-                                        <small>%</small>
-                                    </p>
-                                    <!--                                            {{feeInfo['MOBILE_GOODS']||0 | calcSupplyFee}}%-->
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-6">
-                            <dl class="list-data-text is-white inline-layout stretch">
-                                <dt>카카오</dt>
-                                <dd>
-                                    <p class="num-txt num-txt__sm">
-                                        <strong>2.9</strong>
-                                        <small>%</small>
-                                    </p>
-                                    <!--                                            {{feeInfo['KAKAOPAY']||0 | calcSupplyFee}}%-->
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-6">
-                            <dl class="list-data-text is-white inline-layout stretch">
-                                <dt>휴대폰(디지털)</dt>
-                                <dd>
-                                    <p class="num-txt num-txt__sm">
-                                        <strong>4.4</strong>
-                                        <small>%</small>
-                                    </p>
-                                    <!--                                            {{feeInfo['MOBILE_GOODS']||0 | calcSupplyFee}}%-->
-                                </dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <!-- //bottom -->
-            </div>
-        </article>
-    </div>
+                    </el-dialog>
 
-    <!-- 선택일 결제,정산 상세 / 내 정보 -->
-    <!--            <div class="col-12 col-md-4">-->
-    <!--                <dashboard-calendar></dashboard-calendar>-->
-    <!--            </div>-->
-
-    <!-- 정산현황 -->
-    <div class="col-12 col-md-4">
-        <article class="card md">
-            <div class="card-header">
-                <h4 class="card-title">오늘의 정산현황</h4>
-            </div>
-            <div class="card-body">
-
-            </div>
-        </article>
-    </div>
-    <!-- 결제현황 -->
-    <div class="col-12 col-md-4">
-        <dashboard-payment-info></dashboard-payment-info>
-    </div>
-
-
-    <!-- 월매출현황 / 구매자 결제패턴 분석 / 서비스 상세 -->
-    <div class="col-12 col-md-8">
-        <article class="card md">
-            <div class="card-header">
-                <h4 class="card-title">결제현황 추이</h4>
-                <div class="float-right card-actions card-filter">
-                    <select name="" id="" class="form-control custom-select custom-select-sm">
-                        <option>전체</option>
-                        <option>결제건수</option>
-                        <option>결제금액</option>
-                    </select>
-                    <select name="" id="" class="form-control custom-select">
-                        <option>전체</option>
-                        <option>일주일</option>
-                    </select>
-                </div>
-            </div>
-            <div class="card-body text-center">
-                <div class="graph-box">
-                    <v-chart :options="lineChartOptions"></v-chart>
-                </div>
-            </div>
-        </article>
-    </div>
-    <div class="col-12 col-md-4">
-        <article class="card md">
-            <div class="card-header">
-                <h4 class="card-title">구매자 결제패턴 분석</h4>
-                <p class="card-btitle text-secondary">2020년 9월 11일 ~ 2020년 9월 18일</p>
-
-                <div class="float-right card-actions card-filter">
-                    <select name="serviceChargePercent" id="serviceChargePercent" class="form-control custom-select">
-                        <option>전체</option>
-                        <option>일주일</option>
-                    </select>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="graph-box">
-                    <v-chart :options="pieChartOptions"></v-chart>
-                </div>
-            </div>
-        </article>
-    </div>
-    <!--            <section class="col-12 col-md-4">-->
-    <!--                <h4 class="invisible">그 외 연동 API 및 솔루션 소개</h4>-->
-    <!--                <div class="card-row__deck">-->
-    <!--                    <article class="card">-->
-    <!--                        <h5 class="invisible">결제 API 연동</h5>-->
-    <!--                        <div class="card-body card-body-flex">-->
-    <!--                            <div class="system-link">-->
-    <!--                                <div class="roundbox-wrap roundbox-wrap-md roundbox-primary-light">-->
-    <!--                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-    <!--                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-    <!--                                    </svg>-->
-    <!--                                    <span class="ico"><i class="xi-check"></i></span>-->
-    <!--                                </div>-->
-    <!--                                <div class="system-link__text">-->
-    <!--                                    <p class="sub-text md">-->
-    <!--                                        모든 결제수단을 <br/>-->
-    <!--                                        한번에 하나로 연동하세요.-->
-    <!--                                    </p>-->
-    <!--                                    <a href="#" class="btn btn-outline-primary rounded-pill mt-3">결제 API 연동 상세보기</a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </article>-->
-    <!--                    <article class="card">-->
-    <!--                        <h5 class="invisible">솔루션 소개</h5>-->
-    <!--                        <div class="card-body card-body-flex">-->
-    <!--                            <div class="system-link">-->
-    <!--                                <div class="roundbox-wrap roundbox-wrap-md roundbox-additional-light">-->
-    <!--                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-    <!--                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-    <!--                                    </svg>-->
-    <!--                                    <span class="ico"><i class="xi-cog"></i></span>-->
-    <!--                                </div>-->
-    <!--                                <div class="system-link__text">-->
-    <!--                                    <p class="sub-text md">-->
-    <!--                                        간편하고 쉽게 연동 가능한 <br/>-->
-    <!--                                        다양한 솔루션을 소개합니다.-->
-    <!--                                    </p>-->
-    <!--                                    <a href="#" class="btn btn-outline-additional rounded-pill mt-3">솔루션 소개 상세보기</a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </article>-->
-    <!--                </div>-->
-    <!--            </section>-->
-
-    <!-- 공지사항 / 자주묻는질문 -->
-    <div class="col-12 col-md-7">
-        <article class="card sm card-col__deck">
-            <div class="card-header">
-                <h4 class="card-title">공지사항</h4>
-                <a href="list_notice.jsp" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
-            </div>
-            <div class="card-body">
-                <ul class="bbs-latest">
-                    <li onclick="">
-                        <p class="bbs-subject">
-                            <span class="bbs-cate">전체공지</span>
-                            <span>2019년 10월 15일 서버 이전작업으로 인한</span>
-                        </p>
-                        <p class="bbs-date">
-                            2019.11.12
-                        </p>
-                    </li>
-                    <li onclick="">
-                        <p class="bbs-subject">
-                            <span class="bbs-cate">서버작업</span>
-                            <span>2019년 10월 15일 서버 이전작업으로 인한</span>
-                        </p>
-                        <p class="bbs-date">
-                            2019.11.12
-                        </p>
-                    </li>
-                    <li onclick="">
-                        <p class="bbs-subject">
-                            <span class="bbs-cate">전체공지</span>
-                            <span>2019년 10월 카드사 무이자 할부 안내</span>
-                        </p>
-                        <p class="bbs-date">
-                            2019.11.12
-                        </p>
-                    </li>
-                </ul>
-                <!-- //bbs-latest -->
-            </div>
-        </article>
-        <!-- //card-col__deck -->
-    </div>
-    <div class="col-12 col-md-5">
-        <article class="card sm card-col__deck">
-            <div class="card-header">
-                <h4 class="card-title">자주묻는질문</h4>
-                <a href="list_faq.jsp" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>
-            </div>
-            <div class="card-body">
-                <ul class="bbs-latest">
-                    <li onclick="">
-                        <p class="bbs-subject">
-                            <span class="bbs-cate">결제</span>
-                            <span>결제 취소는 어떻게 하나요?</span>
-                        </p>
-                    </li>
-                    <li onclick="">
-                        <p class="bbs-subject">
-                            <span class="bbs-cate">결제</span>
-                            <span>원격결제는 무엇인가요?</span>
-                        </p>
-                    </li>
-                    <li onclick="">
-                        <p class="bbs-subject">
-                            <span class="bbs-cate">수수료</span>
-                            <span>결제수수료는 어떻게 되나요?</span>
-                        </p>
-                    </li>
-                </ul>
-                <!-- //bbs-latest -->
-            </div>
-        </article>
-        <!-- //card-col__deck -->
-    </div>
-
-    <!-- 결제요청창 -->
-    <DashboardPaymentReq v-show="showPaymentModel" @close="showPaymentModel = false"></DashboardPaymentReq>
-
-</div>
-<!-- //page-info-body -->
-
-<button type="button" class="btn-open-payment" title="결제요청 바로하기"><i class="xi-pen"></i></button>
-
-<el-dialog :visible.sync="showModal" class="sm agree-dialog" :before-close="close">
-    <div slot="title">
-        <div class="el-dialog__title">
-            가맹점 유의사항 및 약관 안내
-        </div>
-    </div>
-    <div class="dialog-contents">
-        <div class="agree-info">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="checkList" id="check1">
-                <label class="custom-control-label" for="check1">
-                    <strong>판매점계약 및 보증보험안내, 유의업종 및 리스크 안내, 약관에 전부 동의합니다.</strong>
-                </label>
-            </div>
-
-            <div class="agree-info-box__wrap">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" name="checkList" id="check2">
-                    <label class="custom-control-label" for="check2">
-                        판매점 계약 및 보증보험 안내 <span class="text-primary">(필수)</span>
-                    </label>
-                </div>
-                <div class="agree-info-box">
-                    <ul class="bullet-circle-list">
-                        <li>
-                            ㈜유디아이디는 건당 결제금액이 10만 원 이상이거나, 월간 결제금액이 300만 원 이상인 경우 별도 서면계약서 및 보증보험 제출을 요청드릴 수 있습니다.
-                        </li>
-                    </ul>
-                    <div class="agree-info-box__btns row mt-2">
-                        <div class="col-6">
-                            <a href="" target="_blank" class="btn btn-block btn-outline-secondary">판매자 계약안내 보기</a>
-                        </div>
-                        <div class="col-6">
-                            <a href="" target="_blank" class="btn btn-block btn-outline-secondary">보증보험 안내 보기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="agree-info-box__wrap">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" name="checkList" id="check3">
-                    <label class="custom-control-label" for="check3">
-                        유의업종 및 리스크 안내 <span class="text-primary">(필수)</span>
-                    </label>
-                </div>
-                <div class="agree-info-box">
-                    <ul class="bullet-circle-list">
-                        <li>
-                            유의업종 및 리스크 업종의 경우 당사에서 요청하는 기간과 금액에 해당하는 보증보험에 대해 제출이 필요할 수 있습니다.
-                        </li>
-                        <li>
-                            실물 상품을 제외한 상품판매에 대해서는 추가로 수수료가 조정될 수 있습니다. (방문판매, 다단계판매 포함)
-                        </li>
-                    </ul>
-                    <div class="mt-2">
-                        <a href="" target="_blank" class="btn btn-block btn-outline-secondary">유의업종 및 리스크업종 보기</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="agree-info-box__wrap">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" name="checkList" id="check4">
-                    <label class="custom-control-label" for="check4">
-                        약관동의 <span class="text-primary">(필수)</span>
-                    </label>
-                </div>
-                <div class="agree-info-box">
-                    <div class="row justify-content-between">
-                        <div class="col-full-auto">
-                            서비스 이용약관
-                        </div>
-                        <div class="col-auto">
-                            <a class="btn btn-xs btn-outline-secondary" href="#" target="_blank">전문보기</a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between mt-2">
-                        <div class="col-full-auto">
-                            개인정보처리방침
-                        </div>
-                        <div class="col-auto">
-                            <a class="btn btn-xs btn-outline-secondary" href="#" target="_blank">전문보기</a>
-                        </div>
-                    </div>
-                </div>
-                <p class="tip"><i class="xi-info-o"></i> 요청 서류에 대해 미제출 시 결제대금의 정산이 보류될 수 있습니다.</p>
-            </div>
-        </div>
-    </div>
-    <div slot="footer">
-        <button type="button" class="btn btn-lg btn-primary" @click="submit">동의 후 닫기</button>
-    </div>
-</el-dialog>
-
-    <!--<div class="row card-wrap page-body page-info-body">-->
-        <!--&lt;!&ndash; 선택일 결제,정산 상세 / 내 정보 &ndash;&gt;-->
-        <!--<div class="col-12 col-md-4">-->
-            <!--<article class="card md">-->
-                <!--<div class="card-header invisible">-->
+                    <!--<div class="row card-wrap page-body page-info-body">-->
+                    <!--&lt;!&ndash; 선택일 결제,정산 상세 / 내 정보 &ndash;&gt;-->
+                    <!--<div class="col-12 col-md-4">-->
+                    <!--<article class="card md">-->
+                    <!--<div class="card-header invisible">-->
                     <!--<h4 class="card-title sm">-->
-                        <!--결제/정산현황 일자선택-->
+                    <!--결제/정산현황 일자선택-->
                     <!--</h4>-->
-                <!--</div>-->
-                <!--<div class="card-body text-center">-->
+                    <!--</div>-->
+                    <!--<div class="card-body text-center">-->
                     <!--&lt;!&ndash; 캘린더 : bootstrap datepicker inline  &ndash;&gt;-->
                     <!--<div id="datepicker1"></div>-->
 
                     <!--&lt;!&ndash;  fullcalendar 로 작업 들어가야 되요! &ndash;&gt;-->
-                <!--</div>-->
-            <!--</article>-->
-        <!--</div>-->
-        <!--<div class="col-12 col-md-4">-->
-            <!--<article class="card md">-->
-                <!--<div class="card-header text-center">-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-md-4">-->
+                    <!--<article class="card md">-->
+                    <!--<div class="card-header text-center">-->
                     <!--<h4 class="card-title sm">-->
-                        <!--<span>2019.9.13</span> <span>금</span>-->
-                        <!--<span class="invisible">- 결제/정산현황</span>-->
+                    <!--<span>2019.9.13</span> <span>금</span>-->
+                    <!--<span class="invisible">- 결제/정산현황</span>-->
                     <!--</h4>-->
-                <!--</div>-->
-                <!--<div class="card-body text-center">-->
+                    <!--</div>-->
+                    <!--<div class="card-body text-center">-->
                     <!--<div class="sum-list__wrap">-->
-                        <!--<dl class="d-flex flex-wrap">-->
-                            <!--<dt class="flex-item align-top">-->
-                                <!--<div class="roundbox-wrap roundbox-primary mr-4">-->
-                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-                                    <!--</svg>-->
-                                    <!--<span class="txt">결제</span>-->
-                                <!--</div>-->
-                            <!--</dt>-->
-                            <!--<dd class="flex-item flex-grow-1">-->
-                                <!--<dl class="d-flex flex-wrap justify-content-between">-->
-                                    <!--<dt class="flex-item">-->
-                                        <!--완료-->
-                                    <!--</dt>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-primary">-->
-                                            <!--<strong>13</strong>-->
-                                            <!--<small>건</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-primary">-->
-                                            <!--<strong>-->
-                                                <!--760,000-->
-                                            <!--</strong>-->
-                                            <!--<small>원</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                <!--</dl>-->
-                                <!--<dl class="d-flex flex-wrap justify-content-between">-->
-                                    <!--<dt class="flex-item">-->
-                                        <!--요청-->
-                                    <!--</dt>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-additional">-->
-                                            <!--<strong>13</strong>-->
-                                            <!--<small>건</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-additional">-->
-                                            <!--<strong>760,000</strong>-->
-                                            <!--<small>원</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                <!--</dl>-->
-                                <!--<dl class="d-flex flex-wrap justify-content-between">-->
-                                    <!--<dt class="flex-item">-->
-                                        <!--취소-->
-                                    <!--</dt>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-danger">-->
-                                            <!--<strong>13</strong>-->
-                                            <!--<small>건</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-danger">-->
-                                            <!--<strong>760,000</strong>-->
-                                            <!--<small>원</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                <!--</dl>-->
-                            <!--</dd>-->
-                        <!--</dl>-->
-                        <!--<dl class="d-flex flex-wrap">-->
-                            <!--<dt class="flex-item">-->
-                                <!--<div class="roundbox-wrap roundbox-info mr-4">-->
-                                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-                                        <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-                                    <!--</svg>-->
-                                    <!--<span class="txt">정산</span>-->
-                                <!--</div>-->
-                            <!--</dt>-->
-                            <!--<dd class="flex-item flex-grow-1">-->
-                                <!--<dl class="d-flex flex-wrap justify-content-between">-->
-                                    <!--<dt class="flex-item">-->
-                                        <!--완료-->
-                                    <!--</dt>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-success">-->
-                                            <!--<strong>13</strong>-->
-                                            <!--<small>건</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-success">-->
-                                            <!--<strong>760,000</strong>-->
-                                            <!--<small>원</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                <!--</dl>-->
-                                <!--<dl class="d-flex flex-wrap justify-content-between">-->
-                                    <!--<dt class="flex-item">-->
-                                        <!--대기-->
-                                    <!--</dt>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-info">-->
-                                            <!--<strong>13</strong>-->
-                                            <!--<small>건</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                    <!--<dd class="flex-item">-->
-                                        <!--<p class="num-txt text-info">-->
-                                            <!--<strong>760,000</strong>-->
-                                            <!--<small>원</small>-->
-                                        <!--</p>-->
-                                    <!--</dd>-->
-                                <!--</dl>-->
-                            <!--</dd>-->
-                        <!--</dl>-->
+                    <!--<dl class="d-flex flex-wrap">-->
+                    <!--<dt class="flex-item align-top">-->
+                    <!--<div class="roundbox-wrap roundbox-primary mr-4">-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                    <!--</svg>-->
+                    <!--<span class="txt">결제</span>-->
+                    <!--</div>-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item flex-grow-1">-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between">-->
+                    <!--<dt class="flex-item">-->
+                    <!--완료-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-primary">-->
+                    <!--<strong>13</strong>-->
+                    <!--<small>건</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-primary">-->
+                    <!--<strong>-->
+                    <!--760,000-->
+                    <!--</strong>-->
+                    <!--<small>원</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between">-->
+                    <!--<dt class="flex-item">-->
+                    <!--요청-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-additional">-->
+                    <!--<strong>13</strong>-->
+                    <!--<small>건</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-additional">-->
+                    <!--<strong>760,000</strong>-->
+                    <!--<small>원</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between">-->
+                    <!--<dt class="flex-item">-->
+                    <!--취소-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-danger">-->
+                    <!--<strong>13</strong>-->
+                    <!--<small>건</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-danger">-->
+                    <!--<strong>760,000</strong>-->
+                    <!--<small>원</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<dl class="d-flex flex-wrap">-->
+                    <!--<dt class="flex-item">-->
+                    <!--<div class="roundbox-wrap roundbox-info mr-4">-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                    <!--</svg>-->
+                    <!--<span class="txt">정산</span>-->
+                    <!--</div>-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item flex-grow-1">-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between">-->
+                    <!--<dt class="flex-item">-->
+                    <!--완료-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-success">-->
+                    <!--<strong>13</strong>-->
+                    <!--<small>건</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-success">-->
+                    <!--<strong>760,000</strong>-->
+                    <!--<small>원</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between">-->
+                    <!--<dt class="flex-item">-->
+                    <!--대기-->
+                    <!--</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-info">-->
+                    <!--<strong>13</strong>-->
+                    <!--<small>건</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt text-info">-->
+                    <!--<strong>760,000</strong>-->
+                    <!--<small>원</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
 
                     <!--</div>-->
-                <!--</div>-->
-            <!--</article>-->
-        <!--</div>-->
-        <!--<div class="col-12 col-md-4">-->
-            <!--&lt;!&ndash; 클래스명 추가 =  정산가능상태(available) : 정산불가상태(unavailable) &ndash;&gt;-->
-            <!--<article class="card md my-info unavailable">-->
-                <!--<div class="card-header">-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-md-4">-->
+                    <!--&lt;!&ndash; 클래스명 추가 =  정산가능상태(available) : 정산불가상태(unavailable) &ndash;&gt;-->
+                    <!--<article class="card md my-info unavailable">-->
+                    <!--<div class="card-header">-->
                     <!--<h4 class="card-title">내 정보</h4>-->
-                <!--</div>-->
-                <!--<div class="card-body">-->
+                    <!--</div>-->
+                    <!--<div class="card-body">-->
                     <!--<div class="top">-->
-                        <!--<ul class="my-fee-info">-->
-                            <!--<li>-->
-                                <!--<div class="linkage">-->
-                                    <!--<div class="roundbox-wrap roundbox-info-white">-->
-                                        <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-                                            <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-                                        <!--</svg>-->
-                                        <!--<span class="ico"><i class="xi-credit-card"></i></span>-->
-                                    <!--</div>-->
-                                    <!--<dl class="d-flex flex-wrap justify-content-between mt-3">-->
-                                        <!--<dt class="flex-item">카드 수수료</dt>-->
-                                        <!--<dd class="flex-item">-->
-                                            <!--<p class="num-txt">-->
-                                                <!--<strong>2.7</strong>-->
-                                                <!--<small>%</small>-->
-                                            <!--</p>-->
-                                        <!--</dd>-->
-                                    <!--</dl>-->
-                                <!--</div>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<div class="linkage">-->
-                                    <!--<div class="roundbox-wrap roundbox-info-white">-->
-                                        <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-                                            <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-                                        <!--</svg>-->
-                                        <!--<span class="ico"><i class="xi-mobile"></i></span>-->
-                                    <!--</div>-->
-                                    <!--<dl class="d-flex flex-wrap justify-content-between mt-3">-->
-                                        <!--<dt class="flex-item">휴대폰 수수료</dt>-->
-                                        <!--<dd class="flex-item">-->
-                                            <!--<p class="num-txt">-->
-                                                <!--<strong>3.6</strong>-->
-                                                <!--<small>%</small>-->
-                                            <!--</p>-->
-                                        <!--</dd>-->
-                                    <!--</dl>-->
-                                <!--</div>-->
-                            <!--</li>-->
-                        <!--</ul>-->
+                    <!--<ul class="my-fee-info">-->
+                    <!--<li>-->
+                    <!--<div class="linkage">-->
+                    <!--<div class="roundbox-wrap roundbox-info-white">-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                    <!--</svg>-->
+                    <!--<span class="ico"><i class="xi-credit-card"></i></span>-->
+                    <!--</div>-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between mt-3">-->
+                    <!--<dt class="flex-item">카드 수수료</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt">-->
+                    <!--<strong>2.7</strong>-->
+                    <!--<small>%</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<div class="linkage">-->
+                    <!--<div class="roundbox-wrap roundbox-info-white">-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                    <!--</svg>-->
+                    <!--<span class="ico"><i class="xi-mobile"></i></span>-->
+                    <!--</div>-->
+                    <!--<dl class="d-flex flex-wrap justify-content-between mt-3">-->
+                    <!--<dt class="flex-item">휴대폰 수수료</dt>-->
+                    <!--<dd class="flex-item">-->
+                    <!--<p class="num-txt">-->
+                    <!--<strong>3.6</strong>-->
+                    <!--<small>%</small>-->
+                    <!--</p>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--</ul>-->
                     <!--</div>-->
                     <!--&lt;!&ndash; //top &ndash;&gt;-->
 
                     <!--&lt;!&ndash; available 일때, &ndash;&gt;-->
                     <!--<div class="bottom">-->
-                        <!--<dl class="d-flex my-adjust-info">-->
-                            <!--<dt>정산주기</dt>-->
-                            <!--<dd>영업일 기준 +3일</dd>-->
-                        <!--</dl>-->
-                        <!--<dl class="d-flex my-adjust-info">-->
-                            <!--<dt>정산주기</dt>-->
-                            <!--<dd>-->
-                                <!--<span>우리은행 </span>-->
-                                <!--<span> (12346****550155)</span>-->
-                            <!--</dd>-->
-                        <!--</dl>-->
-                        <!--<div class="d-flex my-adjust-info__wrap">-->
-                            <!--<dl class="d-flex my-adjust-info">-->
-                                <!--<dt>정산상태</dt>-->
-                                <!--<dd><i class="xi-check"></i> <span>사용가능</span></dd>-->
-                            <!--</dl>-->
-                            <!--<dl class="d-flex my-adjust-info">-->
-                                <!--<dt>정산서류</dt>-->
-                                <!--<dd><i class="xi-check"></i> <span>제출완료</span></dd>-->
-                            <!--</dl>-->
-                        <!--</div>-->
+                    <!--<dl class="d-flex my-adjust-info">-->
+                    <!--<dt>정산주기</dt>-->
+                    <!--<dd>영업일 기준 +3일</dd>-->
+                    <!--</dl>-->
+                    <!--<dl class="d-flex my-adjust-info">-->
+                    <!--<dt>정산주기</dt>-->
+                    <!--<dd>-->
+                    <!--<span>우리은행 </span>-->
+                    <!--<span> (12346****550155)</span>-->
+                    <!--</dd>-->
+                    <!--</dl>-->
+                    <!--<div class="d-flex my-adjust-info__wrap">-->
+                    <!--<dl class="d-flex my-adjust-info">-->
+                    <!--<dt>정산상태</dt>-->
+                    <!--<dd><i class="xi-check"></i> <span>사용가능</span></dd>-->
+                    <!--</dl>-->
+                    <!--<dl class="d-flex my-adjust-info">-->
+                    <!--<dt>정산서류</dt>-->
+                    <!--<dd><i class="xi-check"></i> <span>제출완료</span></dd>-->
+                    <!--</dl>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--&lt;!&ndash; //bottom &ndash;&gt;-->
 
                     <!--&lt;!&ndash; unavailable 일때, &ndash;&gt;-->
                     <!--<div class="bottom text-center">-->
-                        <!--<p class="sub-text md text-white">-->
-                            <!--<i class="xi-info-o"></i> 현재 정산이 불가능한 상태입니다.-->
-                        <!--</p>-->
-                        <!--<a href="set_adjust.jsp" class="btn btn-white rounded-pill">정산안내보기</a>-->
+                    <!--<p class="sub-text md text-white">-->
+                    <!--<i class="xi-info-o"></i> 현재 정산이 불가능한 상태입니다.-->
+                    <!--</p>-->
+                    <!--<a href="set_adjust.html" class="btn btn-white rounded-pill">정산안내보기</a>-->
                     <!--</div>-->
                     <!--&lt;!&ndash; //bottom &ndash;&gt;-->
-                <!--</div>-->
-            <!--</article>-->
-        <!--</div>-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--</div>-->
 
-        <!--&lt;!&ndash; 월매출현황 / 구매자 결제패턴 분석 / 서비스 상세 &ndash;&gt;-->
-        <!--<div class="col-12 col-md-4">-->
-            <!--<article class="card md">-->
-                <!--<div class="card-header">-->
+                    <!--&lt;!&ndash; 월매출현황 / 구매자 결제패턴 분석 / 서비스 상세 &ndash;&gt;-->
+                    <!--<div class="col-12 col-md-4">-->
+                    <!--<article class="card md">-->
+                    <!--<div class="card-header">-->
                     <!--<h4 class="card-title">월 매출현황</h4>-->
-                <!--</div>-->
-                <!--<div class="card-body text-center">-->
-                    <!--<div class="graph-box">-->
-                        <!--<img src="assets/img/graph1.png" alt="">-->
-                        <!--<div style="position:absolute; bottom:-2.333rem; font-weight: 900">컬러 - -->
-                            <!--<span style="color:#1369fa">#1369fa</span>-->
-                            <!--<span style="color:#ff5565">#ff5565</span>-->
-                            <!--<span style="color:#ffa443">#ffa443</span>-->
-                            <!--<span style="color:#a456e5">#a456e5</span>-->
-                            <!--<span style="color:#082b3f">#082b3f</span>-->
-                        <!--</div>-->
                     <!--</div>-->
-                <!--</div>-->
-            <!--</article>-->
-        <!--</div>-->
-        <!--<div class="col-12 col-md-4">-->
-            <!--<article class="card md">-->
-                <!--<div class="card-header">-->
+                    <!--<div class="card-body text-center">-->
+                    <!--<div class="graph-box">-->
+                    <!--<img src="assets/img/graph1.png" alt="">-->
+                    <!--<div style="position:absolute; bottom:-2.333rem; font-weight: 900">컬러 - -->
+                    <!--<span style="color:#1369fa">#1369fa</span>-->
+                    <!--<span style="color:#ff5565">#ff5565</span>-->
+                    <!--<span style="color:#ffa443">#ffa443</span>-->
+                    <!--<span style="color:#a456e5">#a456e5</span>-->
+                    <!--<span style="color:#082b3f">#082b3f</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-md-4">-->
+                    <!--<article class="card md">-->
+                    <!--<div class="card-header">-->
                     <!--<h4 class="card-title">구매자 결제패턴 분석</h4>-->
-                <!--</div>-->
-                <!--<div class="card-body text-center">-->
-                    <!--<div class="graph-box">-->
-                        <!--<img src="assets/img/graph1.png" alt="">-->
-                        <!--<div class="colorScope" style="position:absolute; bottom:-2.333rem; font-weight: 900">컬러 - -->
-                            <!--<span style="color:#1369fa">#1369fa</span>-->
-                            <!--<span style="color:#ff5565">#ff5565</span>-->
-                            <!--<span style="color:#ffa443">#ffa443</span>-->
-                            <!--<span style="color:#a456e5">#a456e5</span>-->
-                            <!--<span style="color:#082b3f">#082b3f</span>-->
-                        <!--</div>-->
                     <!--</div>-->
-                <!--</div>-->
-            <!--</article>-->
-        <!--</div>-->
-        <!--<section class="col-12 col-md-4">-->
-            <!--<h4 class="invisible">그 외 연동 API 및 솔루션 소개</h4>-->
-            <!--<div class="card-row__deck">-->
-                <!--<article class="card">-->
+                    <!--<div class="card-body text-center">-->
+                    <!--<div class="graph-box">-->
+                    <!--<img src="assets/img/graph1.png" alt="">-->
+                    <!--<div class="colorScope" style="position:absolute; bottom:-2.333rem; font-weight: 900">컬러 - -->
+                    <!--<span style="color:#1369fa">#1369fa</span>-->
+                    <!--<span style="color:#ff5565">#ff5565</span>-->
+                    <!--<span style="color:#ffa443">#ffa443</span>-->
+                    <!--<span style="color:#a456e5">#a456e5</span>-->
+                    <!--<span style="color:#082b3f">#082b3f</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--</div>-->
+                    <!--<section class="col-12 col-md-4">-->
+                    <!--<h4 class="invisible">그 외 연동 API 및 솔루션 소개</h4>-->
+                    <!--<div class="card-row__deck">-->
+                    <!--<article class="card">-->
                     <!--<h5 class="invisible">결제 API 연동</h5>-->
                     <!--<div class="card-body card-body-flex">-->
-                        <!--<div class="system-link">-->
-                            <!--<%&#45;&#45;<div class="tv tv-light-primary md"><i class="xi-check"></i></div>&#45;&#45;%>-->
+                    <!--<div class="system-link">-->
+                    <!--<%&#45;&#45;<div class="tv tv-light-primary md"><i class="xi-check"></i></div>&#45;&#45;%>-->
 
-                            <!--<div class="roundbox-wrap roundbox-wrap-md roundbox-primary-light">-->
-                                <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-                                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-                                <!--</svg>-->
-                                <!--<span class="ico"><i class="xi-check"></i></span>-->
-                            <!--</div>-->
-                            <!--<div class="system-link__text">-->
-                                <!--<p class="sub-text md">-->
-                                    <!--모든 결제수단을 <br/>-->
-                                    <!--한번에 하나로 연동하세요.-->
-                                <!--</p>-->
-                                <!--<a href="#" class="btn btn-outline-primary rounded-pill mt-3">결제 API 연동 상세보기</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--<div class="roundbox-wrap roundbox-wrap-md roundbox-primary-light">-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                    <!--</svg>-->
+                    <!--<span class="ico"><i class="xi-check"></i></span>-->
                     <!--</div>-->
-                <!--</article>-->
-                <!--<article class="card">-->
+                    <!--<div class="system-link__text">-->
+                    <!--<p class="sub-text md">-->
+                    <!--모든 결제수단을 <br/>-->
+                    <!--한번에 하나로 연동하세요.-->
+                    <!--</p>-->
+                    <!--<a href="#" class="btn btn-outline-primary rounded-pill mt-3">결제 API 연동 상세보기</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--<article class="card">-->
                     <!--<h5 class="invisible">솔루션 소개</h5>-->
                     <!--<div class="card-body card-body-flex">-->
-                        <!--<div class="system-link">-->
-                            <!--<div class="roundbox-wrap roundbox-wrap-md roundbox-additional-light">-->
-                                <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
-                                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
-                                <!--</svg>-->
-                                <!--<span class="ico"><i class="xi-cog"></i></span>-->
-                            <!--</div>-->
-                            <!--<div class="system-link__text">-->
-                                <!--<p class="sub-text md">-->
-                                    <!--간편하고 쉽게 연동 가능한 <br/>-->
-                                    <!--다양한 솔루션을 소개합니다.-->
-                                <!--</p>-->
-                                <!--<a href="#" class="btn btn-outline-additional rounded-pill mt-3">솔루션 소개 상세보기</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--<div class="system-link">-->
+                    <!--<div class="roundbox-wrap roundbox-wrap-md roundbox-additional-light">-->
+                    <!--<svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">-->
+                    <!--<path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>-->
+                    <!--</svg>-->
+                    <!--<span class="ico"><i class="xi-cog"></i></span>-->
                     <!--</div>-->
-                <!--</article>-->
-            <!--</div>-->
-        <!--</section>-->
+                    <!--<div class="system-link__text">-->
+                    <!--<p class="sub-text md">-->
+                    <!--간편하고 쉽게 연동 가능한 <br/>-->
+                    <!--다양한 솔루션을 소개합니다.-->
+                    <!--</p>-->
+                    <!--<a href="#" class="btn btn-outline-additional rounded-pill mt-3">솔루션 소개 상세보기</a>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--</div>-->
+                    <!--</section>-->
 
-        <!--&lt;!&ndash; 공지사항 / 자주묻는질문 &ndash;&gt;-->
-        <!--<div class="col-12 col-md-7">-->
-            <!--<article class="card sm card-col__deck">-->
-                <!--<div class="card-header">-->
+                    <!--&lt;!&ndash; 공지사항 / 자주묻는질문 &ndash;&gt;-->
+                    <!--<div class="col-12 col-md-7">-->
+                    <!--<article class="card sm card-col__deck">-->
+                    <!--<div class="card-header">-->
                     <!--<h4 class="card-title">공지사항</h4>-->
                     <!--<a href="list_notice.html" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>-->
-                <!--</div>-->
-                <!--<div class="card-body">-->
+                    <!--</div>-->
+                    <!--<div class="card-body">-->
                     <!--<ul class="bbs-latest">-->
-                        <!--<li onclick="">-->
-                            <!--<p class="bbs-subject">-->
-                                <!--<span class="bbs-cate">전체공지</span>-->
-                                <!--<span>2019년 10월 15일 서버 이전작업으로 인한</span>-->
-                            <!--</p>-->
-                            <!--<p class="bbs-date">-->
-                                <!--2019.11.12-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li onclick="">-->
-                            <!--<p class="bbs-subject">-->
-                                <!--<span class="bbs-cate">서버작업</span>-->
-                                <!--<span>2019년 10월 15일 서버 이전작업으로 인한</span>-->
-                            <!--</p>-->
-                            <!--<p class="bbs-date">-->
-                                <!--2019.11.12-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li onclick="">-->
-                            <!--<p class="bbs-subject">-->
-                                <!--<span class="bbs-cate">전체공지</span>-->
-                                <!--<span>2019년 10월 카드사 무이자 할부 안내</span>-->
-                            <!--</p>-->
-                            <!--<p class="bbs-date">-->
-                                <!--2019.11.12-->
-                            <!--</p>-->
-                        <!--</li>-->
+                    <!--<li onclick="">-->
+                    <!--<p class="bbs-subject">-->
+                    <!--<span class="bbs-cate">전체공지</span>-->
+                    <!--<span>2019년 10월 15일 서버 이전작업으로 인한</span>-->
+                    <!--</p>-->
+                    <!--<p class="bbs-date">-->
+                    <!--2019.11.12-->
+                    <!--</p>-->
+                    <!--</li>-->
+                    <!--<li onclick="">-->
+                    <!--<p class="bbs-subject">-->
+                    <!--<span class="bbs-cate">서버작업</span>-->
+                    <!--<span>2019년 10월 15일 서버 이전작업으로 인한</span>-->
+                    <!--</p>-->
+                    <!--<p class="bbs-date">-->
+                    <!--2019.11.12-->
+                    <!--</p>-->
+                    <!--</li>-->
+                    <!--<li onclick="">-->
+                    <!--<p class="bbs-subject">-->
+                    <!--<span class="bbs-cate">전체공지</span>-->
+                    <!--<span>2019년 10월 카드사 무이자 할부 안내</span>-->
+                    <!--</p>-->
+                    <!--<p class="bbs-date">-->
+                    <!--2019.11.12-->
+                    <!--</p>-->
+                    <!--</li>-->
                     <!--</ul>-->
                     <!--&lt;!&ndash; //bbs-latest &ndash;&gt;-->
-                <!--</div>-->
-            <!--</article>-->
-            <!--&lt;!&ndash; //card-col__deck &ndash;&gt;-->
-        <!--</div>-->
-        <!--<div class="col-12 col-md-5">-->
-            <!--<article class="card sm card-col__deck">-->
-                <!--<div class="card-header">-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--&lt;!&ndash; //card-col__deck &ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div class="col-12 col-md-5">-->
+                    <!--<article class="card sm card-col__deck">-->
+                    <!--<div class="card-header">-->
                     <!--<h4 class="card-title">자주묻는질문</h4>-->
                     <!--<a href="list_faq.html" class="btn-more-link"><span>더보기 <i class="xi-angle-right"></i></span></a>-->
-                <!--</div>-->
-                <!--<div class="card-body">-->
+                    <!--</div>-->
+                    <!--<div class="card-body">-->
                     <!--<ul class="bbs-latest">-->
-                        <!--<li onclick="">-->
-                            <!--<p class="bbs-subject">-->
-                                <!--<span class="bbs-cate">결제</span>-->
-                                <!--<span>결제 취소는 어떻게 하나요?</span>-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li onclick="">-->
-                            <!--<p class="bbs-subject">-->
-                                <!--<span class="bbs-cate">결제</span>-->
-                                <!--<span>원격결제는 무엇인가요?</span>-->
-                            <!--</p>-->
-                        <!--</li>-->
-                        <!--<li onclick="">-->
-                            <!--<p class="bbs-subject">-->
-                                <!--<span class="bbs-cate">수수료</span>-->
-                                <!--<span>결제수수료는 어떻게 되나요?</span>-->
-                            <!--</p>-->
-                        <!--</li>-->
+                    <!--<li onclick="">-->
+                    <!--<p class="bbs-subject">-->
+                    <!--<span class="bbs-cate">결제</span>-->
+                    <!--<span>결제 취소는 어떻게 하나요?</span>-->
+                    <!--</p>-->
+                    <!--</li>-->
+                    <!--<li onclick="">-->
+                    <!--<p class="bbs-subject">-->
+                    <!--<span class="bbs-cate">결제</span>-->
+                    <!--<span>원격결제는 무엇인가요?</span>-->
+                    <!--</p>-->
+                    <!--</li>-->
+                    <!--<li onclick="">-->
+                    <!--<p class="bbs-subject">-->
+                    <!--<span class="bbs-cate">수수료</span>-->
+                    <!--<span>결제수수료는 어떻게 되나요?</span>-->
+                    <!--</p>-->
+                    <!--</li>-->
                     <!--</ul>-->
                     <!--&lt;!&ndash; //bbs-latest &ndash;&gt;-->
-                <!--</div>-->
-            <!--</article>-->
-            <!--&lt;!&ndash; //card-col__deck &ndash;&gt;-->
-        <!--</div>-->
+                    <!--</div>-->
+                    <!--</article>-->
+                    <!--&lt;!&ndash; //card-col__deck &ndash;&gt;-->
+                    <!--</div>-->
 
-        <!--&lt;!&ndash; 결제요청창 &ndash;&gt;-->
-        <!--<div class="col-fixed col-12 col-md-4" style="display: none">-->
-            <!--<article class="card card-line">-->
-                <!--<div class="card-header">-->
+                    <!--&lt;!&ndash; 결제요청창 &ndash;&gt;-->
+                    <!--<div class="col-fixed col-12 col-md-4" style="display: none">-->
+                    <!--<article class="card card-line">-->
+                    <!--<div class="card-header">-->
                     <!--<h4 class="card-title">결제요청</h4>-->
                     <!--<div class="card-actions float-right">-->
-                        <!--<button type="button" class="card-close">-->
-                            <!--<i class="xi-close"><span class="invisible">닫기</span></i>-->
-                        <!--</button>-->
+                    <!--<button type="button" class="card-close">-->
+                    <!--<i class="xi-close"><span class="invisible">닫기</span></i>-->
+                    <!--</button>-->
                     <!--</div>-->
-                <!--</div>-->
-                <!--&lt;!&ndash; //card-header &ndash;&gt;-->
-                <!--<div class="card-body">-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; //card-header &ndash;&gt;-->
+                    <!--<div class="card-body">-->
                     <!--<form action="" method="post">-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="form-label" for="">결제요청</label>-->
-                            <!--<select class="form-control custom-select" id="">-->
-                                <!--<option selected>SMS 결제요청</option>-->
-                                <!--<option value=""></option>-->
-                            <!--</select>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="form-label" for="mobile"><span>휴대폰번호</span> <em class="point"></em></label>-->
-                            <!--<input type="tel" class="form-control" id="mobile" required placeholder="휴대폰번호를 입력해주세요.">-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="form-label" for="goodsName">상품명 <em class="point"></em></label>-->
-                            <!--<div class="input-group-wrap">-->
-                                <!--<input type="text" name="goodsName" id="goodsName" required placeholder="상품명을 입력하거나 선택해주세요." class="form-control">-->
-                                <!--<div class="input-joint"><button type="button" class="btn btn-outline-primary">불러오기</button></div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="form-label" for="goodsTotalPrice"><span>결제금액</span> <em class="point"></em></label>-->
-                            <!--<input type="number" class="form-control" id="goodsTotalPrice" min="1000" required placeholder="결제금액을 입력해주세요. (최소 1,000 이상)">-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<p class="form-label"><span>과세/면세 </span> <em class="point"> </em></p>-->
-                            <!--<el-button-group class="btn-group-toggle btn-group-toggle__fixed">-->
-                                <!--<el-button size="medium" class="btn-toggle__active">과세</el-button>-->
-                                <!--<el-button size="medium">면세</el-button>-->
-                            <!--</el-button-group>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="form-label" for="customName">구매자 명</label>-->
-                            <!--<input type="text" class="form-control" id="customName" placeholder="구매자 명을 입력해주세요.">-->
-                        <!--</div>-->
-                        <!--<button type="submit" class="btn btn-block btn-lg btn-primary rounded-sm"><i class="xi-pen"></i> 결제요청</button>-->
+                    <!--<div class="form-group">-->
+                    <!--<label class="form-label" for="">결제요청</label>-->
+                    <!--<select class="form-control custom-select" id="">-->
+                    <!--<option selected>SMS 결제요청</option>-->
+                    <!--<option value=""></option>-->
+                    <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label class="form-label" for="mobile"><span>휴대폰번호</span> <em class="point"></em></label>-->
+                    <!--<input type="tel" class="form-control" id="mobile" required placeholder="휴대폰번호를 입력해주세요.">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label class="form-label" for="goodsName">상품명 <em class="point"></em></label>-->
+                    <!--<div class="input-group-wrap">-->
+                    <!--<input type="text" name="goodsName" id="goodsName" required placeholder="상품명을 입력하거나 선택해주세요." class="form-control">-->
+                    <!--<div class="input-joint"><button type="button" class="btn btn-outline-primary">불러오기</button></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label class="form-label" for="goodsTotalPrice"><span>결제금액</span> <em class="point"></em></label>-->
+                    <!--<input type="number" class="form-control" id="goodsTotalPrice" min="1000" required placeholder="결제금액을 입력해주세요. (최소 1,000 이상)">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<p class="form-label"><span>과세/면세 </span> <em class="point"> </em></p>-->
+                    <!--<el-button-group class="btn-group-toggle btn-group-toggle__fixed">-->
+                    <!--<el-button size="medium" class="btn-toggle__active">과세</el-button>-->
+                    <!--<el-button size="medium">면세</el-button>-->
+                    <!--</el-button-group>-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                    <!--<label class="form-label" for="customName">구매자 명</label>-->
+                    <!--<input type="text" class="form-control" id="customName" placeholder="구매자 명을 입력해주세요.">-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-block btn-lg btn-primary rounded-sm"><i class="xi-pen"></i> 결제요청</button>-->
                     <!--</form>-->
-                <!--</div>-->
-                <!--&lt;!&ndash; //card-body &ndash;&gt;-->
-            <!--</article>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash; //card-wrap &ndash;&gt;-->
-    <!--<button type="button" class="btn-open-payment" title="결제요청 바로하기"><i class="xi-pen"></i></button>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; //card-body &ndash;&gt;-->
+                    <!--</article>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; //card-wrap &ndash;&gt;-->
+                    <!--<button type="button" class="btn-open-payment" title="결제요청 바로하기"><i class="xi-pen"></i></button>-->
 
-<? include "inc/footer.html"; ?>
+                    <? include "inc/footer.html"; ?>
 
 
-<!-- bootstrap date -->
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/moment-locale-ko.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.js"></script>
-<script>
-    $(document).ready(function(){
-        $('#datepicker1').datetimepicker({
-            inline: true,
-            format: 'DD-MM-YY',
-            minDate: moment(),
-            icons: {
-                previous: 'la la-angle-left',
-                next: 'la la-angle-right'
-            },
-            disabledDates : ['2019-09-25','2019-09-20']
-        });
-    });
-</script>
+                    <!-- bootstrap date -->
+                    <script src="assets/js/moment.min.js"></script>
+                    <script src="assets/js/moment-locale-ko.js"></script>
+                    <script src="assets/js/bootstrap-datetimepicker.js"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $('#datepicker1').datetimepicker({
+                                inline: true,
+                                format: 'DD-MM-YY',
+                                minDate: moment(),
+                                icons: {
+                                    previous: 'la la-angle-left',
+                                    next: 'la la-angle-right'
+                                },
+                                disabledDates : ['2019-09-25','2019-09-20']
+                            });
+                        });
+                    </script>
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

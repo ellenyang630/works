@@ -34,10 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.jsp">유디페이 판매점</a></h1>
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
+
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                          <span class="btn_inn">
+                              <span><i class="xi-renew"></i></span>
+                              <span class="t">API 바로가기</span>
+                          </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
         </div>
-        <!-- //logo-box -->
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
 
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
@@ -60,61 +122,61 @@
                         </template>
                         <el-submenu index="2-1">
                             <template slot="title">원격결제</template>
-                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.jsp'">결제요청</router-link></el-menu-item>
-                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.jsp'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.html'">결제요청</router-link></el-menu-item>
+                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.html'">결제요청 (대량)</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.jsp'">링크결제</router-link></el-menu-item>
+                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.html'">링크결제</router-link></el-menu-item>
                         <el-submenu index="2-3">
                             <template slot="title">등록결제</template>
-                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.jsp'">등록요청</router-link></el-menu-item>
-                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.jsp'">등록내역</router-link></el-menu-item>
-                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.jsp'">등록요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.jsp'">결제요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.jsp'" >결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.html'">등록요청</router-link></el-menu-item>
+                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.html'">등록내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.html'">등록요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.html'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.html'" >결제내역</router-link></el-menu-item>
                         </el-submenu>
                         <el-submenu index="2-4">
                             <template slot="title">정기결제</template>
-                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.jsp'">승인요청</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.jsp'">승인요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">승인내역</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.jsp'">결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.html'">승인요청</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.html'">승인요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.html'">승인내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.html'">결제내역</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.jsp'">수기결제</router-link></el-menu-item>
+                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.html'">수기결제</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="3" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-list-dot depth1-ico"></i>
                             <span>결제현황</span>
                         </template>
-                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.jsp'">완료/취소</router-link></el-menu-item>
-                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">결제요청</router-link></el-menu-item>
-                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.jsp'">취소요청</router-link></el-menu-item>
+                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.html'">완료/취소</router-link></el-menu-item>
+                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.html'">결제요청</router-link></el-menu-item>
+                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.html'">취소요청</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="4" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-piggy-bank depth1-ico"></i>
                             <span>정산관리</span>
                         </template>
-                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.jsp'">정산안내</router-link></el-menu-item>
-                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.jsp'">정산내역</router-link></el-menu-item>
-                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.jsp'">익일정산 신청</router-link></el-menu-item>
-                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.jsp'">부가세 자료</router-link></el-menu-item>
+                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.html'">정산안내</router-link></el-menu-item>
+                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.html'">정산내역</router-link></el-menu-item>
+                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.html'">익일정산 신청</router-link></el-menu-item>
+                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.html'">부가세 자료</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="5" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-paper-o depth1-ico"></i>
                             <span>현금영수증</span>
                         </template>
-                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.jsp'">현금영수증 내역</router-link></el-menu-item>
-                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.jsp'">현금영수증 발행</router-link></el-menu-item>
+                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.html'">현금영수증 내역</router-link></el-menu-item>
+                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.html'">현금영수증 발행</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="6" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-box depth1-ico"></i>
                             <span>상품관리</span>
                         </template>
-                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.jsp'">상품 내역</router-link></el-menu-item>
-                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.jsp'">상품 등록</router-link></el-menu-item>
+                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.html'">상품 내역</router-link></el-menu-item>
+                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.html'">상품 등록</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="7" class="depth1-menu">
                         <template slot="title">
@@ -123,10 +185,10 @@
                         </template>
                         <el-submenu index="7-1">
                             <template slot="title">부계정 관리</template>
-                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.jsp'">부계정 내역</router-link></el-menu-item>
-                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.jsp'">부계정 등록</router-link></el-menu-item>
+                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.html'">부계정 내역</router-link></el-menu-item>
+                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.html'">부계정 등록</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.jsp'">부계정 매출</router-link></el-menu-item>
+                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.html'">부계정 매출</router-link></el-menu-item>
                     </el-submenu>
                     <el-menu-item index="8" class="depth1-menu" onclick="location.href='http://uddocs.net/v/udpay'" target="_blank">
                         <i class="xi-all depth1-ico"></i>
@@ -137,22 +199,22 @@
                             <i class="xi-cog depth1-ico"></i>
                             <span>설정</span>
                         </template>
-                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.jsp'">결제설정</router-link></el-menu-item>
-                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.jsp'">정보변경</router-link></el-menu-item>
-                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.jsp'">결제 옵션 설정</router-link></el-menu-item>
-                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.jsp'">정산 정보</router-link></el-menu-item>
+                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.html'">결제설정</router-link></el-menu-item>
+                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.html'">정보변경</router-link></el-menu-item>
+                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.html'">결제 옵션 설정</router-link></el-menu-item>
+                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.html'">정산 정보</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="10" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-message-o depth1-ico"></i>
                             <span>고객센터</span>
                         </template>
-                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.jsp'">공지사항</router-link></el-menu-item>
-                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.jsp'">자주묻는질문</router-link></el-menu-item>
+                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.html'">공지사항</router-link></el-menu-item>
+                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.html'">자주묻는질문</router-link></el-menu-item>
                         <el-submenu index="10-3">
                             <template slot="title">고객문의</template>
-                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.jsp'">문의내역</router-link></el-menu-item>
-                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.jsp'">문의하기</router-link></el-menu-item>
+                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.html'">문의내역</router-link></el-menu-item>
+                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.html'">문의하기</router-link></el-menu-item>
                         </el-submenu>
                     </el-submenu>
                 </el-menu>
@@ -193,218 +255,159 @@
         </nav>
         <!-- //sidebar -->
 
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.jsp">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.jsp">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.jsp'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-    <div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">결제요청 (대량)</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a>
-                </li>
-                <li class="breadcrumb-item"><a href="#">결제요청</a></li>
-                <li class="breadcrumb-item"><a href="#">원격결제</a></li>
-                <li class="breadcrumb-item active" aria-current="page">결제요청 (대량)</li>
-            </ol>
-        </div>
-    </div>
-    <!-- //page-header -->
-    <div class="page-body">
-        <form action="" method="post">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title en float-left">엑셀파일 작성양식</h4>
-                    <div class="btn-ct-top float-right">
-                        <button class="btn btn-sm btn-outline-success btn-ico-hover"><i class="xi-download"></i> 엑셀 샘플 다운로드</button>
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">결제요청 (대량)</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#">결제요청</a></li>
+                                <li class="breadcrumb-item"><a href="#">원격결제</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">결제요청 (대량)</li>
+                            </ol>
+                        </div>
                     </div>
-                </div>
-                <!-- //card-header -->
-                <div class="card-body">
-                    <div class="table-responsive-md">
-                    <table class="table-excel text-center">
-                        <caption>결제요청(대량) 엑셀파일 작성양식 예시</caption>
-                        <colgroup>
-                            <col width="16.66%">
-                            <col width="16.66%">
-                            <col width="16.66%">
-                            <col width="16.66%">
-                            <col width="16.66%">
-                            <col width="*">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">
-                                    A열
-                                </th>
-                                <th scope="col">
-                                    B열
-                                </th>
-                                <th scope="col">
-                                    C열
-                                </th>
-                                <th scope="col">
-                                    D열
-                                </th>
-                                <th scope="col">
-                                    E열
-                                </th>
-                                <th scope="col">
-                                    F열
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="col">
-                                    상품명
-                                </th>
-                                <th scope="col">
-                                    금액 <em class="point"></em>
-                                </th>
-                                <th scope="col">
-                                    휴대폰번호 <em class="point"></em>
-                                </th>
-                                <th scope="col">
-                                    과세/면세 <small>(과세:1 / 면세:2)</small>
-                                </th>
-                                <th scope="col">
-                                    구매자명
-                                </th>
-                                <th scope="col">
-                                    고객번호
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>학원비</td>
-                                <td>100,000</td>
-                                <td>01012345678</td>
-                                <td>1</td>
-                                <td>홍길동</td>
-                                <td>A1111001</td>
-                            </tr>
-                            <tr>
-                                <td>책</td>
-                                <td>20,000</td>
-                                <td>01011112222</td>
-                                <td>2</td>
-                                <td>김수한</td>
-                                <td>A1111002</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-                <!-- //card-body -->
-            </div>
-            <!-- //card -->
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title en">대량결제요청</h4>
-                </div>
-                <div class="card-body">
-                    <table class="table table-view">
-                        <caption>결제요청(대량) 입력 폼</caption>
-                        <colgroup>
-                            <col width="180">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <th scope="row">
-                                파일 업로드
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-                                        <label class="custom-file-label" for="inputGroupFile03">파일을 선택해주세요.</label>
+                    <!-- //page-header -->
+                    <div class="page-body">
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title en float-left">엑셀파일 작성양식</h4>
+                                    <div class="btn-ct-top float-right">
+                                        <button class="btn btn-sm btn-outline-success btn-ico-hover"><i class="xi-download"></i> 엑셀 샘플 다운로드</button>
                                     </div>
                                 </div>
+                                <!-- //card-header -->
+                                <div class="card-body">
+                                    <div class="table-responsive-md">
+                                        <table class="table-excel text-center">
+                                            <caption>결제요청(대량) 엑셀파일 작성양식 예시</caption>
+                                            <colgroup>
+                                                <col width="16.66%">
+                                                <col width="16.66%">
+                                                <col width="16.66%">
+                                                <col width="16.66%">
+                                                <col width="16.66%">
+                                                <col width="*">
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    A열
+                                                </th>
+                                                <th scope="col">
+                                                    B열
+                                                </th>
+                                                <th scope="col">
+                                                    C열
+                                                </th>
+                                                <th scope="col">
+                                                    D열
+                                                </th>
+                                                <th scope="col">
+                                                    E열
+                                                </th>
+                                                <th scope="col">
+                                                    F열
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="col">
+                                                    상품명
+                                                </th>
+                                                <th scope="col">
+                                                    금액 <em class="point"></em>
+                                                </th>
+                                                <th scope="col">
+                                                    휴대폰번호 <em class="point"></em>
+                                                </th>
+                                                <th scope="col">
+                                                    과세/면세 <small>(과세:1 / 면세:2)</small>
+                                                </th>
+                                                <th scope="col">
+                                                    구매자명
+                                                </th>
+                                                <th scope="col">
+                                                    고객번호
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <td>학원비</td>
+                                                <td>100,000</td>
+                                                <td>01012345678</td>
+                                                <td>1</td>
+                                                <td>홍길동</td>
+                                                <td>A1111001</td>
+                                            </tr>
+                                            <tr>
+                                                <td>책</td>
+                                                <td>20,000</td>
+                                                <td>01011112222</td>
+                                                <td>2</td>
+                                                <td>김수한</td>
+                                                <td>A1111002</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <p class="tip">
-                        - 업로드 가능한 파일 형식 : <strong>xlsx, cvs(탭 구분)</strong><br>
-                        - 최대 동시에 요청이 가능한 수량은 500건입니다. <br>
-                        - 발송 이후 <strong>30분 이내</strong>로 결제자 휴대폰번호로 SMS가 전송됩니다. <br>
-                        - 발송내역은 <a class="under" href="list_statusReq.html">결제현황 &gt; 결제요청 페이지</a>에서 확인이 가능합니다. <br>
-                    </p>
-                </div>
-                <!-- //card-body -->
-            </div>
-            <!-- //card -->
-            <div class="btn-ct-bottom inline">
-                <button type="submit" class="btn btn-lg btn-primary rounded-sm">발송</button>
-            </div>
-        </form>
-    </div>
-    <!-- //page-body -->
+                                <!-- //card-body -->
+                            </div>
+                            <!-- //card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title en">대량결제요청</h4>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-view">
+                                        <caption>결제요청(대량) 입력 폼</caption>
+                                        <colgroup>
+                                            <col width="180">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                파일 업로드
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                                                            <label class="custom-file-label" for="inputGroupFile03">파일을 선택해주세요.</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="tip">
+                                        - 업로드 가능한 파일 형식 : <strong>xlsx, cvs(탭 구분)</strong><br>
+                                        - 최대 동시에 요청이 가능한 수량은 500건입니다. <br>
+                                        - 발송 이후 <strong>30분 이내</strong>로 결제자 휴대폰번호로 SMS가 전송됩니다. <br>
+                                        - 발송내역은 <a class="under" href="list_statusReq.html">결제현황 &gt; 결제요청 페이지</a>에서 확인이 가능합니다. <br>
+                                    </p>
+                                </div>
+                                <!-- //card-body -->
+                            </div>
+                            <!-- //card -->
+                            <div class="btn-ct-bottom inline">
+                                <button type="submit" class="btn btn-lg btn-primary rounded-sm">발송</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- //page-body -->
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

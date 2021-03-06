@@ -102,17 +102,15 @@
     @include hover() {
       color: $table-hover-color;
       background-color: $table-dark-hover-bg;
-
       td:not(.list-controller){
-        opacity: 0.85;
+        opacity: 0.6;
       }
     }
     &.current{
       color: $table-hover-color;
       background-color: $table-dark-hover-bg;
-
       td:not(.list-controller){
-        opacity: 0.85;
+        opacity: 0.6;
       }
     }
     &.none-hover:hover{
@@ -201,13 +199,12 @@
   &.table-hover {
     tbody tr {
       @include hover() {
-        //color: $table-dark-hover-color;
+        color: $table-dark-hover-color;
         background-color: $table-dark-hover-bg;
       }
       &.active{
-        //color: $table-dark-hover-color;
+        color: $table-dark-hover-color;
         background-color: $table-dark-hover-bg;
-
         td{
           &:first-child {
             border-top-left-radius: 8px;

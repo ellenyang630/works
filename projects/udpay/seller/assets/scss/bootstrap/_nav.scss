@@ -79,20 +79,16 @@
     @include border-radius($nav-pills-border-radius);
     background-color: $base-lighter;
     color: $white;
+    min-width: 180px;
     text-align: center;
-
-    &:hover{
-      background-color: darken($base-lighter,10%);
-    }
-
   }
 
   .nav-link.active,
   .show > .nav-link {
     color: $nav-pills-link-active-color;
     background-color: $nav-pills-link-active-bg;
-    -webkit-box-shadow: 2px 2px 9px 1px rgba($primary, 0.47);
-    box-shadow: 2px 2px 9px 1px rgba($primary, 0.47);
+    -webkit-box-shadow: 2px 2px 9px 1px rgba($blue, 0.47);
+    box-shadow: 2px 2px 9px 1px rgba($blue, 0.47);
   }
   .nav-item{
     margin-right: 10px;
@@ -109,6 +105,7 @@
     flex: 1 1 auto;
     text-align: center;
   }
+
 }
 
 .nav-justified {

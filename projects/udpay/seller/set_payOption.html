@@ -34,11 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.jsp">유디페이 판매점</a></h1>
-        </div>
-        <!-- //logo-box -->
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
 
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                          <span class="btn_inn">
+                              <span><i class="xi-renew"></i></span>
+                              <span class="t">API 바로가기</span>
+                          </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
+        </div>
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
             <div class="sidebar-content">
@@ -60,61 +121,61 @@
                         </template>
                         <el-submenu index="2-1">
                             <template slot="title">원격결제</template>
-                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.jsp'">결제요청</router-link></el-menu-item>
-                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.jsp'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.html'">결제요청</router-link></el-menu-item>
+                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.html'">결제요청 (대량)</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.jsp'">링크결제</router-link></el-menu-item>
+                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.html'">링크결제</router-link></el-menu-item>
                         <el-submenu index="2-3">
                             <template slot="title">등록결제</template>
-                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.jsp'">등록요청</router-link></el-menu-item>
-                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.jsp'">등록내역</router-link></el-menu-item>
-                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.jsp'">등록요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.jsp'">결제요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.jsp'" >결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.html'">등록요청</router-link></el-menu-item>
+                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.html'">등록내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.html'">등록요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.html'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.html'" >결제내역</router-link></el-menu-item>
                         </el-submenu>
                         <el-submenu index="2-4">
                             <template slot="title">정기결제</template>
-                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.jsp'">승인요청</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.jsp'">승인요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">승인내역</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.jsp'">결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.html'">승인요청</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.html'">승인요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.html'">승인내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.html'">결제내역</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.jsp'">수기결제</router-link></el-menu-item>
+                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.html'">수기결제</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="3" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-list-dot depth1-ico"></i>
                             <span>결제현황</span>
                         </template>
-                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.jsp'">완료/취소</router-link></el-menu-item>
-                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">결제요청</router-link></el-menu-item>
-                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.jsp'">취소요청</router-link></el-menu-item>
+                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.html'">완료/취소</router-link></el-menu-item>
+                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.html'">결제요청</router-link></el-menu-item>
+                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.html'">취소요청</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="4" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-piggy-bank depth1-ico"></i>
                             <span>정산관리</span>
                         </template>
-                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.jsp'">정산안내</router-link></el-menu-item>
-                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.jsp'">정산내역</router-link></el-menu-item>
-                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.jsp'">익일정산 신청</router-link></el-menu-item>
-                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.jsp'">부가세 자료</router-link></el-menu-item>
+                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.html'">정산안내</router-link></el-menu-item>
+                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.html'">정산내역</router-link></el-menu-item>
+                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.html'">익일정산 신청</router-link></el-menu-item>
+                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.html'">부가세 자료</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="5" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-paper-o depth1-ico"></i>
                             <span>현금영수증</span>
                         </template>
-                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.jsp'">현금영수증 내역</router-link></el-menu-item>
-                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.jsp'">현금영수증 발행</router-link></el-menu-item>
+                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.html'">현금영수증 내역</router-link></el-menu-item>
+                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.html'">현금영수증 발행</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="6" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-box depth1-ico"></i>
                             <span>상품관리</span>
                         </template>
-                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.jsp'">상품 내역</router-link></el-menu-item>
-                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.jsp'">상품 등록</router-link></el-menu-item>
+                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.html'">상품 내역</router-link></el-menu-item>
+                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.html'">상품 등록</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="7" class="depth1-menu">
                         <template slot="title">
@@ -123,10 +184,10 @@
                         </template>
                         <el-submenu index="7-1">
                             <template slot="title">부계정 관리</template>
-                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.jsp'">부계정 내역</router-link></el-menu-item>
-                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.jsp'">부계정 등록</router-link></el-menu-item>
+                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.html'">부계정 내역</router-link></el-menu-item>
+                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.html'">부계정 등록</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.jsp'">부계정 매출</router-link></el-menu-item>
+                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.html'">부계정 매출</router-link></el-menu-item>
                     </el-submenu>
                     <el-menu-item index="8" class="depth1-menu" onclick="location.href='http://uddocs.net/v/udpay'" target="_blank">
                         <i class="xi-all depth1-ico"></i>
@@ -137,22 +198,22 @@
                             <i class="xi-cog depth1-ico"></i>
                             <span>설정</span>
                         </template>
-                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.jsp'">결제설정</router-link></el-menu-item>
-                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.jsp'">정보변경</router-link></el-menu-item>
-                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.jsp'">결제 옵션 설정</router-link></el-menu-item>
-                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.jsp'">정산 정보</router-link></el-menu-item>
+                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.html'">결제설정</router-link></el-menu-item>
+                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.html'">정보변경</router-link></el-menu-item>
+                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.html'">결제 옵션 설정</router-link></el-menu-item>
+                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.html'">정산 정보</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="10" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-message-o depth1-ico"></i>
                             <span>고객센터</span>
                         </template>
-                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.jsp'">공지사항</router-link></el-menu-item>
-                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.jsp'">자주묻는질문</router-link></el-menu-item>
+                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.html'">공지사항</router-link></el-menu-item>
+                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.html'">자주묻는질문</router-link></el-menu-item>
                         <el-submenu index="10-3">
                             <template slot="title">고객문의</template>
-                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.jsp'">문의내역</router-link></el-menu-item>
-                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.jsp'">문의하기</router-link></el-menu-item>
+                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.html'">문의내역</router-link></el-menu-item>
+                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.html'">문의하기</router-link></el-menu-item>
                         </el-submenu>
                     </el-submenu>
                 </el-menu>
@@ -193,296 +254,237 @@
         </nav>
         <!-- //sidebar -->
 
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.jsp">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.jsp">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.jsp'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-    <div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">결제 옵션 설정</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a>
-                </li>
-                <li class="breadcrumb-item"><a href="#">설정</a></li>
-                <li class="breadcrumb-item active" aria-current="page">결제 옵션 설정</li>
-            </ol>
-        </div>
-    </div>
-    <!-- //page-header -->
-    <div class="page-body">
-        <form action="" method="post">
-            <div class="card">
-                <div class="card-body">
-                    <table class="table table-view">
-                        <caption>결제옵션 설정 폼</caption>
-                        <colgroup>
-                            <col width="180">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <th scope="row">
-                                아이디
-                            </th>
-                            <td>
-                                sodaagent
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                결제문자 설정
-                            </th>
-                            <td>
-                                <p>
-                                    <span class="badge badge-info-light">결제문자 발송자 표시</span>
-                                    <span>결제관련 문자를 발송할 때, 표시되는 명칭을 설정할 수 있습니다.</span>
-                                </p>
-                                <div class="w-half mt-4">
-                                    <table class="table table-view-info">
-                                        <caption>결제문자 발송자 디자인 수정</caption>
-                                    <colgroup>
-                                        <col width="200">
-                                        <col width="*">
-                                    </colgroup>
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">문자 발송자 선택</th>
-                                        <th scope="col">선택된 값이 표시되는 방식(예시)</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">결제 옵션 설정</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#">설정</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">결제 옵션 설정</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- //page-header -->
+                    <div class="page-body">
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-body">
+                                    <table class="table table-view">
+                                        <caption>결제옵션 설정 폼</caption>
+                                        <colgroup>
+                                            <col width="180">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
                                         <tr>
                                             <th scope="row">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" name="remotePayName" id="sms_ex_01"
-                                                           class="custom-control-input" checked>
-                                                    <label class="custom-control-label" for="sms_ex_01">유디페이로 표시</label>
-                                                </div>
-                                            </th>
-                                            <td>[유디페이] 결제요청- https://udpay.co.kr/l/laYbLG</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" name="remotePayName" id="sms_ex_02"
-                                                           class="custom-control-input">
-                                                    <label class="custom-control-label" for="sms_ex_02">판매자명 표시</label>
-                                                </div>
-                                            </th>
-                                            <td>[장신호] 결제요청- https://udpay.co.kr/l/laYbLG</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" name="remotePayName" id="sms_ex_03"
-                                                           class="custom-control-input">
-                                                    <label class="custom-control-label" for="sms_ex_03">직접 입력</label>
-                                                </div>
-                                                <div class="mt-2">
-                                                    <input type="tel" class="form-control" id="directName"
-                                                           maxlength="20" placeholder="입력해주세요.">
-                                                </div>
-                                            </th>
-                                            <td>[<span id="directInputStr">ㅎㅎ</span>] 결제요청- https://udpay.co.kr/l/laYbLG
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                결제화면 로고 디자인
-                            </th>
-                            <td>
-                                <p>
-                                    <span class="badge badge-info-light">결제화면 로고 디자인 표시</span>
-                                    <span>결제화면 상단에 표시되는 로고의 타이틀 디자인을 변경할 수 있습니다.</span>
-                                </p>
-                                <div class="w-half mt-4">
-                                    <table class="table table-view-info">
-                                        <caption>결제화면 로고 디자인 수정</caption>
-                                    <colgroup>
-                                        <col width="200">
-                                        <col width="*">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">디자인 선택</th>
-                                            <th scope="col">선택된 값이 표시되는 방식(예시)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" name="payment-logo" id="payment-logo-img" class="custom-control-input" checked>
-                                                    <label class="custom-control-label" for="payment-logo-img">유디페이 로고 표시</label>
-                                                </div>
+                                                아이디
                                             </th>
                                             <td>
-                                                <div class="payment-logo-preview">
-                                                    <img class="img-logo" src="assets/img/logo.svg" alt="유디페이">
+                                                sodaagent
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                결제문자 설정
+                                            </th>
+                                            <td>
+                                                <p>
+                                                    <span class="badge badge-info-light">결제문자 발송자 표시</span>
+                                                    <span>결제관련 문자를 발송할 때, 표시되는 명칭을 설정할 수 있습니다.</span>
+                                                </p>
+                                                <div class="w-half mt-4">
+                                                    <table class="table table-view-info">
+                                                        <caption>결제문자 발송자 디자인 수정</caption>
+                                                        <colgroup>
+                                                            <col width="200">
+                                                            <col width="*">
+                                                        </colgroup>
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">문자 발송자 선택</th>
+                                                            <th scope="col">선택된 값이 표시되는 방식(예시)</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="remotePayName" id="sms_ex_01"
+                                                                           class="custom-control-input" checked>
+                                                                    <label class="custom-control-label" for="sms_ex_01">유디페이로 표시</label>
+                                                                </div>
+                                                            </th>
+                                                            <td>[유디페이] 결제요청- https://udpay.co.kr/l/laYbLG</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="remotePayName" id="sms_ex_02"
+                                                                           class="custom-control-input">
+                                                                    <label class="custom-control-label" for="sms_ex_02">판매자명 표시</label>
+                                                                </div>
+                                                            </th>
+                                                            <td>[장신호] 결제요청- https://udpay.co.kr/l/laYbLG</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="remotePayName" id="sms_ex_03"
+                                                                           class="custom-control-input">
+                                                                    <label class="custom-control-label" for="sms_ex_03">직접 입력</label>
+                                                                </div>
+                                                                <div class="mt-2">
+                                                                    <input type="tel" class="form-control" id="directName"
+                                                                           maxlength="20" placeholder="입력해주세요.">
+                                                                </div>
+                                                            </th>
+                                                            <td>[<span id="directInputStr">ㅎㅎ</span>] 결제요청- https://udpay.co.kr/l/laYbLG
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" name="payment-logo" id="payment-logo-txt" class="custom-control-input">
-                                                    <label class="custom-control-label" for="payment-logo-txt">판매자명 텍스트 표시</label>
-                                                </div>
+                                                결제화면 로고 디자인
                                             </th>
                                             <td>
-                                                <div class="payment-logo-preview">
-                                                    <p class="txt-logo">엘리먼트 유아이</p>
+                                                <p>
+                                                    <span class="badge badge-info-light">결제화면 로고 디자인 표시</span>
+                                                    <span>결제화면 상단에 표시되는 로고의 타이틀 디자인을 변경할 수 있습니다.</span>
+                                                </p>
+                                                <div class="w-half mt-4">
+                                                    <table class="table table-view-info">
+                                                        <caption>결제화면 로고 디자인 수정</caption>
+                                                        <colgroup>
+                                                            <col width="200">
+                                                            <col width="*">
+                                                        </colgroup>
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">디자인 선택</th>
+                                                            <th scope="col">선택된 값이 표시되는 방식(예시)</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="payment-logo" id="payment-logo-img" class="custom-control-input" checked>
+                                                                    <label class="custom-control-label" for="payment-logo-img">유디페이 로고 표시</label>
+                                                                </div>
+                                                            </th>
+                                                            <td>
+                                                                <div class="payment-logo-preview">
+                                                                    <img class="img-logo" src="assets/img/logo.svg" alt="유디페이">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="payment-logo" id="payment-logo-txt" class="custom-control-input">
+                                                                    <label class="custom-control-label" for="payment-logo-txt">판매자명 텍스트 표시</label>
+                                                                </div>
+                                                            </th>
+                                                            <td>
+                                                                <div class="payment-logo-preview">
+                                                                    <p class="txt-logo">엘리먼트 유아이</p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="custom-control custom-radio">
+                                                                    <input type="radio" name="payment-logo" id="payment-logo-custom" class="custom-control-input">
+                                                                    <label class="custom-control-label" for="payment-logo-custom">업로드 이미지로 표시</label>
+                                                                </div>
+                                                                <div class="mt-2">
+                                                                    <label for="custom-input-file">
+                                                                        <input type="file" id="custom-input-file" />
+                                                                        <span class="btn btn-sm btn-outline-secondary">찾아보기</span>
+                                                                    </label>
+                                                                </div>
+                                                            </th>
+                                                            <td>
+                                                                <p>찾아보기 버튼을 통해 업로드 된 이미지가 표시됩니다.</p>
+                                                                <div class="payment-logo-preview">
+                                                                    <img class="img-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjE0NnB4IiBoZWlnaHQ9IjM4cHgiIHZpZXdCb3g9IjAgMCAxNDYgMzgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQwICgzMzc2MikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+U2hhcGUgQ29weTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJ2Mi4yLjAiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLpppbpobUt6buY6K6k5pWI5p6cLWNvcHktMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcwLjAwMDAwMCwgLTE5LjAwMDAwMCkiIGZpbGw9IiM0MDlFRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEyLjEzNTQ0MSw0NS4xNTc4MDc3IEMyMTIuMTM1NDQxLDQ1LjE1NzgwNzcgMjEyLjQyMDIzNyw0NS4xNTA1MTA1IDIxMi45NjA5MzcsNDUuMTU3ODA3NyBDMjEzLjUwMTYzNyw0NS4xNjUxMDQ5IDIxMy42NDg4NTEsNDUuNTcwODU1NiAyMTMuNjQ4ODUxLDQ1LjU3MDg1NTYgQzIxMy42NDg4NTEsNDUuNTcwODU1NiAyMTQuNzMzODI4LDQ3LjU2NjU2NTcgMjE1LjAyNDY3Nyw0OC4wNDkxNDM0IEMyMTUuMjgzNjA4LDQ4LjQ3ODcxMzMgMjE0Ljk3MzIyMSw0OC40NzA4NjU0IDIxNC45MDE4MTYsNDguNDYzODQzNiBDMjE0LjkwMjUwNCw0OC40NjI4Nzk4IDIxNC44ODcwOTUsNDguNDYyMTkxNCAyMTQuODg3MDk1LDQ4LjQ2MjE5MTQgQzIxNC44ODcwOTUsNDguNDYyMTkxNCAyMTQuODkzMDExLDQ4LjQ2MzAxNzUgMjE0LjkwMTgxNiw0OC40NjM4NDM2IEMyMTQuODk4NjUyLDQ4LjQ2ODI0OTUgMjE0LjU5NDczMSw0OC40NzgzMDAzIDIxMS40NDc1MjgsNDguNDYyMTkxNCBDMjA3LjA1ODY0MSw0Ny44NjY1NzYyIDIwNi45MDczLDQzLjkxODY2MzggMjA2LjkwNzMsNDMuOTE4NjYzOCBMMjA2LjkwNzMsMzYuODk2ODQ4MyBMMjA0LjQzMDgxMiwzNi44OTY4NDgzIEwyMDQuNDMwODEyLDM0LjI4MDg3NzkgQzIwNC40MzA4MTIsMzMuOTI0Mjc5OCAyMDQuODQzNTYsMzMuODY3ODI5OSAyMDQuODQzNTYsMzMuODY3ODI5OSBMMjA2LjkwNzMsMzMuODY3ODI5OSBMMjA2LjkwNzMsMzEuMjUxODU5NCBDMjA2LjkwNzMsMzAuODI1MTgwOSAyMDcuMzIwMDQ4LDMwLjcwMTEyODggMjA3LjMyMDA0OCwzMC43MDExMjg4IEMyMDcuMzIwMDQ4LDMwLjcwMTEyODggMjA4Ljc3MjY0NiwzMC4yODU4Nzc5IDIwOS42MTc4MTYsMzAuMDQ0MTA3MiBDMjA5Ljk2NDY2MiwyOS45NDQ5NzU2IDIxMC4wNzE3MDEsMzAuMTUwMzk4MiAyMTAuMDcxNzAxLDMwLjE1MDM5ODIgQzIxMC4wNzE3MDEsMzAuMTUwMzk4MiAyMTAuMjA5Mjg0LDMwLjA3NzQyNjQgMjEwLjIwOTI4NCwzMC4zOTI3MTk2IEwyMTAuMjA5Mjg0LDM0LjAwNTUxMjUgTDIxMy43ODY0MzMsMzQuMDA1NTEyNSBDMjE0LjEzNDY1NSwzNC4wMDU1MTI1IDIxNC4xOTkxODEsMzQuNDE4NTYwNSAyMTQuMTk5MTgxLDM0LjQxODU2MDUgTDIxNC4xOTkxODEsMzcuMDM0NTMxIEwyMTAuMjA5Mjg0LDM3LjAzNDUzMSBMMjEwLjIwOTI4NCw0My4wOTI1Njc4IEMyMTAuMjA5Mjg0LDQ0Ljg1MzM5MTMgMjEyLjEzNTQ0MSw0NS4xNTc4MDc3IDIxMi4xMzU0NDEsNDUuMTU3ODA3NyBMMjEyLjEzNTQ0MSw0NS4xNTc4MDc3IFogTTIwMS41NDE1NzYsNDguMTg2ODI2MSBMMTk5LjM0MDI1Myw0OC4xODY4MjYxIEMxOTguOTA4MzgxLDQ4LjE4NjgyNjEgMTk4LjkyNzUwNSw0Ny42MzYwOTU1IDE5OC45Mjc1MDUsNDcuNjM2MDk1NSBMMTk4LjkyNzUwNSwzNy40NDc1Nzg5IEMxOTguOTI3NTA1LDM2LjgyODY5NTQgMTk4LjEwMjAwOSwzNi42MjE0ODMgMTk4LjEwMjAwOSwzNi42MjE0ODMgTDE5My41NjE3ODEsMzYuNjIxNDgzIEMxOTIuODg0NDYyLDM2LjYyMTQ4MyAxOTIuODczODY4LDM3LjQ0NzU3ODkgMTkyLjg3Mzg2OCwzNy40NDc1Nzg5IEwxOTIuODczODY4LDQ3Ljc3Mzc3ODEgQzE5Mi44NzM4NjgsNDguMTc4NzAyOCAxOTIuNDYxMTIsNDguMTg2ODI2MSAxOTIuNDYxMTIsNDguMTg2ODI2MSBMMTkwLjI1OTc5Nyw0OC4xODY4MjYxIEMxODkuNzc1NzgyLDQ4LjE4NjgyNjEgMTg5Ljg0NzA0OSw0Ny42MzYwOTU1IDE4OS44NDcwNDksNDcuNjM2MDk1NSBMMTg5Ljg0NzA0OSwzNC44MzE2MDg1IEMxODkuODQ3MDQ5LDMzLjgwMzExOSAxOTEuMDg1MjkzLDMzLjU5MjQ2NDYgMTkxLjA4NTI5MywzMy41OTI0NjQ2IEwyMDAuNzE2MDgsMzMuNTkyNDY0NiBDMjAxLjY3Nzc4MywzMy41OTI0NjQ2IDIwMS45NTQzMjQsMzQuODMxNjA4NSAyMDEuOTU0MzI0LDM0LjgzMTYwODUgTDIwMS45NTQzMjQsNDcuNDk4NDEyOCBDMjAxLjk1NDMyNCw0OC4yMTg2MzA4IDIwMS41NDE1NzYsNDguMTg2ODI2MSAyMDEuNTQxNTc2LDQ4LjE4NjgyNjEgTDIwMS41NDE1NzYsNDguMTg2ODI2MSBaIE0xODUuODU3MTUyLDQyLjQwNDE1NDYgTDE3Ny4zMjcwMjcsNDIuNDA0MTU0NiBMMTc3LjMyNzAyNyw0NC40NjkzOTQ0IEMxNzcuMzI3MDI3LDQ1LjIxMzU2OTEgMTc4LjI5MDEwNiw0NS40MzMxNzMgMTc4LjI5MDEwNiw0NS40MzMxNzMgTDE4NS4xNjkyMzksNDUuNDMzMTczIEMxODUuNjU4NzU4LDQ1LjQzMzE3MyAxODUuOTk0NzM1LDQ1Ljg0NjIyMSAxODUuOTk0NzM1LDQ1Ljg0NjIyMSBDMTg1Ljk5NDczNSw0NS44NDYyMjEgMTg2LjU5NTAwOCw0Ny4wOTUxNDAzIDE4Ni44MjAyMzEsNDcuNjM2MDk1NSBDMTg3LjA0NTQ1NCw0OC4xNzcwNTA2IDE4Ni40MDc0ODMsNDguMTg2ODI2MSAxODYuNDA3NDgzLDQ4LjE4NjgyNjEgTDE3Ni4wODg3ODMsNDguMTg2ODI2MSBDMTc0Ljg0NjEzNiw0OC4xODY4MjYxIDE3NC41NzUzNzQsNDYuNjcyMzE2OSAxNzQuNTc1Mzc0LDQ2LjY3MjMxNjkgTDE3NC41NzUzNzQsMzQuOTY5MjkxMSBDMTc0LjU3NTM3NCwzNC4yOTYyOTgzIDE3NS41Mzg0NTIsMzQuMDA1NTEyNSAxNzUuNTM4NDUyLDM0LjAwNTUxMjUgTDE4NS44NTcxNTIsMzQuMDA1NTEyNSBDMTg2Ljg5NDExMywzNC4wMDU1MTI1IDE4Ny4wOTUzOTYsMzUuMjQ0NjU2NCAxODcuMDk1Mzk2LDM1LjI0NDY1NjQgTDE4Ny4wOTUzOTYsNDEuMTY1MDEwNyBDMTg3LjA5NTM5Niw0Mi4xNjM4OTgzIDE4NS44NTcxNTIsNDIuNDA0MTU0NiAxODUuODU3MTUyLDQyLjQwNDE1NDYgTDE4NS44NTcxNTIsNDIuNDA0MTU0NiBaIE0xODQuMzQzNzQzLDM3LjQ0NzU3ODkgQzE4NC4zNDM3NDMsMzcuNDQ3NTc4OSAxODQuMjU3MDY2LDM2Ljc1OTE2NTcgMTgzLjY1NTgzLDM2Ljc1OTE2NTcgTDE3OC4wMTQ5NCwzNi43NTkxNjU3IEMxNzguMDE0OTQsMzYuNzU5MTY1NyAxNzcuMzI3MDI3LDM2Ljk0Mzc5ODEgMTc3LjMyNzAyNywzNy40NDc1Nzg5IEwxNzcuMzI3MDI3LDM4Ljk2MjA4ODIgQzE3Ny4zMjcwMjcsMzguOTYyMDg4MiAxNzcuMzQ2ODM5LDM5LjY1MDUwMTQgMTc4LjAxNDk0LDM5LjY1MDUwMTQgTDE4My42NTU4MywzOS42NTA1MDE0IEMxODMuNjU1ODMsMzkuNjUwNTAxNCAxODQuMzQzNzQzLDM5LjQ4MDQ2MzQgMTg0LjM0Mzc0MywzOC44MjQ0MDU1IEwxODQuMzQzNzQzLDM3LjQ0NzU3ODkgTDE4NC4zNDM3NDMsMzcuNDQ3NTc4OSBaIE0xNzEuNDEwOTcyLDQ4LjE4NjgyNjEgTDE2OS4yMDk2NSw0OC4xODY4MjYxIEMxNjguOTE5MjEzLDQ4LjE4NjgyNjEgMTY4Ljc5NjkwMiw0Ny43NzM3NzgxIDE2OC43OTY5MDIsNDcuNzczNzc4MSBMMTY4Ljc5NjkwMiwzNy40NDc1Nzg5IEMxNjguNzk2OTAyLDM2LjgwNzIxNjkgMTY3Ljk3MTQwNiwzNi42MjE0ODMgMTY3Ljk3MTQwNiwzNi42MjE0ODMgTDE2NS45MDc2NjYsMzYuNjIxNDgzIEMxNjUuMzMxODgyLDM2LjYyMTQ4MyAxNjUuMjE5NzUyLDM3LjQ0NzU3ODkgMTY1LjIxOTc1MiwzNy40NDc1Nzg5IEwxNjUuMjE5NzUyLDQ3Ljc3Mzc3ODEgQzE2NS4yMTk3NTIsNDguMTE2MzMyNiAxNjQuODA3MDA0LDQ4LjE4NjgyNjEgMTY0LjgwNzAwNCw0OC4xODY4MjYxIEwxNjIuNjA1NjgyLDQ4LjE4NjgyNjEgQzE2Mi4yOTk1Niw0OC4xODY4MjYxIDE2Mi4xOTI5MzQsNDcuNzczNzc4MSAxNjIuMTkyOTM0LDQ3Ljc3Mzc3ODEgTDE2Mi4xOTI5MzQsMzcuNDQ3NTc4OSBDMTYyLjE5MjkzNCwzNi43OTI4OTc5IDE2MS4zNjc0MzgsMzYuNjIxNDgzIDE2MS4zNjc0MzgsMzYuNjIxNDgzIEwxNTkuMzAzNjk4LDM2LjYyMTQ4MyBDMTU4LjY3Mzk4MiwzNi42MjE0ODMgMTU4LjYxNTc4NCwzNy40NDc1Nzg5IDE1OC42MTU3ODQsMzcuNDQ3NTc4OSBMMTU4LjYxNTc4NCw0Ny43NzM3NzgxIEMxNTguNjE1Nzg0LDQ4LjIxNTczOTUgMTU4LjIwMzAzNiw0OC4xODY4MjYxIDE1OC4yMDMwMzYsNDguMTg2ODI2MSBMMTU2LjAwMTcxNCw0OC4xODY4MjYxIEMxNTUuNTg5Mzc4LDQ4LjE4NjgyNjEgMTU1LjU4ODk2Niw0Ny43NzM3NzgxIDE1NS41ODg5NjYsNDcuNzczNzc4MSBMMTU1LjU4ODk2NiwzNC42OTM5MjU4IEMxNTUuNTg4OTY2LDMzLjkzNjI1ODIgMTU2LjY4OTYyNywzMy41OTI0NjQ2IDE1Ni42ODk2MjcsMzMuNTkyNDY0NiBMMTcwLjQ0Nzg5NCwzMy41OTI0NjQ2IEMxNzEuNTUyMjcsMzMuNTkyNDY0NiAxNzEuODIzNzIsMzQuOTY5MjkxMSAxNzEuODIzNzIsMzQuOTY5MjkxMSBMMTcxLjgyMzcyLDQ3Ljc3Mzc3ODEgQzE3MS44MjM3Miw0OC4yNDkzMzQgMTcxLjQxMDk3Miw0OC4xODY4MjYxIDE3MS40MTA5NzIsNDguMTg2ODI2MSBMMTcxLjQxMDk3Miw0OC4xODY4MjYxIFogTTE1MS40NjE0ODYsNDIuNDA0MTU0NiBMMTQyLjkzMTM2LDQyLjQwNDE1NDYgTDE0Mi45MzEzNiw0NC40NjkzOTQ0IEMxNDIuOTMxMzYsNDUuMjEzNTY5MSAxNDMuODk0NDM5LDQ1LjQzMzE3MyAxNDMuODk0NDM5LDQ1LjQzMzE3MyBMMTUwLjc3MzU3Miw0NS40MzMxNzMgQzE1MS4yNjMwOTIsNDUuNDMzMTczIDE1MS41OTkwNjgsNDUuODQ2MjIxIDE1MS41OTkwNjgsNDUuODQ2MjIxIEMxNTEuNTk5MDY4LDQ1Ljg0NjIyMSAxNTIuMTk5MjA0LDQ3LjA5NTE0MDMgMTUyLjQyNDU2NCw0Ny42MzYwOTU1IEMxNTIuNjQ5Nzg3LDQ4LjE3NzA1MDYgMTUyLjAxMTgxNiw0OC4xODY4MjYxIDE1Mi4wMTE4MTYsNDguMTg2ODI2MSBMMTQxLjY5MzExNyw0OC4xODY4MjYxIEMxNDAuNDUwNDcsNDguMTg2ODI2MSAxNDAuMTc5NzA3LDQ2LjY3MjMxNjkgMTQwLjE3OTcwNyw0Ni42NzIzMTY5IEwxNDAuMTc5NzA3LDM0Ljk2OTI5MTEgQzE0MC4xNzk3MDcsMzQuMjk2Mjk4MyAxNDEuMTQyNzg2LDM0LjAwNTUxMjUgMTQxLjE0Mjc4NiwzNC4wMDU1MTI1IEwxNTEuNDYxNDg2LDM0LjAwNTUxMjUgQzE1Mi40OTg0NDYsMzQuMDA1NTEyNSAxNTIuNjk5NzMsMzUuMjQ0NjU2NCAxNTIuNjk5NzMsMzUuMjQ0NjU2NCBMMTUyLjY5OTczLDQxLjE2NTAxMDcgQzE1Mi42OTk3Myw0Mi4xNjM4OTgzIDE1MS40NjE0ODYsNDIuNDA0MTU0NiAxNTEuNDYxNDg2LDQyLjQwNDE1NDYgTDE1MS40NjE0ODYsNDIuNDA0MTU0NiBaIE0xNDkuOTQ4MDc2LDM3LjQ0NzU3ODkgQzE0OS45NDgwNzYsMzcuNDQ3NTc4OSAxNDkuODYxMzk5LDM2Ljc1OTE2NTcgMTQ5LjI2MDE2MywzNi43NTkxNjU3IEwxNDMuNjE5Mjc0LDM2Ljc1OTE2NTcgQzE0My42MTkyNzQsMzYuNzU5MTY1NyAxNDIuOTMxMzYsMzYuOTQzNzk4MSAxNDIuOTMxMzYsMzcuNDQ3NTc4OSBMMTQyLjkzMTM2LDM4Ljk2MjA4ODIgQzE0Mi45MzEzNiwzOC45NjIwODgyIDE0Mi45NTExNzIsMzkuNjUwNTAxNCAxNDMuNjE5Mjc0LDM5LjY1MDUwMTQgTDE0OS4yNjAxNjMsMzkuNjUwNTAxNCBDMTQ5LjI2MDE2MywzOS42NTA1MDE0IDE0OS45NDgwNzYsMzkuNDgwNDYzNCAxNDkuOTQ4MDc2LDM4LjgyNDQwNTUgTDE0OS45NDgwNzYsMzcuNDQ3NTc4OSBMMTQ5Ljk0ODA3NiwzNy40NDc1Nzg5IFogTTEzOC4xMTU5NjcsNDguMTg2ODI2MSBMMTMyLjg4NzgyNiw0OC4xODY4MjYxIEMxMzIuODg3ODI2LDQ4LjE4NjgyNjEgMTI5LjA2MTkyNyw0OC4wMDYxODY1IDEyOC43NjAzNDYsNDQuMTk0MDI5MSBDMTI4Ljc0ODIzOSw0MC4yNzkwMjI4IDEyOC43NjAzNDYsMjguMDg1MTU4MyAxMjguNzYwMzQ2LDI4LjA4NTE1ODMgTDEzMS4yMzY4MzQsMjguMDg1MTU4MyBDMTMxLjIzNjgzNCwyOC4wODUxNTgzIDEzMi4wNjIzMywyOC4wNzAxNTA5IDEzMi4wNjIzMywyOC45MTEyNTQzIEwxMzIuMDYyMzMsNDMuMzY3OTMzMSBDMTMyLjA2MjMzLDQzLjM2NzkzMzEgMTMyLjM1MDAxNSw0NC41NjM4NDQ3IDEzMy45ODg0ODcsNDUuMDIwMTI1IEMxMzUuODM5OCw0NS4wMTA3NjI2IDEzNi4xODk4MSw0NS4wMjAxMjUgMTM2LjE4OTgxLDQ1LjAyMDEyNSBDMTM2LjE4OTgxLDQ1LjAyMDEyNSAxMzYuOTA3MzAzLDQ0Ljc5MDE5NSAxMzcuNDI4MDU0LDQ1LjcwODUzODMgQzEzNy45NDg4MDQsNDYuNjI2ODgxNiAxMzguNTI4NzE1LDQ3LjYzNjA5NTUgMTM4LjUyODcxNSw0Ny42MzYwOTU1IEMxMzguNTI4NzE1LDQ3LjYzNjA5NTUgMTM4LjYxMTU0LDQ4LjE4NjgyNjEgMTM4LjExNTk2Nyw0OC4xODY4MjYxIEwxMzguMTE1OTY3LDQ4LjE4NjgyNjEgWiBNMTExLjU2MjUxMyw0Ny4zNjA3MzAyIEwxMTEuNTYyNTEzLDI5LjE4NjYxOTYgQzExMS41NjI1MTMsMjguMzgwNzYzIDExMi4yNTA0MjYsMjguMjIyODQxIDExMi4yNTA0MjYsMjguMjIyODQxIEwxMjUuMTgzMTk3LDI4LjIyMjg0MSBDMTI1LjkwNjQ2OSwyOC4yMjI4NDEgMTI1LjU5NTk0NSwyOS4wNDg5MzY5IDEyNS41OTU5NDUsMjkuMDQ4OTM2OSBDMTI1LjU5NTk0NSwyOS4wNDg5MzY5IDEyNS4xOTI4MjcsMzAuMTY2MDk0IDEyNC45MDgwMzEsMzAuNzAxMTI4OCBDMTI0LjYyMzIzNSwzMS4yMzYxNjM2IDEyNC4wODI1MzUsMzEuMjUxODU5NCAxMjQuMDgyNTM1LDMxLjI1MTg1OTQgTDExNS42ODk5OTMsMzEuMjUxODU5NCBDMTE0LjkwODUyMywzMS4yNTE4NTk0IDExNC44NjQ0OTcsMzEuOTQwMjcyNyAxMTQuODY0NDk3LDMxLjk0MDI3MjcgTDExNC44NjQ0OTcsMzYuNDgzODAwMyBMMTI0LjM1NzcwMSwzNi40ODM4MDAzIEMxMjQuOTE0NjM1LDM2LjQ4MzgwMDMgMTI0LjYzMjg2NiwzNy4xNzIyMTM2IDEyNC42MzI4NjYsMzcuMTcyMjEzNiBDMTI0LjYzMjg2NiwzNy4xNzIyMTM2IDEyMy45MjE4MzksMzguNjg4OTI1OCAxMjMuNjY5Nzg3LDM5LjA5OTc3MDggQzEyMy40MTc3MzYsMzkuNTEwNjE1OSAxMjIuODQ0MjkxLDM5LjUxMjgxODggMTIyLjg0NDI5MSwzOS41MTI4MTg4IEwxMTQuODY0NDk3LDM5LjUxMjgxODggTDExNC44NjQ0OTcsNDQuMzMxNzExNyBDMTE0Ljg2NDQ5Nyw0NC45ODg0NTggMTE1LjU1MjQxLDQ1LjE1NzgwNzcgMTE1LjU1MjQxLDQ1LjE1NzgwNzcgTDEyNC4zNTc3MDEsNDUuMTU3ODA3NyBDMTI0Ljk5NjIyMiw0NS4xNTc4MDc3IDEyNS4xODMxOTcsNDUuNTcwODU1NiAxMjUuMTgzMTk3LDQ1LjU3MDg1NTYgQzEyNS4xODMxOTcsNDUuNTcwODU1NiAxMjYuMDU1MTk2LDQ2LjkzMjM5OTQgMTI2LjQyMTQ0MSw0Ny40OTg0MTI4IEMxMjYuNzg3ODIzLDQ4LjA2NDQyNjIgMTI2LjI4Mzg1OCw0OC4xODY4MjYxIDEyNi4yODM4NTgsNDguMTg2ODI2MSBMMTEyLjM4ODAwOSw0OC4xODY4MjYxIEMxMTEuODE0MTUxLDQ4LjE4NjgyNjEgMTExLjU2MjUxMyw0Ny4zNjA3MzAyIDExMS41NjI1MTMsNDcuMzYwNzMwMiBaIE0xMDMuNDE2NTAyLDQ2LjIxNzU1MTEgQzEwMy40MDcwMDgsNDcuNzk0NTY4MiAxMDIuNTg3ODQxLDQ4LjE0NjM0NzQgMTAyLjU4Nzg0MSw0OC4xNDYzNDc0IEMxMDIuNTg3ODQxLDQ4LjE0NjM0NzQgODguNDUyMDQ3OCw1Ni4zMTQ1MDg3IDg3LjUzMjk5NTYsNTYuODI2Mjc1MSBDODYuNjIyMzM2LDU3LjIxNzE1NjEgODYuMDEzNjcwMyw1Ni44MjYyNzUxIDg2LjAxMzY3MDMsNTYuODI2Mjc1MSBDODYuMDEzNjcwMyw1Ni44MjYyNzUxIDcxLjIyMjU3MDYsNDguMjQ3OTU3MiA3MC42ODI2OTYyLDQ3Ljg3MDg0NDQgQzcwLjE0MjY4NDMsNDcuNDkzNzMxNiA3MC4xMzAxNjQzLDQ2LjkwNjM3NzQgNzAuMTMwMTY0Myw0Ni45MDYzNzc0IEM3MC4xMzAxNjQzLDQ2LjkwNjM3NzQgNzAuMTQ1MDIzMiwyOS45MTk5MTc0IDcwLjEzMDE2NDMsMjkuMTMzMzM2NCBDNzAuMTE1MzA1MywyOC4zNDY2MTc3IDcxLjA5Njk1NzYsMjcuNzU1NTQ2MSA3MS4wOTY5NTc2LDI3Ljc1NTU0NjEgTDg1Ljg3NTUzNzMsMTkuMjEzNDM4NyBDODYuNzg1MzcxNCwxOC43MzMyMDE2IDg3LjY3MTEyODYsMTkuMjEzNDM4NyA4Ny42NzExMjg2LDE5LjIxMzQzODcgQzg3LjY3MTEyODYsMTkuMjEzNDM4NyAxMDAuNzI2NjIzLDI2LjgwMjA5MzcgMTAyLjE3MzQ0MiwyNy42MTc3MjU3IEMxMDMuNTkxNTA3LDI4LjI5MTk1NzcgMTAzLjQxNjUwMiwyOS42ODQzNDI0IDEwMy40MTY1MDIsMjkuNjg0MzQyNCBDMTAzLjQxNjUwMiwyOS42ODQzNDI0IDEwMy40MjUzMDcsNDQuNzUxOTE5MiAxMDMuNDE2NTAyLDQ2LjIxNzU1MTEgTDEwMy40MTY1MDIsNDYuMjE3NTUxMSBaIE05Ny41MTYwMTA1LDI5LjE2OTEzMzkgQzk0LjQ5MDAxNzMsMjcuNDI3NDQ4MyA4Ny4zNjE1ODQyLDIzLjI5NzEwNjMgODcuMzYxNTg0MiwyMy4yOTcxMDYzIEM4Ny4zNjE1ODQyLDIzLjI5NzEwNjMgODYuNjY2MTAzOSwyMi45MjEyMzI2IDg1Ljk1MTc3NDcsMjMuMjk3MTA2MyBMNzQuMzQ4NzQwNiwyOS45ODIxNSBDNzQuMzQ4NzQwNiwyOS45ODIxNSA3My41NzgwMDI1LDMwLjQ0NDkwMTQgNzMuNTg5Njk3LDMxLjA2MDQ4MDUgQzczLjYwMTM5MTUsMzEuNjc2MDU5NyA3My41ODk2OTcsNDQuOTY5ODcwOCA3My41ODk2OTcsNDQuOTY5ODcwOCBDNzMuNTg5Njk3LDQ0Ljk2OTg3MDggNzMuNTk5NDY1NCw0NS40Mjk1OTMyIDc0LjAyMzQ5NTEsNDUuNzI0NjQ3MiBDNzQuNDQ3Mzg3Myw0Ni4wMTk3MDExIDg2LjA2MDE4OTgsNTIuNzMzMjQ1MSA4Ni4wNjAxODk4LDUyLjczMzI0NTEgQzg2LjA2MDE4OTgsNTIuNzMzMjQ1MSA4Ni41MzgxNTIsNTMuMDM5MTc1OSA4Ny4yNTMwMzE1LDUyLjczMzI0NTEgQzg3Ljk3NDY1MjYsNTIuMzMyNzI2MiA5OS4wNzMwMzM1LDQ1Ljk0MDI1ODIgOTkuMDczMDMzNSw0NS45NDAyNTgyIEM5OS4wNzMwMzM1LDQ1Ljk0MDI1ODIgOTkuNzE2MjMyNSw0NS42NjQ4OTI5IDk5LjcyMzY2MTksNDQuNDMwNzA1NiBDOTkuNzI1NzI1Nyw0NC4wNzQ3OTU5IDk5LjcyNjU1MTIsNDIuNjkzMjg4MSA5OS43MjY2ODg3LDQwLjk1NzUyMjkgTDg2LjY2MDA1MDIsNDguODc1MjM5NCBMODYuNjYwMDUwMiw0NS44NDYyMjEgQzg2LjY2MDA1MDIsNDQuNjAyMTIwNSA4Ny42MjMxMjg5LDQzLjc4MDk4MTEgODcuNjIzMTI4OSw0My43ODA5ODExIEw5OS4xODA3NjA3LDM2LjgxNjU3OTMgQzk5LjYxNjg5NzgsMzYuMzYxMTI1MSA5OS43MDY4NzY4LDM1LjYzMTU0NDcgOTkuNzI1NDUwNSwzNS4zNTU2Mjg3IEM5OS43MjUwMzc4LDM0LjA5MDQ2MjcgOTkuNzI0NDg3NCwzMi45ODUyODQxIDk5LjcyNDA3NDcsMzIuMjg1MTY3OCBMODYuNjYwMDUwMiw0MC4yMDEyMzIxIEw4Ni42NjAwNTAyLDM3LjAzNDUzMSBDODYuNjYwMDUwMiwzNS43OTA0MzA1IDg3LjQ4NTU0NjIsMzUuMjQ0NjU2NCA4Ny40ODU1NDYyLDM1LjI0NDY1NjQgTDk3LjUxNjAxMDUsMjkuMTY5MTMzOSBaIiBpZD0iU2hhcGUtQ29weSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="엘리먼트 유아이">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <span class="tip"><i class="xi-info-o"></i>  미리보기 이미지의 사이즈로 결제화면 상단에 표시됩니다..</span>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="row">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" name="payment-logo" id="payment-logo-custom" class="custom-control-input">
-                                                    <label class="custom-control-label" for="payment-logo-custom">업로드 이미지로 표시</label>
-                                                </div>
-                                                <div class="mt-2">
-                                                    <label for="custom-input-file">
-                                                        <input type="file" id="custom-input-file" />
-                                                        <span class="btn btn-sm btn-outline-secondary">찾아보기</span>
-                                                    </label>
-                                                </div>
+                                                결제 유효기간
                                             </th>
                                             <td>
-                                                <p>찾아보기 버튼을 통해 업로드 된 이미지가 표시됩니다.</p>
-                                                <div class="payment-logo-preview">
-                                                    <img class="img-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjE0NnB4IiBoZWlnaHQ9IjM4cHgiIHZpZXdCb3g9IjAgMCAxNDYgMzgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQwICgzMzc2MikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+U2hhcGUgQ29weTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJ2Mi4yLjAiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLpppbpobUt6buY6K6k5pWI5p6cLWNvcHktMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTcwLjAwMDAwMCwgLTE5LjAwMDAwMCkiIGZpbGw9IiM0MDlFRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEyLjEzNTQ0MSw0NS4xNTc4MDc3IEMyMTIuMTM1NDQxLDQ1LjE1NzgwNzcgMjEyLjQyMDIzNyw0NS4xNTA1MTA1IDIxMi45NjA5MzcsNDUuMTU3ODA3NyBDMjEzLjUwMTYzNyw0NS4xNjUxMDQ5IDIxMy42NDg4NTEsNDUuNTcwODU1NiAyMTMuNjQ4ODUxLDQ1LjU3MDg1NTYgQzIxMy42NDg4NTEsNDUuNTcwODU1NiAyMTQuNzMzODI4LDQ3LjU2NjU2NTcgMjE1LjAyNDY3Nyw0OC4wNDkxNDM0IEMyMTUuMjgzNjA4LDQ4LjQ3ODcxMzMgMjE0Ljk3MzIyMSw0OC40NzA4NjU0IDIxNC45MDE4MTYsNDguNDYzODQzNiBDMjE0LjkwMjUwNCw0OC40NjI4Nzk4IDIxNC44ODcwOTUsNDguNDYyMTkxNCAyMTQuODg3MDk1LDQ4LjQ2MjE5MTQgQzIxNC44ODcwOTUsNDguNDYyMTkxNCAyMTQuODkzMDExLDQ4LjQ2MzAxNzUgMjE0LjkwMTgxNiw0OC40NjM4NDM2IEMyMTQuODk4NjUyLDQ4LjQ2ODI0OTUgMjE0LjU5NDczMSw0OC40NzgzMDAzIDIxMS40NDc1MjgsNDguNDYyMTkxNCBDMjA3LjA1ODY0MSw0Ny44NjY1NzYyIDIwNi45MDczLDQzLjkxODY2MzggMjA2LjkwNzMsNDMuOTE4NjYzOCBMMjA2LjkwNzMsMzYuODk2ODQ4MyBMMjA0LjQzMDgxMiwzNi44OTY4NDgzIEwyMDQuNDMwODEyLDM0LjI4MDg3NzkgQzIwNC40MzA4MTIsMzMuOTI0Mjc5OCAyMDQuODQzNTYsMzMuODY3ODI5OSAyMDQuODQzNTYsMzMuODY3ODI5OSBMMjA2LjkwNzMsMzMuODY3ODI5OSBMMjA2LjkwNzMsMzEuMjUxODU5NCBDMjA2LjkwNzMsMzAuODI1MTgwOSAyMDcuMzIwMDQ4LDMwLjcwMTEyODggMjA3LjMyMDA0OCwzMC43MDExMjg4IEMyMDcuMzIwMDQ4LDMwLjcwMTEyODggMjA4Ljc3MjY0NiwzMC4yODU4Nzc5IDIwOS42MTc4MTYsMzAuMDQ0MTA3MiBDMjA5Ljk2NDY2MiwyOS45NDQ5NzU2IDIxMC4wNzE3MDEsMzAuMTUwMzk4MiAyMTAuMDcxNzAxLDMwLjE1MDM5ODIgQzIxMC4wNzE3MDEsMzAuMTUwMzk4MiAyMTAuMjA5Mjg0LDMwLjA3NzQyNjQgMjEwLjIwOTI4NCwzMC4zOTI3MTk2IEwyMTAuMjA5Mjg0LDM0LjAwNTUxMjUgTDIxMy43ODY0MzMsMzQuMDA1NTEyNSBDMjE0LjEzNDY1NSwzNC4wMDU1MTI1IDIxNC4xOTkxODEsMzQuNDE4NTYwNSAyMTQuMTk5MTgxLDM0LjQxODU2MDUgTDIxNC4xOTkxODEsMzcuMDM0NTMxIEwyMTAuMjA5Mjg0LDM3LjAzNDUzMSBMMjEwLjIwOTI4NCw0My4wOTI1Njc4IEMyMTAuMjA5Mjg0LDQ0Ljg1MzM5MTMgMjEyLjEzNTQ0MSw0NS4xNTc4MDc3IDIxMi4xMzU0NDEsNDUuMTU3ODA3NyBMMjEyLjEzNTQ0MSw0NS4xNTc4MDc3IFogTTIwMS41NDE1NzYsNDguMTg2ODI2MSBMMTk5LjM0MDI1Myw0OC4xODY4MjYxIEMxOTguOTA4MzgxLDQ4LjE4NjgyNjEgMTk4LjkyNzUwNSw0Ny42MzYwOTU1IDE5OC45Mjc1MDUsNDcuNjM2MDk1NSBMMTk4LjkyNzUwNSwzNy40NDc1Nzg5IEMxOTguOTI3NTA1LDM2LjgyODY5NTQgMTk4LjEwMjAwOSwzNi42MjE0ODMgMTk4LjEwMjAwOSwzNi42MjE0ODMgTDE5My41NjE3ODEsMzYuNjIxNDgzIEMxOTIuODg0NDYyLDM2LjYyMTQ4MyAxOTIuODczODY4LDM3LjQ0NzU3ODkgMTkyLjg3Mzg2OCwzNy40NDc1Nzg5IEwxOTIuODczODY4LDQ3Ljc3Mzc3ODEgQzE5Mi44NzM4NjgsNDguMTc4NzAyOCAxOTIuNDYxMTIsNDguMTg2ODI2MSAxOTIuNDYxMTIsNDguMTg2ODI2MSBMMTkwLjI1OTc5Nyw0OC4xODY4MjYxIEMxODkuNzc1NzgyLDQ4LjE4NjgyNjEgMTg5Ljg0NzA0OSw0Ny42MzYwOTU1IDE4OS44NDcwNDksNDcuNjM2MDk1NSBMMTg5Ljg0NzA0OSwzNC44MzE2MDg1IEMxODkuODQ3MDQ5LDMzLjgwMzExOSAxOTEuMDg1MjkzLDMzLjU5MjQ2NDYgMTkxLjA4NTI5MywzMy41OTI0NjQ2IEwyMDAuNzE2MDgsMzMuNTkyNDY0NiBDMjAxLjY3Nzc4MywzMy41OTI0NjQ2IDIwMS45NTQzMjQsMzQuODMxNjA4NSAyMDEuOTU0MzI0LDM0LjgzMTYwODUgTDIwMS45NTQzMjQsNDcuNDk4NDEyOCBDMjAxLjk1NDMyNCw0OC4yMTg2MzA4IDIwMS41NDE1NzYsNDguMTg2ODI2MSAyMDEuNTQxNTc2LDQ4LjE4NjgyNjEgTDIwMS41NDE1NzYsNDguMTg2ODI2MSBaIE0xODUuODU3MTUyLDQyLjQwNDE1NDYgTDE3Ny4zMjcwMjcsNDIuNDA0MTU0NiBMMTc3LjMyNzAyNyw0NC40NjkzOTQ0IEMxNzcuMzI3MDI3LDQ1LjIxMzU2OTEgMTc4LjI5MDEwNiw0NS40MzMxNzMgMTc4LjI5MDEwNiw0NS40MzMxNzMgTDE4NS4xNjkyMzksNDUuNDMzMTczIEMxODUuNjU4NzU4LDQ1LjQzMzE3MyAxODUuOTk0NzM1LDQ1Ljg0NjIyMSAxODUuOTk0NzM1LDQ1Ljg0NjIyMSBDMTg1Ljk5NDczNSw0NS44NDYyMjEgMTg2LjU5NTAwOCw0Ny4wOTUxNDAzIDE4Ni44MjAyMzEsNDcuNjM2MDk1NSBDMTg3LjA0NTQ1NCw0OC4xNzcwNTA2IDE4Ni40MDc0ODMsNDguMTg2ODI2MSAxODYuNDA3NDgzLDQ4LjE4NjgyNjEgTDE3Ni4wODg3ODMsNDguMTg2ODI2MSBDMTc0Ljg0NjEzNiw0OC4xODY4MjYxIDE3NC41NzUzNzQsNDYuNjcyMzE2OSAxNzQuNTc1Mzc0LDQ2LjY3MjMxNjkgTDE3NC41NzUzNzQsMzQuOTY5MjkxMSBDMTc0LjU3NTM3NCwzNC4yOTYyOTgzIDE3NS41Mzg0NTIsMzQuMDA1NTEyNSAxNzUuNTM4NDUyLDM0LjAwNTUxMjUgTDE4NS44NTcxNTIsMzQuMDA1NTEyNSBDMTg2Ljg5NDExMywzNC4wMDU1MTI1IDE4Ny4wOTUzOTYsMzUuMjQ0NjU2NCAxODcuMDk1Mzk2LDM1LjI0NDY1NjQgTDE4Ny4wOTUzOTYsNDEuMTY1MDEwNyBDMTg3LjA5NTM5Niw0Mi4xNjM4OTgzIDE4NS44NTcxNTIsNDIuNDA0MTU0NiAxODUuODU3MTUyLDQyLjQwNDE1NDYgTDE4NS44NTcxNTIsNDIuNDA0MTU0NiBaIE0xODQuMzQzNzQzLDM3LjQ0NzU3ODkgQzE4NC4zNDM3NDMsMzcuNDQ3NTc4OSAxODQuMjU3MDY2LDM2Ljc1OTE2NTcgMTgzLjY1NTgzLDM2Ljc1OTE2NTcgTDE3OC4wMTQ5NCwzNi43NTkxNjU3IEMxNzguMDE0OTQsMzYuNzU5MTY1NyAxNzcuMzI3MDI3LDM2Ljk0Mzc5ODEgMTc3LjMyNzAyNywzNy40NDc1Nzg5IEwxNzcuMzI3MDI3LDM4Ljk2MjA4ODIgQzE3Ny4zMjcwMjcsMzguOTYyMDg4MiAxNzcuMzQ2ODM5LDM5LjY1MDUwMTQgMTc4LjAxNDk0LDM5LjY1MDUwMTQgTDE4My42NTU4MywzOS42NTA1MDE0IEMxODMuNjU1ODMsMzkuNjUwNTAxNCAxODQuMzQzNzQzLDM5LjQ4MDQ2MzQgMTg0LjM0Mzc0MywzOC44MjQ0MDU1IEwxODQuMzQzNzQzLDM3LjQ0NzU3ODkgTDE4NC4zNDM3NDMsMzcuNDQ3NTc4OSBaIE0xNzEuNDEwOTcyLDQ4LjE4NjgyNjEgTDE2OS4yMDk2NSw0OC4xODY4MjYxIEMxNjguOTE5MjEzLDQ4LjE4NjgyNjEgMTY4Ljc5NjkwMiw0Ny43NzM3NzgxIDE2OC43OTY5MDIsNDcuNzczNzc4MSBMMTY4Ljc5NjkwMiwzNy40NDc1Nzg5IEMxNjguNzk2OTAyLDM2LjgwNzIxNjkgMTY3Ljk3MTQwNiwzNi42MjE0ODMgMTY3Ljk3MTQwNiwzNi42MjE0ODMgTDE2NS45MDc2NjYsMzYuNjIxNDgzIEMxNjUuMzMxODgyLDM2LjYyMTQ4MyAxNjUuMjE5NzUyLDM3LjQ0NzU3ODkgMTY1LjIxOTc1MiwzNy40NDc1Nzg5IEwxNjUuMjE5NzUyLDQ3Ljc3Mzc3ODEgQzE2NS4yMTk3NTIsNDguMTE2MzMyNiAxNjQuODA3MDA0LDQ4LjE4NjgyNjEgMTY0LjgwNzAwNCw0OC4xODY4MjYxIEwxNjIuNjA1NjgyLDQ4LjE4NjgyNjEgQzE2Mi4yOTk1Niw0OC4xODY4MjYxIDE2Mi4xOTI5MzQsNDcuNzczNzc4MSAxNjIuMTkyOTM0LDQ3Ljc3Mzc3ODEgTDE2Mi4xOTI5MzQsMzcuNDQ3NTc4OSBDMTYyLjE5MjkzNCwzNi43OTI4OTc5IDE2MS4zNjc0MzgsMzYuNjIxNDgzIDE2MS4zNjc0MzgsMzYuNjIxNDgzIEwxNTkuMzAzNjk4LDM2LjYyMTQ4MyBDMTU4LjY3Mzk4MiwzNi42MjE0ODMgMTU4LjYxNTc4NCwzNy40NDc1Nzg5IDE1OC42MTU3ODQsMzcuNDQ3NTc4OSBMMTU4LjYxNTc4NCw0Ny43NzM3NzgxIEMxNTguNjE1Nzg0LDQ4LjIxNTczOTUgMTU4LjIwMzAzNiw0OC4xODY4MjYxIDE1OC4yMDMwMzYsNDguMTg2ODI2MSBMMTU2LjAwMTcxNCw0OC4xODY4MjYxIEMxNTUuNTg5Mzc4LDQ4LjE4NjgyNjEgMTU1LjU4ODk2Niw0Ny43NzM3NzgxIDE1NS41ODg5NjYsNDcuNzczNzc4MSBMMTU1LjU4ODk2NiwzNC42OTM5MjU4IEMxNTUuNTg4OTY2LDMzLjkzNjI1ODIgMTU2LjY4OTYyNywzMy41OTI0NjQ2IDE1Ni42ODk2MjcsMzMuNTkyNDY0NiBMMTcwLjQ0Nzg5NCwzMy41OTI0NjQ2IEMxNzEuNTUyMjcsMzMuNTkyNDY0NiAxNzEuODIzNzIsMzQuOTY5MjkxMSAxNzEuODIzNzIsMzQuOTY5MjkxMSBMMTcxLjgyMzcyLDQ3Ljc3Mzc3ODEgQzE3MS44MjM3Miw0OC4yNDkzMzQgMTcxLjQxMDk3Miw0OC4xODY4MjYxIDE3MS40MTA5NzIsNDguMTg2ODI2MSBMMTcxLjQxMDk3Miw0OC4xODY4MjYxIFogTTE1MS40NjE0ODYsNDIuNDA0MTU0NiBMMTQyLjkzMTM2LDQyLjQwNDE1NDYgTDE0Mi45MzEzNiw0NC40NjkzOTQ0IEMxNDIuOTMxMzYsNDUuMjEzNTY5MSAxNDMuODk0NDM5LDQ1LjQzMzE3MyAxNDMuODk0NDM5LDQ1LjQzMzE3MyBMMTUwLjc3MzU3Miw0NS40MzMxNzMgQzE1MS4yNjMwOTIsNDUuNDMzMTczIDE1MS41OTkwNjgsNDUuODQ2MjIxIDE1MS41OTkwNjgsNDUuODQ2MjIxIEMxNTEuNTk5MDY4LDQ1Ljg0NjIyMSAxNTIuMTk5MjA0LDQ3LjA5NTE0MDMgMTUyLjQyNDU2NCw0Ny42MzYwOTU1IEMxNTIuNjQ5Nzg3LDQ4LjE3NzA1MDYgMTUyLjAxMTgxNiw0OC4xODY4MjYxIDE1Mi4wMTE4MTYsNDguMTg2ODI2MSBMMTQxLjY5MzExNyw0OC4xODY4MjYxIEMxNDAuNDUwNDcsNDguMTg2ODI2MSAxNDAuMTc5NzA3LDQ2LjY3MjMxNjkgMTQwLjE3OTcwNyw0Ni42NzIzMTY5IEwxNDAuMTc5NzA3LDM0Ljk2OTI5MTEgQzE0MC4xNzk3MDcsMzQuMjk2Mjk4MyAxNDEuMTQyNzg2LDM0LjAwNTUxMjUgMTQxLjE0Mjc4NiwzNC4wMDU1MTI1IEwxNTEuNDYxNDg2LDM0LjAwNTUxMjUgQzE1Mi40OTg0NDYsMzQuMDA1NTEyNSAxNTIuNjk5NzMsMzUuMjQ0NjU2NCAxNTIuNjk5NzMsMzUuMjQ0NjU2NCBMMTUyLjY5OTczLDQxLjE2NTAxMDcgQzE1Mi42OTk3Myw0Mi4xNjM4OTgzIDE1MS40NjE0ODYsNDIuNDA0MTU0NiAxNTEuNDYxNDg2LDQyLjQwNDE1NDYgTDE1MS40NjE0ODYsNDIuNDA0MTU0NiBaIE0xNDkuOTQ4MDc2LDM3LjQ0NzU3ODkgQzE0OS45NDgwNzYsMzcuNDQ3NTc4OSAxNDkuODYxMzk5LDM2Ljc1OTE2NTcgMTQ5LjI2MDE2MywzNi43NTkxNjU3IEwxNDMuNjE5Mjc0LDM2Ljc1OTE2NTcgQzE0My42MTkyNzQsMzYuNzU5MTY1NyAxNDIuOTMxMzYsMzYuOTQzNzk4MSAxNDIuOTMxMzYsMzcuNDQ3NTc4OSBMMTQyLjkzMTM2LDM4Ljk2MjA4ODIgQzE0Mi45MzEzNiwzOC45NjIwODgyIDE0Mi45NTExNzIsMzkuNjUwNTAxNCAxNDMuNjE5Mjc0LDM5LjY1MDUwMTQgTDE0OS4yNjAxNjMsMzkuNjUwNTAxNCBDMTQ5LjI2MDE2MywzOS42NTA1MDE0IDE0OS45NDgwNzYsMzkuNDgwNDYzNCAxNDkuOTQ4MDc2LDM4LjgyNDQwNTUgTDE0OS45NDgwNzYsMzcuNDQ3NTc4OSBMMTQ5Ljk0ODA3NiwzNy40NDc1Nzg5IFogTTEzOC4xMTU5NjcsNDguMTg2ODI2MSBMMTMyLjg4NzgyNiw0OC4xODY4MjYxIEMxMzIuODg3ODI2LDQ4LjE4NjgyNjEgMTI5LjA2MTkyNyw0OC4wMDYxODY1IDEyOC43NjAzNDYsNDQuMTk0MDI5MSBDMTI4Ljc0ODIzOSw0MC4yNzkwMjI4IDEyOC43NjAzNDYsMjguMDg1MTU4MyAxMjguNzYwMzQ2LDI4LjA4NTE1ODMgTDEzMS4yMzY4MzQsMjguMDg1MTU4MyBDMTMxLjIzNjgzNCwyOC4wODUxNTgzIDEzMi4wNjIzMywyOC4wNzAxNTA5IDEzMi4wNjIzMywyOC45MTEyNTQzIEwxMzIuMDYyMzMsNDMuMzY3OTMzMSBDMTMyLjA2MjMzLDQzLjM2NzkzMzEgMTMyLjM1MDAxNSw0NC41NjM4NDQ3IDEzMy45ODg0ODcsNDUuMDIwMTI1IEMxMzUuODM5OCw0NS4wMTA3NjI2IDEzNi4xODk4MSw0NS4wMjAxMjUgMTM2LjE4OTgxLDQ1LjAyMDEyNSBDMTM2LjE4OTgxLDQ1LjAyMDEyNSAxMzYuOTA3MzAzLDQ0Ljc5MDE5NSAxMzcuNDI4MDU0LDQ1LjcwODUzODMgQzEzNy45NDg4MDQsNDYuNjI2ODgxNiAxMzguNTI4NzE1LDQ3LjYzNjA5NTUgMTM4LjUyODcxNSw0Ny42MzYwOTU1IEMxMzguNTI4NzE1LDQ3LjYzNjA5NTUgMTM4LjYxMTU0LDQ4LjE4NjgyNjEgMTM4LjExNTk2Nyw0OC4xODY4MjYxIEwxMzguMTE1OTY3LDQ4LjE4NjgyNjEgWiBNMTExLjU2MjUxMyw0Ny4zNjA3MzAyIEwxMTEuNTYyNTEzLDI5LjE4NjYxOTYgQzExMS41NjI1MTMsMjguMzgwNzYzIDExMi4yNTA0MjYsMjguMjIyODQxIDExMi4yNTA0MjYsMjguMjIyODQxIEwxMjUuMTgzMTk3LDI4LjIyMjg0MSBDMTI1LjkwNjQ2OSwyOC4yMjI4NDEgMTI1LjU5NTk0NSwyOS4wNDg5MzY5IDEyNS41OTU5NDUsMjkuMDQ4OTM2OSBDMTI1LjU5NTk0NSwyOS4wNDg5MzY5IDEyNS4xOTI4MjcsMzAuMTY2MDk0IDEyNC45MDgwMzEsMzAuNzAxMTI4OCBDMTI0LjYyMzIzNSwzMS4yMzYxNjM2IDEyNC4wODI1MzUsMzEuMjUxODU5NCAxMjQuMDgyNTM1LDMxLjI1MTg1OTQgTDExNS42ODk5OTMsMzEuMjUxODU5NCBDMTE0LjkwODUyMywzMS4yNTE4NTk0IDExNC44NjQ0OTcsMzEuOTQwMjcyNyAxMTQuODY0NDk3LDMxLjk0MDI3MjcgTDExNC44NjQ0OTcsMzYuNDgzODAwMyBMMTI0LjM1NzcwMSwzNi40ODM4MDAzIEMxMjQuOTE0NjM1LDM2LjQ4MzgwMDMgMTI0LjYzMjg2NiwzNy4xNzIyMTM2IDEyNC42MzI4NjYsMzcuMTcyMjEzNiBDMTI0LjYzMjg2NiwzNy4xNzIyMTM2IDEyMy45MjE4MzksMzguNjg4OTI1OCAxMjMuNjY5Nzg3LDM5LjA5OTc3MDggQzEyMy40MTc3MzYsMzkuNTEwNjE1OSAxMjIuODQ0MjkxLDM5LjUxMjgxODggMTIyLjg0NDI5MSwzOS41MTI4MTg4IEwxMTQuODY0NDk3LDM5LjUxMjgxODggTDExNC44NjQ0OTcsNDQuMzMxNzExNyBDMTE0Ljg2NDQ5Nyw0NC45ODg0NTggMTE1LjU1MjQxLDQ1LjE1NzgwNzcgMTE1LjU1MjQxLDQ1LjE1NzgwNzcgTDEyNC4zNTc3MDEsNDUuMTU3ODA3NyBDMTI0Ljk5NjIyMiw0NS4xNTc4MDc3IDEyNS4xODMxOTcsNDUuNTcwODU1NiAxMjUuMTgzMTk3LDQ1LjU3MDg1NTYgQzEyNS4xODMxOTcsNDUuNTcwODU1NiAxMjYuMDU1MTk2LDQ2LjkzMjM5OTQgMTI2LjQyMTQ0MSw0Ny40OTg0MTI4IEMxMjYuNzg3ODIzLDQ4LjA2NDQyNjIgMTI2LjI4Mzg1OCw0OC4xODY4MjYxIDEyNi4yODM4NTgsNDguMTg2ODI2MSBMMTEyLjM4ODAwOSw0OC4xODY4MjYxIEMxMTEuODE0MTUxLDQ4LjE4NjgyNjEgMTExLjU2MjUxMyw0Ny4zNjA3MzAyIDExMS41NjI1MTMsNDcuMzYwNzMwMiBaIE0xMDMuNDE2NTAyLDQ2LjIxNzU1MTEgQzEwMy40MDcwMDgsNDcuNzk0NTY4MiAxMDIuNTg3ODQxLDQ4LjE0NjM0NzQgMTAyLjU4Nzg0MSw0OC4xNDYzNDc0IEMxMDIuNTg3ODQxLDQ4LjE0NjM0NzQgODguNDUyMDQ3OCw1Ni4zMTQ1MDg3IDg3LjUzMjk5NTYsNTYuODI2Mjc1MSBDODYuNjIyMzM2LDU3LjIxNzE1NjEgODYuMDEzNjcwMyw1Ni44MjYyNzUxIDg2LjAxMzY3MDMsNTYuODI2Mjc1MSBDODYuMDEzNjcwMyw1Ni44MjYyNzUxIDcxLjIyMjU3MDYsNDguMjQ3OTU3MiA3MC42ODI2OTYyLDQ3Ljg3MDg0NDQgQzcwLjE0MjY4NDMsNDcuNDkzNzMxNiA3MC4xMzAxNjQzLDQ2LjkwNjM3NzQgNzAuMTMwMTY0Myw0Ni45MDYzNzc0IEM3MC4xMzAxNjQzLDQ2LjkwNjM3NzQgNzAuMTQ1MDIzMiwyOS45MTk5MTc0IDcwLjEzMDE2NDMsMjkuMTMzMzM2NCBDNzAuMTE1MzA1MywyOC4zNDY2MTc3IDcxLjA5Njk1NzYsMjcuNzU1NTQ2MSA3MS4wOTY5NTc2LDI3Ljc1NTU0NjEgTDg1Ljg3NTUzNzMsMTkuMjEzNDM4NyBDODYuNzg1MzcxNCwxOC43MzMyMDE2IDg3LjY3MTEyODYsMTkuMjEzNDM4NyA4Ny42NzExMjg2LDE5LjIxMzQzODcgQzg3LjY3MTEyODYsMTkuMjEzNDM4NyAxMDAuNzI2NjIzLDI2LjgwMjA5MzcgMTAyLjE3MzQ0MiwyNy42MTc3MjU3IEMxMDMuNTkxNTA3LDI4LjI5MTk1NzcgMTAzLjQxNjUwMiwyOS42ODQzNDI0IDEwMy40MTY1MDIsMjkuNjg0MzQyNCBDMTAzLjQxNjUwMiwyOS42ODQzNDI0IDEwMy40MjUzMDcsNDQuNzUxOTE5MiAxMDMuNDE2NTAyLDQ2LjIxNzU1MTEgTDEwMy40MTY1MDIsNDYuMjE3NTUxMSBaIE05Ny41MTYwMTA1LDI5LjE2OTEzMzkgQzk0LjQ5MDAxNzMsMjcuNDI3NDQ4MyA4Ny4zNjE1ODQyLDIzLjI5NzEwNjMgODcuMzYxNTg0MiwyMy4yOTcxMDYzIEM4Ny4zNjE1ODQyLDIzLjI5NzEwNjMgODYuNjY2MTAzOSwyMi45MjEyMzI2IDg1Ljk1MTc3NDcsMjMuMjk3MTA2MyBMNzQuMzQ4NzQwNiwyOS45ODIxNSBDNzQuMzQ4NzQwNiwyOS45ODIxNSA3My41NzgwMDI1LDMwLjQ0NDkwMTQgNzMuNTg5Njk3LDMxLjA2MDQ4MDUgQzczLjYwMTM5MTUsMzEuNjc2MDU5NyA3My41ODk2OTcsNDQuOTY5ODcwOCA3My41ODk2OTcsNDQuOTY5ODcwOCBDNzMuNTg5Njk3LDQ0Ljk2OTg3MDggNzMuNTk5NDY1NCw0NS40Mjk1OTMyIDc0LjAyMzQ5NTEsNDUuNzI0NjQ3MiBDNzQuNDQ3Mzg3Myw0Ni4wMTk3MDExIDg2LjA2MDE4OTgsNTIuNzMzMjQ1MSA4Ni4wNjAxODk4LDUyLjczMzI0NTEgQzg2LjA2MDE4OTgsNTIuNzMzMjQ1MSA4Ni41MzgxNTIsNTMuMDM5MTc1OSA4Ny4yNTMwMzE1LDUyLjczMzI0NTEgQzg3Ljk3NDY1MjYsNTIuMzMyNzI2MiA5OS4wNzMwMzM1LDQ1Ljk0MDI1ODIgOTkuMDczMDMzNSw0NS45NDAyNTgyIEM5OS4wNzMwMzM1LDQ1Ljk0MDI1ODIgOTkuNzE2MjMyNSw0NS42NjQ4OTI5IDk5LjcyMzY2MTksNDQuNDMwNzA1NiBDOTkuNzI1NzI1Nyw0NC4wNzQ3OTU5IDk5LjcyNjU1MTIsNDIuNjkzMjg4MSA5OS43MjY2ODg3LDQwLjk1NzUyMjkgTDg2LjY2MDA1MDIsNDguODc1MjM5NCBMODYuNjYwMDUwMiw0NS44NDYyMjEgQzg2LjY2MDA1MDIsNDQuNjAyMTIwNSA4Ny42MjMxMjg5LDQzLjc4MDk4MTEgODcuNjIzMTI4OSw0My43ODA5ODExIEw5OS4xODA3NjA3LDM2LjgxNjU3OTMgQzk5LjYxNjg5NzgsMzYuMzYxMTI1MSA5OS43MDY4NzY4LDM1LjYzMTU0NDcgOTkuNzI1NDUwNSwzNS4zNTU2Mjg3IEM5OS43MjUwMzc4LDM0LjA5MDQ2MjcgOTkuNzI0NDg3NCwzMi45ODUyODQxIDk5LjcyNDA3NDcsMzIuMjg1MTY3OCBMODYuNjYwMDUwMiw0MC4yMDEyMzIxIEw4Ni42NjAwNTAyLDM3LjAzNDUzMSBDODYuNjYwMDUwMiwzNS43OTA0MzA1IDg3LjQ4NTU0NjIsMzUuMjQ0NjU2NCA4Ny40ODU1NDYyLDM1LjI0NDY1NjQgTDk3LjUxNjAxMDUsMjkuMTY5MTMzOSBaIiBpZD0iU2hhcGUtQ29weSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="엘리먼트 유아이">
-                                                </div>
+                                                <select class="form-control custom-select fixed"  name="payTimeLimit" id="payTimeLimit">
+                                                    <option value="0">당일</option>
+                                                    <option value="1">+ 1일</option>
+                                                    <option value="2">+ 2일</option>
+                                                    <option value="3">+ 3일</option>
+                                                    <option value="4">+ 4일</option>
+                                                    <option value="5">+ 5일</option>
+                                                    <option value="6">+ 6일</option>
+                                                    <option value="7" selected="">+ 7일</option>
+                                                </select>
+                                                <p class="tip">- 결제요청 후 구매자가 결제할 수 있는 유효기간을 설정합니다.<br/>
+                                                    - 설정된 유효기간이 경과되면 구매자는 결제를 할 수 없습니다.</p>
                                             </td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                                <span class="tip"><i class="xi-info-o"></i>  미리보기 이미지의 사이즈로 결제화면 상단에 표시됩니다..</span>
+                                        <tr>
+                                            <th scope="row">
+                                                결제 토큰 사용 여부
+                                            </th>
+                                            <td>
+                                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
+                                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
+                                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
+                                                </el-button-group>
+                                                <div class="card card-line w-half mt-3 mb-0">
+                                                    <div class="card-body p-3">
+                                                        <dl class="list-data-text inline-layout">
+                                                            <dt>결제토큰</dt>
+                                                            <dd>107825b1-28f0-4cf3-95ac-f0a5dda5730b</dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <p class="tip">결제 토큰은 결제 API 사용의 추가 인증 수단으로 토큰 사용시 토큰이 동일해야 결제 API 사용이 가능합니다..</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                결제 유효기간
-                            </th>
-                            <td>
-                                <select class="form-control custom-select fixed"  name="payTimeLimit" id="payTimeLimit">
-                                    <option value="0">당일</option>
-                                    <option value="1">+ 1일</option>
-                                    <option value="2">+ 2일</option>
-                                    <option value="3">+ 3일</option>
-                                    <option value="4">+ 4일</option>
-                                    <option value="5">+ 5일</option>
-                                    <option value="6">+ 6일</option>
-                                    <option value="7" selected="">+ 7일</option>
-                                </select>
-                                <p class="tip">- 결제요청 후 구매자가 결제할 수 있는 유효기간을 설정합니다.<br/>
-                                    - 설정된 유효기간이 경과되면 구매자는 결제를 할 수 없습니다.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                결제 토큰 사용 여부
-                            </th>
-                            <td>
-                                <el-button-group class="btn-group-toggle btn-group-toggle__fixed">
-                                    <el-button size="medium" class="btn-toggle__active">사용</el-button>
-                                    <el-button size="medium" class="btn-toggle__nouse">사용안함</el-button>
-                                </el-button-group>
-                                <div class="card card-line w-half mt-3 mb-0">
-                                    <div class="card-body p-3">
-                                        <dl class="list-data-text inline-layout">
-                                            <dt>결제토큰</dt>
-                                            <dd>107825b1-28f0-4cf3-95ac-f0a5dda5730b</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <p class="tip">결제 토큰은 결제 API 사용의 추가 인증 수단으로 토큰 사용시 토큰이 동일해야 결제 API 사용이 가능합니다..</p>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- //card-body -->
-            </div>
-            <!-- //card -->
-            <p class="tip">
-                - 저장한 시점을 기준으로 변경된 발송자 정보로 문자가 발송됩니다.<br>
-                - 설정한 내용이 없을 경우, 기본 [유디페이]로 문자가 발송됩니다.
-            </p>
-            <div class="btn-ct-bottom inline">
-                <button type="submit" class="btn btn-lg btn-primary rounded-sm">저장</button>
-            </div>
-        </form>
-    </div>
-    <!-- //page-body -->
+                                <!-- //card-body -->
+                            </div>
+                            <!-- //card -->
+                            <p class="tip">
+                                - 저장한 시점을 기준으로 변경된 발송자 정보로 문자가 발송됩니다.<br>
+                                - 설정한 내용이 없을 경우, 기본 [유디페이]로 문자가 발송됩니다.
+                            </p>
+                            <div class="btn-ct-bottom inline">
+                                <button type="submit" class="btn btn-lg btn-primary rounded-sm">저장</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- //page-body -->
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

@@ -34,10 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.jsp">유디페이 판매점</a></h1>
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
+
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                          <span class="btn_inn">
+                              <span><i class="xi-renew"></i></span>
+                              <span class="t">API 바로가기</span>
+                          </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
         </div>
-        <!-- //logo-box -->
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
 
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
@@ -60,61 +122,61 @@
                         </template>
                         <el-submenu index="2-1">
                             <template slot="title">원격결제</template>
-                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.jsp'">결제요청</router-link></el-menu-item>
-                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.jsp'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.html'">결제요청</router-link></el-menu-item>
+                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.html'">결제요청 (대량)</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.jsp'">링크결제</router-link></el-menu-item>
+                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.html'">링크결제</router-link></el-menu-item>
                         <el-submenu index="2-3">
                             <template slot="title">등록결제</template>
-                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.jsp'">등록요청</router-link></el-menu-item>
-                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.jsp'">등록내역</router-link></el-menu-item>
-                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.jsp'">등록요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.jsp'">결제요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.jsp'" >결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.html'">등록요청</router-link></el-menu-item>
+                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.html'">등록내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.html'">등록요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.html'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.html'" >결제내역</router-link></el-menu-item>
                         </el-submenu>
                         <el-submenu index="2-4">
                             <template slot="title">정기결제</template>
-                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.jsp'">승인요청</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.jsp'">승인요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">승인내역</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.jsp'">결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.html'">승인요청</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.html'">승인요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.html'">승인내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.html'">결제내역</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.jsp'">수기결제</router-link></el-menu-item>
+                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.html'">수기결제</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="3" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-list-dot depth1-ico"></i>
                             <span>결제현황</span>
                         </template>
-                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.jsp'">완료/취소</router-link></el-menu-item>
-                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">결제요청</router-link></el-menu-item>
-                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.jsp'">취소요청</router-link></el-menu-item>
+                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.html'">완료/취소</router-link></el-menu-item>
+                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.html'">결제요청</router-link></el-menu-item>
+                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.html'">취소요청</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="4" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-piggy-bank depth1-ico"></i>
                             <span>정산관리</span>
                         </template>
-                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.jsp'">정산안내</router-link></el-menu-item>
-                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.jsp'">정산내역</router-link></el-menu-item>
-                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.jsp'">익일정산 신청</router-link></el-menu-item>
-                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.jsp'">부가세 자료</router-link></el-menu-item>
+                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.html'">정산안내</router-link></el-menu-item>
+                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.html'">정산내역</router-link></el-menu-item>
+                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.html'">익일정산 신청</router-link></el-menu-item>
+                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.html'">부가세 자료</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="5" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-paper-o depth1-ico"></i>
                             <span>현금영수증</span>
                         </template>
-                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.jsp'">현금영수증 내역</router-link></el-menu-item>
-                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.jsp'">현금영수증 발행</router-link></el-menu-item>
+                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.html'">현금영수증 내역</router-link></el-menu-item>
+                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.html'">현금영수증 발행</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="6" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-box depth1-ico"></i>
                             <span>상품관리</span>
                         </template>
-                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.jsp'">상품 내역</router-link></el-menu-item>
-                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.jsp'">상품 등록</router-link></el-menu-item>
+                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.html'">상품 내역</router-link></el-menu-item>
+                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.html'">상품 등록</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="7" class="depth1-menu">
                         <template slot="title">
@@ -123,10 +185,10 @@
                         </template>
                         <el-submenu index="7-1">
                             <template slot="title">부계정 관리</template>
-                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.jsp'">부계정 내역</router-link></el-menu-item>
-                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.jsp'">부계정 등록</router-link></el-menu-item>
+                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.html'">부계정 내역</router-link></el-menu-item>
+                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.html'">부계정 등록</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.jsp'">부계정 매출</router-link></el-menu-item>
+                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.html'">부계정 매출</router-link></el-menu-item>
                     </el-submenu>
                     <el-menu-item index="8" class="depth1-menu" onclick="location.href='http://uddocs.net/v/udpay'" target="_blank">
                         <i class="xi-all depth1-ico"></i>
@@ -137,22 +199,22 @@
                             <i class="xi-cog depth1-ico"></i>
                             <span>설정</span>
                         </template>
-                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.jsp'">결제설정</router-link></el-menu-item>
-                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.jsp'">정보변경</router-link></el-menu-item>
-                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.jsp'">결제 옵션 설정</router-link></el-menu-item>
-                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.jsp'">정산 정보</router-link></el-menu-item>
+                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.html'">결제설정</router-link></el-menu-item>
+                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.html'">정보변경</router-link></el-menu-item>
+                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.html'">결제 옵션 설정</router-link></el-menu-item>
+                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.html'">정산 정보</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="10" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-message-o depth1-ico"></i>
                             <span>고객센터</span>
                         </template>
-                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.jsp'">공지사항</router-link></el-menu-item>
-                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.jsp'">자주묻는질문</router-link></el-menu-item>
+                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.html'">공지사항</router-link></el-menu-item>
+                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.html'">자주묻는질문</router-link></el-menu-item>
                         <el-submenu index="10-3">
                             <template slot="title">고객문의</template>
-                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.jsp'">문의내역</router-link></el-menu-item>
-                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.jsp'">문의하기</router-link></el-menu-item>
+                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.html'">문의내역</router-link></el-menu-item>
+                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.html'">문의하기</router-link></el-menu-item>
                         </el-submenu>
                     </el-submenu>
                 </el-menu>
@@ -192,276 +254,216 @@
             <!-- //cs-info__wrap -->
         </nav>
         <!-- //sidebar -->
-
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.jsp">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.jsp">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.jsp'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-    <div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">결제요청 (대량)</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
-                <li class="breadcrumb-item"><a href="#">결제요청</a></li>
-                <li class="breadcrumb-item"><a href="#">등록결제</a></li>
-                <li class="breadcrumb-item active" aria-current="page">결제요청 (대량)</li>
-            </ol>
-        </div>
-    </div>
-    <!-- //page-header -->
-
-    <div class="row page-body">
-        <div class="col-12">
-            <div class="card card-totalSum">
-                <ul class="summary-info-wrap">
-                    <li class="summary-primary-dark">
-                        <dl>
-                            <dt>
-                                <div class="roundbox-wrap roundbox-secondary-light">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                    </svg>
-                                    <span class="txt">전체</span>
-                                </div>
-                            </dt>
-                            <dd>
-                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="summary-primary">
-                        <dl>
-                            <dt>
-                                <div class="roundbox-wrap roundbox-primary-light">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                    </svg>
-                                    <span class="txt">성공</span>
-                                </div>
-                            </dt>
-                            <dd>
-                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="summary-danger">
-                        <dl>
-                            <dt>
-                                <div class="roundbox-wrap roundbox-danger-light">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                    </svg>
-                                    <span class="txt">실패</span>
-                                </div>
-                            </dt>
-                            <dd>
-                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="summary-info">
-                        <dl>
-                            <dt>
-                                <div class="roundbox-wrap roundbox-info-light">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
-                                    </svg>
-                                    <span class="txt">에러</span>
-                                </div>
-                            </dt>
-                            <dd>
-                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
-                <!-- //summary_to_used -->
-            </div>
-            <!-- //card-totalSum -->
-
-            <div class="card">
-                <div class="card-body">
-                    <div class="table-responsive-md">
-                        <table class="table table-hover text-center">
-                            <caption>등록결제 결제요청 (대량) 결과 내역</caption>
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="checkList" id="checkAll">
-                                            <label class="custom-control-label" for="checkAll"></label>
-                                        </div>
-                                    </th>
-                                    <th scope="col">구매자명</th>
-                                    <th scope="col">고객번호</th>
-                                    <th scope="col">휴대폰번호</th>
-                                    <th scope="col">상품명</th>
-                                    <th scope="col">결제금액</th>
-                                    <th scope="col">요청사유</th>
-                                    <th scope="col">상태</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="td-cell">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" name="checkList" id="check1">
-                                                <label class="custom-control-label" for="check1"></label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-cell">
-                                            홍길동
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-cell">
-                                            1004
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-cell">
-                                            010-2609-2999
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-cell">
-                                            망고썬라이트 젤리푸딩 망고, 180g, 24개입
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="td-cell">
-                                            8,900원
-                                        </div>
-                                    </td>
-                                    <td>
-                                        망고젤리가 맛있으니깐 결제하세요~
-                                    </td>
-                                    <td>
-                                        <p><span class="badge badge-primary-light">성공</span></p>
-                                        <p><span class="badge badge-secondary-light">고객 등록 대기</span></p>
-                                        <p>
-                                            <span class="badge badge-danger-light">실패</span><br/>
-                                            <small>사유: ${pay.errorMessage}</small>
-                                        </p>
-                                        <p><span class="badge badge-danger-light">결제취소</span></p>
-                                    </td>
-                                </tr>
-                                <tr class="none-hover">
-                                    <td colspan="8">
-                                        <div class="table-empty__block">
-                                            <div class="empty-info__text">
-                                                <div class="roundbox-wrap roundbox-wrap-md roundbox-secondary-light">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
-                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"></path>
-                                                    </svg>
-                                                    <span class="ico"><i class="xi-plus"></i></span>
-                                                </div>
-                                                <p class="empty__info-text">내역이 없습니다.</p>
-                                            </div>
-                                        </div>
-                                        <!-- //el-table__empty-block -->
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">결제요청 (대량)</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
+                                <li class="breadcrumb-item"><a href="#">결제요청</a></li>
+                                <li class="breadcrumb-item"><a href="#">등록결제</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">결제요청 (대량)</li>
+                            </ol>
+                        </div>
                     </div>
-                    <!-- //table-responsive-md -->
-                </div>
-                <!-- //card-body -->
-            </div>
-            <!-- //card -->
+                    <!-- //page-header -->
 
-            <div class="btn-ct-bottom inline">
-                <button type="button" class="btn btn-lg btn-more-view rounded-sm">실패건 다운로드</button>
-                <button type="button" class="btn btn-lg btn-additional rounded-sm" @click="dialogVisible11 = true">실패건 재요청</button>
-            </div>
-        </div>
-    </div>
-    <!-- //page-body -->
+                    <div class="row page-body">
+                        <div class="col-12">
+                            <div class="card card-totalSum">
+                                <ul class="summary-info-wrap">
+                                    <li class="summary-primary-dark">
+                                        <dl>
+                                            <dt>
+                                                <div class="roundbox-wrap roundbox-secondary-light">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
+                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
+                                                    </svg>
+                                                    <span class="txt">전체</span>
+                                                </div>
+                                            </dt>
+                                            <dd>
+                                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li class="summary-primary">
+                                        <dl>
+                                            <dt>
+                                                <div class="roundbox-wrap roundbox-primary-light">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
+                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
+                                                    </svg>
+                                                    <span class="txt">성공</span>
+                                                </div>
+                                            </dt>
+                                            <dd>
+                                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li class="summary-danger">
+                                        <dl>
+                                            <dt>
+                                                <div class="roundbox-wrap roundbox-danger-light">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
+                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
+                                                    </svg>
+                                                    <span class="txt">실패</span>
+                                                </div>
+                                            </dt>
+                                            <dd>
+                                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li class="summary-info">
+                                        <dl>
+                                            <dt>
+                                                <div class="roundbox-wrap roundbox-info-light">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
+                                                        <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"/>
+                                                    </svg>
+                                                    <span class="txt">에러</span>
+                                                </div>
+                                            </dt>
+                                            <dd>
+                                                <p class="num-txt emphasis"><strong>210</strong> <span>건</span></p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <!-- //summary_to_used -->
+                            </div>
+                            <!-- //card-totalSum -->
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive-md">
+                                        <table class="table table-hover text-center">
+                                            <caption>등록결제 결제요청 (대량) 결과 내역</caption>
+                                            <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" name="checkList" id="checkAll">
+                                                        <label class="custom-control-label" for="checkAll"></label>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">구매자명</th>
+                                                <th scope="col">고객번호</th>
+                                                <th scope="col">휴대폰번호</th>
+                                                <th scope="col">상품명</th>
+                                                <th scope="col">결제금액</th>
+                                                <th scope="col">요청사유</th>
+                                                <th scope="col">상태</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" name="checkList" id="check1">
+                                                            <label class="custom-control-label" for="check1"></label>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        홍길동
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        1004
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        010-2609-2999
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        망고썬라이트 젤리푸딩 망고, 180g, 24개입
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-cell">
+                                                        8,900원
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    망고젤리가 맛있으니깐 결제하세요~
+                                                </td>
+                                                <td>
+                                                    <p><span class="badge badge-primary-light">성공</span></p>
+                                                    <p><span class="badge badge-secondary-light">고객 등록 대기</span></p>
+                                                    <p>
+                                                        <span class="badge badge-danger-light">실패</span><br/>
+                                                        <small>사유: ${pay.errorMessage}</small>
+                                                    </p>
+                                                    <p><span class="badge badge-danger-light">결제취소</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr class="none-hover">
+                                                <td colspan="8">
+                                                    <div class="table-empty__block">
+                                                        <div class="empty-info__text">
+                                                            <div class="roundbox-wrap roundbox-wrap-md roundbox-secondary-light">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="roundbox" width="55" height="55" viewBox="0 0 55 55">
+                                                                    <path class="roundbox-shape" d="M49.093,49.094C44.584,53.819,36.041,54.888,27.5,55c-8.542-.112-17.085-1.181-21.594-5.907C1.179,44.585.11,36.042,0,27.5,0.11,18.957,1.179,10.415,5.9,5.906,10.414,1.18,18.956.111,27.5,0,36.041,0.111,44.584,1.18,49.093,5.906,53.819,10.415,54.887,18.957,55,27.5,54.887,36.042,53.819,44.585,49.093,49.094Z"></path>
+                                                                </svg>
+                                                                <span class="ico"><i class="xi-plus"></i></span>
+                                                            </div>
+                                                            <p class="empty__info-text">내역이 없습니다.</p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //el-table__empty-block -->
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- //table-responsive-md -->
+                                </div>
+                                <!-- //card-body -->
+                            </div>
+                            <!-- //card -->
+
+                            <div class="btn-ct-bottom inline">
+                                <button type="button" class="btn btn-lg btn-more-view rounded-sm">실패건 다운로드</button>
+                                <button type="button" class="btn btn-lg btn-additional rounded-sm" @click="dialogVisible11 = true">실패건 재요청</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //page-body -->
 
 
-    <el-dialog :visible.sync="dialogVisible11">
-        <div slot="title">
-            <div class="el-dialog__title">
-                안내
-            </div>
-        </div>
+                    <el-dialog :visible.sync="dialogVisible11">
+                        <div slot="title">
+                            <div class="el-dialog__title">
+                                안내
+                            </div>
+                        </div>
 
-        <div class="dialog-contents text-center">
-            <p>실패한 1건에 대해 결제를 다시 요청하시겠습니까?</p>
-            <p>취소 사유를 한 번 더 확인해주시기 바랍니다.</p>
-        </div>
+                        <div class="dialog-contents text-center">
+                            <p>실패한 1건에 대해 결제를 다시 요청하시겠습니까?</p>
+                            <p>취소 사유를 한 번 더 확인해주시기 바랍니다.</p>
+                        </div>
 
-        <div slot="footer">
-            <button type="button" class="btn btn-secondary" @click="dialogVisible11 = false">취소</button>
-            <button type="button" class="btn btn-primary">재요청</button>
-        </div>
-    </el-dialog>
+                        <div slot="footer">
+                            <button type="button" class="btn btn-secondary" @click="dialogVisible11 = false">취소</button>
+                            <button type="button" class="btn btn-primary">재요청</button>
+                        </div>
+                    </el-dialog>
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

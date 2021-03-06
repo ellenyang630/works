@@ -34,10 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.html">유디페이 판매점</a></h1>
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
+
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                        <span class="bar top"></span>
+                        <span class="bar mid"></span>
+                        <span class="bar bottom"></span>
+                    </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                          <span class="btn_inn">
+                              <span><i class="xi-renew"></i></span>
+                              <span class="t">API 바로가기</span>
+                          </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
         </div>
-        <!-- //logo-box -->
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
 
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
@@ -193,144 +255,85 @@
         </nav>
         <!-- //sidebar -->
 
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.html">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.html">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-    <div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">문의하기</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
-                <li class="breadcrumb-item"><a href="#">고객센터</a></li>
-                <li class="breadcrumb-item"><a href="#">고객문의</a></li>
-                <li class="breadcrumb-item active" aria-current="page">문의하기</li>
-            </ol>
-        </div>
-    </div>
-    <!-- //page-header -->
-    <div class="page-body">
-        <form action="" method="post">
-            <div class="card">
-                <div class="card-header">
-                    <p>
-                        <em class="point"></em>이 표시된 항목은 필수 입력값입니다.
-                    </p>
-                </div>
-                <!-- //card-header -->
-                <div class="card-body">
-                    <table class="table table-view">
-                        <caption>문의사항 등록 폼</caption>
-                        <colgroup>
-                            <col width="180">
-                            <col width="*">
-                        </colgroup>
-                        <tbody>
-                        <tr>
-                            <th scope="row">
-                                구분<em class="point"></em>
-                            </th>
-                            <td>
-                                <div class="form-wrap">
-                                <select class="form-control custom-select" id="detailType">
-                                    <option selected>선택하세요</option>
-                                    <option value="true">사용문의</option>
-                                    <option value="false">정산문의</option>
-                                    <option value="false">기타문의</option>
-                                </select>
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">문의하기</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
+                                <li class="breadcrumb-item"><a href="#">고객센터</a></li>
+                                <li class="breadcrumb-item"><a href="#">고객문의</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">문의하기</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- //page-header -->
+                    <div class="page-body">
+                        <form action="" method="post">
+                            <div class="card">
+                                <div class="card-header">
+                                    <p>
+                                        <em class="point"></em>이 표시된 항목은 필수 입력값입니다.
+                                    </p>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                제목<em class="point"></em>
-                            </th>
-                            <td>
-                                <input type="text" class="form-control"
-                                       placeholder="제목을 입력해주세요.">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                상세내용<em class="point"></em>
-                            </th>
-                            <td>
-                            <textarea class="form-control" id="goodsDescription" rows="5" placeholder="내용을 입력해주세요."></textarea>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- //card-body -->
-            </div>
-            <div class="btn-ct-bottom inline">
-                <button type="submit" class="btn btn-lg btn-primary rounded-sm">등록</button>
-            </div>
-        </form>
-    </div>
-    <!-- //page-body -->
+                                <!-- //card-header -->
+                                <div class="card-body">
+                                    <table class="table table-view">
+                                        <caption>문의사항 등록 폼</caption>
+                                        <colgroup>
+                                            <col width="180">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                구분<em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <div class="form-wrap">
+                                                    <select class="form-control custom-select" id="detailType">
+                                                        <option selected>선택하세요</option>
+                                                        <option value="true">사용문의</option>
+                                                        <option value="false">정산문의</option>
+                                                        <option value="false">기타문의</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                제목<em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <input type="text" class="form-control"
+                                                       placeholder="제목을 입력해주세요.">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                상세내용<em class="point"></em>
+                                            </th>
+                                            <td>
+                                                <textarea class="form-control" id="goodsDescription" rows="5" placeholder="내용을 입력해주세요."></textarea>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //card-body -->
+                            </div>
+                            <div class="btn-ct-bottom inline">
+                                <button type="submit" class="btn btn-lg btn-primary rounded-sm">등록</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- //page-body -->
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

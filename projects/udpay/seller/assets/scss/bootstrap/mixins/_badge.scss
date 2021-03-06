@@ -19,7 +19,7 @@
 @mixin badge-light-variant($bg) {
   color: $bg;
   background-color: rgba($bg, 0.15);
-  border: 1px solid rgba($bg, 0.1);
+
 
   @at-root a#{&} {
     @include hover-focus() {

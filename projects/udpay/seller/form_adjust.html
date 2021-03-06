@@ -34,11 +34,72 @@
     </div>
     <!--// skipNav_wrap -->
     <header id="site-header">
-        <div class="logo-box">
-            <h1><a href="index.jsp">유디페이 판매점</a></h1>
-        </div>
-        <!-- //logo-box -->
+        <div class="header-area">
+            <div class="logo-box">
+                <h1><a href="index.html">유디페이 판매점</a></h1>
+            </div>
+            <!-- //logo-box -->
 
+            <div class="top-navbar">
+                <div class="user-menu">
+                    <div class="util-item left">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                            <span class="invisible">메뉴 여닫기</span>
+                            <span class="btn-menu-opener__inn">
+                            <span class="bar top"></span>
+                            <span class="bar mid"></span>
+                            <span class="bar bottom"></span>
+                        </span>
+                        </button>
+                        <ul class="fee-info">
+                            <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
+                            <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
+                            <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
+                            <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.left -->
+
+                    <div class="util-item right">
+                        <ul class="option-menu">
+                            <li class="hello">
+                                <div>
+                                    <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
+                                </div>
+                            </li>
+                            <li class="convert">
+                                <button type="button" title="유디페이 API 바로가기">
+                              <span class="btn_inn">
+                                  <span><i class="xi-renew"></i></span>
+                                  <span class="t">API 바로가기</span>
+                              </span>
+                                </button>
+                            </li>
+                            <li class="alarm active">
+                                <a href="list_alarm.html">
+                                    <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
+                                </a>
+                            </li>
+                            <li class="mypage">
+                                <a href="set_mypage.html">
+                                    <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
+                                </a>
+                            </li>
+                            <li class="logout">
+                                <button type="button" onclick="location.href='login.html'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //util-item.right -->
+                </div>
+                <!-- //user-menu -->
+            </div>
+            <!-- //top-navbar -->
+        </div>
+    </header>
+    <!-- //site-header -->
+
+    <div id="content-wrap">
         <nav id="lnb" class="sidebar" :class="{ show: isActive }">
             <h2 class="invisible">전체메뉴</h2>
             <div class="sidebar-content">
@@ -60,61 +121,61 @@
                         </template>
                         <el-submenu index="2-1">
                             <template slot="title">원격결제</template>
-                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.jsp'">결제요청</router-link></el-menu-item>
-                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.jsp'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-1-1"><router-link to="" onclick="location.href='form_payRemote.html'">결제요청</router-link></el-menu-item>
+                            <el-menu-item index="2-1-2"><router-link to="" onclick="location.href='form_payRemote_large.html'">결제요청 (대량)</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.jsp'">링크결제</router-link></el-menu-item>
+                        <el-menu-item index="2-2"><router-link to="" onclick="location.href='list_payLink.html'">링크결제</router-link></el-menu-item>
                         <el-submenu index="2-3">
                             <template slot="title">등록결제</template>
-                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.jsp'">등록요청</router-link></el-menu-item>
-                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.jsp'">등록내역</router-link></el-menu-item>
-                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.jsp'">등록요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.jsp'">결제요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.jsp'" >결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-1"><router-link to="" onclick="location.href='form_payManual.html'">등록요청</router-link></el-menu-item>
+                            <el-menu-item index="2-3-2"><router-link to="" onclick="location.href='list_payManual.html'">등록내역</router-link></el-menu-item>
+                            <el-menu-item index="2-3-3"><router-link to="" onclick="location.href='form_payManual_large.html'">등록요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-4"><router-link to="" onclick="location.href='form_payManual_reqLarge.html'">결제요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-3-5"><router-link to="" onclick="location.href='list_statusFinManual.html'" >결제내역</router-link></el-menu-item>
                         </el-submenu>
                         <el-submenu index="2-4">
                             <template slot="title">정기결제</template>
-                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.jsp'">승인요청</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.jsp'">승인요청 (대량)</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">승인내역</router-link></el-menu-item>
-                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.jsp'">결제내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-1"><router-link to="" onclick="location.href='form_payRegular.html'">승인요청</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='form_payRegular_large.html'">승인요청 (대량)</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_payRegular.html'">승인내역</router-link></el-menu-item>
+                            <el-menu-item index="2-4-2"><router-link to="" onclick="location.href='list_statusFinRegular.html'">결제내역</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.jsp'">수기결제</router-link></el-menu-item>
+                        <el-menu-item index="2-5"><router-link to="" onclick="location.href='form_payHand.html'">수기결제</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="3" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-list-dot depth1-ico"></i>
                             <span>결제현황</span>
                         </template>
-                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.jsp'">완료/취소</router-link></el-menu-item>
-                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.jsp'">결제요청</router-link></el-menu-item>
-                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.jsp'">취소요청</router-link></el-menu-item>
+                        <el-menu-item index="3-1"><router-link to="" onclick="location.href='list_statusFin.html'">완료/취소</router-link></el-menu-item>
+                        <el-menu-item index="3-2"><router-link to="" onclick="location.href='list_payRegular.html'">결제요청</router-link></el-menu-item>
+                        <el-menu-item index="3-3"><router-link to="" onclick="location.href='list_statusCancel.html'">취소요청</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="4" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-piggy-bank depth1-ico"></i>
                             <span>정산관리</span>
                         </template>
-                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.jsp'">정산안내</router-link></el-menu-item>
-                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.jsp'">정산내역</router-link></el-menu-item>
-                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.jsp'">익일정산 신청</router-link></el-menu-item>
-                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.jsp'">부가세 자료</router-link></el-menu-item>
+                        <el-menu-item index="4-1"><router-link to="" onclick="location.href='form_adjust.html'">정산안내</router-link></el-menu-item>
+                        <el-menu-item index="4-2"><router-link to="" onclick="location.href='list_adjust.html'">정산내역</router-link></el-menu-item>
+                        <el-menu-item index="4-3"><router-link to="" onclick="location.href='form_adjust_nextDay.html'">익일정산 신청</router-link></el-menu-item>
+                        <el-menu-item index="4-4"><router-link to="" onclick="location.href='list_vat.html'">부가세 자료</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="5" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-paper-o depth1-ico"></i>
                             <span>현금영수증</span>
                         </template>
-                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.jsp'">현금영수증 내역</router-link></el-menu-item>
-                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.jsp'">현금영수증 발행</router-link></el-menu-item>
+                        <el-menu-item index="5-1"><router-link to="" onclick="location.href='list_cashst.html'">현금영수증 내역</router-link></el-menu-item>
+                        <el-menu-item index="5-2"><router-link to="" onclick="location.href='form_cashst.html'">현금영수증 발행</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="6" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-box depth1-ico"></i>
                             <span>상품관리</span>
                         </template>
-                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.jsp'">상품 내역</router-link></el-menu-item>
-                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.jsp'">상품 등록</router-link></el-menu-item>
+                        <el-menu-item index="6-1"><router-link to="" onclick="location.href='list_goods.html'">상품 내역</router-link></el-menu-item>
+                        <el-menu-item index="6-2"><router-link to="" onclick="location.href='form_goods.html'">상품 등록</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="7" class="depth1-menu">
                         <template slot="title">
@@ -123,10 +184,10 @@
                         </template>
                         <el-submenu index="7-1">
                             <template slot="title">부계정 관리</template>
-                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.jsp'">부계정 내역</router-link></el-menu-item>
-                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.jsp'">부계정 등록</router-link></el-menu-item>
+                            <el-menu-item index="7-1-1"><router-link to="" onclick="location.href='list_subAccount.html'">부계정 내역</router-link></el-menu-item>
+                            <el-menu-item index="7-1-2"><router-link to="" onclick="location.href='form_subAccount.html'">부계정 등록</router-link></el-menu-item>
                         </el-submenu>
-                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.jsp'">부계정 매출</router-link></el-menu-item>
+                        <el-menu-item index="7-2"><router-link to="" onclick="location.href='list_sale_subAccount.html'">부계정 매출</router-link></el-menu-item>
                     </el-submenu>
                     <el-menu-item index="8" class="depth1-menu" onclick="location.href='http://uddocs.net/v/udpay'" target="_blank">
                         <i class="xi-all depth1-ico"></i>
@@ -137,22 +198,22 @@
                             <i class="xi-cog depth1-ico"></i>
                             <span>설정</span>
                         </template>
-                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.jsp'">결제설정</router-link></el-menu-item>
-                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.jsp'">정보변경</router-link></el-menu-item>
-                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.jsp'">결제 옵션 설정</router-link></el-menu-item>
-                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.jsp'">정산 정보</router-link></el-menu-item>
+                        <el-menu-item index="9-1"><router-link to="" onclick="location.href='set_payment.html'">결제설정</router-link></el-menu-item>
+                        <el-menu-item index="9-2"><router-link to="" onclick="location.href='set_mypage.html'">정보변경</router-link></el-menu-item>
+                        <el-menu-item index="9-3"><router-link to="" onclick="location.href='set_payOption.html'">결제 옵션 설정</router-link></el-menu-item>
+                        <el-menu-item index="9-4"><router-link to="" onclick="location.href='set_adjust.html'">정산 정보</router-link></el-menu-item>
                     </el-submenu>
                     <el-submenu index="10" class="depth1-menu">
                         <template slot="title">
                             <i class="xi-message-o depth1-ico"></i>
                             <span>고객센터</span>
                         </template>
-                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.jsp'">공지사항</router-link></el-menu-item>
-                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.jsp'">자주묻는질문</router-link></el-menu-item>
+                        <el-menu-item index="10-1"><router-link to="" onclick="location.href='list_notice.html'">공지사항</router-link></el-menu-item>
+                        <el-menu-item index="10-2"><router-link to="" onclick="location.href='list_faq.html'">자주묻는질문</router-link></el-menu-item>
                         <el-submenu index="10-3">
                             <template slot="title">고객문의</template>
-                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.jsp'">문의내역</router-link></el-menu-item>
-                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.jsp'">문의하기</router-link></el-menu-item>
+                            <el-menu-item index="10-3-1"><router-link to="" onclick="location.href='list_qna.html'">문의내역</router-link></el-menu-item>
+                            <el-menu-item index="10-3-2"><router-link to="" onclick="location.href='form_qna.html'">문의하기</router-link></el-menu-item>
                         </el-submenu>
                     </el-submenu>
                 </el-menu>
@@ -192,279 +253,219 @@
             <!-- //cs-info__wrap -->
         </nav>
         <!-- //sidebar -->
-
-        <div class="top-navbar">
-            <div class="user-menu">
-                <div class="util-item left">
-                    <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
-                        <span class="invisible">메뉴 여닫기</span>
-                        <span class="btn-menu-opener__inn">
-                        <span class="bar top"></span>
-                        <span class="bar mid"></span>
-                        <span class="bar bottom"></span>
-                    </span>
-                    </button>
-                    <ul class="fee-info">
-                        <li><i class="xi-credit-card"></i> <span>카드</span> <em class="label-card">2.7%</em></li>
-                        <li><i class="xi-mobile"></i> <span>휴대폰</span> <em class="label-mobile">3.6%</em></li>
-                        <li><i class="xi-kakaotalk"></i> <span>카카오</span> <em class="label-kakao">3.6%</em></li>
-                        <li><i class="xi-naver-square"></i> <span>네이버</span> <em class="label-naver">3.6%</em></li>
-                    </ul>
-                </div>
-                <!-- //util-item.left -->
-
-                <div class="util-item right">
-                    <ul class="option-menu">
-                        <li class="hello">
-                            <div>
-                                <strong><i class="xi-profile"></i> OnlyShop(onlyshop1234)</strong>님, 안녕하세요.
-                            </div>
-                        </li>
-                        <li class="convert">
-                            <button type="button" title="유디페이 API 바로가기">
-                          <span class="btn_inn">
-                              <span><i class="xi-renew"></i></span>
-                              <span class="t">API 바로가기</span>
-                          </span>
-                            </button>
-                        </li>
-                        <li class="alarm active">
-                            <a href="list_alarm.jsp">
-                                <i class="la la-bell-o"></i><span class="invisible">알림내역</span>
-                            </a>
-                        </li>
-                        <li class="mypage">
-                            <a href="set_mypage.jsp">
-                                <i class="la la-cog"></i> <span class="invisible">마이페이지</span>
-                            </a>
-                        </li>
-                        <li class="logout">
-                            <button type="button" onclick="location.href='login.jsp'"><i class="la la-sign-out"></i><span class="invisible">로그아웃</span></button>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //util-item.right -->
-            </div>
-            <!-- //user-menu -->
-        </div>
-        <!-- //top-navbar -->
-    </header>
-    <!-- //site-header -->
-
-    <div id="content-wrap">
         <section id="content">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
 
-    <div class="page-header">
-        <div class="page-title">
-            <h3 class="tt">정산안내</h3>
-        </div>
-        <div class="page-location" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
-                <li class="breadcrumb-item"><a href="#">정산관리</a></li>
-                <li class="breadcrumb-item active" aria-current="page">정산안내</li>
-            </ol>
-        </div>
-    </div>
-    <!-- //page-header -->
-    <div class="row page-body page-info-body">
-        <div class="col-12 col-md-5 offset-md-3">
-            <div class="card no-padding">
-                <div class="card-header card-header__bg">
-                    <div>
-                        <p class="card-title">
-                            정산안내
-                        </p>
-                        <div class="card-btitle">
-                            <p>
-                                아래의 정산안내를 확인하신 후 정산 신청을 진행해주세요.
-                            </p>
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h3 class="tt">정산안내</h3>
+                        </div>
+                        <div class="page-location" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="xi-home-o"></i><span class="invisible">홈</span></a></li>
+                                <li class="breadcrumb-item"><a href="#">정산관리</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">정산안내</li>
+                            </ol>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <ul class="flow-adjust">
-                        <li>
-                            <div>
-                                <p class="title__flow-adjust"> 필수서류 제출</p>
-                                <p>정산을 위해 필요한 서류를 휴대폰으로 촬영하신 뒤 제출해주세요.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <p class="title__flow-adjust">서류심사</p>
-                                <p>
-                                    제출 후 영업일 기준 1~2일의 심사 기간이 소요됩니다. 또한, 제출하신<br/>
-                                    서류에 대한 내용을 확인한 후 보완이 필요한 경우 재요청 드립니다.
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <p class="title__flow-adjust">정산승인</p>
-                                <p>
-                                    심사 완료 후 관리자 승인을 통해 정산내역 메뉴에서 확인 가능합니다.<br/>
-                                    기본정산 주기는 D+5일입니다.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- //page-header -->
+                    <div class="row page-body page-info-body">
+                        <div class="col-12 col-md-5 offset-md-3">
+                            <div class="card no-padding">
+                                <div class="card-header card-header__bg">
+                                    <div>
+                                        <p class="card-title">
+                                            정산안내
+                                        </p>
+                                        <div class="card-btitle">
+                                            <p>
+                                                아래의 정산안내를 확인하신 후 정산 신청을 진행해주세요.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="flow-adjust">
+                                        <li>
+                                            <div>
+                                                <p class="title__flow-adjust"> 필수서류 제출</p>
+                                                <p>정산을 위해 필요한 서류를 휴대폰으로 촬영하신 뒤 제출해주세요.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p class="title__flow-adjust">서류심사</p>
+                                                <p>
+                                                    제출 후 영업일 기준 1~2일의 심사 기간이 소요됩니다. 또한, 제출하신<br/>
+                                                    서류에 대한 내용을 확인한 후 보완이 필요한 경우 재요청 드립니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p class="title__flow-adjust">정산승인</p>
+                                                <p>
+                                                    심사 완료 후 관리자 승인을 통해 정산내역 메뉴에서 확인 가능합니다.<br/>
+                                                    기본정산 주기는 D+5일입니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                <div class="card-footer">
-                    <div class="alert-text">
-                        <div class="alert-text__inner">
-                            <ul class="alert-adjust">
-                                <li>
-                                    심사 진행 중에 필요한 경우 추가서류에 대해 요청드릴 수 있습니다.
-                                </li>
-                                <li>
-                                    필수서류 제출 시 추가서류(간판이 포함된 매장사진, 판매상품사진 등)도 함께
-                                    제출해주실 경우 심사가 조금 더 빠르게 진행될 수 있습니다.
-                                </li>
-                                <li class="">
-                                    추가서류 제출은 <a href="set_adjust.jsp" class="under under-effect" data-hover="설정 > ">설정 &gt; 정산 정보 페이지</a>를
-                                    이용해주시기 바랍니다.
-                                </li>
-                                <li>
-                                    정산승인 이전 누적 정산금액은 정산승인 완료일 다음 평일에 일괄 입금해
-                                    드립니다.
-                                </li>
-                            </ul>
+                                <div class="card-footer">
+                                    <div class="alert-text">
+                                        <div class="alert-text__inner">
+                                            <ul class="alert-adjust">
+                                                <li>
+                                                    심사 진행 중에 필요한 경우 추가서류에 대해 요청드릴 수 있습니다.
+                                                </li>
+                                                <li>
+                                                    필수서류 제출 시 추가서류(간판이 포함된 매장사진, 판매상품사진 등)도 함께
+                                                    제출해주실 경우 심사가 조금 더 빠르게 진행될 수 있습니다.
+                                                </li>
+                                                <li class="">
+                                                    추가서류 제출은 <a href="set_adjust.html" class="under under-effect" data-hover="설정 > ">설정 &gt; 정산 정보 페이지</a>를
+                                                    이용해주시기 바랍니다.
+                                                </li>
+                                                <li>
+                                                    정산승인 이전 누적 정산금액은 정산승인 완료일 다음 평일에 일괄 입금해
+                                                    드립니다.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-ct-bottom inline">
+                                <button type="button" class="btn btn-lg btn-primary rounded-sm" @click="dialogVisible8 = true">신청/수정하기</button>
+                                <button type="button" class="btn btn-lg btn-more-view rounded-sm" @click="open" >신청내역 확인</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="btn-ct-bottom inline">
-                <button type="button" class="btn btn-lg btn-primary rounded-sm" @click="dialogVisible8 = true">신청/수정하기</button>
-                <button type="button" class="btn btn-lg btn-more-view rounded-sm" @click="open" >신청내역 확인</button>
-            </div>
-        </div>
-    </div>
-    <!-- //page-body -->
+                    <!-- //page-body -->
 
-    <%-- popup :: 필수서류 제출  --%>
-    <el-dialog :visible.sync="dialogVisible8" class="md">
-        <div slot="title">
-            <div class="el-dialog__title">
-                필수서류 제출
-            </div>
-            <div class="el-dialog__subtitle">
-                정산을 위해 필요한 서류를 휴대폰으로 촬영하신 뒤 제출해주세요.
-            </div>
-        </div>
-        <div class="dialog-contents">
-            <table class="table table-view">
-                <caption>정산신청 필수서류 제출 폼</caption>
-                <colgroup>
-                    <col width="100">
-                    <col width="*">
-                    <col width="150">
-                </colgroup>
-                <tbody>
-                <tr>
-                    <th scope="row">통장 <em class="point"></em></th>
-                    <td>
-                        <div class="custom-file">
-                            <input type="file" id="file01" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
-                            <label for="file01" class="custom-file-label">파일을 선택해주세요.</label>
+                    <%-- popup :: 필수서류 제출  --%>
+                    <el-dialog :visible.sync="dialogVisible8" class="md">
+                        <div slot="title">
+                            <div class="el-dialog__title">
+                                필수서류 제출
+                            </div>
+                            <div class="el-dialog__subtitle">
+                                정산을 위해 필요한 서류를 휴대폰으로 촬영하신 뒤 제출해주세요.
+                            </div>
                         </div>
-                    </td>
-                    <td class="text-right">
-                        <p class="text-primary">
+                        <div class="dialog-contents">
+                            <table class="table table-view">
+                                <caption>정산신청 필수서류 제출 폼</caption>
+                                <colgroup>
+                                    <col width="100">
+                                    <col width="*">
+                                    <col width="150">
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">통장 <em class="point"></em></th>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" id="file01" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
+                                            <label for="file01" class="custom-file-label">파일을 선택해주세요.</label>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <p class="text-primary">
                             <span class="i-circle-shadow">
                                 <i class="xi-check-min i-font-xs"></i>
                             </span>
-                            <span>제출완료</span>
-                        </p>
-                        <p class="text-secondary">
+                                            <span>제출완료</span>
+                                        </p>
+                                        <p class="text-secondary">
                             <span class="i-circle-shadow">
                                 <i class="xi-close-min i-font-xs"></i>
                             </span>
-                            <span>미제출</span>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">신분증 <em class="point"></em></th>
-                    <td>
-                        <div class="custom-file">
-                            <input type="file" id="file02" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
-                            <label for="file02" class="custom-file-label">파일을 선택해주세요.</label>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <p class="text-primary">
+                                            <span>미제출</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">신분증 <em class="point"></em></th>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" id="file02" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
+                                            <label for="file02" class="custom-file-label">파일을 선택해주세요.</label>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <p class="text-primary">
                             <span class="i-circle-shadow">
                                 <i class="xi-check-min i-font-xs"></i>
                             </span>
-                            <span>제출완료</span>
-                        </p>
-                        <p class="text-secondary">
+                                            <span>제출완료</span>
+                                        </p>
+                                        <p class="text-secondary">
                             <span class="i-circle-shadow">
                                 <i class="xi-close-min i-font-xs"></i>
                             </span>
-                            <span>미제출</span>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">매장사진 <em class="point"></em></th>
-                    <td>
-                        <div class="custom-file">
-                            <input type="file" id="file03" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
-                            <label for="file03" class="custom-file-label">파일을 선택해주세요.</label>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <p class="text-primary">
+                                            <span>미제출</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">매장사진 <em class="point"></em></th>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" id="file03" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
+                                            <label for="file03" class="custom-file-label">파일을 선택해주세요.</label>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <p class="text-primary">
                             <span class="i-circle-shadow">
                                 <i class="xi-check-min i-font-xs"></i>
                             </span>
-                            <span>제출완료</span>
-                        </p>
-                        <p class="text-secondary">
+                                            <span>제출완료</span>
+                                        </p>
+                                        <p class="text-secondary">
                             <span class="i-circle-shadow">
                                 <i class="xi-close-min i-font-xs"></i>
                             </span>
-                            <span>미제출</span>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">상품사진 <em class="point"></em></th>
-                    <td>
-                        <div class="custom-file">
-                            <input type="file" id="file04" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
-                            <label for="file04" class="custom-file-label">파일을 선택해주세요.</label>
-                        </div>
-                    </td>
-                    <td class="text-right">
-                        <p class="text-primary">
+                                            <span>미제출</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">상품사진 <em class="point"></em></th>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" id="file04" aria-describedby="inputGroupFileAddon03" class="custom-file-input">
+                                            <label for="file04" class="custom-file-label">파일을 선택해주세요.</label>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <p class="text-primary">
                             <span class="i-circle-shadow">
                                 <i class="xi-check-min i-font-xs"></i>
                             </span>
-                            <span>제출완료</span>
-                        </p>
-                        <p class="text-secondary">
+                                            <span>제출완료</span>
+                                        </p>
+                                        <p class="text-secondary">
                             <span class="i-circle-shadow">
                                 <i class="xi-close-min i-font-xs"></i>
                             </span>
-                            <span>미제출</span>
-                        </p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div slot="footer">
-            <button type="button" class="btn btn-secondary" @click="dialogVisible8 = false">닫기</button>
-            <button type="button" class="btn btn-primary">제출</button>
-        </div>
-    </el-dialog>
+                                            <span>미제출</span>
+                                        </p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div slot="footer">
+                            <button type="button" class="btn btn-secondary" @click="dialogVisible8 = false">닫기</button>
+                            <button type="button" class="btn btn-primary">제출</button>
+                        </div>
+                    </el-dialog>
 
 
                     <button type="button" class="btn-open-search" title="상세 검색창 열기" @click="searchboxOpener">

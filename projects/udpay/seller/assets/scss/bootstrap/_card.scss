@@ -50,7 +50,7 @@
 
 .card-title {
   //margin-bottom: $card-spacer-y;
-  font-size: $font-size-large;
+  font-size: $font-size-base * 1.267;
   font-weight: $font-weight-bolder;
 
   // for English and Number
@@ -68,43 +68,18 @@
 .card-btitle{
   display: flex;
   flex: 1;
-  //align-items: baseline;
-  align-items:center;
-  padding-top: .5rem;
+  align-items: baseline;
+  padding-top: 0.5rem;
   width: 100%;
-  flex-wrap: wrap;
-
-  i{
-    margin-right:.25rem;
+  p{
+    margin-left:auto;
   }
-
-  //p{
-  //  margin-left:auto;
-  //}
-
   .card-title-exp{
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     color:$gray-600;
     margin-left:0;
   }
-
-  .card-title-info{
-    margin-left:auto;
-  }
-
-  @include media-breakpoint-down(sm){
-    &{
-      flex-direction: column;
-      align-items: flex-start;
-
-      .card-title-info{
-        margin-left: 0;
-        flex-grow: 0;
-      }
-    }
-  }
-
 }
 
 .card-subtitle {
@@ -173,6 +148,24 @@
 }
 
 //
+// Card size
+//
+.card{
+  &-xs{
+    .card-header{
+      padding: ($card-spacer-y-xs*0.7) ($card-spacer-x-xs*0.7) 0;
+    }
+    .card-body{
+      padding: ($card-spacer-y-xs*0.7) ($card-spacer-x-xs*0.7) 0;
+    }
+    .card-title{
+      font-size: $font-size-base  * 1.067;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+//
 // Header navs
 //
 
@@ -188,6 +181,15 @@
   margin-left: -$card-spacer-x / 2;
 }
 
+// card-actions
+.card-actions{
+
+}
+.card-close{
+  font-size: 1.6rem;
+  color:$text-dark;
+  //transform: translateY(-7px);
+}
 
 // Card image
 .card-img-overlay {
@@ -356,21 +358,6 @@
 }
 
 
-
-.card-close{
-  //font-size: $font-size-extra-large;
-  font-size:190%;
-  color:$text-dark;
-  //transform: translateY(-7px);
-
-
-  &:hover,
-  &:focus{
-    outline:0;
-    color:$primary;
-  }
-}
-
 //
 // card inner element inline
 //
@@ -378,7 +365,6 @@
 .card-col__deck{
   display: table;
   width: 100%;
-
   .card-header,
   .card-body{
     display: table-cell;
