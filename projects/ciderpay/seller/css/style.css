@@ -3416,12 +3416,9 @@ table th[class*="col-"] {
   position: absolute;
   width: 215px;
   padding-top: 3px; }
-  .logoBox .logo_img {
+  .logoBox .logo_img img {
     height: 18px; }
-    .logoBox .logo_img img {
-      width: 100%; }
   .logoBox .logo_txt {
-    height: 14px;
     margin-left: 2px; }
     .logoBox .logo_txt img {
       width: 100%;
