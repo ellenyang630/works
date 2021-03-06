@@ -20,7 +20,7 @@
                     <el-card class="join-card">
                         <section class="loginWrap">
                             <h1 class="login-logo">
-                                <img src="@/assets/img/logo.png" alt="유디독스">
+                                <img src="assets/img/logo.png" alt="유디독스">
                                 <span class="logo-tit">회원가입</span>
                             </h1>
 
@@ -65,14 +65,29 @@
                         <!-- //loginWrap -->
                     </el-card>
 
-
-
-
                 </div>
             </div>
         </div>
         <!--// simple_content -->
     </div>
 </div>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import elemnet-ui JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data () {
+            return {
+
+            }
+        },
+        methods: {
+
+        }
+    })
+</script>
 </body>
 </html>
