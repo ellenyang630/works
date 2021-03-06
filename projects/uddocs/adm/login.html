@@ -1,59 +1,78 @@
-<div class="simple_content">
-    <div class="fixed-table">
-        <div class="cell-vm">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Dashboard : 유디독스</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+    <link rel="stylesheet" href="assets/scss/style.css" />
+    <!--<script type="text/javascript" src="./assets/js/jquery-2.2.4.min.js"></script>-->
+</head>
+<body>
+<div id="app">
+    <div class="wrapper">
+        <div class="simple_content">
+            <div class="fixed-table">
+                <div class="cell-vm">
 
-            <el-card class="join-card">
-                <section class="loginWrap">
-                    <h1 class="login-logo">
-                        <img src="@/assets/img/logo.png" alt="유디독스">
-                        <span class="logo-tit">회원가입</span>
-                    </h1>
+                    <el-card class="join-card">
+                        <section class="loginWrap">
+                            <h1 class="login-logo">
+                                <img src="@/assets/img/logo.png" alt="유디독스">
+                                <span class="logo-tit">회원가입</span>
+                            </h1>
 
 
-                    <el-form ref="form" :model="form" class="top-inline demo-ruleForm" label-width="110px">
-                        <div class="join-agree">
-                            <div class="el-input__label invisible">이용약관</div>
-                            <el-input type="textarea" readonly value="유디독스 이용약관입니다." resize="none"></el-input>
-                            <el-checkbox class="mgt10">약관에 동의합니다.</el-checkbox>
-                        </div>
-
-
-                        <div class="el-input__wrap d_flex">
-                            <div class="el-input__label">이메일</div>
-                            <div class="inline_row_flex">
-                                <div>
-                                    <el-input type="email" placeholder="이메일 주소를 입력해주세요."></el-input>
+                            <el-form ref="form" :model="form" class="top-inline demo-ruleForm" label-width="110px">
+                                <div class="join-agree">
+                                    <div class="el-input__label invisible">이용약관</div>
+                                    <el-input type="textarea" readonly value="유디독스 이용약관입니다." resize="none"></el-input>
+                                    <el-checkbox class="mgt10">약관에 동의합니다.</el-checkbox>
                                 </div>
-                                <el-button type="primary" plain>중복확인</el-button>
-                            </div>
-                        </div>
-                        <!-- //el-input__wrap -->
-                        <el-form-item label="비밀번호">
-                            <el-input type="password" placeholder="비밀번호를 입력해주세요."></el-input>
-                            <div class="el-input__helpText primary">
-                                <i class="xi-info-o"></i> 영문, 숫자 조합으로 6~20자 이내로 생성 가능
-                            </div>
-                        </el-form-item>
-
-                        <el-form-item label="비밀번호 확인">
-                            <el-input type="password" placeholder="비밀번호를 한번 더 입력해주세요."></el-input>
-                        </el-form-item>
-
-                        <el-form-item label="이름">
-                            <el-input type="text" placeholder="이름을 입력해주세요."></el-input>
-                        </el-form-item>
-
-                        <el-button type="primary" class="el-button__block el-button__brick el-button__big">회원가입</el-button>
-                    </el-form>
-
-                </section>
-                <!-- //loginWrap -->
-            </el-card>
 
 
+                                <div class="el-input__wrap d_flex">
+                                    <div class="el-input__label">이메일</div>
+                                    <div class="inline_row_flex">
+                                        <div>
+                                            <el-input type="email" placeholder="이메일 주소를 입력해주세요."></el-input>
+                                        </div>
+                                        <el-button type="primary" plain>중복확인</el-button>
+                                    </div>
+                                </div>
+                                <!-- //el-input__wrap -->
+                                <el-form-item label="비밀번호">
+                                    <el-input type="password" placeholder="비밀번호를 입력해주세요."></el-input>
+                                    <div class="el-input__helpText primary">
+                                        <i class="xi-info-o"></i> 영문, 숫자 조합으로 6~20자 이내로 생성 가능
+                                    </div>
+                                </el-form-item>
+
+                                <el-form-item label="비밀번호 확인">
+                                    <el-input type="password" placeholder="비밀번호를 한번 더 입력해주세요."></el-input>
+                                </el-form-item>
+
+                                <el-form-item label="이름">
+                                    <el-input type="text" placeholder="이름을 입력해주세요."></el-input>
+                                </el-form-item>
+
+                                <el-button type="primary" class="el-button__block el-button__brick el-button__big">회원가입</el-button>
+                            </el-form>
+
+                        </section>
+                        <!-- //loginWrap -->
+                    </el-card>
 
 
+
+
+                </div>
+            </div>
         </div>
+        <!--// simple_content -->
     </div>
 </div>
-<!--// simple_content -->
+</body>
+</html>

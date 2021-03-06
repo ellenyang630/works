@@ -161,6 +161,12 @@
 // --------------------------------------------------
 
 
+
+//
+//  Dash Board
+// --------------------------------------------------
+
+
 // 내정보
 .card-myInfo{
   @include boxSizing;
@@ -254,8 +260,8 @@
 
       .list-data__wrapper.is-white{
         > .list-data__text.list-data__text-cate {
-            opacity: 1;
-            color:rgba($white,0.5);
+          opacity: 1;
+          color:rgba($white,0.5);
         }
       }
     }
