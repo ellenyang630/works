@@ -33,8 +33,8 @@
 
 @font-face {
   font-family: "FontAwesome";
-  src: url('../fonts/FontAwesome-webfont.eot');
-  src: url('../fonts/FontAwesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/FontAwesome-webfont.woff') format('woff'), url('../fonts/FontAwesome-webfont.svg#FontAwesome') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.svg#FontAwesome') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -213,6 +213,7 @@ button {
 }
 input {
   box-sizing: border-box;
+  line-height: normal !important; /* safari 에서 상하가운데정렬이 안되서 추가  */
 }
 
 input::-ms-clear {/* 180621 IE에서 x버튼 */
@@ -230,6 +231,7 @@ input::placeholder, textarea::placeholder {
   font-weight: normal;
 }
 
+
 input:-ms-input-placeholder, textarea:-ms-input-placeholder { /*180702 input placeholder IE에서도 적용되게 */
   color: #999;
   font-weight: normal;
@@ -243,7 +245,7 @@ input[type="checkbox"], input[type="radio"] {
   padding: 0;
   margin: 0;
   vertical-align: middle;
-  *overflow: hidden;
+  overflow: hidden;
   -webkit-appearance: none;
   position: absolute;
   z-index: 9;
@@ -262,6 +264,14 @@ input[type="checkbox"], input[type="radio"] {
   height: 18px;
   line-height: 18px;
   margin-left: 20px;
+}
+.input_chk_img,.input_radio_img{
+  position: relative;
+  display: inline-block;
+  height: 18px;
+  line-height: 18px;
+  padding-left: 26px;
+  cursor:pointer;
 }
 .input_chk:first-child {
   margin-left: 0px;
@@ -286,7 +296,31 @@ input[type="checkbox"], input[type="radio"] {
   white-space: nowrap;
   background: url(../images/images.png) no-repeat;
   -webkit-background-size: 500px 500px;
-  cursor: hand;
+  cursor: pointer;
+}
+.input_chk_img:before, .input_radio_img:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: url(../images/images.png) no-repeat;
+  -webkit-background-size: 500px 500px;
+  cursor: pointer;
+}
+.input_chk_img:before{
+  background-position: 0px -75px;
+}
+.input_radio_img:before{
+  background-position: -28px -75px;
+}
+.input_chk_img.on:before{
+  background-position: 0px -93px;
+}
+.input_radio_img.on:before{
+  background-position: -28px -93px;
 }
 .input_chk input[type="checkbox"] + label:before {
   background-position: 0px -75px;
@@ -302,6 +336,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 .input_chk input[type="checkbox"] + label, .input_chk input[type="radio"] + label {
   padding-left: 25px;
+  cursor:pointer;
 }
 .input_chk.first input[type="checkbox"] + label, .input_chk.first input[type="radio"] + label {
   padding-left: 18px;
@@ -324,6 +359,44 @@ input[type="checkbox"], input[type="radio"] {
 select {
   box-sizing: border-box;
 }
+
+/* 동의 체크박스 */
+.input_chk.agree{
+  height: 22px;
+  line-height: 22px;
+}
+.input_chk.agree input[type="checkbox"]{
+  width: 22px;
+  height: 22px;
+}
+.input_chk.agree label{
+  font-size:15px;
+  line-height:23px;
+  font-weight:600;
+  padding-left: 30px !important;
+}
+@media(max-width: 800px){
+  .input_chk.agree label{
+    font-size: inherit;
+  }
+}
+.input_chk.agree input[type="checkbox"] + label:before{
+  width: 22px;
+  height: 22px;
+  font-size:15px;
+  font-weight:600;
+}
+
+.input_chk.agree input[type="checkbox"] + label:before{
+  background-position: -57px -71px;
+}
+.input_chk.agree input[type="checkbox"]:checked + label:before{
+  background-position: -57px -93px;
+}
+
+
+
+
 /***********************************
  * margin
  ***********************************/
@@ -352,6 +425,11 @@ select {
 .mgt0 {
   margin-top: 0px !important;
 }
+@media(min-width: 801px){
+  .wmgt0{
+    margin-top:0px !important;
+  }
+}
 .mgt5 {
   margin-top: 5px !important;
 }
@@ -367,7 +445,14 @@ select {
 }
 .mgt30 {
   margin-top: 30px !important;
-}/*0323*/
+}
+.mgt40 {
+  margin-top: 40px !important;
+}
+.mgt60 {
+  margin-top: 60px !important;
+}
+/*0323*/
 .mgb0 {
   margin-bottom: 0px !important;
 }
@@ -385,6 +470,9 @@ select {
 }/*0323*/
 .mgb10 {
   margin-bottom: 10px;
+}
+.mgb5 {
+  margin-bottom: 5px;
 }
 .mg0{
   margin:0 !important;
@@ -407,6 +495,9 @@ select {
 }
 .pBox:first-child{
   padding-top: 0px;
+}
+.pd0{
+  padding: 0px !important;
 }
 .pdl0 {
   padding-left: 0px !important;
@@ -451,6 +542,9 @@ select {
   padding: 20px 20px !important;
 }/*0323*/
 
+.plr5 {
+  padding: 0 5px !important;
+}
 .plr20 {
   padding: 0 20px !important;
 }
@@ -463,13 +557,26 @@ select {
 .pdb0{
   padding-bottom: 0 !important;
 }
+.pdb15{
+  padding-bottom: 15px !important;
+}
 
 .borderT_none {
   border-top: none !important;
 }
-.borderR {
-  border-right: 1px solid #d8dbe2;
+/*.borderR {*/
+  /*border-right: 1px solid #d8dbe2 !important;*/
+/*}*/
+
+/* for IE10 and IE11 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .borderR { border-right: 1px solid #d8dbe2 !important; }
 }
+/* for Edge Browser */
+@supports (-ms-ime-align:auto) {
+  .borderR { border-right: 1px solid #d8dbe2 !important; }
+}
+
 .cwhite {
   color: #fff;
 }
@@ -480,7 +587,9 @@ select {
 .bgWhite {
   background: #fff;
 }
-
+.bd0{
+  border: 0px !important;
+}
 .bdt0 {
   border-top: 0px !important;
 }
@@ -496,6 +605,10 @@ select {
 }
 .bdb0 {
   border-bottom: 0px !important;
+}
+.bdb1 {
+  border-bottom: 1px solid #d8dbe2 !important;
+
 }
 .carrow {
   cursor: default !important;
@@ -636,12 +749,20 @@ textarea {
   width: 100%;
   padding: 0 10px;
   height: 36px;;
-  line-height: 36px;;
+  line-height: 36px;
   font-size: 13.5px;
   color: #2e2e2e;
   background-color: #fff;
   border: 1px solid #c8c8c8;
   display: inline-block;
+}
+/*.intpw.ng-valid { font-size: 40px }   !* 기본 *!
+.intpw.ng-invalid{ font-size: 13.5px;} !* 값이 있을때 *!*/
+/*.intpw.ppw{
+  font-size: 20px;
+}*/
+.intpw::placeholder{
+  font-size: 13.5px;
 }
 .int:disabled {
   background-color: #f1f1f1;
@@ -1046,7 +1167,7 @@ select.int {
 .text-capitalize {
   text-transform: capitalize;
 }
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .mtl {
     text-align: left !important;
   }
@@ -1122,6 +1243,10 @@ strong.num {
 .w100p {
   width: 100% !important;
 }
+
+.w50p {
+  width: 50% !important;
+}
 .w220px {
   width: 220px !important;
 }
@@ -1136,6 +1261,15 @@ strong.num {
 }
 .w100px {
   width: 100px !important;
+  display: inline-block;
+}
+.w40px {
+  width: 40px !important;
+  display: inline-block;
+}
+
+.w50px {
+  width: 50px !important;
   display: inline-block;
 }
 .w90px {
@@ -1169,6 +1303,9 @@ strong.num {
     margin-top: 10px !important;
     display: table;
     float: inherit !important;
+  }
+  .mw100p.mgt0{
+    margin-top: 0px !important;
   }
   .mw100p.first {
     margin-top: 0px !important;
@@ -1413,6 +1550,13 @@ strong.num {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
+.icon_edit{
+  background-position: -376px -66px;
+  width: 16px;
+  height: 15px;
+}
+
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -1780,10 +1924,12 @@ td:hover .icon_cancle, td:active .icon_cancle, td:focus .icon_cancle {
   display: block;
   width: 100%;
   height: 100%;
+  padding: 8px 0;
+  cursor: pointer;
 }
 /* named upload */
 .filebox .upload-name {
-  display: table-cell;
+  /*display: table-cell;*/ /* ie에서 상하가운데 맞추기 */
   border: 1px #fff;
   width: 100%;
   height: 34px; /* ie에서 글자 안 보여서 다시 추가 */
@@ -1794,9 +1940,27 @@ td:hover .icon_cancle, td:active .icon_cancle, td:focus .icon_cancle {
   background-color: #fff;
   border-right: 0px;
 }
+
 .bankAttach .filebox{
   width:250px !important;
 }
+@media(max-width:800px){
+  .bankAttach .filebox{
+    width:100% !important;
+  }
+}
+.excelUp{
+  margin: 20px 0;
+}
+.excelUp .filebox{
+  width:500px !important;
+}
+@media(max-width:800px){
+  .excelUp .filebox{
+    width:100% !important;
+  }
+}
+
 
 
 small {
@@ -1814,9 +1978,24 @@ small {
   width: 91%;
   float: left;
 }
-.int.w90pc + small {
+.int.w80pc {
+  width: 85%;
+  float: left;
+}
+.int.w90pc + small, .int.w80pc + small {
   float: right;
   margin-left: 0px !important;
 }
+@media(max-width: 800px){
+  .tab-content.mtab_tbl .int.w80pc {
+    width: 85% !important;
+  }
+  .tab-content.mtab_tbl .int.w40px{
+    width: 40px !important;
+  }
+}
 
-/**/
+/* 프린트할때 크롬에서 폰트어썸 안보이는 이슈때문에 변경 */
+.fontSign{
+  font-family: Gulim;
+}
