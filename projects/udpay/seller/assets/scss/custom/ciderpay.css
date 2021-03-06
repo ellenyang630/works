@@ -3003,6 +3003,14 @@ table em.point {
   position: relative;
   text-align: center;
   overflow: hidden; }
+  .graph-box .info-graph {
+    padding-top: 12%; }
+  .graph-box .info-graph-txt {
+    color: #96a5b3;
+    margin-top: 1rem; }
+    .graph-box .info-graph-txt p:first-child {
+      font-size: 1.134rem;
+      font-weight: 700; }
 
 .bbs-latest li {
   width: 100%;

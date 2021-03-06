@@ -406,6 +406,25 @@
   //margin-top:26px;
   text-align: center;
   overflow: hidden;
+
+  .info-graph{
+    padding-top:12%;
+  }
+  .info-graph-txt{
+    color: $base-lighter;
+    margin-top:1rem;
+
+
+    p{
+      &:first-child{
+        font-size:$font-size-md;
+        font-weight: $font-weight-bolder;
+      }
+      &:last-child{
+
+      }
+    }
+  }
 }
 
 // 공지사항, 자주묻는질문 최신글
