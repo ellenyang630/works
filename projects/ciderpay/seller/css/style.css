@@ -3419,12 +3419,12 @@ table th[class*="col-"] {
   .logoBox .logo_img {
     height: 18px; }
     .logoBox .logo_img img {
-      width: 85px; }
+      width: 100%; }
   .logoBox .logo_txt {
     height: 14px;
     margin-left: 2px; }
     .logoBox .logo_txt img {
-      width: 72px;
+      width: 100%;
       margin-top: 1px; }
   .logoBox img {
     display: inline-block; }

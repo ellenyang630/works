@@ -111,7 +111,8 @@
     height: 18px;
 
     img {
-      width: 85px;
+      width: 100%;
+      //width: 85px;
     }
   }
   .logo_txt {
@@ -120,7 +121,8 @@
     margin-left: 2px;
 
     img {
-      width: 72px;
+      //width: 72px;
+      width: 100%;
       margin-top: 1px;
     }
   }
