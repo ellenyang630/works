@@ -40,25 +40,27 @@
         </div>
     </div>
     <div class="utilWrap toparea clearfix">
-        <div class="utilHello">
-            <strong><i class="la la-clock-o"></i> cider_reserve</strong>님, 안녕하세요.
-            <span><em>접속시간</em>2019-11-11 11:22:11</span>
-        </div>
-        <div class="utilBox">
-            <ul class="userMenu group">
-                <li class="alarm active">
-                    <a href="#">
-                        <i class="la la-bell"></i>
-                        <em></em>
-                    </a>
-                </li>
-                <li class="mypage">
-                    <a href="#"><i class="la la-user"></i></a>
-                </li>
-                <li class="logout">
-                    <a href="#"><i class="la la-sign-out"></i></a>
-                </li>
-            </ul>
+        <div class="user-menu">
+            <div class="utilHello">
+                <strong><i class="la la-clock-o"></i> cider_reserve</strong>님, 안녕하세요.
+                <span><em>접속시간</em>2019-11-11 11:22:11</span>
+            </div>
+            <div class="utilBox">
+                <ul class="userMenu group">
+                    <li class="alarm active">
+                        <a href="#">
+                            <i class="la la-bell"></i>
+                            <em></em>
+                        </a>
+                    </li>
+                    <li class="mypage">
+                        <a href="#"><i class="la la-user"></i></a>
+                    </li>
+                    <li class="logout">
+                        <a href="#"><i class="la la-sign-out"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -66,7 +68,7 @@
 <div id="content_wrap" class="clearfix">
     <div id="ltnav" class="lnb">
         <div class="logoBox">
-            <h1><a href="menu1_book.html"><img src="images/logo.png" alt="사이다예약"></a></h1>
+            <h1><a href="index.html"><img src="images/logo.png" alt="사이다예약"></a></h1>
         </div>
         <div id="cssmenu">
             <ul>
@@ -101,9 +103,6 @@
                         <li>
                             <a href="menu2_list.html"><span>결제현황</span></a>
                         </li>
-                        <li>
-                            <a href="#"><span>판매현황</span></a>
-                        </li>
                     </ul>
                 </li>
                 <li class="dep1">
@@ -118,17 +117,17 @@
                         <li>
                             <a href="menu3_product.html"><span>예약상품 설정</span></a>
                         </li>
-                        <li class="dep1 dep2">
-                            <a href="javascript:void(0);"><span>SMS 설정</span></a>
-                            <ul>
-                                <li>
-                                    <a href="#"><span>문자충전</span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>문자발송내역</span></a>
-                                </li>
-                            </ul>
-                        </li>
+                        <!--<li class="dep1 dep2">-->
+                            <!--<a href="javascript:void(0);"><span>SMS 설정</span></a>-->
+                            <!--<ul>-->
+                                <!--<li>-->
+                                    <!--<a href="#"><span>문자충전</span></a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#"><span>문자발송내역</span></a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
                     </ul>
                 </li>
                 <li class="dep1">
@@ -165,7 +164,12 @@
     </div>
     <!--//ltnav-->
     <div id="content">
-        <div id="table-fixed"><section id="content_inner"><h2 class="sr-only">본문내용</h2><div><div class="title_box clearfix"><div class="ttBox"><h3 class="title">판매현황</h3><p class="title-desc"></p></div><div class="location"><ul class="clearfix"><li class="first"><a href="javascript:void(0)"><i class="xi-home-o"></i></a></li><li><a href="javascript:void(0)">매출관리</a></li><li><strong class="active">판매현황</strong></li></ul></div></div><div><div class="thead clearfix"><div class="pull-left"><div class="thead_select"><span class="filter_select"><div class="selectWrap"><select class="int"><option value="m">월별 매출현황</option><option value="d">일별 매출현황</option></select></div></span><span class="filter_select" style="display: none;"><div class="selectWrap"><select class="int"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4">4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select></div></span></div></div></div><div class="table-responsive"><table class="table tbList"><caption>총 예약매출에 대한 판매현황 리스트</caption><colgroup><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"></colgroup><thead><tr><th><button type="button" class="btn_sort">구분 <i aria-hidden="true" class="la la-angle-down"></i></button></th><th>총 예약건수</th><th>이용완료 건수</th><th>예약취소 건수</th><th>총 매출액</th><th>전월 대비 증감률</th></tr></thead><tbody><tr><td>12월</td><td class="cgray"><strong class="num">0</strong> 건
+        <div id="table-fixed"><section id="content_inner"><h2 class="sr-only">본문내용</h2><div>
+
+            <div class="title_box clearfix">
+                <div class="ttBox">
+                    <h2 class="title">판매현황</h2>
+                    <p class="title-desc"></p></div><div class="location"><ul class="clearfix"><li class="first"><a href="javascript:void(0)"><i class="xi-home-o"></i></a></li><li><a href="javascript:void(0)">매출관리</a></li><li><strong class="active">판매현황</strong></li></ul></div></div><div><div class="thead clearfix"><div class="pull-left"><div class="thead_select"><span class="filter_select"><div class="selectWrap"><select class="int"><option value="m">월별 매출현황</option><option value="d">일별 매출현황</option></select></div></span><span class="filter_select" style="display: none;"><div class="selectWrap"><select class="int"><option value="1">1월</option><option value="2">2월</option><option value="3">3월</option><option value="4">4월</option><option value="5">5월</option><option value="6">6월</option><option value="7">7월</option><option value="8">8월</option><option value="9">9월</option><option value="10">10월</option><option value="11">11월</option><option value="12">12월</option></select></div></span></div></div></div><div class="table-responsive"><table class="table tbList"><caption>총 예약매출에 대한 판매현황 리스트</caption><colgroup><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"><col width="16.6%"></colgroup><thead><tr><th><button type="button" class="btn_sort">구분 <i aria-hidden="true" class="la la-angle-down"></i></button></th><th>총 예약건수</th><th>이용완료 건수</th><th>예약취소 건수</th><th>총 매출액</th><th>전월 대비 증감률</th></tr></thead><tbody><tr><td>12월</td><td class="cgray"><strong class="num">0</strong> 건
         </td><td class="cgray"><strong class="num">0</strong> 건
         </td><td class="cgray"><strong class="num">0</strong> 건
         </td><td><p><strong class="num">0</strong> 원</p></td><td><p><strong>0</strong> %</p></td></tr><tr><td>11월</td><td class="cgray"><strong class="num">0</strong> 건
