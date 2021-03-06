@@ -1516,11 +1516,13 @@ button.with-data {
     clear: both; }
 
 .site-content {
-  flex-grow: 1; }
+  flex-grow: 1;
+  display: flex; }
   .site-content.intro-body {
     width: 100%;
     float: none;
-    clear: both; }
+    clear: both;
+    display: block; }
 
 #content.intro-content {
   margin-left: 0; }

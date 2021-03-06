@@ -1125,11 +1125,13 @@ button.with-data{
   //float:left;
   //width:100%;
   flex-grow: 1;
+  display: flex;
 
   &.intro-body{
     width:100%;
     float:none;
     clear: both;
+    display: block;
   }
 }
 #content{
