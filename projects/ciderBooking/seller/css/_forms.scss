@@ -26,8 +26,8 @@ input[type="file"].up-goods-file {
 .fileUpload {
   label{
     position: relative;
-    width: 116px;
-    height: 116px;
+    width: 100px;
+    height: 100px;
     text-align: center;
     border: 1px solid $line-dark;
     cursor: pointer;
@@ -75,6 +75,7 @@ input[type="file"].up-goods-file {
   }
   br + small{
     padding-left:23px;
+    line-height: 2;
   }
 }
 
@@ -84,12 +85,12 @@ input[type="checkbox"], input[type="radio"] {
   height: 18px;
   padding: 0;
   margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9;
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  //z-index: 9;
   vertical-align: middle;
-  *overflow: hidden;
+  overflow: hidden;
   -webkit-appearance: none;
   border: 0;
   background: 0;
@@ -113,7 +114,7 @@ input[type="checkbox"], input[type="radio"] {
 .input_chk input[type="checkbox"],
 .input_radio input[type="radio"]{
   & + label{
-    padding-left: 23px;
+    padding-left: 5px;
     cursor: pointer;
     font-weight: 400;
     color: $gray-6;
@@ -248,9 +249,11 @@ input:checked + .check_slider:before {
     &:after{
       display: inline-block;
       content:"불가";
-      width:30px;
+      width:40px;
       position: absolute;
-      left:-30px;
+      left:-40px;
+      color: $gray-9;
+      font-weight: 700;
     }
   }
   input:checked {
@@ -262,20 +265,21 @@ input:checked + .check_slider:before {
       }
       &:after {
         content:"가능";
+        color: $green;
       }
     }
   }
 }
 
-  .switch.sm.sell{
-    input:checked {
-      & + .check_slider{
-        &:after {
-          content:"판매";
-        }
+.switch.sm.sell{
+  input:checked {
+    & + .check_slider{
+      &:after {
+        content:"판매";
       }
     }
   }
+}
 
 
 // 요일 선택 체크박스
@@ -307,9 +311,10 @@ input[type="checkbox"]{
     // checked
     &:checked{
       & + label{
-        background: $green;
+        background: rgba($green, 0.8);
         color: $white;
         font-weight: $font-weight-exbold;
+        border-color: #00d593;
       }
     }
   }
@@ -324,15 +329,21 @@ input[type="checkbox"]{
 
 // 선택된 날짜
 .mem_tagGroup {
+  margin-left:-3px;
   > span,
   > button{
-    margin-top: 5px;
-    margin-bottom:5px;
+    //margin-top: 5px;
+    //margin-bottom:5px;
+    //margin-left:5px;
+    margin:3px;
+    //&:first-child{
+    //  margin-left:0;
+    //}
+    //&:nth-child(4n+1){
+    //  margin-left:0;
+    //}
   }
   button{
-    &:hover,
-    &:active,
-    &:focus,
     &.active{
       border-color: $green;
       color: $green;
@@ -342,10 +353,13 @@ input[type="checkbox"]{
 .mem_tag {
   display: inline-block;
   width: auto !important;
-  padding: 2px 7px;
-  height: 28px;
+  max-height: 28px;
+  padding: 2px 9px;
+  margin-top: 5px;
+  margin-bottom:5px;
+  margin-left:5px;
   line-height: 1.7;
-  font-size: $font-size-base;
+  font-size: 12px;
   font-weight: normal;
   vertical-align: middle;
   border-radius: 50em;
@@ -356,7 +370,10 @@ input[type="checkbox"]{
 
   .remove {
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 7px;
+    &:hover, &:focus, &:active{
+      color: $green;
+    }
   }
 }
 
@@ -371,7 +388,7 @@ input[type="checkbox"]{
   .int {
     width: 100%;
     min-width: 30px;
-    //height: 36px;
+    height: 30px;
     padding-left:0;
     //line-height: 36px;
     //border: 1px solid $line;
@@ -418,4 +435,53 @@ input[type="checkbox"]{
       /*color: $light-black;*/
     }
   }
+}
+
+
+// 다중선택 셀렉트박스
+.dropdown {
+  font-size: 13px;
+  dt{
+    button {
+      position: relative;
+      display: block;
+      width:100%;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 10px;
+      border:1px solid $line;
+      color: $black;
+      text-align: left;
+      overflow: hidden;
+      cursor: auto;
+    }
+  }
+  dd {
+    position: relative;
+    text-align: left;
+
+    ul {
+      width:100%;
+      padding: 10px;
+      position: absolute;
+      top: -1px;
+      left: 0px;
+      z-index: 5;
+      background: $white;
+      border:1px solid $line;
+      color: $black;
+      //overflow: auto;
+    }
+  }
+}
+
+.dropdown dt a span,
+.multiSel span {
+  display: inline-block;
+}
+.dropdown span.value {
+  display: none;
+}
+.dropdown dd ul li {
+  padding: 3px 0;
 }

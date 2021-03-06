@@ -1705,7 +1705,7 @@ table {
       margin-bottom: 4px; }
       .tbList .btnBox span:last-child {
         margin-bottom: 0px; }
-      .tbList .btnBox span a {
+      .tbList .btnBox span a, .tbList .btnBox span button {
         width: 100%; }
   .tbList.bdt0 {
     border-width: 0;
