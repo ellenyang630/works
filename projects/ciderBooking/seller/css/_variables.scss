@@ -3,12 +3,11 @@
 
 //color
 $white: #ffffff !default;
-$black: #2d3539 !default;
-$blue-black: #33414e !default;
-$blue-black-light: #576c80 !default;
-$blue-black-dark: #253340 !default;
+$black: #2e2e2e !default;
+$blue-black: #2d3e4e !default;
+$blue-black-dark: #1b252f !default;
 
-$gray-6: #767a83 !default;
+$gray-6: #666666 !default;
 $gray-9: #999999 !default;
 
 $base: #656c7f !default;
@@ -17,18 +16,12 @@ $red_a: rgba($red,0.07) !default;
 $green: #00d593 !default;
 $green_a: rgba($green,0.07) !default;
 
-$line: #dbdde2 !default;
+$line: #d5d8db !default;
 $line-dark: #cbcdd2 !default;
 $line-light: #e1e4e7 !default;
 
-$white-gray:rgb(237, 240, 245) !default;
+$white-gray: #eff1f3 !default;
 $white-lgray: #f5f7f9 !default;
-
-// sub color
-$blue     : #0698fb !default;
-$violet     : #842cf2 !default;
-$purple     : #4545bb !default;
-
 
 //animation
 $transition-base: all .2s ease-in-out !default;
@@ -90,44 +83,5 @@ $radius-50: 50em !default;
   }
   &:after{
     clear: both;
-  }
-}
-
-%table{
-  display: table;
-  width: 100%;
-}
-
-%cell{
-  display: table-cell;
-}
-
-/* mixin */
-/// Mixin to prefix a property
-@mixin prefix($property, $value, $prefixes: ()) {
-  @each $prefix in $prefixes {
-    #{'-' + $prefix + '-' + $property}: $value;
-  }
-  // Output standard non-prefixed declaration
-  #{$property}: $value;
-}
-
-// font-family
-@mixin font-family($fontFam) {
-  font-family: $fontFam;
-}
-
-// content value init
-@mixin content-val($content) {
-  display:inline-block;
-  content: $content;
-}
-
-// float clear both
-@mixin clearfix {
-  &:after{
-    display: block;
-    content:"";
-    clear:both;
   }
 }

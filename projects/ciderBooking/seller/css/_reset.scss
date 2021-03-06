@@ -6,73 +6,36 @@
 .cred {
   color: $red !important;
 }
-
 .cgreen {
   color: $green !important;
 }
-
-.cblue {
-  color: $blue !important;
-}
-
 .cgray {
   color: $gray-9 !important;
 }
-
-.bgreen_a {
+.bgreen_a{
   background: $green_a;
 }
-
-.bred_a {
+.bred_a{
   background: $red_a;
 }
-
-.lgreen {
+.lgreen{
   color: $green !important;
-  border-color: rgba($green, 0.9) !important;
+  border-color:  rgba($green,0.9) !important;
 }
-
-.bgreen {
+.bgreen{
   background: $green !important;
   color: $white !important;
   border-color: $green !important;
 }
-
-.bblack {
-  background: $blue-black-light !important;
-  color: $white !important;
-  border-color: $blue-black-light !important;
-}
-
-.bblue {
-  background: $blue !important;
-  color: $white !important;
-  border-color: $blue !important;
-}
-.lblue {
-  background: $white !important;
-  color: $blue !important;
-  border-color: $blue !important;
-}
-.lred {
+.lred{
   color: $red !important;
-  border-color: rgba($red, 0.5) !important;
+  border-color:  rgba($red,0.5) !important;
 }
-
-.cblueblack {
-  color: $blue-black !important;
-}
-
-.text-prime {
-  color: $blue !important;
-}
-
 /* ----------------------------------------------------------------
  decoration
  -----------------------------------------------------------------*/
 .under {
   text-decoration: underline;
-  color: $green;
   &:hover, &:active, &:focus {
     text-decoration: underline;
   }
@@ -86,47 +49,21 @@
   text-decoration: none;
 }
 
-// only screen reader
-.invisible {
-  overflow: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-}
-
 /* ----------------------------------------------------------------
  Helper Classes
  -----------------------------------------------------------------*/
 .vm {
   vertical-align: middle;
 }
-
-.mgt0 {
-  margin-top: 0px !important;
+.mgt5{
+  margin-top: 5px;
 }
-
-.mgt5 {
-  margin-top: 5px !important;
+.mgt10{
+  margin-top: 10px;
 }
-
-.mgt10 {
-  margin-top: 10px !important;
-}
-
-.mgt15 {
-  margin-top: 15px !important;
-}
-
-.mgt20 {
-  margin-top: 20px !important;
-}
-
 .clearFix {
   clear: both;
 }
-
 .clearfix {
   zoom: 1;
   &:before, &:after {
@@ -137,29 +74,20 @@
     clear: both;
   }
 }
-
-.pull-left {
-  float: left;
+.pull-left{
+  float:left;
   display: inline-block;
 }
-
-.pull-right {
+.pull-right{
   float: right;
   display: inline-block;
 }
-
-.text-right {
-  text-align: right !important;
+.text-right{
+  text-align: right;
 }
-
-.text-center {
-  text-align: right !important;
+.text-left{
+  text-align: left;
 }
-
-.text-left {
-  text-align: left !important;
-}
-
 .hand {
   cursor: pointer;
 }
@@ -181,12 +109,6 @@
   transition: opacity .15s linear;
 }
 
-.row {
-  &.notop {
-    margin-top: -12px;
-  }
-}
-
 /* ----------------------------------------------------------------
  margin padding
  -----------------------------------------------------------------*/
@@ -194,9 +116,8 @@
   margin: 0px;
   padding: 0px;
 }
-
-.bd_none {
-  border: 0px;
+.bd_none{
+  border:0px;
 }
 
 /* ----------------------------------------------------------------
@@ -206,17 +127,15 @@
 /* ----------------------------------------------------------------
  Reset
  -----------------------------------------------------------------*/
-* {
+*{
   @extend %box;
   @extend .mp_none;
   outline: none !important;
 }
-
 *:before, *:after {
   @extend %box;
   white-space-collapse: collapse;
 }
-
 body, html {
   height: 100%;
 }
@@ -243,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 table {
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 0px;
   @extend .bd_none;
   width: 100%;
@@ -277,7 +196,6 @@ a {
   @extend .ins;
   color: $base;
   outline: none !important;
-  cursor: pointer;
   &:hover, &:active, &:focus {
     @extend .ins;
   }
@@ -297,272 +215,120 @@ input, select, textarea, button, textarea {
   font-family: $font-family;
   line-height: normal !important; /* safari 에서 상하가운데정렬이 안되서 추가  */
 }
-
-input:disabled {
+input:disabled{
   background: $white-gray;
   color: $gray-9;
 }
-
-input::-ms-clear { /* 180621 IE에서 x버튼 */
+input::-ms-clear {/* 180621 IE에서 x버튼 */
   width: 23px;
   height: 23px
 }
-
 input[type="search"] {
   -webkit-appearance: textfield;
   box-sizing: content-box;
 }
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-input[type=number] {
-  -moz-appearance:textfield;
-}
 input::-webkit-input-placeholder {
   color: $gray-9;
 }
-
 input:-ms-input-placeholder {
   color: $gray-9;
 }
-
 textarea::-webkit-input-placeholder {
   color: $gray-9;
 }
-
 textarea:-ms-input-placeholder {
   color: $gray-9;
 }
-
 input::placeholder {
   color: $gray-9;
   opacity: 1;
 }
-
 textarea::placeholder {
   color: $gray-9;
   opacity: 1;
 }
-
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  position: relative;
-}
-
-select option[disabled] {
+select option[disabled]{
   color: $gray-9 !important;
   display: none;
 }
 
 small {
   font-weight: $normal;
-  font-size: 0.9em !important;
+  font-size: 0.9em;
   color: $gray-9;
 }
 
 input + label, input + small {
   margin-left: 3px;
 }
-
-input + label small {
+input + label small{
   margin-left: 6px;
 }
-
 /*
 select::-ms-expand {
   display: none;
 }*/
 
-.hand {
-  cursor: pointer;
-}
-
-//인풋창 가이드 툴팁
-.ip_bubble {
-  position: relative;
-}
-
-/* int_focus */
-.tbOpt .int:focus{
-  border: 1px solid rgba($green,.8) !important;
-  outline: none;
-  -moz-box-shadow: 0px 0px 4px rgba($green,.5);
-  -webkit-box-shadow: 0px 0px 4px rgba($green,.5);
-  box-shadow: 0px 0px 4x rgba($green,.5);
-  transition:all 0.2s;
-}
-.int_tip {
-  position: absolute;
-  left:50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: -44px;
-  padding: 10px 20px;
-  font-size: 12px;
-  color: #fff;
-  background: $black;
-  border-radius: 50em;
-  display: none;
-  z-index: 99;
-  -webkit-animation: mover 2s linear infinite;
-  animation: mover 2s linear infinite;
-  &.active {
-    display: block;
-  }
-}
-@-webkit-keyframes mover {
-  20% {
-    top: -40px;
-  }
-  50% {
-    top: -40px;
-  }
-  80% {
-    top: -40px;
-  }
-}
-
-.int_tip_inn{
-  position: relative;
-}
-.int_tip_arrow{
-  position: absolute;
-  left:50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: -15px;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right:  6px solid transparent;
-  border-top:  6px solid $black;
-  z-index: 1201 !important;
-}
-
-
 /* ----------------------------------------------------------------
  int
  -----------------------------------------------------------------*/
-.int {
+.int{
   padding: 0 0 0 10px;
-  height: 34px;
-  line-height: 34px;
-  min-width: 130px;
+  height: 30px;
+  line-height: 30px;
+  min-width: 100px;
   font-size: 13px;
   color: $black;
   background: $white;
   border: 1px solid $line-dark;
   display: inline-block;
 }
-
-.hsInt {
+.hsInt{
   height: 80px !important;
 }
-
-.wsInt {
+.wsInt{
   min-width: auto;
-  width: 60px !important;
+  width:60px !important;
   text-align: center;
   padding: 0 10px;
 }
-
-.w80Int {
+.w80Int{
   width: 80px !important;
 }
-
-.w300Int {
+.w300Int{
   width: 300px !important;
 }
-
-.wfInt {
+.wfInt{
   min-width: auto;
-  width: 100% !important;
+  width:100% !important;
 }
-
-select.int {
-  background: none;
+select.int{
+  padding-left: 6px;
 }
-
-.selectWrap {
-  position: relative;
-  background: $white;
-  &:before {
-    position: absolute;
-    right: 10px;
-    top: 9px;
-    display: inline-block;
-    font-family: LineAwesome;
-    content: "\F110";
-  }
-}
-
-/* CAUTION: IE hackery ahead */
-select.int::-ms-expand {
-  display: none; /* remove default arrow on ie10 and ie11 */
-}
-
-/* target Internet Explorer 9 to undo the custom arrow */
-@media screen and (min-width: 0 \0
-) {
-  select.int {
-    background: none \9
-  ;
-    padding: 5px \9
-  ;
-  }
-}
-
-.int_plus {
+.int_plus{
   margin-top: 6px;
 }
-
-.int_date {
+.int_date{
   position: relative;
 }
-
-.int_date:after {
-  //@extend %top50;
-  //position:absolute;
-  //right: 5px;
-  //color: $gray-9;
-  //font-size: 1.5em;
-  //font-family: $font-icon;
-  //content:"\f15c";
-  //cursor: pointer;
+.int_date:after{
+  @extend %top50;
+  position:absolute;
+  right: 5px;
+  color: $gray-9;
+  font-size: 1.5em;
+  font-family: $font-icon;
+  content:"\f15c";
+  cursor: pointer;
 }
-
-textarea.int {
+textarea.int{
   padding: 6px;
   resize: none;
-  height: 116px;
+  height: 130px;
   line-height: inherit;
-  width: 100%;
-  &.sm {
-    height: 80px;
-  }
-  &.scrollView {
-    overflow-y: auto;
-  }
+  width :100%;
 }
-
-// LineAwesome font-size
-.i_icon {
-  color: $gray-9;
-  i {
-    transform: translateY(9%);
-  }
-  &.bg {
-    font-size: 160%;
-  }
-  &.md {
-    font-size: 130%;
-  }
-}
-
 /* ----------------------------------------------------------------
  tab
  -----------------------------------------------------------------*/
@@ -574,6 +340,7 @@ textarea.int {
     display: block;
   }
 }
+
 
 /*------------------------------------------------------------------
  collapse
@@ -592,178 +359,4 @@ textarea.int {
   overflow: hidden;
 }
 
-/* css3 animate */
-/*@mixin keyframes( $animationName )
-{
-  @-webkit-keyframes $animationName {
-    @content;
-  }
-  @-moz-keyframes $animationName {
-    @content;
-  }
-  @-o-keyframes $animationName {
-    @content;
-  }
-  @keyframes $animationName {
-    @content;
-  }
-}
 
-@include keyframes( incrediblehulk )
-{
-  0% {
-    color: #f8d2c0;
-    // you can also use mixins inside this mixin!
-    @include transform( scale(1) );
-  }
-
-  100% {
-    color: #0f0;
-    @include transform( scale(3) );
-  }
-}*/
-
-@keyframes shadow-pulse-green {
-  0% {
-    box-shadow: 0 0 0 0px rgba($green, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 0 8px rgba($green, 0);
-  }
-}
-
-@keyframes shadow-pulse-red {
-  0% {
-    box-shadow: 0 0 0 0px rgba($red, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 0 8px rgba($red, 0);
-  }
-}
-
-@keyframes shadow-pulse-big {
-  0% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 0 70px rgba(0, 0, 0, 0);
-  }
-}
-
-/* loader */
-#loader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 20001;
-  width: 100%;
-  height: 100%;
-}
-
-.bg_dimm {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 20000;
-}
-
-.loaderWrap {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  overflow: hidden;
-  z-index: 20005;
-}
-
-.loader,
-.loader:after {
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
-}
-
-.loader {
-  margin: 0 auto;
-  font-size: 10px;
-  position: relative;
-  text-indent: -9999em;
-  border-top: 8px solid rgba($green, 0.5);
-  border-right: 8px solid rgba($green, 0.5);
-  border-bottom: 8px solid rgba($green, 0.5);
-  border-left: 8px solid #rgba ($green, 01);
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
-}
-
-.loader_text {
-  margin-top: 20px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
-  text-align: center;
-  -webkit-animation: fadeInOut 1.5s infinite linear;
-  animation: fadeInOut 1.5s infinite linear;
-}
-
-/* animation @keyframes */
-@-webkit-keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes fadeInOut {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-
-
-/*------------------------------------------------------------------
- margin border padding
- -----------------------------------------------------------------*/
-.bdb0{
-  border-bottom: 0px !important
-}
