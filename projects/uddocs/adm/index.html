@@ -39,114 +39,116 @@
         <!-- //#site-header -->
 
         <main id="content_wrap">
-            <section id="content" class="intro-content">
-                <h1 class="invisible">본문</h1>
-                <!-- // include 끝 -->
+            <div class="site-content intro-body">
+                <section id="content" class="intro-content">
+                    <h1 class="invisible">본문</h1>
+                    <!-- // include 끝 -->
 
-                <div class="bg-title-box">
-                    <p class="tit-ads">
-                        복잡한 API 이제, 간편하게 관리해 보세요.
-                    </p>
-                    <div class="d_flex total-project">
-                        <span class="total-project__label">현재 생성된 프로젝트</span>
-                        <span class="total-project__sum">
-                            <strong>3</strong>
-                            <small>project</small>
-                        </span>
+                    <div class="bg-title-box">
+                        <p class="tit-ads">
+                            복잡한 API 이제, 간편하게 관리해 보세요.
+                        </p>
+                        <div class="d_flex total-project">
+                            <span class="total-project__label">현재 생성된 프로젝트</span>
+                            <span class="total-project__sum">
+                                <strong>3</strong>
+                                <small>project</small>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <!-- //bg-title-box -->
+                    <!-- //bg-title-box -->
 
-                <section id="content_inner">
-                    <h1 class="invisible">연동된 API 프로젝트 리스트</h1>
-                    <el-row :gutter="21" class="api-project-item__list">
-                        <el-col :span="6" class="api-project-item api-project-item__default">
-                            <el-card>
-                                <el-button type="text" class="add-api-project" @click="dialogVisible = true">
-                                    <p class="add">프로젝트 생성</p>
-                                </el-button>
-                            </el-card>
-                        </el-col>
-                        <!-- //api-project-item -->
-                        <el-col :span="6" class="api-project-item">
-                            <el-card>
-                                <div class="api-project-name">
-                                    <h2 class="kor"><router-link to="/api/list">사이다페이 API</router-link></h2>
-                                    <p class="id">cidermaster1234</p>
-                                </div>
-                                <!-- //api-project-name -->
-                                <div class="api-project-controller">
-                                    <div class="d_flex">
-                                        <div>
-                                            <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
-                                        </div>
-                                        <div class="mgl-auto">
-                                            <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light">
-                                                <router-link to="/api/list">
-                                                    <span class="invisible">API 프로젝트 보기</span>
-                                                </router-link>
-                                            </el-button>
-                                            <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light" @click="dialogVisible = true">
-                                                <span class="invisible">API 프로젝트 수정</span>
-                                            </el-button>
+                    <section id="content_inner">
+                        <h1 class="invisible">연동된 API 프로젝트 리스트</h1>
+                        <el-row :gutter="21" class="api-project-item__list">
+                            <el-col :span="6" class="api-project-item api-project-item__default">
+                                <el-card>
+                                    <el-button type="text" class="add-api-project" @click="dialogVisible = true">
+                                        <p class="add">프로젝트 생성</p>
+                                    </el-button>
+                                </el-card>
+                            </el-col>
+                            <!-- //api-project-item -->
+                            <el-col :span="6" class="api-project-item">
+                                <el-card>
+                                    <div class="api-project-name">
+                                        <h2 class="kor"><router-link to="/api/list">사이다페이 API</router-link></h2>
+                                        <p class="id">cidermaster1234</p>
+                                    </div>
+                                    <!-- //api-project-name -->
+                                    <div class="api-project-controller">
+                                        <div class="d_flex">
+                                            <div>
+                                                <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
+                                            </div>
+                                            <div class="mgl-auto">
+                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light">
+                                                    <router-link to="/api/list">
+                                                        <span class="invisible">API 프로젝트 보기</span>
+                                                    </router-link>
+                                                </el-button>
+                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light" @click="dialogVisible = true">
+                                                    <span class="invisible">API 프로젝트 수정</span>
+                                                </el-button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- //api-project-controller -->
-                            </el-card>
-                        </el-col>
-                        <!-- //api-project-item -->
-                        <el-col :span="6" class="api-project-item">
-                            <el-card>
-                                <div class="api-project-name">
-                                    <h2 class="kor">유디아이디 API</h2>
-                                    <p class="id">udid1234</p>
-                                </div>
-                                <!-- //api-project-name -->
-                                <div class="api-project-controller">
-                                    <div class="d_flex">
-                                        <div>
-                                            <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
-                                        </div>
-                                        <div class="mgl-auto">
-                                            <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light"></el-button>
-                                            <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light"></el-button>
+                                    <!-- //api-project-controller -->
+                                </el-card>
+                            </el-col>
+                            <!-- //api-project-item -->
+                            <el-col :span="6" class="api-project-item">
+                                <el-card>
+                                    <div class="api-project-name">
+                                        <h2 class="kor">유디아이디 API</h2>
+                                        <p class="id">udid1234</p>
+                                    </div>
+                                    <!-- //api-project-name -->
+                                    <div class="api-project-controller">
+                                        <div class="d_flex">
+                                            <div>
+                                                <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
+                                            </div>
+                                            <div class="mgl-auto">
+                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light"></el-button>
+                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light"></el-button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- //api-project-controller -->
-                            </el-card>
-                        </el-col>
-                        <!-- //api-project-item -->
-                        <el-col :span="6" class="api-project-item">
-                            <el-card>
-                                <div class="api-project-name">
-                                    <h2 class="kor">콜라서비스 API</h2>
-                                    <p class="id">colamaster1234</p>
-                                </div>
-                                <!-- //api-project-name -->
-                                <div class="api-project-controller">
-                                    <div class="d_flex">
-                                        <div>
-                                            <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
-                                        </div>
-                                        <div class="mgl-auto">
-                                            <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light"></el-button>
-                                            <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light"></el-button>
+                                    <!-- //api-project-controller -->
+                                </el-card>
+                            </el-col>
+                            <!-- //api-project-item -->
+                            <el-col :span="6" class="api-project-item">
+                                <el-card>
+                                    <div class="api-project-name">
+                                        <h2 class="kor">콜라서비스 API</h2>
+                                        <p class="id">colamaster1234</p>
+                                    </div>
+                                    <!-- //api-project-name -->
+                                    <div class="api-project-controller">
+                                        <div class="d_flex">
+                                            <div>
+                                                <el-switch active-text="공개" inactive-text="비공개" class="el-switch__small"></el-switch>
+                                            </div>
+                                            <div class="mgl-auto">
+                                                <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light"></el-button>
+                                                <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light"></el-button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- //api-project-controller -->
-                            </el-card>
-                        </el-col>
-                        <!-- //api-project-item -->
-                    </el-row>
-                    <!-- //api-project-item__list -->
+                                    <!-- //api-project-controller -->
+                                </el-card>
+                            </el-col>
+                            <!-- //api-project-item -->
+                        </el-row>
+                        <!-- //api-project-item__list -->
+                    </section>
+                    <!-- //#content_inner -->
+
                 </section>
-                <!-- //#content_inner -->
-
-            </section>
-            <!-- //#content.intro-content -->
+                <!-- //#content.intro-content -->
+            </div>
         </main>
         <!-- //#content_wrap -->
 
