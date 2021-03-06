@@ -408,7 +408,8 @@
   overflow: hidden;
 
   .info-graph{
-    padding-top:12%;
+    padding-top:14%;
+    min-height: 258px;
   }
   .info-graph-txt{
     color: $base-lighter;

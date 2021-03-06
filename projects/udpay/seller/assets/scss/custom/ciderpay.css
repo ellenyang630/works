@@ -3004,7 +3004,8 @@ table em.point {
   text-align: center;
   overflow: hidden; }
   .graph-box .info-graph {
-    padding-top: 12%; }
+    padding-top: 14%;
+    min-height: 258px; }
   .graph-box .info-graph-txt {
     color: #96a5b3;
     margin-top: 1rem; }
