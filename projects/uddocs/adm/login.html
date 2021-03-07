@@ -17,54 +17,40 @@
             <div class="fixed-table">
                 <div class="cell-vm">
 
-                    <el-card class="join-card">
+                    <el-card class="login-card">
                         <section class="loginWrap">
                             <h1 class="login-logo">
                                 <img src="assets/img/logo.png" alt="유디독스">
-                                <span class="logo-tit">회원가입</span>
                             </h1>
-
-
-                            <el-form ref="form" :model="form" class="top-inline demo-ruleForm" label-width="110px">
-                                <div class="join-agree">
-                                    <div class="el-input__label invisible">이용약관</div>
-                                    <el-input type="textarea" readonly value="유디독스 이용약관입니다." resize="none"></el-input>
-                                    <el-checkbox class="mgt10">약관에 동의합니다.</el-checkbox>
+                            <el-form class="demo-ruleForm">
+                                <div class="el-form-item--group">
+                                    <el-form-item>
+                                        <el-input type="email" placeholder="이메일 주소를 입력해주세요.">
+                                            <i slot="prefix" class="el-input__icon xi-mail-o"></i>
+                                        </el-input>
+                                    </el-form-item>
+                                    <el-form-item>
+                                        <el-input type="password" placeholder="비밀번호를 입력해주세요.">
+                                            <i slot="prefix" class="el-input__icon xi-lock-o"></i>
+                                        </el-input>
+                                    </el-form-item>
                                 </div>
-
-
-                                <div class="el-input__wrap d_flex">
-                                    <div class="el-input__label">이메일</div>
-                                    <div class="inline_row_flex">
-                                        <div>
-                                            <el-input type="email" placeholder="이메일 주소를 입력해주세요."></el-input>
-                                        </div>
-                                        <el-button type="primary" plain>중복확인</el-button>
-                                    </div>
-                                </div>
-                                <!-- //el-input__wrap -->
-                                <el-form-item label="비밀번호">
-                                    <el-input type="password" placeholder="비밀번호를 입력해주세요."></el-input>
-                                    <div class="el-input__helpText primary">
-                                        <i class="xi-info-o"></i> 영문, 숫자 조합으로 6~20자 이내로 생성 가능
-                                    </div>
+                                <el-form-item>
+                                    <el-checkbox v-model="check1">자동로그인</el-checkbox>
                                 </el-form-item>
 
-                                <el-form-item label="비밀번호 확인">
-                                    <el-input type="password" placeholder="비밀번호를 한번 더 입력해주세요."></el-input>
-                                </el-form-item>
-
-                                <el-form-item label="이름">
-                                    <el-input type="text" placeholder="이름을 입력해주세요."></el-input>
-                                </el-form-item>
-
-                                <el-button type="primary" class="el-button__block el-button__brick el-button__big">회원가입</el-button>
+                                <el-button type="primary" class="el-button__block el-button__brick el-button__big mgt10">
+                                    <a href="index.html">로그인</a>
+                                </el-button>
                             </el-form>
 
+                            <ul class="cell-inline stretch mgt30">
+                                <li><a href="join.html" class="text-primary under">회원가입</a></li>
+                                <li><a href="#" class="text-primary under">비밀번호 찾기</a></li>
+                            </ul>
                         </section>
-                        <!-- //loginWrap -->
+                        <!--// loginWrap -->
                     </el-card>
-
                 </div>
             </div>
         </div>
@@ -81,7 +67,7 @@
         el: '#app',
         data () {
             return {
-
+                check1: false,
             }
         },
         methods: {

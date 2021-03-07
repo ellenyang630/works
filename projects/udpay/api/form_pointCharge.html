@@ -29,7 +29,7 @@
             </div>
             <div class="userMenu">
                 <div class="utilBox left">
-                    <button type="button" class="btnMenu_opener">
+                    <button type="button" class="btnMenu_opener" @click="openNav == true">
               <span class="btnMenu_opener__inn">
                 <span class="bar top"></span>
                 <span class="bar mid"></span>
@@ -77,7 +77,7 @@
 
     <el-container id="content_wrap">
         <!-- #ltnav -->
-        <el-aside id="ltnav" class="lnb">
+        <el-aside id="ltnav" class="lnb" :class="openNav == false ? 'show':'hide'">
             <h1 class="invisible">전체 메뉴</h1>
             <el-menu id="cssmenu" :default-openeds="['1']" default-active="1" >
                 <el-menu-item index="1" class="dep1" onclick="window.open('index.html', '_self')"><i class="ico xi-dashboard-o"></i> Dashboard</el-menu-item>
@@ -145,7 +145,8 @@
         </el-aside>
         <!-- //#ltnav -->
 
-        <section id="content">
+
+        <section id="content" :class="openNav == false ? 'full':'collap'" >
             <h1 class="invisible">본문</h1>
             <section id="content_inner">
                 <div class="title_box clearfix">
@@ -292,6 +293,7 @@
             return{
                 textarea:'',
                 alertMsg: false,
+                openNav: true,
 
 
             }
