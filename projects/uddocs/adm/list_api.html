@@ -15,9 +15,9 @@
     <div class="wrapper">
         <header id="site-header"><div class="top-navbar"><div class="logoBox"><h1><a href="/project" class="">UDDOCS</a></h1></div>
             <div class="user-menu view"><div class="util-item left"><div class="project-info"><div class="project-info__button"><button type="button" class="el-button button-home el-button--default" title="홈으로 이동"><!----><i class="xi-home"></i><!----></button><button type="button" class="el-button button-edit el-button--default" title="프로젝트 수정"><!----><i class="xi-pen"></i><!----></button></div><p class="project-info__title">사이다페이</p><div class="project-info__url"><span class="project-info__url-copy"><span class="url-link">http://uddocs.net/v/ciderpay</span><button type="button" class="el-button el-button--text" title="문서 url 복사"><!----><i class="xi-documents-o"></i><!----></button></span></div><div role="switch" class="el-switch el-switch__small project-info__public is-checked" aria-checked="true"><input type="checkbox" name="" true-value="true" class="el-switch__input"><span class="el-switch__label el-switch__label--left"><!----><span aria-hidden="true">비공개</span></span><span class="el-switch__core" style="width: 40px;"></span><span class="el-switch__label el-switch__label--right is-active"><!----><span>공개</span></span></div></div></div><div class="util-item right"><ul class="option-menu"><li><button type="button" class="fn-button button-sync"><i class="la la-exchange"></i><span>프로젝트 연결</span></button></li><!----><li class="logout">
-            <button type="button" title="로그아웃" class="icon-button">
-                <i class="la la-sign-out"></i></button>
-        </li></ul></div></div></div><!----><!----><!----></header>
+                <button type="button" title="로그아웃" class="icon-button">
+                    <i class="la la-sign-out"></i></button>
+            </li></ul></div></div></div><!----><!----><!----></header>
         <!-- //#site-header -->
 
         <main id="content_wrap">
@@ -183,13 +183,13 @@
                     <!-- //sidebar -->
                 </aside>
                 <!-- //#lnb -->
+
                 <section id="content">
                     <h1 class="invisible">본문</h1>
                     <section id="content_inner">
                         <div class="title_box clearfix">
                             <div class="ttBox">
                                 <h1 class="tt">Header 세트</h1>
-                                <p class="subtt">개발 토큰을 설정하는 세트</p>
                             </div>
                             <div class="location">
                                 <el-breadcrumb separator-class="el-icon-arrow-right">
@@ -204,259 +204,123 @@
                         <!-- 리스트 시작 -->
                         <el-row>
                             <el-col :span="24">
-                                <el-form>
-                                    <el-card shadow="always" class="no_padding">
-                                        <div class="list_wrap">
-                                            <div class="table-responsive">
-                                                <div class="el-table el-table--fit el-table--scrollable-x el-table--enable-row-hover el-table--enable-row-transition">
-                                                    <div class="el-table__header-wrapper">
-                                                        <table class="el-table__header">
-                                                            <colgroup>
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="270" />
-                                                            </colgroup>
-                                                            <thead class="has-gutter">
-                                                            <tr>
-                                                                <th><div class="cell">변수명</div></th>
-                                                                <th><div class="cell">항목명</div></th>
-                                                                <th><div class="cell">데이터타입</div></th>
-                                                                <th><div class="cell">길이</div></th>
-                                                                <th><div class="cell">필수</div></th>
-                                                                <th><div class="cell">설명</div></th>
-                                                                <th><div class="cell">기본값</div></th>
-                                                                <th><div class="cell">허용값 관리</div></th>
-                                                                <th><div class="cell">관리</div></th>
-                                                            </tr>
-                                                            </thead>
-                                                        </table>
-                                                        <!-- //el-table__header -->
-                                                    </div>
-                                                    <!-- //el-table__header-wrapper -->
+                                <el-card shadow="always" class="no_padding">
+                                    <div class="list_wrap">
+                                        <div class="table_head">
+                                            <div class="list_search">
+                                                <el-input
+                                                        placeholder="검색어를 입력해주세요."
+                                                        prefix-icon="el-icon-search" size="small">
+                                                </el-input>
 
-
-
-                                                    <div class="el-table__body-wrapper is-scrolling-left">
-                                                        <table class="el-table__body">
-                                                            <colgroup>
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="" />
-                                                                <col width="270" />
-                                                            </colgroup>
-                                                            <tbody>
-                                                            <tr class="el-table__row">
-                                                                <td>
-
-                                                                    <div class="cell">
-                                                                        <el-form-item label="변수명">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="항목명">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="데이터 타입">
-                                                                            <el-select size="small" placeholder="데이터 타입">
-                                                                                <el-option label="String" value="1" selected></el-option>
-                                                                                <el-option label="Number" value="2"></el-option>
-                                                                                <el-option label="Boolean" value="3"></el-option>
-                                                                            </el-select>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="길이">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="필수">
-                                                                            <el-switch active-text="ON" inactive-text="OFF" class="el-switch__small"></el-switch>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="설명">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="기본값">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-button size="small" icon="xi-cog" plain>관리</el-button>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="in-btn">
-                                                                    <div class="cell">
-                                                                        <el-button size="small" type="danger" icon="xi-trash-o" plain>삭제</el-button>
-                                                                        <el-button size="small" icon="xi-documents-o" plain>복사</el-button>
-                                                                        <el-radio-group v-model="radio1" size="small">
-                                                                            <el-radio-button label="1">
-                                                                                <i class="xi-angle-up"></i>
-                                                                                <span class="invisible">위로 이동</span>
-                                                                            </el-radio-button>
-                                                                            <el-radio-button label="2">
-                                                                                <i class="xi-angle-down"></i>
-                                                                                <span class="invisible">아래로 이동</span>
-                                                                            </el-radio-button>
-                                                                        </el-radio-group>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <!-- //el-table__row -->
-
-                                                            <tr class="el-table__row">
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="변수명">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="항목명">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="데이터 타입">
-                                                                            <el-select size="small" placeholder="데이터 타입">
-                                                                                <el-option label="String" value="1" selected></el-option>
-                                                                                <el-option label="Number" value="2"></el-option>
-                                                                                <el-option label="Boolean" value="3"></el-option>
-                                                                            </el-select>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="길이">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="필수">
-                                                                            <el-switch active-text="ON" inactive-text="OFF" class="el-switch__small"></el-switch>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="설명">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-form-item label="기본값">
-                                                                            <el-input size="small"></el-input>
-                                                                        </el-form-item>
-                                                                    </div>
-                                                                </td>
-                                                                <td>
-                                                                    <div class="cell">
-                                                                        <el-button size="small" icon="xi-cog" plain>관리</el-button>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="in-btn">
-                                                                    <div class="cell">
-                                                                        <el-button size="small" type="primary" icon="xi-plus" plain>추가</el-button>
-                                                                        <el-radio-group v-model="radio1" size="small">
-                                                                            <el-radio-button label="1">
-                                                                                <i class="xi-angle-up"></i>
-                                                                                <span class="invisible">위로 이동</span>
-                                                                            </el-radio-button>
-                                                                            <el-radio-button label="2">
-                                                                                <i class="xi-angle-down"></i>
-                                                                                <span class="invisible">아래로 이동</span>
-                                                                            </el-radio-button>
-                                                                        </el-radio-group>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <!-- //el-table__row -->
-                                                            </tbody>
-                                                        </table>
-                                                        <!-- //el-table__body -->
-                                                    </div>
-                                                    <!-- //el-table__body-wrapper -->
-                                                </div>
-                                                <!-- //el-table -->
-                                                <div class="el-table__empty-block">
-                                                    <div class="el-table__empty-text">
-                                                        <div class="tv md info"><i class="xi-list"></i></div>
-                                                        <p class="empty__info-text">해당내역이 없습니다.</p>
-                                                    </div>
-                                                </div>
-                                                <!-- //el-table__empty-block -->
                                             </div>
-                                            <!-- //table-responsive -->
+                                            <div class="list_total">
+                                                <el-button type="primary" plain icon="xi-plus" size="small">세트 추가</el-button>
+                                            </div>
                                         </div>
-                                    </el-card>
+                                        <!-- //table_head -->
 
-                                    <div class="list_button">
-                                                <span>
-                                                    <el-button class="el-button--deep-primary el-button__brick">목록으로</el-button>
-                                                </span>
-                                        <span>
-                                                    <el-button type="info" class="el-button__brick">초기화</el-button>
-                                                    <el-button type="primary" class="el-button__brick">수정</el-button>
-                                                </span>
+                                        <div class="table-responsive">
+                                            <div class="el-table el-table--fit el-table--scrollable-x el-table--enable-row-hover el-table--enable-row-transition">
+                                                <div class="el-table__header-wrapper">
+                                                    <table class="el-table__header">
+                                                        <colgroup>
+                                                            <col width="15%" />
+                                                            <col width="*" />
+                                                            <col width="*" />
+                                                        </colgroup>
+                                                        <thead class="has-gutter">
+                                                        <tr>
+                                                            <th><div class="cell">세트명</div></th>
+                                                            <th><div class="cell">설명</div></th>
+                                                            <th><div class="cell">관리</div></th>
+                                                        </tr>
+                                                        </thead>
+                                                    </table>
+                                                    <!-- //el-table__header -->
+                                                </div>
+                                                <!-- //el-table__header-wrapper -->
+
+                                                <div class="el-table__body-wrapper is-scrolling-left">
+                                                    <table class="el-table__body">
+                                                        <colgroup>
+                                                            <col width="15%" />
+                                                            <col width="*" />
+                                                            <col width="*" />
+                                                        </colgroup>
+                                                        <tbody>
+                                                        <tr class="el-table__row">
+                                                            <td>
+                                                                <div class="cell text-primary">
+                                                                    개발토큰
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="cell">
+                                                                    인증 토큰을 설정하는 세트 (개발자 : 홍길동, 디자인: 홍길동, 기획: 홍길동)
+                                                                </div>
+                                                            </td>
+                                                            <td class="in-btn">
+                                                                <div class="cell">
+                                                                    <el-button size="small" icon="xi-file-text-o" plain>상세</el-button>
+                                                                    <el-button size="small" type="success" icon="xi-pen-o" plain>수정</el-button>
+                                                                    <el-button size="small" type="danger" icon="xi-trash-o" plain>삭제</el-button>
+                                                                    <el-button size="small" icon="xi-documents-o" plain>복사</el-button>
+
+                                                                    <span>
+                                                                        <el-radio-group  size="small">
+                                                                            <el-radio-button label="1"><i class="xi-angle-up"></i></el-radio-button>
+                                                                            <el-radio-button label="2"><i class="xi-angle-down"></i></el-radio-button>
+                                                                        </el-radio-group>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- //el-table__row -->
+                                                        <tr class="el-table__row">
+                                                            <td>
+                                                                <div class="cell text-primary">
+                                                                    개발토큰
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="cell">
+                                                                    인증 토큰을 설정하는 세트 (개발자 : 홍길동, 디자인: 홍길동, 기획: 홍길동)
+                                                                </div>
+                                                            </td>
+                                                            <td class="in-btn">
+                                                                <div class="cell">
+                                                                    <el-button size="small" icon="xi-file-text-o" plain>상세</el-button>
+                                                                    <el-button size="small" type="success" icon="xi-pen-o" plain>수정</el-button>
+                                                                    <el-button size="small" type="danger" icon="xi-trash-o" plain>삭제</el-button>
+                                                                    <el-button size="small" icon="xi-documents-o" plain>복사</el-button>
+
+                                                                    <span>
+                                                                        <el-radio-group size="small">
+                                                                            <el-radio-button label="1"><i class="xi-angle-up"></i></el-radio-button>
+                                                                            <el-radio-button label="2"><i class="xi-angle-down"></i></el-radio-button>
+                                                                        </el-radio-group>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- //el-table__row -->
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- //el-table__body -->
+                                                </div>
+                                                <!-- //el-table__body-wrapper -->
+                                            </div>
+                                            <!-- //el-table -->
+                                        </div>
+                                        <!-- //table-responsive -->
                                     </div>
-                                    <!-- //list_button -->
-                                </el-form>
-
-
+                                    <!-- //list_wrap -->
+                                </el-card>
                             </el-col>
                         </el-row>
-
-
-                        <el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
-                        <el-button type="text" @click="dialogVisible2 = true">click to open the Dialog</el-button>
-                        <el-button type="text" @click="dialogVisible3 = true">click to open the Dialog</el-button>
-                        <el-button type="text" @click="dialogVisible4 = true">click to open the Dialog</el-button>
-                        <el-button type="text" @click="dialogVisible5 = true">click to open the Dialog</el-button>
-                        <el-button type="text" @click="dialogVisible6 = true">click to open the Dialog</el-button>
-
-
                     </section>
+                    <!-- //#content_inner -->
                 </section>
                 <!-- //#content -->
             </div>
