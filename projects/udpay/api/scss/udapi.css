@@ -1411,10 +1411,9 @@ html {
   transition: left 0.2s ease; }
 
 #content.collap {
-  margin-left: 250px;
+  padding-left: 250px;
   transition: margin-left 0.2s ease; }
 #content.full {
-  margin-left: 0;
   transition: margin-left 0.2s ease; }
 
 .simple_content {
