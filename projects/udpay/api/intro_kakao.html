@@ -29,7 +29,7 @@
             </div>
             <div class="userMenu">
                 <div class="utilBox left">
-                    <button type="button" class="btnMenu_opener">
+                    <button type="button" class="btnMenu_opener" @click="openNav = !openNav">
               <span class="btnMenu_opener__inn">
                 <span class="bar top"></span>
                 <span class="bar mid"></span>
@@ -75,7 +75,7 @@
     </el-header>
     <!-- //header -->
     <el-container id="content_wrap">
-        <el-aside id="ltnav" class="lnb">
+        <el-aside id="ltnav" class="lnb" :class="openNav == false ? 'hide':'show'">
             <h1 class="invisible">전체 메뉴</h1>
             <el-menu id="cssmenu" :default-openeds="['1']" default-active="1" >
                 <el-menu-item index="1" class="dep1" onclick="window.open('index.html', '_self')"><i class="ico xi-dashboard-o"></i> Dashboard</el-menu-item>
@@ -398,9 +398,43 @@
         data(){
             return{
                 dialogVisible: false,
+                openNav: true,
+
             }
         },
         methods: {
+            openSideBar() {
+                const lnb = document.querySelector("#ltnav").classList;
+                const content = document.querySelector("#content").classList;
+
+                if ($(window).width() > 1600) {
+                    if (lnb.contains("show")) {
+                        lnb.remove("show");
+                        content.remove("collap");
+                    }
+
+                    if (!lnb.contains("hide")) {
+                        lnb.add("hide");
+                        content.add("full");
+                    } else {
+                        lnb.remove("hide");
+                        content.remove("full");
+                    }
+                } else{
+                    if (lnb.contains("hide")) {
+                        lnb.remove("hide");
+                        content.remove("full");
+                    }
+
+                    if (!lnb.contains("show")) {
+                        lnb.add("show");
+                        content.add("collap");
+                    } else {
+                        lnb.remove("show");
+                        content.remove("collap");
+                    }
+                }
+            },
         }
     })
 </script>

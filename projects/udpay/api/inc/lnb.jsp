@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<el-aside id="ltnav" class="lnb">
+<el-aside id="ltnav" class="lnb" :class="openNav == false ? 'hide':'show'">
     <h1 class="invisible">전체 메뉴</h1>
     <el-menu id="cssmenu" :default-openeds="['1']" default-active="1" >
         <el-menu-item index="1" class="dep1" onclick="window.open('index.html', '_self')"><i class="ico xi-dashboard-o"></i> Dashboard</el-menu-item>
