@@ -29,7 +29,7 @@
             </div>
             <div class="userMenu">
                 <div class="utilBox left">
-                    <button type="button" class="btnMenu_opener" @click="openNav == true">
+                    <button type="button" class="btnMenu_opener" @click="openNav == !openNav">
               <span class="btnMenu_opener__inn">
                 <span class="bar top"></span>
                 <span class="bar mid"></span>
@@ -77,7 +77,7 @@
 
     <el-container id="content_wrap">
         <!-- #ltnav -->
-        <el-aside id="ltnav" class="lnb" :class="openNav == false ? 'show':'hide'">
+        <el-aside id="ltnav" class="lnb" :class="openNav == false ? 'hide':'show'">
             <h1 class="invisible">전체 메뉴</h1>
             <el-menu id="cssmenu" :default-openeds="['1']" default-active="1" >
                 <el-menu-item index="1" class="dep1" onclick="window.open('index.html', '_self')"><i class="ico xi-dashboard-o"></i> Dashboard</el-menu-item>
@@ -244,7 +244,7 @@
                                         <el-col :sm="24" :lg="12">
                                             <div class="el-input__wrap">
                                                 <div class="el-input__label">첨부파일 등록 <small class="mgl5">첨부파일 용량 10Mbyte미만</small></div>
-                                                <el-upload
+                                                <!--<el-upload
                                                         class="upload-demdo"
                                                         ref="upload"
                                                         action=""
@@ -257,7 +257,7 @@
                                                         :http-request="uploadFiles"
                                                         :file-list="fileList"
                                                         :show-file-list="viewFileList"
-                                                >
+                                                >-->
                                                     <el-button size="medium" type="primary" icon="xi-folder-add-o" plain class="el-button--block">첨부파일 선택</el-button>
                                                 </el-upload>
                                             </div>
