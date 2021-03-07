@@ -107,10 +107,10 @@
                                                         <i class="xi-pen"></i>
                                                         <span class="invisible">수정</span>
                                                     </button>
-                                                     <router-link to="/api/detail" class="default-reverse">
+                                                     <a href="view_api.html" class="default-reverse">
                                                         <i class="xi-paper-o"></i>
                                                         <span class="invisible">카테고리 상세보기</span>
-                                                    </router-link>
+                                                    </a>
                                                 </span>
                                             </div>
                                         </li>
@@ -118,9 +118,9 @@
                                         <li class="sidebar-item">
                                             <div class="d_flex space-between">
                                                 <span class="sidebar-item-name">
-                                                    <router-link to="/api/list" class="sidebar-link">
+                                                    <a href="list_api.html" class="sidebar-link">
                                                         현금영수증현금영수증
-                                                    </router-link>
+                                                    </a>
                                                 </span>
                                                 <span class="sidebar-item-button">
                                                     <button class="default-reverse">
@@ -131,10 +131,10 @@
                                                         <i class="xi-pen"></i>
                                                         <span class="invisible">수정</span>
                                                     </button>
-                                                     <router-link to="/api/detail" class="default-reverse">
+                                                     <a href="view_api.html" class="default-reverse">
                                                         <i class="xi-paper-o"></i>
                                                         <span class="invisible">카테고리 상세보기</span>
-                                                    </router-link>
+                                                    </a>
                                                 </span>
                                             </div>
                                         </li>
@@ -147,9 +147,9 @@
                                 <li class="sidebar-item">
                                     <div class="sidebar-sub-header d_flex space-between">
                                         <span class="sidebar-item-name">
-                                            <router-link to="/api/list" class="sidebar-link">
+                                            <a href="list_api.html" class="sidebar-link">
                                                 pay&api 부가
-                                            </router-link>
+                                            </a>
                                         </span>
                                         <span class="sidebar-item-button">
                                             <button class="default" @click="dialogVisible4 = true">
@@ -254,11 +254,11 @@
                                                         </td>
                                                         <td class="in-btn">
                                                             <div class="cell">
-                                                                <router-link to="/api/detail" tag="button">
+                                                                <a href="view_api.html" tag="button">
                                                                     <el-button size="small" icon="xi-file-text-o" plain>
                                                                         상세
                                                                     </el-button>
-                                                                </router-link>
+                                                                </a>
                                                                 <el-button size="small" type="success" icon="xi-pen-o" plain>수정</el-button>
                                                                 <el-button size="small" type="danger" icon="xi-trash-o" plain>삭제</el-button>
                                                                 <el-button size="small" icon="xi-documents-o" plain>복사</el-button>
@@ -383,7 +383,7 @@
                         <el-col :span="6" class="api-project-item">
                             <el-card>
                                 <div class="api-project-name">
-                                    <h2 class="kor"><router-link to="/api/list">사이다페이 API</router-link></h2>
+                                    <h2 class="kor"><a href="list_api.html">사이다페이 API</a></h2>
                                     <p class="id">cidermaster1234</p>
                                 </div>
                                 <!-- //api-project-name -->
@@ -394,9 +394,9 @@
                                         </div>
                                         <div class="mgl-auto">
                                             <el-button size="small" icon="xi-eye-o" circle class="el-button--primary-light">
-                                                <router-link to="/api/list">
+                                                <a href="list_api.html">
                                                     <span class="invisible">API 프로젝트 보기</span>
-                                                </router-link>
+                                                </a>
                                             </el-button>
                                             <el-button size="small" icon="xi-pen-o" circle class="el-button--success-light" @click="dialogVisible = true">
                                                 <span class="invisible">API 프로젝트 수정</span>
