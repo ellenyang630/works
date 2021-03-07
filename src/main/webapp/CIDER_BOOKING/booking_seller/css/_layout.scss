@@ -688,6 +688,7 @@ body {
 }
 .row.wrap{
   margin-top:-12px;  // row flex로 되어잇는 경우, 주석풀기
+  margin-top: 30px;
 }
 .row.wrap2{
   //margin-top:-24px;  // row flex로 되어있는 경우, 주석풀기
@@ -715,7 +716,8 @@ body {
   }
 }
 .booking_main{
-  margin-top:-12px;
+  //margin-top:-12px;
+  margin-top: 30px;
 }
 .btnArea {
   margin-top: 30px;

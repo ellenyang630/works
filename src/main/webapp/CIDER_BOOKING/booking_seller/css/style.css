@@ -1820,7 +1820,8 @@ body {
   margin-top: 0; }
 
 .row.wrap {
-  margin-top: -12px; }
+  margin-top: -12px;
+  margin-top: 30px; }
 
 .cardWrap {
   margin-top: 20px; }
@@ -1841,7 +1842,7 @@ body {
     margin-top: 20px; }
 
 .booking_main {
-  margin-top: -12px; }
+  margin-top: 30px; }
 
 .btnArea {
   margin-top: 30px;
