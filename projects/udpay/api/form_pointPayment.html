@@ -649,6 +649,38 @@
             }
         },
         methods: {
+            openSideBar() {
+                const lnb = document.querySelector("#ltnav").classList;
+                const content = document.querySelector("#content").classList;
+
+                if ($(window).width() > 1600) {
+                    if (lnb.contains("show")) {
+                        lnb.remove("show");
+                        content.remove("collap");
+                    }
+
+                    if (!lnb.contains("hide")) {
+                        lnb.add("hide");
+                        content.add("full");
+                    } else {
+                        lnb.remove("hide");
+                        content.remove("full");
+                    }
+                } else{
+                    if (lnb.contains("hide")) {
+                        lnb.remove("hide");
+                        content.remove("full");
+                    }
+
+                    if (!lnb.contains("show")) {
+                        lnb.add("show");
+                        content.add("collap");
+                    } else {
+                        lnb.remove("show");
+                        content.remove("collap");
+                    }
+                }
+            },
         }
     })
 </script>

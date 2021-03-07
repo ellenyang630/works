@@ -1047,13 +1047,14 @@ html{
   &.collap{
     //margin-left:250px;
     padding-left: 250px;
-    transition: margin-left 0.2s ease;
+    transition: padding-left 0.2s ease;
   }
   &.full{
     //margin-left:0 ;
     padding-left: 0;
-    transition: margin-left 0.2s ease;
+    transition: padding-left 0.2s ease;
   }
+
 }
 
 
