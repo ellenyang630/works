@@ -43,7 +43,7 @@
             <div class="top-navbar">
                 <div class="user-menu">
                     <div class="util-item left">
-                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="toggler">
+                        <button type="button" class="btn-menu-opener" title="메뉴 여닫기" @click="openSideBar()">
                             <span class="invisible">메뉴 여닫기</span>
                             <span class="btn-menu-opener__inn">
                         <span class="bar top"></span>
@@ -100,7 +100,7 @@
     <!-- //site-header -->
 
     <div id="content-wrap">
-        <nav id="lnb" class="sidebar" :class="{ show: isActive }">
+        <nav id="lnb" class="sidebar" :class="isActive == false ? 'hide':'show'">
             <h2 class="invisible">전체메뉴</h2>
             <div class="sidebar-content">
                 <!--  ul.el-menu  -->
@@ -254,7 +254,7 @@
         </nav>
         <!-- //sidebar -->
 
-        <section id="content">
+        <section id="content" :class="isActive == false ? 'expanded':'collapsed'">
             <h2 class="invisible">본문</h2>
             <section id="content-inner">
                 <div class="container-fluid page-container">
@@ -464,6 +464,38 @@
                 return `${countValue.toFixed(0)}`;
             }
             */
+            openSideBar() {
+                const lnb = document.querySelector("#ltnav").classList;
+                const content = document.querySelector("#content").classList;
+
+                if ($(window).width() > 1600) {
+                    if (lnb.contains("show")) {
+                        lnb.remove("show");
+                        content.remove("collap");
+                    }
+
+                    if (!lnb.contains("hide")) {
+                        lnb.add("hide");
+                        content.add("full");
+                    } else {
+                        lnb.remove("hide");
+                        content.remove("full");
+                    }
+                } else{
+                    if (lnb.contains("hide")) {
+                        lnb.remove("hide");
+                        content.remove("full");
+                    }
+
+                    if (!lnb.contains("show")) {
+                        lnb.add("show");
+                        content.add("collap");
+                    } else {
+                        lnb.remove("show");
+                        content.remove("collap");
+                    }
+                }
+            },
         },
         created() {
             // 페이지 로드 후, 클래스 추가
