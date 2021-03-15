@@ -1,0 +1,537 @@
+@charset "UTF-8";
+/* _forms.scss */
+
+
+// 폼 그룹
+.form-group{
+  & + &{
+    margin-top: 2rem;
+  }
+}
+
+
+
+//
+//  리스트 상단 검색
+// --------------------------------------------------
+
+
+// 필수값 표시
+.required{
+  position: relative;
+
+  &:after{
+    content:"*";
+    display: inline-block;
+    text-align: center;
+    vertical-align: text-top;
+    color: $--color-danger;
+    position: absolute;
+    //top: 0;
+    margin-left: 4px;
+  }
+}
+
+
+//
+//
+//
+
+// custom inputs
+// custom checkbox/radios
+$fw-input-padding:            6px                      !default;
+$fw-check-height:             18px                     !default;
+$fw-check-width:              $fw-check-height         !default;
+$fw-check-scale:              10px                      !default; // optimized for even numbers
+$fw-check-input-bg-color:     #fff                     !default;
+$fw-check-border-width:       1px                      !default;
+$fw-check-border-radius:      null                     !default;
+$fw-check-border-color:       #444                     !default;
+$fw-check-focus-color:        #333                     !default;
+$fw-check-focus-bg-color:     $--color-danger !default;
+$fw-check-focus-border-color: $--color-danger !default;
+
+// visually hide elements the accessible way
+@mixin vh {
+  border: 0                      !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%)          !important;
+  height: 1px                    !important;
+  overflow: hidden               !important;
+  padding: 0                     !important;
+  position: absolute             !important;
+  width: 1px                     !important;
+  white-space: nowrap            !important;
+}
+
+.checkbox,
+.radio{
+  font-size: $font-size-small;
+
+  [type="checkbox"],
+  [type="radio"] {
+    @include vh();
+
+    + label {
+      display: inline-block;
+      position: relative;
+      user-select: none;
+      line-height: 16px;
+      vertical-align: top;
+
+      &:before {
+        background-color: $fw-check-input-bg-color;
+        border: $fw-check-border-width solid $fw-check-border-color;
+        box-sizing: content-box;
+        content: '';
+        color: $fw-check-border-color;
+        margin-right: $fw-check-width * 0.25;
+        top: 50%;
+        left: 0;
+        width: $fw-check-width;
+        height: $fw-check-height;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &:after {
+        box-sizing: content-box;
+        content: '';
+        background-color: $fw-check-border-color;
+        position: absolute;
+        top: 50%;
+        //left: $fw-input-padding + $fw-check-border-width + $fw-check-scale/2;
+        left: $fw-check-border-width + $fw-check-scale/2;
+        width: $fw-check-width - $fw-check-scale;
+        height: $fw-check-height - $fw-check-scale;
+        margin-top: ($fw-check-height - $fw-check-scale)/-2;
+        transform: scale(0);
+        transform-origin: 50%;
+        transition: transform 200ms ease-out;
+      }
+    }
+
+    &[disabled] {
+      + label {
+        &:before {
+          animation: none;
+          box-shadow: none;
+          border: 1px solid rgba(128, 128, 128, 0.5);
+        }
+      }
+    }
+  }
+}
+
+.checkbox{
+  [type="checkbox"]{
+    + label {
+
+      &:before,
+      &:after {
+        @if ($fw-check-border-radius) {
+          border-radius: $fw-check-border-radius;
+        }
+        @else {
+          border-radius: 0;
+        }
+      }
+      &:before{
+        border: 1px solid $gray-base;
+        border-radius: $border-radius-small;
+      }
+
+      &:after {
+        background-color: transparent;
+        top: 50%;
+        //left: calc(#{$fw-input-padding} + #{$fw-check-border-width} + #{$fw-check-width}/5);
+        left: calc(#{$fw-check-border-width} + #{$fw-check-width}/5);
+        width: $fw-check-width/2;
+        height: $fw-check-width/5;
+        margin-top: calc(#{$fw-check-height} / -2 / 2 * 0.8);
+        border-style: solid;
+        border-color: $--color-white;
+        border-width: 0 0 2px 2px;
+        border-image: none;
+        transform: rotate(-45deg) scale(0);
+        transition: none;
+        border-radius: 1px;
+      }
+    }
+
+    &:checked {
+      + label {
+        &:before{
+          background-color: $--color-danger;
+          border: 1px solid $--color-danger;
+        }
+
+        &:after {
+          content: ''; //\2713';
+          transform: rotate(-45deg) scale(1);
+          transition: transform 200ms ease-out;
+        }
+      }
+    }
+  }
+}
+
+.checkbox--md{
+  font-size: $font-size-medium;
+}
+
+
+.radio{
+  [type="radio"]{
+    + label {
+
+      &:before,
+      &:after {
+        @if ($fw-check-border-radius) {
+          border-radius: $fw-check-border-radius;
+        } @else {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &:checked {
+      &:active,
+      &:focus {
+        + label {
+          &:before {
+            animation: none;
+            filter: none;
+            transition: none;
+          }
+        }
+      }
+
+      + label {
+        &:before {
+          animation: none;
+          background-color: $fw-check-input-bg-color;
+          border: 1px solid $--color-danger;
+        }
+
+        &:after {
+          transform: scale(1);
+          background-color: $--color-danger;
+        }
+      }
+    }
+  }
+}
+
+
+//
+//
+//
+
+.form{
+
+  // form-group (각각의 입력폼 요소를 하나로 묶는 요소)
+  &-group{
+    .form-item{
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+
+      + .form-item{
+        margin-top: 0;
+      }
+
+      &__cell {
+        display: table-cell;
+        padding: 10px 15px;
+        vertical-align: top;
+      }
+
+      &__label {
+        width: 95px;
+        color: $text-base;
+      }
+
+
+      @include respond-to('small-up') {
+        &__cell {
+          padding: 7px 30px;
+        }
+      }
+    }
+
+    // 키, 밸류 좌측정렬
+    &.is-start{
+      @include respond-to('small-down'){
+        .form-item {
+          display: block;
+          width: 100%;
+
+          + .form-item {
+            margin-top: 20px;
+          }
+
+          &__cell {
+            display: block;
+            padding: 0;
+          }
+
+          &__label {
+            width: 100%;
+          }
+        }
+      }
+
+      @include respond-to('small-up') {
+        .form-item {
+          &__label {
+            width: 135px;
+          }
+        }
+      }
+    }
+
+    // 키 좌측정렬, 밸류 우측정렬
+    &.is-stretch{
+      .form-item{
+        &__data{
+          width: 113px;
+          text-align: right;
+          padding-left: 0;
+        }
+      }
+    }
+
+    // 약관동의 폼
+    &.is-agree{
+      .form-item {
+        + .form-item {
+          margin-top: 0;
+        }
+        &__label{
+          width: 180px;
+        }
+        &__data{
+          width: 95px;
+        }
+      }
+    }
+
+    // label은 가려진 폼 형태일 경우
+    &.is-inputOnly{
+      .form-item + .form-item{
+        margin-top: 10px;
+      }
+    }
+
+    // 입력한 데이터가 텍스트로 보여지는 경우
+    &.form-dataTxt{
+      .form-item {
+
+        @include respond-to('small-up') {
+          &__label {
+            width: 160px;
+          }
+        }
+      }
+    }
+  }
+
+
+  // form-item (각 입력폼 요소 하나)
+  &-item{
+    &__cell{
+      font-size: $font-size-small;
+    }
+
+    &__data{
+      margin-top: 10px;
+      color: $text-dark;
+    }
+  }
+}
+
+
+// 셀렉트 스타일
+.select-box{
+  position: relative;
+  display: inline-block;
+  border: 1px solid $gray-light;
+  z-index: 0;
+
+  &:after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    z-index: -1;
+    width: 10px;
+    height: 6px;
+    @include ie-only {
+      background: url("../../img/ico_select_indicator.svg") no-repeat;
+    }
+    background: $ico-select-indicator center center no-repeat;
+    @include prefix(transform, translateY(-50%), webkit ms);
+  }
+  select {
+    @include prefix(appearance, none, webkit moz);
+    display: block;
+    padding: 7px 37px 7px 13px;
+    border: 0;
+    font-size:$font-size-small;
+  }
+
+  // for IE 11
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+// 인풋 스타일
+.input-box{
+  width: 100%;
+  border: 1px solid $gray-base;
+  background-color: $--color-white;
+  border-radius: $border-radius-small;
+  overflow: hidden;
+
+  input{
+    @include boxSizing;
+    width: 100%;
+    height: 100%;
+    padding: 13px 20px;
+    color: $text-dark;
+  }
+
+  // 플레이스 홀더 스타일
+  @include placeholder{
+    font-size:$font-size-small;
+    color: $text-lighter;
+    opacity: 1;
+  }
+}
+
+// 인풋 다중일 경우 묶음 요소
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+
+  @include respond-to('small-up'){
+    flex-wrap: nowrap;
+
+    + .input-group{
+      margin-top: 10px;
+    }
+  }
+
+  &__item{
+    padding: 5px 0;
+    //flex: 1 0 auto;
+
+    &:not(.w370){
+      flex: 1 1 auto;
+    }
+
+    @include respond-to('small-up'){
+      padding: 0;
+
+      &:last-child{
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &__btn{
+    width: 90px;
+    flex: 0 1 90px;
+    padding-left: 5px;
+  }
+}
+
+
+.w370{
+  width: 100%;
+
+  @include respond-to('small-up'){
+    max-width: 370px;
+    //flex-basis: 370px;
+  }
+}
+
+// 수량 컨트롤러
+.option-control{
+
+  // option-control--quantity
+  &--quantity{
+    position: relative;
+    //display:flex;
+    overflow: hidden;
+    display: table;
+    margin: 0 auto;
+    width: 105px;
+    //border: 1px solid $gray-light;
+    border-radius: $border-radius-medium;
+  }
+
+  // option-control__item
+  &__item{
+    display: table-cell;
+    vertical-align: middle;
+    //border-radius: 6px;
+
+    &:first-child,
+    &:last-child{
+      width: 32px;
+    }
+
+    &:first-child{
+      //border-radius: 6px 0 0 6px;
+
+      button{
+        //border: 1px solid $gray-light;
+        //border-right: 1px solid $gray-light;
+        border-radius: 6px 0 0 6px;
+      }
+    }
+    &:last-child{
+      button{
+        //border: 1px solid $gray-light;
+        //border-left: 1px solid $gray-light;
+        border-radius: 0 6px 6px 0;
+      }
+    }
+
+    input {
+      @include boxSizing;
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background-color: $--color-white;
+      color: $text-dark;
+      border-top: 1px solid $gray-light;
+      border-bottom: 1px solid $gray-light;
+    }
+    button {
+      position: relative;
+      display: block;
+      padding:0;
+      min-width: 32px;
+      height: 32px;
+      background-color: $--color-white;
+      font-size: $font-size-medium;
+      color: $text-dark;
+      border: 1px solid $gray-light;
+
+      &[disabled]{
+        color: $text-lighter;
+      }
+    }
+  }
+}

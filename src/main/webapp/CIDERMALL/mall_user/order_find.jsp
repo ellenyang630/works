@@ -67,6 +67,7 @@
         el: '#app',
         data: {
             openYnSidebar: false,
+            openYnSearch: false,
             openYnAddr: false,
         },
         methods: {

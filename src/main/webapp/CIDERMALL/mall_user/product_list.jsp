@@ -3,12 +3,15 @@
 
 <!-- 개발 서버에서는 nuxt로 작업해서 root를 잡아줄 필요없음 -->
 <!-- 하지만 펍에서는 root를 잡아주기 위해 id="app" 선언해줌 -->
-<div id="app" class="wrap">
+<div id="app" class="wrap" :class="{ 'skin1': skin1, 'skin2': skin2, 'skin3': skin3 }">
     <!-- 헤더 컴포넌트 -->
     <jsp:include page="inc/header_component.jsp"/>
 
     <!-- 사이드바 컴포넌트 -->
     <jsp:include page="inc/sidebar_component.jsp"/>
+
+    <!-- 검색UI 컴포넌트 -->
+    <jsp:include page="inc/search_component.jsp"/>
 
     <main id="content" role="main" class="content__area">
         <h2 class="screen-reader">본문</h2>
@@ -21,6 +24,12 @@
             <div class="product__contents container">
                 <div class="content__subtitle">
                     <h4>아로마/캔들용품</h4>
+                </div>
+
+                <div class="container">
+                    <button @click="showskin1">스킨1</button>
+                    <button @click="showskin2">스킨2</button>
+                    <button @click="showskin3">스킨3</button>
                 </div>
 
                 <div class="product__area">
@@ -177,13 +186,32 @@
         el: '#app',
         data: {
             openYnSidebar: false,
+            openYnSearch: false,
             openYnAddr: false,
 
             typeOfList: false,
             typeOfGrid: true,
+
+            skin1: true,
+            skin2: false,
+            skin3: false,
         },
         methods: {
-
+            showskin1(){
+                this.skin1 = !this.skin1;
+                this.skin2 = false;
+                this.skin3 = false;
+            },
+            showskin2(){
+                this.skin2 = !this.skin2;
+                this.skin1 = false;
+                this.skin3 = false;
+            },
+            showskin3(){
+                this.skin3 = !this.skin3;
+                this.skin1 = false;
+                this.skin2 = false;
+            },
         },
     })
 </script>

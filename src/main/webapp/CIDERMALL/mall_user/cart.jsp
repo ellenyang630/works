@@ -297,15 +297,14 @@
 <script>
     new Vue({
         el: '#app',
-        data(){
-            return{
-                openYnSidebar: false,
-                checkBuyerPrice: false,
-                openYnAddr: false,
+        data: {
+            openYnSidebar: false,
+            openYnSearch: false,
+            checkBuyerPrice: false,
+            openYnAddr: false,
 
-                check1: false,
-                check2: true,
-            }
+            check1: false,
+            check2: true,
         },
         methods: {
 

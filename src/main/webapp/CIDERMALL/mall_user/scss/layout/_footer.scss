@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* _footer.scss */
+
+
+.footer{
+  padding: 2rem 0;
+  background-color: $bg-base;
+
+
+  &__container{
+    @include inner(1120px);
+    padding: 0 20px;
+  }
+
+  &__flex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1.867rem;
+
+    @include respond-to('medium-up'){
+      flex-direction: row;
+      padding-bottom: 0;
+    }
+  }
+
+  &__menu{
+    order: 0;
+
+    ul{
+      font-size: 0;
+    }
+    li{
+      display: inline-block;
+      color: $text-light;
+      font-size: $font-size-xsmall;
+
+      + li{
+        margin-left: 2.267rem;
+      }
+
+      &.em{
+        color: $text-dark;
+      }
+
+      a{
+        color: inherit;
+      }
+    }
+
+    @include respond-to('medium-up'){
+      order: 1;
+
+      li {
+        font-size: $--font-size-base;
+      }
+    }
+  }
+
+  &__address{
+    order: 1;
+
+    @include respond-to('medium-up'){
+      order: 0;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+
+      .addr-detail{
+        display:none;
+      }
+    }
+  }
+
+  // 데스크탑 용 주소
+  &__address--desktop{
+    .addr-detail{
+      display: none;
+
+
+      li{
+        float:left;
+        display: inline-block;
+
+        + li{
+          margin-left: 10px;
+        }
+      }
+
+      @include respond-to('medium-up'){
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__logo{
+    font-size: $font-size-small;
+
+    button{
+      position: relative;
+      font-weight: $font-weight-bold;
+      padding-right: 16px;
+      color: $text-dark;
+
+      &:after{
+        @include prefix(transition, transform 180ms ease-in-out, webkit o);
+        @include prefix(transform, translateY(-50%) rotateZ(0deg), webkit ms);
+        content: "";
+
+        @include ie-only {
+          background: url("../../img/ico_arrow_down.svg") no-repeat;
+        }
+        background: $ico-arrow-down-black no-repeat;
+        background-size: 8px 4px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: inline-block;
+        width: 8px;
+        height: 4px;
+      }
+
+      &.is-trigger{
+        &:after{
+          @include prefix(transform, translateY(-50%) rotateZ(-180deg), webkit ms);
+        }
+      }
+    }
+
+    @include respond-to('small-up'){
+      font-size: $font-size-medium;
+
+      button{
+        padding-right: 25px;
+
+        &:after{
+          background-size: 12px 8px;
+          width: 12px;
+          height: 8px;
+        }
+      }
+    }
+  }
+
+  &__copyright{
+    padding-top: 28px;
+    border-top: 1px solid $gray-lighter;
+    color: $text-light;
+    font-size: $font-size-smaller;
+    font-weight: $font-weight-light;
+    text-align: center;
+
+    @include respond-to('medium-up'){
+      text-align: left;
+      margin-top: 25px;
+    }
+  }
+}
+
+// 주소
+.addr{
+  &-info{
+    margin-top: 1rem;
+
+    .cs-tel,
+    .cs-time{
+      display: block;
+    }
+
+    @include respond-to('medium-up'){
+      margin-top: 0;
+      text-align: left;
+
+      + .addr-info{
+        margin-left: 2rem;
+      }
+
+      .cs-tel,
+      .cs-time{
+        display: inline-block;
+      }
+    }
+  }
+
+  &-detail{
+    height:auto;
+    transform-origin: top center;
+    overflow: hidden;
+    //@include prefix(transition, (height 150ms ease-in-out, transform 250ms ease-in-out), webkit o);
+    position: relative;
+    font-size: $font-size-smaller;
+    color: $text-light;
+
+    &.opend{
+      //transform:scaleY(1);
+    }
+    &.closed{
+      height:0;
+      //transform:scaleY(0);
+    }
+
+    a{
+      color: $text-base;
+    }
+  }
+}
+
+.cs{
+  &-tel{
+    font-size: 1.267rem;
+    font-weight: $font-weight-medium;
+    color: $text-dark;
+    position: relative;
+
+    &:before{
+      content:"";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      @include ie-only {
+        background: url("../../img/ico_call.svg") no-repeat;
+      }
+      background: $ico_call center center no-repeat;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    @include respond-to('medium-up') {
+      font-size: $font-size-larger;
+    }
+  }
+  &-time{
+    color: $text-light;
+    font-size: $font-size-smaller;
+    margin-top: 5px;
+
+    @include respond-to('medium-up'){
+      font-size: $--font-size-base;
+      margin-top: 0;
+      margin-left: 10px;
+    }
+  }
+}

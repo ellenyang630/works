@@ -10,6 +10,9 @@
     <!-- 사이드바 컴포넌트 -->
     <jsp:include page="inc/sidebar_component.jsp"/>
 
+    <!-- 검색UI 컴포넌트 -->
+    <jsp:include page="inc/search_component.jsp"/>
+
     <main id="content" role="main" class="content__area">
         <h2 class="screen-reader">본문</h2>
 
@@ -445,6 +448,7 @@
         el: '#app',
         data: {
             openYnSidebar: false,
+            openYnSearch: false,
             checkBuyerPrice: false,
             openYnAddr: false,
 

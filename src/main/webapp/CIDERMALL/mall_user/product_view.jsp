@@ -225,6 +225,7 @@
         el: '#app',
         data: {
             openYnSidebar: false,
+            openYnSearch: false,
             checkBuyerPrice: false,
             openYnAddr: false,
 

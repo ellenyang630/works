@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/* _sidebar.scss */
+
+
+// 모바일 메뉴 & 마이페이지 메뉴
+.sidebar{
+  overflow-y: auto;
+  width: 100%;
+  position: absolute;
+  left: -300px;
+  top: 70px;
+  bottom: 94px;
+  background: #f6f6f6;
+  padding-bottom: 10px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  transition-property: left;
+  transition-duration: 300ms;
+
+  &-dimmer{
+    background-color: rgba($--color-black,.2);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    opacity: 0;
+    z-index: -1;
+  }
+
+  // sidebar-logo
+  &-logo{
+    width: 76px;
+    margin-bottom: 14px;
+  }
+
+  &-head{
+    @include boxSizing;
+    position: relative;
+    height: 50px;
+
+    .btn-home{
+      //top: 16px;
+      top: 0;
+      left: 20px;
+      padding-top: 16px;
+      padding-bottom:16px;
+    }
+    .btn-close--sidebar{
+      position: absolute;
+      padding: 25px 20px;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  // sidebar-nav (nav)
+  &-nav{
+    border-top: 7px solid $gray-extra-light-1;
+  }
+
+
+  // sidebar-items (ul)
+  &-items{
+    padding-top: 17px;
+  }
+
+  // sidebar-item (li)
+  &-item{
+    &.has-submenu{
+      overflow: hidden;
+
+      &.visible{
+        overflow: visible;
+
+        > .sidebar-link:after{
+          right: 0;
+          top: 50%;
+          transform: rotate(0deg) translateY(-50%);
+          color:$text-dark;
+        }
+      }
+
+      > .sidebar-link{
+        position: relative;
+
+        &:after{
+          //content:"\e941";
+          //font-family: $font-family-icon;
+          display: block;
+          position: absolute;
+          right: -7px;
+          top: 30%;
+          transform: rotate(-90deg) translateY(-25%);
+          color:$text-dark;
+        }
+      }
+    }
+  }
+
+  // sidebar-link (a)
+  &-link{
+    display: block;
+    padding: 10px 0;
+    font-size: $font-size-medium-lower;
+    color: $text-dark;
+  }
+
+  // sidebar-sub-group
+  &-sub-group{
+    height:0;
+    transition-property: height;
+    transition-duration: 300ms;
+
+    &.show{
+      height:auto;
+    }
+
+    > .sidebar-item{
+      font-size: $font-size-small;
+      background-color: $bg-base;
+      padding:0 12px;
+      margin-top: 10px;
+
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+
+    .sidebar-link{
+      padding: 11px 0;
+      font-size: $font-size-small;
+    }
+  }
+
+
+  .sidebar-items > .sidebar-item > .sidebar-link{
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    padding: 10px 20px;
+  }
+
+  &-foot{
+    padding: 0 20px;
+    margin-top: 35px;
+  }
+}
+
+
+
+// 모바일 디바이스에서 사이드 바
+.sidebar-menu{
+  .sidebar{
+    position: fixed;
+    width:78%;
+    max-width: 300px;
+    height:100%;
+    height:100vh;
+    top: 0;
+    background-color: $--color-white;
+    z-index: 500;
+  }
+
+  &.is-show{
+    .sidebar{
+      left:0;
+    }
+    .sidebar-dimmer{
+      opacity: 1;
+      z-index: 400;
+    }
+  }
+}
+
+.sns-window{
+  @include clearFix;
+
+  li{
+    display: block;
+    float: left;
+
+    + li{
+      margin-left:10px;
+    }
+  }
+}

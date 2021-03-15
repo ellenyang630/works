@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* _functions.scss */
+
+
+// SCSS variable in background image with SVG image data URI
+@function url-color($color) {
+  @return '%23' + str-slice('#{$color}', 2, -1)
+}

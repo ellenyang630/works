@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* _main */
+//## 메인 페이지에 사용하는 스타일을 지정합니다.
+
+
+// 메인 배너 슬라이더
+.banner{
+  &__contents{
+    @include inner(1120px);
+
+    @include respond-to('small-up') {
+      padding: 0 20px;
+    }
+  }
+  &__area{
+
+  }
+
+  &__swiper{
+    .swiper-slide{
+      overflow: hidden;
+    }
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+      bottom: 20px;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+      margin: 0 5px;
+    }
+    .swiper-pagination-bullet{
+      background: $gray-dark;
+      opacity: .2;
+    }
+    .swiper-pagination-bullet-active{
+      background: $text-dark;
+      opacity: 1;
+    }
+
+    .thumbnail{
+      padding-top: 40%;
+
+      .centered img{
+        height: 100%;
+      }
+    }
+
+
+    @include respond-to('small-up'){
+      height: 100%;
+      max-height: 432px;
+      overflow: hidden;
+
+      .thumbnail{
+        height: 100%;
+      }
+    }
+  }
+}
+
+
+
+// 메인 > 베스트 상품전
+#best-product,
+#theme-product{
+  position: relative;
+  z-index: 5;
+
+  .product__listGroup.grid-type{
+    position: relative;
+
+    .product__lists{
+      padding-bottom: 38px;
+
+      @include respond-to('small-up'){
+        padding-bottom: 63px;
+      }
+    }
+    .product__list{
+      margin-top: 0;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $gray-dark;
+
+    @include respond-to('small-down'){
+      display: none;
+    }
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after{
+    font-size: $font-size-xlarge;
+  }
+
+  .swiper-pagination{
+    width: 100%;
+    display: flex;
+  }
+
+  .swiper-pagination-bullet{
+    width: auto;
+    height: 3px;
+    flex: 1 0 auto;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .swiper-pagination-bullet-active{
+    @include themeGen() {
+      background: getThemeVal('primary');
+    }
+  }
+}

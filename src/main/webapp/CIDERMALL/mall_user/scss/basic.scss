@@ -1,21 +1,26 @@
 @charset "UTF-8";
-
-@import "functions";
-@import "element-variables";
-@import "mixins";
-@import "reset";
-@import "common";
-@import "buttons";
-@import "forms";
-@import "tables";
-
-@import "page-common";
-@import "page-all";
-
-@import "layout";
-@import "product-list";
-@import "product-view";
-@import "order";
-@import "element-components";
-
-
+// utils
+@import "utils/functions";
+@import "utils/element-variables";
+@import "utils/mixins";
+// base
+@import "base/reset";
+@import "base/common";
+// components
+@import "components/buttons";
+@import "components/forms";
+@import "components/tables";
+// layout
+@import "layout/container";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/search";
+// pages
+@import "pages/element-components";
+@import "pages/products";
+@import "pages/page-all";
+@import "pages/main";
+@import "pages/order";
+// skin
+@import "skin/skin-style";

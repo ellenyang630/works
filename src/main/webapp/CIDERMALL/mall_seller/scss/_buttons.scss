@@ -243,31 +243,31 @@
 }
 
 // 이미지 첨부하기
-.btn-attach{
-  color: $--color-success;
-  border-color: $success-light;
-  background-color: $success-light;
-
-  &:hover,
-  &:focus{
-    color: $--color-white;
-    border-color: $--color-success;
-    background: $--color-success;
-  }
-
-  &[disabled]{
-    color: $border-dark;
-    border-color: $--border-color-light;
-    background-color: $--border-color-light;
-
-    &:hover,
-    &:focus{
-      color: $border-dark;
-      border-color: $--border-color-light;
-      background-color: $--border-color-light;
-    }
-  }
-}
+//.btn-attach{
+//  color: $--color-success;
+//  border-color: $success-light;
+//  background-color: $success-light;
+//
+//  &:hover,
+//  &:focus{
+//    color: $--color-white;
+//    border-color: $--color-success;
+//    background: $--color-success;
+//  }
+//
+//  &[disabled]{
+//    color: $border-dark;
+//    border-color: $--border-color-light;
+//    background-color: $--border-color-light;
+//
+//    &:hover,
+//    &:focus{
+//      color: $border-dark;
+//      border-color: $--border-color-light;
+//      background-color: $--border-color-light;
+//    }
+//  }
+//}
 
 // 리스트 노출 순서 변경 버튼
 .btn-mover{

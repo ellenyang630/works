@@ -1,0 +1,382 @@
+@charset "UTF-8";
+/* _common.scss */
+
+// for screen reader device
+.screen-reader {
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+hr{
+  display: block;
+  margin: 0;
+  margin-top: 2rem;
+  border: 0;
+  //border-top: 1px solid $border-light;
+}
+
+.hidden{
+  &-mobile{
+    display: none;
+
+    @include respond-to('xsmall-up'){
+      display: initial;
+    }
+  }
+  &-tablet{
+    display: none;
+
+    @include respond-to('small-up'){
+      display: block;
+    }
+  }
+  &-desktop{
+    display: block;
+
+    @include respond-to('small-up'){
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+
+//
+//  Margin & Padding
+// --------------------------------------------------
+
+$sides: ("b": "bottom","t": "top","l": "left","r": "right");
+@each $prefix, $value in $sides {
+  $property: if($prefix == '', '', -#{$value});
+  @for $i from 0 through 5 {
+
+    //margin
+    .m#{$prefix}{
+      &-#{$i} {
+        margin#{$property}:#{$i - ($i * .5)}rem;
+      }
+    }
+
+    // padding
+    .p#{$prefix}{
+      &-#{$i} {
+        padding#{$property}:#{$i - ($i * .5)}rem;
+      }
+    }
+  }
+}
+
+
+
+//
+//  Text style
+// --------------------------------------------------
+
+// text align
+@each $alignVal in $x-align {
+  .text-#{$alignVal}{
+    text-align: $alignVal !important;
+  }
+}
+
+// text theme color
+@each $color, $value in $theme-colors {
+  .text-#{$color} {
+    color: $value !important;
+  }
+}
+
+.text-disabled{
+  color: $text-light;
+}
+
+.break-keep{
+  word-break:keep-all;
+}
+
+// 가격 스타일
+.price-txt{
+  color: $text-dark;
+
+  .num,
+  .unit{
+    vertical-align: baseline;
+    font-weight:$font-weight-bold;
+  }
+
+  .unit{
+    color: inherit;
+    font-size: 86%;
+    margin-left:-4px;
+  }
+  .calc{
+    color: $gray-dark;
+  }
+
+
+  &--md{
+    font-size: $font-size-large;
+
+    .unit{
+      font-size: 80%;
+    }
+  }
+
+
+  &--lg{
+    font-size: $font-size-largest;
+
+    .unit{
+      font-size: 68%;
+    }
+  }
+
+  &--em{
+    font-size: $font-size-largest;
+    color: rgba($--color-danger, .98);
+
+    .unit{
+      font-size: 68%;
+    }
+  }
+}
+
+// text underline
+.under {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:link{
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @include hover-focus-active{
+    text-decoration: underline;
+  }
+}
+
+.text-through{
+  text-decoration: line-through;
+}
+
+
+
+
+
+
+//
+//  Design Style
+// --------------------------------------------------
+
+
+// 아이콘 스타일로 만든 경우
+.ico{
+  &-minus{
+    //position: relative;
+
+    &:before{
+      content:"";
+      display: inline-block;
+      vertical-align: middle;
+      width: 9px;
+      height: 1px;
+      background-color: $text-dark;
+    }
+  }
+  &-plus{
+    display: block;
+    position: relative;
+    width:9px;
+    height:9px;
+    //background:#000;
+
+    &:before,
+    &:after {
+      content: "";
+      position:absolute;
+      background:#000;
+    }
+
+    &:before {
+      left:50%;
+      top:4px; /* this defines how much black "border" there should be */
+      bottom:4px;
+      width:1px;
+      transform:translateX(-50%);
+    }
+
+    &:after {
+      top:50%;
+      left:4px;
+      right:4px;
+      height:1px;
+      transform:translateY(-50%);
+    }
+
+    //&:before{
+    //  content:"";
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //  width: 9px;
+    //  height: 1px;
+    //  //background-color: $text-dark;
+    //  background-color: red;
+    //  position: absolute;
+    //  //top:50%;
+    //  //left:50%;
+    //}
+    //&:after{
+    //  content:"";
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //  width: 1px;
+    //  height: 9px;
+    //  background-color: $text-dark;
+    //  position: absolute;
+    //}
+  }
+}
+
+// 페이지 내 안내 텍스트
+.help-text{
+  color: $gray-dark;
+  font-size: $font-size-smaller;
+  line-height: 1.69;
+  word-break: keep-all;
+  text-align: center;
+
+  &__card{
+    border-radius: $border-radius-medium;
+    background-color: $bg-base;
+    padding: 20px 15px;
+    margin-top: 1.333rem;
+  }
+
+  &__ico{
+    display: inline-block;
+    border-radius: $border-radius-circle;
+    background-color: $--color-white;
+    width: 16px;
+    height: 16px;
+    font-size: 85%;
+    font-weight: $font-weight-black;
+    color: $text-dark;
+    text-align: center;
+  }
+
+
+  @include respond-to('small-up'){
+    &__card{
+      padding: 25px 15px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+
+// 링크결제 최종 표시가격
+.product-price__wrap{
+  width:100%;
+  padding-top: 1.333rem;
+
+
+  @include respond-to('small-up'){
+    background-color: $bg-base;
+    padding: 2.4rem 2rem;
+  }
+
+  dl{
+    @include clearFix;
+    width:100%;
+    margin-top:10px;
+
+    &:first-child{
+      margin-top:0;
+    }
+
+    > *{
+      float:left;
+
+      &:last-child{
+        float:right;
+      }
+    }
+    dt{
+      font-size: $font-size-small;
+      color: $text-base;
+    }
+    dd{
+      font-size: $--font-size-base;
+      color:$text-dark;
+      text-align: right;
+    }
+    .none-price{
+      text-decoration: line-through;
+    }
+
+    &.discounted-price{
+      dd{
+        p{
+          display:inline-block;
+        }
+      }
+      .discount{
+        margin-right:5px;
+      }
+    }
+    &.total-price{
+      padding:10px 0;
+
+      @include respond-to('small-up'){
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+
+// 이미지 썸네일 레이아웃 - width:100% 주고 상위요소에서 고정 width 조절하기
+.thumbnail {
+  position: relative;
+  padding-top: 100%; // 1:1 ratio
+  overflow: hidden;
+  background: $gray-extra-light-2;
+
+  &-wrapper{
+    width: 100%;
+  }
+
+  .centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(50%,50%);
+    -ms-transform: translate(50%,50%);
+    transform: translate(50%,50%);
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      height: auto;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+    }
+  }
+}

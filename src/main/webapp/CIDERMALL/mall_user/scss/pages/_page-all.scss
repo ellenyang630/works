@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* _page-all */
+//## 그 외 페이지의 스타일을 지정합니다.
+
+
+// 개인정보 확인 페이지
+.identify{
+  &__form{
+    @include inner(420px);
+    padding: 0 20px;
+
+    // 로그인 영역
+    .sign-in{
+
+    }
+
+    // 회원가입 영역
+    .sign-up{
+      padding-top: 1.333rem;
+      border-top: 1px solid $gray-light;
+    }
+  }
+
+  &__btn{
+    margin-top: 1.333rem;
+  }
+
+  &__opt{
+    display: flex;
+    margin-top: 1.333rem;
+    margin-bottom: 2rem;
+    font-size: $font-size-small;
+
+    &-findId{
+      margin-left: auto;
+
+      a{
+        color: $text-base;
+      }
+    }
+  }
+}

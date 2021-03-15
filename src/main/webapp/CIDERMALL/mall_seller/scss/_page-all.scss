@@ -696,31 +696,55 @@
       margin-left: .6667rem;
     }
 
-    img{
-      width: 240px;
-      height: 130px;
-    }
+    .textarea-wrap {
+      @include boxSizing;
+      position: relative;
+      background-color: $--color-white;
+      border: 1px solid $border-base;
+      color: $text-dark;
+      border-radius: 4px;
+      height: 440px !important;
+      overflow-x: hidden;
+      overflow-y: auto;
+      //padding: 1.333rem;
 
-    .textarea-wrap{
-      .el-textarea__inner{
-        width: 100%;
-        height: 440px !important;
+      &.disabled {
+        background-color: $--border-color-light;
+        color: $text-light;
       }
 
-      &.textarea--with-img{
-        position: relative;
-
-        img{
-          position: absolute;
-          z-index: 10;
-          top: 1.067rem;
-          left: 1.067rem;
+      // 메시지 설정 > 이미지 첨부 텍스트에어리어
+      &.textarea--with-img {
+        .file-uploader--msg {
+          position: relative;
+          width: 240px;
+          height: 130px;
+          margin: 1.333rem 1.333rem 10px;
         }
-        .el-textarea__inner{
-          padding-top: 156px;
+
+        .file-uploader__img {
+          position: static;
+          transform: translateY(0);
+        }
+
+        .el-textarea .el-textarea__inner{
+          padding-top: 0;
+          min-height: calc(298px - 1.333rem) !important;
         }
       }
+
+      .el-textarea .el-textarea__inner{
+        padding: 0;
+        padding: 1.333rem;
+        min-height: 438px !important;
+      }
+      .el-textarea__inner,
+      .el-textarea__inner:focus{
+        border: 0;
+        box-shadow: none;
+      }
     }
+
   }
 }
 

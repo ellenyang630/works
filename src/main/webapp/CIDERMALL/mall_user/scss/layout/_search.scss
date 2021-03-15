@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* _search.scss */
+
+
+.search{
+  &-wrap{
+    background-color: rgba($--color-black,.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    z-index: 50;
+    display: none;
+
+    &.is-show{
+      display: block;
+    }
+
+    @include respond-to('small-up'){
+      top: 120px;
+    }
+  }
+
+
+  // search-area
+  &-area{
+    @include boxSizing;
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background-color: $bg-base;
+  }
+
+  // search-dimmer
+  &-dimmer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+
+// 리스트 상단 검색바
+.search-form{
+  @include inner(1120px);
+  position: relative;
+  padding: 30px 20px;
+
+  .list-group__wrap{
+    position: relative;
+  }
+
+  .list-search__btn{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 20px;
+    height: 21px;
+    padding: 24px;
+    @include ie-only {
+      background: url("../img/ico_search.svg") center center no-repeat;
+    }
+    background: $ico-search center center no-repeat;
+    background-size: 20px auto;
+  }
+
+  .input-box{
+    border: 0;
+    border-radius: $border-radius-medium;
+
+    // 플레이스 홀더 스타일
+    @include placeholder{
+      font-size: $--font-size-base;
+      font-weight: $font-weight-regular;
+      color: $text-lighter;
+      opacity: 1;
+    }
+  }
+
+  .form-control,
+  .search-input{
+    display: block;
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    font-size: $--font-size-base;
+    background-color: $--color-white;
+    border-radius: $border-radius-medium;
+
+    &:focus{
+      box-shadow: none;
+    }
+  }
+
+
+  @include respond-to('small-up'){
+    padding: 40px 90px 50px;
+
+    .input-box{
+      // 플레이스 홀더 스타일
+      @include placeholder {
+        font-size: $font-size-medium;
+      }
+    }
+    .search-input {
+      padding: 24px 75px 24px 30px;
+      font-size: $font-size-medium;
+    }
+    .list-search__btn {
+      right: 8px;
+      width: 25px;
+      height: 24px;
+      padding: 34px;
+      background-size: 25px 24px;
+    }
+  }
+}

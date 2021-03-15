@@ -2,7 +2,7 @@
 <jsp:include page="inc/header_script.jsp"/>
 
 <!-- 개발 서버에서는 nuxt로 작업해서 root를 잡아줄 필요없음 -->
-<!-- 하지만 펍에서는 root를 잡아주기 위해 id="app" 선언해줌 -->
+<!-- 하지만 펍에서는 root를 잡아주기 위해 id="app" 선언해줌 (개발쪽에도 동일하게 해줌) -->
 <div id="app" class="wrap">
     <!-- 헤더 컴포넌트 -->
     <jsp:include page="inc/header_component.jsp"/>
@@ -370,6 +370,7 @@
         el: '#app',
         data: {
             openYnSidebar: false,
+            openYnSearch: false,
             checkBuyerPrice: false,
             openYnAddr: false,
         },

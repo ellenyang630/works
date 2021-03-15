@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* _container */
+
+
+.wrap{
+  //width: 100%;
+  padding-bottom: 60px;
+
+  @include respond-to('small-up'){
+    padding-bottom: 0;
+  }
+}
+
+.content{
+  // content__area
+  &__area{
+    min-height: calc(101vh - 401px);
+    padding-bottom: 80px;
+
+    @include respond-to('small-up'){
+      min-height: calc(101vh - 464px);
+      padding-bottom: 170px;
+    }
+  }
+
+  // content__subtitle
+  &__subtitle{
+    font-size: 1.267rem;
+    height: 87px;
+    text-align: center;
+    color: $text-dark-light;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > * {
+      font-weight: $font-weight-bold;
+    }
+
+    @include respond-to('small-up'){
+      font-size: $font-size-xlarge;
+      height: 150px;
+    }
+  }
+
+  // content__section
+  &__section{
+
+  }
+}
+
+.container{
+  @include inner(1120px);
+  padding: 0 20px;
+}
+
+// 페이지 하단 고정 버튼
+.action-bar{
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  z-index: 300;
+
+  .btn-group{
+    font-size: 0;
+
+    .btn + .btn{
+      margin-top: 0;
+    }
+  }
+
+  .btn{
+    border-radius: 0;
+  }
+
+  @include respond-to('small-up'){
+    display: none;
+  }
+}

@@ -69,36 +69,50 @@
                                                         </div>
                                                         <div class="el-input__area">
                                                             <div class="el-input__item">
-                                                                <el-upload
-                                                                        class="upload-image upload--block"
-                                                                        action="https://jsonplaceholder.typicode.com/posts/"
-                                                                        multiple
-                                                                        :limit="1">
-                                                                    <el-button class="btn-attach btn-block el-button--icon"
-                                                                               icon="ri-image-add-line" :disabled="switch1 == false">
-                                                                        이미지 첨부하기
-                                                                    </el-button>
-                                                                </el-upload>
+<%--                                                                <el-upload--%>
+<%--                                                                        class="upload-image upload--block"--%>
+<%--                                                                        action="https://jsonplaceholder.typicode.com/posts/"--%>
+<%--                                                                        multiple--%>
+<%--                                                                        :limit="1">--%>
+<%--                                                                    <el-button class="btn-attach btn-block el-button--icon"--%>
+<%--                                                                               icon="ri-image-add-line" :disabled="switch1 == false">--%>
+<%--                                                                        이미지 첨부하기--%>
+<%--                                                                    </el-button>--%>
+<%--                                                                </el-upload>--%>
+
+                                                                <div class="file-uploader--msg">
+                                                                    <label for="imgFile1" class="file-uploader__label" :class="switch1 == false ? 'disabled':''">
+                                                                        <i class="ri-image-add-line"></i><span>이미지 첨부하기</span>
+                                                                        <input type="file" class="file-uploader__input" id="imgFile1">
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                             <div class="el-input__item el-input--with-count">
                                                                 <!-- 이미지 첨부 시, 클래스 추가 :class="textarea--with-img" -->
-                                                                <div class="textarea-wrap textarea--with-img">
-                                                                    <img src="https://blog-ko.lordofheroes.com/content/images/2020/07/sns-2.jpg" alt="">
-
+                                                                <div class="textarea-wrap textarea--with-img" :class="switch1 == false ? 'disabled':''">
+                                                                    <div class="file-uploader--msg">
+                                                                        <img class="file-uploader__img"
+                                                                             src="https://blog-ko.lordofheroes.com/content/images/2020/07/sns-2.jpg">
+                                                                        <button type="button" class="file-uploader__del">
+                                                                            <i class="ri-close-line"></i><span class="invisible">삭제</span>
+                                                                        </button>
+                                                                    </div>
                                                                     <el-input
                                                                             type="textarea"
                                                                             v-model="textarea1"
                                                                             :disabled="switch1 == false"
                                                                             resize="none"
+                                                                            autosize
                                                                             placeholder="[#마이몰 이름# - 결제완료 안내] 주문 상품 : #상품명#
 주문 번호 : #주문 번호#">
                                                                     </el-input>
-                                                                    <div class="el-input__count">
-                                                                        <span>55byte / </span>
-                                                                        <strong>MMS</strong>
-                                                                    </div>
+                                                                </div>
+                                                                <div class="el-input__count">
+                                                                    <span>55byte / </span>
+                                                                    <strong>LMS</strong>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -134,33 +148,50 @@
                                                         </div>
                                                         <div class="el-input__area">
                                                             <div class="el-input__item">
-                                                                <el-upload
-                                                                        class="upload-image upload--block"
-                                                                        action="https://jsonplaceholder.typicode.com/posts/"
-                                                                        multiple
-                                                                        :limit="1">
-                                                                    <el-button class="btn-attach btn-block el-button--icon"
-                                                                               icon="ri-image-add-line" :disabled="switch2 == false">
-                                                                        이미지 첨부하기
-                                                                    </el-button>
-                                                                </el-upload>
+<%--                                                                <el-upload--%>
+<%--                                                                        class="upload-image upload--block"--%>
+<%--                                                                        action="https://jsonplaceholder.typicode.com/posts/"--%>
+<%--                                                                        multiple--%>
+<%--                                                                        :limit="1">--%>
+<%--                                                                    <el-button class="btn-attach btn-block el-button--icon"--%>
+<%--                                                                               icon="ri-image-add-line" :disabled="switch2 == false">--%>
+<%--                                                                        이미지 첨부하기--%>
+<%--                                                                    </el-button>--%>
+<%--                                                                </el-upload>--%>
+
+                                                                <div class="file-uploader--msg">
+                                                                    <label for="imgFile2" class="file-uploader__label" :class="switch2 == false ? 'disabled':''">
+                                                                        <i class="ri-image-add-line"></i><span>이미지 첨부하기</span>
+                                                                        <input type="file" class="file-uploader__input" id="imgFile2" :disabled="switch2 == false">
+                                                                    </label>
+                                                                </div>
                                                             </div>
 
                                                             <div class="el-input__item el-input--with-count">
                                                                 <!-- 이미지 첨부 시, 클래스 추가 :class="textarea--with-img" -->
-                                                                <div class="textarea-wrap">
+                                                                <div class="textarea-wrap" :class="switch2 == false ? 'disabled':''">
+<%--                                                                    <div class="file-uploader--msg">--%>
+<%--                                                                        <img class="file-uploader__img"--%>
+<%--                                                                             src="https://blog-ko.lordofheroes.com/content/images/2020/07/sns-2.jpg">--%>
+<%--                                                                        <button type="button" class="file-uploader__del">--%>
+<%--                                                                            <i class="ri-close-line"></i><span class="invisible">삭제</span>--%>
+<%--                                                                        </button>--%>
+<%--                                                                    </div>--%>
+
                                                                     <el-input
                                                                             type="textarea"
                                                                             v-model="textarea2"
                                                                             :disabled="switch2 == false"
                                                                             resize="none"
-                                                                            placeholder="[#마이몰 이름# - 결제취소 안내] 주문 상품 : #상품명#
-주문 번호 : #주문 번호#">
+                                                                            autosize
+                                                                            placeholder="[#마이몰 이름# - 결제취소 안내] 
+                                                                            주문 상품 : #상품명#
+                                                                            주문 번호 : #주문 번호#">
                                                                     </el-input>
-                                                                    <div class="el-input__count">
-                                                                        <span>55byte / </span>
-                                                                        <strong>LMS</strong>
-                                                                    </div>
+                                                                </div>
+                                                                <div class="el-input__count">
+                                                                    <span>55byte / </span>
+                                                                    <strong>LMS</strong>
                                                                 </div>
                                                             </div>
                                                         </div>

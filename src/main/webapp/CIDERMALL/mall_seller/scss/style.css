@@ -398,12 +398,12 @@ body {
 }
 /* _common.scss */
 .invisible {
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
 
 hr {
@@ -1065,27 +1065,6 @@ hr {
   background-color: #EEF0F5;
 }
 
-.btn-attach {
-  color: #4D83FC;
-  border-color: #E4ECFF;
-  background-color: #E4ECFF;
-}
-.btn-attach:hover, .btn-attach:focus {
-  color: #FFFFFF;
-  border-color: #4D83FC;
-  background: #4D83FC;
-}
-.btn-attach[disabled] {
-  color: #BBC7D0;
-  border-color: #EEF0F5;
-  background-color: #EEF0F5;
-}
-.btn-attach[disabled]:hover, .btn-attach[disabled]:focus {
-  color: #BBC7D0;
-  border-color: #EEF0F5;
-  background-color: #EEF0F5;
-}
-
 .btn-mover {
   font-size: 1.067rem;
 }
@@ -1471,7 +1450,7 @@ hr {
   color: #FFFFFF;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.8);
-  line-height: 1.333rem;
+  line-height: 1.467rem;
 }
 
 .file-uploader--banner {
@@ -1492,6 +1471,54 @@ hr {
   line-height: 78px;
 }
 
+.file-uploader--msg {
+  width: 100%;
+  line-height: auto;
+}
+.file-uploader--msg .file-uploader__label {
+  line-height: inherit;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  font-family: "remixicon";
+  color: #4D83FC;
+  border-color: #E4ECFF;
+  background-color: #E4ECFF;
+  font-weight: 600;
+  -moz-user-select: none;
+  padding: 15px 27px;
+  font-size: 16px;
+}
+.file-uploader--msg .file-uploader__label:hover, .file-uploader--msg .file-uploader__label:focus {
+  color: #FFFFFF;
+  border-color: #4D83FC;
+  background: #4D83FC;
+}
+.file-uploader--msg .file-uploader__label.disabled {
+  color: #BBC7D0;
+  border-color: #EEF0F5;
+  background-color: #EEF0F5;
+}
+.file-uploader--msg .file-uploader__label.disabled:hover, .file-uploader--msg .file-uploader__label.disabled:focus {
+  color: #BBC7D0;
+  border-color: #EEF0F5;
+  background-color: #EEF0F5;
+}
+.file-uploader--msg .file-uploader__label i {
+  margin-right: 5px;
+  transform: translateY(1px);
+  font-size: 123%;
+}
+.file-uploader--msg .file-uploader__label > i,
+.file-uploader--msg .file-uploader__label > span {
+  vertical-align: middle;
+}
+.file-uploader--msg .file-uploader__label:after {
+  content: "";
+}
 /* _tables.scss */
 .table-responsive {
   overflow-x: auto;
@@ -3453,25 +3480,48 @@ hr {
 .phone-inner .form-card__header {
   margin-left: 0.6667rem;
 }
-.phone-inner img {
+.phone-inner .textarea-wrap {
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #DFE3E5;
+  color: #373A4B;
+  border-radius: 4px;
+  height: 440px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.phone-inner .textarea-wrap.disabled {
+  background-color: #EEF0F5;
+  color: #A1ACC9;
+}
+.phone-inner .textarea-wrap.textarea--with-img .file-uploader--msg {
+  position: relative;
   width: 240px;
   height: 130px;
+  margin: 1.333rem 1.333rem 10px;
 }
-.phone-inner .textarea-wrap .el-textarea__inner {
-  width: 100%;
-  height: 440px !important;
+.phone-inner .textarea-wrap.textarea--with-img .file-uploader__img {
+  position: static;
+  transform: translateY(0);
 }
-.phone-inner .textarea-wrap.textarea--with-img {
-  position: relative;
+.phone-inner .textarea-wrap.textarea--with-img .el-textarea .el-textarea__inner {
+  padding-top: 0;
+  min-height: calc(298px - 1.333rem) !important;
 }
-.phone-inner .textarea-wrap.textarea--with-img img {
-  position: absolute;
-  z-index: 10;
-  top: 1.067rem;
-  left: 1.067rem;
+.phone-inner .textarea-wrap .el-textarea .el-textarea__inner {
+  padding: 0;
+  padding: 1.333rem;
+  min-height: 438px !important;
 }
-.phone-inner .textarea-wrap.textarea--with-img .el-textarea__inner {
-  padding-top: 156px;
+.phone-inner .textarea-wrap .el-textarea__inner,
+.phone-inner .textarea-wrap .el-textarea__inner:focus {
+  border: 0;
+  box-shadow: none;
 }
 
 .charge-summary {

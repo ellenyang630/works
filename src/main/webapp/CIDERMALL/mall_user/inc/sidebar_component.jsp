@@ -46,9 +46,21 @@
 
         <div class="sidebar-foot">
             <ul class="sns-window">
-                <li><a href="#" target="_blank" title="인스타그램 새창열기"><img src="img/btn_instagram.svg" alt="인스타그램"></a></li>
-                <li><a href="#" target="_blank" title="카카오채널 새창열기"><img src="img/btn_kakaoChannel.svg" alt="카카오톡 채널"></a></li>
-                <li><a href="#" target="_blank" title="네이버블로그 새창열기"><img src="img/btn_naverBlog.svg" alt="네이버 블로그"></a></li>
+                <li>
+                    <a href="#" target="_blank" title="인스타그램 새창열기">
+                        <img src="img/btn_instagram.png" alt="인스타그램 로고" width="40" height="40">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" title="카카오채널 새창열기">
+                        <img src="img/btn_kakao_channel.png" alt="카카오톡채널 로고" width="40" height="40">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" title="네이버블로그 새창열기">
+                        <img src="img/btn_naver_blog.png" alt="네이버블로그 로고" width="40" height="40">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

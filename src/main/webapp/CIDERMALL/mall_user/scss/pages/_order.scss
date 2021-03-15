@@ -1,0 +1,424 @@
+@charset "UTF-8";
+/* _order */
+//## 주문서 페이지 & 주문조회 리스트 & 주문조회 상세에 사용하는 스타일을 지정합니다.
+
+// 주문서 컨텐츠 구분
+.module{
+  // module__section
+  &__section{
+    margin-top: 2rem;
+
+    &.mt-0{
+      margin-top: 0;
+    }
+
+    @include respond-to('small-up'){
+      margin-top: 4.667rem;
+    }
+  }
+
+  // module__head
+  &__head{
+    border-bottom: 1px solid $text-dark;
+
+    &.is-flex{
+      display: flex;
+      align-content: center;
+
+      .module__act{
+        margin-left: auto;
+      }
+    }
+  }
+
+  // module-title
+  &__title{
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    padding-bottom: 1rem;
+    color: $text-dark;
+
+    em{
+      color: rgba($--color-danger, .98);
+    }
+  }
+
+  // module-body
+  &__body{
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-light;
+
+    &.bb-0{
+      border-bottom: 0;
+      padding-bottom:0;
+    }
+
+    &.module-view{
+      background-color: $bg-base;
+    }
+
+    &.module-list{
+      padding:0;
+      border-bottom: 0;
+    }
+    &.init{
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &-view{
+    background-color: $bg-base;
+  }
+
+  &__foot{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+    .help-text{
+      margin-left: auto;
+    }
+
+
+    @include respond-to('medium-down'){
+      .btn-group{
+        display: none;
+      }
+    }
+  }
+}
+
+
+// 주문상품 정보
+.ordered{
+  // ordered__contents
+  &__contents{
+    .goods-control{
+      @include respond-to('medium-up'){
+        display: block;
+      }
+    }
+  }
+
+  // ordered__head
+  &__head{
+    background-color: $gray-extra-light-3;
+    display: flex;
+
+    .status{
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      color: $--color-danger;
+      padding: 15px 20px;
+    }
+    .btn-view{
+      margin-left: auto;
+      padding: 15px 20px;
+    }
+
+
+    @include respond-to('medium-up'){
+      .status{
+        padding: 20px 30px;
+      }
+      .btn-view{
+        padding: 20px 30px;
+      }
+    }
+
+  }
+
+  //&__status{
+  //  font-weight: $font-weight-bold;
+  //  color: $--color-danger;
+  //}
+
+
+  // ordered__lists (ul)
+  &__lists{
+    @include respond-to('medium-up'){
+      //padding: 0 14px;
+      padding: 0 30px;
+    }
+  }
+
+  // ordered__list (li)
+  &__list{
+    padding: 15px 0;
+    border-bottom: 1px solid $gray-light;
+
+    &:last-child{
+      border-bottom: 0;
+    }
+
+    .goods-control__cell{
+      + .goods-control__cell{
+        margin-left: 10px;
+      }
+    }
+
+    @include respond-to('small-up'){
+      .goods-control__cell{
+        + .goods-control__cell{
+          margin-left: auto;
+        }
+      }
+    }
+
+    @include respond-to('medium-up'){
+      padding: 1.333rem 0;
+
+      .goods-txt{
+        padding-left: 30px;
+      }
+    }
+  }
+
+
+  // ordered__summary
+  &__summary{
+    display: flex;
+    padding: 1.333rem;
+    background: $bg-base;
+    border-radius: $border-radius-medium * 2;
+    align-items: center;
+
+    .pay-idNum{
+      font-size: $font-size-small;
+
+      dt{
+        color: $text-base;
+      }
+      dd{
+        color: $text-dark;
+        font-weight: $font-weight-bold;
+      }
+    }
+    .pay-status{
+      margin-left: auto;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-bold;
+      color: $--color-danger;
+    }
+
+
+    @include respond-to('small-down'){
+      .pay-idNum{
+        dt{
+          display: none;
+        }
+        dl:last-child dd{
+          color: $gray-dark;
+          font-weight: $font-weight-regular;
+        }
+      }
+    }
+
+    @include respond-to('small-up'){
+      padding: 1.8rem 2rem;
+
+      .pay-idNum{
+        display: flex;
+
+        dl{
+          display: flex;
+
+          + dl{
+            margin-left: 2rem;
+          }
+        }
+        dd{
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+// 상품정보 아이템 (이미지, 가격, 수량 표시)
+.goods{
+  &-info{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    &.vertical-center{
+      .goods-img,
+      .goods-txt{
+        vertical-align: middle;
+      }
+    }
+
+    // 장바구니 페이지에서
+    &.in-cart{
+      .goods-name{
+        padding-right: 40px;
+
+        @include respond-to('medium-up'){
+          padding-right: 0;
+        }
+      }
+
+      .goods-control__cell{
+        &:last-child{
+          margin-left: auto;
+        }
+      }
+
+      @include respond-to('xsmall-down'){
+        .goods-control__inner{
+          display: block;
+        }
+      }
+    }
+
+    // 주문하기 페이지에서
+    &.in-order{
+
+    }
+  }
+
+  &-img,
+  &-txt{
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  // goods-img
+  &-img{
+    width: 110px;
+    height: 110px;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+
+    @include respond-to('medium-down'){
+      position: relative;
+
+      .checkbox{
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    @include respond-to('medium-up'){
+      .checkbox{
+        display: none;
+      }
+    }
+  }
+
+  // goods-txt
+  &-txt{
+    padding-top: 10px;
+    padding-left: 15px;
+    text-align: left;
+    position: relative;
+
+    .btn-delete{
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    @include respond-to('medium-up'){
+      padding-left: 20px;
+
+      .btn-delete{
+        display: none;
+      }
+    }
+  }
+
+  // goods-name
+  &-name{
+    margin-bottom: 1.133rem;
+    font-size: $font-size-small;
+    color:$text-dark;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.35em;
+    max-height: 2.7em;
+  }
+
+  // goods-control
+  &-control{
+    color: $text-dark;
+
+    &__inner{
+      display:flex;
+      align-items: flex-end;
+    }
+
+    &__cell{
+      + .goods-control__cell{
+        margin-left: 10px;
+      }
+    }
+    .option-control--quantity{
+      margin-top: 0;
+    }
+
+    .option-control--quantity{
+      margin:0;
+      margin-top: 10px;
+    }
+    .quantity-txt{
+      font-size: $font-size-smaller;
+    }
+
+    //@include respond-to('xsmall-up'){
+    //  &__inner{
+    //    display:flex;
+    //    align-items: flex-end;
+    //  }
+    //
+    //  &__cell{
+    //    + .goods-control__cell{
+    //      margin-left: 10px;
+    //    }
+    //  }
+    //  .option-control--quantity{
+    //    margin-top: 0;
+    //  }
+    //}
+
+    @include respond-to('medium-up'){
+      display:none;
+
+      .quantity-txt{
+        font-size: $font-size-small;
+      }
+    }
+  }
+
+  // goods-price
+  &-price{
+    .price-txt{
+      display: inline-block;
+
+      strong{
+        font-size: $--font-size-large;
+      }
+    }
+
+    .discounted{
+      display: inline-block;
+      margin-left: .6667rem;
+      font-size: $--font-size-small;
+      text-decoration: line-through;
+      color:$text-light;
+    }
+  }
+}

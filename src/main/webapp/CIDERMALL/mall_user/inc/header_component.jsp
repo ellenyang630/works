@@ -6,7 +6,14 @@
                 <button type="button" class="btn-menu" @click="openYnSidebar = true">
                     카테고리 메뉴 열기
                 </button>
-                <button type="button" class="btn-search">검색</button>
+                <button type="button" class="btn-search" @click="openYnSearch = true"
+                        :class="openYnSearch == true ? '':'is-active'">
+                    검색창 열기
+                </button>
+                <button type="button" class="btn-close--sidebar" @click="openYnSearch = false"
+                        :class="openYnSearch == false ? '':'is-active'">
+                    검색창 닫기
+                </button>
             </div>
 
             <h1 class="header__logo">

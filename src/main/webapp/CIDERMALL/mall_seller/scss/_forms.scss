@@ -482,7 +482,7 @@
     color:$--color-white;
     border-radius: $--border-radius-small;
     background-color: rgba($--color-black,.8);
-    line-height: 1.333rem;
+    line-height: 1.467rem;
   }
 }
 
@@ -497,7 +497,7 @@
   }
 }
 
-// 로고 이미지 첨부
+// 마이몰 로고 이미지 첨부
 .file-uploader--logo{
   width: 240px;
   height: 80px;
@@ -505,5 +505,72 @@
 
   .file-uploader__label{
     line-height: 78px;
+  }
+}
+
+
+// 메시지 설정에서 첨부 이미지
+.file-uploader--msg{
+  width: 100%;
+  line-height: auto;
+
+  .file-uploader__label{
+    line-height: inherit;
+    //position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+
+    text-align: center;
+    border-radius: $--border-radius-base;
+    font-family: $font-family-icon;
+
+    color: $--color-success;
+    border-color: $success-light;
+    background-color: $success-light;
+    font-weight: 600;
+    -moz-user-select: none;
+    padding: 15px 27px;
+    font-size: 16px;
+
+
+    &:hover,
+    &:focus{
+      color: $--color-white;
+      border-color: $--color-success;
+      background: $--color-success;
+    }
+
+    &.disabled{
+      color: $border-dark;
+      border-color: $--border-color-light;
+      background-color: $--border-color-light;
+
+      &:hover,
+      &:focus{
+        color: $border-dark;
+        border-color: $--border-color-light;
+        background-color: $--border-color-light;
+      }
+    }
+
+    i{
+      margin-right: 5px;
+      transform: translateY(1px);
+      font-size: 123%;
+    }
+
+    > i,
+    > span{
+      vertical-align: middle;
+    }
+
+    &:after{
+      content:"";
+    }
+  }
+  .file-uploader__img{
+
   }
 }

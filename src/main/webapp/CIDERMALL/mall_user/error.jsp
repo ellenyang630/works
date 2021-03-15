@@ -41,15 +41,6 @@
 <script>
     new Vue({
         el: '#app',
-        data(){
-            return{
-                openYnSidebar: false,
-                openYnAddr: false,
-            }
-        },
-        methods: {
-
-        },
     })
 </script>
 </body>

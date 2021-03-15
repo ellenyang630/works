@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* _header.scss */
+
+
+.header{
+  &{
+    height: 60px;
+    transition-property: height;
+    transition-duration: 300ms;
+  }
+
+  .container{
+    position: relative;
+    height: 100%;
+  }
+
+  // header__logo
+  &__logo{
+    text-align: center;
+    padding: 16px 0 17px;
+
+    .txt,
+    .img{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .txt{
+      font-family: $font-family-gmarket;
+      font-size: $--font-size-base * 1.267; //19px
+      font-weight: $font-weight-bold;
+      color: $text-dark;
+    }
+    .img{
+      height: 17px;
+
+      img{
+        height: 100%;
+      }
+    }
+
+
+    @include respond-to('medium-up'){
+      padding: 0;
+      height: 120px;
+      line-height: 120px;
+
+      .txt {
+        font-size: $font-size-xlarge;
+      }
+      .img {
+        height: 27px;
+      }
+    }
+  }
+
+  @include respond-to('medium-up'){
+    height: 120px;
+  }
+}
+
+
+
+.gnb{
+  &__area{
+
+  }
+  &__left,
+  &__right{
+    position: absolute;
+    top: 0;
+
+    @include respond-to('small-up'){
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__left{
+    left: 13px;
+
+    @include respond-to('small-up'){
+      left: 13px;
+    }
+  }
+  &__right{
+    right: 0;
+  }
+}

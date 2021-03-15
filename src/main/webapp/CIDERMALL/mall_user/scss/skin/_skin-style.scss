@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/* _skin-style.scss */
+
+// 스킨1 & 스킨2에 대한 스타일
+.skin1,
+.skin2{
+  .swiper-button-next,
+  .swiper-button-prev {
+    top:160px;
+  }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next{
+    left: -77px;
+  }
+
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev{
+    right: -77px;
+  }
+}
+
+
+// 스킨2 & 스킨3에 대한 스타일
+.skin2,
+.skin3 {
+  .product {
+    // product__header
+    &__header {
+      &.is-flex {
+        .btn-more--product {
+          text-indent: -9999px;
+          overflow: hidden;
+          background: url("../img/ico_plus.svg") no-repeat;
+          width: 17px;
+          height: 17px;
+        }
+      }
+    }
+  }
+
+  // 메인 > 베스트 상품전
+  #best-product,
+  #theme-product{
+    .product__contentsBg{
+      display: none;
+    }
+    .product__title{
+      @include respond-to('small-up'){
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+
+// 스킨1에 대한 스타일
+.skin1{
+  #best-product,
+  #theme-product {
+    position: relative;
+    z-index: 5;
+
+    .product__contentsBg {
+      display: block;
+      padding-top: 17%;
+    }
+
+    .product__title {
+      padding-left: 0;
+
+      @include respond-to('small-up') {
+        padding-left: 50px;
+      }
+    }
+  }
+
+  #theme-product{
+    .product__contentsBg {
+      background-color: rgba($text-light, .2);
+    }
+  }
+}
+
+
+// 스킨2에 대한 스타일
+.skin2{
+  .btn-cart__count{
+    color: $text-dark-light;
+  }
+
+  .product {
+    // product__contents
+    &__contents{
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      @include respond-to('small-up'){
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }
+
+    // product__listGroup
+    &__listGroup{
+      &.grid-type {
+        .product__listInfo{
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-bottom: 10px;
+          background-color: $--color-white;
+
+          @include respond-to('small-up') {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+          }
+        }
+      }
+
+      &.list-type{
+        .product__lists{
+
+          @include respond-to('small-up') {
+            -webkit-box-orient: horizontal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin: 0 -5px;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box;
+          }
+        }
+        .product__list{
+          @include respond-to('small-up') {
+            max-width: calc(50% - 20px);
+            flex: 0 1 calc(50% - 20px);
+            border: 1px solid #f0f0f0;
+            margin: 20px 10px 0 10px;
+            padding: 0;
+
+            &:nth-child(1),
+            &:nth-child(2){
+              margin-top: 0;
+            }
+          }
+        }
+
+        .product__listImg{
+          @include respond-to('small-up') {
+            width: 260px;
+            flex: 0 0 260px;
+            //height: 260px;
+
+            .btn-addToCart{
+              display: block;
+            }
+          }
+        }
+        .product__listInfo{
+          padding-bottom: 45px;
+          padding-top: 45px;
+          padding-right: 25px;
+        }
+        .product__listPrice{
+          .addToCart{
+            display: none;
+          }
+          .percentage{
+            margin-left: auto;
+          }
+        }
+      }
+    }
+
+    // product__listImg
+    &__listImg {
+      .badge {
+        &--best {
+          background-color: $text-dark-light;
+          color: $skin2-color;
+        }
+        &--theme {
+          background-color: darken($text-light, 3%);
+          color: $--color-white;
+        }
+      }
+
+      .btn-addToCart {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        z-index: 5;
+      }
+
+      @include respond-to('small-up') {
+        .btn-addToCart {
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+    }
+  }
+
+  #best-product{
+    background-color: $gray-extra-light-1;
+
+    .product__title{
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+
+// 스킨3에 대한 스타일
+.skin3 {
+  .product {
+
+    // product__listImg
+    &__listImg {
+      .thumbnail {
+        border-radius: 17px;
+      }
+      .badge {
+        top: 10px;
+        left: 10px;
+
+        &--best,
+        &--theme {
+          background-color: $--color-white;
+          color: $text-dark;
+          border-radius: $border-radius-medium * 2;
+        }
+
+        @include respond-to('small-up') {
+          top: 20px;
+          left: 20px;
+          font-size: $--font-size-base;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+
+  // 메인 > 베스트 상품전
+  #best-product,
+  #theme-product {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $--color-text-secondary;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: $border-radius-circle;
+      box-shadow: 0 0 23px 7px rgba($--color-black, .05);
+      top:160px;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: $font-size-smaller;
+      font-weight: $font-weight-bold;
+    }
+
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled{
+      display: none;
+    }
+
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+      left: -68px;
+    }
+
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+      right: -68px;
+    }
+  }
+}
